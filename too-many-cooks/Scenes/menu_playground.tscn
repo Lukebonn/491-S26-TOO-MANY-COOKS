@@ -1,9 +1,186 @@
 [gd_scene format=3 uid="uid://cim8uvhnxv7v"]
 
+[ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scripts/speakerboxtolength.gd" id="1_ol5do"]
+[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Images/icon.svg" id="2_1p467"]
+[ext_resource type="Texture2D" uid="uid://j5pea85gjsg4" path="res://Images/gear.png" id="3_7b63m"]
+[ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scripts/settings.gd" id="4_2xemw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol5do"]
+bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_jiauv"]
+
 [node name="Control" type="Control" unique_id=1905278438]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Dialogue" type="Panel" parent="." unique_id=1917945347]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -431.5
+offset_top = -189.99997
+offset_right = 414.30554
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.017453292
+theme_override_styles/panel = SubResource("StyleBoxFlat_ol5do")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue" unique_id=1083997891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.461994
+offset_top = 3.5088806
+offset_right = -12.44458
+offset_bottom = -13.491089
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
+fit_content = true
+
+[node name="Speaker" type="Panel" parent="." unique_id=1746935631 node_paths=PackedStringArray("child_dialogue")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -431.5
+offset_top = -278.00003
+offset_right = -356.83398
+offset_bottom = -210.46402
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.017453292
+theme = SubResource("Theme_jiauv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ol5do")
+script = ExtResource("1_ol5do")
+child_dialogue = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Speaker" unique_id=690228356]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.461994
+offset_top = 6.0294495
+offset_right = -8.269684
+offset_bottom = -16.011658
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "you"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=539993318]
+visible = false
+position = Vector2(550, 357.00003)
+scale = Vector2(2.1992188, 4.2734375)
+texture = ExtResource("2_1p467")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=180874606]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 550.0
+offset_right = 428.0
+offset_bottom = 1070.0
+grow_horizontal = 0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("3_7b63m")
+ignore_texture_size = true
+
+[node name="settings" type="Node2D" parent="." unique_id=1758496919]
+position = Vector2(1152, 0)
+script = ExtResource("4_2xemw")
+
+[node name="background" type="ColorRect" parent="settings" unique_id=1404169168]
+z_index = 1
+offset_left = 0.35559082
+offset_top = 0.10183716
+offset_right = 477.71118
+offset_bottom = 647.1018
+color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
+
+[node name="cover" type="ColorRect" parent="settings" unique_id=1968666571]
+z_index = 1
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="buttons" type="VBoxContainer" parent="settings" unique_id=349534747]
+z_index = 1
+offset_left = 188.0
+offset_top = 9.0
+offset_right = 466.01282
+offset_bottom = 635.0
+theme_override_constants/separation = 16
+
+[node name="Button" type="Button" parent="settings/buttons" unique_id=1488591438]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button2" type="Button" parent="settings/buttons" unique_id=1892206791]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button3" type="Button" parent="settings/buttons" unique_id=561799106]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button4" type="Button" parent="settings/buttons" unique_id=1633847661]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button5" type="Button" parent="settings/buttons" unique_id=793127930]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button6" type="Button" parent="settings/buttons" unique_id=459244292]
+z_index = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Marker2D" type="Marker2D" parent="settings" unique_id=712050519]
+position = Vector2(-304, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="settings" unique_id=1712407616]
