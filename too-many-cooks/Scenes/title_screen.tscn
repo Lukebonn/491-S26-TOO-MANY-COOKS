@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://dwvv0kufm72s1"]
+
+[ext_resource type="Script" uid="uid://bj8xfh5iufnmh" path="res://Scripts/prototype stuff/titleenvironmentspinner.gd" id="1_4gxqj"]
+[ext_resource type="Script" uid="uid://dk0rkw8cig63j" path="res://Scripts/prototype stuff/ui stuff/camera_mainmenu.gd" id="1_12m1t"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Images/prototype art that we will not use in the final build/cat.png" id="2_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://616qwfcuf6yj" path="res://Images/prototype art that we will not use in the final build/Pine Tree - GREEN  - 0000.png" id="2_twnyg"]
+[ext_resource type="Texture2D" uid="uid://cyix2bhc0xyqk" path="res://Images/prototype art that we will not use in the final build/Pine Tree - YELLOW  - 0000.png" id="3_55kwv"]
+[ext_resource type="Script" uid="uid://5as35m4y32nc" path="res://Scripts/prototype stuff/ui stuff/title_ui.gd" id="4_55kwv"]
+[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Images/icon.svg" id="4_twnyg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
+sky_top_color = Color(5.390644e-06, 0.7529455, 0.9618829, 1)
+sky_horizon_color = Color(1, 1, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Sky" id="Sky_6vd4x"]
+sky_material = SubResource("ProceduralSkyMaterial_12m1t")
+
+[sub_resource type="Environment" id="Environment_n82rj"]
+background_mode = 2
+sky = SubResource("Sky_6vd4x")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vd4x"]
+albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6vd4x"]
+material = SubResource("StandardMaterial3D_6vd4x")
+top_radius = 1.0
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0061g"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 6.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8mikk"]
+size = Vector2(100, 100)
+
+[node name="Node3D" type="Node3D" unique_id=388464668]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1166118465 node_paths=PackedStringArray("menu_camera_spot")]
+transform = Transform3D(-0.6427876, 0, 0.7660444, 0, 1, 0, -0.7660444, 0, -0.6427876, 5.711604, 2.5041432, -4.958377)
+script = ExtResource("1_12m1t")
+menu_camera_spot = NodePath("../Menu part/CameraSpot")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771332632]
+environment = SubResource("Environment_n82rj")
+
+[node name="Menu part" type="Node3D" parent="." unique_id=1383766374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.385757, 2.3841858e-07, 0.57752466)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Menu part" unique_id=172650460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39751863, 0, -0.10042763)
+mesh = SubResource("CylinderMesh_6vd4x")
+
+[node name="CameraSpot" type="Marker3D" parent="Menu part" unique_id=1841477792]
+transform = Transform3D(0.017364822, 0.025488699, 0.095125124, 0, 0.09659258, -0.025881905, -0.098480776, 0.0044943467, 0.01677313, 1.5937452, 0.68869746, 0.096888006)
+gizmo_extents = 1.95
+
+[node name="Sprite3D" type="Sprite3D" parent="Menu part" unique_id=39587136]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.58070946, 0.7662382, 0.62495816)
+billboard = 2
+texture = ExtResource("2_6vd4x")
+
+[node name="Stuff that spins" type="Node3D" parent="." unique_id=417076584]
+script = ExtResource("1_4gxqj")
+speed = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Stuff that spins" unique_id=1745361215]
+transform = Transform3D(-0.16986556, -0.6597653, 0.7320215, -0.3019366, 0.74193573, 0.5986365, -0.9380725, -0.11933636, -0.32523662, 4.250527, 2.3810194, -4.882335)
+shadow_enabled = true
+
+[node name="Tower" type="MeshInstance3D" parent="Stuff that spins" unique_id=436090541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_0061g")
+
+[node name="Trees" type="Node3D" parent="Stuff that spins" unique_id=701635104]
+
+[node name="tree_green" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1809959747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17553782, 0.53362596, 2.7928104)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_twnyg")
+
+[node name="tree_yellow" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=370677541]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.0377023, 0.37525308, 2.902305)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_55kwv")
+
+[node name="tree_green2" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1748024582]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.1092818, 0.53362596, 1.368159)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_twnyg")
+
+[node name="tree_yellow2" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=75191703]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 2.322522, 0.53362596, 1.4776535)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_55kwv")
+
+[node name="tree_green3" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1251496062]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.7252834, 0.53362596, 0.8021574)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_twnyg")
+
+[node name="tree_yellow3" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=512926425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5120432, 0.53362596, 0.91165185)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_55kwv")
+
+[node name="tree_green4" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=609792169]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.06374526, 0.3571061, -2.084628)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_twnyg")
+
+[node name="tree_yellow4" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1731115115]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.2769854, 0.53362596, -1.9751337)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_55kwv")
+
+[node name="tree_green5" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1827381374]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.2418592, 0.3782524, -0.956445)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_twnyg")
+
+[node name="tree_yellow5" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1630146447]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3.4550993, 0.53362596, -0.84695053)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_55kwv")
+
+[node name="Ground" type="MeshInstance3D" parent="Stuff that spins" unique_id=1719364192]
+mesh = SubResource("PlaneMesh_8mikk")
+
+[node name="Title UI" type="Control" parent="." unique_id=446132715]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_55kwv")
+
+[node name="titletop" type="Control" parent="Title UI" unique_id=1580252919]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Title UI/titletop" unique_id=148839172]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_constants/margin_top = -300
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Title UI/titletop/MarginContainer" unique_id=1399522578]
+modulate = Color(1, 0.19607843, 0.19607843, 1)
+z_index = 1
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/bold_italics_font_size = 60
+text = "logo placeholder
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Title UI/titletop/MarginContainer" unique_id=686725751]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_twnyg")
+
+[node name="titlebottom" type="Control" parent="Title UI" unique_id=334999017]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Title UI/titlebottom" unique_id=1713905387]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Title UI/titlebottom/MarginContainer" unique_id=843791403]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/bold_italics_font_size = 60
+text = "Press Meow"
+fit_content = true
+horizontal_alignment = 1
+
+[connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="stop_spinning_enivonment" from="Title UI" to="Stuff that spins" method="_on_title_ui_stop_spinning_enivonment"]

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cim8uvhnxv7v"]
 
-[ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scripts/speakerboxtolength.gd" id="1_ol5do"]
+[ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scripts/prototype stuff/ui stuff/speakerboxtolength.gd" id="1_ol5do"]
 [ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Images/icon.svg" id="2_1p467"]
-[ext_resource type="Texture2D" uid="uid://j5pea85gjsg4" path="res://Images/gear.png" id="3_7b63m"]
-[ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scripts/settings.gd" id="4_2xemw"]
+[ext_resource type="Texture2D" uid="uid://j5pea85gjsg4" path="res://Images/prototype art that we will not use in the final build/gear.png" id="3_7b63m"]
+[ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scripts/prototype stuff/ui stuff/settings.gd" id="4_2xemw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol5do"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
