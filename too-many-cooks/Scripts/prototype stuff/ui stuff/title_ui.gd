@@ -14,6 +14,7 @@ func _process(delta):
 	
 func _input(event):
 	if event is InputEventKey and event.pressed and can_start_game:
+		can_start_game = false
 		cast_aside_title_and_get_to_menu()
 		stop_spinning_enivonment.emit()
 		
@@ -27,5 +28,9 @@ func title_cinematics_gogogo():
 
 func cast_aside_title_and_get_to_menu():
 	var tween = get_tree().create_tween()
-	tween.parallel().tween_property($titletop/MarginContainer,"position",Vector2(-1000,0),.3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	tween.parallel().tween_property($titlebottom/MarginContainer,"position",Vector2(-1000,0),.3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property($titletop/MarginContainer,"position",Vector2(-500,0),.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property($titlebottom/MarginContainer,"position",Vector2(-1200,0),.3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+
+func _on_quit_button_down():
+	get_tree().quit()

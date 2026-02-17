@@ -16,3 +16,4 @@ func _on_title_ui_stop_spinning_enivonment():
 	var tween = get_tree().create_tween()
 	tween.parallel().tween_property(self,"position",menu_camera_spot.global_position,1.0).set_trans(Tween.TRANS_EXPO)
 	tween.parallel().tween_property(self,"rotation",menu_camera_spot.rotation,1.0).set_trans(Tween.TRANS_EXPO)
+	

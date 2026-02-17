@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyix2bhc0xyqk" path="res://Images/prototype art that we will not use in the final build/Pine Tree - YELLOW  - 0000.png" id="3_55kwv"]
 [ext_resource type="Script" uid="uid://5as35m4y32nc" path="res://Scripts/prototype stuff/ui stuff/title_ui.gd" id="4_55kwv"]
 [ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Images/icon.svg" id="4_twnyg"]
+[ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scripts/prototype stuff/ui stuff/main_menu_ui.gd" id="8_n82rj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
 sky_top_color = Color(5.390644e-06, 0.7529455, 0.9618829, 1)
@@ -218,13 +219,75 @@ grow_horizontal = 2
 theme_override_constants/margin_top = 100
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Title UI/titlebottom/MarginContainer" unique_id=843791403]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 theme_override_font_sizes/bold_italics_font_size = 60
-text = "Press Meow"
+text = "Press Whatever"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Menu UI" type="Control" parent="." unique_id=1441813974]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_n82rj")
+
+[node name="Sidebar" type="Control" parent="Menu UI" unique_id=229459287]
+anchors_preset = 0
+offset_left = 1152.0
+offset_right = 1192.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Menu UI/Sidebar" unique_id=1977620025]
+layout_mode = 1
+offset_right = 1000.0
+offset_bottom = 900.0
+rotation = -0.17453292
+
+[node name="Buttons" type="Control" parent="Menu UI" unique_id=251356827]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu UI/Buttons" unique_id=1833951934]
+layout_mode = 1
+offset_left = 1152.0
+offset_right = 1442.0
+offset_bottom = 645.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Continue"
+
+[node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="Credits" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=745377423]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=911186619]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Stuff that spins" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
