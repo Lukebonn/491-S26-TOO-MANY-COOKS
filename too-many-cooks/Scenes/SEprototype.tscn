@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://8cinn6ehtcgy"]
+
+[ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scripts/prototype stuff/Effects Prototype/se_prototype.gd" id="1_sxxbo"]
+
+[node name="SEprototype" type="Node2D" unique_id=1031834621]
+script = ExtResource("1_sxxbo")
+
+[node name="PoisonButton" type="Button" parent="." unique_id=716824082]
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 25
+text = "Apply Posion"
+
+[node name="HealButton" type="Button" parent="." unique_id=1800725149]
+offset_left = 896.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 25
+text = "Apply
+Regeneration"
+
+[node name="EffectClearButton" type="Button" parent="." unique_id=1398826089]
+offset_left = 896.0
+offset_top = 488.0
+offset_right = 1088.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 25
+text = "Clear Effects"
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=104365550]
+offset_left = 40.0
+offset_top = 48.0
+offset_right = 472.0
+offset_bottom = 112.0
+show_percentage = false
+
+[node name="HealthValue" type="RichTextLabel" parent="HealthBar" unique_id=383234510]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 8.0
+offset_right = 320.0
+offset_bottom = 56.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Health Value"
+horizontal_alignment = 1
+
+[node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 56.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Health"
+
+[node name="EffectName" type="RichTextLabel" parent="." unique_id=1898203501]
+offset_left = 40.0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 176.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Effect Name"
+
+[node name="EffectTime" type="RichTextLabel" parent="." unique_id=1877924493]
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 328.0
+offset_bottom = 176.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Time"
