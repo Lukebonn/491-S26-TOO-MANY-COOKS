@@ -1,4 +1,6 @@
 extends Control
+# Carson made this so yell at her if you want something different
+
 var can_start_game = false
 
 signal stop_spinning_enivonment
@@ -13,7 +15,7 @@ func _process(delta):
 	pass
 	
 func _input(event):
-	if event is InputEventKey and event.pressed and can_start_game:
+	if Input.is_anything_pressed() and can_start_game:
 		can_start_game = false
 		cast_aside_title_and_get_to_menu()
 		stop_spinning_enivonment.emit()
