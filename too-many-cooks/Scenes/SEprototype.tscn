@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://8cinn6ehtcgy"]
 
 [ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scripts/prototype stuff/Effects Prototype/se_prototype.gd" id="1_sxxbo"]
+[ext_resource type="Script" uid="uid://b5dwygbfgqemr" path="res://Scripts/prototype stuff/Effects Prototype/poison.gd" id="2_574rk"]
+[ext_resource type="Script" uid="uid://ch4y2mvt8c7c3" path="res://Scripts/prototype stuff/Effects Prototype/heal.gd" id="3_isgyt"]
+[ext_resource type="Script" uid="uid://c2vhh3mmh8e8r" path="res://Scripts/prototype stuff/Effects Prototype/clearEffects.gd" id="4_mrnjr"]
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_sxxbo")
@@ -12,6 +15,7 @@ offset_right = 1088.0
 offset_bottom = 160.0
 theme_override_font_sizes/font_size = 25
 text = "Apply Posion"
+script = ExtResource("2_574rk")
 
 [node name="HealButton" type="Button" parent="." unique_id=1800725149]
 offset_left = 896.0
@@ -21,6 +25,7 @@ offset_bottom = 288.0
 theme_override_font_sizes/font_size = 25
 text = "Apply
 Regeneration"
+script = ExtResource("3_isgyt")
 
 [node name="EffectClearButton" type="Button" parent="." unique_id=1398826089]
 offset_left = 896.0
@@ -29,6 +34,7 @@ offset_right = 1088.0
 offset_bottom = 584.0
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
+script = ExtResource("4_mrnjr")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=104365550]
 offset_left = 40.0
@@ -70,3 +76,9 @@ offset_right = 328.0
 offset_bottom = 176.0
 theme_override_font_sizes/normal_font_size = 30
 text = "Time"
+
+[connection signal="applyPoison" from="." to="." method="_on_apply_poison"]
+[connection signal="applyRegeneration" from="." to="." method="_on_apply_regeneration"]
+[connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
+[connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
