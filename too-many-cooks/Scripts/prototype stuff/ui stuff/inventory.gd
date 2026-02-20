@@ -27,8 +27,8 @@ func _ready() -> void:
 #item: ItemData to be added
 #returns false if item cannot be added
 func add_item(item : ItemData) -> bool:
-	var slot = get_slot_with(item)
-	if slot == null or slot.quantity >= item.max_stack:
+	var slot = get_available_slot_with(item)
+	if slot == null:
 		slot = get_empty_slot()
 		
 		if(slot == null):
@@ -47,11 +47,15 @@ func add_item(item : ItemData) -> bool:
 #item: ItemData to be removed
 func remove_item(item : ItemData):
 	var slot = get_slot_with(item)
-	slot.item = null
-	slot.quantity = 0
-	
-	inventory_updated.emit()
-	slot_updated.emit()
+	if(slot):
+		if(slot.quantity > 1):
+			slot.quantity -= 1
+		else:
+			slot.item = null
+			slot.quantity = 0
+		
+		inventory_updated.emit()
+		slot_updated.emit()
 
 ##removes item from specified slot
 #slot: ItemSlot to be emptied
@@ -67,11 +71,20 @@ func remove_item_from_slot(slot : ItemSlot):
 func get_item_from(slot : ItemSlot) -> ItemData:
 	return slot.item
 
-##returns the item slot that has the item in the parameter
+##returns the first item slot that has the item in the parameter
 #item: ItemData that specifies the item to be found
 func get_slot_with(item : ItemData) -> ItemSlot:
 	for slot in item_slots:
 		if slot.item == item:
+			return slot
+	
+	return null
+
+##returns the first item slot with the item parameter but is not a full stack
+#item: ItemData that specifies the item to be found
+func get_available_slot_with(item : ItemData) -> ItemSlot:
+	for slot in item_slots:
+		if slot.item == item and slot.quantity < item.max_stack:
 			return slot
 	
 	return null

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d1nhcqqdtl4gi"]
+
+[ext_resource type="Script" uid="uid://c2bngjtur1e15" path="res://Scripts/prototype stuff/inventory_test_controller.gd" id="1_p0e2e"]
+[ext_resource type="Script" uid="uid://b1ogxl67th3d8" path="res://Scripts/prototype stuff/ui stuff/inventory.gd" id="1_r0qi5"]
+[ext_resource type="Script" uid="uid://4785i162le6f" path="res://Scripts/prototype stuff/itemData.gd" id="3_noe12"]
+[ext_resource type="Resource" uid="uid://bxcj7ggh7j1xa" path="res://Scripts/prototype stuff/items/Test_Item_1.tres" id="4_eqq7b"]
+[ext_resource type="Resource" uid="uid://c8q7dnwqt4y51" path="res://Scripts/prototype stuff/items/Test_Item_2.tres" id="5_eqq7b"]
+
+[node name="Node2D" type="Node2D" unique_id=181088831]
+script = ExtResource("1_p0e2e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2016056754]
+offset_left = 26.0
+offset_top = 25.0
+offset_right = 376.0
+offset_bottom = 625.0
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel" unique_id=987609953]
+z_index = -1
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 600.0
+color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1218328263]
+offset_left = 398.0
+offset_top = 40.0
+offset_right = 694.0
+offset_bottom = 123.0
+text = "Add Item 1"
+
+[node name="Button2" type="Button" parent="." unique_id=874615434]
+offset_left = 710.0
+offset_top = 40.0
+offset_right = 1006.0
+offset_bottom = 123.0
+text = "Add Item 2"
+
+[node name="Button3" type="Button" parent="." unique_id=1972254979]
+offset_left = 398.0
+offset_top = 141.0
+offset_right = 694.0
+offset_bottom = 224.0
+text = "Remove Item 1"
+
+[node name="Button4" type="Button" parent="." unique_id=1438746732]
+offset_left = 710.0
+offset_top = 141.0
+offset_right = 1006.0
+offset_bottom = 224.0
+text = "Remove Item 2"
+
+[node name="Inventory" type="Node" parent="." unique_id=578178522]
+script = ExtResource("1_r0qi5")
+starting_items = Dictionary[ExtResource("3_noe12"), int]({
+ExtResource("4_eqq7b"): 2,
+ExtResource("5_eqq7b"): 2
+})
+
+[connection signal="pressed" from="Button" to="." method="_on_add_button1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_add_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_remove_button_1_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_remove_button_2_pressed"]
+[connection signal="inventory_updated" from="Inventory" to="." method="make_list"]
