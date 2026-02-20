@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bo85qjls5gokq"]
+
+[ext_resource type="Script" uid="uid://c3o636nwn1fn5" path="res://Scripts/prototype stuff/Enemy Prototype/player.gd" id="1_oyc1c"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Images/prototype art that we will not use in the final build/cat.png" id="2_c3qj7"]
+[ext_resource type="Script" uid="uid://ciod55df3jfl8" path="res://Scripts/prototype stuff/Enemy Prototype/enemy.gd" id="3_421n3"]
+[ext_resource type="Texture2D" uid="uid://j5pea85gjsg4" path="res://Images/prototype art that we will not use in the final build/gear.png" id="4_h6jhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjw4q"]
+size = Vector2(58, 55)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3b8b"]
+radius = 158.91193
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvmee"]
+size = Vector2(44, 44)
+
+[node name="Enemy_test" type="Node2D" unique_id=930093451]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=817261637]
+position = Vector2(326, 165)
+script = ExtResource("1_oyc1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=746269893]
+position = Vector2(3.0517578e-05, 3.0517578e-05)
+scale = Vector2(0.10791012, 0.10644531)
+texture = ExtResource("2_c3qj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=312740804]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_qjw4q")
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1288663948]
+position = Vector2(96, 83)
+script = ExtResource("3_421n3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=370090439]
+position = Vector2(0.9999924, 0.9999924)
+scale = Vector2(0.0834961, 0.07812502)
+texture = ExtResource("4_h6jhh")
+
+[node name="dection_area" type="Area2D" parent="Enemy" unique_id=1680529269]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemy/dection_area" unique_id=396877074]
+shape = SubResource("CircleShape2D_m3b8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=539609832]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_tvmee")
+
+[connection signal="body_entered" from="Enemy/dection_area" to="Player" method="_on_dection_area_body_entered"]
+[connection signal="body_entered" from="Enemy/dection_area" to="Enemy" method="_on_dection_area_body_entered"]
+[connection signal="body_exited" from="Enemy/dection_area" to="Enemy" method="_on_dection_area_body_exited"]
