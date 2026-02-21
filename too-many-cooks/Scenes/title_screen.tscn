@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://5as35m4y32nc" path="res://Scripts/prototype stuff/ui stuff/title_ui.gd" id="4_55kwv"]
 [ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Images/icon.svg" id="4_twnyg"]
 [ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scripts/prototype stuff/ui stuff/main_menu_ui.gd" id="8_n82rj"]
+[ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scripts/prototype stuff/ui stuff/fullscreentoggle.gd" id="9_8mikk"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scripts/prototype stuff/ui stuff/tooltip_reader.gd" id="9_0061g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
@@ -62,7 +63,7 @@ mesh = SubResource("CylinderMesh_6vd4x")
 transform = Transform3D(0.017364822, 0.025488699, 0.095125124, 0, 0.09659258, -0.025881905, -0.098480776, 0.0044943467, 0.01677313, 1.5937452, 0.68869746, 0.096888006)
 gizmo_extents = 1.95
 
-[node name="Sprite3D" type="Sprite3D" parent="Menu part" unique_id=39587136]
+[node name="Cat" type="Sprite3D" parent="Menu part" unique_id=39587136]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.58070946, 0.7662382, 0.62495816)
 billboard = 2
 texture = ExtResource("2_6vd4x")
@@ -338,12 +339,13 @@ custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
 mouse_filter = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 tab_2/title = "Secret..."
 tab_2/disabled = true
 tab_3/title = "Purple"
 
 [node name="Audio" type="MarginContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer" unique_id=435965722]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 metadata/_tab_index = 0
@@ -364,12 +366,16 @@ theme_override_font_sizes/font_size = 60
 text = "Audio"
 vertical_alignment = 1
 
-[node name="Master Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1492498948]
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=110879481]
+layout_mode = 2
+alignment = 1
+
+[node name="Master Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer" unique_id=1492498948]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
 
-[node name="Master" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Master Audio" unique_id=740675233]
+[node name="Master" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" unique_id=740675233]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -378,18 +384,29 @@ text = "Master"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="MasterSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Master Audio" unique_id=492974695]
-custom_minimum_size = Vector2(200, 5)
+[node name="MasterSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" unique_id=492974695]
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 value = 100.0
 
-[node name="Music Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1646450802]
+[node name="masterlabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer" unique_id=2026534104]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  100%"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=240411201]
+layout_mode = 2
+alignment = 1
+
+[node name="Music Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2" unique_id=1646450802]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
 
-[node name="Music" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Music Audio" unique_id=390011987]
+[node name="Music" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio" unique_id=390011987]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -398,18 +415,29 @@ text = "Music"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Music Audio" unique_id=356832200]
-custom_minimum_size = Vector2(200, 5)
+[node name="MusicSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio" unique_id=356832200]
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 value = 100.0
 
-[node name="SFX Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=2103455061]
+[node name="musiclabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2" unique_id=217065131]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  100%"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1857564641]
+layout_mode = 2
+alignment = 1
+
+[node name="SFX Audio" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3" unique_id=2103455061]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
 
-[node name="SFX" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/SFX Audio" unique_id=194480506]
+[node name="SFX" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio" unique_id=194480506]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -418,22 +446,28 @@ text = "SFX"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/SFX Audio" unique_id=1914610199]
-custom_minimum_size = Vector2(200, 5)
+[node name="SFXSlider" type="HSlider" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio" unique_id=1914610199]
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 value = 100.0
 
+[node name="sfxlabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3" unique_id=1621466753]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "  100%"
+horizontal_alignment = 1
+
 [node name="Graphics" type="MarginContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer" unique_id=1541431376]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Audio Sliders" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics" unique_id=212893054]
+[node name="Graphics Settings" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics" unique_id=212893054]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Audio Sliders" unique_id=1738730646]
+[node name="Label" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=1738730646]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -443,11 +477,11 @@ theme_override_font_sizes/font_size = 60
 text = "Graphics"
 vertical_alignment = 1
 
-[node name="Fullscreen" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Audio Sliders" unique_id=1981010340]
+[node name="Fullscreen" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=1981010340]
 layout_mode = 2
 alignment = 1
 
-[node name="Fullscreen" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Audio Sliders/Fullscreen" unique_id=125137175]
+[node name="Fullscreen" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen" unique_id=125137175]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -457,9 +491,10 @@ text = "Fullscreen"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Fullscreentoggle" type="CheckButton" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Audio Sliders/Fullscreen" unique_id=1953702279]
+[node name="Fullscreentoggle" type="CheckButton" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen" unique_id=1953702279]
 layout_mode = 2
 expand_icon = true
+script = ExtResource("9_8mikk")
 
 [node name="Secret" type="Control" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer" unique_id=1372831561]
 visible = false
@@ -473,11 +508,11 @@ layout_mode = 2
 metadata/_tab_index = 3
 metadata/_tab_name = "Purple"
 
-[node name="Audio Sliders" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2" unique_id=1198071699]
+[node name="Purple Toggle" type="VBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2" unique_id=1198071699]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Audio Sliders" unique_id=1732082126]
+[node name="Label" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle" unique_id=1732082126]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -487,11 +522,11 @@ theme_override_font_sizes/font_size = 60
 text = "Purple Toggle"
 vertical_alignment = 1
 
-[node name="Fullscreen" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Audio Sliders" unique_id=1680457850]
+[node name="Purple" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle" unique_id=1680457850]
 layout_mode = 2
 alignment = 1
 
-[node name="Fullscreen" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Audio Sliders/Fullscreen" unique_id=1265807535]
+[node name="PurpleLabel" type="RichTextLabel" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple" unique_id=1265807535]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -501,7 +536,7 @@ text = "Purple on?"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Fullscreentoggle" type="CheckButton" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Audio Sliders/Fullscreen" unique_id=792301535]
+[node name="PurpleToggle" type="CheckButton" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple" unique_id=792301535]
 layout_mode = 2
 expand_icon = true
 
@@ -531,13 +566,23 @@ text = "Back
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI" method="_on_settings_pressed"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Master Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Master Audio/Master" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Master Audio/MasterSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Music Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Music Audio/Music" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/Music Audio/MusicSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/SFX Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/SFX Audio/SFX" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
-[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/SFX Audio/SFXSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/Master" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
+[connection signal="value_changed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider" to="Menu UI" method="_on_master_slider_value_changed"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/Music" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
+[connection signal="value_changed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider" to="Menu UI" method="_on_music_slider_value_changed"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFX" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
+[connection signal="value_changed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider" to="Menu UI" method="_on_sfx_slider_value_changed"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreen" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_fullscreen_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreentoggle" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_fullscreen_mouse_entered"]
+[connection signal="pressed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreentoggle" to="Menu UI" method="_on_fullscreentoggle_pressed"]
+[connection signal="toggled" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreentoggle" to="Menu UI" method="_on_fullscreentoggle_toggled"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleLabel" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleToggle" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
+[connection signal="pressed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleToggle" to="Menu UI" method="_on_purple_toggle_pressed"]
 [connection signal="pressed" from="Menu UI/Pause UI/Back" to="Menu UI" method="_on_back_pressed"]

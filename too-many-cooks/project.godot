@@ -16,7 +16,7 @@ config/icon="res://Images/icon.svg"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [physics]
 
