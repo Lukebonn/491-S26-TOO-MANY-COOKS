@@ -19,3 +19,7 @@ func input_handler(_delta : float) -> void:
 	#changes to dash state if dash key is pressed
 	if(Input.is_action_just_pressed("dash")):
 		player.change_state("dash_state")
+
+##player should lose a certain amount of health
+func hit_response(source):
+	pass #replace with damage code

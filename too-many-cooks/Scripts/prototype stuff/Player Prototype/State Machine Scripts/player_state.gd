@@ -15,3 +15,8 @@ func exit_state():
 ##defines player behaviors in each state, is called each frame by handler script
 func input_handler(_delta : float) -> void:
 	pass
+
+##code that should execute when the player gets hit
+#source: the node that causes the damage
+func hit_response(source):
+	pass
