@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ja87ubeb3t44"]
+
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Images/prototype art that we will not use in the final build/cat.png" id="1_4drwd"]
+[ext_resource type="Script" uid="uid://db8aisup6xpsj" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/player_state_handler.gd" id="1_oijlg"]
+[ext_resource type="Script" uid="uid://6uhy5s6vb8xv" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/idle_state.gd" id="3_vr61t"]
+[ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/dash_state.gd" id="4_jkhb6"]
+[ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/move_state.gd" id="5_pwx6j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiypd"]
+radius = 34.0
+height = 114.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1909083790]
+position = Vector2(560, 309)
+script = ExtResource("1_oijlg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743152657]
+scale = Vector2(0.23339844, 0.22363286)
+texture = ExtResource("1_4drwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
+shape = SubResource("CapsuleShape2D_aiypd")
+
+[node name="idle_state" type="Node" parent="." unique_id=1108578452]
+script = ExtResource("3_vr61t")
+
+[node name="dash_state" type="Node" parent="." unique_id=688587643]
+script = ExtResource("4_jkhb6")
+
+[node name="move_state" type="Node" parent="." unique_id=945448675]
+script = ExtResource("5_pwx6j")
