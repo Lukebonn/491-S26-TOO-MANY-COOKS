@@ -32,6 +32,9 @@ func _process(delta: float) -> void:
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_sxxbo")
+health = null
+displayHealth = null
+maxHealth = null
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
 offset_left = 896.0
@@ -101,7 +104,8 @@ offset_bottom = 176.0
 theme_override_font_sizes/normal_font_size = 30
 text = "Time"
 
-[connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
+[connection signal="applyPoison" from="." to="." method="_on_apply_poison"]
+[connection signal="applyRegeneration" from="." to="." method="_on_apply_regeneration"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
