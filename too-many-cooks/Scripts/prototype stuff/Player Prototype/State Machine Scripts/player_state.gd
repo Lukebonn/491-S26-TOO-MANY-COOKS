@@ -13,5 +13,5 @@ func exit_state():
 	pass
 
 ##defines player behaviors in each state, is called each frame by handler script
-func input_handler(delta : float) -> void:
+func input_handler(_delta : float) -> void:
 	pass

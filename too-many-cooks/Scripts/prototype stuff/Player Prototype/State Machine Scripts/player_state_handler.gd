@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var speed : int = 200
+var current_dir : Vector2 = Vector2(0,-1)
 
 var current_state : PlayerState
 
