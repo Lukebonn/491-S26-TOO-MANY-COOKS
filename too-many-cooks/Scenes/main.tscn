@@ -1,3 +1,36 @@
 [gd_scene format=3 uid="uid://dhpcv5gcbs731"]
 
+[ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://Scripts/mini_map_sub_viewport.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Images/prototype art that we will not use in the final build/cat.png" id="2_bo1nx"]
+
 [node name="Node2D" type="Node2D" unique_id=335954345]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=907606833]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1147695982]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1149653312]
+handle_input_locally = false
+size = Vector2i(258, 258)
+render_target_update_mode = 4
+script = ExtResource("1_jjgbg")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=419354896]
+zoom = Vector2(0.2, 0.2)
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/SubViewportContainer" unique_id=854564208]
+position = Vector2(3.9280577, -7.956522)
+scale = Vector2(0.9928058, 1.0217391)
+points = PackedVector2Array(0, 8, -1.9419556, 258.34042, 258, 264, 258, 8)
+closed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer" unique_id=198232763]
+position = Vector2(130.99997, 116)
+scale = Vector2(0.094726436, 0.14550778)
+texture = ExtResource("2_bo1nx")
