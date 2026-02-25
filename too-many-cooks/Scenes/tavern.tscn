@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://bflr35recnny2"]
+
+[ext_resource type="Script" uid="uid://bl2u6igpxgahk" path="res://Scripts/prototype stuff/ui stuff/tavern_controller.gd" id="1_1uoo0"]
+[ext_resource type="Script" uid="uid://b6g02boy87hiu" path="res://Scripts/prototype stuff/ui stuff/dialogue_box.gd" id="1_4hstr"]
+[ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scripts/prototype stuff/ui stuff/speakerboxtolength.gd" id="1_www31"]
+[ext_resource type="Script" uid="uid://b3la3oieo5lrp" path="res://Scripts/prototype stuff/ui stuff/tavern_bg.gd" id="2_3n42s"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Images/prototype art that we will not use in the final build/cat.png" id="3_3n42s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
+bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_1uoo0"]
+
+[sub_resource type="Gradient" id="Gradient_wwyh0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ijo1q"]
+gradient = SubResource("Gradient_wwyh0")
+width = 3456
+height = 648
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
+size = Vector2(128, 128)
+
+[node name="Tavern" type="Node2D" unique_id=233294115]
+script = ExtResource("1_1uoo0")
+
+[node name="Dialogue Box" type="Control" parent="." unique_id=766055336]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4hstr")
+
+[node name="Container" type="Control" parent="Dialogue Box" unique_id=1526253951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 1000.0
+offset_right = 576.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogue" type="Panel" parent="Dialogue Box/Container" unique_id=1306393861]
+z_index = 1
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -451.5
+offset_top = -229.99997
+offset_right = 394.30554
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.017453292
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Dialogue Box/Container/Dialogue" unique_id=1328355702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.461994
+offset_top = 3.5088806
+offset_right = -12.44458
+offset_bottom = -13.491089
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
+fit_content = true
+
+[node name="Speaker" type="Panel" parent="Dialogue Box/Container" unique_id=634979717 node_paths=PackedStringArray("child_dialogue")]
+z_index = 1
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -451.5
+offset_top = -318.00003
+offset_right = -376.83398
+offset_bottom = -250.46402
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.017453292
+theme = SubResource("Theme_1uoo0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
+script = ExtResource("1_www31")
+child_dialogue = NodePath("SpeakerLabel")
+
+[node name="SpeakerLabel" type="RichTextLabel" parent="Dialogue Box/Container/Speaker" unique_id=1427882835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.324226
+offset_top = 10.146812
+offset_right = 533.6582
+offset_bottom = -11.894295
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "youuu"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Tavern BG" type="Control" parent="." unique_id=2002706169]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1260.0
+offset_right = -1220.0
+offset_bottom = 40.0
+script = ExtResource("2_3n42s")
+scroll_speed = 100.0
+
+[node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
+texture = SubResource("GradientTexture2D_ijo1q")
+centered = false
+
+[node name="Guy 1" type="Sprite2D" parent="Tavern BG" unique_id=1740733379]
+position = Vector2(710, 309)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_3n42s")
+
+[node name="Guy 2" type="Sprite2D" parent="Tavern BG" unique_id=572135851]
+position = Vector2(1458, 309)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_3n42s")
+
+[node name="Guy 3" type="TextureButton" parent="Tavern BG" unique_id=1050383874]
+layout_mode = 0
+offset_left = 2097.0
+offset_top = 309.0
+offset_right = 2097.0
+offset_bottom = 309.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_3n42s")
+texture_pressed = ExtResource("3_3n42s")
+
+[node name="Chatty Catty" type="TextureButton" parent="Tavern BG" unique_id=1678287820]
+layout_mode = 0
+offset_left = 2795.0
+offset_top = 303.0
+offset_right = 3307.0
+offset_bottom = 815.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_3n42s")
+texture_pressed = ExtResource("3_3n42s")
+
+[node name="Guy 5" type="Sprite2D" parent="Tavern BG" unique_id=295720806]
+position = Vector2(806, 238)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_3n42s")
+
+[node name="Guy 6" type="Sprite2D" parent="Tavern BG" unique_id=1900057226]
+position = Vector2(844, 350)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_3n42s")
+
+[node name="Door Andy" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
+layout_mode = 0
+offset_left = 3218.0
+offset_top = 279.0
+offset_right = 3346.0
+offset_bottom = 407.0
+texture_normal = SubResource("PlaceholderTexture2D_4hstr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Door Andy" unique_id=270719110]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "DOOR TO COMBAT"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HeadsUpUI" type="Control" parent="." unique_id=407470600]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftPanel" type="Panel" parent="HeadsUpUI" unique_id=2097488240]
+z_index = 2
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+offset_bottom = 608.0
+grow_vertical = 2
+
+[node name="RightPanel" type="Panel" parent="HeadsUpUI" unique_id=92928351]
+z_index = 2
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1016.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[connection signal="pressed" from="Tavern BG/Guy 3" to="Tavern BG" method="_on_guy_3_pressed"]
+[connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
+[connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
+[connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
+[connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
+[connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]
+[connection signal="mouse_exited" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
