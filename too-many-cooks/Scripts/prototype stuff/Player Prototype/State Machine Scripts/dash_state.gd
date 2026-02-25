@@ -24,7 +24,7 @@ func input_handler(delta : float) -> void:
 	if(timer > 0):
 		timer -= delta
 	else:
-		player.change_state("move_state")
+		player.change_state("idle_state")
 
 ##player should not take damage in roll state
 func hit_response(_source):
