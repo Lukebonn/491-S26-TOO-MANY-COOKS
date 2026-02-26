@@ -1,4 +1,10 @@
 extends Node2D
+
+@export var mana = 100
+@export var displayMana: int
+@export var maxMana = 100
+
+
 @export var health = 100
 # behind the scenes health value, calculated as a float.
 @export var displayHealth: int
@@ -66,24 +72,25 @@ func _process(delta: float) -> void:
 	# these conditionals check for the first instance of each effect.
 	# Meaning, repeated instances do not have any additional effect.
 	if (statusEffects.has("Poison")):
-		health -= 2.0 * delta # the poison effect removes 2 health per second.
+		health -= 5.0 * delta # the poison effect removes 2 health per second.
 	if (statusEffects.has("Regeneration")):
-		health += 1.0 * delta # the regeneration effect heals 1 health per second.
+		health += 5.0 * delta # the regeneration effect heals 1 health per second.
 	displayHealth = int(health)
+	displayMana = int(mana)
 	# updates the value for displayHealth to display it as an integer.
 	
 	# the following conditional ensures that the player's health
 	# cannot exceed their max health.
 	if (health > maxHealth):
 		health = maxHealth
+	if (health < 0):
+		health = 0
 	
 	# testing purposes
 	print(statusEffects)
 	print(effectDurations)
 	
-	# Update the displays for the health and health bar.
-	$HealthBar/HealthValue.text = str(displayHealth)
-	$HealthBar.value = health
+	
 
 func _on_poison_button_pressed() -> void:
 	#applyPoison.emit(5) 
