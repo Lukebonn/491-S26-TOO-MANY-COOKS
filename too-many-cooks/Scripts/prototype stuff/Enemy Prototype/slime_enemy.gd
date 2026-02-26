@@ -10,6 +10,7 @@ var is_alive: bool = true
 var health: int = 100
 var target = null
 
+@export var damage = 10
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var take_damage_sound: AudioStreamPlayer2D = $TakeDamage
 
@@ -27,8 +28,8 @@ func _attack(delta: float) -> void:
 	animated_sprite_2d.play("attack_side")
 	
 #function that can be called from the player to deal damage to the slime
-func take_damage(damage: int, attacker_position: Vector2) -> void: 
-	health -= damage
+func take_damage(self_damage: int, attacker_position: Vector2) -> void: 
+	health -= self_damage
 	if health <= 0:
 		_die()
 	else:
@@ -67,4 +68,11 @@ func _on_sight_body_exited(body: Node2D) -> void:
 	if body.name == "SwordEnemy" and is_alive:
 		target = null
 		animated_sprite_2d.play("idle_front")
-		
+
+#The function that gives the damage to the player
+func get_damage():
+	return damage
+
+
+
+	

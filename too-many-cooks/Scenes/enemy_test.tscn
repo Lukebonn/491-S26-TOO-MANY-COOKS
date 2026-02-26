@@ -5,9 +5,6 @@
 [ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Scripts/prototype stuff/Enemy Prototype/slime_enemy.gd" id="5_421n3"]
 [ext_resource type="Texture2D" uid="uid://d28t75hmkruus" path="res://Images/prototype art that we will not use in the final build/Enemy/slime.png" id="6_h6jhh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjw4q"]
-size = Vector2(58, 55)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_421n3"]
 atlas = ExtResource("3_c3qj7")
 region = Rect2(0, 384, 48, 48)
@@ -397,8 +394,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_421n3"]
-radius = 8.265138
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjw4q"]
+size = Vector2(58, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3qj7"]
+size = Vector2(58, 55)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mj271"]
 atlas = ExtResource("6_h6jhh")
@@ -439,15 +439,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2y7lo"]
 radius = 36.10488
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyc1c"]
+size = Vector2(16.5, 12.5)
+
 [node name="Enemy_test" type="Node2D" unique_id=930093451]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=817261637]
 position = Vector2(326, 165)
 script = ExtResource("1_oyc1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=312740804]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_qjw4q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1207490985]
 texture_filter = 1
@@ -455,13 +454,22 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mj271")
 animation = &"death"
 
+[node name="Hurtbox" type="Area2D" parent="Player" unique_id=1205190727]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox" unique_id=312740804]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_qjw4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2127282940]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_c3qj7")
+
 [node name="SlimeEnemy" type="CharacterBody2D" parent="." unique_id=1704136668]
 position = Vector2(139, 118)
 scale = Vector2(4, 4)
 script = ExtResource("5_421n3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeEnemy" unique_id=1123599414]
-shape = SubResource("CircleShape2D_421n3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlimeEnemy" unique_id=745382349]
 position = Vector2(0.25, -2.75)
@@ -477,5 +485,18 @@ shape = SubResource("CircleShape2D_2y7lo")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="SlimeEnemy" unique_id=379266345]
 
+[node name="DamageTrigger" type="Area2D" parent="SlimeEnemy" unique_id=805326701]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeEnemy/DamageTrigger" unique_id=1276170157]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_oyc1c")
+
+[connection signal="area_entered" from="Player/Hurtbox" to="Player" method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="SlimeEnemy/Sight" to="SlimeEnemy" method="_on_sight_body_entered"]
 [connection signal="body_exited" from="SlimeEnemy/Sight" to="SlimeEnemy" method="_on_sight_body_exited"]
+[connection signal="area_entered" from="SlimeEnemy/DamageTrigger" to="Player" method="_on_damage_trigger_area_entered"]
+[connection signal="area_shape_entered" from="SlimeEnemy/DamageTrigger" to="Player" method="_on_damage_trigger_area_shape_entered"]
+[connection signal="body_entered" from="SlimeEnemy/DamageTrigger" to="Player" method="_on_damage_trigger_body_entered"]
+[connection signal="body_entered" from="SlimeEnemy/DamageTrigger" to="SlimeEnemy" method="_on_damage_trigger_body_entered"]
