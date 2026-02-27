@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnv3j3ikeoqgb"]
 
-[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Scripts/prototype stuff/Player Prototype/player.tscn" id="1_elcxj"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Scenes/player.tscn" id="1_elcxj"]
 
 [node name="PlayerTest" type="Node2D" unique_id=469150633]
 

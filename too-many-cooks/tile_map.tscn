@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://die871b18tsfy"]
 
 [ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Images/prototype art that we will not use in the final build/KenneyArt/TinyDungeon/aKtdMap.png" id="1_7yhko"]
-[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Scripts/prototype stuff/Player Prototype/player.tscn" id="2_1n30v"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Scenes/player.tscn" id="2_1n30v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1n30v"]
 texture = ExtResource("1_7yhko")

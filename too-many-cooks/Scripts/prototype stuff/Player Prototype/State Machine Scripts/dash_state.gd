@@ -5,7 +5,7 @@ var duration : float = 0.2
 var timer : float
 
 var dash_counter : int = 0
-var cooldown : float = 2.0
+var cooldown : float = 1.0
 var cooldown_timer : float = 0
 
 ##Calls player_state enter_state method to have 'player' reference player node
@@ -14,6 +14,7 @@ func enter_state(player_node):
 	print_debug("dash_state entered")
 	super(player_node)
 	
+	#checks if the player is spamming dash
 	if(cooldown_timer > 0):
 		dash_counter += 1
 		reset_cooldown()
@@ -21,6 +22,7 @@ func enter_state(player_node):
 		dash_counter = 0
 		dash_speed = 1000
 	
+	#if the player has spammed dash 3 times, their dash will slow way down
 	if(dash_counter >= 3):
 		dash_speed /= dash_counter
 	
@@ -41,6 +43,7 @@ func input_handler(delta : float) -> void:
 		player.change_state("idle_state")
 		start_cooldown(delta)
 
+##starts a timer that keeps track of if the player is spamming dash
 func start_cooldown(delta : float):
 	cooldown_timer = cooldown
 	
