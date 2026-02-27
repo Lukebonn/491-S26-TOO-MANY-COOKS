@@ -5,7 +5,7 @@ var duration : float = 0.2
 var timer : float
 
 var dash_counter : int = 0
-var cooldown : float = 1
+var cooldown : float = 2.0
 var cooldown_timer : float = 0
 
 ##Calls player_state enter_state method to have 'player' reference player node
@@ -19,8 +19,9 @@ func enter_state(player_node):
 		reset_cooldown()
 	else:
 		dash_counter = 0
+		dash_speed = 1000
 	
-	if(dash_counter >= 4):
+	if(dash_counter >= 3):
 		dash_speed /= dash_counter
 	
 	#player will dash in the last recorded direction if not moving
@@ -41,11 +42,11 @@ func input_handler(delta : float) -> void:
 		start_cooldown(delta)
 
 func start_cooldown(delta : float):
-	print_debug("cooldown start")
 	cooldown_timer = cooldown
+	
 	while cooldown_timer > 0:
 		cooldown_timer -= delta
-	print_debug("cooldown finished")
+		await get_tree().process_frame
 
 func reset_cooldown():
 	cooldown_timer = cooldown
