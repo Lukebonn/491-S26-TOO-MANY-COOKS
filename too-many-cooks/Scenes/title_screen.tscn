@@ -26,13 +26,14 @@ sky = SubResource("Sky_6vd4x")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vd4x"]
-albedo_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mikk"]
+albedo_color = Color(0.4487121, 0.4487121, 0.4487121, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_6vd4x"]
-material = SubResource("StandardMaterial3D_6vd4x")
+[sub_resource type="CylinderMesh" id="CylinderMesh_8mikk"]
+material = SubResource("StandardMaterial3D_8mikk")
 top_radius = 1.0
 height = 1.0
+radial_segments = 15
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0061g"]
 top_radius = 1.0
@@ -57,7 +58,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.385757, 2.3841858e-07, 0.57
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Menu part" unique_id=172650460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39751863, 0, -0.10042763)
-mesh = SubResource("CylinderMesh_6vd4x")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_8mikk")
 
 [node name="CameraSpot" type="Marker3D" parent="Menu part" unique_id=1841477792]
 transform = Transform3D(0.017364822, 0.025488699, 0.095125124, 0, 0.09659258, -0.025881905, -0.098480776, 0.0044943467, 0.01677313, 1.5937452, 0.68869746, 0.096888006)
@@ -66,6 +68,9 @@ gizmo_extents = 1.95
 [node name="Cat" type="Sprite3D" parent="Menu part" unique_id=39587136]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.58070946, 0.7662382, 0.62495816)
 billboard = 2
+double_sided = false
+texture_filter = 0
+render_priority = 1
 texture = ExtResource("2_6vd4x")
 
 [node name="Stuff that spins" type="Node3D" parent="." unique_id=417076584]
@@ -75,6 +80,7 @@ speed = 1.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Stuff that spins" unique_id=1745361215]
 transform = Transform3D(-0.16986556, -0.6597653, 0.7320215, -0.3019366, 0.74193573, 0.5986365, -0.9380725, -0.11933636, -0.32523662, 4.250527, 2.3810194, -4.882335)
 shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="Tower" type="MeshInstance3D" parent="Stuff that spins" unique_id=436090541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -86,60 +92,80 @@ mesh = SubResource("CylinderMesh_0061g")
 [node name="tree_green" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1809959747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17553782, 0.53362596, 2.7928104)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_twnyg")
 
 [node name="tree_yellow" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=370677541]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.0377023, 0.37525308, 2.902305)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_55kwv")
 
 [node name="tree_green2" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1748024582]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.1092818, 0.53362596, 1.368159)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_twnyg")
 
 [node name="tree_yellow2" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=75191703]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 2.322522, 0.53362596, 1.4776535)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_55kwv")
 
 [node name="tree_green3" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1251496062]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.7252834, 0.53362596, 0.8021574)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_twnyg")
 
 [node name="tree_yellow3" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=512926425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5120432, 0.53362596, 0.91165185)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_55kwv")
 
 [node name="tree_green4" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=609792169]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.06374526, 0.3571061, -2.084628)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_twnyg")
 
 [node name="tree_yellow4" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1731115115]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.2769854, 0.53362596, -1.9751337)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_55kwv")
 
 [node name="tree_green5" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1827381374]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.2418592, 0.3782524, -0.956445)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_twnyg")
 
 [node name="tree_yellow5" type="Sprite3D" parent="Stuff that spins/Trees" unique_id=1630146447]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3.4550993, 0.53362596, -0.84695053)
 billboard = 2
+double_sided = false
+alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("3_55kwv")
 
@@ -339,13 +365,12 @@ custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
 mouse_filter = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 tab_2/title = "Secret..."
 tab_2/disabled = true
 tab_3/title = "Purple"
 
 [node name="Audio" type="MarginContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer" unique_id=435965722]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 metadata/_tab_index = 0
@@ -389,12 +414,15 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-value = 100.0
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="masterlabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer" unique_id=2026534104]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "  100%"
+text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=240411201]
@@ -420,12 +448,15 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-value = 100.0
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="musiclabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2" unique_id=217065131]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "  100%"
+text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1857564641]
@@ -451,15 +482,19 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-value = 100.0
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="sfxlabel" type="Label" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3" unique_id=1621466753]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "  100%"
+text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="Graphics" type="MarginContainer" parent="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer" unique_id=1541431376]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
