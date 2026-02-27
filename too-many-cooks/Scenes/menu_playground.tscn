@@ -105,6 +105,7 @@ scale = Vector2(2.1992188, 4.2734375)
 texture = ExtResource("2_1p467")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=180874606]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

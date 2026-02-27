@@ -2,6 +2,8 @@ extends CharacterBody2D
 var speed : int = 200
 var current_dir : Vector2 = Vector2(0,-1)
 
+var local_mouse_pos : Vector2
+
 var current_state : PlayerState
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +24,19 @@ func change_state(new_state : String):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #calls the input_handler function of current_state every frame
 func _physics_process(delta: float) -> void:
+	
+	local_mouse_pos = get_local_mouse_position()
+	
+	#player sprite faces left or right following the mouse
+	if(local_mouse_pos.x < 0):
+		$Sprite2D.flip_h = false
+	if(local_mouse_pos.x > 0):
+		$Sprite2D.flip_h = true
+	
+	#hitbox is pointed towards the mouse unless the player is attacking
+	if(current_state != get_node("attack_state")):
+		$Hitbox.look_at(get_global_mouse_position())
+	
 	if(current_state):
 		current_state.input_handler(delta)
 	

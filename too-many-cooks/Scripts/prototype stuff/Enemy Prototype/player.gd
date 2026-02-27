@@ -7,6 +7,11 @@ var last_direction: Vector2 = Vector2.RIGHT
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+#Just a temp varaiable for now to showcase the player taking damage
+var health = 100
+
+
+	
 func _physics_process(_delta: float) -> void:
 		
 	move_and_slide()
@@ -55,3 +60,14 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix + "_back")
 	if dir.y > 0:
 		animated_sprite_2d.play(prefix + "_front")
+
+#The function for taking damage
+func take_damage(amount):
+	health -= amount
+	print("Player took damage! Health: ", health)
+
+#Upon entering an enemy, this should signal the player to take damage
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.has_method("get_damage"):
+		take_damage(area.get_damage())
+	print("damage!")

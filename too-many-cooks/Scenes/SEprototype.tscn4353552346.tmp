@@ -2,7 +2,34 @@
 
 [ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scripts/prototype stuff/Effects Prototype/se_prototype.gd" id="1_sxxbo"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://Scripts/prototype stuff/Effects Prototype/health_bar.gd" id="2_ybb0y"]
-[ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://Scripts/prototype stuff/Effects Prototype/mana_bar.gd" id="3_bfsmp"]
+
+[sub_resource type="GDScript" id="GDScript_sxxbo"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_ybb0y"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_sxxbo")
@@ -23,6 +50,7 @@ offset_bottom = 288.0
 theme_override_font_sizes/font_size = 25
 text = "Apply
 Regeneration"
+script = SubResource("GDScript_sxxbo")
 
 [node name="EffectClearButton" type="Button" parent="." unique_id=1398826089]
 offset_left = 896.0
@@ -31,6 +59,7 @@ offset_right = 1088.0
 offset_bottom = 584.0
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
+script = SubResource("GDScript_ybb0y")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=104365550]
 offset_left = 16.0
@@ -60,7 +89,6 @@ offset_top = 176.0
 offset_right = 384.0
 offset_bottom = 224.0
 show_percentage = false
-script = ExtResource("3_bfsmp")
 
 [node name="ManaValue" type="RichTextLabel" parent="ManaBar" unique_id=408674144]
 layout_mode = 0
@@ -70,8 +98,6 @@ offset_bottom = 48.0
 theme_override_font_sizes/normal_font_size = 30
 text = "Mana Value"
 horizontal_alignment = 1
-
-[node name="ManaTimer" type="Timer" parent="ManaBar" unique_id=1752878788]
 
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
 offset_left = 16.0

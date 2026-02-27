@@ -5,8 +5,13 @@
 [ext_resource type="Script" uid="uid://6uhy5s6vb8xv" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/idle_state.gd" id="3_vr61t"]
 [ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/dash_state.gd" id="4_jkhb6"]
 [ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/move_state.gd" id="5_pwx6j"]
+[ext_resource type="Script" uid="uid://bip7x8vvk4jd" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/attack_state.gd" id="6_pwx6j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiypd"]
+radius = 34.0
+height = 114.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwx6j"]
 radius = 34.0
 height = 114.0
 
@@ -20,6 +25,18 @@ texture = ExtResource("1_4drwd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
 shape = SubResource("CapsuleShape2D_aiypd")
 
+[node name="Hitbox" type="Area2D" parent="." unique_id=724517346]
+monitoring = false
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=1797335899]
+polygon = PackedVector2Array(70, 69, 105, 32, 105, -35, 70, -70)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1802615009]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=647800534]
+shape = SubResource("CapsuleShape2D_pwx6j")
+
 [node name="idle_state" type="Node" parent="." unique_id=1108578452]
 script = ExtResource("3_vr61t")
 
@@ -28,3 +45,11 @@ script = ExtResource("4_jkhb6")
 
 [node name="move_state" type="Node" parent="." unique_id=945448675]
 script = ExtResource("5_pwx6j")
+
+[node name="attack_state" type="Node" parent="." unique_id=1767612672]
+script = ExtResource("6_pwx6j")
+
+[connection signal="area_entered" from="Hurtbox" to="idle_state" method="hit_response"]
+[connection signal="area_entered" from="Hurtbox" to="dash_state" method="hit_response"]
+[connection signal="area_entered" from="Hurtbox" to="move_state" method="hit_response"]
+[connection signal="area_entered" from="Hurtbox" to="attack_state" method="hit_response"]
