@@ -119,7 +119,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="SpeakerSprite" type="Sprite2D" parent="Dialogue Box/Container" unique_id=1535565508]
-position = Vector2(-49, -259)
+position = Vector2(-45, -326)
 
 [node name="Tavern BG" type="Control" parent="." unique_id=2002706169]
 layout_mode = 3
