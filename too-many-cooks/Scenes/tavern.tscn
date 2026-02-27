@@ -46,9 +46,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 576.0
-offset_top = 1000.0
+offset_top = 1170.0
 offset_right = 576.0
-offset_bottom = 1000.0
+offset_bottom = 1170.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -117,6 +117,9 @@ theme_override_font_sizes/normal_font_size = 32
 text = "youuu"
 fit_content = true
 autowrap_mode = 0
+
+[node name="SpeakerSprite" type="Sprite2D" parent="Dialogue Box/Container" unique_id=1535565508]
+position = Vector2(-49, -259)
 
 [node name="Tavern BG" type="Control" parent="." unique_id=2002706169]
 layout_mode = 3
