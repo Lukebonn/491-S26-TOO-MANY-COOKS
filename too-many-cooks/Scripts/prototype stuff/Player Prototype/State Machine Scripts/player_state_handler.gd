@@ -13,7 +13,7 @@ func _ready() -> void:
 	current_state.enter_state(self)
 
 ##changes state to the node whose name matches new_state
-#new_state: idle_state, move_state, dash_state, (more to be added)
+#new_state: idle_state, move_state, dash_state, attack_state, magic_state (more to be added)
 func change_state(new_state : String):
 	if(current_state): #just in case current_state is null for some reason
 		current_state.exit_state()
@@ -41,4 +41,7 @@ func _physics_process(delta: float) -> void:
 		current_state.input_handler(delta)
 	
 	move_and_slide()
-	
+
+##triggers when a hitbox enters the player's hurtbox
+func _on_hurtbox_area_entered(area):
+	current_state.hit_response(area)

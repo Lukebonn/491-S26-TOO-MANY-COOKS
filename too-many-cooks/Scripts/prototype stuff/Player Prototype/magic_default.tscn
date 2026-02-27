@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://drkk2ia10hkpl"]
+
+[ext_resource type="Script" uid="uid://q4wrlfwt3fdq" path="res://Scripts/prototype stuff/Player Prototype/magic_default.gd" id="1_k2wfq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anfya"]
+
+[node name="MagicDefault" type="RigidBody2D" unique_id=541092243]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_k2wfq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1102468948]
+shape = SubResource("CircleShape2D_anfya")

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/dash_state.gd" id="4_jkhb6"]
 [ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/move_state.gd" id="5_pwx6j"]
 [ext_resource type="Script" uid="uid://bip7x8vvk4jd" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/attack_state.gd" id="6_pwx6j"]
+[ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Scripts/prototype stuff/Player Prototype/State Machine Scripts/magic_state.gd" id="7_f8u88"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiypd"]
 radius = 34.0
@@ -16,6 +17,7 @@ radius = 34.0
 height = 114.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1909083790]
+motion_mode = 1
 script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743152657]
@@ -49,7 +51,7 @@ script = ExtResource("5_pwx6j")
 [node name="attack_state" type="Node" parent="." unique_id=1767612672]
 script = ExtResource("6_pwx6j")
 
-[connection signal="area_entered" from="Hurtbox" to="idle_state" method="hit_response"]
-[connection signal="area_entered" from="Hurtbox" to="dash_state" method="hit_response"]
-[connection signal="area_entered" from="Hurtbox" to="move_state" method="hit_response"]
-[connection signal="area_entered" from="Hurtbox" to="attack_state" method="hit_response"]
+[node name="magic_state" type="Node" parent="." unique_id=265768770]
+script = ExtResource("7_f8u88")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

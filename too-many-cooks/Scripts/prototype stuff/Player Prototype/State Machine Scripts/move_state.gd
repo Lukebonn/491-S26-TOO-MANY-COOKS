@@ -23,7 +23,11 @@ func input_handler(_delta : float) -> void:
 	#changes to attack_state if attack input is pressed
 	if(Input.is_action_just_pressed("attack")):
 		player.change_state("attack_state")
+	
+	#changes to magic_state if magic input is pressed
+	if(Input.is_action_just_pressed("magic")):
+		player.change_state("magic_state")
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	pass #replace with damage code
+	pass #replace with damage code and change to hurt state

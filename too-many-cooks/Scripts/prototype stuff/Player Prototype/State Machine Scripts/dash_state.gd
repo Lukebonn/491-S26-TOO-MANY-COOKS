@@ -4,11 +4,24 @@ var dash_speed : int = 1000
 var duration : float = 0.2
 var timer : float
 
+var dash_counter : int = 0
+var cooldown : float = 1
+var cooldown_timer : float = 0
+
 ##Calls player_state enter_state method to have 'player' reference player node
 #sets players speed to dash_speed, resets duration timer
 func enter_state(player_node):
 	print_debug("dash_state entered")
 	super(player_node)
+	
+	if(cooldown_timer > 0):
+		dash_counter += 1
+		reset_cooldown()
+	else:
+		dash_counter = 0
+	
+	if(dash_counter >= 4):
+		dash_speed /= dash_counter
 	
 	#player will dash in the last recorded direction if not moving
 	if(player.velocity == Vector2(0,0)):
@@ -25,6 +38,17 @@ func input_handler(delta : float) -> void:
 		timer -= delta
 	else:
 		player.change_state("idle_state")
+		start_cooldown(delta)
+
+func start_cooldown(delta : float):
+	print_debug("cooldown start")
+	cooldown_timer = cooldown
+	while cooldown_timer > 0:
+		cooldown_timer -= delta
+	print_debug("cooldown finished")
+
+func reset_cooldown():
+	cooldown_timer = cooldown
 
 ##player should not take damage in roll state
 func hit_response(_source):
