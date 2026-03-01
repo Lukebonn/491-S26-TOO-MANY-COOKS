@@ -4,4 +4,7 @@
 
 [node name="PlayerTest" type="Node2D" unique_id=469150633]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1162924117]
+zoom = Vector2(5, 5)
+
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("1_elcxj")]

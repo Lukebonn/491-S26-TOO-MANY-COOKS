@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var speed : int = 200
+var speed : int = 100
 var current_dir : Vector2 = Vector2(0,-1)
 
 var local_mouse_pos : Vector2
@@ -29,9 +29,9 @@ func _physics_process(delta: float) -> void:
 	
 	#player sprite faces left or right following the mouse
 	if(local_mouse_pos.x < 0):
-		$Sprite2D.flip_h = false
-	if(local_mouse_pos.x > 0):
 		$Sprite2D.flip_h = true
+	if(local_mouse_pos.x > 0):
+		$Sprite2D.flip_h = false
 	
 	#hitbox is pointed towards the mouse unless the player is attacking
 	if(current_state != get_node("attack_state")):

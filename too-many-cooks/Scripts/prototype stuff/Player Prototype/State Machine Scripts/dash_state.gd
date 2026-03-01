@@ -1,6 +1,8 @@
 extends PlayerState
 
-var dash_speed : int = 1000
+var full_dash_speed : int = 400
+var current_dash_speed : int
+
 var duration : float = 0.2
 var timer : float
 
@@ -14,24 +16,25 @@ func enter_state(player_node):
 	print_debug("dash_state entered")
 	super(player_node)
 	
+	current_dash_speed = full_dash_speed
+	
 	#checks if the player is spamming dash
 	if(cooldown_timer > 0):
 		dash_counter += 1
 		reset_cooldown()
 	else:
 		dash_counter = 0
-		dash_speed = 1000
 	
 	#if the player has spammed dash 3 times, their dash will slow way down
 	if(dash_counter >= 3):
-		dash_speed /= dash_counter
+		current_dash_speed /= dash_counter
 	
 	#player will dash in the last recorded direction if not moving
 	if(player.velocity == Vector2(0,0)):
 		player.velocity = player.current_dir
 	else:
 		player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
-	player.velocity = player.velocity.normalized() * dash_speed
+	player.velocity = player.velocity.normalized() * current_dash_speed
 	
 	timer = duration
 

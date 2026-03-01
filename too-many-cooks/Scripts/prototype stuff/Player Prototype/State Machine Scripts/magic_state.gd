@@ -12,7 +12,7 @@ func enter_state(player_node):
 	if(!on_cooldown):
 		var spell = preload("res://Scenes/magic_default.tscn").instantiate()
 		spell.position = player.position
-		spell.velocity = player.local_mouse_pos.normalized() * 10
+		spell.velocity = player.local_mouse_pos.normalized() * 5
 		add_child(spell)
 		
 		start_cooldown()
@@ -20,7 +20,7 @@ func enter_state(player_node):
 	player.change_state("move_state")
 
 ##creates an instance of the spell and sets its velocity in the direction the player is aiming
-func input_handler(delta : float) -> void:
+func input_handler(_delta : float) -> void:
 	pass
 
 ##player is unable to use the spell again until cooldown timer expires

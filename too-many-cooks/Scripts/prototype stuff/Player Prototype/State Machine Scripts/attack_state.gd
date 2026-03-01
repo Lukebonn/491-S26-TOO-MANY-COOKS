@@ -10,7 +10,7 @@ func enter_state(player_node):
 	
 	if(!on_cooldown):
 		#player lunges forward a small amount and has their hitbox enabled
-		player.velocity += player.local_mouse_pos.normalized() * 300
+		player.velocity += player.local_mouse_pos.normalized() * 150
 		$"../Hitbox".monitorable = true
 		await get_tree().create_timer(0.1).timeout
 		
