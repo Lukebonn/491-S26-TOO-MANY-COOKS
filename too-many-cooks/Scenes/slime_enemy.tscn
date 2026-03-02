@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dfkx7up3pl55j"]
+
+[ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Scripts/prototype stuff/Enemy Prototype/slime_enemy.gd" id="1_ge67a"]
+[ext_resource type="Texture2D" uid="uid://d28t75hmkruus" path="res://Images/prototype art that we will not use in the final build/Enemy/slime.png" id="2_ssmms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj271"]
+atlas = ExtResource("2_ssmms")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4wv2"]
+atlas = ExtResource("2_ssmms")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07lmn"]
+atlas = ExtResource("2_ssmms")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3se4e"]
+atlas = ExtResource("2_ssmms")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn8to"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj271")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4wv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07lmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3se4e")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2y7lo"]
+radius = 36.10488
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyc1c"]
+size = Vector2(16.5, 12.5)
+
+[node name="SlimeEnemy" type="CharacterBody2D" unique_id=1633737342]
+position = Vector2(139, 118)
+scale = Vector2(4, 4)
+script = ExtResource("1_ge67a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=702207343]
+position = Vector2(0.25, -2.75)
+sprite_frames = SubResource("SpriteFrames_mn8to")
+animation = &"idle_front"
+
+[node name="Sight" type="Area2D" parent="." unique_id=1676065679]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=745541570]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_2y7lo")
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=708656368]
+
+[node name="DamageTrigger" type="Area2D" parent="." unique_id=2105200172]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageTrigger" unique_id=619607958]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_oyc1c")
+
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="DamageTrigger" to="." method="_on_damage_trigger_body_entered"]
