@@ -72,6 +72,7 @@ text = "Mana Value"
 horizontal_alignment = 1
 
 [node name="ManaTimer" type="Timer" parent="ManaBar" unique_id=1752878788]
+wait_time = 3.0
 
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
 offset_left = 16.0
@@ -113,3 +114,4 @@ text = "Time"
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
 [connection signal="timeout" from="HealthBar/Timer" to="HealthBar" method="_on_timer_timeout"]
+[connection signal="timeout" from="ManaBar/ManaTimer" to="ManaBar" method="_on_mana_timer_timeout"]
