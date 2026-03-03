@@ -5,6 +5,9 @@ extends PlayerState
 func enter_state(player_node):
 	print_debug("idle_state entered")
 	super(player_node)
+	
+	player.get_node("Sprite2D").animation = "idle"
+	
 	player.velocity = Vector2(0,0)
 
 func input_handler(_delta : float) -> void:
@@ -26,4 +29,4 @@ func input_handler(_delta : float) -> void:
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	pass #replace with damage code and change to hurt state
+	print_debug("player hit")#replace with damage code and change to hurt state

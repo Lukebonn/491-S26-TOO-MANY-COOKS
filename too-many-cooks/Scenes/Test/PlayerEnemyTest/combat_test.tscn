@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cnv3j3ikeoqgb"]
+
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_vmwr5"]
+[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="2_sli66"]
+
+[node name="CombatTest" type="Node2D" unique_id=469150633]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1162924117]
+zoom = Vector2(5, 5)
+process_callback = 0
+
+[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("1_vmwr5")]
+
+[node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("2_sli66")]
+position = Vector2(74, 1)
+scale = Vector2(1, 1)

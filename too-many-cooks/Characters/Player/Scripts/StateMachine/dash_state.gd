@@ -3,11 +3,11 @@ extends PlayerState
 var full_dash_speed : int = 400
 var current_dash_speed : int
 
-var duration : float = 0.2
+var duration : float = 0.1
 var timer : float
 
 var dash_counter : int = 0
-var cooldown : float = 1.0
+var cooldown : float = 5
 var cooldown_timer : float = 0
 
 ##Calls player_state enter_state method to have 'player' reference player node

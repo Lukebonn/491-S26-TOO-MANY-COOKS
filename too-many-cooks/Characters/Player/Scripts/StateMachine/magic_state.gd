@@ -33,4 +33,4 @@ func start_cooldown():
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	pass #add damage code and change to hurt state
+	print_debug("player hit")#add damage code and change to hurt state

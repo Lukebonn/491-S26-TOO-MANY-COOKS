@@ -1,6 +1,6 @@
 extends PlayerState
 
-var cooldown : float = 0.5
+var cooldown : float = 0.3
 var on_cooldown : bool = false
 
 ##Calls player_state enter_state method to have 'player' reference player node
@@ -10,7 +10,7 @@ func enter_state(player_node):
 	
 	if(!on_cooldown):
 		#player lunges forward a small amount and has their hitbox enabled
-		player.velocity += player.local_mouse_pos.normalized() * 150
+		player.velocity += player.local_mouse_pos.normalized() * 70
 		$"../Hitbox".monitorable = true
 		player.get_node("Hitbox").visible = true
 		await get_tree().create_timer(0.1).timeout
@@ -38,4 +38,4 @@ func start_cooldown():
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	pass #add damage code and change to hurt state
+	print_debug("player hit")#add damage code and change to hurt state

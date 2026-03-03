@@ -92,6 +92,16 @@ magic={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Player Hurtbox"
+2d_physics/layer_3="Player Hitboxes"
+2d_physics/layer_4="Enemies"
+2d_physics/layer_5="Enemy Hurtboxes"
+2d_physics/layer_6="Enemy Hitboxes"
+2d_physics/layer_7="Collision Objects"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -48,6 +48,8 @@ size = Vector2(16.5, 12.5)
 [node name="SlimeEnemy" type="CharacterBody2D" unique_id=1633737342]
 position = Vector2(139, 118)
 scale = Vector2(4, 4)
+collision_layer = 8
+collision_mask = 64
 script = ExtResource("1_blvt8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=702207343]
@@ -56,6 +58,7 @@ sprite_frames = SubResource("SpriteFrames_mn8to")
 animation = &"idle_front"
 
 [node name="Sight" type="Area2D" parent="." unique_id=1676065679]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=745541570]
 light_mask = 2
@@ -65,7 +68,7 @@ shape = SubResource("CircleShape2D_2y7lo")
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=708656368]
 
 [node name="DamageTrigger" type="Area2D" parent="." unique_id=2105200172]
-collision_layer = 4
+collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageTrigger" unique_id=619607958]
