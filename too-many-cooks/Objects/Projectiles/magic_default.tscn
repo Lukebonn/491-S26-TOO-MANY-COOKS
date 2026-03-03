@@ -5,6 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_anfya"]
 radius = 4.0
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_nppe8"]
+
 [node name="MagicDefault" type="RigidBody2D" unique_id=541092243]
 collision_layer = 0
 collision_mask = 0
@@ -13,3 +15,8 @@ script = ExtResource("1_vlsvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1102468948]
 shape = SubResource("CircleShape2D_anfya")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=614038975]
+position = Vector2(-1.1920929e-07, -2.3841858e-07)
+scale = Vector2(8, 8)
+texture = SubResource("CanvasTexture_nppe8")

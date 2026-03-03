@@ -12,10 +12,12 @@ func enter_state(player_node):
 		#player lunges forward a small amount and has their hitbox enabled
 		player.velocity += player.local_mouse_pos.normalized() * 150
 		$"../Hitbox".monitorable = true
+		player.get_node("Hitbox").visible = true
 		await get_tree().create_timer(0.1).timeout
 		
 		#player stops for a moment after attacking and has their hitbox disabled
 		$"../Hitbox".monitorable = false
+		player.get_node("Hitbox").visible = false
 		player.velocity = Vector2(0,0)
 		
 		start_cooldown()

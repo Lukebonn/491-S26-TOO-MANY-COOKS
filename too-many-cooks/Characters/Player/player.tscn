@@ -12,6 +12,8 @@
 radius = 8.0
 height = 21.0
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_7vev3"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwx6j"]
 radius = 4.0
 height = 21.0
@@ -27,6 +29,7 @@ texture = ExtResource("2_3smsa")
 shape = SubResource("CapsuleShape2D_aiypd")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=724517346]
+visible = false
 monitoring = false
 monitorable = false
 
@@ -34,6 +37,11 @@ monitorable = false
 position = Vector2(0, 1.1368684e-13)
 scale = Vector2(0.19084826, 0.13489208)
 polygon = PackedVector2Array(70, 69, 105, 32, 105, -35, 70, -70)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox" unique_id=112373864]
+position = Vector2(16.5, 0)
+scale = Vector2(6.9999995, 18)
+texture = SubResource("CanvasTexture_7vev3")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1802615009]
 

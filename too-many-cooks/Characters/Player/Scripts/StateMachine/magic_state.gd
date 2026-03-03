@@ -10,7 +10,7 @@ func enter_state(player_node):
 	
 	#spell only activates if cooldown has expired
 	if(!on_cooldown):
-		var spell = preload("res://Scenes/magic_default.tscn").instantiate()
+		var spell = preload("res://Objects/Projectiles/magic_default.tscn").instantiate()
 		spell.position = player.position
 		spell.velocity = player.local_mouse_pos.normalized() * 5
 		add_child(spell)
