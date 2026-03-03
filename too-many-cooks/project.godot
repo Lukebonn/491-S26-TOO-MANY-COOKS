@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Too Many Cooks"
-run/main_scene="uid://dhpcv5gcbs731"
+run/main_scene="uid://dwvv0kufm72s1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Scenes/Test/ProtoArt/icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://Scenes/Test/ProtoArt/icon.svg"
 
 Global="*uid://c5ownmyiwqqxa"
 SaveMgr="*uid://bmqmy686mrgl3"
+PlayerStats="*uid://b8r6bpm0nl0b2"
 
 [display]
 

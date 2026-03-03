@@ -21,10 +21,6 @@ func hide_dialogue():
 	tween.tween_property($Container,"position",Vector2($Container.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 	$"..".in_dialogue = false
 	
-func show_sprite(character: String, index: String):
-	var charSprite = preload("res://Images/prototype art that we will not use in the final build/npcs/tavern npcs/cat.png")
-	$Container/SpeakerSprite.texture = charSprite
-	
 
 func print_text(character: String, index: String):
 	$Container/Speaker/SpeakerLabel.text = character
@@ -35,6 +31,7 @@ func print_text(character: String, index: String):
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
 		print(message_ref)
+		#show_sprite(message_ref,0)
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
 		for letter in message_ref.length():
@@ -70,6 +67,8 @@ func find_message(character: String, index: String):
 		"KingArthur":
 			match index:
 				"scolding":
-					show_sprite(character, index)
+					
 					return "I'm so mad about that thing that happened!"
-	
+		"ChattyCatty":
+			match index:
+				pass

@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dk0rkw8cig63j" path="res://Scenes/Title/Scripts/camera_mainmenu.gd" id="1_hfp4f"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="2_7fh0p"]
+[ext_resource type="Script" uid="uid://ce4dvdgqkncab" path="res://Scenes/Title/Scripts/catmover.gd" id="3_7fh0p"]
 [ext_resource type="Script" uid="uid://bj8xfh5iufnmh" path="res://Scenes/Title/Scripts/titleenvironmentspinner.gd" id="3_xsi77"]
 [ext_resource type="Texture2D" uid="uid://616qwfcuf6yj" path="res://Scenes/Test/ProtoArt/Pine Tree - GREEN  - 0000.png" id="4_l1yp5"]
 [ext_resource type="Texture2D" uid="uid://cyix2bhc0xyqk" path="res://Scenes/Test/ProtoArt/Pine Tree - YELLOW  - 0000.png" id="5_rv8x5"]
 [ext_resource type="Script" uid="uid://5as35m4y32nc" path="res://Scenes/Title/Scripts/title_ui.gd" id="6_fbuyo"]
-[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="7_xruoh"]
+[ext_resource type="Texture2D" uid="uid://ekpaotdpfa4p" path="res://Scenes/Title/Art/SSLOGO.png" id="8_7fh0p"]
 [ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scenes/Title/Scripts/main_menu_ui.gd" id="8_72lsw"]
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="9_l627n"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="10_qa3ra"]
@@ -56,22 +57,32 @@ environment = SubResource("Environment_n82rj")
 [node name="Menu part" type="Node3D" parent="." unique_id=1383766374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.385757, 2.3841858e-07, 0.57752466)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Menu part" unique_id=172650460]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39751863, 0, -0.10042763)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Menu part" unique_id=172650460 node_paths=PackedStringArray("CatSpot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8651528, 2.3841858e-07, -4.4262247)
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_8mikk")
+script = ExtResource("3_7fh0p")
+CatSpot = NodePath("../MeshSpot")
+
+[node name="MeshSpot" type="Marker3D" parent="Menu part" unique_id=111292042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39751816, 0, -0.10042763)
 
 [node name="CameraSpot" type="Marker3D" parent="Menu part" unique_id=1841477792]
 transform = Transform3D(0.017364822, 0.025488699, 0.095125124, 0, 0.09659258, -0.025881905, -0.098480776, 0.0044943467, 0.01677313, 1.5937452, 0.68869746, 0.096888006)
 gizmo_extents = 1.95
 
-[node name="Cat" type="Sprite3D" parent="Menu part" unique_id=39587136]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.58070946, 0.7662382, 0.62495816)
+[node name="Cat" type="Sprite3D" parent="Menu part" unique_id=39587136 node_paths=PackedStringArray("CatSpot")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.8651528, 0.78306496, -4.4262247)
 billboard = 2
 double_sided = false
 texture_filter = 0
 render_priority = 1
 texture = ExtResource("2_7fh0p")
+script = ExtResource("3_7fh0p")
+CatSpot = NodePath("../CatSpot")
+
+[node name="CatSpot" type="Marker3D" parent="Menu part" unique_id=868926396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581, 0.766, 0.625)
 
 [node name="Stuff that spins" type="Node3D" parent="." unique_id=417076584]
 script = ExtResource("3_xsi77")
@@ -211,15 +222,14 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 60
 theme_override_font_sizes/bold_italics_font_size = 60
-text = "logo placeholder
-"
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Title UI/titletop/MarginContainer" unique_id=686725751]
+[node name="Logo" type="TextureRect" parent="Title UI/titletop/MarginContainer" unique_id=686725751]
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("7_xruoh")
+texture = ExtResource("8_7fh0p")
 
 [node name="titlebottom" type="Control" parent="Title UI" unique_id=334999017]
 layout_mode = 1
@@ -597,6 +607,8 @@ text = "Back
 "
 
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/MeshInstance3D" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/Cat" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Stuff that spins" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI" method="_on_settings_pressed"]

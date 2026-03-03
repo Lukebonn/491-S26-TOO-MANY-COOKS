@@ -30,7 +30,7 @@ func title_cinematics_gogogo():
 
 func cast_aside_title_and_get_to_menu():
 	var tween = get_tree().create_tween()
-	tween.parallel().tween_property($titletop/MarginContainer,"position",Vector2(-500,0),.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property($titletop/MarginContainer,"position",Vector2(-530,0),.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property($titlebottom/MarginContainer,"position",Vector2(-1200,0),.3).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 
 
