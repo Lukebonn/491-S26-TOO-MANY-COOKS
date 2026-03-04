@@ -6,3 +6,5 @@ extends Node
 
 #temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
 var Gold := 0
+var MaxHealth = 100
+var MaxMana = 100

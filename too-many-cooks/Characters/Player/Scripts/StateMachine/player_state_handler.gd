@@ -45,3 +45,5 @@ func _physics_process(delta: float) -> void:
 ##triggers when a hitbox enters the player's hurtbox
 func _on_hurtbox_area_entered(area):
 	current_state.hit_response(area)
+	$"../UI".health -= 10
+	#$"../UI".applyStatusEffect.emit("Poison", 5)
