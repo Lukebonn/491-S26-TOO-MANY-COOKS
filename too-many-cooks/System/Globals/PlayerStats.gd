@@ -10,3 +10,10 @@ var Gold := 0
 #speed stats for the player
 var Max_Speed = 200.0
 var Speed_Slowdown = 150.0
+
+#health and mana, 
+#these are directly edited from tavern upgrades
+#but in gameplay realtime health and mana
+#is edited in the player (not here)
+var MaxHealth := 100.0
+var MaxMana := 100.0
