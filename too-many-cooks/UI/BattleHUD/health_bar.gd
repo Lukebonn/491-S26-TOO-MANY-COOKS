@@ -4,14 +4,14 @@ var flash = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	max_value = get_parent().maxHealth
+	max_value = PlayerStats.MaxHealth
 	self_modulate = Color(10.0, 0.0, 0.0, 1.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	value = get_parent().displayHealth
 	$HealthValue.text = str(get_parent().displayHealth)
-	if get_parent().displayHealth <= (get_parent().maxHealth / 10):
+	if get_parent().displayHealth <= (PlayerStats.MaxHealth / 10):
 		if (enteredCriticalHealth == false):
 			$Timer.start(0.1)
 			# this timer is used to specify how fast the health bar should flash

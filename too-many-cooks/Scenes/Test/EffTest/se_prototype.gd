@@ -2,15 +2,12 @@ extends Node2D
 
 @export var mana = 100
 @export var displayMana: int
-@export var maxMana = 100
 
 
 @export var health = 100
 # behind the scenes health value, calculated as a float.
 @export var displayHealth: int
 # the health value displayed in the game, expressed as an int.
-@export var maxHealth = 100
-# the maximum health the "player" can have.
 var statusEffects = []
 # contains a list of status effects applied to the "player."
 var effectDurations = []
@@ -81,14 +78,14 @@ func _process(delta: float) -> void:
 	
 	# the following conditional ensures that the player's health
 	# cannot exceed their max health.
-	if (health > maxHealth):
-		health = maxHealth
+	if (health > PlayerStats.MaxHealth):
+		health = PlayerStats.MaxHealth
 	if (health < 0):
 		health = 0
 	
 	# testing purposes
-	print(statusEffects)
-	print(effectDurations)
+	#print(statusEffects)
+	#print(effectDurations)
 	
 	
 

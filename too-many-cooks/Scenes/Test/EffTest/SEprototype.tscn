@@ -8,6 +8,7 @@
 script = ExtResource("1_dvulo")
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
+visible = false
 offset_left = 896.0
 offset_top = 64.0
 offset_right = 1088.0
@@ -16,6 +17,7 @@ theme_override_font_sizes/font_size = 25
 text = "Apply Posion"
 
 [node name="HealButton" type="Button" parent="." unique_id=1800725149]
+visible = false
 offset_left = 896.0
 offset_top = 192.0
 offset_right = 1088.0
@@ -25,6 +27,7 @@ text = "Apply
 Regeneration"
 
 [node name="EffectClearButton" type="Button" parent="." unique_id=1398826089]
+visible = false
 offset_left = 896.0
 offset_top = 488.0
 offset_right = 1088.0
@@ -71,9 +74,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Mana Value"
 horizontal_alignment = 1
 
-[node name="ManaTimer" type="Timer" parent="ManaBar" unique_id=1752878788]
-wait_time = 3.0
-
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
 offset_left = 16.0
 offset_top = 8.0
@@ -114,4 +114,3 @@ text = "Time"
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
 [connection signal="timeout" from="HealthBar/Timer" to="HealthBar" method="_on_timer_timeout"]
-[connection signal="timeout" from="ManaBar/ManaTimer" to="ManaBar" method="_on_mana_timer_timeout"]
