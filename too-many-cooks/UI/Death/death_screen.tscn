@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cuay06mj8rbro"]
 
+[ext_resource type="Script" uid="uid://bcw1068oqmssa" path="res://UI/Death/exit_button.gd" id="1_0kqq6"]
+
 [node name="DeathScreen" type="ColorRect" unique_id=1098237324]
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,3 +18,24 @@ offset_bottom = 362.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "You're finished!"
+
+[node name="Exit Button" type="Button" parent="." unique_id=1413275584]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 445.0
+offset_right = 395.0
+offset_bottom = 498.0
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+script = ExtResource("1_0kqq6")
+
+[node name="Retry Button" type="Button" parent="." unique_id=1453882045]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 443.0
+offset_right = 827.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 32
+text = "Retry"
+
+[connection signal="pressed" from="Exit Button" to="Exit Button" method="_on_pressed"]
