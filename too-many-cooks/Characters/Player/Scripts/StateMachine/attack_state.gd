@@ -3,20 +3,24 @@ extends PlayerState
 var cooldown : float = 0.3
 var on_cooldown : bool = false
 
+var mana_gain : float = 10
+
 ##Calls player_state enter_state method to have 'player' reference player node
 func enter_state(player_node):
-	print_debug("attack_state entered")
+	#print_debug("attack_state entered")
 	super(player_node)
 	
 	if(!on_cooldown):
 		#player lunges forward a small amount and has their hitbox enabled
 		player.velocity += player.local_mouse_pos.normalized() * 70
 		$"../Hitbox".monitorable = true
+		$"../Hitbox".monitoring = true
 		player.get_node("Hitbox").visible = true
 		await get_tree().create_timer(0.1).timeout
 		
-		#player stops for a moment after attacking and has their hitbox disabled
+		#player has their hitbox disabled
 		$"../Hitbox".monitorable = false
+		$"../Hitbox".monitoring = false
 		player.get_node("Hitbox").visible = false
 		player.velocity = Vector2(0,0)
 		
@@ -36,6 +40,11 @@ func start_cooldown():
 	
 	on_cooldown = false
 
+##player regains mana when attacking enemies
+func on_attack_hit():
+	player.mana += mana_gain
+
 ##player should lose a certain amount of health
 func hit_response(source):
-	print_debug("player hit")#add damage code and change to hurt state
+	$"../hurt_state".damage_hitbox = source
+	player.change_state("hurt_state")

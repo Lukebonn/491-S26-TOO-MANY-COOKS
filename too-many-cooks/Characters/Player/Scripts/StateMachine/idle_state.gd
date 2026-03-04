@@ -3,7 +3,7 @@ extends PlayerState
 
 ##Calls player_state enter_state method to have 'player' reference player node
 func enter_state(player_node):
-	print_debug("idle_state entered")
+	#print_debug("idle_state entered")
 	super(player_node)
 	
 	player.get_node("Sprite2D").animation = "idle"
@@ -29,4 +29,5 @@ func input_handler(_delta : float) -> void:
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	print_debug("player hit")#replace with damage code and change to hurt state
+	$"../hurt_state".damage_hitbox = source
+	player.change_state("hurt_state")

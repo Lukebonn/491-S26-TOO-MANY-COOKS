@@ -76,4 +76,7 @@ func get_damage():
 	return damage
 
 func _on_damage_trigger_area_entered(area: Area2D) -> void:
-	take_damage(20,player.position)
+	if(player):
+		take_damage(20,player.position)
+	else:
+		take_damage(20,Vector2.ZERO)

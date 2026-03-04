@@ -3,17 +3,21 @@ extends PlayerState
 var cooldown : float = 1.0
 var on_cooldown : bool = false
 
+var mana_cost : float = 30
+
 ##Calls player_state enter_state method to have 'player' reference player node
 func enter_state(player_node):
-	print_debug("magic_state entered")
+	#print_debug("magic_state entered")
 	super(player_node)
 	
 	#spell only activates if cooldown has expired
-	if(!on_cooldown):
+	if(!on_cooldown and player.mana >= mana_cost):
 		var spell = preload("res://Objects/Projectiles/magic_default.tscn").instantiate()
-		spell.position = player.position
+		spell.position = player.position + player.local_mouse_pos.normalized() * 15
 		spell.velocity = player.local_mouse_pos.normalized() * 5
 		add_child(spell)
+		
+		player.mana -= mana_cost
 		
 		start_cooldown()
 	
@@ -33,4 +37,5 @@ func start_cooldown():
 
 ##player should lose a certain amount of health
 func hit_response(source):
-	print_debug("player hit")#add damage code and change to hurt state
+	$"../hurt_state".damage_hitbox = source
+	player.change_state("hurt_state")

@@ -7,8 +7,11 @@ radius = 4.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nppe8"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nppe8"]
+radius = 4.0
+
 [node name="MagicDefault" type="RigidBody2D" unique_id=541092243]
-collision_layer = 4
+collision_layer = 64
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_vlsvx")
@@ -20,3 +23,10 @@ shape = SubResource("CircleShape2D_anfya")
 position = Vector2(-1.1920929e-07, -2.3841858e-07)
 scale = Vector2(8, 8)
 texture = SubResource("CanvasTexture_nppe8")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=874155800]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1757883590]
+shape = SubResource("CircleShape2D_nppe8")

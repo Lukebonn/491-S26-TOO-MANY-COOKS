@@ -13,7 +13,7 @@ var cooldown_timer : float = 0
 ##Calls player_state enter_state method to have 'player' reference player node
 #sets players speed to dash_speed, resets duration timer
 func enter_state(player_node):
-	print_debug("dash_state entered")
+	#print_debug("dash_state entered")
 	super(player_node)
 	
 	current_dash_speed = full_dash_speed

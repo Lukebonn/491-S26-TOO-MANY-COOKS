@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bogj5hn8s0qau" path="res://Characters/Player/Sprites/cat4.png" id="6_x58m1"]
 [ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Characters/Player/Scripts/StateMachine/magic_state.gd" id="7_f8u88"]
 [ext_resource type="Script" uid="uid://b8r6bpm0nl0b2" path="res://System/Globals/PlayerStats.gd" id="12_u2wkb"]
+[ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/hurt_state.gd" id="13_b71o8"]
+[ext_resource type="Script" path="res://Characters/Player/Scripts/StateMachine/death_state.gd" id="14_x58m1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vev3"]
 animations = [{
@@ -90,14 +92,17 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=647800534]
 shape = SubResource("CapsuleShape2D_pwx6j")
 
+[node name="player_stats" type="Node" parent="." unique_id=1202790873]
+script = ExtResource("12_u2wkb")
+
 [node name="idle_state" type="Node" parent="." unique_id=1108578452]
 script = ExtResource("3_vr61t")
 
-[node name="dash_state" type="Node" parent="." unique_id=688587643]
-script = ExtResource("4_jkhb6")
-
 [node name="move_state" type="Node" parent="." unique_id=945448675]
 script = ExtResource("5_pwx6j")
+
+[node name="dash_state" type="Node" parent="." unique_id=688587643]
+script = ExtResource("4_jkhb6")
 
 [node name="attack_state" type="Node" parent="." unique_id=1767612672]
 script = ExtResource("6_pwx6j")
@@ -105,7 +110,11 @@ script = ExtResource("6_pwx6j")
 [node name="magic_state" type="Node" parent="." unique_id=265768770]
 script = ExtResource("7_f8u88")
 
-[node name="player_stats" type="Node" parent="." unique_id=1202790873]
-script = ExtResource("12_u2wkb")
+[node name="hurt_state" type="Node" parent="." unique_id=475899646]
+script = ExtResource("13_b71o8")
 
+[node name="death_state" type="Node" parent="." unique_id=1569881533]
+script = ExtResource("14_x58m1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
