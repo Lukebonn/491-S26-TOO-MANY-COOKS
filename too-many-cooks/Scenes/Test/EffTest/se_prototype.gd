@@ -1,5 +1,6 @@
 extends Node2D
 
+var player
 @export var mana = 100
 @export var displayMana: int
 
@@ -41,6 +42,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	player = $"../Player"
 	# if there are any expired effects in "cleanUp," then
 	# iterate through the array of indexes with expired effects,
 	# and remove them from the respective arrays.
@@ -72,16 +74,19 @@ func _process(delta: float) -> void:
 		health -= 5.0 * delta # the poison effect removes 2 health per second.
 	if (statusEffects.has("Regeneration")):
 		health += 5.0 * delta # the regeneration effect heals 1 health per second.
-	displayHealth = int(health)
-	displayMana = int(mana)
-	# updates the value for displayHealth to display it as an integer.
+	
 	
 	# the following conditional ensures that the player's health
 	# cannot exceed their max health.
-	if (health > PlayerStats.MaxHealth):
-		health = PlayerStats.MaxHealth
-	if (health < 0):
-		health = 0
+	#if (health > PlayerStats.MaxHealth):
+		#health = PlayerStats.MaxHealth
+	#if (health < 0):
+		#health = 0
+	health = clamp(health, 0, PlayerStats.MaxHealth)
+	
+	displayHealth = int(round(health))
+	displayMana = int(mana)
+	# updates the value for displayHealth to display it as an integer.
 	
 	# testing purposes
 	#print(statusEffects)
