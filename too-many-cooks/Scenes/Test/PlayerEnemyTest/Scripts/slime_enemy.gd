@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
-const KNOCKBACK_FORCE: int = 100
+const KNOCKBACK_FORCE: int = 20
 var player_chase=false
 var player = null
 
@@ -16,16 +16,16 @@ var target = null
 
 
 func _physics_process(delta: float) -> void:
-	if is_alive and target:
-		_attack(delta) 
+	#if is_alive and target:
+		#_attack(delta) 
 	if player_chase:
 		position += (player.position-position)/SPEED
 	
 
-func _attack(delta: float) -> void:
-	var direction = (target.position - position).normalized()
-	position += direction * SPEED * delta
-	animated_sprite_2d.play("attack_side")
+#func _attack(delta: float) -> void:
+	#var direction = (target.position - position).normalized()
+	#position += direction * SPEED * delta
+	#animated_sprite_2d.play("attack_side")
 	
 #function that can be called from the player to deal damage to the slime
 func take_damage(self_damage: int, attacker_position: Vector2) -> void: 
@@ -51,8 +51,10 @@ func _die() -> void:
 	animated_sprite_2d.play("death")
 	
 	#disable collision
-	$CollisionShape2D.set_deferred("disabled", true)
+	$DamageTrigger/CollisionShape2D.set_deferred("disabled", true)
 	$Sight/CollisionShape2D.set_deferred("disabled", true)
+	hide()
+	
 
 func _on_sight_body_entered(body: Node2D) -> void:
 	#print(body.name)
@@ -73,6 +75,5 @@ func _on_sight_body_exited(body: Node2D) -> void:
 func get_damage():
 	return damage
 
-
-
-	
+func _on_damage_trigger_area_entered(area: Area2D) -> void:
+	take_damage(20,player.position)
