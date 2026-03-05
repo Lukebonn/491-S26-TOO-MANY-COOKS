@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scenes/Test/EffTest/UI.gd" id="1_dvulo"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
+[ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_dvulo")
@@ -91,23 +92,22 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Mana
 "
 
-[node name="EffectName" type="RichTextLabel" parent="." unique_id=1898203501]
-visible = false
+[node name="CoinLabel" type="RichTextLabel" parent="." unique_id=1898203501]
 offset_left = 40.0
 offset_top = 256.0
-offset_right = 256.0
+offset_right = 128.0
 offset_bottom = 304.0
 theme_override_font_sizes/normal_font_size = 30
-text = "Effect Name"
+text = "Coins:"
 
-[node name="EffectTime" type="RichTextLabel" parent="." unique_id=1877924493]
-visible = false
-offset_left = 256.0
+[node name="CoinCount" type="RichTextLabel" parent="." unique_id=1877924493]
+offset_left = 136.0
 offset_top = 256.0
-offset_right = 328.0
+offset_right = 224.0
 offset_bottom = 304.0
 theme_override_font_sizes/normal_font_size = 30
-text = "Time"
+text = "10000"
+script = ExtResource("4_snacm")
 
 [connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]

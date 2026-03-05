@@ -14,7 +14,6 @@ var target = null
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var take_damage_sound: AudioStreamPlayer2D = $TakeDamage
 
-
 func _physics_process(delta: float) -> void:
 	#if is_alive and target:
 		#_attack(delta) 
@@ -49,6 +48,9 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 func _die() -> void:
 	is_alive = false
 	animated_sprite_2d.play("death")
+	
+	# Dawson - Adds 1 Gold to the Global Gold count
+	PlayerStats.Gold += 1
 	
 	#disable collision
 	$DamageTrigger/CollisionShape2D.set_deferred("disabled", true)
