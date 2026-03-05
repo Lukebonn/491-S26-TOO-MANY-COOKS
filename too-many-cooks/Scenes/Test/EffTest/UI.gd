@@ -1,14 +1,7 @@
 extends Node2D
 
-var player
-@export var mana = 100
-@export var displayMana: int
+var player # stores a reference to the player node in the Combat Scene.
 
-
-@export var health = 100
-# behind the scenes health value, calculated as a float.
-@export var displayHealth: int
-# the health value displayed in the game, expressed as an int.
 var statusEffects = []
 # contains a list of status effects applied to the "player."
 var effectDurations = []
@@ -21,6 +14,8 @@ var cleanUp = []
 # deprecated signals. Now condensed into one all-inclusive signal!
 #signal applyPoison(duration) # a signal to apply posion of a set duration.
 #signal applyRegeneration(duration) # a signal to apply regeneration of a set duration.
+
+signal flashManaBar()
 
 signal applyStatusEffect(effectName: String, duration: int)
 # applies a specified status effect for a specified duration, in seconds; following
@@ -43,6 +38,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player = $"../Player"
+	
 	# if there are any expired effects in "cleanUp," then
 	# iterate through the array of indexes with expired effects,
 	# and remove them from the respective arrays.
@@ -71,22 +67,19 @@ func _process(delta: float) -> void:
 	# these conditionals check for the first instance of each effect.
 	# Meaning, repeated instances do not have any additional effect.
 	if (statusEffects.has("Poison")):
-		health -= 5.0 * delta # the poison effect removes 2 health per second.
+		player.health -= 2.0 * delta # the poison effect removes 2 health per second.
 	if (statusEffects.has("Regeneration")):
-		health += 5.0 * delta # the regeneration effect heals 1 health per second.
+		player.health += 1.0 * delta # the regeneration effect heals 1 health per second.
 	
 	
-	# the following conditional ensures that the player's health
-	# cannot exceed their max health.
-	#if (health > PlayerStats.MaxHealth):
-		#health = PlayerStats.MaxHealth
-	#if (health < 0):
-		#health = 0
-	health = clamp(health, 0, PlayerStats.MaxHealth)
+	# ensures that the player's Health can only ever be between
+	# 0 and the player's Max Health.
+	player.health = clamp(player.health, 0, PlayerStats.MaxHealth)
 	
-	displayHealth = int(round(health))
-	displayMana = int(mana)
-	# updates the value for displayHealth to display it as an integer.
+	player.displayHealth = int(round(player.health))
+	player.displayMana = int(player.mana)
+	# updates the values for displayHealth & displayMana 
+	# to display as integers.
 	
 	# testing purposes
 	#print(statusEffects)
@@ -98,6 +91,8 @@ func _on_poison_button_pressed() -> void:
 	#applyPoison.emit(5) 
 	applyStatusEffect.emit("Poison", 5) # Applies poison for 5 seconds.
 	# The duration of the effect can be changed.
+	# this is effectively a deprecated function, as the test buttons
+	# used to clear and add status effects are hidden.
 
 
 
@@ -105,6 +100,8 @@ func _on_heal_button_pressed() -> void:
 	#applyRegeneration.emit(5) 
 	applyStatusEffect.emit("Regeneration", 5) # Applies regeneration for 5 seconds.
 	# The duration of the effect can be changed.
+	# this is effectively a deprecated function, as the test buttons
+	# used to clear and add status effects are hidden.
 
 
 func _on_effect_clear_button_pressed() -> void:
@@ -112,6 +109,8 @@ func _on_effect_clear_button_pressed() -> void:
 	effectDurations = []
 	# uhhh I think this one clears all active status effects.
 	# not sure, but check up on this one.
+	# this is effectively a deprecated function, as the test buttons
+	# used to clear and add status effects are hidden.
 
 
 #deprecated functions that have been collapsed into one all-inclusive function!
@@ -147,3 +146,12 @@ func _on_apply_status_effect(effectName: String, duration: int) -> void:
 	# than the old duration).
 	# If the effect does not already exist, then apply the specified effect with the 
 	# specified duration.
+
+
+func _on_player_not_enough_mana() -> void:
+	flashManaBar.emit()
+	# this signal tells the Mana bar to flash, indicating to the
+	# player that they do not have enough Mana.
+# Takes a singal and emits another signal that is more local to the
+# Mana bar node. Yes, it might be redundant to emit a signal from
+# another signal, but I couldn't think of another way to do this.

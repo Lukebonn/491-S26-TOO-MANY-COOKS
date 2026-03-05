@@ -20,6 +20,12 @@ func enter_state(player_node):
 		player.mana -= mana_cost
 		
 		start_cooldown()
+	elif (player.mana < mana_cost):
+		get_parent().notEnoughMana.emit()
+	# Dawson - If the player can't cast their spell, this conditional
+	# will check if its because they do not have enough Mana to do so.
+	# This will be used to make the Mana bar flash to indicate to the
+	# player that they do not have enough Mana to cast their spell.
 	
 	player.change_state("move_state")
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8cinn6ehtcgy"]
 
-[ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scenes/Test/EffTest/se_prototype.gd" id="1_dvulo"]
+[ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scenes/Test/EffTest/UI.gd" id="1_dvulo"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
 
@@ -110,6 +110,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Time"
 
 [connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
+[connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]

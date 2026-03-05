@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Characters/Player/Scripts/StateMachine/magic_state.gd" id="7_f8u88"]
 [ext_resource type="Script" uid="uid://b8r6bpm0nl0b2" path="res://System/Globals/PlayerStats.gd" id="12_u2wkb"]
 [ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/hurt_state.gd" id="13_b71o8"]
-[ext_resource type="Script" path="res://Characters/Player/Scripts/StateMachine/death_state.gd" id="14_x58m1"]
+[ext_resource type="Script" uid="uid://bi4b1xyv34gbw" path="res://Characters/Player/Scripts/StateMachine/death_state.gd" id="14_x58m1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vev3"]
 animations = [{

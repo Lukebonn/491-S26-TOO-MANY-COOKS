@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 var health : float = PlayerStats.MaxHealth
-var mana : float = PlayerStats.MaxMana
+var displayHealth : int = int(health)
+var mana : float = PlayerStats.MaxMana 
+# Dawson - not entirely sure if Mana needs to be a float since we'll
+# likely just be using whole numbers for it.
+var displayMana : int = int(mana)
 var speed : int = 100
 
 var current_dir : Vector2 = Vector2(0,-1)
@@ -9,6 +13,8 @@ var current_dir : Vector2 = Vector2(0,-1)
 var local_mouse_pos : Vector2
 
 var current_state : PlayerState
+
+signal notEnoughMana()
 
 # Called when the node enters the scene tree for the first time.
 #player should be in idle state when loaded
