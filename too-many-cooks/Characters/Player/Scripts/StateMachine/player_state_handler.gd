@@ -50,11 +50,11 @@ func _physics_process(delta: float) -> void:
 	if(current_state):
 		current_state.input_handler(delta)
 	
-	if speed >= $"/root/PlayerStats".Max_Speed:
+	if speed >= PlayerStats.Max_Speed:
 		speed = speed / 2
 	
-	if speed >= $"/root/PlayerStats".Speed_Slowdown:
-		speed = $"/root/PlayerStats".Speed_Slowdown
+	if speed >= PlayerStats.Speed_Slowdown:
+		speed = PlayerStats.Speed_Slowdown
 	move_and_slide()
 
 ##triggers when a hitbox enters the player's hurtbox
