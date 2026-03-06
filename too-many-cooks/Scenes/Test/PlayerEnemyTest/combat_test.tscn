@@ -21,3 +21,4 @@ position = Vector2(-115.99999, -65)
 scale = Vector2(0.17842205, 0.17842205)
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
+[connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]

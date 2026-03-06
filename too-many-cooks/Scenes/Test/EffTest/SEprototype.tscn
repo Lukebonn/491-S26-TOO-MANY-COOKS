@@ -110,6 +110,7 @@ text = "10000"
 script = ExtResource("4_snacm")
 
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=1649117116]
+visible = false
 offset_left = 329.00006
 offset_top = 184.0
 offset_right = 968.99994
@@ -142,7 +143,7 @@ offset_top = 24.0
 offset_right = 526.99994
 offset_bottom = 120.0
 theme_override_font_sizes/normal_font_size = 53
-text = "You have died!"
+text = "You Have Died!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

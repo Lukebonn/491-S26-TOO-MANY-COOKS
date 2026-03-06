@@ -21,18 +21,19 @@ signal applyStatusEffect(effectName: String, duration: int)
 # applies a specified status effect for a specified duration, in seconds; following
 # a few simple rules. See function "_on_apply_status_effect()" for more details.
 # Technically, this signal can be used to apply functionless status effects.
-# for example, applyStatusEffect("Beef Stroganoff", 10)
+# for example, applyStatusEffect("Beef Stroganoff", 10) will apply the status effect
+# "Beef Stroganoff" for 10 seconds.
 # effects only have an effect if their effect/function is defined in the code.
 # in this prototype, only "Poison" and "Regeneration" have defined functions,
 # and thus, are the only two effects that do something.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$DeathScreen.visible = false
 	# testing purposes
 	#print($HealthBar/HealthValue.text)
 	#print($HealthBar.value)
 	#applyStatusEffect.emit("Poison", 20)
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -158,10 +159,17 @@ func _on_player_not_enough_mana() -> void:
 # Mana bar node. Yes, it might be redundant to emit a signal from
 # another signal, but I couldn't think of another way to do this.
 
+func _on_player_death() -> void:
+	await get_tree().create_timer(1.0).timeout
+	$DeathScreen.visible = true
+	# When the player unfortunately passes away, 
+	# wait 1 second, then display the death screen.
 
 func _on_retry_button_button_down() -> void:
 	get_tree().reload_current_scene()
+	# restarts the combat scene
 
 
 func _on_return_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+	# takes the player back to the tavern

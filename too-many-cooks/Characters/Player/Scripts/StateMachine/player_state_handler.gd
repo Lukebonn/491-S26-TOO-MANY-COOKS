@@ -15,6 +15,9 @@ var local_mouse_pos : Vector2
 var current_state : PlayerState
 
 signal notEnoughMana()
+# Is emitted when a spell is used without having enough Mana.
+signal playerDeath()
+# I think this one might be emitted when the player dies, not sure.
 
 # Called when the node enters the scene tree for the first time.
 #player should be in idle state when loaded
