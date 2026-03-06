@@ -12,6 +12,10 @@ var is_alive: bool = true
 var health: int = 100
 var target = null
 
+signal allEnemiesDead()
+# Dawson - this signal serves as a marker for when all the enemies
+# on the floor have been defeated. As of now, its sole purpose is
+# to spawn the exit staircase.
 
 @export var damage = 10
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -62,6 +66,8 @@ func _die() -> void:
 	
 	# Dawson - Adds 1 Gold to the Global Gold count
 	PlayerStats.Gold += 1
+	# Dawson - Spawns the exit staircase
+	allEnemiesDead.emit()
 	
 	#disable collision
 	$DamageTrigger/CollisionShape2D.set_deferred("disabled", true)

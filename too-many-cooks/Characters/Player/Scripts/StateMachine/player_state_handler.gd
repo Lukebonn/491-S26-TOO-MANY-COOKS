@@ -67,3 +67,8 @@ func _on_hurtbox_area_entered(area):
 ##triggers when player melee hitbox collides with something
 func _on_hitbox_area_entered(_area):
 	$attack_state.on_attack_hit()
+
+
+func _on_tavern_return_area_entered(area: Area2D):
+	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+	# takes the player back to the tavern
