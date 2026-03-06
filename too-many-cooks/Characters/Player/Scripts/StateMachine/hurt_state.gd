@@ -7,7 +7,7 @@ func enter_state(player_node):
 	super(player_node)
 	
 	player.get_node("Sprite2D").animation = "hurt"
-	player.modulate = Color(1.0, 0.382, 0.452, 1.0)
+	#player.modulate = Color(1.0, 0.382, 0.452, 1.0)
 	
 	#player takes an amount of damage equal to the attacker's attack power
 	player.health -= damage_hitbox.get_parent().damage
@@ -22,5 +22,5 @@ func enter_state(player_node):
 	if(player.health <= 0):
 		player.change_state("death_state")
 	else:
-		player.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		#player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		player.change_state("move_state")
