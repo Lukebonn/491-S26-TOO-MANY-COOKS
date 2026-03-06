@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://u1exbn0iintr"]
+
+[ext_resource type="Texture2D" uid="uid://bnhw4f1sn6v5d" path="res://Scenes/Test/ProtoArt/Enemy/rat king.png" id="1_ccvvp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh3im"]
+
+[node name="RangedSlimeEnemy" type="CharacterBody2D" unique_id=260407340]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=287705912]
+shape = SubResource("CircleShape2D_kh3im")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=647978973]
+texture = ExtResource("1_ccvvp")
+centered = false
+offset = Vector2(-120, -200)
