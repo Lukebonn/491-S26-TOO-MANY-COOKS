@@ -27,10 +27,11 @@ func set_direction(direction: Vector2, player_level: int):
 func take_damage(self_damage: int, attacker_position: Vector2) -> void: 
 	health -= self_damage
 	if health <= 0:
-		_die()
+		#_die()
+		pass
 	else:
 		print(health)
-		take_damage_sound.play() #pending audio to the take damage
+		#take_damage_sound.play() #pending audio to the take damage
 		
 		#Knockback
 		var knockback_direction = (position - attacker_position).normalized()
@@ -62,4 +63,5 @@ func _on_body_entered(body: Node2D) -> void:
 		
 #The function that gives the damage to the player
 func get_damage():
-	return damage
+	pass
+	#return damage
