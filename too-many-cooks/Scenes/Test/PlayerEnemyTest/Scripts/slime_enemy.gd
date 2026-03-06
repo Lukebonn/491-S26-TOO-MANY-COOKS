@@ -11,7 +11,7 @@ var player = null
 var is_alive: bool = true
 var health: int = 100
 var target = null
-var 
+
 
 @export var damage = 10
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	if player_chase:
 		position += (player.position-position)/SPEED
+		velocity = Vector2(-10,0)
 	
 
 #func _attack(delta: float) -> void:

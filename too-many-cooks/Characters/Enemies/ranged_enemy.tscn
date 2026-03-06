@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://des2u21wbv08v"]
+
+[ext_resource type="Texture2D" uid="uid://cqlywd1gmvv7" path="res://Scenes/Test/ProtoArt/Enemy/arrow.png" id="2_85274"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fehqi"]
+size = Vector2(130, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyrdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85274"]
+bg_color = Color(1, 0.06999999, 0.08549976, 1)
+
+[node name="EnemyProjectile" type="Area2D" unique_id=448116752]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060063044]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_85274")
+
+[node name="ProjectileHitbox" type="CollisionShape2D" parent="." unique_id=1916954239]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_fehqi")
+
+[node name="Temp Health Bar" type="ProgressBar" parent="." unique_id=757828172]
+offset_left = -14.75
+offset_top = -12.5
+offset_right = 15.75
+offset_bottom = -8.5
+theme_override_styles/background = SubResource("StyleBoxFlat_jyrdq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_85274")
+value = 50.0
+show_percentage = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
