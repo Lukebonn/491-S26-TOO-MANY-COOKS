@@ -98,49 +98,47 @@ offset_top = 256.0
 offset_right = 128.0
 offset_bottom = 304.0
 theme_override_font_sizes/normal_font_size = 30
-text = "Gold:"
+text = "Coins:"
 
 [node name="CoinCount" type="RichTextLabel" parent="." unique_id=1877924493]
-offset_left = 120.0
+offset_left = 136.0
 offset_top = 256.0
-offset_right = 208.0
+offset_right = 224.0
 offset_bottom = 304.0
 theme_override_font_sizes/normal_font_size = 30
 text = "10000"
 script = ExtResource("4_snacm")
 
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=1649117116]
-offset_left = 329.00006
-offset_top = 184.0
-offset_right = 968.99994
-offset_bottom = 544.0
+offset_left = 344.0
+offset_top = 160.0
+offset_right = 808.0
+offset_bottom = 488.0
 color = Color(1, 0, 0, 0.5882353)
 
 [node name="RetryButton" type="Button" parent="DeathScreen" unique_id=1822436038]
 layout_mode = 0
-offset_left = 406.99994
+offset_left = 296.0
 offset_top = 224.0
-offset_right = 598.99994
-offset_bottom = 320.0
-theme_override_font_sizes/font_size = 45
+offset_right = 424.0
+offset_bottom = 288.0
 text = "Retry"
 
 [node name="ReturnButton" type="Button" parent="DeathScreen" unique_id=2127298838]
 layout_mode = 0
-offset_left = 38.99994
+offset_left = 40.0
 offset_top = 224.0
-offset_right = 230.99994
-offset_bottom = 320.0
-theme_override_font_sizes/font_size = 30
+offset_right = 168.0
+offset_bottom = 288.0
 text = "Return to
 Tavern"
 
-[node name="DeathText" type="RichTextLabel" parent="DeathScreen" unique_id=1500146652]
+[node name="RichTextLabel" type="RichTextLabel" parent="DeathScreen" unique_id=1500146652]
 layout_mode = 0
-offset_left = 110.99994
-offset_top = 24.0
-offset_right = 526.99994
-offset_bottom = 120.0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 424.0
+offset_bottom = 128.0
 theme_override_font_sizes/normal_font_size = 53
 text = "You have died!"
 horizontal_alignment = 1

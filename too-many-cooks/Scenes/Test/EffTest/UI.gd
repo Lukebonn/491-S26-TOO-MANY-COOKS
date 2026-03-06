@@ -38,6 +38,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player = $"../Player"
+	if (player == null):
+		print("WARNING: REFERENCE TO PLAYER IS EMPTY. WHERE IS PLAYER?")
 	
 	# if there are any expired effects in "cleanUp," then
 	# iterate through the array of indexes with expired effects,
@@ -155,3 +157,11 @@ func _on_player_not_enough_mana() -> void:
 # Takes a singal and emits another signal that is more local to the
 # Mana bar node. Yes, it might be redundant to emit a signal from
 # another signal, but I couldn't think of another way to do this.
+
+
+func _on_retry_button_button_down() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_return_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
