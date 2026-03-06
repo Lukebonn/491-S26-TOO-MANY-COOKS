@@ -27,6 +27,7 @@ func enter_state(player_node):
 	
 	#if the player has spammed dash 3 times, their dash will slow way down
 	if(dash_counter >= 3):
+		player.modulate = Color(1.0, 0.639, 0.19, 1.0)
 		current_dash_speed /= dash_counter
 	
 	#player will dash in the last recorded direction if not moving
@@ -53,6 +54,8 @@ func start_cooldown(delta : float):
 	while cooldown_timer > 0:
 		cooldown_timer -= delta
 		await get_tree().process_frame
+	
+	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 func reset_cooldown():
 	cooldown_timer = cooldown
