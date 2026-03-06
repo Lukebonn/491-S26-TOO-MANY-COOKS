@@ -13,8 +13,7 @@ func enter_state(player_node):
 	player.health -= damage_hitbox.get_parent().damage
 	
 	#player receives knockback on hit
-	player.velocity = (damage_hitbox.get_parent().velocity - player.velocity).normalized() * 350
-	
+	player.velocity = (player.global_position - damage_hitbox.get_parent().global_position).normalized() * 350
 	await get_tree().create_timer(0.1).timeout
 	
 	#player dies if their health is below zero, otherwise is returned to move_state

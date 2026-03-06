@@ -30,7 +30,6 @@ func _physics_process(delta: float) -> void:
 	
 	if player_chase:
 		position += (player.position-position)/SPEED
-		velocity = Vector2(-10,0)
 	
 
 #func _attack(delta: float) -> void:
