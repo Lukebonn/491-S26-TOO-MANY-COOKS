@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#for temp health
+@onready var temp_health_bar: ProgressBar = $"Temp Health Bar"
 
 const SPEED = 100.0
 const KNOCKBACK_FORCE: int = 20
@@ -14,9 +16,17 @@ var target = null
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var take_damage_sound: AudioStreamPlayer2D = $TakeDamage
 
+func _ready():
+	temp_health_bar.value = health #attach health bar to enemy
+
 func _physics_process(delta: float) -> void:
 	#if is_alive and target:
 		#_attack(delta) 
+	
+	# *note* ideally would put this in take damage but 
+	# this health bar is for playtest.
+	temp_health_bar.value = health #update enemy health bar
+	
 	if player_chase:
 		position += (player.position-position)/SPEED
 	
