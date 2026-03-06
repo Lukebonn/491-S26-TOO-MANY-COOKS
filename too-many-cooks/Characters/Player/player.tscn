@@ -20,6 +20,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_3smsa")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3smsa")
 }],
 "loop": true,
 "name": &"idle",
@@ -60,10 +71,8 @@ script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2079195409]
 sprite_frames = SubResource("SpriteFrames_7vev3")
-animation = &"move"
+animation = &"hurt"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.74486744
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
 shape = SubResource("CapsuleShape2D_aiypd")

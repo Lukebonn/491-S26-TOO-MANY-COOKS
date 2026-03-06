@@ -6,6 +6,8 @@ func enter_state(player_node):
 	#print_debug("hurt_state entered")
 	super(player_node)
 	
+	player.get_node("Sprite2D").animation = "hurt"
+	
 	#player takes an amount of damage equal to the attacker's attack power
 	player.health -= damage_hitbox.get_parent().damage
 	
