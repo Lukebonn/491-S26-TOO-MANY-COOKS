@@ -24,7 +24,6 @@ func hide_dialogue():
 
 func print_text(character: String, index):
 	$Container/Speaker/SpeakerLabel.text = character
-	
 	is_printing_text = true
 	var message_ref = find_message(character, index)
 	
@@ -72,8 +71,14 @@ func find_message(character: String, index):
 		"ChattyCatty":
 			match index:
 				pass
-		"NPC1":
+		"Tutorial":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/NPC1.txt", FileAccess.READ)
+		"Ranger":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/RANGER.txt", FileAccess.READ)
+			PlayerStats.Magic = "Fireball"
+		"Playtest":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
+			Global.Has_Finished_Playtest = true
 	var body = file.get_as_text()
 	body = body.split("\n")
 	index = index.split(",")

@@ -84,6 +84,8 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 24
 text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
 fit_content = true
+scroll_active = false
+visible_characters_behavior = 1
 
 [node name="Speaker" type="Panel" parent="Dialogue Box/Container" unique_id=634979717 node_paths=PackedStringArray("child_dialogue")]
 z_index = 1
@@ -118,7 +120,9 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 32
 text = "youuu"
 fit_content = true
-autowrap_mode = 0
+scroll_active = false
+autowrap_mode = 2
+autowrap_trim_flags = 128
 
 [node name="SpeakerSprite" type="Sprite2D" parent="Dialogue Box/Container" unique_id=1535565508]
 position = Vector2(-45, -326)
@@ -146,11 +150,42 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("3_3n42s")
 texture_pressed = ExtResource("3_3n42s")
 script = ExtResource("6_41fud")
-Name = "NPC1"
+Name = "Tutorial"
 Expressions = Array[Texture]([ExtResource("7_a44po")])
 Conversations = Array[String](["0,1,2"])
 
+[node name="RANGER" type="TextureButton" parent="Tavern BG" unique_id=655953505]
+visible = false
+layout_mode = 0
+offset_left = 2061.0
+offset_top = 443.0
+offset_right = 2573.0
+offset_bottom = 955.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_3n42s")
+texture_pressed = ExtResource("3_3n42s")
+flip_h = true
+script = ExtResource("6_41fud")
+Name = "Ranger"
+Conversations = Array[String](["0,1,2"])
+
+[node name="PLAYTEST" type="TextureButton" parent="Tavern BG" unique_id=2082392399]
+visible = false
+layout_mode = 0
+offset_left = 1400.0
+offset_top = 431.0
+offset_right = 1912.0
+offset_bottom = 943.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_3n42s")
+texture_pressed = ExtResource("3_3n42s")
+flip_h = true
+script = ExtResource("6_41fud")
+Name = "Playtest"
+Conversations = Array[String](["0,1,2"])
+
 [node name="Chatty Catty" type="TextureButton" parent="Tavern BG" unique_id=723860022]
+visible = false
 layout_mode = 0
 offset_left = 2795.0
 offset_top = 303.0
@@ -189,7 +224,7 @@ vertical_alignment = 1
 anchors_preset = 0
 script = ExtResource("10_pv64h")
 
-[node name="ProtoUpgrade" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
+[node name="NPCMagic" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
 layout_mode = 0
 offset_left = 1377.0
 offset_top = 397.0
@@ -199,11 +234,11 @@ texture_normal = SubResource("PlaceholderTexture2D_pv64h")
 script = ExtResource("10_gr732")
 Cost_Amount = Array[int]([1])
 Cost_Material = Array[int]([0])
-Upgrade_Reward = Array[String](["Magic"])
+Upgrade_Reward = Array[String](["NPCMagic"])
 Is_Complicated = true
 metadata/_custom_type_script = "uid://bb7uucsrpfp4w"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/ProtoUpgrade" unique_id=1903962225]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCMagic" unique_id=1903962225]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 40.0
@@ -216,7 +251,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/ProtoUpgrade" unique_id=161632022]
+[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/NPCMagic" unique_id=161632022]
 visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
@@ -229,7 +264,56 @@ offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/ProtoUpgrade/Panel" unique_id=693083008]
+[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCMagic/Panel" unique_id=693083008]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 60.0
+text = "Costs:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPCEnd" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=1881978114]
+visible = false
+layout_mode = 0
+offset_left = 1552.0
+offset_top = 397.0
+offset_right = 1680.0
+offset_bottom = 525.0
+texture_normal = SubResource("PlaceholderTexture2D_pv64h")
+script = ExtResource("10_gr732")
+Cost_Amount = Array[int]([1])
+Cost_Material = Array[int]([0])
+Upgrade_Reward = Array[String](["NPCEnd"])
+Is_Complicated = true
+metadata/_custom_type_script = "uid://bb7uucsrpfp4w"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCEnd" unique_id=1468434003]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Upgrade!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/NPCEnd" unique_id=1438347948]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -148.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCEnd/Panel" unique_id=1122320047]
 layout_mode = 0
 offset_right = 127.0
 offset_bottom = 60.0

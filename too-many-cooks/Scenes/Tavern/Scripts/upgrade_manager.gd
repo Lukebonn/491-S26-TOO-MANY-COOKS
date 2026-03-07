@@ -14,5 +14,8 @@ func _on_upgrade_complicated(variant):
 	#that are complex will likely be from npcs
 	#oh well...
 	match variant:
-		"Magic":
-			PlayerStats.Magic = "Fireball"
+		"NPCMagic":
+			$"../RANGER".show()
+			$NPCEnd.show()
+		"NPCEnd":
+			$"../PLAYTEST".show()

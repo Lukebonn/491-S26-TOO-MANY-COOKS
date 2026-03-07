@@ -20,13 +20,13 @@ func _either_panel_mouse_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"direction",0,1).set_trans(Tween.TRANS_CUBIC)
 
-func _on_chatty_catty_pressed():
-	$"../Dialogue Box".show_dialogue("Meowy","default")
-	#we wont do this method for everything probably
-	#but we also need a way to tell the dialogue box what to say
-	#a simple method is giving "show_dialogue" an argument that is the text we need
-	#but that method falls short if we want our fellas to say unique things thru a run
-	#(which we do)
+func set_up_tavern():
+	if Global.Has_Finished_Playtest:
+		$RANGER.show()
+		$PLAYTEST.show()
+		$"Upgrade Man/NPCMagic".hide()
+		$"Upgrade Man/NPCEnd".hide()
+
 func _on_door_andy_pressed():
 	print("leaving...")
 	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")
