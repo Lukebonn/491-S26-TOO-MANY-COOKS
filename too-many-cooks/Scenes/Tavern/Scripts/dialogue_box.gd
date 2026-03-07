@@ -5,12 +5,12 @@ extends Control
 
 var is_printing_text = false
 var is_awaiting_response = false
-@export var text_speed = .02
+@export var text_speed = .01
 
 #args character = which character are we talking to? pulled from a JSON list prolly
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
-func show_dialogue(character: String, index: String):
+func show_dialogue(character: String, index):
 	$"..".in_dialogue = true
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
@@ -22,7 +22,7 @@ func hide_dialogue():
 	$"..".in_dialogue = false
 	
 
-func print_text(character: String, index: String):
+func print_text(character: String, index):
 	$Container/Speaker/SpeakerLabel.text = character
 	
 	is_printing_text = true
@@ -30,7 +30,6 @@ func print_text(character: String, index: String):
 	
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
-		print(message_ref)
 		#show_sprite(message_ref,0)
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
@@ -42,7 +41,6 @@ func print_text(character: String, index: String):
 	else:
 		for line in message_ref:
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
-			print(line)
 			$Container/Dialogue/DialogueLabel.text = line
 			for letter in line.length():
 				$Container/Dialogue/DialogueLabel.visible_characters += 1 
@@ -56,7 +54,9 @@ func print_text(character: String, index: String):
 	#we also want to be able to encode things like expressions
 	#and sounds
 
-func find_message(character: String, index: String):
+func find_message(character: String, index):
+	var text : Array[String]
+	var file
 	match character:
 		"Meowy":
 			match index:
@@ -72,3 +72,13 @@ func find_message(character: String, index: String):
 		"ChattyCatty":
 			match index:
 				pass
+		"NPC1":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/NPC1.txt", FileAccess.READ)
+	var body = file.get_as_text()
+	body = body.split("\n")
+	index = index.split(",")
+	print(index)
+	for line in index:
+		print(body.get(index.get(line.to_int()).to_int()))
+		text.append(body.get(index.get(line.to_int()).to_int()))
+	return text

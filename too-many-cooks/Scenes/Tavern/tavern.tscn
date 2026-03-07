@@ -5,9 +5,12 @@
 [ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="1_www31"]
 [ext_resource type="Script" uid="uid://b3la3oieo5lrp" path="res://Scenes/Tavern/Scripts/tavern_bg.gd" id="2_3n42s"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="3_3n42s"]
-[ext_resource type="Script" uid="uid://jbdgoly6qy0n" path="res://Characters/NPCs [tavern]/NPC_Class.gd" id="6_41fud"]
+[ext_resource type="Texture2D" uid="uid://c5rea1u5p5di" path="res://Scenes/Tavern/Art/tavernCOLORED.png" id="5_535h7"]
+[ext_resource type="Script" uid="uid://jbdgoly6qy0n" path="res://Scenes/Tavern/Scripts/NPC_Class.gd" id="6_41fud"]
 [ext_resource type="Texture2D" uid="uid://bh0bc2eq0lcxd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cat.png" id="7_535h7"]
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
+[ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
+[ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -24,14 +27,10 @@ shadow_size = 10
 
 [sub_resource type="Theme" id="Theme_1uoo0"]
 
-[sub_resource type="Gradient" id="Gradient_wwyh0"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ijo1q"]
-gradient = SubResource("Gradient_wwyh0")
-width = 3456
-height = 648
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
+size = Vector2(128, 128)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
 
 [node name="Tavern" type="Node2D" unique_id=233294115]
@@ -134,33 +133,22 @@ script = ExtResource("2_3n42s")
 scroll_speed = 100.0
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
-texture = SubResource("GradientTexture2D_ijo1q")
+texture = ExtResource("5_535h7")
 centered = false
 
-[node name="Guy 1" type="Sprite2D" parent="Tavern BG" unique_id=1740733379]
-position = Vector2(710, 309)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_3n42s")
-
-[node name="Guy 2" type="Sprite2D" parent="Tavern BG" unique_id=572135851]
-position = Vector2(1458, 309)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_3n42s")
-
-[node name="KingArthur" type="TextureButton" parent="Tavern BG" unique_id=952928426]
+[node name="NPC1" type="TextureButton" parent="Tavern BG" unique_id=952928426]
 layout_mode = 0
-offset_left = 2097.0
+offset_left = 1863.0
 offset_top = 309.0
-offset_right = 2609.0
+offset_right = 2375.0
 offset_bottom = 821.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("3_3n42s")
 texture_pressed = ExtResource("3_3n42s")
 script = ExtResource("6_41fud")
-Name = "KingArthur"
+Name = "NPC1"
 Expressions = Array[Texture]([ExtResource("7_a44po")])
-Conversations = Array[String](["0"])
-metadata/_custom_type_script = "uid://jbdgoly6qy0n"
+Conversations = Array[String](["0,1,2"])
 
 [node name="Chatty Catty" type="TextureButton" parent="Tavern BG" unique_id=723860022]
 layout_mode = 0
@@ -175,17 +163,6 @@ script = ExtResource("6_41fud")
 Name = "ChattyCatty"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("7_a44po")])
 Conversations = Array[String](["01", "2"])
-metadata/_custom_type_script = "uid://jbdgoly6qy0n"
-
-[node name="Guy 5" type="Sprite2D" parent="Tavern BG" unique_id=295720806]
-position = Vector2(806, 238)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_3n42s")
-
-[node name="Guy 6" type="Sprite2D" parent="Tavern BG" unique_id=1900057226]
-position = Vector2(844, 350)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_3n42s")
 
 [node name="Door Andy" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
 layout_mode = 0
@@ -205,6 +182,58 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "DOOR TO COMBAT"
 fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrade Man" type="Control" parent="Tavern BG" unique_id=2040262124]
+anchors_preset = 0
+script = ExtResource("10_pv64h")
+
+[node name="ProtoUpgrade" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
+layout_mode = 0
+offset_left = 1377.0
+offset_top = 397.0
+offset_right = 1505.0
+offset_bottom = 525.0
+texture_normal = SubResource("PlaceholderTexture2D_pv64h")
+script = ExtResource("10_gr732")
+Cost_Amount = Array[int]([1])
+Cost_Material = Array[int]([0])
+Upgrade_Reward = Array[String](["Magic"])
+Is_Complicated = true
+metadata/_custom_type_script = "uid://bb7uucsrpfp4w"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/ProtoUpgrade" unique_id=1903962225]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Upgrade!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/ProtoUpgrade" unique_id=161632022]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -148.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/ProtoUpgrade/Panel" unique_id=693083008]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 60.0
+text = "Costs:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -238,7 +267,6 @@ offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[connection signal="pressed" from="Tavern BG/KingArthur" to="Tavern BG" method="_on_guy_3_pressed"]
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]

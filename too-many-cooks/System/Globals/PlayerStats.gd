@@ -17,3 +17,11 @@ var Speed_Slowdown = 150.0
 #is edited in the player (not here)
 var MaxHealth := 100.0
 var MaxMana := 100.0
+
+#magic type, this correlates to what spell is cast
+#set to none for the playtest1 at first
+# Possible magic types:
+# None = no magic
+# Fireball = projectile
+# Regen = regeneration spell for 5 seconds (not in)
+var Magic := "None"
