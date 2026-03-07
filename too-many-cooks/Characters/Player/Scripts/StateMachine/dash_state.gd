@@ -10,6 +10,8 @@ var dash_counter : int = 0
 var cooldown : float = 5
 var cooldown_timer : float = 0
 
+signal player_in_hitbox(Area2D)
+
 ##Calls player_state enter_state method to have 'player' reference player node
 #sets players speed to dash_speed, resets duration timer
 func enter_state(player_node):
@@ -45,6 +47,9 @@ func input_handler(delta : float) -> void:
 		timer -= delta
 	else:
 		player.change_state("idle_state")
+		#player hurtbox is flicked on and off once dash ends so that it will check for collisions
+		$"../Hurtbox".monitoring = false
+		$"../Hurtbox".monitoring = true
 		start_cooldown(delta)
 
 ##starts a timer that keeps track of if the player is spamming dash
