@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="3_787b4"]
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_nnrde"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_uwhm3"]
+[ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -211,3 +212,9 @@ texture = ExtResource("4_uwhm3")
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("3_787b4")]
 position = Vector2(601, 344)
 scale = Vector2(1, 1)
+
+[node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_tum0s")]
+offset_left = 406.0
+offset_top = 291.0
+offset_right = 541.0
+offset_bottom = 341.0
