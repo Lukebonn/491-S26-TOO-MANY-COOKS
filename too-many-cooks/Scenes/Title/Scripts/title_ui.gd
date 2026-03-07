@@ -36,3 +36,11 @@ func cast_aside_title_and_get_to_menu():
 
 func _on_quit_button_down():
 	get_tree().quit()
+
+
+func _on_start_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")

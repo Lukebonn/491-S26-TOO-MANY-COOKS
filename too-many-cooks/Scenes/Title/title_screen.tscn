@@ -315,12 +315,12 @@ alignment = 1
 [node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Start"
+text = "Tavern"
 
 [node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Continue"
+text = "Combat"
 
 [node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092]
 layout_mode = 2
@@ -611,6 +611,8 @@ text = "Back
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/Cat" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Stuff that spins" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Start" to="Title UI" method="_on_start_pressed"]
+[connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Continue" to="Title UI" method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI" method="_on_settings_pressed"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
