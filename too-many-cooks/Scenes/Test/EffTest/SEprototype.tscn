@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
+[ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/HealthBarBorder.png" id="5_8ktjv"]
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_dvulo")
@@ -76,6 +77,7 @@ text = "Mana Value"
 horizontal_alignment = 1
 
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
+visible = false
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 168.0
@@ -146,6 +148,11 @@ theme_override_font_sizes/normal_font_size = 53
 text = "You Have Died!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HealthBarBorder" type="Sprite2D" parent="." unique_id=42185410]
+position = Vector2(189.50002, 99.00001)
+scale = Vector2(3.6222222, 3.8285716)
+texture = ExtResource("5_8ktjv")
 
 [connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
