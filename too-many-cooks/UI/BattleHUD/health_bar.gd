@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 var enteredCriticalHealth = false
 var flash = true
 
@@ -11,9 +11,10 @@ func _ready() -> void:
 	# sets the color of the Health bar to be red
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	value = get_parent().player.displayHealth
 	$HealthValue.text = str(get_parent().player.displayHealth)
+	
 	# These two lines of code make sure that the values on the bar
 	# are always up to date.
 	

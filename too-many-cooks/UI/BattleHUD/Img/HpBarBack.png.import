@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cav7kjl11v50t"
-path="res://.godot/imported/HealthBarBorder.png-1d249ff4b83f35b7aea74fcaed40b8fd.ctex"
+uid="uid://bgprqylqedkbv"
+path="res://.godot/imported/HpBarBack.png-c5edd3202feafbfb758fffd6d5a47bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/BattleHUD/HealthBarBorder.png"
-dest_files=["res://.godot/imported/HealthBarBorder.png-1d249ff4b83f35b7aea74fcaed40b8fd.ctex"]
+source_file="res://UI/BattleHUD/Img/HpBarBack.png"
+dest_files=["res://.godot/imported/HpBarBack.png-c5edd3202feafbfb758fffd6d5a47bfd.ctex"]
 
 [params]
 

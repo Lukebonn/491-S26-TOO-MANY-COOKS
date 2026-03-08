@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://8cinn6ehtcgy"]
 
 [ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scenes/Test/EffTest/UI.gd" id="1_dvulo"]
+[ext_resource type="Texture2D" uid="uid://d2x02b0k0qqrh" path="res://UI/BattleHUD/Img/HpBarFill.png" id="2_1p4yy"]
+[ext_resource type="Texture2D" uid="uid://bgprqylqedkbv" path="res://UI/BattleHUD/Img/HpBarBack.png" id="2_7ubs7"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
-[ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/HealthBarBorder.png" id="5_8ktjv"]
+[ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/Img/HpBarBorder.png" id="5_8ktjv"]
 
 [node name="SEprototype" type="Node2D" unique_id=1031834621]
 script = ExtResource("1_dvulo")
@@ -37,13 +39,21 @@ offset_bottom = 584.0
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
 
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=104365550]
+[node name="HealthBarBack" type="Sprite2D" parent="." unique_id=1743607461]
+position = Vector2(200, 80)
+scale = Vector2(3.6222222, 3.8285716)
+texture = ExtResource("2_7ubs7")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1201939551]
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 384.0
 offset_bottom = 112.0
 value = 50.0
-show_percentage = false
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_right = 4
+texture_progress = ExtResource("2_1p4yy")
 script = ExtResource("2_snacm")
 
 [node name="HealthValue" type="RichTextLabel" parent="HealthBar" unique_id=383234510]
@@ -58,6 +68,11 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="HealthBar" unique_id=488911210]
 wait_time = 0.1
+
+[node name="HealthBarBorder" type="Sprite2D" parent="HealthBar" unique_id=42185410]
+position = Vector2(173.50002, 51.000008)
+scale = Vector2(3.6222222, 3.8285716)
+texture = ExtResource("5_8ktjv")
 
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=809030424]
 offset_left = 16.0
@@ -148,11 +163,6 @@ theme_override_font_sizes/normal_font_size = 53
 text = "You Have Died!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="HealthBarBorder" type="Sprite2D" parent="." unique_id=42185410]
-position = Vector2(189.50002, 99.00001)
-scale = Vector2(3.6222222, 3.8285716)
-texture = ExtResource("5_8ktjv")
 
 [connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
