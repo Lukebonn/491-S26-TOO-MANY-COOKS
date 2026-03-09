@@ -42,6 +42,7 @@ func print_text(character: String, index, emotions):
 		hide_dialogue()
 	else:
 		for line in message_ref:
+			'''
 			if "[" in line:
 				match line:
 					"[","A","N","G", "R", "Y", "]", _ : 
@@ -49,7 +50,7 @@ func print_text(character: String, index, emotions):
 					"[","S","M","I","R","K","]", _: 
 						var cur_emote: String
 						if cur_emote in line:
-							$Container/SpeakerSprite.texture = emotions[3]
+							$Container/SpeakerSprite.texture = emotions[3]'''
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line
 			for letter in line.length():
