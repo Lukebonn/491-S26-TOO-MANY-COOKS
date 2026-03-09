@@ -14,6 +14,6 @@ func _send_conversation():
 	#maybe variant takes from ur current spell,
 	#or the npc's current relation with you (a new variable)
 	#or a boss thats been defeated
-	DialogueBox.show_dialogue(Name,Conversations[0])
+	DialogueBox.show_dialogue(Name,Conversations[0], Expressions)
 
 	

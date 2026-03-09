@@ -10,11 +10,11 @@ var is_awaiting_response = false
 #args character = which character are we talking to? pulled from a JSON list prolly
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
-func show_dialogue(character: String, index):
+func show_dialogue(character: String, index, emotions):
 	$"..".in_dialogue = true
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
-	print_text(character, index)
+	print_text(character, index, emotions)
 	
 func hide_dialogue():
 	var tween = get_tree().create_tween()
@@ -22,14 +22,17 @@ func hide_dialogue():
 	$"..".in_dialogue = false
 	
 
-func print_text(character: String, index):
+func print_text(character: String, index, emotions):
+	var emote : String
 	$Container/Speaker/SpeakerLabel.text = character
 	is_printing_text = true
-	var message_ref = find_message(character, index)
+	var message_ref = find_message(character, index, emotions)
 	
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
-		#show_sprite(message_ref,0)
+		'''match emote:
+			_ : $Container/SpeakerSprite1.texture = emotions[0] 
+			"[SMIRK]" : $Container/SpeakerSprite1.texture = emotions[3]'''
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
 		for letter in message_ref.length():
@@ -39,6 +42,9 @@ func print_text(character: String, index):
 		hide_dialogue()
 	else:
 		for line in message_ref:
+			match emote:
+				_ : $Container/SpeakerSprite.texture = emotions[0] 
+				"[SMIRK]",_ : $Container/SpeakerSprite.texture = emotions[3]
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line
 			for letter in line.length():
@@ -53,9 +59,10 @@ func print_text(character: String, index):
 	#we also want to be able to encode things like expressions
 	#and sounds
 
-func find_message(character: String, index):
+func find_message(character: String, index, emotions):
 	var text : Array[String]
 	var file
+	
 	match character:
 		"Meowy":
 			match index:
@@ -73,6 +80,7 @@ func find_message(character: String, index):
 				pass
 		"Tutorial":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/NPC1.txt", FileAccess.READ)
+				
 		"Ranger":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/RANGER.txt", FileAccess.READ)
 			PlayerStats.Magic = "Fireball"
