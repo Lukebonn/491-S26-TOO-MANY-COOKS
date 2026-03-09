@@ -5,3 +5,5 @@ extends Node
 #or player progression flags to determine npc dialogue
 
 var Has_Finished_Playtest := false
+
+var Is_In_Dialogue := false

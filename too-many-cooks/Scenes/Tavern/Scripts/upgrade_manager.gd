@@ -17,5 +17,10 @@ func _on_upgrade_complicated(variant):
 		"NPCMagic":
 			$"../RANGER".show()
 			$NPCEnd.show()
+			$"../TavernBackgroundLong".hide()
+			$"../TavernBackgroundLong2".show()
+			
 		"NPCEnd":
 			$"../PLAYTEST".show()
+			$"../TavernBackgroundLong2".hide()
+			$"../TavernBackgroundLong3".show()

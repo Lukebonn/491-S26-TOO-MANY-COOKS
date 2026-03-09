@@ -320,6 +320,7 @@ text = "Tavern"
 [node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
+disabled = true
 text = "Combat"
 
 [node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092]

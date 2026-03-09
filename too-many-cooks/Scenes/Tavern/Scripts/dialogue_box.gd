@@ -26,6 +26,7 @@ func print_text(character: String, index, emotions):
 	#`var emote
 	$Container/Speaker/SpeakerLabel.text = character
 	is_printing_text = true
+	Global.Is_In_Dialogue = true
 	var message_ref = find_message(character, index, emotions)
 	
 	#check if its string (one line) or array (more than one)
@@ -58,7 +59,7 @@ func print_text(character: String, index, emotions):
 				await get_tree().create_timer(text_speed).timeout
 			await $"..".next_line
 		hide_dialogue()
-	
+	Global.Is_In_Dialogue = false
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
 	#then print it out
