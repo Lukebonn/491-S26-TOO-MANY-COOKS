@@ -23,7 +23,7 @@ func hide_dialogue():
 	
 
 func print_text(character: String, index, emotions):
-	var emote : String
+	#`var emote
 	$Container/Speaker/SpeakerLabel.text = character
 	is_printing_text = true
 	var message_ref = find_message(character, index, emotions)
@@ -42,9 +42,16 @@ func print_text(character: String, index, emotions):
 		hide_dialogue()
 	else:
 		for line in message_ref:
-			match emote:
-				_ : $Container/SpeakerSprite.texture = emotions[0] 
-				"[SMIRK]",_ : $Container/SpeakerSprite.texture = emotions[3]
+			if "[" in line:
+				match line:
+					"[ANGRY]" : 
+						var cur_emote
+						if cur_emote in line:
+							$Container/SpeakerSprite.texture = emotions[1] 
+					"[SMIRK]", _: 
+						var cur_emote: String
+						if cur_emote in line:
+							$Container/SpeakerSprite.texture = emotions[3]
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line
 			for letter in line.length():
