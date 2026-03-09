@@ -44,11 +44,9 @@ func print_text(character: String, index, emotions):
 		for line in message_ref:
 			if "[" in line:
 				match line:
-					"[ANGRY]" : 
-						var cur_emote
-						if cur_emote in line:
-							$Container/SpeakerSprite.texture = emotions[1] 
-					"[SMIRK]", _: 
+					"[","A","N","G", "R", "Y", "]", _ : 
+						$Container/SpeakerSprite.texture = emotions[2] 
+					"[","S","M","I","R","K","]", _: 
 						var cur_emote: String
 						if cur_emote in line:
 							$Container/SpeakerSprite.texture = emotions[3]
