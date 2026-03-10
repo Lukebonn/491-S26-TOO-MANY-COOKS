@@ -20,6 +20,7 @@ config/icon="res://Scenes/Test/ProtoArt/icon.svg"
 Global="*uid://c5ownmyiwqqxa"
 SaveMgr="*uid://bmqmy686mrgl3"
 PlayerStats="*uid://b8r6bpm0nl0b2"
+DamageNumbers="*uid://cqs4quf3yaur8"
 
 [display]
 

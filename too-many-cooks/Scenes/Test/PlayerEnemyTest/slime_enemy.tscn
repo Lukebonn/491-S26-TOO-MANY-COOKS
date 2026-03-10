@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Scenes/Test/PlayerEnemyTest/Scripts/slime_enemy.gd" id="1_blvt8"]
 [ext_resource type="Texture2D" uid="uid://d28t75hmkruus" path="res://Scenes/Test/ProtoArt/Enemy/slime.png" id="2_36bin"]
+[ext_resource type="Script" uid="uid://cqs4quf3yaur8" path="res://System/Globals/DamageNumbers.gd" id="3_36bin"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mj271"]
 atlas = ExtResource("2_36bin")
@@ -89,6 +90,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_blvt8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_36bin")
 value = 50.0
 show_percentage = false
+
+[node name="DamageNumbersOrigin" type="Node2D" parent="." unique_id=597681092]
+position = Vector2(0, -27)
+script = ExtResource("3_36bin")
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
