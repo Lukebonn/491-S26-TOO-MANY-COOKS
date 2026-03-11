@@ -3,7 +3,7 @@ extends CharacterBody2D
 #for temp health
 @onready var temp_health_bar: ProgressBar = $"Temp Health Bar"
 
-const SPEED = 100.0
+const SPEED = 1.0
 const KNOCKBACK_FORCE: int = 20
 var player_chase=false
 var player = null
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	temp_health_bar.value = health #update enemy health bar
 	
 	if player_chase:
-		position += (player.position-position)/SPEED
+		position += (player.position-position)*SPEED*delta
 	
 
 #func _attack(delta: float) -> void:
