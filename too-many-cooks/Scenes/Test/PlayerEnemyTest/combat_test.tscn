@@ -8,7 +8,16 @@
 [ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.wav" id="6_qh6lb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnocq"]
-size = Vector2(38, 64)
+size = Vector2(38, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh6lb"]
+size = Vector2(240, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5c44"]
+size = Vector2(8, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74vm0"]
+size = Vector2(8, 144)
 
 [node name="CombatTest" type="Node2D" unique_id=469150633]
 
@@ -17,9 +26,10 @@ zoom = Vector2(5, 5)
 process_callback = 0
 
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("1_vmwr5")]
+position = Vector2(-64, 0)
 
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("2_sli66")]
-position = Vector2(74, 1)
+position = Vector2(64, 0)
 scale = Vector2(1, 1)
 
 [node name="UI" parent="." unique_id=1031834621 instance=ExtResource("3_1lw8e")]
@@ -37,7 +47,7 @@ collision_layer = 64
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase/TavernReturn" unique_id=1889735904]
-position = Vector2(0, -47)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_lnocq")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=756298209]
@@ -45,6 +55,26 @@ stream = ExtResource("6_qh6lb")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="ScreenBoundaries" type="StaticBody2D" parent="." unique_id=1439795017]
+collision_layer = 64
+collision_mask = 63
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenBoundaries" unique_id=59190628]
+position = Vector2(0, 68)
+shape = SubResource("RectangleShape2D_qh6lb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScreenBoundaries" unique_id=970513235]
+position = Vector2(0, -68)
+shape = SubResource("RectangleShape2D_qh6lb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ScreenBoundaries" unique_id=558196252]
+position = Vector2(-116, 0)
+shape = SubResource("RectangleShape2D_u5c44")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ScreenBoundaries" unique_id=1923070164]
+position = Vector2(124, 0)
+shape = SubResource("RectangleShape2D_74vm0")
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]

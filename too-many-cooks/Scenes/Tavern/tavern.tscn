@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
+[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="16_6jyd3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -383,6 +384,21 @@ offset_right = 96.0
 offset_bottom = 608.0
 grow_vertical = 2
 
+[node name="LeftPanelArrow" type="TextureRect" parent="HeadsUpUI/LeftPanel" unique_id=674523534]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_6jyd3")
+
 [node name="RightPanel" type="Panel" parent="HeadsUpUI" unique_id=92928351]
 z_index = 2
 layout_mode = 1
@@ -395,6 +411,22 @@ offset_right = 1112.0
 offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="RightPanelArrow" type="TextureRect" parent="HeadsUpUI/RightPanel" unique_id=1739437180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_6jyd3")
+flip_h = true
 
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
