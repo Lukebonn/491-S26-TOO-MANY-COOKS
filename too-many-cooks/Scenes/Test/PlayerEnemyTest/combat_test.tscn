@@ -37,7 +37,7 @@ scale = Vector2(1, 1)
 
 [node name="UI" parent="." unique_id=1031834621 instance=ExtResource("3_1lw8e")]
 position = Vector2(-109.00001, -65)
-scale = Vector2(0.17842205, 0.17842205)
+scale = Vector2(0.15, 0.15)
 
 [node name="Staircase" type="Sprite2D" parent="." unique_id=1646119538]
 z_index = -1
