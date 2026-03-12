@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bnp3ksrmhwhps"]
+
+[ext_resource type="Script" uid="uid://dcgayxw0j1ggb" path="res://intro_screen.gd" id="1_4pqbn"]
+
+[node name="Intro Screen" type="ColorRect" unique_id=1962694564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pqbn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=166489996]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -578.0
+offset_top = 157.0
+offset_right = 578.0
+offset_bottom = 444.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Once upon a time, in the kingdom of Faunia, in a town named Litshire, the people lived under peace and prosperity. Until one day, the Rat King and his marauders plundered and crushed the land. Many heroes tried to defeat him to no avail. We are doomed."
+horizontal_alignment = 1

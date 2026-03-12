@@ -39,7 +39,7 @@ func _on_quit_button_down():
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+	get_tree().change_scene_to_file("res://intro_screen.tscn")
 
 
 func _on_continue_pressed():

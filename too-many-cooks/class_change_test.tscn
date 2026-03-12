@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cjfxykddcq6vq"]
+
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_13wj5"]
+
+[node name="ClassChangeTest" type="Node2D" unique_id=823272926]
+
+[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("1_13wj5")]
+position = Vector2(535, 387)
+
+[node name="Knight" type="Button" parent="." unique_id=774606522]
+offset_left = 274.0
+offset_top = 181.0
+offset_right = 333.0
+offset_bottom = 212.0
+text = "Knight"
+
+[node name="Mage" type="Button" parent="." unique_id=1362157460]
+offset_left = 738.0
+offset_top = 181.0
+offset_right = 789.0
+offset_bottom = 212.0
+text = "Mage"
+
+[node name="Ranger" type="Button" parent="." unique_id=1139694126]
+offset_left = 504.0
+offset_top = 178.0
+offset_right = 567.0
+offset_bottom = 209.0
+text = "Ranger"
+
+[connection signal="pressed" from="Knight" to="Player" method="_on_knight_pressed"]
+[connection signal="pressed" from="Mage" to="Player" method="_on_mage_pressed"]
+[connection signal="pressed" from="Ranger" to="Player" method="_on_ranger_pressed"]

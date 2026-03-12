@@ -7,7 +7,7 @@ var mana : float = PlayerStats.MaxMana
 # likely just be using whole numbers for it.
 var displayMana : int = int(mana)
 var speed : int = 100
-
+var Class = "Default"
 var current_dir : Vector2 = Vector2(0,-1)
 
 var local_mouse_pos : Vector2
@@ -72,3 +72,18 @@ func _on_hitbox_area_entered(_area):
 func _on_tavern_return_area_entered(area: Area2D):
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
+
+
+func _on_knight_pressed():
+	Class = "Knight"
+	print("Your class is now: " + Class)
+
+
+func _on_mage_pressed():
+	Class = "Mage"
+	print("Your class is now: " + Class)
+
+
+func _on_ranger_pressed():
+	Class = "Ranger"
+	print("Your class is now: " + Class)
