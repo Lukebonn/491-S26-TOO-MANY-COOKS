@@ -16,11 +16,24 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -578.0
-offset_top = 157.0
+offset_top = 93.0
 offset_right = 578.0
-offset_bottom = 444.0
+offset_bottom = 538.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
-text = "Once upon a time, in the kingdom of Faunia, in a town named Litshire, the people lived under peace and prosperity. Until one day, the Rat King and his marauders plundered and crushed the land. Many heroes tried to defeat him to no avail. We are doomed."
+text = "The premise:
+Once upon a time, in the kingdom of Faunia, in a town named Litshire, the people lived under peace and prosperity. Until one day, the Rat King and his marauders plundered and crushed the land. Many heroes tried to defeat him to no avail. We are doomed.
+"
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1264584158]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 447.0
+offset_right = 712.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 64
+text = "OK"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

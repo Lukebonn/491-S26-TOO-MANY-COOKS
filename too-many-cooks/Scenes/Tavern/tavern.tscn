@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
 [ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="16_6jyd3"]
+[ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -431,9 +432,171 @@ grow_vertical = 2
 texture = ExtResource("16_6jyd3")
 flip_h = true
 
+[node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_7td72")
+
+[node name="FirstPanel" type="Panel" parent="FirstTimeUI" unique_id=1083427474]
+z_index = 2
+layout_mode = 1
+offset_left = 302.0
+offset_top = 132.0
+offset_right = 878.0
+offset_bottom = 429.0
+
+[node name="Label" type="Label" parent="FirstTimeUI/FirstPanel" unique_id=2066306281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Welcome to the tavern!
+This is where you can upgrade and talk 
+to NPCs to help you get stronger."
+horizontal_alignment = 1
+
+[node name="ButtonOne" type="Button" parent="FirstTimeUI/FirstPanel" unique_id=1277610040]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 88.5
+offset_right = 47.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "OK"
+
+[node name="SecondPanel" type="Panel" parent="FirstTimeUI" unique_id=1680088400]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 259.0
+offset_top = 371.0
+offset_right = 635.0
+offset_bottom = 510.0
+
+[node name="Label" type="Label" parent="FirstTimeUI/SecondPanel" unique_id=1666957017]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 375.0
+offset_bottom = 109.0
+text = "You can upgrade your tavern by clicking here. 
+Upgrading your tavern can make new NPCs
+appear.
+"
+horizontal_alignment = 1
+
+[node name="ButtonTwo" type="Button" parent="FirstTimeUI/SecondPanel" unique_id=1190458107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = 21.5
+offset_right = 43.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "OK"
+
+[node name="ThirdPanel" type="Panel" parent="FirstTimeUI" unique_id=479480410]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 489.0
+offset_top = 149.0
+offset_right = 865.0
+offset_bottom = 288.0
+
+[node name="Label" type="Label" parent="FirstTimeUI/ThirdPanel" unique_id=1087305835]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 375.0
+offset_bottom = 109.0
+text = "This is an NPC. 
+You can talk to them by clicking on them.
+Some may allow you to become stronger."
+horizontal_alignment = 1
+
+[node name="ButtonThree" type="Button" parent="FirstTimeUI/ThirdPanel" unique_id=1968508285]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = 21.5
+offset_right = 43.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "OK"
+
+[node name="FourthPanel" type="Panel" parent="FirstTimeUI" unique_id=243541216]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 404.0
+offset_top = 178.0
+offset_right = 780.0
+offset_bottom = 317.0
+
+[node name="Label" type="Label" parent="FirstTimeUI/FourthPanel" unique_id=280864426]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 375.0
+offset_bottom = 109.0
+text = "The bars on the sides let you move the camera.
+You can leave the tavern by clicking the door
+on the right side of the tavern.
+"
+horizontal_alignment = 1
+
+[node name="ButtonFour" type="Button" parent="FirstTimeUI/FourthPanel" unique_id=1026356765]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = 21.5
+offset_right = 43.0
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "OK"
+
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
+[connection signal="pressed" from="FirstTimeUI/FirstPanel/ButtonOne" to="FirstTimeUI" method="_on_button_one_pressed"]
+[connection signal="pressed" from="FirstTimeUI/SecondPanel/ButtonTwo" to="FirstTimeUI" method="_on_button_two_pressed"]
+[connection signal="pressed" from="FirstTimeUI/ThirdPanel/ButtonThree" to="FirstTimeUI" method="_on_button_three_pressed"]
+[connection signal="pressed" from="FirstTimeUI/FourthPanel/ButtonFour" to="FirstTimeUI" method="_on_button_four_pressed"]

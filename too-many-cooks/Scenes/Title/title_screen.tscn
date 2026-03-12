@@ -315,13 +315,13 @@ alignment = 1
 [node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Tavern"
+text = "Start"
 
 [node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 disabled = true
-text = "Combat"
+text = "Continue"
 
 [node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092]
 layout_mode = 2

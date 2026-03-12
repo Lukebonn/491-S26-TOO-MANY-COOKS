@@ -13,11 +13,13 @@ func _process(delta):
 		position.x = clamp(position.x,-2304.0,0.0)
 func _on_left_panel_mouse_entered():
 	#lerp it to -1
-	var tween = get_tree().create_tween()
-	tween.tween_property(self,"direction",10,1).set_trans(Tween.TRANS_CUBIC)
+	if !Global.First_Time_Tavern:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self,"direction",10,1).set_trans(Tween.TRANS_CUBIC)
 func _on_right_panel_mouse_entered():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self,"direction",-10,1).set_trans(Tween.TRANS_CUBIC)
+	if !Global.First_Time_Tavern:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self,"direction",-10,1).set_trans(Tween.TRANS_CUBIC)
 func _either_panel_mouse_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"direction",0,1).set_trans(Tween.TRANS_CUBIC)
