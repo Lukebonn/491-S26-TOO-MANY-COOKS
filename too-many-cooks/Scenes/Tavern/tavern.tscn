@@ -12,9 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://chkxggdp3r60q" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade2.png" id="7_6jyd3"]
 [ext_resource type="Texture2D" uid="uid://bh0bc2eq0lcxd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cat.png" id="7_535h7"]
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
+[ext_resource type="Texture2D" uid="uid://cd1c4eu47edfb" path="res://Scenes/Test/ProtoArt/chipmunk.png" id="8_ir5m0"]
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
+[ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
+[ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
 [ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="16_6jyd3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
@@ -169,8 +172,8 @@ offset_top = 309.0
 offset_right = 2375.0
 offset_bottom = 821.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_3n42s")
-texture_pressed = ExtResource("3_3n42s")
+texture_normal = ExtResource("8_ir5m0")
+texture_pressed = ExtResource("8_ir5m0")
 script = ExtResource("6_41fud")
 Name = "Tutorial"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
@@ -185,8 +188,8 @@ offset_top = 212.0
 offset_right = 2712.0
 offset_bottom = 724.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_3n42s")
-texture_pressed = ExtResource("3_3n42s")
+texture_normal = ExtResource("14_7td72")
+texture_pressed = ExtResource("14_7td72")
 flip_h = true
 script = ExtResource("6_41fud")
 Name = "Ranger"
@@ -212,8 +215,8 @@ offset_top = 200.0
 offset_right = 2051.0
 offset_bottom = 712.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_3n42s")
-texture_pressed = ExtResource("3_3n42s")
+texture_normal = ExtResource("15_16683")
+texture_pressed = ExtResource("15_16683")
 flip_h = true
 script = ExtResource("6_41fud")
 Name = "Playtest"
