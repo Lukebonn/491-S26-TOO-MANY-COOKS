@@ -1,14 +1,14 @@
-[gd_scene format=4 uid="uid://buddsphtvh11b"]
+[gd_scene format=4 uid="uid://cwqww6jve7wdb"]
 
-[ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdMap.png" id="1_0l5ya"]
-[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_pc4nk"]
-[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="3_787b4"]
-[ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_nnrde"]
-[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_uwhm3"]
-[ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
+[ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdMap.png" id="1_3260u"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_6mw51"]
+[ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_vvol3"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_ld5va"]
+[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="5_8m23b"]
+[ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_gijrm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
-texture = ExtResource("1_0l5ya")
+texture = ExtResource("1_3260u")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -189,7 +189,7 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAQACAAAAAGAAMAAAARACAAAAABAAQAAAASACIAAAAGAAMAAAATACAAAAAGAAMAAAATACEAAAAGAAMAAAATACMAAAAGAAMAAAATACcAAAAGAAMAAAAVACEAAAAGAAMAAAAWACIAAAABAAQAAAAXACYAAAAGAAMAAAAYACAAAAAGAAMAAAAYACYAAAABAAQAAAAZACQAAAAGAAMAAAAdACMAAAAGAAMAAAAeACcAAAAGAAMAAAAfACEAAAAGAAMAAAAfACMAAAAGAAMAAAAhACAAAAAGAAMAAAAhACcAAAAGAAMAAAAjACQAAAAGAAMAAAAjACUAAAAGAAMAAAAmACcAAAAGAAMAAAAnAB8AAAAGAAMAAAAoACIAAAAGAAMAAAAoACcAAAAGAAMAAAApACAAAAAGAAMAAAApACQAAAAGAAMAAAAsACAAAAAGAAMAAAAsACQAAAAGAAMAAAAuACUAAAAGAAMAAAAyACMAAAAGAAMAAAAzACQAAAAGAAMAAAA1AB8AAAAGAAMAAAA1ACIAAAAGAAMAAAA1ACcAAAAGAAMAAAA2AB8AAAAGAAMAAAA2ACEAAAAGAAMAAAA3ACAAAAAGAAMAAAA3ACMAAAAGAAMAAAA3ACYAAAAGAAMAAAA4ACIAAAAGAAMAAAA5ACYAAAAGAAMAAAA6ACMAAAAGAAMAAAA7ACcAAAAGAAMAAAA8ACIAAAAGAAMAAAADABEAAAAGAAMAAAADABMAAAAGAAMAAAADABUAAAAGAAMAAAADABoAAAAGAAMAAAAEABYAAAAGAAMAAAAEABgAAAAGAAMAAAAEABwAAAAGAAMAAAAEAB4AAAAGAAMAAAAFAA8AAAAGAAMAAAAFABAAAAAGAAMAAAAFABkAAAAGAAMAAAAGAA0AAAAGAAMAAAAGABEAAAAGAAMAAAAGABMAAAAGAAMAAAAGABsAAAAGAAMAAAAHABcAAAAGAAMAAAAHABsAAAAGAAMAAAAHAB0AAAAGAAMAAAAIAA4AAAAGAAMAAAAIABMAAAAGAAMAAAAIABoAAAAGAAMAAAAJABAAAAAGAAMAAAAKABkAAAAGAAMAAAALAB4AAAAGAAMAAAAMABEAAAAGAAMAAAAMABIAAAAGAAMAAAANABYAAAAGAAMAAAANABoAAAAGAAMAAAACAAcAAAAGAAMAAAADAAQAAAAGAAMAAAAGAAYAAAAGAAMAAAAGAAgAAAAGAAMAAAAHAAQAAAAGAAMAAAAJAAMAAAAGAAMAAAALAAMAAAAGAAMAAAALAAUAAAAGAAMAAAAMAAIAAAAGAAMAAAANAAgAAAAGAAMAAAAQAAMAAAAGAAMAAAAQAAYAAAAGAAMAAAARAAMAAAAGAAMAAAADACUAAAABAAQAAAAEACUAAAABAAQAAAARACUAAAABAAQAAAAWACAAAAABAAQAAAAYACIAAAABAAQAAAAZACEAAAABAAQAAAAZACMAAAABAAQAAAAaACAAAAABAAQAAAAaACYAAAABAAQAAAAbACUAAAABAAQAAAAdACQAAAABAAQAAAAeACUAAAABAAQAAAAfACYAAAABAAQAAAAiACUAAAABAAQAAAAlACMAAAABAAQAAAAnACQAAAABAAQAAAAxABkAAAABAAQAAAAzABUAAAABAAQAAAAzABkAAAABAAQAAAA1ABgAAAABAAQAAAA6ABgAAAABAAQAAAA8ABkAAAABAAQAAAA9ABcAAAABAAQAAAA9ABoAAAABAAQAAAAuAAoAAAABAAQAAAAwAAgAAAABAAQAAAAyAAkAAAABAAQAAAAyAAwAAAABAAQAAAAzAAgAAAABAAQAAAA0AAgAAAABAAQAAAA0AA4AAAABAAQAAAA2ABMAAAABAAQAAAA3AAQAAAABAAQAAAA3AAUAAAABAAQAAAA3AAsAAAABAAQAAAA4AAkAAAABAAQAAAA5AAQAAAABAAQAAAA5AAUAAAABAAQAAAA5AA8AAAABAAQAAAA6AA8AAAABAAQAAAA7ABIAAAABAAQAAAA8AAoAAAABAAQAAAA8AA8AAAABAAQAAAA8ABAAAAABAAQAAAA9ABMAAAABAAQAAAA+AA4AAAABAAQAAAA/AAYAAAABAAQAAAA/AAcAAAABAAQAAABAAAUAAAABAAQAAABAAAYAAAABAAQAAABAAA8AAAABAAQAAABBAA0AAAABAAQAAABDAAYAAAABAAQAAABDABAAAAABAAQAAAAfAAkAAAABAAQAAAAhAAkAAAABAAQAAAAmAAcAAAABAAQAAAATABoAAAABAAQAAAAUABYAAAABAAQAAAAVABoAAAABAAQAAAAWABkAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_1x0i4")
 
-[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("2_pc4nk")]
+[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("2_6mw51")]
 position = Vector2(500, 339)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1641143463]
@@ -212,7 +212,7 @@ metadata/_edit_use_anchors_ = true
 handle_input_locally = false
 size = Vector2i(258, 258)
 render_target_update_mode = 4
-script = ExtResource("3_nnrde")
+script = ExtResource("3_vvol3")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" unique_id=732298855]
 position = Vector2(-8, 24)
@@ -227,13 +227,13 @@ closed = true
 [node name="Sprite2D" type="Sprite2D" parent="MiniMap/SubViewportContainer" unique_id=193973281]
 position = Vector2(130, 128)
 scale = Vector2(0.045410108, 0.04931638)
-texture = ExtResource("4_uwhm3")
+texture = ExtResource("4_ld5va")
 
-[node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("3_787b4")]
+[node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("5_8m23b")]
 position = Vector2(601, 344)
 scale = Vector2(1, 1)
 
-[node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_tum0s")]
+[node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_gijrm")]
 offset_left = 406.0
 offset_top = 291.0
 offset_right = 541.0
