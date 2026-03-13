@@ -50,10 +50,9 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 	else:
 		print(health)
 		take_damage_sound.play() #pending audio to the take damage
-		
+	
 		#Knockback
-		var knockback_direction = (position - attacker_position).normalized()
-		var target_position = position + knockback_direction * KNOCKBACK_FORCE
+		var target_position = (global_position-attacker_position).normalized().direction_to(-attacker_position) 
 		
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_OUT)
@@ -103,6 +102,6 @@ func get_damage():
 
 func _on_damage_trigger_area_entered(area: Area2D) -> void:
 	if(player):
-		take_damage(20,player.position)
+		take_damage(20,player.global_position)
 	else:
 		take_damage(20,Vector2.ZERO)
