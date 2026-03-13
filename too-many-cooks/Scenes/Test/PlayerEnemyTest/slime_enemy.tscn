@@ -51,6 +51,9 @@ size = Vector2(16.5, 12.5)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36bin"]
 bg_color = Color(1, 0.06999999, 0.08549976, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36bin"]
+size = Vector2(16, 12.25)
+
 [node name="SlimeEnemy" type="CharacterBody2D" unique_id=1633737342]
 position = Vector2(139, 118)
 scale = Vector2(4, 4)
@@ -94,6 +97,10 @@ show_percentage = false
 [node name="DamageNumbersOrigin" type="Node2D" parent="." unique_id=597681092]
 position = Vector2(0, -27)
 script = ExtResource("3_36bin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=205792884]
+position = Vector2(0, -0.875)
+shape = SubResource("RectangleShape2D_36bin")
 
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
