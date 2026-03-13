@@ -83,7 +83,7 @@ func _die() -> void:
 	
 
 func _on_sight_body_entered(body: Node2D) -> void:
-	#print(body.name)
+	print(body.name)
 	if body.name == "SwordEnemy":
 		target = body
 	player=body

@@ -24,6 +24,7 @@ signal playerDeath()
 func _ready() -> void:
 	current_state = get_node("idle_state")
 	current_state.enter_state(self)
+	add_to_group("player")
 
 ##changes state to the node whose name matches new_state
 #new_state: idle_state, move_state, dash_state, attack_state, magic_state (more to be added)

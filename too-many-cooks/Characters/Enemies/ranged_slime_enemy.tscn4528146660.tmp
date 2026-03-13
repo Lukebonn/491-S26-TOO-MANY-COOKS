@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cgxwigre05alx" path="res://Scenes/Test/ProtoArt/Enemy/RangedEnemy/Skeleton_01_White_Walk.png" id="6_f77fc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh3im"]
-radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5otm6"]
 atlas = ExtResource("2_kk4y1")
@@ -360,9 +359,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kk4y1"]
-radius = 57.0
-
 [node name="RangedSlimeEnemy" type="CharacterBody2D" unique_id=260407340]
 script = ExtResource("1_ca75f")
 
@@ -384,10 +380,5 @@ scale = Vector2(0.09, 0.09)
 
 [node name="Sight" type="Area2D" parent="." unique_id=1165885079]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=706055698]
-shape = SubResource("CircleShape2D_kk4y1")
-
 [connection signal="animation_finished" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="area_entered" from="Sight" to="." method="_on_sight_area_entered"]
-[connection signal="area_exited" from="Sight" to="." method="_on_sight_area_exited"]
