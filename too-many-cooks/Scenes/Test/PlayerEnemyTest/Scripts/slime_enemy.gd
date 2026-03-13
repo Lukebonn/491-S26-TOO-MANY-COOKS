@@ -51,8 +51,12 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 		print(health)
 		take_damage_sound.play() #pending audio to the take damage
 	
-		#Knockback
-		var target_position = (global_position-attacker_position).normalized().direction_to(-attacker_position) 
+		#Knockback-what we have now
+		var knockback_direction = (position - attacker_position).normalized()
+		var target_position = position + knockback_direction * KNOCKBACK_FORCE
+		
+		#Been trying to position knockback differently, will fix this soon!
+		#var target_position = (global_position-attacker_position).normalized().direction_to(-attacker_position) 
 		
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_OUT)
