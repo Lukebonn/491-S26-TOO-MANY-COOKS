@@ -31,9 +31,6 @@ func print_text(character: String, index, emotions):
 	
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
-		'''match emote:
-			_ : $Container/SpeakerSprite1.texture = emotions[0] 
-			"[SMIRK]" : $Container/SpeakerSprite1.texture = emotions[3]'''
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
 		for letter in message_ref.length():
@@ -44,18 +41,19 @@ func print_text(character: String, index, emotions):
 	else:
 		for line in message_ref:
 			var emote = find_emote(character, emotions, line)
-			#$Container/SpeakerSprite.texture = emote
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
-			$Container/Dialogue/DialogueLabel.text = line
+			$Container/Dialogue/DialogueLabel.text = line.right(-3)
 			for letter in line.length():
 				$Container/Dialogue/DialogueLabel.visible_characters += 1 
 				await get_tree().create_timer(text_speed).timeout
 			await $"..".next_line
 		hide_dialogue()
+		$Container/SpeakerSprite.hide()
 	Global.Is_In_Dialogue = false
 	
 func find_emote(character: String, emotions, line: String):
 	#print(line + "test")
+	$Container/SpeakerSprite.show()
 	var tag = line[1]
 	match tag:
 		"1":
