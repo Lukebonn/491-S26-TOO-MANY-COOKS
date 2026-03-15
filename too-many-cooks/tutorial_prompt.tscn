@@ -1,7 +1,34 @@
 [gd_scene format=3 uid="uid://cva367os2jx7d"]
 
 [ext_resource type="Texture2D" uid="uid://d2pc0b8u0yb5h" path="res://Characters/Player/Sprites/pixil-frame-0.png" id="1_8nyk8"]
+[ext_resource type="Script" uid="uid://c5aq7so28d7o7" path="res://tutorial_prompt.gd" id="1_e0c0h"]
+[ext_resource type="FontFile" uid="uid://cq4db84i8bay1" path="res://PixelPurl.ttf" id="2_tx223"]
 
-[node name="Sprite2D" type="Sprite2D" unique_id=1784253591]
-position = Vector2(4, 9)
+[node name="Tutorial Prompt" type="Node2D" unique_id=267205786]
+script = ExtResource("1_e0c0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1824721221]
+position = Vector2(23, -10.499998)
+scale = Vector2(2.04, 1.31)
 texture = ExtResource("1_8nyk8")
+
+[node name="Label" type="Label" parent="." unique_id=1291914746]
+offset_left = -46.0
+offset_top = -49.0
+offset_right = 84.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("2_tx223")
+theme_override_font_sizes/font_size = 16
+text = "Use WASD keys to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=892846475]
+offset_left = 60.0
+offset_top = -21.0
+offset_right = 81.0
+theme_override_fonts/font = ExtResource("2_tx223")
+theme_override_font_sizes/font_size = 16
+text = "OK"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

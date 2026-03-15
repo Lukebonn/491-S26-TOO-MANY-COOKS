@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://5h2nvu0najdi" path="res://Scenes/Test/PlayerEnemyTest/Scripts/combat_controls_playtest.gd" id="7_pjd3s"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]
 [ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="9_vn22c"]
+[ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="10_cjfr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnocq"]
 size = Vector2(42, 3)
@@ -93,6 +94,9 @@ visible = false
 position = Vector2(89, -49)
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("9_vn22c")
+
+[node name="Tutorial Prompt" parent="." unique_id=267205786 instance=ExtResource("10_cjfr7")]
+position = Vector2(-18, 26)
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]
