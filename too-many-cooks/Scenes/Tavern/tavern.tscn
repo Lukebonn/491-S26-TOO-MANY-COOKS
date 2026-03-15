@@ -40,8 +40,6 @@ shadow_size = 10
 
 [sub_resource type="Theme" id="Theme_1uoo0"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_msftv"]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
 size = Vector2(128, 128)
 
@@ -140,11 +138,8 @@ autowrap_mode = 2
 autowrap_trim_flags = 128
 
 [node name="SpeakerSprite" type="Sprite2D" parent="Dialogue Box/Container" unique_id=1535565508]
+z_index = 1
 position = Vector2(-45, -326)
-
-[node name="SpeakerSprite1" type="AnimatedSprite2D" parent="Dialogue Box/Container" unique_id=141219790]
-position = Vector2(-44, -334)
-sprite_frames = SubResource("SpriteFrames_msftv")
 
 [node name="Tavern BG" type="Control" parent="." unique_id=2002706169]
 layout_mode = 3
