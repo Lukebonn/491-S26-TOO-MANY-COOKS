@@ -31,9 +31,6 @@ func print_text(character: String, index, emotions):
 	
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
-		'''match emote:
-			_ : $Container/SpeakerSprite1.texture = emotions[0] 
-			"[SMIRK]" : $Container/SpeakerSprite1.texture = emotions[3]'''
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
 		for letter in message_ref.length():
@@ -43,23 +40,36 @@ func print_text(character: String, index, emotions):
 		hide_dialogue()
 	else:
 		for line in message_ref:
-			'''
-			if "[" in line:
-				match line:
-					"[","A","N","G", "R", "Y", "]", _ : 
-						$Container/SpeakerSprite.texture = emotions[2] 
-					"[","S","M","I","R","K","]", _: 
-						var cur_emote: String
-						if cur_emote in line:
-							$Container/SpeakerSprite.texture = emotions[3]'''
+			var emote = find_emote(character, emotions, line)
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
-			$Container/Dialogue/DialogueLabel.text = line
+			$Container/Dialogue/DialogueLabel.text = line.right(-3)
 			for letter in line.length():
 				$Container/Dialogue/DialogueLabel.visible_characters += 1 
 				await get_tree().create_timer(text_speed).timeout
 			await $"..".next_line
 		hide_dialogue()
+		$Container/SpeakerSprite.hide()
 	Global.Is_In_Dialogue = false
+	
+#Find the emotions of the NPC based on a tag with the following patter [X]
+#1 = Sad, 2 = Mad, 3 = Smirking, * =  Base Emote
+func find_emote(character: String, emotions, line: String):
+	#print(line + "test")
+	$Container/SpeakerSprite.show()
+	var tag = line[1]
+	match tag:
+		"1":
+			$Container/SpeakerSprite.texture = emotions[1]
+			print("I should be crying wahh") 
+		"2": 
+			$Container/SpeakerSprite.texture = emotions[2] 
+			print("I should be mad grrr")
+		"3": 
+			$Container/SpeakerSprite.texture = emotions[3]
+			print("I should be smirking")
+		_: 
+			$Container/SpeakerSprite.texture = emotions[0]
+	
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
 	#then print it out
