@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 300
+var speed = 100
 var direction: Vector2
 
 @onready var sprite_2d: Sprite2D = $Sprite2D

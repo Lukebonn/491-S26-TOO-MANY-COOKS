@@ -361,7 +361,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk4y1"]
-radius = 57.0
+radius = 127.03543
 
 [node name="RangedSlimeEnemy" type="CharacterBody2D" unique_id=260407340]
 collision_layer = 8
@@ -389,6 +389,8 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=706055698]
 shape = SubResource("CircleShape2D_kk4y1")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=315189996]
 
 [connection signal="animation_finished" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="2_sli66"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/SEprototype.tscn" id="3_1lw8e"]
 [ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="4_lnocq"]
-[ext_resource type="Script" uid="uid://bndcicnatwmua" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="5_vasta"]
+[ext_resource type="Script" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="5_vasta"]
 [ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.wav" id="6_qh6lb"]
 [ext_resource type="Script" uid="uid://5h2nvu0najdi" path="res://Scenes/Test/PlayerEnemyTest/Scripts/combat_controls_playtest.gd" id="7_pjd3s"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]

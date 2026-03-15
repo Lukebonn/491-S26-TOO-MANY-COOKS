@@ -191,6 +191,7 @@ tile_set = SubResource("TileSet_1x0i4")
 
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("2_pc4nk")]
 position = Vector2(500, 339)
+collision_mask = 65
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1641143463]
 zoom = Vector2(5, 5)

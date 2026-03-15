@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cwqww6jve7wdb"]
 
+[ext_resource type="Script" uid="uid://cn4v2ultwm4f1" path="res://Scenes/Test/EnvTest/enemy_spawner_test.gd" id="1_6mw51"]
 [ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdMap.png" id="1_3260u"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_6mw51"]
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_vvol3"]
@@ -163,6 +164,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qvpnl")
 
 [node name="MiniMap_Test" type="Node2D" unique_id=1829330732]
+script = ExtResource("1_6mw51")
+slime_scene = ExtResource("5_8m23b")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=408273084]
 tile_set = SubResource("TileSet_1x0i4")
@@ -196,6 +199,7 @@ position = Vector2(500, 339)
 zoom = Vector2(5, 5)
 
 [node name="MiniMap" type="CanvasLayer" parent="." unique_id=495871975]
+visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMap" unique_id=303683350]
 anchors_preset = 1
@@ -211,7 +215,7 @@ metadata/_edit_use_anchors_ = true
 [node name="SubViewport" type="SubViewport" parent="MiniMap/SubViewportContainer" unique_id=1198298574]
 handle_input_locally = false
 size = Vector2i(258, 258)
-render_target_update_mode = 4
+render_target_update_mode = 0
 script = ExtResource("3_vvol3")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" unique_id=732298855]
@@ -234,7 +238,12 @@ position = Vector2(601, 344)
 scale = Vector2(1, 1)
 
 [node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_gijrm")]
-offset_left = 406.0
-offset_top = 291.0
-offset_right = 541.0
-offset_bottom = 341.0
+
+[node name="SlimeSpawnPoint1" type="Marker2D" parent="." unique_id=227162153]
+position = Vector2(156, 391)
+
+[node name="SlimeSpawnPoint2" type="Marker2D" parent="." unique_id=846919504]
+position = Vector2(507, 570)
+
+[node name="SlimeSpawnPoint3" type="Marker2D" parent="." unique_id=156704558]
+position = Vector2(931, 435)
