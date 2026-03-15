@@ -18,7 +18,11 @@
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
+[ext_resource type="Texture2D" uid="uid://dqmdofdis25ld" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/grinning.png" id="15_mpp4l"]
 [ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="16_6jyd3"]
+[ext_resource type="Texture2D" uid="uid://cb5fb1jeprmjd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cry.png" id="16_arv5a"]
+[ext_resource type="Texture2D" uid="uid://by8schxoxexd5" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/rage.png" id="17_4f6a6"]
+[ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="18_tqgpy"]
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
@@ -194,6 +198,7 @@ texture_pressed = ExtResource("14_7td72")
 flip_h = true
 script = ExtResource("6_41fud")
 Name = "Ranger"
+Expressions = Array[Texture]([ExtResource("15_mpp4l"), ExtResource("16_arv5a"), ExtResource("17_4f6a6"), ExtResource("18_tqgpy")])
 Conversations = Array[String](["0,1,2"])
 
 [node name="Label" type="Label" parent="Tavern BG/RANGER" unique_id=1817203477]
@@ -221,6 +226,7 @@ texture_pressed = ExtResource("15_16683")
 flip_h = true
 script = ExtResource("6_41fud")
 Name = "Playtest"
+Expressions = Array[Texture]([ExtResource("15_mpp4l"), ExtResource("5_vqw7w"), ExtResource("17_4f6a6"), ExtResource("9_rulk3")])
 Conversations = Array[String](["0,1,2"])
 
 [node name="Label" type="Label" parent="Tavern BG/PLAYTEST" unique_id=343353348]

@@ -1,3 +1,3 @@
-Hello traveller, I’ve seen you come back from the spire all scratched up. I can help teach you something that will allow you to strike your enemies from afar.
-Right click to unleash a ranged attack, this will surely allow you to slay any foe with ease.
-Go on now, give those bandits some heat, and make em’ sweat a little for me.
+[*] Hello traveller, I’ve seen you come back from the spire all scratched up. I can help teach you something that will allow you to strike your enemies from afar.
+[3] Right click to unleash a ranged attack, this will surely allow you to slay any foe with ease.
+[3] Go on now, give those bandits some heat, and make em’ sweat a little for me.

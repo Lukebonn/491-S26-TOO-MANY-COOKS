@@ -51,6 +51,8 @@ func print_text(character: String, index, emotions):
 		$Container/SpeakerSprite.hide()
 	Global.Is_In_Dialogue = false
 	
+#Find the emotions of the NPC based on a tag with the following patter [X]
+#1 = Sad, 2 = Mad, 3 = Smirking, * =  Base Emote
 func find_emote(character: String, emotions, line: String):
 	#print(line + "test")
 	$Container/SpeakerSprite.show()

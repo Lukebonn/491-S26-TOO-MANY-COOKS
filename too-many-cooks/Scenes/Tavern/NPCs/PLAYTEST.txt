@@ -1,3 +1,3 @@
-Hold up there, climber. It looks like the path ahead isn’t quite finished yet.
-The Tower stretches way higher than this but for now the expedition will have to continue another time.
-Thanks for helping us test the climb!
+[1] Hold up there, climber. It looks like the path ahead isn’t quite finished yet.
+[1] The Tower stretches way higher than this but for now the expedition will have to continue another time.
+[*] Thanks for helping us test the climb!
