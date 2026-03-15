@@ -43,15 +43,8 @@ func print_text(character: String, index, emotions):
 		hide_dialogue()
 	else:
 		for line in message_ref:
-			'''
-			if "[" in line:
-				match line:
-					"[","A","N","G", "R", "Y", "]", _ : 
-						$Container/SpeakerSprite.texture = emotions[2] 
-					"[","S","M","I","R","K","]", _: 
-						var cur_emote: String
-						if cur_emote in line:
-							$Container/SpeakerSprite.texture = emotions[3]'''
+			var emote = find_emote(character, emotions, line)
+			#$Container/SpeakerSprite.texture = emote
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line
 			for letter in line.length():
@@ -60,6 +53,23 @@ func print_text(character: String, index, emotions):
 			await $"..".next_line
 		hide_dialogue()
 	Global.Is_In_Dialogue = false
+	
+func find_emote(character: String, emotions, line: String):
+	#print(line + "test")
+	var tag = line[1]
+	match tag:
+		"1":
+			$Container/SpeakerSprite.texture = emotions[1]
+			print("I should be crying wahh") 
+		"2": 
+			$Container/SpeakerSprite.texture = emotions[2] 
+			print("I should be mad grrr")
+		"3": 
+			$Container/SpeakerSprite.texture = emotions[3]
+			print("I should be smirking")
+		_: 
+			$Container/SpeakerSprite.texture = emotions[0]
+	
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
 	#then print it out
