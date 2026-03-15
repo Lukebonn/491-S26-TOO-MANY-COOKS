@@ -1,30 +1,7 @@
 [gd_scene format=3 uid="uid://cva367os2jx7d"]
 
-[ext_resource type="Script" uid="uid://c5aq7so28d7o7" path="res://tutorial_prompt.gd" id="1_8nyk8"]
+[ext_resource type="Texture2D" uid="uid://d2pc0b8u0yb5h" path="res://Characters/Player/Sprites/pixil-frame-0.png" id="1_8nyk8"]
 
-[node name="Tutorial Prompt" type="ColorRect" unique_id=1009234046]
-offset_right = 135.0
-offset_bottom = 50.0
-script = ExtResource("1_8nyk8")
-
-[node name="Label" type="Label" parent="." unique_id=53083870]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
-text = "Use WASD or arrow keys to move,
-use left mouse button to attack,
-use space to dodge"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="." unique_id=1315464529]
-layout_mode = 0
-offset_left = 109.0
-offset_top = 27.0
-offset_right = 129.0
-offset_bottom = 47.0
-theme_override_font_sizes/font_size = 8
-text = "OK"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" unique_id=1784253591]
+position = Vector2(4, 9)
+texture = ExtResource("1_8nyk8")
