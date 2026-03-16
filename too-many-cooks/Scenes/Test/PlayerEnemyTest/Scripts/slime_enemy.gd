@@ -3,6 +3,7 @@ extends CharacterBody2D
 #for temp health
 @onready var temp_health_bar: ProgressBar = $"Temp Health Bar"
 
+
 const SPEED = 1.0
 const KNOCKBACK_FORCE: int = 20
 var player_chase=false
@@ -10,6 +11,7 @@ var player = null
 
 var is_alive: bool = true
 var health: int = 100
+#var health: int = EnemyStats.basic_slime_health
 var target = null
 
 signal allEnemiesDead()
@@ -86,16 +88,16 @@ func _die() -> void:
 
 func _on_sight_body_entered(body: Node2D) -> void:
 	print(body.name)
-	if body.name == "SwordEnemy":
+	if body.name == "Player":
 		target = body
-	player=body
-	player_chase = true
+		player=body
+		player_chase = true
 
 
 func _on_sight_body_exited(body: Node2D) -> void:
 	player=null
 	player_chase=false
-	if body.name == "SwordEnemy" and is_alive:
+	if body.name == "Player" and is_alive:
 		target = null
 		animated_sprite_2d.play("idle_front")
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://u1exbn0iintr"]
 
-[ext_resource type="Script" uid="uid://c8h7c1dn7s6yr" path="res://Characters/Enemies/ranged_slime_enemy.gd" id="1_ca75f"]
+[ext_resource type="Script" uid="uid://c8h7c1dn7s6yr" path="res://Characters/Enemies/Scripts/ranged_slime_enemy.gd" id="1_ca75f"]
 [ext_resource type="Texture2D" uid="uid://d1q1ld5d1f15m" path="res://Scenes/Test/ProtoArt/Enemy/RangedEnemy/Skeleton_01_White_Attack1.png" id="2_kk4y1"]
 [ext_resource type="Texture2D" uid="uid://c4j64skrmh6m0" path="res://Scenes/Test/ProtoArt/Enemy/RangedEnemy/Skeleton_01_White_Die.png" id="3_6skcy"]
 [ext_resource type="Texture2D" uid="uid://bs3mlq1ea4ylb" path="res://Scenes/Test/ProtoArt/Enemy/RangedEnemy/Skeleton_01_White_Hurt.png" id="4_86ry4"]
@@ -363,6 +363,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk4y1"]
 radius = 127.03543
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk4y1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6skcy"]
+bg_color = Color(1, 0.06999999, 0.08549976, 1)
+
 [node name="RangedSlimeEnemy" type="CharacterBody2D" unique_id=260407340]
 collision_layer = 8
 script = ExtResource("1_ca75f")
@@ -370,18 +375,12 @@ script = ExtResource("1_ca75f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=287705912]
 shape = SubResource("CircleShape2D_kh3im")
 
-[node name="rotationNode" type="Node2D" parent="." unique_id=929186957]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="rotationNode" unique_id=1731014010]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1731014010]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_hk7jx")
 animation = &"Attack"
 centered = false
 offset = Vector2(-45, -40)
-
-[node name="arrowStartMarker" type="Marker2D" parent="rotationNode" unique_id=335141091]
-position = Vector2(1.9999993, 0)
-scale = Vector2(0.09, 0.09)
 
 [node name="Sight" type="Area2D" parent="." unique_id=1165885079]
 collision_layer = 0
@@ -390,9 +389,25 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=706055698]
 shape = SubResource("CircleShape2D_kk4y1")
 
+[node name="rotationNode" type="Node2D" parent="." unique_id=929186957]
+
+[node name="arrowStartMarker" type="Marker2D" parent="rotationNode" unique_id=335141091]
+position = Vector2(1.9999993, 0)
+scale = Vector2(0.09, 0.09)
+
 [node name="AttackTimer" type="Timer" parent="." unique_id=315189996]
 
-[connection signal="animation_finished" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="frame_changed" from="rotationNode/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[node name="Temp Health Bar" type="ProgressBar" parent="." unique_id=36537670]
+offset_left = -14.75
+offset_top = -12.5
+offset_right = 15.75
+offset_bottom = -8.5
+theme_override_styles/background = SubResource("StyleBoxFlat_kk4y1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6skcy")
+value = 50.0
+show_percentage = false
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Sight" to="." method="_on_sight_area_entered"]
 [connection signal="area_exited" from="Sight" to="." method="_on_sight_area_exited"]

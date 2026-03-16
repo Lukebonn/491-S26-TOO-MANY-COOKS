@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccknvsbk3xdax"]
 
-[ext_resource type="Script" uid="uid://baom06ojl8ofv" path="res://Characters/Enemies/enemy_arrow.gd" id="1_osdl6"]
+[ext_resource type="Script" uid="uid://baom06ojl8ofv" path="res://Characters/Enemies/Scripts/enemy_arrow.gd" id="1_osdl6"]
 [ext_resource type="Texture2D" uid="uid://cqlywd1gmvv7" path="res://Scenes/Test/ProtoArt/Enemy/arrow.png" id="2_pa2yw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fehqi"]

@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://cn4v2ultwm4f1" path="res://Scenes/Test/EnvTest/enemy_spawner_test.gd" id="1_6mw51"]
 [ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdMap.png" id="1_3260u"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_6mw51"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_slime_enemy.tscn" id="3_ld5va"]
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_vvol3"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_ld5va"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="5_8m23b"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_gijrm"]
+[ext_resource type="PackedScene" uid="uid://p8kqfwi1kvo5" path="res://Characters/Enemies/WaveCombatTestStuffs/WaveTransitionAnimation.tscn" id="9_ld5va"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_3260u")
@@ -166,6 +168,7 @@ sources/0 = SubResource("TileSetAtlasSource_qvpnl")
 [node name="MiniMap_Test" type="Node2D" unique_id=1829330732]
 script = ExtResource("1_6mw51")
 slime_scene = ExtResource("5_8m23b")
+skeleton_scene = ExtResource("3_ld5va")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=408273084]
 tile_set = SubResource("TileSet_1x0i4")
@@ -247,3 +250,5 @@ position = Vector2(507, 570)
 
 [node name="SlimeSpawnPoint3" type="Marker2D" parent="." unique_id=156704558]
 position = Vector2(931, 435)
+
+[node name="WaveTransitionAnimation" parent="." unique_id=1200444778 instance=ExtResource("9_ld5va")]

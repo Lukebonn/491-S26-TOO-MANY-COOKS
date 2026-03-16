@@ -21,7 +21,7 @@ func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.name == "SwordEnemy"):
+	if(body.name == "Player"):
 		#body.take_damage(20, player.position)
 		print("Player Hit!")
 	else:

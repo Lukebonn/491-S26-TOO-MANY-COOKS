@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://p8kqfwi1kvo5"]
+
+[sub_resource type="Animation" id="Animation_6xlcg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ovibv"]
+resource_name = "between_wave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.34509805), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6d81"]
+_data = {
+&"RESET": SubResource("Animation_6xlcg"),
+&"between_wave": SubResource("Animation_ovibv")
+}
+
+[node name="WaveTransitionAnimation" type="Node2D" unique_id=1200444778]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=632126309]
+offset_left = -77.0
+offset_top = -49.0
+offset_right = 1209.0
+offset_bottom = 702.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1988645526]
+libraries/ = SubResource("AnimationLibrary_s6d81")
