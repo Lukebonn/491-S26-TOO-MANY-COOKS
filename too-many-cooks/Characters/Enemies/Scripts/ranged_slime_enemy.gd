@@ -21,10 +21,12 @@ var is_alive: bool = true
 var health: int = 100
 var target = null
 
+
 func _ready():
 	temp_health_bar.value = health #attach health bar to enemy
 
 func _physics_process(delta: float) -> void:
+	temp_health_bar.value = health 
 	if playerNode:
 		_shoot()
 	else:
@@ -121,7 +123,7 @@ func _die() -> void:
 	#allEnemiesDead.emit()
 	
 	#disable collision
-	$DamageTrigger/CollisionShape2D.set_deferred("disabled", true)
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	$Sight/CollisionShape2D.set_deferred("disabled", true)
 	hide()
 
@@ -129,8 +131,9 @@ func _die() -> void:
 func get_damage():
 	return damage
 
-func _on_damage_trigger_area_entered(area: Area2D) -> void:
+#This is the standard function for when an enemy gets hit by the player
+func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(playerNode):
-		take_damage(20,playerNode.global_position)
+		take_damage(PlayerStats.base_str,playerNode.global_position)
 	else:
-		take_damage(20,Vector2.ZERO)
+		take_damage(PlayerStats.base_mag,Vector2.ZERO)

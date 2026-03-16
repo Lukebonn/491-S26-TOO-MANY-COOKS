@@ -8,10 +8,12 @@ size = Vector2(130, 60)
 
 [node name="EnemyProjectile" type="Area2D" unique_id=448116752]
 scale = Vector2(0.09, 0.09)
+collision_layer = 32
+collision_mask = 2
 script = ExtResource("1_osdl6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060063044]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.10000001, 0.10000001)
 texture = ExtResource("2_pa2yw")
 
 [node name="ProjectileHitbox" type="CollisionShape2D" parent="." unique_id=1916954239]
@@ -20,5 +22,6 @@ shape = SubResource("RectangleShape2D_fehqi")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1630775555]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -96,12 +96,8 @@ func _on_sight_body_exited(body: Node2D) -> void:
 		target = null
 		animated_sprite_2d.play("idle_front")
 
-#The function that gives the damage to the player
-func get_damage():
-	return damage
-
 func _on_damage_trigger_area_entered(area: Area2D) -> void:
 	if(player):
-		take_damage(20,player.global_position)
+		take_damage(PlayerStats.base_str,player.global_position)
 	else:
-		take_damage(20,Vector2.ZERO)
+		take_damage(PlayerStats.base_mag,Vector2.ZERO)

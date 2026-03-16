@@ -8,9 +8,15 @@ func enter_state(player_node):
 	
 	player.get_node("Sprite2D").animation = "hurt"
 	#player.modulate = Color(1.0, 0.382, 0.452, 1.0)
-	
+
+
 	#player takes an amount of damage equal to the attacker's attack power
-	player.health -= damage_hitbox.get_parent().damage
+	var dmg = damage_hitbox.get("damage")
+	if dmg == null:
+		dmg = damage_hitbox.get_parent().get("damage")
+	if dmg != null:
+		player.health -= dmg
+	
 	
 	#player receives knockback on hit
 	player.velocity = (player.global_position - damage_hitbox.get_parent().global_position).normalized() * 350

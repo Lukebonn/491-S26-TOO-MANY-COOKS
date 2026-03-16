@@ -368,6 +368,10 @@ radius = 127.03543
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6skcy"]
 bg_color = Color(1, 0.06999999, 0.08549976, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nygy0"]
+radius = 8.0
+height = 16.0
+
 [node name="RangedSlimeEnemy" type="CharacterBody2D" unique_id=260407340]
 collision_layer = 8
 script = ExtResource("1_ca75f")
@@ -407,7 +411,15 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6skcy")
 value = 50.0
 show_percentage = false
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1728691508]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=228353405]
+shape = SubResource("CapsuleShape2D_nygy0")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="area_entered" from="Sight" to="." method="_on_sight_area_entered"]
 [connection signal="area_exited" from="Sight" to="." method="_on_sight_area_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
