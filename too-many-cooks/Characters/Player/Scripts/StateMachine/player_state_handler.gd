@@ -11,7 +11,7 @@ var displayMana : int = int(mana)
 ##current stats including modifiers
 #currently unused except for speed
 var strength : int = PlayerStats.base_str
-var defence : int = PlayerStats.base_def
+var defense : int = PlayerStats.base_def
 var magic : int = PlayerStats.base_mag
 var speed : int = 100
 
@@ -54,7 +54,7 @@ func set_class(new_class : PlayerClass):
 	$magic_state.set_script(new_class.magic)
 	
 	strength *= new_class.str_mod
-	defence *= new_class.def_mod
+	defense *= new_class.def_mod
 	magic *= new_class.mag_mod
 
 ##changes state to the node whose name matches new_state
