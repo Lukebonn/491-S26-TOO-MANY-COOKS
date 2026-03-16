@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_nnrde"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_uwhm3"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
+[ext_resource type="PackedScene" uid="uid://bjwgwx8jlkexb" path="res://Scenes/Level Design/Test Level Design/Chest.tscn" id="7_0npcw"]
+[ext_resource type="PackedScene" uid="uid://ibkesuy03r0c" path="res://Scenes/Level Design/Test Level Design/key.tscn" id="8_h05sp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -235,7 +237,10 @@ position = Vector2(601, 344)
 scale = Vector2(1, 1)
 
 [node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_tum0s")]
-offset_left = 406.0
-offset_top = 291.0
-offset_right = 541.0
-offset_bottom = 341.0
+
+[node name="Chest" parent="." unique_id=738895399 instance=ExtResource("7_0npcw")]
+
+[node name="Key" parent="." unique_id=1316605277 instance=ExtResource("8_h05sp")]
+position = Vector2(126, 192)
+
+[connection signal="chest_opened" from="Key" to="Chest" method="_on_key_chest_opened"]

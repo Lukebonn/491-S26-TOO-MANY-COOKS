@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bdkjsmkaos8i3"]
+
+[ext_resource type="Material" uid="uid://cxfnbulitax7j" path="res://Scenes/Level Design/Weather System/Drizzle.tres" id="1_nevgv"]
+[ext_resource type="Script" uid="uid://dcnk5mwv4er0d" path="res://Scenes/Level Design/Weather System/concurrent_state_machine.gd" id="2_vfnup"]
+[ext_resource type="Script" uid="uid://c4brgax8jxc6o" path="res://rain_state_machine.gd" id="3_pbgo3"]
+
+[node name="WeatherTestScene" type="Node2D" unique_id=1415316628]
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1835473715]
+position = Vector2(100, -19)
+process_material = ExtResource("1_nevgv")
+
+[node name="ConcurrentStateMachine" type="Node" parent="." unique_id=481157604 node_paths=PackedStringArray("particles")]
+script = ExtResource("2_vfnup")
+particles = NodePath("../Particles")
+
+[node name="RainStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=1322344646]
+script = ExtResource("3_pbgo3")
