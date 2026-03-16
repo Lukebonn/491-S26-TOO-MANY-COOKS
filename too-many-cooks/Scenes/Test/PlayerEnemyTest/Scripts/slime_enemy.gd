@@ -64,12 +64,7 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property(self, "position", target_position, 0.5)
 		
-		DamageNumbers.display_number(damage, damage_numbers_origin.global_position)
-	'''only problem is that its displaying the initial 
-	damage for the slime and not the player damage amount.
-	Not sure where/what the player stat damage is but
-	replace "damage" with PlayerStats.variable_name 
-	(whatever the name of player damage is)'''
+		DamageNumbers.display_number(self_damage, damage_numbers_origin.global_position)
 	
 func _die() -> void:
 	is_alive = false

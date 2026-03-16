@@ -1,6 +1,7 @@
-'''extends AudioStreamPlayer
+#extends AudioStreamPlayer
+extends AudioStreamPlayer2D
 
-const player_min_x: float = 500 #player spawn
+const player_min_x: float = 250 #player spawn
 const player_max_x: float = 600 #enemy slime
 const zero_volume: int = -40
 
@@ -24,13 +25,12 @@ func compute_x_bounds():
 	xmax = player_min_x + (d- d*transition) / 2.0
 	#update the volume between the two locations
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is theaa elapsed time since the previous frame.
 func _process(delta: float):
-	var px = Player.global_position.x #get player location on x axis
+	var px = $"../Player".global_position.x #get player location on x axis
 	var r = inverse_lerp(xmin, xmax, px) #gets it back as ratio in range
 	
 	#updates the volume
 	stream.set_sync_stream_volume (0, min (zero_volume + r* (-zero_volume),0.0))
 	
 	stream.set_sync_stream_volume (0, min (zero_volume + (1.0 - r) * (-zero_volume),0.0))
-'''

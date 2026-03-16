@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
 [ext_resource type="PackedScene" uid="uid://bjwgwx8jlkexb" path="res://Scenes/Level Design/Test Level Design/Chest.tscn" id="7_0npcw"]
 [ext_resource type="PackedScene" uid="uid://ibkesuy03r0c" path="res://Scenes/Level Design/Test Level Design/key.tscn" id="8_h05sp"]
+[ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.wav" id="9_uruf1"]
+[ext_resource type="Script" uid="uid://ddagge5dbq4op" path="res://Scenes/Test/EnvTest/dynamicMusic.gd" id="10_yvunr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -164,6 +166,13 @@ texture = ExtResource("1_0l5ya")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qvpnl")
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_1hp1d"]
+stream_count = 2
+stream_0/stream = ExtResource("9_uruf1")
+stream_0/volume = 5.0
+stream_1/stream = ExtResource("9_uruf1")
+stream_1/volume = 9.93
+
 [node name="MiniMap_Test" type="Node2D" unique_id=1829330732]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=408273084]
@@ -242,5 +251,10 @@ scale = Vector2(1, 1)
 
 [node name="Key" parent="." unique_id=1316605277 instance=ExtResource("8_h05sp")]
 position = Vector2(126, 192)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=155009504]
+position = Vector2(488, 339)
+stream = SubResource("AudioStreamSynchronized_1hp1d")
+script = ExtResource("10_yvunr")
 
 [connection signal="chest_opened" from="Key" to="Chest" method="_on_key_chest_opened"]
