@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://choio6ou3pbbp"]
+
+[ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_clkxo"]
+
+[resource]
+script = ExtResource("1_clkxo")
+str_mod = 1.2
+def_mod = 1.2
+spd_mod = 1.0
+mag_mod = 0.8
+metadata/_custom_type_script = "uid://cdjmfedbai0ha"

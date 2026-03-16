@@ -26,7 +26,7 @@ func enter_state(player_node):
 				spell.velocity = player.local_mouse_pos.normalized() * 5
 				add_child(spell)
 				player.mana -= mana_cost
-			"Regen":
+			_:
 				pass
 		
 		start_cooldown()

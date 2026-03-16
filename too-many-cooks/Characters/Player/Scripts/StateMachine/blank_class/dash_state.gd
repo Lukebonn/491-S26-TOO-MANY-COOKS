@@ -47,10 +47,12 @@ func input_handler(delta : float) -> void:
 		timer -= delta
 	else:
 		player.change_state("idle_state")
-		#player hurtbox is flicked on and off once dash ends so that it will check for collisions
-		$"../Hurtbox".monitoring = false
-		$"../Hurtbox".monitoring = true
-		start_cooldown(delta)
+
+##player hurtbox is flicked on and off once dash ends so that it will check for collisions
+func exit_state():
+	$"../Hurtbox".monitoring = false
+	$"../Hurtbox".monitoring = true
+	start_cooldown(get_process_delta_time())
 
 ##starts a timer that keeps track of if the player is spamming dash
 func start_cooldown(delta : float):

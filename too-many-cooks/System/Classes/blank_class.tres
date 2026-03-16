@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://cus2ghi0ntyg7"]
+
+[ext_resource type="Script" uid="uid://bip7x8vvk4jd" path="res://Characters/Player/Scripts/StateMachine/blank_class/attack_state.gd" id="1_5eqnr"]
+[ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_gil0b"]
+[ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Characters/Player/Scripts/StateMachine/blank_class/dash_state.gd" id="2_u3022"]
+[ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Characters/Player/Scripts/StateMachine/blank_class/magic_state.gd" id="3_jbkd6"]
+
+[resource]
+script = ExtResource("1_gil0b")
+attack = ExtResource("1_5eqnr")
+dash = ExtResource("2_u3022")
+magic = ExtResource("3_jbkd6")
+str_mod = 1.0
+def_mod = 1.0
+spd_mod = 1.0
+mag_mod = 1.0
+metadata/_custom_type_script = "uid://cdjmfedbai0ha"
