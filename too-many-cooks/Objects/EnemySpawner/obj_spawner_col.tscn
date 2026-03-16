@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cefkrvakavfju"]
+
+[ext_resource type="Script" uid="uid://cc8arso1k2xqc" path="res://Objects/EnemySpawner/Scripts/obj_spawner_col.gd" id="1_0bifj"]
+
+[node name="ObjSpawnerCol" type="Area2D" unique_id=719003453]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_0bifj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

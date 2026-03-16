@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bplwfa57njfvb"]
+
+[ext_resource type="Texture2D" uid="uid://c571te2vh53u7" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdKey.png" id="1_cv8jh"]
+[ext_resource type="Script" uid="uid://b5s248q2a2ndc" path="res://Objects/Key/obj_key.gd" id="1_passb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_passb"]
+
+[node name="ObjKey" type="Node2D" unique_id=150755072]
+script = ExtResource("1_passb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743266336]
+texture = ExtResource("1_cv8jh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=704362220]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=41536668]
+shape = SubResource("CircleShape2D_passb")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

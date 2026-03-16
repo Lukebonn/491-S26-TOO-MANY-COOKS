@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvjyx80o6k8li"]
+
+[ext_resource type="Script" uid="uid://nv5v3ihd67io" path="res://Objects/EnemySpawner/Scripts/enemy_spawner.gd" id="1_8xilf"]
+[ext_resource type="Texture2D" uid="uid://db3slorhnroba" path="res://Objects/EnemySpawner/Sprites/tile_spawner.png" id="1_kl5b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl5b1"]
+size = Vector2(16, 16)
+
+[node name="ObjEnemySpawner" type="Node2D" unique_id=817439483]
+script = ExtResource("1_8xilf")
+
+[node name="TileSpawner" type="Sprite2D" parent="." unique_id=1707547804]
+texture = ExtResource("1_kl5b1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=939980071]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=976835996]
+shape = SubResource("RectangleShape2D_kl5b1")
+
+[node name="SpawnRoot" type="Marker2D" parent="." unique_id=2044249499]
+
+[node name="SpawnPoint" type="Marker2D" parent="SpawnRoot" unique_id=541930634]
