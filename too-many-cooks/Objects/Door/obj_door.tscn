@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bjmw5jy4mmifb"]
+
+[ext_resource type="Script" uid="uid://dotxbh7pk5ny" path="res://Objects/Door/obj_door.gd" id="1_5kuwq"]
+[ext_resource type="Texture2D" uid="uid://j5q2afh8glo3" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdDoorSheet.png" id="2_aslu8"]
+
+[sub_resource type="Animation" id="Animation_17h6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nopuj"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_aslu8"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17h6n"]
+_data = {
+&"RESET": SubResource("Animation_17h6n"),
+&"close": SubResource("Animation_nopuj"),
+&"open": SubResource("Animation_aslu8")
+}
+
+[node name="ObjDoor" type="Node2D" unique_id=907675044]
+script = ExtResource("1_5kuwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2082492924]
+texture = ExtResource("2_aslu8")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1107824209]
+libraries/ = SubResource("AnimationLibrary_17h6n")

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cbtk6nph36k5"]
 
+[ext_resource type="Script" uid="uid://bg8qbgiww5c0v" path="res://Objects/EnemySpawner/Scripts/enemy_spawner_test.gd" id="1_5xh8t"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_gtqvj"]
 outline_size = 4
 outline_color = Color(0.2, 0.2, 0.2, 1)
@@ -7,6 +9,7 @@ shadow_color = Color(0.2, 0.2, 0.2, 1)
 shadow_offset = Vector2(1.5, 1.5)
 
 [node name="EnemySpawnerTest" type="Node2D" unique_id=1861991076]
+script = ExtResource("1_5xh8t")
 
 [node name="Label" type="Label" parent="." unique_id=834984430]
 anchors_preset = 8
@@ -24,3 +27,7 @@ text = "TEST"
 label_settings = SubResource("LabelSettings_gtqvj")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=2073259643]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,122 +1,110 @@
 [gd_scene format=4 uid="uid://b7q10no3dduau"]
 
-[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_prs0f"]
-[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/SEprototype.tscn" id="3_c04ny"]
-[ext_resource type="TileSet" uid="uid://c30qfq2dsg2ln" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdTileSet.tres" id="4_d6jyv"]
-[ext_resource type="PackedScene" uid="uid://bplwfa57njfvb" path="res://Objects/Key/obj_key.tscn" id="4_dtxct"]
-[ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="5_dtxct"]
-[ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="6_oxfpq"]
-[ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="7_btg0j"]
-[ext_resource type="PackedScene" uid="uid://dvob2rhx8ffg7" path="res://Objects/Lock/obj_lock_col.tscn" id="8_1h8nb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gtqvj"]
-outline_size = 4
-outline_color = Color(0.2, 0.2, 0.2, 1)
-shadow_color = Color(0.2, 0.2, 0.2, 1)
-shadow_offset = Vector2(1.5, 1.5)
-
-[sub_resource type="PackedScene" id="PackedScene_oxfpq"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("EnemySpawnerTest", "Node2D", "Label", "Label", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "text", "label_settings", "horizontal_alignment", "vertical_alignment"),
-"node_count": 2,
-"node_ids": PackedInt32Array(1861991076, 834984430),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 15, 4, 0, 5, 1, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0),
-"variants": [8, 0.5, 0.5, 0.5, 0.5, -20.0, -11.5, 20.0, 11.5, 2, 2, "TEST", SubResource("LabelSettings_gtqvj"), 1, 1],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_tigj1"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("EnemySpawnerTest", "Node2D", "Label", "Label", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "text", "label_settings", "horizontal_alignment", "vertical_alignment"),
-"node_count": 2,
-"node_ids": PackedInt32Array(1861991076, 834984430),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 15, 4, 0, 5, 1, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0),
-"variants": [8, 0.5, 0.5, 0.5, 0.5, -20.0, -11.5, 20.0, 11.5, 2, 2, "TEST", SubResource("LabelSettings_gtqvj"), 1, 1],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_btg0j"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("EnemySpawnerTest", "Node2D", "Label", "Label", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "text", "label_settings", "horizontal_alignment", "vertical_alignment"),
-"node_count": 2,
-"node_ids": PackedInt32Array(1861991076, 834984430),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 15, 4, 0, 5, 1, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0),
-"variants": [8, 0.5, 0.5, 0.5, 0.5, -20.0, -11.5, 20.0, 11.5, 2, 2, "TEST", SubResource("LabelSettings_gtqvj"), 1, 1],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_1h8nb"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("EnemySpawnerTest", "Node2D", "Label", "Label", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "text", "label_settings", "horizontal_alignment", "vertical_alignment"),
-"node_count": 2,
-"node_ids": PackedInt32Array(1861991076, 834984430),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 15, 4, 0, 5, 1, 6, 2, 7, 3, 8, 4, 9, 5, 10, 6, 11, 7, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 0),
-"variants": [8, 0.5, 0.5, 0.5, 0.5, -20.0, -11.5, 20.0, 11.5, 2, 2, "TEST", SubResource("LabelSettings_gtqvj"), 1, 1],
-"version": 3
-}
+[ext_resource type="Script" uid="uid://dwfrf7r1jprj8" path="res://Scenes/Test/ObjTest/lv_test.gd" id="1_0if32"]
+[ext_resource type="TileSet" uid="uid://c30qfq2dsg2ln" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdTileSet.tres" id="2_dk4tr"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="3_05qkn"]
+[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/SEprototype.tscn" id="4_m1mma"]
+[ext_resource type="PackedScene" uid="uid://bplwfa57njfvb" path="res://Objects/Key/obj_key.tscn" id="5_apq1s"]
+[ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="6_2kvhs"]
+[ext_resource type="PackedScene" uid="uid://cbtk6nph36k5" path="res://Objects/EnemySpawner/enemy_spawner_test.tscn" id="7_05qkn"]
+[ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="7_tdi4f"]
+[ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="8_dlci1"]
+[ext_resource type="PackedScene" uid="uid://dvob2rhx8ffg7" path="res://Objects/Lock/obj_lock_col.tscn" id="9_5yfot"]
+[ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door/obj_door.tscn" id="10_dk4tr"]
+[ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="12_m1mma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tigj1"]
 radius = 96.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_btg0j"]
+radius = 16.0
 
-[node name="CombatTest" type="Node2D" unique_id=469150633]
+[sub_resource type="CircleShape2D" id="CircleShape2D_05qkn"]
+radius = 64.0
+
+[node name="LvTest" type="Node2D" unique_id=469150633]
+script = ExtResource("1_0if32")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2024119633]
 position = Vector2(64, 0)
 tile_map_data = PackedByteArray("AADw//n/AAAEAAMAAAAHAPn/AAAEAAMAAAAGAPn/AAAEAAMAAAAFAPn/AAAEAAMAAAAEAPn/AAAEAAMAAAADAPn/AAAEAAMAAAACAPn/AAAEAAMAAADx//n/AAAEAAMAAADy//n/AAAEAAMAAADz//n/AAAEAAMAAAD0//n/AAAEAAMAAAD1//n/AAAEAAMAAAD2//n/AAAEAAMAAAD3//n/AAAEAAMAAAD4//n/AAAEAAMAAAD5//n/AAAEAAMAAAD6//n/AAAEAAMAAAD7//n/AAAEAAMAAAD8//n/AAAEAAMAAAD9//n/AAAEAAMAAAD+//n/AAAEAAMAAAD///n/AAAEAAMAAAAAAPn/AAAEAAMAAAABAPn/AAAEAAMAAAAHAPr/AAACAAQAAAAIAPn/AAADAAEAAAAIAPj/AAADAAAAAAAIAPr/AAADAAEAAAAIAPv/AAADAAEAAAAIAPz/AAADAAEAAAAIAP3/AAADAAEAAAAIAP7/AAADAAEAAAAIAP//AAADAAEAAAAIAAAAAAADAAEAAAAIAAEAAAADAAEAAAAIAAIAAAADAAEAAAAIAAMAAAADAAEAAAAHAPj/AAACAAAAAAAGAPj/AAACAAAAAAAFAPj/AAACAAAAAAAEAPj/AAACAAAAAAADAPj/AAACAAAAAAACAPj/AAACAAAAAAABAPj/AAACAAAAAAAAAPj/AAACAAAAAAD///j/AAACAAAAAAD+//j/AAACAAAAAAD9//j/AAACAAAAAAD8//j/AAACAAAAAAD7//j/AAACAAAAAAD6//j/AAACAAAAAAD5//j/AAACAAAAAAD4//j/AAACAAAAAAD3//j/AAACAAAAAAD2//j/AAACAAAAAAD1//j/AAACAAAAAAD0//j/AAACAAAAAADz//j/AAACAAAAAADy//j/AAACAAAAAADx//j/AAACAAAAAADw//j/AAACAAAAAAAGAPr/AAACAAQAAAAFAPr/AAACAAQAAAAEAPr/AAACAAQAAAADAPr/AAACAAQAAAACAPr/AAACAAQAAAABAPr/AAACAAQAAAAAAPr/AAACAAQAAAD///r/AAACAAQAAAD+//r/AAACAAQAAAD9//r/AAACAAQAAAD8//r/AAACAAQAAAD7//r/AAACAAQAAAD6//r/AAACAAQAAAD5//r/AAACAAQAAAD4//r/AAACAAQAAAD3//r/AAACAAQAAAD2//r/AAACAAQAAAD1//r/AAACAAQAAAD0//r/AAACAAQAAADz//r/AAACAAQAAADy//r/AAACAAQAAADx//r/AAACAAQAAADw//r/AAACAAQAAADw//v/AAAAAAQAAADw//z/AAAAAAQAAADw//3/AAAAAAQAAADw//7/AAAAAAQAAADw////AAAAAAQAAADw/wAAAAAAAAQAAADw/wEAAAAAAAQAAADw/wIAAAAAAAQAAADw/wMAAAAAAAQAAADw/wQAAAAAAAQAAADw/wUAAAAAAAQAAADx//v/AAAAAAQAAADx//z/AAAAAAQAAADx//3/AAAAAAQAAADx//7/AAAAAAQAAADx////AAAAAAQAAADx/wAAAAAAAAQAAADx/wEAAAAAAAQAAADx/wIAAAAAAAQAAADx/wMAAAAAAAQAAADx/wQAAAAAAAQAAADx/wUAAAAAAAQAAADy//v/AAAAAAQAAADy//z/AAAAAAQAAADy//3/AAAAAAQAAADy//7/AAAAAAQAAADy////AAAAAAQAAADy/wAAAAAAAAQAAADy/wEAAAAAAAQAAADy/wIAAAAAAAQAAADy/wMAAAAAAAQAAADy/wQAAAAAAAQAAADy/wUAAAAAAAQAAADz//v/AAAAAAQAAADz//z/AAAAAAQAAADz//3/AAAAAAQAAADz//7/AAAAAAQAAADz////AAAAAAQAAADz/wAAAAAAAAQAAADz/wEAAAAAAAQAAADz/wIAAAAAAAQAAADz/wMAAAAAAAQAAADz/wQAAAAAAAQAAADz/wUAAAAAAAQAAAD0//v/AAAAAAQAAAD0//z/AAAAAAQAAAD0//3/AAAAAAQAAAD0//7/AAAAAAQAAAD0////AAAAAAQAAAD0/wAAAAAAAAQAAAD0/wEAAAAAAAQAAAD0/wIAAAAAAAQAAAD0/wMAAAAAAAQAAAD0/wQAAAAAAAQAAAD0/wUAAAAAAAQAAAD1//v/AAAAAAQAAAD1//z/AAAAAAQAAAD1//3/AAAAAAQAAAD1//7/AAAAAAQAAAD1////AAAAAAQAAAD1/wAAAAAAAAQAAAD1/wEAAAAAAAQAAAD1/wIAAAAAAAQAAAD1/wMAAAAAAAQAAAD1/wQAAAAAAAQAAAD1/wUAAAAAAAQAAAD2//v/AAAAAAQAAAD2//z/AAAAAAQAAAD2//3/AAAAAAQAAAD2//7/AAAAAAQAAAD2////AAAAAAQAAAD2/wAAAAAAAAQAAAD2/wEAAAAAAAQAAAD2/wIAAAAAAAQAAAD2/wMAAAAAAAQAAAD2/wQAAAAAAAQAAAD2/wUAAAAAAAQAAAD3//v/AAAAAAQAAAD3//z/AAAAAAQAAAD3//3/AAAAAAQAAAD3//7/AAAAAAQAAAD3////AAAAAAQAAAD3/wAAAAAAAAQAAAD3/wEAAAAAAAQAAAD3/wIAAAAAAAQAAAD3/wMAAAAAAAQAAAD3/wQAAAAAAAQAAAD3/wUAAAAAAAQAAAD4//v/AAAAAAQAAAD4//z/AAAAAAQAAAD4//3/AAAAAAQAAAD4//7/AAAAAAQAAAD4////AAAAAAQAAAD4/wAAAAAAAAQAAAD4/wEAAAAAAAQAAAD4/wIAAAAAAAQAAAD4/wMAAAAAAAQAAAD4/wQAAAAAAAQAAAD4/wUAAAAAAAQAAAD5//v/AAAAAAQAAAD5//z/AAAAAAQAAAD5//3/AAAAAAQAAAD5//7/AAAAAAQAAAD5////AAAAAAQAAAD5/wAAAAAAAAQAAAD5/wEAAAAAAAQAAAD5/wIAAAAAAAQAAAD5/wMAAAAAAAQAAAD5/wQAAAAAAAQAAAD5/wUAAAAAAAQAAAD6//v/AAAAAAQAAAD6//z/AAAAAAQAAAD6//3/AAAAAAQAAAD6//7/AAAAAAQAAAD6////AAAAAAQAAAD6/wAAAAAAAAQAAAD6/wEAAAAAAAQAAAD6/wIAAAAAAAQAAAD6/wMAAAAAAAQAAAD6/wQAAAAAAAQAAAD6/wUAAAAAAAQAAAD7//v/AAAAAAQAAAD7//z/AAAAAAQAAAD7//3/AAAAAAQAAAD7//7/AAAAAAQAAAD7////AAAAAAQAAAD7/wAAAAAAAAQAAAD7/wEAAAAAAAQAAAD7/wIAAAAAAAQAAAD7/wMAAAAAAAQAAAD7/wQAAAAAAAQAAAD7/wUAAAAAAAQAAAD8//v/AAAAAAQAAAD8//z/AAAAAAQAAAD8//3/AAAAAAQAAAD8//7/AAAAAAQAAAD8////AAAAAAQAAAD8/wAAAAAAAAQAAAD8/wEAAAAAAAQAAAD8/wIAAAAAAAQAAAD8/wMAAAAAAAQAAAD8/wQAAAAAAAQAAAD8/wUAAAAAAAQAAAD9//v/AAAAAAQAAAD9//z/AAAAAAQAAAD9//3/AAAAAAQAAAD9//7/AAAAAAQAAAD9////AAAAAAQAAAD9/wAAAAAAAAQAAAD9/wEAAAAAAAQAAAD9/wIAAAAAAAQAAAD9/wMAAAAAAAQAAAD9/wQAAAAAAAQAAAD9/wUAAAAAAAQAAAD+//v/AAAAAAQAAAD+//z/AAAAAAQAAAD+//3/AAAAAAQAAAD+//7/AAAAAAQAAAD+////AAAAAAQAAAD+/wAAAAAAAAQAAAD+/wEAAAAAAAQAAAD+/wIAAAAAAAQAAAD+/wMAAAAAAAQAAAD+/wQAAAAAAAQAAAD+/wUAAAAAAAQAAAD///v/AAAAAAQAAAD///z/AAAAAAQAAAD///3/AAAAAAQAAAD///7/AAAAAAQAAAD/////AAAAAAQAAAD//wAAAAAAAAQAAAD//wEAAAAAAAQAAAD//wIAAAAAAAQAAAD//wMAAAAAAAQAAAD//wQAAAAAAAQAAAD//wUAAAAAAAQAAAAAAPv/AAAAAAQAAAAAAPz/AAAAAAQAAAAAAP3/AAAAAAQAAAAAAP7/AAAAAAQAAAAAAP//AAAAAAQAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAQAAAAAAAIAAAAAAAQAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAQAAAABAPv/AAAAAAQAAAABAPz/AAAAAAQAAAABAP3/AAAAAAQAAAABAP7/AAAAAAQAAAABAP//AAAAAAQAAAABAAAAAAAAAAQAAAABAAEAAAAAAAQAAAABAAIAAAAAAAQAAAABAAMAAAAAAAQAAAABAAQAAAAAAAQAAAABAAUAAAAAAAQAAAACAPv/AAAAAAQAAAACAPz/AAAAAAQAAAACAP3/AAAAAAQAAAACAP7/AAAAAAQAAAACAP//AAAAAAQAAAACAAAAAAAAAAQAAAACAAEAAAAAAAQAAAACAAIAAAAAAAQAAAACAAMAAAAAAAQAAAACAAQAAAAAAAQAAAACAAUAAAAAAAQAAAADAPv/AAAAAAQAAAADAPz/AAAAAAQAAAADAP3/AAAAAAQAAAADAP7/AAAAAAQAAAADAP//AAAAAAQAAAADAAAAAAAAAAQAAAADAAEAAAAAAAQAAAADAAIAAAAAAAQAAAADAAMAAAAAAAQAAAADAAQAAAAAAAQAAAADAAUAAAAAAAQAAAAEAPv/AAAAAAQAAAAEAPz/AAAAAAQAAAAEAP3/AAAAAAQAAAAEAP7/AAAAAAQAAAAEAP//AAAAAAQAAAAEAAAAAAAAAAQAAAAEAAEAAAAAAAQAAAAEAAIAAAAAAAQAAAAEAAMAAAAAAAQAAAAEAAQAAAAAAAQAAAAEAAUAAAAAAAQAAAAFAPv/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAQAAAAFAAAAAAAAAAQAAAAFAAEAAAAAAAQAAAAFAAIAAAAAAAQAAAAFAAMAAAAAAAQAAAAFAAQAAAAAAAQAAAAFAAUAAAAAAAQAAAAGAPv/AAAAAAQAAAAGAPz/AAAAAAQAAAAGAP3/AAAAAAQAAAAGAP7/AAAAAAQAAAAGAP//AAAAAAQAAAAGAAAAAAAAAAQAAAAGAAEAAAAAAAQAAAAGAAIAAAAAAAQAAAAGAAMAAAAAAAQAAAAGAAQAAAAAAAQAAAAGAAUAAAAAAAQAAAAHAPv/AAAAAAQAAAAHAPz/AAAAAAQAAAAHAP3/AAAAAAQAAAAHAP7/AAAAAAQAAAAHAP//AAAAAAQAAAAHAAAAAAAAAAQAAAAHAAEAAAAAAAQAAAAHAAIAAAAAAAQAAAAHAAMAAAAAAAQAAAAHAAQAAAAAAAQAAAAHAAUAAAAAAAQAAADw/wYAAAACAAIAAADx/wYAAAACAAIAAADy/wYAAAACAAIAAADz/wYAAAACAAIAAAD0/wYAAAACAAIAAAD1/wYAAAACAAIAAAD2/wYAAAACAAIAAAD3/wYAAAACAAIAAAD4/wYAAAACAAIAAAD5/wYAAAACAAIAAAD6/wYAAAACAAIAAAD7/wYAAAACAAIAAAD8/wYAAAACAAIAAAD9/wYAAAACAAIAAAD+/wYAAAACAAIAAAD//wYAAAACAAIAAAAAAAYAAAACAAIAAAABAAYAAAACAAIAAAACAAYAAAACAAIAAAADAAYAAAACAAIAAAAEAAYAAAACAAIAAAAFAAYAAAACAAIAAAAGAAYAAAACAAIAAAAHAAYAAAACAAIAAAAIAAYAAAADAAIAAAAIAAQAAAADAAEAAAAIAAUAAAADAAEAAADv//r/AAABAAEAAADv//v/AAABAAEAAADv//z/AAABAAEAAADv//3/AAABAAEAAADv//7/AAABAAEAAADv////AAABAAEAAADv/wAAAAABAAEAAADv/wEAAAABAAEAAADv/wIAAAABAAEAAADv/wMAAAABAAEAAADv/wQAAAABAAEAAADv/wUAAAABAAEAAADv/wYAAAABAAIAAADv//n/AAABAAEAAADv//j/AAABAAAAAAA=")
-tile_set = ExtResource("4_d6jyv")
+tile_set = ExtResource("2_dk4tr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1162924117]
-zoom = Vector2(3, 3)
+position = Vector2(0, -8)
+zoom = Vector2(2.8, 2.8)
 process_callback = 0
 
-[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("1_prs0f")]
+[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("3_05qkn")]
 
-[node name="UI" parent="." unique_id=1031834621 instance=ExtResource("3_c04ny")]
+[node name="UI" parent="." unique_id=1031834621 instance=ExtResource("4_m1mma")]
 position = Vector2(-176, -96)
 scale = Vector2(0.15, 0.15)
 
-[node name="ObjKey" parent="." unique_id=150755072 instance=ExtResource("4_dtxct")]
-position = Vector2(64, 0)
+[node name="OnDeadOpenDoor" type="Node" parent="." unique_id=1899435598]
 
-[node name="ObjEnemySpawner" parent="." unique_id=817439483 instance=ExtResource("5_dtxct")]
+[node name="ObjEnemySpawner" parent="OnDeadOpenDoor" unique_id=817439483 instance=ExtResource("6_2kvhs")]
 position = Vector2(-128, 0)
-Enemies = Array[PackedScene]([SubResource("PackedScene_oxfpq"), SubResource("PackedScene_tigj1"), SubResource("PackedScene_btg0j"), SubResource("PackedScene_1h8nb")])
+Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
 SpawnRadius = 48.0
 
-[node name="ObjSpawnerCol" parent="ObjEnemySpawner" unique_id=719003453 instance=ExtResource("6_oxfpq")]
+[node name="ObjSpawnerCol" parent="OnDeadOpenDoor/ObjEnemySpawner" unique_id=719003453 instance=ExtResource("7_tdi4f")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjEnemySpawner/ObjSpawnerCol" unique_id=1963649203]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadOpenDoor/ObjEnemySpawner/ObjSpawnerCol" unique_id=1963649203]
 shape = SubResource("CircleShape2D_tigj1")
 
-[node name="ObjLock" parent="." unique_id=269246272 instance=ExtResource("7_btg0j")]
-position = Vector2(128, 0)
+[node name="ObjDoor2" parent="OnDeadOpenDoor" unique_id=1953720290 instance=ExtResource("10_dk4tr")]
+position = Vector2(-128, -104)
+StartOpen = true
 
-[node name="ObjLockCol" parent="ObjLock" unique_id=849357917 instance=ExtResource("8_1h8nb")]
+[node name="UnlockDoorWithKey" type="Node" parent="." unique_id=1121180971]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjLock/ObjLockCol" unique_id=1157488402]
+[node name="ObjKey" parent="UnlockDoorWithKey" unique_id=150755072 instance=ExtResource("5_apq1s")]
+position = Vector2(104, -80)
+
+[node name="ObjDoor" parent="UnlockDoorWithKey" unique_id=907675044 instance=ExtResource("10_dk4tr")]
+position = Vector2(128, -104)
+
+[node name="ObjLock" parent="UnlockDoorWithKey" unique_id=269246272 instance=ExtResource("8_dlci1")]
+z_index = 1
+position = Vector2(128, -104)
+
+[node name="ObjLockCol" parent="UnlockDoorWithKey/ObjLock" unique_id=849357917 instance=ExtResource("9_5yfot")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockDoorWithKey/ObjLock/ObjLockCol" unique_id=1157488402]
 shape = SubResource("CircleShape2D_btg0j")
+
+[node name="OnDeadGiveKey" type="Node" parent="." unique_id=483403987]
+
+[node name="ObjKey2" parent="OnDeadGiveKey" unique_id=1324119498 instance=ExtResource("5_apq1s")]
+position = Vector2(120, 48)
+StartHidden = true
+
+[node name="ObjEnemySpawner2" parent="OnDeadGiveKey" unique_id=931755633 instance=ExtResource("6_2kvhs")]
+position = Vector2(120, 0)
+Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
+
+[node name="ObjSpawnerCol" parent="OnDeadGiveKey/ObjEnemySpawner2" unique_id=1281556974 instance=ExtResource("7_tdi4f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadGiveKey/ObjEnemySpawner2/ObjSpawnerCol" unique_id=1460972828]
+shape = SubResource("CircleShape2D_05qkn")
+
+[node name="ObjLock2" parent="OnDeadGiveKey" unique_id=910257717 instance=ExtResource("8_dlci1")]
+z_index = 1
+position = Vector2(120, 72)
+
+[node name="ObjLockCol" parent="OnDeadGiveKey/ObjLock2" unique_id=595277045 instance=ExtResource("9_5yfot")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadGiveKey/ObjLock2/ObjLockCol" unique_id=1709908798]
+shape = SubResource("CircleShape2D_btg0j")
+
+[node name="ObjChest" parent="OnDeadGiveKey" unique_id=439909105 instance=ExtResource("12_m1mma")]
+position = Vector2(120, 72)
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]
+[connection signal="on_all_dead" from="OnDeadOpenDoor/ObjEnemySpawner" to="." method="_on_obj_enemy_spawner_on_all_dead"]
+[connection signal="on_spawn" from="OnDeadOpenDoor/ObjEnemySpawner" to="." method="_on_obj_enemy_spawner_on_spawn"]
+[connection signal="on_unlock" from="UnlockDoorWithKey/ObjLock" to="." method="_on_obj_lock_on_unlock"]
+[connection signal="on_all_dead" from="OnDeadGiveKey/ObjEnemySpawner2" to="." method="_on_obj_enemy_spawner_2_on_all_dead"]
+[connection signal="on_unlock" from="OnDeadGiveKey/ObjLock2" to="." method="_on_obj_lock_2_on_unlock"]

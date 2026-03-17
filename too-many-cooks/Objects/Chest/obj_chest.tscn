@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b04ibwwhdjicd"]
+
+[ext_resource type="Script" uid="uid://dak6pbvt8p05d" path="res://Objects/Chest/obj_chest.gd" id="1_btgui"]
+[ext_resource type="Texture2D" uid="uid://d2bxawkx0k74x" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdChestSheet.png" id="1_xtwl7"]
+
+[sub_resource type="Animation" id="Animation_17h6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nopuj"]
+resource_name = "close"
+length = 0.375
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_aslu8"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btgui"]
+_data = {
+&"RESET": SubResource("Animation_17h6n"),
+&"close": SubResource("Animation_nopuj"),
+&"open": SubResource("Animation_aslu8")
+}
+
+[node name="ObjChest" type="Node2D" unique_id=439909105]
+script = ExtResource("1_btgui")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=654266611]
+texture = ExtResource("1_xtwl7")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=146301194]
+libraries/ = SubResource("AnimationLibrary_btgui")
