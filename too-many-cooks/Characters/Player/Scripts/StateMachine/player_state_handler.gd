@@ -28,6 +28,9 @@ signal notEnoughMana()
 signal playerDeath()
 # I think this one might be emitted when the player dies, not sure.
 
+var num_keys : int = 0
+#Number of held Keys, used by Key and Lock objects.
+
 ##Called when the node enters the scene tree for the first time.
 #player should be in idle state when loaded
 #loads the correct class for the player

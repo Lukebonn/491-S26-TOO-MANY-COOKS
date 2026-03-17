@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvob2rhx8ffg7"]
+
+[ext_resource type="Script" uid="uid://dnxltnt45mgi1" path="res://Objects/Lock/Scripts/obj_lock_col.gd" id="1_j35xj"]
+
+[node name="ObjLockCol" type="Area2D" unique_id=849357917]
+collision_layer = 0
+script = ExtResource("1_j35xj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

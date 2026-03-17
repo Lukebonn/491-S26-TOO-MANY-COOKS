@@ -12,13 +12,9 @@ script = ExtResource("1_8xilf")
 [node name="TileSpawner" type="Sprite2D" parent="." unique_id=1707547804]
 texture = ExtResource("1_kl5b1")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=939980071]
-collision_layer = 0
-collision_mask = 0
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1237032169]
+collision_layer = 64
+collision_mask = 63
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=976835996]
 shape = SubResource("RectangleShape2D_kl5b1")
-
-[node name="SpawnRoot" type="Marker2D" parent="." unique_id=2044249499]
-
-[node name="SpawnPoint" type="Marker2D" parent="SpawnRoot" unique_id=541930634]

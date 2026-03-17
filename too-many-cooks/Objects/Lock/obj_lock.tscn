@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cvxl3oo88rrdk"]
+
+[ext_resource type="Script" uid="uid://b1b1pf52ckfds" path="res://Objects/Lock/Scripts/obj_lock.gd" id="1_gml1x"]
+[ext_resource type="Texture2D" uid="uid://bli2douqkygkw" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdLock.png" id="1_qrrbs"]
+
+[node name="ObjLock" type="Node2D" unique_id=269246272]
+script = ExtResource("1_gml1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056122697]
+texture = ExtResource("1_qrrbs")

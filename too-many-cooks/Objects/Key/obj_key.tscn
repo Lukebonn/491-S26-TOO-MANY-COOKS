@@ -12,10 +12,9 @@ script = ExtResource("1_passb")
 texture = ExtResource("1_cv8jh")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=704362220]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=41536668]
 shape = SubResource("CircleShape2D_passb")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

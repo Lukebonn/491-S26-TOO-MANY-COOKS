@@ -1,6 +1,8 @@
 extends Node2D
 signal key_collected
 
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	key_collected.emit()
-	queue_free()
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		key_collected.emit()
+		body.num_keys += 1
+		queue_free()
