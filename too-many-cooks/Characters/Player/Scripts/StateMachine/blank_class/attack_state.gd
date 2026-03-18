@@ -1,5 +1,7 @@
 extends PlayerState
 
+var hitbox : PackedScene = load("res://Characters/Player/Attacks/blank_class/blank_attack.tscn")
+
 var cooldown : float = 0.3
 var on_cooldown : bool = false
 
@@ -13,24 +15,23 @@ func enter_state(player_node):
 	if(!on_cooldown):
 		#player lunges forward a small amount and has their hitbox enabled
 		player.velocity += player.local_mouse_pos.normalized() * 70
-		$"../Hitbox".monitorable = true
-		$"../Hitbox".monitoring = true
-		player.get_node("Hitbox").visible = true
+		
+		var attack = hitbox.instantiate()
+		player.add_child(attack)
+		attack.look_at(player.global_mouse_pos)
+		
 		await get_tree().create_timer(0.1).timeout
 		
 		#player has their hitbox disabled
-		$"../Hitbox".monitorable = false
-		$"../Hitbox".monitoring = false
-		player.get_node("Hitbox").visible = false
+		
+		attack.queue_free()
+		
 		player.velocity = Vector2(0,0)
 		
 		start_cooldown()
 	
 	player.change_state("move_state")
 
-
-func input_handler(_delta : float) -> void:
-	pass
 
 ##player is unable to attack until cooldown timer expires
 func start_cooldown():

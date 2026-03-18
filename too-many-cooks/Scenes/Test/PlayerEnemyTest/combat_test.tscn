@@ -96,6 +96,7 @@ scale = Vector2(0.125, 0.125)
 texture = ExtResource("9_vn22c")
 
 [node name="Tutorial Prompt" parent="." unique_id=267205786 instance=ExtResource("10_cjfr7")]
+visible = false
 position = Vector2(-18, 26)
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]

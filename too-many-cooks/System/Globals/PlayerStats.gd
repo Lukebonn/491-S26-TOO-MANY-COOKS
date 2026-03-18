@@ -34,7 +34,7 @@ var base_mag : int = 10
 var Magic := "None"
 
 ##classes enum for all possible classes and current_class for the player's equipped class
-var current_class = classes.none
+var current_class = classes.warrior
 
 enum classes{
 	none,

@@ -1,9 +1,15 @@
 [gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://choio6ou3pbbp"]
 
+[ext_resource type="Script" uid="uid://c0g6qfd3sk4p7" path="res://Characters/Player/Scripts/StateMachine/warrior_class/warrior_attack.gd" id="1_2wgaa"]
 [ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_clkxo"]
+[ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/warrior_dash.gd" id="2_0swjg"]
+[ext_resource type="Script" uid="uid://b6ugk1okk1c33" path="res://Characters/Player/Scripts/StateMachine/warrior_class/warrior_magic.gd" id="3_p0i80"]
 
 [resource]
 script = ExtResource("1_clkxo")
+attack = ExtResource("1_2wgaa")
+dash = ExtResource("2_0swjg")
+magic = ExtResource("3_p0i80")
 str_mod = 1.2
 def_mod = 1.2
 spd_mod = 1.0

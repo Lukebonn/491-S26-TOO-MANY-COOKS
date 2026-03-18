@@ -20,6 +20,7 @@ var equipped_class : PlayerClass
 var current_dir : Vector2 = Vector2(0,-1)
 
 var local_mouse_pos : Vector2
+var global_mouse_pos : Vector2
 
 var current_state : PlayerState
 
@@ -50,7 +51,7 @@ func _ready() -> void:
 	current_state.enter_state(self)
 	add_to_group("player")
 
-##sets the states from the class resorce into the player state machine
+##sets the states from the class resorce into the player state machine and applies stat modifiers
 func set_class(new_class : PlayerClass):
 	$dash_state.set_script(new_class.dash)
 	$attack_state.set_script(new_class.attack)
@@ -74,6 +75,7 @@ func change_state(new_state : String):
 func _physics_process(delta: float) -> void:
 	
 	local_mouse_pos = get_local_mouse_position()
+	global_mouse_pos = get_global_mouse_position()
 	
 	#player sprite faces left or right following the mouse
 	if(local_mouse_pos.x < 0):
@@ -83,7 +85,8 @@ func _physics_process(delta: float) -> void:
 	
 	#hitbox is pointed towards the mouse unless the player is attacking
 	if(current_state != get_node("attack_state")):
-		$Hitbox.look_at(get_global_mouse_position())
+		pass
+		#$Hitbox.look_at(get_global_mouse_position())
 	
 	if(current_state):
 		current_state.input_handler(delta)
