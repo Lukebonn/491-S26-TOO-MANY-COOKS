@@ -8,11 +8,14 @@
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
 [ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/Img/HpBarBorder.png" id="5_8ktjv"]
 
-[node name="SEprototype" type="Node2D" unique_id=1031834621]
+[node name="UI" type="Control" unique_id=1832120515]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_dvulo")
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
 visible = false
+layout_mode = 0
 offset_left = 896.0
 offset_top = 64.0
 offset_right = 1088.0
@@ -22,6 +25,7 @@ text = "Apply Posion"
 
 [node name="HealButton" type="Button" parent="." unique_id=1800725149]
 visible = false
+layout_mode = 0
 offset_left = 896.0
 offset_top = 192.0
 offset_right = 1088.0
@@ -32,6 +36,7 @@ Regeneration"
 
 [node name="EffectClearButton" type="Button" parent="." unique_id=1398826089]
 visible = false
+layout_mode = 0
 offset_left = 896.0
 offset_top = 488.0
 offset_right = 1088.0
@@ -39,12 +44,8 @@ offset_bottom = 584.0
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
 
-[node name="HealthBarBack" type="Sprite2D" parent="." unique_id=1743607461]
-position = Vector2(200, 80)
-scale = Vector2(3.6222222, 3.8285716)
-texture = ExtResource("2_7ubs7")
-
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1201939551]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 384.0
@@ -74,7 +75,13 @@ position = Vector2(173.50002, 51.000008)
 scale = Vector2(3.6222222, 3.8285716)
 texture = ExtResource("5_8ktjv")
 
+[node name="HealthBarBack" type="Sprite2D" parent="HealthBar" unique_id=1743607461]
+position = Vector2(184, 32)
+scale = Vector2(3.6222222, 3.8285716)
+texture = ExtResource("2_7ubs7")
+
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=809030424]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 176.0
 offset_right = 384.0
@@ -93,6 +100,7 @@ horizontal_alignment = 1
 
 [node name="HealthLabel" type="RichTextLabel" parent="." unique_id=2083047647]
 visible = false
+layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 168.0
@@ -101,6 +109,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Health"
 
 [node name="ManaLabel" type="RichTextLabel" parent="." unique_id=618052939]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 128.0
 offset_right = 168.0
@@ -110,6 +119,7 @@ text = "Mana
 "
 
 [node name="CoinLabel" type="RichTextLabel" parent="." unique_id=1898203501]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 256.0
 offset_right = 128.0
@@ -118,6 +128,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Gold:"
 
 [node name="CoinCount" type="RichTextLabel" parent="." unique_id=1877924493]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 256.0
 offset_right = 208.0
@@ -128,6 +139,7 @@ script = ExtResource("4_snacm")
 
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=1649117116]
 visible = false
+layout_mode = 0
 offset_left = 329.00006
 offset_top = 184.0
 offset_right = 968.99994

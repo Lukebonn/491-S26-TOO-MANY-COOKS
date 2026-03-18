@@ -1,6 +1,6 @@
-extends Node2D
+extends Control
 
-var player # stores a reference to the player node in the Combat Scene.
+@export var player: CharacterBody2D # stores a reference to the player node in the Combat Scene.
 
 var statusEffects = []
 # contains a list of status effects applied to the "player."
@@ -38,10 +38,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	player = $"../Player"
-	if (player == null):
-		print("WARNING: REFERENCE TO PLAYER IS EMPTY. WHERE IS PLAYER?")
-	
 	# if there are any expired effects in "cleanUp," then
 	# iterate through the array of indexes with expired effects,
 	# and remove them from the respective arrays.
