@@ -55,8 +55,6 @@ bg_color = Color(1, 0.06999999, 0.08549976, 1)
 size = Vector2(16, 12.25)
 
 [node name="SlimeEnemy" type="CharacterBody2D" unique_id=1633737342]
-position = Vector2(139, 118)
-scale = Vector2(4, 4)
 collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_blvt8")

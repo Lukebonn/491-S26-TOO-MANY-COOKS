@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://nv5v3ihd67io" path="res://Objects/EnemySpawner/Scripts/enemy_spawner.gd" id="1_8xilf"]
 [ext_resource type="Texture2D" uid="uid://db3slorhnroba" path="res://Objects/EnemySpawner/Sprites/tile_spawner.png" id="1_kl5b1"]
+[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="2_8tlm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl5b1"]
 size = Vector2(16, 16)
 
 [node name="ObjEnemySpawner" type="Node2D" unique_id=817439483]
 script = ExtResource("1_8xilf")
+Enemies = Array[PackedScene]([ExtResource("2_8tlm5")])
 
 [node name="TileSpawner" type="Sprite2D" parent="." unique_id=1707547804]
 texture = ExtResource("1_kl5b1")
