@@ -76,6 +76,7 @@ scale = Vector2(3.6222222, 3.8285716)
 texture = ExtResource("5_8ktjv")
 
 [node name="HealthBarBack" type="Sprite2D" parent="HealthBar" unique_id=1743607461]
+z_index = -1
 position = Vector2(184, 32)
 scale = Vector2(3.6222222, 3.8285716)
 texture = ExtResource("2_7ubs7")
