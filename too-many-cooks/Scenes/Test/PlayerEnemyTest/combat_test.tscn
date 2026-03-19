@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/UI.tscn" id="3_1lw8e"]
 [ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="4_lnocq"]
 [ext_resource type="Script" uid="uid://bndcicnatwmua" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="5_vasta"]
-[ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.wav" id="6_qh6lb"]
+[ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.ogg" id="6_cjfr7"]
 [ext_resource type="Script" uid="uid://5h2nvu0najdi" path="res://Scenes/Test/PlayerEnemyTest/Scripts/combat_controls_playtest.gd" id="7_pjd3s"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]
 [ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="9_vn22c"]
@@ -58,8 +58,8 @@ collision_mask = 2
 position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_lnocq")
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=756298209]
-stream = ExtResource("6_qh6lb")
+[node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=756298209]
+stream = ExtResource("6_cjfr7")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"

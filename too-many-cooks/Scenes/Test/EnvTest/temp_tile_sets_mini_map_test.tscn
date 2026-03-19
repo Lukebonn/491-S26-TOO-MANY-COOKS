@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
 [ext_resource type="PackedScene" uid="uid://bjwgwx8jlkexb" path="res://Scenes/Level Design/Test Level Design/Chest.tscn" id="7_0npcw"]
 [ext_resource type="PackedScene" uid="uid://ibkesuy03r0c" path="res://Scenes/Level Design/Test Level Design/key.tscn" id="8_h05sp"]
-[ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.wav" id="9_uruf1"]
+[ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/[DEPRECATED]Eli491_Combat softer.wav" id="9_uruf1"]
 [ext_resource type="Script" uid="uid://ddagge5dbq4op" path="res://Scenes/Test/EnvTest/dynamicMusic.gd" id="10_yvunr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
