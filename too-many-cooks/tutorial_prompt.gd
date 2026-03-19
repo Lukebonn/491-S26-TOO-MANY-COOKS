@@ -2,10 +2,8 @@ extends Node2D
 
 var first_time = true
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if first_time == false:
-		queue_free()
-	elif first_time == true:
+func _ready():
+	if Global.First_Time_Tavern:
 		show()
 
 
@@ -16,4 +14,4 @@ func _process(_delta: float) -> void:
 
 func _on_button_pressed():
 	queue_free()
-	first_time = false
+	Global.First_Time_Combat = false

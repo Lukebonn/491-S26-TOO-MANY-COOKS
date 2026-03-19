@@ -51,6 +51,7 @@ func _ready() -> void:
 	current_state.enter_state(self)
 	add_to_group("player")
 
+
 ##sets the states from the class resorce into the player state machine and applies stat modifiers
 func set_class(new_class : PlayerClass):
 	$dash_state.set_script(new_class.dash)

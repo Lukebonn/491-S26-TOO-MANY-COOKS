@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
 [ext_resource type="Texture2D" uid="uid://cd1c4eu47edfb" path="res://Scenes/Test/ProtoArt/chipmunk.png" id="8_ir5m0"]
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
-[ext_resource type="Script" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
+[ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
