@@ -37,9 +37,13 @@ process_callback = 0
 
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("3_05qkn")]
 
-[node name="UI" parent="." unique_id=1031834621 instance=ExtResource("4_m1mma")]
-position = Vector2(-176, -96)
+[node name="UI" parent="." unique_id=1031834621 node_paths=PackedStringArray("player") instance=ExtResource("4_m1mma")]
+offset_left = -176.0
+offset_top = -96.0
+offset_right = -176.0
+offset_bottom = -96.0
 scale = Vector2(0.15, 0.15)
+player = NodePath("../Player")
 
 [node name="OnDeadOpenDoor" type="Node" parent="." unique_id=1899435598]
 

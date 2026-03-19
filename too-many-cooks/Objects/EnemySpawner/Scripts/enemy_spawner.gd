@@ -41,6 +41,5 @@ func calc_spawn_pos(i: int):
 
 func on_enemy_dead() -> void:
 	num_enemies -= 1
-	print("bye")
 	if num_enemies <= 0:
 		on_all_dead.emit()

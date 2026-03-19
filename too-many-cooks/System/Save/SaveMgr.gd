@@ -14,10 +14,10 @@ func Save() -> void:
 
 # Load game save, calling Save() if one doesn't exist.
 func Load() -> void:
-	if not ResourceLoader.exists(SavePath):
-		Save()
-	else:
+	if ResourceLoader.exists(SavePath):
 		GameSave = ResourceLoader.load(SavePath, "", ResourceLoader.CACHE_MODE_IGNORE)
+	else:
+		GameSave = SaveGame.new()
 
 # Delete save data and create new data with Save().
 func Reset() -> void:

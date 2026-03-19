@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready() -> void:
+	print(ResourceLoader.exists("res://System/Save/SaveGame.tres"))
+
 #On enemies dead, open door.
 func _on_obj_enemy_spawner_on_spawn() -> void:
 	$OnDeadOpenDoor/ObjDoor2.set_open(false)
