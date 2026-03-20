@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://4xcgo6wurbfm"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_7vev3"]
-
 [node name="Hitbox" type="Area2D" unique_id=607964857]
 collision_layer = 4
-collision_mask = 16
+collision_mask = 24
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2089132905]
 position = Vector2(0, 1.1368684e-13)
 scale = Vector2(0.19084826, 0.13489208)
 polygon = PackedVector2Array(70, 69, 105, 32, 105, -35, 70, -70)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060534246]
-position = Vector2(16.5, 0)
-scale = Vector2(6.9999995, 18)
-texture = SubResource("CanvasTexture_7vev3")
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=924618675]
+polygon = PackedVector2Array(14, 9, 19, 4, 19, -5, 14, -9)

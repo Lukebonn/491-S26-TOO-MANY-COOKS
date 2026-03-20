@@ -104,8 +104,8 @@ func _on_hurtbox_area_entered(area):
 	current_state.hit_response(area)
 
 ##triggers when player melee hitbox collides with something
-func _on_hitbox_area_entered(_area):
-	$attack_state.on_attack_hit()
+#func on_attack_hit():
+#	$attack_state.on_attack_hit()
 
 ##this should be in a script for managing the entire combat scene, not here
 func _on_tavern_return_area_entered(_area: Area2D):

@@ -7,7 +7,7 @@ var duration : float = 0.1
 var timer : float
 
 var dash_counter : int = 0
-var cooldown : float = 5
+var cooldown : float = 2
 var cooldown_timer : float = 0
 
 signal player_in_hitbox(Area2D)

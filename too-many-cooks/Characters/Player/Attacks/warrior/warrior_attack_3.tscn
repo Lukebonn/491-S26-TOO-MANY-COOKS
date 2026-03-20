@@ -8,14 +8,5 @@
 position = Vector2(0, 7.450581e-09)
 polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.198822, 84.01198, 120.51458, 39.531975, 120.51458, -40.53202, 26.198822, -85.012024)
 
-[node name="Sprite2D" parent="." index="1" unique_id=1060534246]
-position = Vector2(15.500001, 0)
-scale = Vector2(15, 18)
-
-[node name="Sprite2D2" parent="Sprite2D" index="0" unique_id=1604745495]
-position = Vector2(-0.25000006, -0.6944445)
-scale = Vector2(1, 0.38888884)
-
-[node name="Sprite2D3" parent="Sprite2D" index="1" unique_id=708015294]
-position = Vector2(-0.25000006, 0.6944445)
-scale = Vector2(1, 0.38888893)
+[node name="Polygon2D" parent="." index="1" unique_id=924618675]
+polygon = PackedVector2Array(8, 9, 8, -9, 5, -19, 21, -9, 21, 9, 5, 19)

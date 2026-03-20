@@ -1,6 +1,6 @@
 extends PlayerState
 
-var hitbox : PackedScene = load("res://Characters/Player/Attacks/blank_class/blank_attack.tscn")
+var attack : PackedScene = load("res://Characters/Player/Attacks/blank_class/blank_attack.tscn")
 
 var cooldown : float = 0.3
 var on_cooldown : bool = false
@@ -16,15 +16,17 @@ func enter_state(player_node):
 		#player lunges forward a small amount and has their hitbox enabled
 		player.velocity += player.local_mouse_pos.normalized() * 70
 		
-		var attack = hitbox.instantiate()
-		player.add_child(attack)
-		attack.look_at(player.global_mouse_pos)
+		var hitbox = attack.instantiate()
+		hitbox.connect("body_entered", on_attack_hit)
+		
+		player.add_child(hitbox)
+		hitbox.look_at(player.global_mouse_pos)
 		
 		await get_tree().create_timer(0.1).timeout
 		
 		#player has their hitbox disabled
 		
-		attack.queue_free()
+		hitbox.queue_free()
 		
 		player.velocity = Vector2(0,0)
 		
@@ -42,7 +44,7 @@ func start_cooldown():
 	on_cooldown = false
 
 ##player regains mana when attacking enemies
-func on_attack_hit():
+func on_attack_hit(_body):
 	player.mana += mana_gain
 
 ##player should lose a certain amount of health

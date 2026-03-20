@@ -39,10 +39,6 @@ func enter_state(player_node):
 	
 	player.change_state("move_state")
 
-##creates an instance of the spell and sets its velocity in the direction the player is aiming
-func input_handler(_delta : float) -> void:
-	pass
-
 ##player is unable to use the spell again until cooldown timer expires
 func start_cooldown():
 	on_cooldown = true

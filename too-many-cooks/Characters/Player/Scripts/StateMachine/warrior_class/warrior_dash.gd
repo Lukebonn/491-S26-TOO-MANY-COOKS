@@ -1,5 +1,91 @@
 extends PlayerState
 
+var full_dash_speed : int = 600
+var current_dash_speed : int
+
+var duration : float = 0.1
+var timer : float
+
+var dash_counter : int = 0
+var cooldown : float = 2
+var cooldown_timer : float = 0
+
+var dash_attack : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_dash_attack.tscn")
+
+signal player_in_hitbox(Area2D)
+
+##Calls player_state enter_state method to have 'player' reference player node
+#sets players speed to dash_speed, resets duration timer
 func enter_state(player_node):
+	#print_debug("dash_state entered")
 	super(player_node)
-	player.change_state("move_state")
+	
+	current_dash_speed = full_dash_speed
+	
+	#checks if the player is spamming dash
+	if(cooldown_timer > 0):
+		dash_counter += 1
+		reset_cooldown()
+	else:
+		dash_counter = 0
+	
+	#if the player has spammed dash 3 times, their dash will slow way down
+	#dash attack will only trigger if dashing normally
+	if(dash_counter >= 3):
+		player.modulate = Color(1.0, 0.639, 0.19, 1.0)
+		current_dash_speed /= dash_counter
+	else:
+		execute_attack()
+	
+	#player will dash in the last recorded direction if not moving
+	if(player.velocity == Vector2(0,0)):
+		player.velocity = player.current_dir
+	else:
+		player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
+	player.velocity = player.velocity.normalized() * current_dash_speed
+	
+	
+	
+	timer = duration
+
+func execute_attack():
+	var hitbox = dash_attack.instantiate()
+	
+	var look_point = player.position + Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
+	
+	player.add_child(hitbox)
+	hitbox.look_at(look_point)
+	
+	await get_tree().create_timer(duration).timeout
+	
+	hitbox.queue_free()
+
+##changes into move_state when timer reaches zero
+func input_handler(delta : float) -> void:
+	if(timer > 0):
+		timer -= delta
+	else:
+		player.change_state("idle_state")
+
+##player hurtbox is flicked on and off once dash ends so that it will check for collisions
+func exit_state():
+	$"../Hurtbox".monitoring = false
+	$"../Hurtbox".monitoring = true
+	start_cooldown(get_process_delta_time())
+
+##starts a timer that keeps track of if the player is spamming dash
+func start_cooldown(delta : float):
+	cooldown_timer = cooldown
+	
+	while cooldown_timer > 0:
+		cooldown_timer -= delta
+		await get_tree().process_frame
+	
+	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+func reset_cooldown():
+	cooldown_timer = cooldown
+
+##player should not take damage in roll state
+func hit_response(_source):
+	pass

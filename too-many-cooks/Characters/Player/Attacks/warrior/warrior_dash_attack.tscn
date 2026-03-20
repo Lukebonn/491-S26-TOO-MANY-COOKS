@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://drsmo5d3lcdkw"]
+
+[node name="Hitbox" type="Area2D" unique_id=307444384]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1322426897]
+position = Vector2(0.05227232, 0)
+scale = Vector2(1.0113636, 1)
+polygon = PackedVector2Array(3.903371, 7, 12.802247, 0, 3.903371, -7, 25.65618, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1115463668]
+polygon = PackedVector2Array(4, 7, 25, 0, 4, -7, 11, 0)
