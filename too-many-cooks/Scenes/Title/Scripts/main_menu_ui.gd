@@ -65,21 +65,21 @@ func _on_master_slider_value_changed(value):
 	str($"Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider".value*100) \
 	+ "%"
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))
-	SaveMgr.GameSave.master_volume = value
+	SaveMgr.GameData.master_volume = value
 	
 func _on_music_slider_value_changed(value):
 	$"Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/musiclabel".text = "  " + \
 	str($"Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider".value*100) \
 	+ "%"
 	AudioServer.set_bus_volume_db(1, linear_to_db(value))
-	SaveMgr.GameSave.music_volume = value
+	SaveMgr.GameData.music_volume = value
 
 func _on_sfx_slider_value_changed(value):
 	$"Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/sfxlabel".text = "  " +  \
 	str($"Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider".value*100) \
 	+ "%"
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))
-	SaveMgr.GameSave.sound_volume = value
+	SaveMgr.GameData.sound_volume = value
 
 func _on_purple_toggle_pressed():
 	if $"../Menu part/Cat".modulate == Color(.8,0,.8):
