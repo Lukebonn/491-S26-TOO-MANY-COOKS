@@ -3,16 +3,50 @@
 [ext_resource type="Material" uid="uid://cxfnbulitax7j" path="res://Scenes/Level Design/Weather System/Drizzle.tres" id="1_nevgv"]
 [ext_resource type="Script" uid="uid://dcnk5mwv4er0d" path="res://Scenes/Level Design/Weather System/concurrent_state_machine.gd" id="2_vfnup"]
 [ext_resource type="Script" uid="uid://c4brgax8jxc6o" path="res://rain_state_machine.gd" id="3_pbgo3"]
+[ext_resource type="Script" uid="uid://c60854dlj175g" path="res://Scenes/Level Design/Weather System/fog_state_machine.gd" id="4_vfnup"]
+[ext_resource type="Script" uid="uid://bjgqrxl753k6l" path="res://Scenes/Level Design/Weather System/wind_state_machine.gd" id="5_pbgo3"]
+[ext_resource type="Shader" uid="uid://chpdc3wblj555" path="res://Scenes/Level Design/Weather System/HeavyWind.tres" id="6_xrcjm"]
+[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="7_rj2ab"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptc7x"]
+shader = ExtResource("6_xrcjm")
+shader_parameter/speed = 2.5
+shader_parameter/strength = 0.4
+shader_parameter/y_origin = 64.0
+shader_parameter/restrict_dir = 0
 
 [node name="WeatherTestScene" type="Node2D" unique_id=1415316628]
 
 [node name="Particles" type="GPUParticles2D" parent="." unique_id=1835473715]
 position = Vector2(100, -19)
+emitting = false
 process_material = ExtResource("1_nevgv")
 
-[node name="ConcurrentStateMachine" type="Node" parent="." unique_id=481157604 node_paths=PackedStringArray("particles")]
+[node name="ConcurrentStateMachine" type="Node" parent="." unique_id=481157604 node_paths=PackedStringArray("particles", "color_rect")]
 script = ExtResource("2_vfnup")
 particles = NodePath("../Particles")
+color_rect = NodePath("../ParallaxLayer/ColorRect")
 
 [node name="RainStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=1322344646]
 script = ExtResource("3_pbgo3")
+debug = false
+
+[node name="FogStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=323237622]
+script = ExtResource("4_vfnup")
+debug = false
+
+[node name="WindStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=1157525971 groups=["Sway"]]
+script = ExtResource("5_pbgo3")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1484666317]
+motion_mirroring = Vector2(1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer" unique_id=1310616005]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=293342842 groups=["Sway"]]
+material = SubResource("ShaderMaterial_ptc7x")
+position = Vector2(200, 149)
+texture = ExtResource("7_rj2ab")

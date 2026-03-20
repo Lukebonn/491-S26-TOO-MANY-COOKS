@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bdc4oyuygym6t"]
+
+[ext_resource type="Shader" uid="uid://c66vjgvqjofkm" path="res://Scenes/Level Design/Weather System/Sway.gdshader" id="1_adwig"]
+
+[resource]
+shader = ExtResource("1_adwig")
+shader_parameter/speed = 1.5
+shader_parameter/strength = 0.2
+shader_parameter/y_origin = 64.0
+shader_parameter/restrict_dir = 0

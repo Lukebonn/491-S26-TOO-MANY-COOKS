@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bex7287fjra60"]
+
+[ext_resource type="Shader" uid="uid://byfvouppfkblw" path="res://Scenes/Level Design/Weather System/weather_test_scene.gdshader" id="1_1bihe"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yfp11"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jff2i"]
+width = 1152
+height = 648
+noise = SubResource("FastNoiseLite_yfp11")
+seamless = true
+
+[resource]
+shader = ExtResource("1_1bihe")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_jff2i")
+shader_parameter/smoke_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/distortion_speed = 0.2
+shader_parameter/density = 0.30000001425

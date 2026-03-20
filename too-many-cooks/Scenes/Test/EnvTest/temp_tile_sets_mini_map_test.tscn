@@ -243,7 +243,6 @@ texture = ExtResource("4_uwhm3")
 
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("3_787b4")]
 position = Vector2(601, 344)
-scale = Vector2(1, 1)
 
 [node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_tum0s")]
 
