@@ -26,6 +26,8 @@ func input_handler(_delta : float) -> void:
 	#changes to magic_state if magic input is pressed
 	if(Input.is_action_just_pressed("magic")):
 		player.change_state("magic_state")
+	
+	
 
 ##player should lose a certain amount of health
 func hit_response(source):

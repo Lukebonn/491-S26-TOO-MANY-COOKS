@@ -1,38 +1,43 @@
 [gd_scene format=3 uid="uid://bvssa6ikgdtrr"]
 
 [ext_resource type="FontFile" uid="uid://cq4db84i8bay1" path="res://PixelPurl.ttf" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://siks5ho5otte" path="res://pause_menu.gd" id="1_nwcfo"]
 
 [node name="Pause Menu" type="ColorRect" unique_id=408083181]
-offset_right = 355.0
-offset_bottom = 285.0
+offset_right = 150.0
+offset_bottom = 117.0
 color = Color(1, 1, 1, 0.3647059)
+script = ExtResource("1_nwcfo")
 
 [node name="Label" type="Label" parent="." unique_id=453789265]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 15.0
-offset_right = 253.0
-offset_bottom = 70.0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 106.0
+offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "Paused"
 
 [node name="Resume" type="Button" parent="." unique_id=774169955]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 109.0
-offset_right = 217.0
-offset_bottom = 145.0
+offset_left = 47.0
+offset_top = 47.0
+offset_right = 95.0
+offset_bottom = 69.0
 theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Resume"
 
 [node name="Quit" type="Button" parent="." unique_id=323012838]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 206.0
-offset_right = 218.0
-offset_bottom = 242.0
+offset_left = 57.0
+offset_top = 85.0
+offset_right = 86.0
+offset_bottom = 107.0
 theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Quit"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

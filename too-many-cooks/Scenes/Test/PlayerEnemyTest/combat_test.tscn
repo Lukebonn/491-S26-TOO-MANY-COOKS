@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]
 [ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="9_vn22c"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="10_cjfr7"]
+[ext_resource type="PackedScene" uid="uid://bvssa6ikgdtrr" path="res://pause_menu.tscn" id="11_vn22c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnocq"]
 size = Vector2(42, 3)
@@ -101,6 +102,12 @@ texture = ExtResource("9_vn22c")
 [node name="Tutorial Prompt" parent="." unique_id=267205786 instance=ExtResource("10_cjfr7")]
 visible = false
 position = Vector2(-18, 26)
+
+[node name="Pause Menu" parent="." unique_id=408083181 instance=ExtResource("11_vn22c")]
+offset_left = -74.0
+offset_top = -56.0
+offset_right = 76.0
+offset_bottom = 61.0
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]

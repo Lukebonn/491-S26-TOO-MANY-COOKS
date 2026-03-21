@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
 [ext_resource type="Texture2D" uid="uid://cd1c4eu47edfb" path="res://Scenes/Test/ProtoArt/chipmunk.png" id="8_ir5m0"]
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
-[ext_resource type="Script" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
+[ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="18_tqgpy"]
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
 [ext_resource type="AudioStream" uid="uid://bs835jwuvi230" path="res://Scenes/Tavern/TavernMusic.ogg" id="25_arv5a"]
+[ext_resource type="PackedScene" uid="uid://bvssa6ikgdtrr" path="res://pause_menu.tscn" id="26_4f6a6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -596,6 +597,12 @@ text = "OK"
 stream = ExtResource("25_arv5a")
 autoplay = true
 bus = &"Music"
+
+[node name="Pause Menu" parent="." unique_id=408083181 instance=ExtResource("26_4f6a6")]
+offset_left = 515.0
+offset_top = 166.0
+offset_right = 665.0
+offset_bottom = 283.0
 
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
