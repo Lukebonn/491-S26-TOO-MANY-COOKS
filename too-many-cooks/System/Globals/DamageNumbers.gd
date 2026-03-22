@@ -18,6 +18,8 @@ func display_number(value: int, position: Vector2): #is_crit: bool = false):
 	number.label_settings.font_size = 12 #IDK a good size
 	number.label_settings.outline_color = "#000" #black outline
 	number.label_settings.outline_size = 1
+	number.theme = preload("res://UI/Themes/CombatTheme.tres")
+	number.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	
 	call_deferred("add_child", number) #adds the number
 	

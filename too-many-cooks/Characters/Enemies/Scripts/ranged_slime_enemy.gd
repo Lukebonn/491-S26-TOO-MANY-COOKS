@@ -107,6 +107,15 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 		tween.tween_property(self, "position", target_position, 0.5)
 		
 		#DamageNumbers.display_number(damage, damage_numbers_origin.global_position)
+		#enemy team, i switched up the damage number stuff to be in its own scene
+		#this was to de-couple it from a particular enemy
+		#the following three lines can become all you need in a enemy death state
+		#to display a number
+		#let me know if you have questions -carson
+		var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
+		damage_number.Number = self_damage
+		add_child(damage_number)
+		
 	'''only problem is that its displaying the initial 
 	damage for the slime and not the player damage amount.
 	Not sure where/what the player stat damage is but

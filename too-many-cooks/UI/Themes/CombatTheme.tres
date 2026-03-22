@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cjyah8gr6r4sy"]
+
+[ext_resource type="FontFile" uid="uid://dwou2mmwlxkrl" path="res://UI/Themes/Fonts/unifontex-font/Unifontexmono-lxY45.ttf" id="1_qgf5m"]
+
+[resource]
+default_font = ExtResource("1_qgf5m")
+default_font_size = 32

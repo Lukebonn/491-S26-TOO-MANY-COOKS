@@ -64,8 +64,17 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 		tween.set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property(self, "position", target_position, 0.5)
 		
-		DamageNumbers.display_number(self_damage, damage_numbers_origin.global_position)
-	
+		#DamageNumbers.display_number(self_damage, damage_numbers_origin.global_position)
+		
+		#enemy team, i switched up the damage number stuff to be in its own scene
+		#this was to de-couple it from a particular enemy
+		#the following three lines can become all you need in a enemy death state
+		#to display a number
+		#let me know if you have questions -carson
+		var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
+		damage_number.Number = self_damage
+		add_child(damage_number)
+		
 func _die() -> void:
 	is_alive = false
 	animated_sprite_2d.play("death")

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b6g02boy87hiu" path="res://Scenes/Tavern/Scripts/dialogue_box.gd" id="1_4hstr"]
 [ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="1_www31"]
 [ext_resource type="Script" uid="uid://b3la3oieo5lrp" path="res://Scenes/Tavern/Scripts/tavern_bg.gd" id="2_3n42s"]
+[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_tqgpy"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="3_3n42s"]
 [ext_resource type="Texture2D" uid="uid://dkxxv4gfpo8b6" path="res://Scenes/Tavern/Art/TavernBackgroundDamaged.png" id="5_msftv"]
 [ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="5_vqw7w"]
@@ -40,8 +41,6 @@ corner_radius_bottom_left = 10
 corner_detail = 5
 shadow_size = 10
 
-[sub_resource type="Theme" id="Theme_1uoo0"]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
 size = Vector2(128, 128)
 
@@ -55,6 +54,7 @@ script = ExtResource("1_1uoo0")
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("2_tqgpy")
 script = ExtResource("1_4hstr")
 
 [node name="Container" type="Control" parent="Dialogue Box" unique_id=1526253951]
@@ -68,6 +68,7 @@ offset_right = 576.0
 offset_bottom = 1170.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 
 [node name="Dialogue" type="Panel" parent="Dialogue Box/Container" unique_id=1306393861]
 z_index = 1
@@ -82,7 +83,7 @@ offset_right = 394.30554
 offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 0
-rotation = -0.017453292
+theme = ExtResource("2_tqgpy")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
 
 [node name="DialogueLabel" type="RichTextLabel" parent="Dialogue Box/Container/Dialogue" unique_id=1328355702]
@@ -90,13 +91,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.461994
-offset_top = 3.5088806
-offset_right = -12.44458
-offset_bottom = -13.491089
+offset_left = 8.341636
+offset_top = 9.146982
+offset_right = -12.564941
+offset_bottom = -7.8529816
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 24
+theme = ExtResource("2_tqgpy")
+theme_override_font_sizes/normal_font_size = 36
 text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
 fit_content = true
 scroll_active = false
@@ -115,8 +117,7 @@ offset_right = -376.83398
 offset_bottom = -250.46402
 grow_horizontal = 2
 grow_vertical = 0
-rotation = -0.017453292
-theme = SubResource("Theme_1uoo0")
+theme = ExtResource("2_tqgpy")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
 script = ExtResource("1_www31")
 child_dialogue = NodePath("SpeakerLabel")
@@ -132,7 +133,8 @@ offset_right = 533.6582
 offset_bottom = -11.894295
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 32
+theme = ExtResource("2_tqgpy")
+theme_override_font_sizes/normal_font_size = 44
 text = "youuu"
 fit_content = true
 scroll_active = false
@@ -149,6 +151,7 @@ anchors_preset = 0
 offset_left = -1260.0
 offset_right = -1220.0
 offset_bottom = 40.0
+theme = ExtResource("2_tqgpy")
 script = ExtResource("2_3n42s")
 scroll_speed = 100.0
 
@@ -174,6 +177,7 @@ offset_top = 309.0
 offset_right = 2375.0
 offset_bottom = 821.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("8_ir5m0")
 texture_pressed = ExtResource("8_ir5m0")
 script = ExtResource("6_41fud")
@@ -190,6 +194,7 @@ offset_top = 212.0
 offset_right = 2712.0
 offset_bottom = 724.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("14_7td72")
 texture_pressed = ExtResource("14_7td72")
 flip_h = true
@@ -218,6 +223,7 @@ offset_top = 200.0
 offset_right = 2051.0
 offset_bottom = 712.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("15_16683")
 texture_pressed = ExtResource("15_16683")
 flip_h = true
@@ -246,6 +252,7 @@ offset_top = 303.0
 offset_right = 3307.0
 offset_bottom = 815.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("3_3n42s")
 texture_pressed = ExtResource("3_3n42s")
 script = ExtResource("6_41fud")
@@ -260,6 +267,7 @@ offset_left = 3218.0
 offset_top = 279.0
 offset_right = 3346.0
 offset_bottom = 407.0
+theme = ExtResource("2_tqgpy")
 texture_normal = SubResource("PlaceholderTexture2D_4hstr")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Door Andy" unique_id=270719110]
@@ -277,6 +285,7 @@ vertical_alignment = 1
 
 [node name="Upgrade Man" type="Control" parent="Tavern BG" unique_id=2040262124]
 anchors_preset = 0
+theme = ExtResource("2_tqgpy")
 script = ExtResource("10_pv64h")
 
 [node name="NPCMagic" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
@@ -285,6 +294,7 @@ offset_left = 1377.0
 offset_top = 397.0
 offset_right = 1505.0
 offset_bottom = 525.0
+theme = ExtResource("2_tqgpy")
 texture_normal = SubResource("PlaceholderTexture2D_pv64h")
 script = ExtResource("10_gr732")
 Cost_Amount = Array[int]([1])
@@ -333,6 +343,7 @@ offset_left = 1552.0
 offset_top = 397.0
 offset_right = 1680.0
 offset_bottom = 525.0
+theme = ExtResource("2_tqgpy")
 texture_normal = SubResource("PlaceholderTexture2D_pv64h")
 script = ExtResource("10_gr732")
 Cost_Amount = Array[int]([1])
@@ -346,6 +357,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
+theme = ExtResource("2_tqgpy")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Upgrade!"
@@ -365,11 +377,13 @@ offset_top = -148.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCEnd/Panel" unique_id=1122320047]
 layout_mode = 0
 offset_right = 127.0
 offset_bottom = 60.0
+theme = ExtResource("2_tqgpy")
 text = "Costs:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -381,6 +395,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("2_tqgpy")
 
 [node name="LeftPanel" type="Panel" parent="HeadsUpUI" unique_id=2097488240]
 z_index = 2
@@ -390,6 +405,7 @@ anchor_bottom = 1.0
 offset_right = 96.0
 offset_bottom = 608.0
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 
 [node name="LeftPanelArrow" type="TextureRect" parent="HeadsUpUI/LeftPanel" unique_id=674523534]
 layout_mode = 1
@@ -404,6 +420,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 texture = ExtResource("16_6jyd3")
 
 [node name="RightPanel" type="Panel" parent="HeadsUpUI" unique_id=92928351]
@@ -418,6 +435,7 @@ offset_right = 1112.0
 offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 
 [node name="RightPanelArrow" type="TextureRect" parent="HeadsUpUI/RightPanel" unique_id=1739437180]
 layout_mode = 1
@@ -432,6 +450,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 texture = ExtResource("16_6jyd3")
 flip_h = true
 
@@ -441,6 +460,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("2_tqgpy")
 script = ExtResource("20_7td72")
 
 [node name="FirstPanel" type="Panel" parent="FirstTimeUI" unique_id=1083427474]
@@ -450,6 +470,7 @@ offset_left = 302.0
 offset_top = 132.0
 offset_right = 878.0
 offset_bottom = 429.0
+theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/FirstPanel" unique_id=2066306281]
 layout_mode = 1
@@ -464,7 +485,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("2_tqgpy")
 text = "Welcome to the tavern!
 This is where you can upgrade and talk 
 to NPCs to help you get stronger."
@@ -483,6 +504,7 @@ offset_right = 47.0
 offset_bottom = 119.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 theme_override_font_sizes/font_size = 24
 text = "OK"
 
@@ -490,16 +512,18 @@ text = "OK"
 visible = false
 z_index = 2
 layout_mode = 0
-offset_left = 259.0
-offset_top = 371.0
-offset_right = 635.0
-offset_bottom = 510.0
+offset_left = 260.0
+offset_top = 357.0
+offset_right = 753.0
+offset_bottom = 560.0
+theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/SecondPanel" unique_id=1666957017]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 375.0
 offset_bottom = 109.0
+theme = ExtResource("2_tqgpy")
 text = "You can upgrade your tavern by clicking here. 
 Upgrading your tavern can make new NPCs
 appear.
@@ -514,11 +538,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -51.0
-offset_top = 21.5
+offset_top = 46.5
 offset_right = 43.0
-offset_bottom = 63.5
+offset_bottom = 88.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 theme_override_font_sizes/font_size = 24
 text = "OK"
 
@@ -526,16 +551,18 @@ text = "OK"
 visible = false
 z_index = 2
 layout_mode = 0
-offset_left = 489.0
-offset_top = 149.0
-offset_right = 865.0
-offset_bottom = 288.0
+offset_left = 440.0
+offset_top = 111.0
+offset_right = 900.0
+offset_bottom = 308.0
+theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/ThirdPanel" unique_id=1087305835]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 375.0
 offset_bottom = 109.0
+theme = ExtResource("2_tqgpy")
 text = "This is an NPC. 
 You can talk to them by clicking on them.
 Some may allow you to become stronger."
@@ -549,11 +576,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -51.0
-offset_top = 21.5
+offset_top = 35.5
 offset_right = 43.0
-offset_bottom = 63.5
+offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 theme_override_font_sizes/font_size = 24
 text = "OK"
 
@@ -561,16 +589,18 @@ text = "OK"
 visible = false
 z_index = 2
 layout_mode = 0
-offset_left = 404.0
-offset_top = 178.0
-offset_right = 780.0
+offset_left = 309.0
+offset_top = 140.0
+offset_right = 815.0
 offset_bottom = 317.0
+theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/FourthPanel" unique_id=280864426]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 375.0
 offset_bottom = 109.0
+theme = ExtResource("2_tqgpy")
 text = "The bars on the sides let you move the camera.
 You can leave the tavern by clicking the door
 on the right side of the tavern.
@@ -585,11 +615,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -51.0
-offset_top = 21.5
+offset_top = 36.5
 offset_right = 43.0
-offset_bottom = 63.5
+offset_bottom = 78.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_tqgpy")
 theme_override_font_sizes/font_size = 24
 text = "OK"
 

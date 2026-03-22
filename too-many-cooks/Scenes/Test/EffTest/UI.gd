@@ -1,6 +1,6 @@
 extends Control
 
-@export var player: CharacterBody2D # stores a reference to the player node in the Combat Scene.
+@export var player: Node # stores a reference to the player node in the Combat Scene.
 
 var statusEffects = []
 # contains a list of status effects applied to the "player."
@@ -30,6 +30,7 @@ signal applyStatusEffect(effectName: String, duration: int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DeathScreen.visible = false
+	print(player)
 	# testing purposes
 	#print($HealthBar/HealthValue.text)
 	#print($HealthBar.value)
@@ -38,6 +39,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if !player:
+		pass
 	# if there are any expired effects in "cleanUp," then
 	# iterate through the array of indexes with expired effects,
 	# and remove them from the respective arrays.
