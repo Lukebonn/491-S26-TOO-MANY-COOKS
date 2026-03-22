@@ -104,6 +104,7 @@ func find_message(character: String, index, emotions):
 		"Playtest":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
 			Global.Has_Finished_Playtest = true
+			
 	var body = file.get_as_text()
 	body = body.split("\n")
 	index = index.split(",")

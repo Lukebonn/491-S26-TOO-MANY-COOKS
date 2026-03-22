@@ -24,6 +24,7 @@ func _either_panel_mouse_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"direction",0,1).set_trans(Tween.TRANS_CUBIC)
 
+
 func set_up_tavern():
 	if PlayerStats.Magic == "Fireball":
 		$TavernBackgroundLong.hide()
@@ -35,7 +36,6 @@ func set_up_tavern():
 		$"Upgrade Man/NPCEnd".hide()
 		$TavernBackgroundLong2.hide()
 		$TavernBackgroundLong3.show()
-		
 func _on_door_andy_pressed():
 	print("leaving...")
 	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")

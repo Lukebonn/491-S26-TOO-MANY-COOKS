@@ -27,7 +27,8 @@ func input_handler(_delta : float) -> void:
 	if(Input.is_action_just_pressed("magic")):
 		player.change_state("magic_state")
 	
-	
+	if(Input.is_action_pressed("pause")):
+		get_tree().change_scene_to_file("res://pause_menu.tscn")
 
 ##player should lose a certain amount of health
 func hit_response(source):

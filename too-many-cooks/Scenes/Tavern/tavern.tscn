@@ -25,8 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://by8schxoxexd5" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/rage.png" id="17_4f6a6"]
 [ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="18_tqgpy"]
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
+[ext_resource type="FontFile" uid="uid://bdsrppevtlams" path="res://UI/Themes/Fonts/cs-belric-pixel-font/CsbelricpixelRegularDemo-WpGYv.otf" id="24_tqgpy"]
 [ext_resource type="AudioStream" uid="uid://bs835jwuvi230" path="res://Scenes/Tavern/TavernMusic.ogg" id="25_arv5a"]
-[ext_resource type="PackedScene" uid="uid://bvssa6ikgdtrr" path="res://pause_menu.tscn" id="26_4f6a6"]
+[ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -454,6 +455,17 @@ theme = ExtResource("2_tqgpy")
 texture = ExtResource("16_6jyd3")
 flip_h = true
 
+[node name="Pause Button" type="Button" parent="HeadsUpUI" unique_id=1676192164]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 22.0
+offset_right = 1033.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("24_tqgpy")
+theme_override_font_sizes/font_size = 32
+text = "Pause"
+script = ExtResource("26_djqff")
+
 [node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
 visible = false
 layout_mode = 3
@@ -629,18 +641,13 @@ stream = ExtResource("25_arv5a")
 autoplay = true
 bus = &"Music"
 
-[node name="Pause Menu" parent="." unique_id=408083181 instance=ExtResource("26_4f6a6")]
-offset_left = 515.0
-offset_top = 166.0
-offset_right = 665.0
-offset_bottom = 283.0
-
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
+[connection signal="pressed" from="HeadsUpUI/Pause Button" to="HeadsUpUI/Pause Button" method="_on_pressed"]
 [connection signal="pressed" from="FirstTimeUI/FirstPanel/ButtonOne" to="FirstTimeUI" method="_on_button_one_pressed"]
 [connection signal="pressed" from="FirstTimeUI/SecondPanel/ButtonTwo" to="FirstTimeUI" method="_on_button_two_pressed"]
 [connection signal="pressed" from="FirstTimeUI/ThirdPanel/ButtonThree" to="FirstTimeUI" method="_on_button_three_pressed"]
