@@ -39,7 +39,9 @@ func _on_quit_button_down():
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://intro_screen.tscn")
+	$"../FadeInFadeOut".fade_out()
+	await get_tree().create_timer(1.2).timeout
+	get_tree().change_scene_to_file("res://Scenes/Intro Cutscene/intro_cutscene.tscn")
 
 
 func _on_continue_pressed():

@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://7mtvcfyorufg"]
+
+[ext_resource type="Script" uid="uid://j807jo3j658r" path="res://Scenes/Intro Cutscene/intro_cutscene.gd" id="1_ancq6"]
+[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="2_04lgd"]
+[ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="2_ct673"]
+[ext_resource type="Texture2D" uid="uid://usglfupm6fry" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P1.png" id="3_w8r81"]
+[ext_resource type="Texture2D" uid="uid://cjehyy065fx5x" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P2.png" id="4_04lgd"]
+[ext_resource type="Texture2D" uid="uid://kynperywo8m" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P3.png" id="5_hhtmf"]
+[ext_resource type="Texture2D" uid="uid://bvdsehvvr7m07" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P4.png" id="6_ceprt"]
+[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="8_hhtmf"]
+
+[node name="IntroCutscene" type="Control" unique_id=5151694]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ancq6")
+
+[node name="PageArrow" type="Sprite2D" parent="." unique_id=1289254406]
+position = Vector2(1084.0001, 712.00006)
+rotation = 3.1415927
+scale = Vector2(3.0595934, 3.0595934)
+texture = ExtResource("2_04lgd")
+
+[node name="FadeInFadeOut" parent="." unique_id=1881155850 instance=ExtResource("2_ct673")]
+z_index = 10
+layout_mode = 1
+start_faded = true
+
+[node name="Pages" type="Node" parent="." unique_id=953281000]
+
+[node name="0" type="Sprite2D" parent="Pages" unique_id=1901779680]
+z_index = 1
+position = Vector2(1728, 320)
+texture = ExtResource("3_w8r81")
+
+[node name="1" type="Sprite2D" parent="Pages" unique_id=85573923]
+z_index = 2
+position = Vector2(1728, 320)
+texture = ExtResource("4_04lgd")
+
+[node name="2" type="Sprite2D" parent="Pages" unique_id=1312472469]
+z_index = 3
+position = Vector2(1728, 320)
+texture = ExtResource("5_hhtmf")
+
+[node name="3" type="Sprite2D" parent="Pages" unique_id=391738852]
+z_index = 4
+position = Vector2(1728, 320)
+texture = ExtResource("6_ceprt")
+
+[node name="Narrations" type="Node" parent="." unique_id=546478446]
+
+[node name="0" type="AudioStreamPlayer" parent="Narrations" unique_id=438893724]
+
+[node name="1" type="AudioStreamPlayer" parent="Narrations" unique_id=71876580]
+
+[node name="2" type="AudioStreamPlayer" parent="Narrations" unique_id=1521303308]
+
+[node name="3" type="AudioStreamPlayer" parent="Narrations" unique_id=214642975]
+
+[node name="Subtitles" type="Node" parent="." unique_id=1010485060]
+
+[node name="0" type="RichTextLabel" parent="Subtitles" unique_id=547641253]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="1" type="RichTextLabel" parent="Subtitles" unique_id=1941761504]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow TWO"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="2" type="RichTextLabel" parent="Subtitles" unique_id=1775240174]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow THREE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="3" type="RichTextLabel" parent="Subtitles" unique_id=1939497237]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow FOUR"
+fit_content = true
+horizontal_alignment = 1

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scenes/Title/Scripts/main_menu_ui.gd" id="8_72lsw"]
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="9_l627n"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="10_qa3ra"]
+[ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="13_l1yp5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
 sky_top_color = Color(5.390644e-06, 0.7529455, 0.9618829, 1)
@@ -282,6 +283,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 theme = ExtResource("7_xsi77")
 script = ExtResource("8_72lsw")
 
@@ -670,6 +672,10 @@ theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Back
 "
+
+[node name="FadeInFadeOut" parent="." unique_id=1881155850 instance=ExtResource("13_l1yp5")]
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/MeshInstance3D" method="_on_title_ui_stop_spinning_enivonment"]
