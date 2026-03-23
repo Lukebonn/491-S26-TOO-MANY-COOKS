@@ -1,5 +1,9 @@
 extends Node
 
+#dear whoever wrote this.
+#What is this? What does it do? Where is this used?
+#Sincerely, Luke Bonniwell
+
 #idk if we want to add crit hits but i added it just in case
 func display_number(value: int, position: Vector2): #is_crit: bool = false):
 	var number = Label.new()
