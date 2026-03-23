@@ -36,6 +36,13 @@ func set_up_tavern():
 		$"Upgrade Man/NPCEnd".hide()
 		$TavernBackgroundLong2.hide()
 		$TavernBackgroundLong3.show()
+		$"Door Andy".queue_free()
+		$"EndDoor".show()
 func _on_door_andy_pressed():
 	print("leaving...")
 	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")
+
+
+func _on_end_door_pressed():
+	print("Thanks for playing what we have so far!")
+	get_tree().change_scene_to_file("res://play_test_end.tscn")

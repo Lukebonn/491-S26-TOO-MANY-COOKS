@@ -261,6 +261,30 @@ Name = "ChattyCatty"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("7_a44po")])
 Conversations = Array[String](["01", "2"])
 
+[node name="EndDoor" type="TextureButton" parent="Tavern BG" unique_id=150786149]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 3218.0
+offset_top = 279.0
+offset_right = 3346.0
+offset_bottom = 407.0
+theme = ExtResource("2_tqgpy")
+texture_normal = SubResource("PlaceholderTexture2D_4hstr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/EndDoor" unique_id=183440682]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "END OF TEST"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Door Andy" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
 z_index = 1
 layout_mode = 0
@@ -642,6 +666,7 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Tavern BG/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
+[connection signal="pressed" from="Tavern BG/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
 [connection signal="pressed" from="Tavern BG/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
