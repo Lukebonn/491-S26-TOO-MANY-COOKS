@@ -2,10 +2,13 @@ extends Node2D
 signal on_spawn
 signal on_all_dead
 
+##The enemies to spawn from this Spawner.
 @export var Enemies : Array[PackedScene]
-#The enemies to spawn.
+##The radius at which enemies will be spawned at.
 @export var SpawnRadius : float = 32.0
-#The radius at which to spawn enemies at.
+##The radius of the base collision shape in this Spawner.
+@export var CollisionRadius : float = 64.0
+
 var rotInc : float
 #Incriment of rotation, used in circle spawn logic.
 var canSpawn = true
@@ -18,6 +21,8 @@ func _ready() -> void:
 	rotInc = 360 * 1/float(Enemies.size())
 	#Save number of enemies for later.
 	num_enemies = Enemies.size()
+	$BaseColObj/BaseCol.shape.radius = CollisionRadius
+	$Sprite.hide()
 
 func try_spawn_enemies() -> void:
 	if canSpawn:

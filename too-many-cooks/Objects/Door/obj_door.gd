@@ -6,8 +6,8 @@ var animRef : AnimationPlayer
 #Ref to AnimationPlayer.
 var spriteRef : Sprite2D
 #Ref to Sprite2D.
+##Whether or not this Door should start already open.
 @export var StartOpen = false
-#Initial state of this Door (open or closed?).
 
 func _ready() -> void:
 	animRef = $AnimationPlayer

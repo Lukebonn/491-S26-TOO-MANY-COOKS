@@ -3,8 +3,10 @@ signal key_collected
 
 var player : Node2D
 #Ref to collided Player, for collecting Key when made visible.
+##Whether or not this Key should start hidden and made visible later.
+##Set to True if this Key must be collected after some event,
+##like defeating enemies from a Spawner.
 @export var StartHidden = false
-#Whether this Key should be hidden on start and made visible later.
 
 func _ready() -> void:
 	visible = not StartHidden
@@ -14,6 +16,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player = body
 		if visible:
 			give_key()
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		player = null
 
 func _on_visibility_changed() -> void:
 	if player:

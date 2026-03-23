@@ -6,21 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/UI.tscn" id="4_m1mma"]
 [ext_resource type="PackedScene" uid="uid://bplwfa57njfvb" path="res://Objects/Key/obj_key.tscn" id="5_apq1s"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="6_2kvhs"]
-[ext_resource type="PackedScene" uid="uid://cbtk6nph36k5" path="res://Objects/EnemySpawner/enemy_spawner_test.tscn" id="7_05qkn"]
-[ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="7_tdi4f"]
+[ext_resource type="PackedScene" uid="uid://cbtk6nph36k5" path="res://Objects/EnemySpawner/spawn_test.tscn" id="7_05qkn"]
 [ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="8_dlci1"]
-[ext_resource type="PackedScene" uid="uid://dvob2rhx8ffg7" path="res://Objects/Lock/obj_lock_col.tscn" id="9_5yfot"]
 [ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door/obj_door.tscn" id="10_dk4tr"]
 [ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="12_m1mma"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tigj1"]
-radius = 96.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_btg0j"]
-radius = 16.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_05qkn"]
-radius = 64.0
 
 [node name="LvTest" type="Node2D" unique_id=469150633]
 script = ExtResource("1_0if32")
@@ -51,11 +40,7 @@ player = NodePath("../Player")
 position = Vector2(-128, 0)
 Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
 SpawnRadius = 48.0
-
-[node name="ObjSpawnerCol" parent="OnDeadOpenDoor/ObjEnemySpawner" unique_id=719003453 instance=ExtResource("7_tdi4f")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadOpenDoor/ObjEnemySpawner/ObjSpawnerCol" unique_id=1963649203]
-shape = SubResource("CircleShape2D_tigj1")
+CollisionRadius = 96.0
 
 [node name="ObjDoor2" parent="OnDeadOpenDoor" unique_id=1953720290 instance=ExtResource("10_dk4tr")]
 position = Vector2(-128, -104)
@@ -73,11 +58,6 @@ position = Vector2(128, -104)
 z_index = 1
 position = Vector2(128, -104)
 
-[node name="ObjLockCol" parent="UnlockDoorWithKey/ObjLock" unique_id=849357917 instance=ExtResource("9_5yfot")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockDoorWithKey/ObjLock/ObjLockCol" unique_id=1157488402]
-shape = SubResource("CircleShape2D_btg0j")
-
 [node name="OnDeadGiveKey" type="Node" parent="." unique_id=483403987]
 
 [node name="ObjKey2" parent="OnDeadGiveKey" unique_id=1324119498 instance=ExtResource("5_apq1s")]
@@ -88,19 +68,9 @@ StartHidden = true
 position = Vector2(120, 0)
 Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
 
-[node name="ObjSpawnerCol" parent="OnDeadGiveKey/ObjEnemySpawner2" unique_id=1281556974 instance=ExtResource("7_tdi4f")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadGiveKey/ObjEnemySpawner2/ObjSpawnerCol" unique_id=1460972828]
-shape = SubResource("CircleShape2D_05qkn")
-
 [node name="ObjLock2" parent="OnDeadGiveKey" unique_id=910257717 instance=ExtResource("8_dlci1")]
 z_index = 1
 position = Vector2(120, 72)
-
-[node name="ObjLockCol" parent="OnDeadGiveKey/ObjLock2" unique_id=595277045 instance=ExtResource("9_5yfot")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OnDeadGiveKey/ObjLock2/ObjLockCol" unique_id=1709908798]
-shape = SubResource("CircleShape2D_btg0j")
 
 [node name="ObjChest" parent="OnDeadGiveKey" unique_id=439909105 instance=ExtResource("12_m1mma")]
 position = Vector2(120, 72)
