@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="5_8m23b"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_gijrm"]
 [ext_resource type="PackedScene" uid="uid://p8kqfwi1kvo5" path="res://Characters/Enemies/WaveCombatTestStuffs/WaveTransitionAnimation.tscn" id="9_ld5va"]
+[ext_resource type="PackedScene" uid="uid://bfpvr65lopowi" path="res://Characters/Enemies/Hob_Lobber_Enemy/HobLobberEnemy.tscn" id="10_8m23b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_3260u")
@@ -238,7 +239,6 @@ texture = ExtResource("4_ld5va")
 
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("5_8m23b")]
 position = Vector2(601, 344)
-scale = Vector2(1, 1)
 
 [node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_gijrm")]
 
@@ -252,3 +252,6 @@ position = Vector2(507, 570)
 position = Vector2(931, 435)
 
 [node name="WaveTransitionAnimation" parent="." unique_id=1200444778 instance=ExtResource("9_ld5va")]
+
+[node name="Hob_Lobber_Enemy" parent="." unique_id=1316086628 instance=ExtResource("10_8m23b")]
+position = Vector2(669, 449)

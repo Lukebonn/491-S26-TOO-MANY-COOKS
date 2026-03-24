@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 func position_to_next_wave():
 	if current_nodes == starting_nodes:
-		wave_transition_animation.play("between_wave")
+		#wave_transition_animation.play("between_wave")
 		current_wave += 1
 		# TODO: update current wave GLOBAL variable
 		await get_tree().create_timer(0.5).timeout

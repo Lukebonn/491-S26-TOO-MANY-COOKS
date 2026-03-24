@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if playerNode:
 		_shoot()
 	else:
-		animated_sprite_2d.play("Idle")
+		animated_sprite_2d.play("idle")
 	_set_animation()
 	
 	if inRange:
@@ -40,12 +40,11 @@ func _physics_process(delta: float) -> void:
 
 func _shoot():
 	isShooting = true
-	animated_sprite_2d.play("Attack")
+	animated_sprite_2d.play("attack")
 	cooldownCompleted = false
 
 func _set_animation():	
 	if not playerNode: 
-		
 		return
 	
 	var playerPosition = playerNode.global_position
@@ -78,9 +77,10 @@ func _create_arrow():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "Attack":
 		isShooting = false
-	animated_sprite_2d.play("Idle")
+	animated_sprite_2d.play("idle")
 
 func _on_sight_area_entered(body: Area2D) -> void:
+	print(body)
 	if body.name == "Hurtbox":
 		playerNode = body
 		inRange = true
@@ -90,7 +90,7 @@ func _on_sight_area_exited(body: Area2D) -> void:
 	if body.name == "Hurtbox":
 		playerNode = null
 		inRange = false
-		animated_sprite_2d.play("Idle")
+		animated_sprite_2d.play("idle")
 		
 # TODO: NOTE THAT THIS HAS BEEN TEMPORARILY DEACTIVATED UNTIL A BASE CLASS CAN BE 
 # TODO: CREATED FOR THE ENEMY AND THIS TAKE DAMAGE WON'T HAVE TO CHANGE
