@@ -21,5 +21,4 @@ func _process(delta):
 
 func get_mouse_vector():
 	var value = Player.position + get_local_mouse_position()
-	print(value)
 	return value

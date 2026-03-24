@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bflr35recnny2"]
 
 [ext_resource type="Script" uid="uid://bl2u6igpxgahk" path="res://Scenes/Tavern/Scripts/tavern_controller.gd" id="1_1uoo0"]
-[ext_resource type="Script" uid="uid://b6g02boy87hiu" path="res://Scenes/Tavern/Scripts/dialogue_box.gd" id="1_4hstr"]
-[ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="1_www31"]
 [ext_resource type="Script" uid="uid://b3la3oieo5lrp" path="res://Scenes/Tavern/Scripts/tavern_bg.gd" id="2_3n42s"]
+[ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="2_djqff"]
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_tqgpy"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="3_3n42s"]
 [ext_resource type="Texture2D" uid="uid://dkxxv4gfpo8b6" path="res://Scenes/Tavern/Art/TavernBackgroundDamaged.png" id="5_msftv"]
@@ -29,124 +28,19 @@
 [ext_resource type="AudioStream" uid="uid://bs835jwuvi230" path="res://Scenes/Tavern/TavernMusic.ogg" id="25_arv5a"]
 [ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hstr"]
-bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 5
-shadow_size = 10
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
 size = Vector2(128, 128)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
 
-[node name="Tavern" type="Node2D" unique_id=233294115]
+[node name="Tavern" type="Node2D" unique_id=233294115 node_paths=PackedStringArray("dialogue_ref")]
 script = ExtResource("1_1uoo0")
+dialogue_ref = NodePath("Dialogue Box")
 
-[node name="Dialogue Box" type="Control" parent="." unique_id=766055336]
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("2_tqgpy")
-script = ExtResource("1_4hstr")
+[node name="Dialogue Box" parent="." unique_id=2003466752 instance=ExtResource("2_djqff")]
 
-[node name="Container" type="Control" parent="Dialogue Box" unique_id=1526253951]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 576.0
-offset_top = 1170.0
-offset_right = 576.0
-offset_bottom = 1170.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_tqgpy")
-
-[node name="Dialogue" type="Panel" parent="Dialogue Box/Container" unique_id=1306393861]
-z_index = 1
-layout_mode = 0
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -451.5
-offset_top = -229.99997
-offset_right = 394.30554
-offset_bottom = -78.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_tqgpy")
-theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
-
-[node name="DialogueLabel" type="RichTextLabel" parent="Dialogue Box/Container/Dialogue" unique_id=1328355702]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.341636
-offset_top = 9.146982
-offset_right = -12.564941
-offset_bottom = -7.8529816
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_tqgpy")
-theme_override_font_sizes/normal_font_size = 36
-text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
-fit_content = true
-scroll_active = false
-visible_characters_behavior = 1
-
-[node name="Speaker" type="Panel" parent="Dialogue Box/Container" unique_id=634979717 node_paths=PackedStringArray("child_dialogue")]
-z_index = 1
-layout_mode = 0
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -451.5
-offset_top = -318.00003
-offset_right = -376.83398
-offset_bottom = -250.46402
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_tqgpy")
-theme_override_styles/panel = SubResource("StyleBoxFlat_4hstr")
-script = ExtResource("1_www31")
-child_dialogue = NodePath("SpeakerLabel")
-
-[node name="SpeakerLabel" type="RichTextLabel" parent="Dialogue Box/Container/Speaker" unique_id=1427882835]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.324226
-offset_top = 10.146812
-offset_right = 533.6582
-offset_bottom = -11.894295
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_tqgpy")
-theme_override_font_sizes/normal_font_size = 44
-text = "youuu"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-autowrap_trim_flags = 128
-
-[node name="SpeakerSprite" type="Sprite2D" parent="Dialogue Box/Container" unique_id=1535565508]
-z_index = 1
-position = Vector2(-45, -326)
-
-[node name="Tavern BG" type="Control" parent="." unique_id=2002706169]
+[node name="Tavern BG" type="Control" parent="." unique_id=2002706169 node_paths=PackedStringArray("dialogue_box_ref")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1260.0
@@ -155,6 +49,7 @@ offset_bottom = 40.0
 theme = ExtResource("2_tqgpy")
 script = ExtResource("2_3n42s")
 scroll_speed = 100.0
+dialogue_box_ref = NodePath("../Dialogue Box")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
 texture = ExtResource("5_msftv")

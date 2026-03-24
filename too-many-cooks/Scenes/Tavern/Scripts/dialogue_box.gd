@@ -5,13 +5,23 @@ extends Control
 
 var is_printing_text = false
 var is_awaiting_response = false
+
+var in_dialogue = false
+
 @export var text_speed = .01
+
+signal next_line
+signal message_complete
 
 #args character = which character are we talking to? pulled from a JSON list prolly
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
+func _input(event):
+	if event is InputEventMouseButton:
+		next_line.emit()
+
 func show_dialogue(character: String, index, emotions):
-	$"..".in_dialogue = true
+	in_dialogue = true
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
 	print_text(character, index, emotions)
@@ -19,7 +29,8 @@ func show_dialogue(character: String, index, emotions):
 func hide_dialogue():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
-	$"..".in_dialogue = false
+	in_dialogue = false
+	message_complete.emit()
 	
 
 func print_text(character: String, index, emotions):
@@ -36,7 +47,7 @@ func print_text(character: String, index, emotions):
 		for letter in message_ref.length():
 			$Container/Dialogue/DialogueLabel.visible_characters += 1 
 			await get_tree().create_timer(text_speed).timeout
-		await $"..".next_line
+		await next_line
 		hide_dialogue()
 	else:
 		for line in message_ref:
@@ -46,18 +57,20 @@ func print_text(character: String, index, emotions):
 			for letter in line.length():
 				$Container/Dialogue/DialogueLabel.visible_characters += 1 
 				await get_tree().create_timer(text_speed).timeout
-			await $"..".next_line
+			await next_line
 		hide_dialogue()
 		$Container/SpeakerSprite.hide()
 	Global.Is_In_Dialogue = false
 	
 #Find the emotions of the NPC based on a tag with the following patter [X]
-#1 = Sad, 2 = Mad, 3 = Smirking, * =  Base Emote
+#0 = None, 1 = Sad, 2 = Mad, 3 = Smirking, * =  Base Emote
 func find_emote(character: String, emotions, line: String):
 	#print(line + "test")
 	$Container/SpeakerSprite.show()
 	var tag = line[1]
 	match tag:
+		"0":
+			pass
 		"1":
 			$Container/SpeakerSprite.texture = emotions[1]
 			print("I should be crying wahh") 
@@ -104,12 +117,13 @@ func find_message(character: String, index, emotions):
 		"Playtest":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
 			Global.Has_Finished_Playtest = true
+		"Intro":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/INTRO.txt", FileAccess.READ)
 			
 	var body = file.get_as_text()
 	body = body.split("\n")
 	index = index.split(",")
-	print(index)
 	for line in index:
-		print(body.get(index.get(line.to_int()).to_int()))
-		text.append(body.get(index.get(line.to_int()).to_int()))
+		print(body.get(line.to_int()))
+		text.append(body.get(line.to_int()))
 	return text

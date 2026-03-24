@@ -4,7 +4,7 @@ var can_turn_page = true
 var current_page = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$FadeInFadeOut.fade_in()
+	FadeInFadeOut.fade_in()
 	turn_to_page(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,6 +40,7 @@ func turn_to_page(index: int):
 		print("Finished page " + str(current_page))
 		can_turn_page = true
 	elif current_page == 4 and can_turn_page:
-		$FadeInFadeOut.fade_out()
+		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1.2).timeout
-		get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+		var target_scene = ResourceLoader.load("uid://dkpv4bqf7uhxt")
+		get_tree().change_scene_to_packed(target_scene)

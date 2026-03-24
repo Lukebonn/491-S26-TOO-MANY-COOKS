@@ -3,10 +3,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(Global.First_Time_Tavern)
-	if Global.First_Time_Tavern:
-		show()
-		
+	#print(Global.First_Time_Tavern)
+	#if Global.First_Time_Tavern:
+		#show()
+	pass
 		
 
 

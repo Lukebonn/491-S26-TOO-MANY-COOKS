@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcxhi6gaq1tu0" path="res://UI/FadeInFadeOut/fadein_fadeout.gd" id="1_ib2si"]
 
-[node name="FadeInFadeOut" type="Control" unique_id=1881155850]
+[node name="FadeInFadeOut" type="Control" unique_id=1881155850 node_paths=PackedStringArray("colorrect")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,12 +10,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ib2si")
+colorrect = NodePath("CanvasLayer/ColorRect")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2027705302]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2042436925]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2027705302]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
