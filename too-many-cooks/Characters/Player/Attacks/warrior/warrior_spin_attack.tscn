@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d1lssh3wxmhsk"]
+
+[ext_resource type="Script" uid="uid://cgramw6flbxyh" path="res://Characters/Player/Attacks/warrior/scripts/warrior_spin_attack.gd" id="1_61ylc"]
+
+[node name="SpinAttack" type="RigidBody2D" unique_id=491256885]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_61ylc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1277489146]
+polygon = PackedVector2Array(0, -9, -3, -17, 0, -39, 3, -17)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2143961689]
+polygon = PackedVector2Array(0, -9, 3, -17, 0, -39, -3, -17)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=738129791]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=1944688460]
+polygon = PackedVector2Array(0, -9, -4, -17, 0, -40, 4, -17)
