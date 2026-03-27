@@ -6,8 +6,17 @@ func _ready():
 		node.connect("Upgrade_Complicated",_on_upgrade_complicated)
 
 func _on_upgrade_basic(stat, boost):
-	pass # Replace with function body.
-
+	match stat:
+		"attack":
+			PlayerStats.passive_str += boost
+		"defense":
+			PlayerStats.passive_def += boost
+		"speed":
+			PlayerStats.passive_spd += boost
+		"mana":
+			PlayerStats.passive_mana += boost
+		"hp":
+			PlayerStats.passive_hp += boost
 
 func _on_upgrade_complicated(variant):
 	#thinking about it now most of the upgrade things 

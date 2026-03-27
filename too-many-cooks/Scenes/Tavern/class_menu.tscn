@@ -1,0 +1,364 @@
+[gd_scene format=3 uid="uid://co1wdkv55yg55"]
+
+[ext_resource type="Script" uid="uid://cf1ldi44kyffq" path="res://Scenes/Tavern/Scripts/class_menu.gd" id="1_bjonv"]
+[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_veqpr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y33xb"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.8980392)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Class_Menu" type="Control" unique_id=877217506]
+z_index = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_veqpr")
+script = ExtResource("1_bjonv")
+
+[node name="Panel" type="Panel" parent="." unique_id=1351599176]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y33xb")
+
+[node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Close"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 800.0
+offset_bottom = 500.0
+mouse_filter = 2
+
+[node name="Class_Name" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "The "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1327689756]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1269665270]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1944775991]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ActiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1322756572]
+layout_mode = 2
+tooltip_text = "What your stats will be modified by when this class is chosen"
+mouse_filter = 0
+text = "Active Stat Changes"
+horizontal_alignment = 1
+
+[node name="ActiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1226013473]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=970081200]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Strength"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=439849546]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "HP"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=672175082]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Defense"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=390507696]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Speed"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=556804055]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Mana"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ActiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1484648764]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=128738324]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=2005115973]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=1250182647]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=1771233196]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=267544287]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PassiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1778244130]
+layout_mode = 2
+tooltip_text = "What your stats will be modified by even when this class is not chosen"
+mouse_filter = 0
+text = "Passive Stat Changes"
+horizontal_alignment = 1
+
+[node name="PassiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=444837674]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=844642486]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Strength"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=1326767802]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "HP"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=2132782999]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Defense"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=1945910566]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Speed"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=586825020]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Mana"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PassiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1230890971]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1254821010]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1791383939]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=385489143]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=246019162]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1075096590]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Other" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=597595398]
+layout_mode = 2
+text = "Other:"
+horizontal_alignment = 1
+
+[node name="AttackDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1361897609]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Attack becomes a [color=red]"
+fit_content = true
+
+[node name="DashDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=933498308]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Dash becomes a [color=yellow]"
+fit_content = true
+
+[node name="MagicDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=88970703]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Magic becomes a [color=lightblue]"
+fit_content = true
+
+[node name="TrueOtherDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=891058085]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+fit_content = true
+
+[node name="Buttons" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1517445205]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=129194331]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Talk"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1463405284]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1417052867]
+layout_mode = 2
+alignment = 1
+
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=199862697]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Upgrade"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=587582743]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=62058358]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Requires Quest Done"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1862622720]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Quest" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1924907551]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "Quest"
+
+[connection signal="pressed" from="Panel/Close" to="." method="hide_menu"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/Talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/Quest" to="." method="_on_quest_pressed"]

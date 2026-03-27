@@ -111,15 +111,18 @@ func find_message(character: String, index, emotions):
 		"Tutorial":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/NPC1.txt", FileAccess.READ)
 				
-		"Ranger":
-			file = FileAccess.open("res://Scenes/Tavern/NPCs/RANGER.txt", FileAccess.READ)
-			PlayerStats.Magic = "Fireball"
+		
 		"Playtest":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
 			Global.Has_Finished_Playtest = true
 		"Intro":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/INTRO.txt", FileAccess.READ)
-			
+		"Warrior":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/WARRIOR.txt", FileAccess.READ)
+		"Ranger":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/RANGER.txt", FileAccess.READ)
+		"Mage":
+			file = FileAccess.open("res://Scenes/Tavern/NPCs/MAGE.txt",FileAccess.READ)
 	var body = file.get_as_text()
 	body = body.split("\n")
 	index = index.split(",")

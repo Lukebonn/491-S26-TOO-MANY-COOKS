@@ -3,13 +3,14 @@ extends Control
 var direction = 0
 @export var scroll_speed = 300.0
 @export var dialogue_box_ref : Control
+@export var class_menu_ref : Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_up_tavern()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dialogue_box_ref.in_dialogue == false:
+	if dialogue_box_ref.in_dialogue == false and class_menu_ref.is_showing == false:
 		position.x = position.x + (direction * scroll_speed * delta)
 		position.x = clamp(position.x,-2304.0,0.0)
 func _on_left_panel_mouse_entered():

@@ -1,10 +1,11 @@
 class_name NPC extends TextureButton
 
-@onready var DialogueBox = $"../../Dialogue Box"
+@onready var DialogueBox = $"../../../Dialogue Box"
 @export var Name : String
 @export var Expressions : Array[Texture]
 @export var Conversations : Array[String]
 
+var conversation: int = 0
 func _ready():
 	self.connect("pressed",_send_conversation)
 	self.connect("mouse_entered",_on_mouse_entered)
@@ -16,7 +17,8 @@ func _send_conversation():
 	#or the npc's current relation with you (a new variable)
 	#or a boss thats been defeated
 	if !Global.Is_In_Dialogue:
-		DialogueBox.show_dialogue(Name,Conversations[0], Expressions)
+		DialogueBox.show_dialogue(Name,Conversations[conversation], Expressions)
+
 
 func _on_mouse_entered():
 	self.modulate = Color(1,1,1)
