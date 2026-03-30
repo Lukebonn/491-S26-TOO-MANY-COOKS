@@ -462,18 +462,20 @@ Conversations = Array[String](["01", "2"])
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = 1958.0
-offset_top = 279.0
-offset_right = 2086.0
-offset_bottom = 407.0
+offset_left = -1108.0
+offset_top = 287.0
+offset_right = -980.0
+offset_bottom = 415.0
 theme = ExtResource("2_tqgpy")
 texture_normal = SubResource("PlaceholderTexture2D_4hstr")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/NPCs/EndDoor" unique_id=183440682]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 130.0
+offset_bottom = 130.0
 mouse_filter = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5

@@ -38,7 +38,6 @@ func set_up_tavern():
 		$"Upgrade Man/NPCEnd".hide()
 		$TavernBackgroundLong2.hide()
 		$TavernBackgroundLong3.show()
-		$"Door Andy".queue_free()
 		$"EndDoor".show()
 func _on_door_andy_pressed():
 	print("leaving...")

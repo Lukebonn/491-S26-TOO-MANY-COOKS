@@ -64,6 +64,26 @@ visible = false
 position = Vector2(-100, -249)
 damage = 100
 
+[node name="4" parent="Insta-KO Squad" unique_id=1481689101 instance=ExtResource("5_ltqhe")]
+visible = false
+position = Vector2(-37, -316)
+damage = 100
+
+[node name="5" parent="Insta-KO Squad" unique_id=197343668 instance=ExtResource("5_ltqhe")]
+visible = false
+position = Vector2(42, -316)
+damage = 100
+
+[node name="6" parent="Insta-KO Squad" unique_id=166569628 instance=ExtResource("5_ltqhe")]
+visible = false
+position = Vector2(42, -249)
+damage = 100
+
+[node name="7" parent="Insta-KO Squad" unique_id=1953272389 instance=ExtResource("5_ltqhe")]
+visible = false
+position = Vector2(-41, -246)
+damage = 100
+
 [node name="FirstGuy" parent="." unique_id=733207282 instance=ExtResource("5_ltqhe")]
 position = Vector2(5, -283)
 
