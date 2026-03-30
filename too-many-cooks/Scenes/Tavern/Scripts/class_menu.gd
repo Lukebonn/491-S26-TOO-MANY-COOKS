@@ -109,7 +109,7 @@ func _on_upgrade_pressed():
 			$"../Tavern BG/Class_NPCS/Ranger_CLASS_NPC".update_sheet()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Level += 1
-			$"../Tavern BG/Class_NPCS/Ranger_CLASS_NPC".update_sheet()
+			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
 
 
