@@ -13,21 +13,12 @@ func enter_state(player_node):
 	#spell only activates if cooldown has expired
 	if(!on_cooldown and player.mana >= mana_cost):
 		var spell
-		#magic logic gets from stats for what spell to cast
-		#we might move more of the spell logic into the match statement
-		#since things like fireball only really need velocity and stuff
-		#and these spells will likely have separate magic costs
-		match PlayerStats.Magic:
-			"None":
-				pass
-			"Fireball":
-				spell = preload("res://Objects/Projectiles/magic_default.tscn").instantiate()
-				spell.position = player.position + player.local_mouse_pos.normalized() * 15
-				spell.velocity = player.local_mouse_pos.normalized() * 5
-				add_child(spell)
-				player.mana -= mana_cost
-			_:
-				pass
+		
+		spell = preload("res://Objects/Projectiles/magic_default.tscn").instantiate()
+		player.add_child(spell)
+		spell.position += player.local_mouse_pos.normalized() * 15
+		spell.velocity = player.local_mouse_pos.normalized() * 5
+		player.mana -= mana_cost
 		
 		start_cooldown()
 	elif (player.mana < mana_cost):

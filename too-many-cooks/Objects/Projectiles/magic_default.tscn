@@ -11,7 +11,7 @@ radius = 4.0
 radius = 4.0
 
 [node name="MagicDefault" type="RigidBody2D" unique_id=541092243]
-collision_layer = 64
+collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_vlsvx")

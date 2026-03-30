@@ -11,6 +11,7 @@ var cooldown : float = 2
 var cooldown_timer : float = 0
 
 var dash_attack : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_dash_attack.tscn")
+var power : float = 0.8
 
 signal player_in_hitbox(Area2D)
 
@@ -44,8 +45,6 @@ func enter_state(player_node):
 		player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
 	player.velocity = player.velocity.normalized() * current_dash_speed
 	
-	
-	
 	timer = duration
 
 func execute_attack():
@@ -55,6 +54,8 @@ func execute_attack():
 	
 	player.add_child(hitbox)
 	hitbox.look_at(look_point)
+	
+	player.set_damage(power)
 	
 	await get_tree().create_timer(duration).timeout
 	

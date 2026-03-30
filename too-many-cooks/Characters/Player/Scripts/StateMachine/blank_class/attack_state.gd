@@ -2,6 +2,8 @@ extends PlayerState
 
 var attack : PackedScene = load("res://Characters/Player/Attacks/blank_class/blank_attack.tscn")
 
+var power : float = 1.0
+
 var cooldown : float = 0.3
 var on_cooldown : bool = false
 
@@ -21,6 +23,8 @@ func enter_state(player_node):
 		
 		player.add_child(hitbox)
 		hitbox.look_at(player.global_mouse_pos)
+		
+		player.set_damage(power)
 		
 		await get_tree().create_timer(0.1).timeout
 		

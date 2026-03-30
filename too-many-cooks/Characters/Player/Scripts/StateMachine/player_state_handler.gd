@@ -15,6 +15,8 @@ var defense : int = PlayerStats.base_def
 var magic : int = PlayerStats.base_mag
 var speed : int = 100
 
+var damage : int
+
 var equipped_class : PlayerClass
 
 var current_dir : Vector2 = Vector2(0,-1)
@@ -31,6 +33,7 @@ signal playerDeath()
 
 var num_keys : int = 0
 #Number of held Keys, used by Key and Lock objects.
+
 
 ##Called when the node enters the scene tree for the first time.
 #player should be in idle state when loaded
@@ -62,6 +65,7 @@ func set_class(new_class : PlayerClass):
 	defense *= new_class.def_mod
 	magic *= new_class.mag_mod
 
+
 ##changes state to the node whose name matches new_state
 #new_state: idle_state, move_state, dash_state, attack_state, magic_state (more to be added)
 func change_state(new_state : String):
@@ -70,6 +74,7 @@ func change_state(new_state : String):
 	
 	current_state = get_node(new_state)
 	current_state.enter_state(self)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #calls the input_handler function of current_state every frame
@@ -99,13 +104,17 @@ func _physics_process(delta: float) -> void:
 		speed = PlayerStats.Speed_Slowdown
 	move_and_slide()
 
+
 ##triggers when a hitbox enters the player's hurtbox
 func _on_hurtbox_area_entered(area):
 	current_state.hit_response(area)
 
-##triggers when player melee hitbox collides with something
-#func on_attack_hit():
-#	$attack_state.on_attack_hit()
+
+##caluclates how much damage the player does to the enemy
+#multipler: a float representing how the strength of the player's attack
+func set_damage(multiplier : float):
+	damage = int(strength * multiplier)
+
 
 ##this should be in a script for managing the entire combat scene, not here
 func _on_tavern_return_area_entered(_area: Area2D):

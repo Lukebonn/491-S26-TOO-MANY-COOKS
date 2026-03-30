@@ -41,9 +41,9 @@ func parry():
 
 func sword_projectile():
 	var attack = preload("res://Objects/Projectiles/magic_sword_projectile.tscn").instantiate()
-	attack.position = player.position
+	player.add_child(attack)
+	attack.position += player.local_mouse_pos.normalized() * 15
 	attack.velocity = player.local_mouse_pos.normalized() * 2
-	add_child(attack)
 	
 	player.mana -= 15
 	
@@ -53,12 +53,13 @@ func sword_projectile():
 
 func spin_attack():
 	var attack = preload("res://Characters/Player/Attacks/warrior/warrior_spin_attack.tscn").instantiate()
-	attack.position = player.position
-	add_child(attack)
+	player.add_child(attack)
 	
 	player.velocity = Vector2.ZERO
 	
 	player.mana -= 25
+	
+	player.set_damage(1.8)
 	
 	await get_tree().create_timer(0.5).timeout
 	
@@ -76,7 +77,7 @@ func start_cooldown():
 ##player should lose a certain amount of health
 func hit_response(source):
 	if(parrying):
-		source.get_parent().take_damage(20, player.position)
+		source.get_parent().take_damage(int(player.strength * 1.7), player.position)
 	else:
 		$"../hurt_state".damage_hitbox = source
 		player.change_state("hurt_state")
