@@ -1,14 +1,11 @@
 shader_type canvas_item;
 
+uniform float speed = 1.5;
+uniform float strength = 0.2;
+uniform float y_origin = 64;
+uniform int restrict_dir : hint_range(-1,1) = 0;
+
 void vertex() {
-	// Called for every vertex the material is visible on.
+	float x = sin(TIME*speed)*(VERTEX.y-y_origin)*strength+sin(TIME*speed)*strength*8.0;
+    VERTEX.x += x*float(restrict_dir==0)+abs(x)*float(-restrict_dir);
 }
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}

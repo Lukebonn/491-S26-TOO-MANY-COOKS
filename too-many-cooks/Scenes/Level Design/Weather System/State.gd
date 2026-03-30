@@ -1,4 +1,5 @@
-extends Resource
+extends Node
+#extends Resource
 class_name State
 
 func enter():

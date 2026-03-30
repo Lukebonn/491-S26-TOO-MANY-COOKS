@@ -4,9 +4,9 @@
 code = "//i got this online: https://godotshaders.com/shader/simple-sway/
 shader_type canvas_item;
 
-uniform float speed = 2.0;
+uniform float speed = 2.5;
 uniform float strength = 0.5;
-uniform float y_origin = 0.0;
+uniform float y_origin = 64;
 uniform int restrict_dir : hint_range(-1,1) = 0;
 
 void vertex() {

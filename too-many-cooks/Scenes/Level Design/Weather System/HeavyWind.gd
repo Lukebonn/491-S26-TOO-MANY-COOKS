@@ -8,7 +8,9 @@ func _init(tree):
 
 func enter():
 	for object in scene_tree.get_nodes_in_group("Sway"):
-		object.material = load("res://Scenes/Level Design/Weather System/HeavyWind.tres")
+		object.material = load("res://Scenes/Level Design/Weather System/BigWind.tres")
+		#object.material_override = load("res://Scenes/Level Design/Weather System/BigWind.tres")
+		
 
 func exit():
 	for object in scene_tree.get_nodes_in_group("Sway"):
