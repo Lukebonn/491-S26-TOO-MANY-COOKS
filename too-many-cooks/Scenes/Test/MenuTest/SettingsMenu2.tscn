@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bp3qimvl4p8m4"]
+
+[ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scenes/Title/Scripts/settings.gd" id="1_5jne5"]
+[ext_resource type="PackedScene" uid="uid://bft78ueg6uv8l" path="res://Scenes/Test/MenuTest/SettingsMenu.tscn" id="2_py0n4"]
+
+[node name="settings" type="Node2D" unique_id=734773122]
+script = ExtResource("1_5jne5")
+
+[node name="background" type="ColorRect" parent="." unique_id=1813375192]
+z_index = 1
+offset_left = 0.35559082
+offset_top = 0.10183716
+offset_right = 477.71118
+offset_bottom = 647.1018
+color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
+
+[node name="cover" type="ColorRect" parent="." unique_id=1480557321]
+z_index = 1
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="buttons" parent="." unique_id=159583547 instance=ExtResource("2_py0n4")]
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1948197532]
+position = Vector2(-304, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=686372798]

@@ -30,9 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://co1wdkv55yg55" path="res://Scenes/Tavern/class_menu.tscn" id="21_y33xb"]
 [ext_resource type="Script" uid="uid://dfktgotoe2b4l" path="res://Scenes/Tavern/Scripts/Class_NPC_Class.gd" id="23_djqff"]
 [ext_resource type="FontFile" uid="uid://bdsrppevtlams" path="res://UI/Themes/Fonts/cs-belric-pixel-font/CsbelricpixelRegularDemo-WpGYv.otf" id="24_tqgpy"]
-[ext_resource type="AudioStream" uid="uid://bs835jwuvi230" path="res://Scenes/Tavern/TavernMusic.ogg" id="25_arv5a"]
 [ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
 [ext_resource type="Script" uid="uid://duffidar21ncd" path="res://Scenes/Tavern/debugbutton.gd" id="28_1gied"]
+[ext_resource type="AudioStream" uid="uid://c3o3ouafmtp4b" path="res://Scenes/Tavern/Tavern.wav" id="33_1gied"]
+[ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/SettingsMenu2.tscn" id="34_tvort"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
@@ -773,9 +774,15 @@ theme_override_font_sizes/font_size = 24
 text = "OK"
 
 [node name="TavernMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1904910536]
-stream = ExtResource("25_arv5a")
+stream = ExtResource("33_1gied")
 autoplay = true
 bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=126700936]
+
+[node name="settings" parent="CanvasLayer" unique_id=734773122 instance=ExtResource("34_tvort")]
+visible = false
+position = Vector2(1152, 0)
 
 [connection signal="pressed" from="Tavern BG/NPCs/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/NPCs/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
