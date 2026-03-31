@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_clkxo"]
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/warrior_dash.gd" id="2_0swjg"]
 [ext_resource type="Script" uid="uid://b6ugk1okk1c33" path="res://Characters/Player/Scripts/StateMachine/warrior_class/warrior_magic.gd" id="3_p0i80"]
+[ext_resource type="Texture2D" uid="uid://cmurr5fnovyih" path="res://Characters/Player/Sprites/Weapons/sword1.png" id="5_0swjg"]
 
 [resource]
 script = ExtResource("1_clkxo")
@@ -14,4 +15,5 @@ str_mod = 1.2
 def_mod = 1.2
 spd_mod = 1.0
 mag_mod = 0.8
+weapon_sprite = ExtResource("5_0swjg")
 metadata/_custom_type_script = "uid://cdjmfedbai0ha"

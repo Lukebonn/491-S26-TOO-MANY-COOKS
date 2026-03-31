@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhc5qgog600dq"]
 
 [ext_resource type="Script" uid="uid://b30iqujos0dat" path="res://Objects/Projectiles/Scripts/magic_sword_projectile.gd" id="1_vkla8"]
+[ext_resource type="Texture2D" uid="uid://cglqsmcwtr7j" path="res://Characters/Player/Sprites/Weapons/sword21.png" id="2_qdc61"]
 
 [node name="MagicSwordProjectile" type="RigidBody2D" unique_id=591366031]
 collision_layer = 0
@@ -14,8 +15,11 @@ position = Vector2(0, -4.7683716e-07)
 scale = Vector2(1, 1.2499999)
 polygon = PackedVector2Array(0, -14, -3, 4.8000007, 0, 14, 3, 4.8000007)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=9596288]
-polygon = PackedVector2Array(0, 17, 3, 6, 0, -17, -3, 6)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1070288561]
+position = Vector2(-0.00014651101, 0.00307889)
+rotation = -0.7853982
+scale = Vector2(1.7646965, 1.7648172)
+texture = ExtResource("2_qdc61")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=379563901]
 collision_layer = 4

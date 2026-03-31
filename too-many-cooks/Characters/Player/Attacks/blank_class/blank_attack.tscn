@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://4xcgo6wurbfm"]
 
+[ext_resource type="Texture2D" uid="uid://bukck6o172p6a" path="res://Characters/Player/Sprites/Weapons/Scratch1.png" id="1_sv2mk"]
+
 [node name="Hitbox" type="Area2D" unique_id=607964857]
 collision_layer = 4
 collision_mask = 24
@@ -9,5 +11,6 @@ position = Vector2(0, 1.1368684e-13)
 scale = Vector2(0.19084826, 0.13489208)
 polygon = PackedVector2Array(70, 69, 105, 32, 105, -35, 70, -70)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=924618675]
-polygon = PackedVector2Array(14, 9, 19, 4, 19, -5, 14, -9)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=184765365]
+position = Vector2(17, 0)
+texture = ExtResource("1_sv2mk")

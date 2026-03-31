@@ -78,6 +78,11 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=647800534]
 shape = SubResource("CapsuleShape2D_pwx6j")
 
+[node name="Weapon" type="Node2D" parent="." unique_id=387267039]
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=1974573788]
+position = Vector2(14, 0)
+
 [node name="player_stats" type="Node" parent="." unique_id=1202790873]
 script = ExtResource("12_u2wkb")
 

@@ -9,7 +9,7 @@ var duration_2 : float = 0.1
 var power_2 : float = 1.3
 
 var attack_3 : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_attack_3.tscn")
-var duration_3 : float = 0.3
+var duration_3 : float = 0.2
 var power_3 : float = 1.5
 
 var cooldown : float = 0.2
@@ -21,6 +21,11 @@ var first_time : bool = true
 
 var mana_gain : float = 10
 
+
+##what should happen when the state is entered
+#if it's the first time entering the state, creates the combo timer as a child of the player
+#if attack is not on cooldown, excecutes whatever attack is next in the player's combo
+#then starts the combo timer and the cooldown before retuning to move_state
 func enter_state(player_node):
 	super(player_node)
 	
@@ -31,6 +36,8 @@ func enter_state(player_node):
 		first_time = false
 	
 	if(!on_cooldown):
+		
+		player.get_node("Weapon").rotation_degrees -= 50 * player.current_x_dir
 		
 		lunge_player()
 		
@@ -54,6 +61,7 @@ func enter_state(player_node):
 	
 	player.change_state("move_state")
 
+
 ##intantiates attack scene, adds it to player scene, rotates it to look at mouse, then waits for a duration and removes it from the tree
 #hitbox: attack scene to be instantiated
 #duration: how long the attack should be active
@@ -70,6 +78,11 @@ func execute_attack(attack, duration, power):
 	
 	hitbox.queue_free()
 
+
+func input_handler(delta : float) -> void:
+	player.get_node("Weapon").rotation_degrees += 1000 * player.current_x_dir * delta
+
+
 ##makes the player do a short lunge forward when attacking
 func lunge_player():
 	player.velocity += player.local_mouse_pos.normalized() * 70
@@ -77,6 +90,7 @@ func lunge_player():
 	await get_tree().create_timer(0.1).timeout
 	
 	player.velocity = Vector2(0,0)
+
 
 ##player is unable to attack until cooldown timer expires
 func start_cooldown():
@@ -86,12 +100,16 @@ func start_cooldown():
 	
 	on_cooldown = false
 
+
+##resets the combo counter to 0
 func reset_combo():
 	combo_counter = 0
+
 
 ##player regains mana when attacking enemies
 func on_attack_hit(_body):
 	player.mana += mana_gain
+
 
 ##player should lose a certain amount of health
 func hit_response(source):

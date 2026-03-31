@@ -9,5 +9,5 @@ position = Vector2(0, 0.11241531)
 scale = Vector2(0.19084826, 0.22482014)
 polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.198822, 70.66798, 104.79529, 39.531975, 104.79529, -40.53202, 26.198822, -71.66802)
 
-[node name="Polygon2D" parent="." index="1" unique_id=924618675]
-polygon = PackedVector2Array(8, 9, 8, -9, 5, -16, 18, -9, 18, 9, 5, 16)
+[node name="Sprite2D" parent="." index="1" unique_id=184765365]
+visible = false

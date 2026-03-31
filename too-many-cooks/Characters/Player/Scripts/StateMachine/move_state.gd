@@ -9,7 +9,7 @@ func enter_state(player_node):
 	player.get_node("Sprite2D").animation = "move"
 
 func input_handler(_delta : float) -> void:
-	player.current_dir = player.velocity
+	#player.current_dir = player.velocity
 	
 	player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
 	player.velocity = player.velocity.normalized() * player.speed

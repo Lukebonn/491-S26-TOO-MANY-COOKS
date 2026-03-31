@@ -19,7 +19,7 @@ var damage : int
 
 var equipped_class : PlayerClass
 
-var current_dir : Vector2 = Vector2(0,-1)
+var current_x_dir : int = 1
 
 var local_mouse_pos : Vector2
 var global_mouse_pos : Vector2
@@ -64,6 +64,8 @@ func set_class(new_class : PlayerClass):
 	strength *= new_class.str_mod
 	defense *= new_class.def_mod
 	magic *= new_class.mag_mod
+	
+	$Weapon/Sprite2D.texture = new_class.weapon_sprite
 
 
 ##changes state to the node whose name matches new_state
@@ -83,16 +85,20 @@ func _physics_process(delta: float) -> void:
 	local_mouse_pos = get_local_mouse_position()
 	global_mouse_pos = get_global_mouse_position()
 	
+	
 	#player sprite faces left or right following the mouse
 	if(local_mouse_pos.x < 0):
+		current_x_dir = -1
+		$Weapon/Sprite2D.flip_v = true
 		$Sprite2D.flip_h = true
 	if(local_mouse_pos.x > 0):
+		current_x_dir = 1
+		$Weapon/Sprite2D.flip_v = false
 		$Sprite2D.flip_h = false
 	
 	#hitbox is pointed towards the mouse unless the player is attacking
 	if(current_state != get_node("attack_state")):
-		pass
-		#$Hitbox.look_at(get_global_mouse_position())
+		$Weapon.look_at(global_mouse_pos)
 	
 	if(current_state):
 		current_state.input_handler(delta)

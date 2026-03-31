@@ -10,4 +10,6 @@ class_name PlayerClass
 @export var str_mod : float
 @export var def_mod : float
 @export var spd_mod : float
-@export var mag_mod :float
+@export var mag_mod : float
+
+@export var weapon_sprite : Texture
