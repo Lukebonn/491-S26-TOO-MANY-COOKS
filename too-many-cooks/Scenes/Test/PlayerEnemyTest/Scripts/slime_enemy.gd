@@ -107,6 +107,6 @@ func _on_sight_body_exited(body: Node2D) -> void:
 
 func _on_damage_trigger_area_entered(area: Area2D) -> void:
 	if(player):
-		take_damage(PlayerStats.base_str,player.global_position)
+		take_damage(area.get_parent().damage,player.global_position)
 	else:
-		take_damage(PlayerStats.base_mag,Vector2.ZERO)
+		take_damage(area.get_parent().damage,Vector2.ZERO)
