@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://kynperywo8m" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P3.png" id="5_hhtmf"]
 [ext_resource type="Texture2D" uid="uid://bvdsehvvr7m07" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P4.png" id="6_ceprt"]
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="8_hhtmf"]
+[ext_resource type="Texture2D" uid="uid://dkkqcq82ntjex" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P5.webp" id="8_k7ifm"]
+[ext_resource type="Texture2D" uid="uid://cylyuy2wv0pir" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P6.webp" id="9_lna37"]
 
 [node name="IntroCutscene" type="Control" unique_id=5151694]
 z_index = 10
@@ -51,6 +53,14 @@ texture = ExtResource("5_hhtmf")
 z_index = 4
 position = Vector2(1728, 320)
 texture = ExtResource("6_ceprt")
+
+[node name="4" type="Sprite2D" parent="Pages" unique_id=108855139]
+position = Vector2(1726, 320)
+texture = ExtResource("8_k7ifm")
+
+[node name="5" type="Sprite2D" parent="Pages" unique_id=400003766]
+position = Vector2(1728, 319)
+texture = ExtResource("9_lna37")
 
 [node name="Narrations" type="Node" parent="." unique_id=546478446]
 
@@ -149,5 +159,49 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
 text = "meow FOUR"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="4" type="RichTextLabel" parent="Subtitles" unique_id=788887280]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow FIVE"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="5" type="RichTextLabel" parent="Subtitles" unique_id=851179754]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("8_hhtmf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 56
+text = "meow SIX"
 fit_content = true
 horizontal_alignment = 1

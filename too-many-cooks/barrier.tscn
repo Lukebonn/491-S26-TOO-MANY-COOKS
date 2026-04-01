@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dh2e5arjhgwwb"]
+
+[ext_resource type="Script" uid="uid://dvik5b26p0u1v" path="res://barrier.gd" id="1_lfb78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d85yw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lfb78"]
+
+[node name="Barrier" type="Area2D" unique_id=1785926896]
+collision_mask = 69
+script = ExtResource("1_lfb78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721828999]
+shape = SubResource("RectangleShape2D_d85yw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=474255429]
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_lfb78")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
