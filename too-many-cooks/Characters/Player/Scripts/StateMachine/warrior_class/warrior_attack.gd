@@ -56,7 +56,7 @@ func enter_state(player_node):
 				
 		#print_debug("Combo" + str(combo_counter))
 		
-		combo_timer.start(0.4)
+		combo_timer.start(0.5)
 		start_cooldown()
 	
 	player.change_state("move_state")

@@ -59,7 +59,7 @@ func spin_attack():
 	
 	player.mana -= 25
 	
-	player.set_damage(1.8)
+	#player.set_damage(1.8)
 	
 	await get_tree().create_timer(0.5).timeout
 	
