@@ -77,7 +77,7 @@ func start_cooldown():
 ##player should lose a certain amount of health
 func hit_response(source):
 	if(parrying):
-		source.get_parent().take_damage(int(player.strength * 1.7), player.position)
+		source.get_parent().take_damage(int(player.strength * 1.7))
 	else:
 		$"../hurt_state".damage_hitbox = source
 		player.change_state("hurt_state")
