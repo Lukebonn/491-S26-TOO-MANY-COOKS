@@ -13,7 +13,7 @@ func _process(delta):
 		turn_to_page(current_page)
 
 func turn_to_page(index: int):
-	if can_turn_page and current_page < 4:
+	if can_turn_page and current_page < 5:
 		var tween = get_tree().create_tween()
 		tween.tween_property($Subtitles.get_child(index-1),"position",Vector2(76,1300),1).set_trans(Tween.TRANS_CUBIC)
 		
@@ -39,7 +39,7 @@ func turn_to_page(index: int):
 		await arrow_tween.finished
 		print("Finished page " + str(current_page))
 		can_turn_page = true
-	elif current_page == 4 and can_turn_page:
+	elif current_page == 5 and can_turn_page:
 		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1.2).timeout
 		var target_scene = ResourceLoader.load("uid://dkpv4bqf7uhxt")
