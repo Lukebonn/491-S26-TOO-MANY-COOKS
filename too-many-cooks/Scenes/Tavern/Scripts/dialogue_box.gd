@@ -91,13 +91,14 @@ func find_emote(character: String, emotions, line: String):
 	
 #func find_options(character: String, line: String):
 	#$Container/Dialogue/DialogueOption1.show()
-	#var regex = RegEx.new()
-	#regex.compile("")
-	#var regex = line
-	#match tag:
-		#"?1":
-			#$Container/Dialogue/DialogueOption1.text
-		#"?2"
+	#$Container/Dialogue/DialogueOption2.show()
+	#var tag = line[1]
+	#if tag == "?":
+		#match line[2]:
+			#"1":
+				#$Container/Dialogue/DialogueOption1.text
+			#"2":
+				#$Container/Dialogue/DialogueOption1.text
 
 
 func find_message(character: String, index, emotions):
