@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_ttory"]
 [ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_slime_enemy.tscn" id="4_skeib"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Scenes/Test/PlayerEnemyTest/slime_enemy.tscn" id="5_skeib"]
+[ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="6_b2ooe"]
+[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/UI.tscn" id="7_wi2j0"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -18,10 +20,19 @@ tile_set = ExtResource("1_v80ci")
 zoom = Vector2(4, 4)
 
 [node name="RangedSlimeEnemy" parent="." unique_id=260407340 instance=ExtResource("4_skeib")]
-position = Vector2(-115, 31)
+position = Vector2(-108, 301)
 
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("5_skeib")]
-position = Vector2(112, 47)
+position = Vector2(58, 362)
 
 [node name="SlimeEnemy2" parent="." unique_id=636021781 instance=ExtResource("5_skeib")]
-position = Vector2(262, -38)
+position = Vector2(208, 277)
+
+[node name="TemplateEnemy" parent="." unique_id=1670622060 instance=ExtResource("6_b2ooe")]
+position = Vector2(-92, -23)
+damage = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
+
+[node name="UI" parent="CanvasLayer" unique_id=1832120515 node_paths=PackedStringArray("player") instance=ExtResource("7_wi2j0")]
+player = NodePath("../../Player")

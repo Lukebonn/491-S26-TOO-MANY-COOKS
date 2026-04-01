@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drsmo5d3lcdkw"]
 
 [node name="Hitbox" type="Area2D" unique_id=307444384]
+collision_layer = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1322426897]
 position = Vector2(0.05227232, 0)
