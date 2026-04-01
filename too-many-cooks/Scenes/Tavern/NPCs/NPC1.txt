@@ -6,8 +6,10 @@
 [3] You will last longer if you keep moving; press space to dodge- and the clicking mouse will help you attack!
 [*] Keep upgrading this place and maybe other adventurers will stop by to give you more aid.
 7
-8
-9
+[?1] Dialogue 1
+[?2] Dialogue 2
+
+<001
 10
 11
 12

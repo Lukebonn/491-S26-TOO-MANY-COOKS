@@ -88,6 +88,17 @@ func find_emote(character: String, emotions, line: String):
 	#then print it out
 	#we also want to be able to encode things like expressions
 	#and sounds
+	
+#func find_options(character: String, line: String):
+	#$Container/Dialogue/DialogueOption1.show()
+	#var regex = RegEx.new()
+	#regex.compile("")
+	#var regex = line
+	#match tag:
+		#"?1":
+			#$Container/Dialogue/DialogueOption1.text
+		#"?2"
+
 
 func find_message(character: String, index, emotions):
 	var text : Array[String]
