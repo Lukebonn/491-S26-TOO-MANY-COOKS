@@ -1,13 +1,26 @@
 extends Node2D
 signal on_spawn
 signal on_all_dead
+enum LocType {FixedRadius, AlongPath, RadiusRange}
 
+##Whether or not enemies will spawn randomly in this spawner's given location type.
+##This must be true for the RadiusRange location type to work.
+@export var RandomLocation : bool = false
 ##The enemies to spawn from this Spawner.
 @export var Enemies : Array[PackedScene]
-##The radius at which enemies will be spawned at.
-@export var SpawnRadius : float = 32.0
 ##The radius of the base collision shape in this Spawner.
+##This Spawner will begin spawning from Enemies when the player enters this radius.
 @export var CollisionRadius : float = 64.0
+
+@export_group("Location Handling")
+##The type of location handling to use when spawning from Enemies.
+##FixedRadius means enemies will spawn a fixed distance away from the spawner.
+##AlongPath means enemies will spawn along a Path2D (MUST be assigned!)
+##RadiusRange means enemies will spawn within a min-max radius range.
+##RadiusRange requires RandomLocation to be true!
+@export var LocationType : LocType
+##The radius at which enemies will be spawned at, if LocationType is FixedRadius.
+@export var SpawnRadius : float = 32.0
 
 var rotInc : float
 #Incriment of rotation, used in circle spawn logic.
