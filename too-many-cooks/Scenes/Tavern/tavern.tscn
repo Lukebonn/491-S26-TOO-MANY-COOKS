@@ -97,7 +97,6 @@ texture = ExtResource("6_0b7ml")
 centered = false
 
 [node name="TavernBackgroundLong3" type="Sprite2D" parent="Tavern BG" unique_id=353033038]
-visible = false
 texture = ExtResource("7_6jyd3")
 centered = false
 
