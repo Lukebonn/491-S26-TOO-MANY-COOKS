@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhc5qgog600dq"]
 
 [ext_resource type="Script" uid="uid://b30iqujos0dat" path="res://Objects/Projectiles/Scripts/magic_sword_projectile.gd" id="1_vkla8"]
-[ext_resource type="Texture2D" uid="uid://cglqsmcwtr7j" path="res://Characters/Player/Sprites/Weapons/sword21.png" id="2_qdc61"]
+[ext_resource type="Texture2D" uid="uid://cglqsmcwtr7j" path="res://Characters/Player/Sprites/Weapons/Sword/sword2.png" id="2_qdc61"]
 
 [node name="MagicSwordProjectile" type="RigidBody2D" unique_id=591366031]
 collision_layer = 0

@@ -1,6 +1,61 @@
 [gd_scene format=3 uid="uid://4xcgo6wurbfm"]
 
-[ext_resource type="Texture2D" uid="uid://bukck6o172p6a" path="res://Characters/Player/Sprites/Weapons/Scratch1.png" id="1_sv2mk"]
+[ext_resource type="Texture2D" uid="uid://dvdnvekn6kwbh" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch2.png" id="1_420sv"]
+[ext_resource type="Texture2D" uid="uid://cxi158dhudgmq" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch3.png" id="2_iy75m"]
+[ext_resource type="Texture2D" uid="uid://cxaqbplrdools" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch4.png" id="3_7p7x4"]
+[ext_resource type="Texture2D" uid="uid://bnjqej7onpfrp" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch5.png" id="4_iu76x"]
+[ext_resource type="Texture2D" uid="uid://ds30844rn7j3y" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch6.png" id="5_u2ppf"]
+[ext_resource type="Texture2D" uid="uid://b4fjdsf6ip5xd" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch7.png" id="6_j1tr1"]
+[ext_resource type="Texture2D" uid="uid://q6ug4wn5gs58" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch8.png" id="7_wc461"]
+[ext_resource type="Texture2D" uid="uid://cji1ecj1l6lfn" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch10.png" id="8_22m6i"]
+[ext_resource type="Texture2D" uid="uid://uf3j2sqfee2k" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch11.png" id="9_1wkl3"]
+[ext_resource type="Texture2D" uid="uid://bis32oktynf5a" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch12.png" id="10_3j0jl"]
+[ext_resource type="Texture2D" uid="uid://b4fxpvac36hsg" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch13.png" id="11_50wp6"]
+[ext_resource type="Texture2D" uid="uid://bbjvlr8u5c2if" path="res://Characters/Player/Sprites/Weapons/Scratch/Scratch14.png" id="12_odg7y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xeb1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_420sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iy75m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7p7x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iu76x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u2ppf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j1tr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wc461")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_22m6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1wkl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3j0jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_50wp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_odg7y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
 
 [node name="Hitbox" type="Area2D" unique_id=607964857]
 collision_layer = 4
@@ -11,6 +66,10 @@ position = Vector2(0, 1.1368684e-13)
 scale = Vector2(0.19084826, 0.13489208)
 polygon = PackedVector2Array(70, 69, 105, 32, 105, -35, 70, -70)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=184765365]
-position = Vector2(17, 0)
-texture = ExtResource("1_sv2mk")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=323557212]
+position = Vector2(15, -1.1920929e-07)
+rotation = 0.2617994
+sprite_frames = SubResource("SpriteFrames_xeb1r")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0

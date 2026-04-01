@@ -9,5 +9,7 @@ position = Vector2(0, 0.11241531)
 scale = Vector2(0.19084826, 0.22482014)
 polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.198822, 70.66798, 104.79529, 39.531975, 104.79529, -40.53202, 26.198822, -71.66802)
 
-[node name="Sprite2D" parent="." index="1" unique_id=184765365]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=323557212]
 visible = false
+frame = 0
+frame_progress = 0.0

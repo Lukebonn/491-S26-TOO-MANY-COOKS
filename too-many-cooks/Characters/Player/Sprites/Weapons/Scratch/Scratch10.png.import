@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bukck6o172p6a"
-path="res://.godot/imported/Scratch1.png-172ae290cb863f7da8b74123e22d54e4.ctex"
+uid="uid://cji1ecj1l6lfn"
+path="res://.godot/imported/Scratch10.png-6866e6561948d26cb1e8b02eb4293272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Player/Sprites/Weapons/Scratch1.png"
-dest_files=["res://.godot/imported/Scratch1.png-172ae290cb863f7da8b74123e22d54e4.ctex"]
+source_file="res://Characters/Player/Sprites/Weapons/Scratch/Scratch10.png"
+dest_files=["res://.godot/imported/Scratch10.png-6866e6561948d26cb1e8b02eb4293272.ctex"]
 
 [params]
 
