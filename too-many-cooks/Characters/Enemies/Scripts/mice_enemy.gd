@@ -34,9 +34,14 @@ func _physics_process(delta: float) -> void:
 	# *note* ideally would put this in take damage but 
 	# this health bar is for playtest.
 	temp_health_bar.value = health #update enemy health bar
-	
+		
 	if player_chase:
+		animated_sprite_2d.play("chase")
 		position += (player.position-position)*SPEED*delta
+		if(player.position.x > 0):
+			$AnimatedSprite2D.flip_h = true
+		if(player.position.x < 0):
+			$AnimatedSprite2D.flip_h = false
 	move_and_slide()
 	
 

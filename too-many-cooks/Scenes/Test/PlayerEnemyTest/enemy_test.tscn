@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3o636nwn1fn5" path="res://Scenes/Test/PlayerEnemyTest/Scripts/player.gd" id="1_e4o8m"]
 [ext_resource type="Texture2D" uid="uid://bu8cj4u841qsl" path="res://Scenes/Test/ProtoArt/Enemy/player.png" id="2_ewvgp"]
-[ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Scenes/Test/PlayerEnemyTest/Scripts/slime_enemy.gd" id="3_1prem"]
+[ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Characters/Enemies/Scripts/mice_enemy.gd" id="3_1prem"]
 [ext_resource type="Texture2D" uid="uid://d28t75hmkruus" path="res://Scenes/Test/ProtoArt/Enemy/slime.png" id="4_kr8wb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_421n3"]
