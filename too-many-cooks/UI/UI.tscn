@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8cinn6ehtcgy"]
 
-[ext_resource type="Script" uid="uid://depieuhvstkky" path="res://Scenes/Test/EffTest/UI.gd" id="1_dvulo"]
+[ext_resource type="Script" uid="uid://depieuhvstkky" path="res://UI/UI.gd" id="1_dvulo"]
 [ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_tabjk"]
 [ext_resource type="Texture2D" uid="uid://d2x02b0k0qqrh" path="res://UI/BattleHUD/Img/HpBarFill.png" id="2_1p4yy"]
 [ext_resource type="Texture2D" uid="uid://bgprqylqedkbv" path="res://UI/BattleHUD/Img/HpBarBack.png" id="2_7ubs7"]

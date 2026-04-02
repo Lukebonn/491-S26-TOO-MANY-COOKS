@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dwfrf7r1jprj8" path="res://Scenes/Test/ObjTest/lv_test.gd" id="1_0if32"]
 [ext_resource type="TileSet" uid="uid://c30qfq2dsg2ln" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdTileSet.tres" id="2_dk4tr"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="3_05qkn"]
-[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/UI.tscn" id="4_m1mma"]
+[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_m1mma"]
 [ext_resource type="PackedScene" uid="uid://bplwfa57njfvb" path="res://Objects/Key/obj_key.tscn" id="5_apq1s"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="6_2kvhs"]
 [ext_resource type="PackedScene" uid="uid://cbtk6nph36k5" path="res://Objects/EnemySpawner/spawn_test.tscn" id="7_05qkn"]
