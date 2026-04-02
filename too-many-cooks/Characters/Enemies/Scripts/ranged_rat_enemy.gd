@@ -56,7 +56,7 @@ func _set_animation():
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if animated_sprite_2d.animation == "Attack":
-		if animated_sprite_2d.frame == 5:
+		if animated_sprite_2d.frame == 2:
 			_create_arrow()
 			#implement later when animation frames don't do the job anymore for a cooldown
 			#await get_tree().create_timer(0.5).timeout

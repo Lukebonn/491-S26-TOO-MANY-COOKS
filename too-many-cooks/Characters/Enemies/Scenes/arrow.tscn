@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ccknvsbk3xdax"]
 
 [ext_resource type="Script" uid="uid://baom06ojl8ofv" path="res://Characters/Enemies/Scripts/enemy_arrow.gd" id="1_osdl6"]
-[ext_resource type="Texture2D" uid="uid://cqlywd1gmvv7" path="res://Scenes/Test/ProtoArt/Enemy/arrow.png" id="2_pa2yw"]
+[ext_resource type="Texture2D" uid="uid://ci160oexc3cew" path="res://Characters/Enemies/rat/cheese.png" id="2_kxdl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fehqi"]
-size = Vector2(130, 60)
+size = Vector2(131.66666, 99.999985)
 
 [node name="EnemyProjectile" type="Area2D" unique_id=448116752]
 scale = Vector2(0.09, 0.09)
@@ -13,14 +13,18 @@ collision_mask = 2
 script = ExtResource("1_osdl6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060063044]
-scale = Vector2(0.10000001, 0.10000001)
-texture = ExtResource("2_pa2yw")
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(13.492064, 11.805554)
+texture = ExtResource("2_kxdl1")
 
 [node name="ProjectileHitbox" type="CollisionShape2D" parent="." unique_id=1916954239]
-position = Vector2(-1, -6)
+position = Vector2(0.8333286, 5.555556)
+scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_fehqi")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1630775555]
+position = Vector2(-11.111111, 11.111111)
+rect = Rect2(-44.444447, -55.555557, 111.111115, 100)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

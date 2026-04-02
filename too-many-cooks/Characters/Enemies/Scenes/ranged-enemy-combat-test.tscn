@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dm6s45tbxpnca"]
 
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_4l82q"]
-[ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://Scenes/Test/EffTest/UI.tscn" id="2_glolb"]
-[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_slime_enemy.tscn" id="2_vf5s5"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_rat_enemy.tscn" id="2_vf5s5"]
 [ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="3_vf5s5"]
-[ext_resource type="Script" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="4_wncap"]
+[ext_resource type="Script" uid="uid://bndcicnatwmua" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="4_wncap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjwjn"]
 size = Vector2(38, 64)
@@ -20,13 +19,6 @@ position = Vector2(-42, 0)
 
 [node name="RangedSlimeEnemy" parent="." unique_id=260407340 instance=ExtResource("2_vf5s5")]
 position = Vector2(63, 0)
-
-[node name="UI" parent="." unique_id=1031834621 instance=ExtResource("2_glolb")]
-offset_left = -109.00001
-offset_top = -65.0
-offset_right = -109.00001
-offset_bottom = -65.0
-scale = Vector2(0.17842205, 0.17842205)
 
 [node name="Staircase" type="Sprite2D" parent="." unique_id=972623455]
 z_index = -1
