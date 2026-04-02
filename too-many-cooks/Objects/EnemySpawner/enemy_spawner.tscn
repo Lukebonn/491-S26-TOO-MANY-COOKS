@@ -18,3 +18,8 @@ texture = ExtResource("1_kl5b1")
 
 [node name="BaseCol" type="CollisionShape2D" parent="BaseColObj" unique_id=1812788454]
 shape = SubResource("CircleShape2D_736ij")
+
+[node name="Interval" type="Timer" parent="." unique_id=1698805292]
+one_shot = true
+
+[connection signal="timeout" from="Interval" to="." method="_on_interval_timeout"]

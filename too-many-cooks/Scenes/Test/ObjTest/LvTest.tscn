@@ -11,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door/obj_door.tscn" id="10_dk4tr"]
 [ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="12_m1mma"]
 
+[sub_resource type="Curve2D" id="Curve2D_dk4tr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 120, -48, 0, 0, 0, 0, 176, 0)
+}
+point_count = 3
+
 [node name="LvTest" type="Node2D" unique_id=469150633]
 script = ExtResource("1_0if32")
 
@@ -39,8 +45,8 @@ player = NodePath("../Player")
 [node name="ObjEnemySpawner" parent="OnDeadOpenDoor" unique_id=817439483 instance=ExtResource("6_2kvhs")]
 position = Vector2(-128, 0)
 Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
-SpawnRadius = 48.0
 CollisionRadius = 96.0
+SpawnRadius = 48.0
 
 [node name="ObjDoor2" parent="OnDeadOpenDoor" unique_id=1953720290 instance=ExtResource("10_dk4tr")]
 position = Vector2(-128, -104)
@@ -64,9 +70,14 @@ position = Vector2(128, -104)
 position = Vector2(120, 48)
 StartHidden = true
 
-[node name="ObjEnemySpawner2" parent="OnDeadGiveKey" unique_id=931755633 instance=ExtResource("6_2kvhs")]
+[node name="ObjEnemySpawner2" parent="OnDeadGiveKey" unique_id=931755633 node_paths=PackedStringArray("SpawnPath") instance=ExtResource("6_2kvhs")]
 position = Vector2(120, 0)
+RandomLocation = true
 Enemies = Array[PackedScene]([ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn"), ExtResource("7_05qkn")])
+LocationType = 1
+SpawnPath = NodePath("../Path2D")
+SpawnMethod = 1
+SpawnInterval = 2.0
 
 [node name="ObjLock2" parent="OnDeadGiveKey" unique_id=910257717 instance=ExtResource("8_dlci1")]
 z_index = 1
@@ -74,6 +85,9 @@ position = Vector2(120, 72)
 
 [node name="ObjChest" parent="OnDeadGiveKey" unique_id=439909105 instance=ExtResource("12_m1mma")]
 position = Vector2(120, 72)
+
+[node name="Path2D" type="Path2D" parent="OnDeadGiveKey" unique_id=1310809484]
+curve = SubResource("Curve2D_dk4tr")
 
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]
