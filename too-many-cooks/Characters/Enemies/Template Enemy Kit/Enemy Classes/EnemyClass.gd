@@ -58,7 +58,9 @@ func _on_hurtbox_area_entered(area):
 
 func _on_hurtbox_body_entered(body):
 	current_state.hit_response(body)
-	take_damage(body.get_parent().damage)
+	if body.has_method("take_damage"):
+		body.take_damage(damage)
+	#take_damage(body.get_parent().damage)
 
 func take_damage(inc_damage: int):
 	current_health = current_health - inc_damage
