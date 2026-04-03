@@ -1,12 +1,9 @@
-[gd_scene format=3 uid="uid://0bhnfqkcl5ly"]
+[gd_scene format=3 uid="uid://d1jepf84ktk0s"]
 
-[ext_resource type="PackedScene" uid="uid://cpbindqs64pju" path="res://Characters/Player/Attacks/warrior/warrior_attack_1.tscn" id="1_sfwa8"]
+[ext_resource type="PackedScene" uid="uid://cpbindqs64pju" path="res://Characters/Player/Attacks/warrior/warrior_attack_1.tscn" id="1_4m32j"]
 
-[node name="Hitbox" unique_id=607964857 instance=ExtResource("1_sfwa8")]
+[node name="Hitbox" unique_id=607964857 instance=ExtResource("1_4m32j")]
 
 [node name="CollisionPolygon2D" parent="." index="0" unique_id=2089132905]
 position = Vector2(0, 7.450581e-09)
 polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.198822, 84.01198, 120.51458, 39.531975, 120.51458, -40.53202, 26.198822, -85.012024)
-
-[node name="Polygon2D" parent="." index="1" unique_id=924618675]
-polygon = PackedVector2Array(8, 9, 8, -9, 5, -19, 21, -9, 21, 9, 5, 19)

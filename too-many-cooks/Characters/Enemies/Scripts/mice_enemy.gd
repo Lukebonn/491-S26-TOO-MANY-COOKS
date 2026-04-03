@@ -81,18 +81,14 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 		add_child(damage_number)
 		
 func _die() -> void:
-	is_alive = false
 	animated_sprite_2d.play("death")
 	
 	# Dawson - Adds 1 Gold to the Global Gold count
 	PlayerStats.Gold += 1
+	
+	queue_free()
 	# Dawson - Spawns the exit staircase
 	allEnemiesDead.emit()
-	
-	#disable collision
-	$DamageTrigger/CollisionShape2D.set_deferred("disabled", true)
-	$Sight/CollisionShape2D.set_deferred("disabled", true)
-	hide()
 	
 
 func _on_sight_body_entered(body: Node2D) -> void:
