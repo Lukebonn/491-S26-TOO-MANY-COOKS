@@ -36,3 +36,6 @@ damage = 0
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 node_paths=PackedStringArray("player") instance=ExtResource("7_wi2j0")]
 player = NodePath("../../Player")
+
+[node name="SlimeEnemy3" parent="." unique_id=432302108 instance=ExtResource("5_skeib")]
+position = Vector2(64, -9)
