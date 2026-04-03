@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b0oem144ug8fp"]
+
+[ext_resource type="Script" uid="uid://c65b540schjyp" path="res://Scenes/Level Design/Exploding Barrel/barrel.gd" id="1_jwajh"]
+[ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="2_au06h"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="3_5tsyg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au06h"]
+radius = 3.968258
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0cvy1"]
+radius = 21.095022
+
+[node name="ExplodingBarrel" type="Node2D" unique_id=983040404]
+
+[node name="Barrel" type="StaticBody2D" parent="." unique_id=1929232732]
+position = Vector2(159, 89)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_jwajh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel" unique_id=186471021]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_au06h")
+
+[node name="MeshInstance2D" type="Sprite2D" parent="Barrel" unique_id=1078656785]
+position = Vector2(1.9073486e-06, -4.7683716e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_au06h")
+
+[node name="explosion radius" type="Area2D" parent="Barrel" unique_id=482375219]
+scale = Vector2(0.5, 0.5)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrel/explosion radius" unique_id=2099021918]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_0cvy1")
+
+[node name="Timer" type="Timer" parent="Barrel" unique_id=1341083924]
+
+[node name="Player" parent="." unique_id=1909083790 instance=ExtResource("3_5tsyg")]
+position = Vector2(109, 92)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=835084220]
+zoom = Vector2(4.16, 4.16)
