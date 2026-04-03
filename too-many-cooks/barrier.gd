@@ -11,7 +11,8 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Area2D):
+	player = area
 	if(player):
 		$CollisionShape2D.set_deferred("disabled", true)
 		hide()

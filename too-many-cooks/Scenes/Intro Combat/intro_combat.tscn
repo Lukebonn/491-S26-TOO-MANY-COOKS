@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="5_ltqhe"]
 [ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="7_sp0by"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="9_efvaj"]
+[ext_resource type="PackedScene" uid="uid://dh2e5arjhgwwb" path="res://barrier.tscn" id="10_pa5cx"]
 
 [node name="IntroCombat" type="Node2D" unique_id=357568199 node_paths=PackedStringArray("dialogue_ref")]
 script = ExtResource("1_gk2t5")
@@ -24,6 +25,9 @@ position = Vector2(0, 37)
 [node name="PlayerCamera" parent="." unique_id=587947942 node_paths=PackedStringArray("Player") instance=ExtResource("3_gk2t5")]
 zoom = Vector2(4, 4)
 Player = NodePath("../Player")
+
+[node name="Barrier" parent="." unique_id=1785926896 instance=ExtResource("10_pa5cx")]
+position = Vector2(0, -61)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=482306515]
 
