@@ -1,15 +1,17 @@
 [gd_scene format=4 uid="uid://buddsphtvh11b"]
 
 [ext_resource type="Texture2D" uid="uid://dd8tqrx5t2evr" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/aKtdMap.png" id="1_0l5ya"]
+[ext_resource type="Script" uid="uid://bt6xelho18ihw" path="res://Scenes/Test/EnvTest/temp_tile_sets_mini_map_test.gd" id="1_1hp1d"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_pc4nk"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="3_787b4"]
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="3_nnrde"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="4_uwhm3"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="6_tum0s"]
-[ext_resource type="PackedScene" uid="uid://bjwgwx8jlkexb" path="res://Scenes/Level Design/Test Level Design/Chest.tscn" id="7_0npcw"]
-[ext_resource type="PackedScene" uid="uid://ibkesuy03r0c" path="res://Scenes/Level Design/Test Level Design/key.tscn" id="8_h05sp"]
 [ext_resource type="AudioStream" uid="uid://lhhkdupna3c6" path="res://Scenes/Test/PlayerEnemyTest/[DEPRECATED]Eli491_Combat softer.wav" id="9_uruf1"]
+[ext_resource type="Material" uid="uid://cxfnbulitax7j" path="res://Scenes/Level Design/Weather System/Drizzle.tres" id="10_uruf1"]
 [ext_resource type="Script" uid="uid://ddagge5dbq4op" path="res://Scenes/Test/EnvTest/dynamicMusic.gd" id="10_yvunr"]
+[ext_resource type="PackedScene" uid="uid://v15p4jn8vif4" path="res://Scenes/Level Design/Weather System/weather_manager.tscn" id="11_yvunr"]
+[ext_resource type="Texture2D" uid="uid://bnhw4f1sn6v5d" path="res://Scenes/Test/ProtoArt/Enemy/rat king.png" id="12_g56id"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -174,6 +176,7 @@ stream_1/stream = ExtResource("9_uruf1")
 stream_1/volume = 9.93
 
 [node name="MiniMap_Test" type="Node2D" unique_id=1829330732]
+script = ExtResource("1_1hp1d")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=408273084]
 tile_set = SubResource("TileSet_1x0i4")
@@ -246,14 +249,30 @@ position = Vector2(601, 344)
 
 [node name="Tutorial Prompt" parent="." unique_id=1009234046 instance=ExtResource("6_tum0s")]
 
-[node name="Chest" parent="." unique_id=738895399 instance=ExtResource("7_0npcw")]
-
-[node name="Key" parent="." unique_id=1316605277 instance=ExtResource("8_h05sp")]
-position = Vector2(126, 192)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=155009504]
 position = Vector2(488, 339)
 stream = SubResource("AudioStreamSynchronized_1hp1d")
 script = ExtResource("10_yvunr")
 
-[connection signal="chest_opened" from="Key" to="Chest" method="_on_key_chest_opened"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=194172388]
+position = Vector2(377, 364.99997)
+scale = Vector2(0.23101266, 0.25632912)
+texture = ExtResource("12_g56id")
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1481348936]
+position = Vector2(100, -19)
+emitting = false
+process_material = ExtResource("10_uruf1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1455009716]
+motion_mirroring = Vector2(1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer" unique_id=33376438]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="WeatherManager" parent="." unique_id=1217193743 node_paths=PackedStringArray("particles", "color_rect") instance=ExtResource("11_yvunr")]
+particles = NodePath("../Particles")
+color_rect = NodePath("../ParallaxLayer/ColorRect")

@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bdkjsmkaos8i3"]
 
 [ext_resource type="Material" uid="uid://cxfnbulitax7j" path="res://Scenes/Level Design/Weather System/Drizzle.tres" id="1_nevgv"]
-[ext_resource type="Script" uid="uid://dcnk5mwv4er0d" path="res://Scenes/Level Design/Weather System/concurrent_state_machine.gd" id="2_vfnup"]
-[ext_resource type="Script" uid="uid://c4brgax8jxc6o" path="res://rain_state_machine.gd" id="3_pbgo3"]
-[ext_resource type="Script" uid="uid://c60854dlj175g" path="res://Scenes/Level Design/Weather System/fog_state_machine.gd" id="4_vfnup"]
-[ext_resource type="Script" uid="uid://bjgqrxl753k6l" path="res://Scenes/Level Design/Weather System/wind_state_machine.gd" id="5_pbgo3"]
+[ext_resource type="PackedScene" uid="uid://v15p4jn8vif4" path="res://Scenes/Level Design/Weather System/weather_manager.tscn" id="2_nevgv"]
+[ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="4_vfnup"]
 [ext_resource type="Texture2D" uid="uid://bnhw4f1sn6v5d" path="res://Scenes/Test/ProtoArt/Enemy/rat king.png" id="6_kfjv5"]
 
 [node name="WeatherTestScene" type="Node2D" unique_id=1415316628]
@@ -14,20 +12,9 @@ position = Vector2(100, -19)
 emitting = false
 process_material = ExtResource("1_nevgv")
 
-[node name="ConcurrentStateMachine" type="Node" parent="." unique_id=481157604 node_paths=PackedStringArray("particles", "color_rect")]
-script = ExtResource("2_vfnup")
+[node name="WeatherManager" parent="." unique_id=1217193743 node_paths=PackedStringArray("particles", "color_rect") instance=ExtResource("2_nevgv")]
 particles = NodePath("../Particles")
 color_rect = NodePath("../ParallaxLayer/ColorRect")
-
-[node name="RainStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=1322344646]
-script = ExtResource("3_pbgo3")
-
-[node name="FogStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=323237622]
-script = ExtResource("4_vfnup")
-debug = false
-
-[node name="WindStateMachine" type="Node" parent="ConcurrentStateMachine" unique_id=1157525971]
-script = ExtResource("5_pbgo3")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1484666317]
 motion_mirroring = Vector2(1152, 648)
@@ -36,8 +23,16 @@ motion_mirroring = Vector2(1152, 648)
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1366464664 groups=["Sway"]]
 position = Vector2(84.5, 38.5)
 scale = Vector2(0.26898733, 0.30063292)
 texture = ExtResource("6_kfjv5")
+
+[node name="Player" parent="." unique_id=1909083790 groups=["Sway"] instance=ExtResource("4_vfnup")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=644689030]
+position = Vector2(84.5, 38.5)
+scale = Vector2(0.26898733, 0.30063292)
+zoom = Vector2(5, 5)

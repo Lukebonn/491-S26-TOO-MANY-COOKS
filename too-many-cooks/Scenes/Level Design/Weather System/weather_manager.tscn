@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://v15p4jn8vif4"]
+
+[ext_resource type="Script" uid="uid://dcnk5mwv4er0d" path="res://Scenes/Level Design/Weather System/concurrent_state_machine.gd" id="1_udryn"]
+[ext_resource type="Script" uid="uid://c4brgax8jxc6o" path="res://rain_state_machine.gd" id="2_i7s5x"]
+[ext_resource type="Script" uid="uid://c60854dlj175g" path="res://Scenes/Level Design/Weather System/fog_state_machine.gd" id="3_7x278"]
+[ext_resource type="Script" uid="uid://bjgqrxl753k6l" path="res://Scenes/Level Design/Weather System/wind_state_machine.gd" id="4_gicwa"]
+
+[node name="WeatherManager" type="Node" unique_id=1217193743 node_paths=PackedStringArray("particles", "color_rect")]
+script = ExtResource("1_udryn")
+particles = NodePath("")
+color_rect = NodePath("")
+
+[node name="RainStateMachine" type="Node" parent="." unique_id=359713944]
+script = ExtResource("2_i7s5x")
+
+[node name="FogStateMachine" type="Node" parent="." unique_id=710933178]
+script = ExtResource("3_7x278")
+debug = false
+
+[node name="WindStateMachine" type="Node" parent="." unique_id=661850123]
+script = ExtResource("4_gicwa")
