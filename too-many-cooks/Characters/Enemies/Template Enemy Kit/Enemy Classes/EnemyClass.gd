@@ -27,7 +27,7 @@ func _ready():
 	current_health = health
 	
 func change_state(new_state : String):
-	if(!current_state): #just in case current_state is null for some reason
+	if !current_state: #just in case current_state is null for some reason
 		current_state.exit_state()
 	print("Switching to enemy state: " + new_state)
 	current_state = get_node(new_state)
@@ -35,7 +35,18 @@ func change_state(new_state : String):
 
 func _physics_process(delta: float) -> void:
 	current_state.process(delta)
+	
 
+func get_player_vector():
+	var vector = (player_ref.position - self.position).normalized()
+	return vector
+
+func take_damage(inc_damage: int):
+	current_health = current_health - inc_damage
+	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
+	damage_number.Number = inc_damage
+	add_child(damage_number)
+	current_state.hit_response(1)
 
 #collision signals
 func _on_sight_body_entered(body):
@@ -44,35 +55,28 @@ func _on_sight_body_entered(body):
 		player_in_sight = true
 		if sight_state:
 			current_state = sight_state
-			current_state.enter_state(self)
+			change_state(str(current_state))
 
 func _on_sight_body_exited(body):
 	if body.name == "Player":
 		player_in_sight = false
 	if sight_state:
-		sight_state.exit_state()
+		change_state("IdleState")
 
 func _on_hurtbox_area_entered(area):
-	current_state.hit_response(area)
 	take_damage(area.get_parent().damage)
+	if current_state != $HitState:
+		change_state("HitState")
 
 func _on_hurtbox_body_entered(body):
-	current_state.hit_response(body)
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
+	if current_state != $HitState:
+		change_state("HitState")
 	#take_damage(body.get_parent().damage)
 
-func take_damage(inc_damage: int):
-	current_health = current_health - inc_damage
-	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
-	damage_number.Number = inc_damage
-	add_child(damage_number)
-	current_state.hit_response(1)
-	
-	
 func _on_hitbox_area_entered(_area):
 	pass # Replace with function body.
-
 
 func _on_hitbox_body_entered(_body):
 	pass # Replace with function body.

@@ -8,11 +8,14 @@ extends EnemyState
 @export var Hit_Stun : float
 func enter_state(enemy_node):
 	super(enemy_node)
+	if enemy_ref.current_health <= 0:
+		exit_state()
 	if player_ref and enemy_ref:
 		var direction = (enemy_ref.position -player_ref.position).normalized()
 		enemy_ref.velocity = Knockback_Strength * direction
-		if Hit_Stun > 0 and enemy_ref.health != 0:
-			await get_tree().create_timer(Hit_Stun).timeout
+		if Hit_Stun > 0 and enemy_ref.health >= 0:
+			$Timer.start(Hit_Stun)
+			await $Timer.timeout
 		exit_state()
 
 func process(delta):

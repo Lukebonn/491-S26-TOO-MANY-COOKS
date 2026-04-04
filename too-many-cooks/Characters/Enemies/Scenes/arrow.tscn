@@ -11,6 +11,7 @@ scale = Vector2(0.09, 0.09)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_osdl6")
+speed = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060063044]
 position = Vector2(-9.536743e-07, -9.536743e-07)

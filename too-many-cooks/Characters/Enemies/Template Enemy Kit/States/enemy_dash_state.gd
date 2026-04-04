@@ -16,7 +16,7 @@ func enter_state(enemy_node):
 	super(enemy_node)
 	dashStep = dashSteps.align
 
-func _process(delta: float) -> void:
+func process(delta: float) -> void:
 	if player_ref and enemy_ref:
 		match dashStep: #woawie a match statement
 			dashSteps.align:

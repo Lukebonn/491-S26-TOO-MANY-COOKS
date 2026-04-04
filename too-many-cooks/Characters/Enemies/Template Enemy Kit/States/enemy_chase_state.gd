@@ -10,7 +10,7 @@ func enter_state(enemy_node):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process(delta):
 	if player_ref and enemy_ref:
-		var direction = (player_ref.position - enemy_ref.position).normalized()
+		var direction = enemy_ref.get_player_vector()
 		enemy_ref.velocity = Chase_Speed * direction
 		enemy_ref.move_and_slide()
 
