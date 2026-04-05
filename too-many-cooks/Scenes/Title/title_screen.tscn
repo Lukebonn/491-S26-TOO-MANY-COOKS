@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scenes/Title/Scripts/main_menu_ui.gd" id="8_72lsw"]
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="9_l627n"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="10_qa3ra"]
+[ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="11_fbuyo"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="12_xruoh"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="13_72lsw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
 sky_top_color = Color(5.390644e-06, 0.7529455, 0.9618829, 1)
@@ -329,36 +332,51 @@ theme = ExtResource("7_xsi77")
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057]
+[node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Start"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
 
-[node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018]
+[node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Continue"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
 
-[node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092]
+[node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Settings"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
 
-[node name="Credits" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=745377423]
+[node name="Credits" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=745377423 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Credits"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
 
-[node name="Quit" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=911186619]
+[node name="Quit" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=911186619 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
 
 [node name="Pause UI" type="Control" parent="Menu UI" unique_id=852060420]
 layout_mode = 1
@@ -661,7 +679,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("10_qa3ra")
 
-[node name="Back" type="Button" parent="Menu UI/Pause UI" unique_id=784161723]
+[node name="Back" type="Button" parent="Menu UI/Pause UI" unique_id=784161723 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 0
 offset_left = 1932.0
 offset_top = 705.0
@@ -671,16 +689,39 @@ theme = ExtResource("7_xsi77")
 theme_override_font_sizes/font_size = 64
 text = "Back
 "
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../ButtonHoverSound")
+clickSound = NodePath("../../../ButtonClickSound")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=774691918]
+stream = ExtResource("12_xruoh")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=1481275417]
+stream = ExtResource("13_72lsw")
+volume_db = -8.0
+bus = &"Music"
 
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/MeshInstance3D" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/Cat" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Stuff that spins" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Start" to="Menu UI/Buttons/VBoxContainer/Start" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Start" to="Menu UI/Buttons/VBoxContainer/Start" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Start" to="Title UI" method="_on_start_pressed"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Continue" to="Menu UI/Buttons/VBoxContainer/Continue" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Continue" to="Menu UI/Buttons/VBoxContainer/Continue" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Continue" to="Title UI" method="_on_continue_pressed"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI/Buttons/VBoxContainer/Settings" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI/Buttons/VBoxContainer/Settings" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI" method="_on_settings_pressed"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_mouse_entered"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/Master" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
@@ -700,4 +741,6 @@ text = "Back
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleLabel" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
 [connection signal="mouse_entered" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleToggle" to="Menu UI/Pause UI/PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Pause UI/PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleToggle" to="Menu UI" method="_on_purple_toggle_pressed"]
+[connection signal="button_down" from="Menu UI/Pause UI/Back" to="Menu UI/Pause UI/Back" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Pause UI/Back" to="Menu UI/Pause UI/Back" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Pause UI/Back" to="Menu UI" method="_on_back_pressed"]
