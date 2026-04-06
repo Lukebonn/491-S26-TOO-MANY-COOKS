@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btkcewpw6f6r3"]
+
+[ext_resource type="Script" uid="uid://bpwfkmxm3lf1p" path="res://Objects/Staircase/staircase.gd" id="1_kwhiy"]
+[ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Objects/Staircase/Staircase Test.png" id="2_21a8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxfjw"]
+size = Vector2(39, 8)
+
+[node name="Staircase" type="Area2D" unique_id=1529414869]
+visible = false
+collision_layer = 0
+monitoring = false
+monitorable = false
+script = ExtResource("1_kwhiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306784809]
+texture = ExtResource("2_21a8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1244401067]
+position = Vector2(-0.5, -12)
+shape = SubResource("RectangleShape2D_sxfjw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

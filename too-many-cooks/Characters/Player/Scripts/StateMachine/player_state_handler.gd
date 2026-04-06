@@ -123,29 +123,3 @@ func _on_hurtbox_area_entered(area):
 #multipler: a float representing how the strength of the player's attack
 func set_damage(multiplier : float):
 	damage = int(strength * multiplier)
-
-
-##this should be in a script for managing the entire combat scene, not here
-func _on_tavern_return_area_entered(_area: Area2D):
-	call_deferred("go_to_tavern")
-	# takes the player back to the tavern
-##same as _on_tavern_return_area_entered
-func go_to_tavern():
-	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
-
-
-##I commented these out because the player won't be changing classes while the player scene is loaded
-
-#func _on_knight_pressed():
-#	equipped_class = "Knight"
-#	print("Your class is now: " + equipped_class)
-
-
-#func _on_mage_pressed():
-#	equipped_class = "Mage"
-#	print("Your class is now: " + equipped_class)
-
-
-#func _on_ranger_pressed():
-#	equipped_class = "Ranger"
-#	print("Your class is now: " + equipped_class)

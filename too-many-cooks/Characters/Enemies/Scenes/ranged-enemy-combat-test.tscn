@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_4l82q"]
 [ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_rat_enemy.tscn" id="2_vf5s5"]
-[ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="3_vf5s5"]
+[ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Objects/Staircase/Staircase Test.png" id="3_vf5s5"]
 [ext_resource type="Script" uid="uid://bndcicnatwmua" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="4_wncap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjwjn"]

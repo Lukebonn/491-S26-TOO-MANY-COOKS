@@ -3,16 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_vmwr5"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="2_sli66"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="3_1lw8e"]
-[ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="4_lnocq"]
-[ext_resource type="Script" uid="uid://bndcicnatwmua" path="res://Scenes/Test/PlayerEnemyTest/Scripts/staircase.gd" id="5_vasta"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.ogg" id="6_cjfr7"]
+[ext_resource type="PackedScene" uid="uid://btkcewpw6f6r3" path="res://Objects/Staircase/staircase.tscn" id="6_vn22c"]
 [ext_resource type="Script" uid="uid://5h2nvu0najdi" path="res://Scenes/Test/PlayerEnemyTest/Scripts/combat_controls_playtest.gd" id="7_pjd3s"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]
 [ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="9_vn22c"]
 [ext_resource type="PackedScene" uid="uid://cva367os2jx7d" path="res://tutorial_prompt.tscn" id="10_cjfr7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnocq"]
-size = Vector2(42, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh6lb"]
 size = Vector2(240, 8)
@@ -42,20 +38,6 @@ offset_right = -109.00001
 offset_bottom = -65.0
 scale = Vector2(0.15, 0.15)
 player = NodePath("../Player")
-
-[node name="Staircase" type="Sprite2D" parent="." unique_id=1646119538]
-z_index = -1
-position = Vector2(0, -49)
-texture = ExtResource("4_lnocq")
-script = ExtResource("5_vasta")
-
-[node name="TavernReturn" type="Area2D" parent="Staircase" unique_id=1339128836]
-collision_layer = 64
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Staircase/TavernReturn" unique_id=1889735904]
-position = Vector2(0, -13.5)
-shape = SubResource("RectangleShape2D_lnocq")
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=756298209]
 stream = ExtResource("6_cjfr7")
@@ -102,7 +84,11 @@ texture = ExtResource("9_vn22c")
 visible = false
 position = Vector2(-18, 26)
 
+[node name="Staircase" parent="." unique_id=1529414869 instance=ExtResource("6_vn22c")]
+z_index = -1
+position = Vector2(0, -48)
+destination_path = "res://Scenes/Tavern/tavern.tscn"
+
 [connection signal="notEnoughMana" from="Player" to="UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="UI" method="_on_player_death"]
-[connection signal="allEnemiesDead" from="SlimeEnemy" to="Staircase" method="_on_all_enemies_dead"]
-[connection signal="area_entered" from="Staircase/TavernReturn" to="Player" method="_on_tavern_return_area_entered"]
+[connection signal="allEnemiesDead" from="SlimeEnemy" to="Staircase" method="enable"]

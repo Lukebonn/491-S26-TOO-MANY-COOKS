@@ -8,7 +8,9 @@ var timer : float
 
 var dash_counter : int = 0
 var cooldown : float = 2
-var cooldown_timer : float = 0
+var cooldown_timer : Timer = Timer.new()
+
+var first_time : bool = true
 
 signal player_in_hitbox(Area2D)
 
@@ -20,12 +22,15 @@ func enter_state(player_node):
 	
 	current_dash_speed = full_dash_speed
 	
+	if(first_time):
+		player.add_child(cooldown_timer)
+		cooldown_timer.timeout.connect(reset_counter)
+		
+		first_time = false
+	
 	#checks if the player is spamming dash
-	if(cooldown_timer > 0):
+	if(!cooldown_timer.is_stopped()):
 		dash_counter += 1
-		reset_cooldown()
-	else:
-		dash_counter = 0
 	
 	#if the player has spammed dash 3 times, their dash will slow way down
 	if(dash_counter >= 3):
@@ -52,20 +57,17 @@ func input_handler(delta : float) -> void:
 func exit_state():
 	$"../Hurtbox".monitoring = false
 	$"../Hurtbox".monitoring = true
-	start_cooldown(get_process_delta_time())
+	start_cooldown()
 
 ##starts a timer that keeps track of if the player is spamming dash
-func start_cooldown(delta : float):
-	cooldown_timer = cooldown
-	
-	while cooldown_timer > 0:
-		cooldown_timer -= delta
-		await get_tree().process_frame
+func start_cooldown():
+	cooldown_timer.start()
 	
 	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
-func reset_cooldown():
-	cooldown_timer = cooldown
+func reset_counter():
+	cooldown_timer.stop()
+	dash_counter = 0
 
 ##player should not take damage in roll state
 func hit_response(_source):

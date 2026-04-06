@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://t56ir8n6wmac"
-path="res://.godot/imported/Staircase Test.png-a936eaaa697d4e00fabd343e512f37b5.ctex"
+path="res://.godot/imported/Staircase Test.png-c45684d3ace173a0737283fcb5613ac6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Player/Sprites/Staircase Test.png"
-dest_files=["res://.godot/imported/Staircase Test.png-a936eaaa697d4e00fabd343e512f37b5.ctex"]
+source_file="res://Objects/Staircase/Staircase Test.png"
+dest_files=["res://.godot/imported/Staircase Test.png-c45684d3ace173a0737283fcb5613ac6.ctex"]
 
 [params]
 
