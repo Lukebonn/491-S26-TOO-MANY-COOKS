@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_ov6qn"]
 [ext_resource type="PackedScene" uid="uid://ig2vcmpn3mgq" path="res://Characters/Enemies/Hob_Lobber_Enemy/Enemy-Lob.tscn" id="8_rtsrt"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_rjdo5"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_q2nso"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_q2nso"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_hehib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
