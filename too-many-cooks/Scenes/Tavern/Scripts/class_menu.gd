@@ -3,6 +3,8 @@ var is_showing = false
 @export var dialogue_ref : Control
 var current_class : String
 var current_level
+
+signal back_pressed
 # any logic regarding 
 func show_menu():
 	is_showing = true
@@ -70,7 +72,7 @@ func _check_upgrade_avaliability():
 					if PlayerStats.KillCount > 80: return true
 				5: 
 					if PlayerStats.KillCount > 150: return true
-		"Ranger":
+		"Rogue":
 			match current_level:
 				0:
 					if PlayerStats.Gold > -1: return true
@@ -89,9 +91,9 @@ func _on_talk_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_NPC".conversation = 0
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
-		"Ranger":
-			$"../Tavern BG/Class_NPCS/Ranger_NPC".conversation = 0
-			$"../Tavern BG/Class_NPCS/Ranger_NPC"._send_conversation()
+		"Rogue":
+			$"../Tavern BG/Class_NPCS/Rogue_NPC".conversation = 0
+			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_NPC".conversation = 0
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
@@ -104,9 +106,9 @@ func _on_upgrade_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
-		"Ranger":
-			$"../Tavern BG/Class_NPCS/Ranger_CLASS_NPC".Class_Level += 1
-			$"../Tavern BG/Class_NPCS/Ranger_CLASS_NPC".update_sheet()
+		"Rogue":
+			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Level += 1
+			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
@@ -119,11 +121,27 @@ func _on_quest_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_NPC".conversation = 1
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
-		"Ranger":
-			$"../Tavern BG/Class_NPCS/Ranger_NPC".conversation = 1
-			$"../Tavern BG/Class_NPCS/Ranger_NPC"._send_conversation()
+		"Rogue":
+			$"../Tavern BG/Class_NPCS/Rogue_NPC".conversation = 1
+			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_NPC".conversation = 1 
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
 	await dialogue_ref.message_complete
 	show_menu()
+
+func _on_back_pressed():
+	back_pressed.emit()
+	hide_menu()
+	set_top_right_button("Close")
+
+func set_top_right_button(new_button: String):
+	match new_button:
+		"Back":
+			$Panel/Back.show()
+			$Panel/Close.hide()
+		"Close":
+			await get_tree().create_timer(1).timeout
+			$Panel/Back.hide()
+			$Panel/Close.show()
+	

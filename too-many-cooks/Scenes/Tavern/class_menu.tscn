@@ -37,6 +37,7 @@ offset_bottom = 250.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_y33xb")
 
 [node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -48,6 +49,20 @@ offset_right = -16.0
 offset_bottom = 47.0
 grow_horizontal = 0
 text = "Close"
+
+[node name="Back" type="Button" parent="Panel" unique_id=94567557]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Back
+"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
 layout_mode = 0
@@ -359,6 +374,7 @@ layout_mode = 2
 text = "Quest"
 
 [connection signal="pressed" from="Panel/Close" to="." method="hide_menu"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/Talk" to="." method="_on_talk_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/Quest" to="." method="_on_quest_pressed"]

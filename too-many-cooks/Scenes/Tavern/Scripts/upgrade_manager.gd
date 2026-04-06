@@ -24,7 +24,7 @@ func _on_upgrade_complicated(variant):
 	#oh well...
 	match variant:
 		"NPCMagic":
-			$"../RANGER".show()
+			$"../ROGUE".show()
 			$NPCEnd.show()
 			$"../TavernBackgroundLong".hide()
 			$"../TavernBackgroundLong2".show()

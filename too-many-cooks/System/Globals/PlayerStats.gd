@@ -47,7 +47,7 @@ var current_class = classes.warrior
 enum classes{
 	none,
 	warrior,
-	ranger,
+	rogue,
 	mage
 }
 

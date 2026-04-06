@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cyh3a1qkkfmcu"]
+
+[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_sedxj"]
+[ext_resource type="Script" uid="uid://bdj1daavcuomn" path="res://Scenes/Tavern/door_class_select.gd" id="2_rjcil"]
+[ext_resource type="Texture2D" uid="uid://cmurr5fnovyih" path="res://Characters/Player/Sprites/Weapons/Sword/sword1.png" id="3_rjcil"]
+[ext_resource type="Texture2D" uid="uid://cv0jm0phuf3cp" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyTown/KttBow.png" id="4_1la83"]
+[ext_resource type="Texture2D" uid="uid://qon1yyruwokm" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdArrow.png" id="5_tsy5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y33xb"]
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.8980392)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Class Select" type="Control" unique_id=877217506]
+z_index = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sedxj")
+script = ExtResource("2_rjcil")
+
+[node name="Panel" type="Panel" parent="." unique_id=1351599176]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y33xb")
+
+[node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Close"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 800.0
+offset_bottom = 500.0
+mouse_filter = 2
+
+[node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "What class should I be?"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=213432083]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer2" unique_id=1523503634]
+layout_mode = 2
+
+[node name="Classes" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1269665270]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Warrior" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1120229820]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Warrior"
+
+[node name="Rogue" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1154282168]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rogue"
+
+[node name="Magician" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1259405670]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Magician"
+
+[node name="sword" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1895565087]
+z_index = 1
+position = Vector2(98, 102.5)
+scale = Vector2(10.214286, 10.214286)
+texture = ExtResource("3_rjcil")
+
+[node name="knife" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=186783298]
+z_index = 1
+position = Vector2(295, 102.5)
+scale = Vector2(10.214286, 10.214286)
+texture = ExtResource("4_1la83")
+
+[node name="staff" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=816185281]
+z_index = 1
+position = Vector2(492, 102.5)
+scale = Vector2(10.214286, 10.214286)
+texture = ExtResource("5_tsy5r")
+
+[node name="Checks" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1469144720]
+layout_mode = 2
+alignment = 1
+
+[node name="WarriorCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=247833101]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Check Class"
+
+[node name="RogueCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=572888052]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Check Class"
+
+[node name="MagicianCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=826261879]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Check Class"
+
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes/Warrior" to="." method="_on_warrior_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes/Rogue" to="." method="_on_rogue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes/Magician" to="." method="_on_magician_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks/WarriorCheck" to="." method="_on_warrior_check_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks/RogueCheck" to="." method="_on_rogue_check_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks/MagicianCheck" to="." method="_on_magician_check_pressed"]

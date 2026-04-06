@@ -32,6 +32,8 @@
 [ext_resource type="FontFile" uid="uid://bdsrppevtlams" path="res://UI/Themes/Fonts/cs-belric-pixel-font/CsbelricpixelRegularDemo-WpGYv.otf" id="24_tqgpy"]
 [ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
 [ext_resource type="Script" uid="uid://duffidar21ncd" path="res://Scenes/Tavern/debugbutton.gd" id="28_1gied"]
+[ext_resource type="PackedScene" uid="uid://dp2wyj4pxj1i6" path="res://Scenes/Tavern/act_select.tscn" id="29_0id2w"]
+[ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
 [ext_resource type="AudioStream" uid="uid://c3o3ouafmtp4b" path="res://Scenes/Tavern/Tavern.wav" id="33_1gied"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/SettingsMenu2.tscn" id="34_tvort"]
 
@@ -91,7 +93,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Option 2"
 
-[node name="Tavern BG" type="Control" parent="." unique_id=2002706169 node_paths=PackedStringArray("dialogue_box_ref", "class_menu_ref")]
+[node name="Tavern BG" type="Control" parent="." unique_id=2002706169 node_paths=PackedStringArray("dialogue_box_ref", "class_menu_ref", "act_select_ref", "class_select_ref")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1260.0
@@ -102,6 +104,8 @@ script = ExtResource("2_3n42s")
 scroll_speed = 100.0
 dialogue_box_ref = NodePath("../Dialogue Box")
 class_menu_ref = NodePath("../Class_Menu")
+act_select_ref = NodePath("../Act Select")
+class_select_ref = NodePath("../Class Select")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
 texture = ExtResource("5_msftv")
@@ -284,7 +288,7 @@ Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderT
 Conversations = Array[String](["0,1,2", "10"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
-[node name="Ranger_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref")]
+[node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref")]
 layout_mode = 0
 offset_left = -645.0
 offset_top = 320.0
@@ -294,7 +298,7 @@ texture_normal = ExtResource("15_mpp4l")
 texture_pressed = ExtResource("18_tqgpy")
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
-Class_Name = "Ranger"
+Class_Name = "Rogue"
 Class_Attack_Desc = "ranged attack!"
 Class_Dash_Desc = "something!"
 Class_Magic_Desc = "something!"
@@ -315,7 +319,7 @@ Defense_Growth_Modifier = 1.2
 Speed_Growth_Modifier = 1.3
 metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
-[node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Ranger_CLASS_NPC" unique_id=673501371]
+[node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Rogue_CLASS_NPC" unique_id=673501371]
 layout_mode = 0
 offset_left = 27.99997
 offset_top = 44.0
@@ -326,7 +330,7 @@ theme_override_font_sizes/font_size = 30
 text = "ranger"
 horizontal_alignment = 1
 
-[node name="Ranger_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1261395280]
+[node name="Rogue_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1261395280]
 layout_mode = 0
 offset_left = -473.0
 offset_top = -72.0
@@ -334,7 +338,7 @@ offset_right = -433.0
 offset_bottom = -32.0
 mouse_filter = 1
 script = ExtResource("6_41fud")
-Name = "Ranger"
+Name = "Rogue"
 Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q")])
 Conversations = Array[String](["0", "10"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
@@ -415,7 +419,7 @@ Name = "Tutorial"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
 Conversations = Array[String](["0,1,2,3,4,5,6,7,8,9,10"])
 
-[node name="RANGER" type="TextureButton" parent="Tavern BG/NPCs" unique_id=655953505]
+[node name="ROGUE" type="TextureButton" parent="Tavern BG/NPCs" unique_id=655953505]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -429,11 +433,11 @@ texture_normal = ExtResource("14_7td72")
 texture_pressed = ExtResource("14_7td72")
 flip_h = true
 script = ExtResource("6_41fud")
-Name = "Ranger"
+Name = "Rogue"
 Expressions = Array[Texture]([ExtResource("15_mpp4l"), ExtResource("16_arv5a"), ExtResource("17_4f6a6"), ExtResource("18_tqgpy")])
 Conversations = Array[String](["0,1,2"])
 
-[node name="Label" type="Label" parent="Tavern BG/NPCs/RANGER" unique_id=1817203477]
+[node name="Label" type="Label" parent="Tavern BG/NPCs/ROGUE" unique_id=1817203477]
 layout_mode = 0
 offset_left = -156.66666
 offset_top = 230.0
@@ -516,17 +520,28 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Door Andy" type="TextureButton" parent="Tavern BG/NPCs" unique_id=1702364782]
+[node name="DebugKOButton" type="Button" parent="Tavern BG" unique_id=1500362303]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 111.0
+offset_right = 334.0
+offset_bottom = 217.0
+text = "The button that 
+increases your 
+killcount by one!"
+script = ExtResource("28_1gied")
+
+[node name="Exit" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
 z_index = 1
 layout_mode = 0
-offset_left = 1958.0
+offset_left = 3197.0
 offset_top = 279.0
-offset_right = 2086.0
+offset_right = 3325.0
 offset_bottom = 407.0
 theme = ExtResource("2_tqgpy")
 texture_normal = SubResource("PlaceholderTexture2D_4hstr")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/NPCs/Door Andy" unique_id=270719110]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Exit" unique_id=270719110]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 40.0
@@ -539,24 +554,24 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Tavern BG" unique_id=1500362303]
-layout_mode = 0
-offset_left = 134.0
-offset_top = 111.0
-offset_right = 334.0
-offset_bottom = 217.0
-text = "The button that 
-increases your 
-killcount by one!"
-script = ExtResource("28_1gied")
-
 [node name="Class_Menu" parent="." unique_id=877217506 node_paths=PackedStringArray("dialogue_ref") instance=ExtResource("21_y33xb")]
-visible = false
 offset_left = 576.0
 offset_top = 1005.0
 offset_right = 616.0
 offset_bottom = 1045.0
 dialogue_ref = NodePath("../Dialogue Box")
+
+[node name="Class Select" parent="." unique_id=260938041 instance=ExtResource("29_a55l7")]
+offset_left = 576.0
+offset_top = 1005.0
+offset_right = 616.0
+offset_bottom = 1045.0
+
+[node name="Act Select" parent="." unique_id=1488498671 instance=ExtResource("29_0id2w")]
+offset_left = 576.0
+offset_top = 1005.0
+offset_right = 616.0
+offset_bottom = 1045.0
 
 [node name="HeadsUpUI" type="Control" parent="." unique_id=407470600]
 layout_mode = 3
@@ -818,8 +833,11 @@ position = Vector2(1152, 0)
 
 [connection signal="pressed" from="Tavern BG/NPCs/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/NPCs/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
-[connection signal="pressed" from="Tavern BG/NPCs/Door Andy" to="Tavern BG" method="_on_door_andy_pressed"]
-[connection signal="pressed" from="Tavern BG/Button" to="Tavern BG/Button" method="_on_pressed"]
+[connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
+[connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
+[connection signal="back_pressed" from="Class_Menu" to="Tavern BG" method="_on_class_menu_back_pressed"]
+[connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
+[connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]

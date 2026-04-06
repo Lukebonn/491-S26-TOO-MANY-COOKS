@@ -77,7 +77,13 @@ func _on_clicked():
 		Class_Menu_Ref.set_other_descriptions(Class_Attack_Desc,Class_Dash_Desc,Class_Magic_Desc,Class_Other_Desc)
 		Class_Menu_Ref.show_menu()
 func change_class(new_class: String):
-	pass 
+	match new_class:
+		"Warrior":
+			pass
+		"Rogue":
+			pass
+		"Mage":
+			pass
 	#i do this later !!! :3
 	
 func update_sheet():

@@ -4,13 +4,15 @@ var direction = 0
 @export var scroll_speed = 300.0
 @export var dialogue_box_ref : Control
 @export var class_menu_ref : Control
+@export var act_select_ref : Control
+@export var class_select_ref : Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_up_tavern()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dialogue_box_ref.in_dialogue == false and class_menu_ref.is_showing == false:
+	if dialogue_box_ref.in_dialogue == false and class_menu_ref.is_showing == false and act_select_ref.is_showing == false and class_select_ref.is_showing == false:
 		position.x = position.x + (direction * scroll_speed * delta)
 		position.x = clamp(position.x,-2304.0,0.0)
 func _on_left_panel_mouse_entered():
@@ -32,18 +34,47 @@ func set_up_tavern():
 		$TavernBackgroundLong.hide()
 		$TavernBackgroundLong2.show()
 	if Global.Has_Finished_Playtest:
-		$RANGER.show()
+		$ROGUE.show()
 		$PLAYTEST.show()
 		$"Upgrade Man/NPCMagic".hide()
 		$"Upgrade Man/NPCEnd".hide()
 		$TavernBackgroundLong2.hide()
 		$TavernBackgroundLong3.show()
 		$"EndDoor".show()
+
 func _on_door_andy_pressed():
-	print("leaving...")
-	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")
+	class_select_ref.show_menu()
 
 
 func _on_end_door_pressed():
 	print("Thanks for playing what we have so far!")
 	get_tree().change_scene_to_file("res://play_test_end.tscn")
+
+
+func _on_class_select_class_checked(name_of_class):
+	match name_of_class:
+		"Warrior":
+			$Class_NPCS/Warrior_CLASS_NPC._on_clicked()
+		"Rogue":
+			$Class_NPCS/Rogue_CLASS_NPC._on_clicked()
+		"Mage":
+			$Class_NPCS/Mage_CLASS_NPC._on_clicked()
+	class_menu_ref.set_top_right_button("Back")
+	class_select_ref.hide_menu_top()
+
+
+func _on_class_select_class_selected(name_of_class):
+	match name_of_class:
+		"Warrior":
+			$Class_NPCS/Warrior_CLASS_NPC.change_class(name_of_class)
+		"Rogue":
+			$Class_NPCS/Rogue_CLASS_NPC.change_class(name_of_class)
+		"Mage":
+			$Class_NPCS/Mage_CLASS_NPC.change_class(name_of_class)
+	class_select_ref.hide_menu_top()
+	act_select_ref.show_menu()
+
+
+func _on_class_menu_back_pressed():
+	class_select_ref.show_menu()
+	
