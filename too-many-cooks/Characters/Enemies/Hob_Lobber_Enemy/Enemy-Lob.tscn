@@ -149,7 +149,7 @@ script = ExtResource("1_r24qm")
 position = Vector2(-1.0000005, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_36sb7")
-animation = &"literal_fire"
+animation = &"sphere"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=832595165]
 texture = ExtResource("1_cst3d")

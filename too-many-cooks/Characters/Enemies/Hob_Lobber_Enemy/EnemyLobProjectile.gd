@@ -20,6 +20,7 @@ var landed: bool = false
 
 
 func _ready():
+	animated_sprite_2d.hide()
 	add_to_group("enemy_projectile")
 	set_as_top_level(true)
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -66,6 +67,7 @@ func _process(delta: float) -> void:
 func _land() -> void:
 	landed = true
 	$Sprite2D.hide()
+	animated_sprite_2d.show()
 	$CollisionShape2D.set_deferred("disabled", false)
 	velocity = Vector2(0,0)
 	animated_sprite_2d.play("sphere")
