@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_ttory"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_ttory"]
 [ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_rat_enemy.tscn" id="4_skeib"]
+[ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="5_37e6m"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="5_skeib"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="6_b2ooe"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="7_wi2j0"]
@@ -22,13 +23,16 @@ zoom = Vector2(4, 4)
 [node name="RangedSlimeEnemy" parent="." unique_id=260407340 instance=ExtResource("4_skeib")]
 position = Vector2(-108, 301)
 
+[node name="HobLobber" parent="." unique_id=1670622060 instance=ExtResource("5_37e6m")]
+position = Vector2(151, 37)
+
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("5_skeib")]
 position = Vector2(58, 362)
 
 [node name="SlimeEnemy2" parent="." unique_id=636021781 instance=ExtResource("5_skeib")]
 position = Vector2(208, 277)
 
-[node name="TemplateEnemy" parent="." unique_id=1670622060 instance=ExtResource("6_b2ooe")]
+[node name="TemplateEnemy" parent="." unique_id=979431414 instance=ExtResource("6_b2ooe")]
 position = Vector2(82, -40)
 damage = 0
 

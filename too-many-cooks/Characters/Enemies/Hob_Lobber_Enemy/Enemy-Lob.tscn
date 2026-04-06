@@ -147,7 +147,7 @@ script = ExtResource("1_r24qm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=481920401]
 position = Vector2(-1.0000005, 0)
-scale = Vector2(45, 45)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_36sb7")
 animation = &"literal_fire"
 

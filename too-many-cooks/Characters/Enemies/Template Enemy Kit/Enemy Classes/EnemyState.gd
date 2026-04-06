@@ -20,7 +20,7 @@ func enter_state(enemy_node):
 	enemy_ref = enemy_node
 	player_ref = enemy_ref.player_ref
 	if animation_name != "NONE":
-		$AnimatedSprite2D.animation = animation_name
+		enemy_ref.get_node("AnimatedSprite2D").play(animation_name)
 
 ##code that should execute when exiting state
 func exit_state():

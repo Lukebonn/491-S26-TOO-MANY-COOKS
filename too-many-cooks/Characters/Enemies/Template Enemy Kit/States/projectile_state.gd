@@ -10,6 +10,8 @@ extends EnemyState
 @export var Flee_While_Firing : bool
 ##How far should the enemy move back when firing?
 @export var Flee_Speed : float
+##whether or not player's location is needed for the projectile (in the case of projectiles that arc, the end of the arc needs to be known, so for the hob lobber specfically
+@export var Player_Location_Needed_For_Projectile : bool
 
 var fired = true
 
@@ -36,6 +38,9 @@ func fire():
 	var new_proj = Projectile.instantiate()
 	new_proj.position = enemy_ref.position
 	new_proj.direction = raycast.target_position
+	#The point of this is to give the location of the "player" to the projectile on instantiation
+	if Player_Location_Needed_For_Projectile and player_ref != null:
+		new_proj.playerLocation = player_ref.global_position
 	#adds as sibling so projectile doesn't vanish if enemy is KO'd
 	add_sibling(new_proj)
 	await get_tree().create_timer(Idle_Time).timeout
@@ -52,7 +57,7 @@ func flee():
 		
 func exit_state():
 	enemy_ref.velocity = Vector2(0,0)
-	enemy_ref.change_state("IdleState")
+	enemy_ref.call_deferred("change_state", "IdleState")
 
 func hit_response(source):
 	enemy_ref.change_state("HitState")
