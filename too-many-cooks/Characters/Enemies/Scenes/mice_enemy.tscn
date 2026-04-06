@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dfkx7up3pl55j"]
 
 [ext_resource type="Script" uid="uid://cn8aoey6uug6b" path="res://Characters/Enemies/Scripts/mice_enemy.gd" id="1_blvt8"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="2_78m3v"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="2_78m3v"]
 [ext_resource type="Script" uid="uid://cqs4quf3yaur8" path="res://System/Globals/DamageNumbers.gd" id="3_36bin"]
-[ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/mice/black/2.png" id="3_o0yq2"]
+[ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/Mice/black/2.png" id="3_o0yq2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mn8to"]
 animations = [{

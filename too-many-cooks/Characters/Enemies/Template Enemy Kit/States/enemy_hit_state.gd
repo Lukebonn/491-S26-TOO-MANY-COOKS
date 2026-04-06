@@ -14,8 +14,9 @@ func enter_state(enemy_node):
 		var direction = (enemy_ref.position -player_ref.position).normalized()
 		enemy_ref.velocity = Knockback_Strength * direction
 		if Hit_Stun > 0 and enemy_ref.health >= 0:
-			$Timer.start(Hit_Stun)
-			await $Timer.timeout
+			await get_tree().create_timer(Hit_Stun).timeout
+			#$Timer.start(Hit_Stun)
+			#await $Timer.timeout
 		exit_state()
 
 func process(delta):

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://u1exbn0iintr"]
 
 [ext_resource type="Script" uid="uid://c8h7c1dn7s6yr" path="res://Characters/Enemies/Scripts/ranged_rat_enemy.gd" id="1_ca75f"]
-[ext_resource type="Texture2D" uid="uid://bdcb6unjge202" path="res://Characters/Enemies/rat/1.png" id="2_bttu3"]
+[ext_resource type="Texture2D" uid="uid://bdcb6unjge202" path="res://Characters/Enemies/Rat/1.png" id="2_bttu3"]
 [ext_resource type="Texture2D" uid="uid://c4j64skrmh6m0" path="res://Scenes/Test/ProtoArt/Enemy/RangedEnemy/Skeleton_01_White_Die.png" id="3_6skcy"]
-[ext_resource type="Texture2D" uid="uid://c01mgrymt6r0f" path="res://Characters/Enemies/rat/2.png" id="3_oobeg"]
-[ext_resource type="Texture2D" uid="uid://cu5qxx0n4lnv7" path="res://Characters/Enemies/rat/3.png" id="4_0giom"]
-[ext_resource type="Texture2D" uid="uid://64soj4k3owh4" path="res://Characters/Enemies/rat/4.png" id="6_oobeg"]
-[ext_resource type="Texture2D" uid="uid://cneqfe8wl8a1k" path="res://Characters/Enemies/rat/5.png" id="7_0giom"]
-[ext_resource type="Texture2D" uid="uid://1vdr5ts7d4rw" path="res://Characters/Enemies/rat/2a.png" id="8_y063h"]
+[ext_resource type="Texture2D" uid="uid://c01mgrymt6r0f" path="res://Characters/Enemies/Rat/2.png" id="3_oobeg"]
+[ext_resource type="Texture2D" uid="uid://cu5qxx0n4lnv7" path="res://Characters/Enemies/Rat/3.png" id="4_0giom"]
+[ext_resource type="Texture2D" uid="uid://64soj4k3owh4" path="res://Characters/Enemies/Rat/4.png" id="6_oobeg"]
+[ext_resource type="Texture2D" uid="uid://cneqfe8wl8a1k" path="res://Characters/Enemies/Rat/5.png" id="7_0giom"]
+[ext_resource type="Texture2D" uid="uid://1vdr5ts7d4rw" path="res://Characters/Enemies/Rat/2a.png" id="8_y063h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvqvk"]
 
