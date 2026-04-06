@@ -54,4 +54,45 @@ position = Vector2(368, -40)
 position = Vector2(368, 24)
 
 [node name="RatEnemy3" parent="." unique_id=1845722072 instance=ExtResource("9_uhsgw")]
-position = Vector2(320, -16)
+position = Vector2(192, -16)
+health = 1000
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1157277081]
+offset_left = -56.0
+offset_top = 48.0
+offset_right = 56.0
+offset_bottom = 104.0
+theme_override_font_sizes/normal_font_size = 9
+text = "This is supposed to look like an entrance from which the player comes from"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1200511278]
+offset_left = 448.0
+offset_top = -296.0
+offset_right = 560.0
+offset_bottom = -248.0
+theme_override_font_sizes/normal_font_size = 9
+text = "Lil' side pathway that could lead to a chest or some other collectible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1667023354]
+offset_left = -160.0
+offset_top = -168.0
+offset_right = -48.0
+offset_bottom = -88.0
+theme_override_font_sizes/normal_font_size = 9
+text = "Some branches that lead to other rooms with enemies, collectibles, etc.. Some will most likely will be dead ends."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=1714049767]
+offset_left = 624.0
+offset_top = 160.0
+offset_right = 736.0
+offset_bottom = 240.0
+theme_override_font_sizes/normal_font_size = 9
+text = "There's an exit down one (or more) of the paths, which may require some condition to be fulfilled (i.e. all enemies killed, key found, etc.)"
+horizontal_alignment = 1
+vertical_alignment = 1
