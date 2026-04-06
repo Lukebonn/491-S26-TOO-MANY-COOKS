@@ -21,6 +21,8 @@ var equipped_class : PlayerClass
 
 var current_x_dir : int = 1
 
+var current_dir : Vector2
+
 var local_mouse_pos : Vector2
 var global_mouse_pos : Vector2
 
@@ -85,6 +87,7 @@ func _physics_process(delta: float) -> void:
 	local_mouse_pos = get_local_mouse_position()
 	global_mouse_pos = get_global_mouse_position()
 	
+	current_dir = velocity.normalized()
 	
 	#player sprite faces left or right following the mouse
 	if(local_mouse_pos.x < 0):

@@ -40,7 +40,7 @@ func enter_state(player_node):
 	
 	#player will dash in the last recorded direction if not moving
 	if(player.velocity == Vector2(0,0)):
-		player.velocity = player.current_dir
+ 		player.velocity = player.current_dir
 	else:
 		player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
 	player.velocity = player.velocity.normalized() * current_dash_speed
