@@ -30,6 +30,7 @@ signal applyStatusEffect(effectName: String, duration: int)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DeathScreen.visible = false
+	show()
 	print(player)
 	# testing purposes
 	#print($HealthBar/HealthValue.text)

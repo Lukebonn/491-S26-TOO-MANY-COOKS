@@ -55,10 +55,12 @@ position = Vector2(1728, 320)
 texture = ExtResource("6_ceprt")
 
 [node name="4" type="Sprite2D" parent="Pages" unique_id=108855139]
+z_index = 5
 position = Vector2(1726, 320)
 texture = ExtResource("8_k7ifm")
 
 [node name="5" type="Sprite2D" parent="Pages" unique_id=400003766]
+z_index = 6
 position = Vector2(1728, 319)
 texture = ExtResource("9_lna37")
 
@@ -71,6 +73,10 @@ texture = ExtResource("9_lna37")
 [node name="2" type="AudioStreamPlayer" parent="Narrations" unique_id=1521303308]
 
 [node name="3" type="AudioStreamPlayer" parent="Narrations" unique_id=214642975]
+
+[node name="4" type="AudioStreamPlayer" parent="Narrations" unique_id=2069614410]
+
+[node name="5" type="AudioStreamPlayer" parent="Narrations" unique_id=1988622880]
 
 [node name="Subtitles" type="Node" parent="." unique_id=1010485060]
 

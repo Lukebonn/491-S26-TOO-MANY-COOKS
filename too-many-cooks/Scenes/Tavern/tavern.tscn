@@ -126,6 +126,7 @@ theme = ExtResource("2_tqgpy")
 script = ExtResource("10_pv64h")
 
 [node name="NPCMagic" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
+visible = false
 layout_mode = 0
 offset_left = 1377.0
 offset_top = 397.0
@@ -417,7 +418,7 @@ texture_pressed = ExtResource("8_ir5m0")
 script = ExtResource("6_41fud")
 Name = "Tutorial"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
-Conversations = Array[String](["0,1,2,3,4,5,6,7,8,9,10"])
+Conversations = Array[String](["0,1,2,3"])
 
 [node name="ROGUE" type="TextureButton" parent="Tavern BG/NPCs" unique_id=655953505]
 visible = false
@@ -651,7 +652,6 @@ text = "Pause"
 script = ExtResource("26_djqff")
 
 [node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -716,10 +716,12 @@ theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/SecondPanel" unique_id=1666957017]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 375.0
-offset_bottom = 109.0
+offset_left = 14.0
+offset_top = 31.0
+offset_right = 472.0
+offset_bottom = 136.0
 theme = ExtResource("2_tqgpy")
+theme_override_font_sizes/font_size = 24
 text = "You can upgrade your tavern by clicking here. 
 Upgrading your tavern can make new NPCs
 appear.
@@ -755,10 +757,12 @@ theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/ThirdPanel" unique_id=1087305835]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 375.0
-offset_bottom = 109.0
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 426.0
+offset_bottom = 120.0
 theme = ExtResource("2_tqgpy")
+theme_override_font_sizes/font_size = 24
 text = "This is an NPC. 
 You can talk to them by clicking on them.
 Some may allow you to become stronger."
@@ -793,10 +797,12 @@ theme = ExtResource("2_tqgpy")
 
 [node name="Label" type="Label" parent="FirstTimeUI/FourthPanel" unique_id=280864426]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 375.0
-offset_bottom = 109.0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 479.0
+offset_bottom = 124.0
 theme = ExtResource("2_tqgpy")
+theme_override_font_sizes/font_size = 24
 text = "The bars on the sides let you move the camera.
 You can leave the tavern by clicking the door
 on the right side of the tavern.

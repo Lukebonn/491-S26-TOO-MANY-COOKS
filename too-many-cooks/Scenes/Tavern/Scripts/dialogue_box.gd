@@ -127,7 +127,7 @@ func find_message(character: String, index, emotions):
 		"Playtest":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
 			Global.Has_Finished_Playtest = true
-		"Intro":
+		"Gramps":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/INTRO.txt", FileAccess.READ)
 		"Warrior":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/WARRIOR.txt", FileAccess.READ)

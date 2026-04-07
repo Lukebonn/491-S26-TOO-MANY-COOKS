@@ -79,11 +79,11 @@ func _on_clicked():
 func change_class(new_class: String):
 	match new_class:
 		"Warrior":
-			pass
+			PlayerStats.current_class = PlayerStats.classes.warrior
 		"Rogue":
-			pass
+			PlayerStats.current_class = PlayerStats.classes.rogue
 		"Mage":
-			pass
+			PlayerStats.current_class = PlayerStats.classes.mage
 	#i do this later !!! :3
 	
 func update_sheet():
