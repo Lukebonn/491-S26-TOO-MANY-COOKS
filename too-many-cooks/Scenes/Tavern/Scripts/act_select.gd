@@ -49,9 +49,10 @@ func make_level_queue(dir: String, amount : int):
 	var levels: Array = []
 	for file in files:
 		file = dir + "/" + file
-		if file.right(5) == ".tscn":
+		if file.right(5) == ".tscn" or "remap":
 			levels.append(file)
 	var indicies_queued: Array = []
+	print(files)
 	while LevelQueue.Queue.size() < amount:
 		var rng = randi_range(0,(levels.size()-1))
 		if rng not in indicies_queued:

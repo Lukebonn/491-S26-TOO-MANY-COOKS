@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://dokv5e7eu3vve"]
 
-[ext_resource type="FontFile" uid="uid://bdsrppevtlams" path="res://UI/Themes/Fonts/cs-belric-pixel-font/CsbelricpixelRegularDemo-WpGYv.otf" id="1_3hg0q"]
+[ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="1_3hg0q"]
 
 [resource]
 default_font = ExtResource("1_3hg0q")

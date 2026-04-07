@@ -37,7 +37,6 @@ offset_bottom = 250.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_y33xb")
 
 [node name="Close" type="Button" parent="Panel" unique_id=2059311441]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -51,6 +50,7 @@ grow_horizontal = 0
 text = "Close"
 
 [node name="Back" type="Button" parent="Panel" unique_id=94567557]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 1

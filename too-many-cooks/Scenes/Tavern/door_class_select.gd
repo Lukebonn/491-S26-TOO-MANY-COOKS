@@ -49,3 +49,7 @@ func hide_menu_top():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,-1000),.5).set_trans(Tween.TRANS_CUBIC)
 	is_showing = false
+
+
+func _on_close_pressed():
+	hide_menu()
