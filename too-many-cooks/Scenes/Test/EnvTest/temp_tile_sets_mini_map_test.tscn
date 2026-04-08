@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://ddagge5dbq4op" path="res://Scenes/Test/EnvTest/dynamicMusic.gd" id="10_yvunr"]
 [ext_resource type="PackedScene" uid="uid://v15p4jn8vif4" path="res://Scenes/Level Design/Weather System/weather_manager.tscn" id="11_yvunr"]
 [ext_resource type="Texture2D" uid="uid://bnhw4f1sn6v5d" path="res://Scenes/Test/ProtoArt/Enemy/rat king.png" id="12_g56id"]
+[ext_resource type="PackedScene" uid="uid://bqne2320dex2t" path="res://Scenes/Level Design/Hazzards + traps/Spike Trap/spikes.tscn" id="13_g56id"]
+[ext_resource type="PackedScene" uid="uid://cgxhj8xrmp76d" path="res://Scenes/Level Design/Hazzards + traps/Teleporter trap/Teleport trap.tscn" id="14_mx150"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -276,3 +278,16 @@ metadata/_edit_use_anchors_ = true
 [node name="WeatherManager" parent="." unique_id=1217193743 node_paths=PackedStringArray("particles", "color_rect") instance=ExtResource("11_yvunr")]
 particles = NodePath("../Particles")
 color_rect = NodePath("../ParallaxLayer/ColorRect")
+
+[node name="Spike" parent="." unique_id=742448890 instance=ExtResource("13_g56id")]
+position = Vector2(504, 289)
+
+[node name="TeleportTrap" parent="." unique_id=472055031 instance=ExtResource("14_mx150")]
+position = Vector2(403, 276)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Destination Point" parent="TeleportTrap" index="2" unique_id=1607782984]
+position = Vector2(149.99997, -784)
+
+[editable path="TeleportTrap"]

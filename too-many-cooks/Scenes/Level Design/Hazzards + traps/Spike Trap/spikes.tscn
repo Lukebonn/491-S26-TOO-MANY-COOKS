@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bqne2320dex2t"]
+
+[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="2_kuf5r"]
+[ext_resource type="Script" uid="uid://bs3y75djq1mke" path="res://Scenes/Level Design/Hazzards + traps/Spike Trap/spikes.gd" id="2_owua6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owua6"]
+size = Vector2(37, 33)
+
+[node name="Spike" type="Area2D" unique_id=555921285]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_owua6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180948406]
+scale = Vector2(2, 2)
+texture = ExtResource("2_kuf5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2115252216]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_owua6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

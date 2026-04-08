@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgxhj8xrmp76d"]
+
+[ext_resource type="Script" uid="uid://b0pbrau1s7p5h" path="res://Scenes/Level Design/Hazzards + traps/Teleporter trap/teleport_trap.gd" id="1_pj4lw"]
+[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="2_pj4lw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pj4lw"]
+radius = 29.0
+height = 64.0
+
+[node name="TeleportTrap" type="Area2D" unique_id=472055031]
+script = ExtResource("1_pj4lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=742948236]
+shape = SubResource("CapsuleShape2D_pj4lw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21784762]
+texture = ExtResource("2_pj4lw")
+
+[node name="Destination Point" type="Marker2D" parent="." unique_id=1607782984]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

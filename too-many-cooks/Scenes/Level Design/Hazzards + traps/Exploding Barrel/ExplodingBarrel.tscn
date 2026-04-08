@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0oem144ug8fp"]
 
-[ext_resource type="Script" uid="uid://c65b540schjyp" path="res://Scenes/Level Design/Exploding Barrel/barrel.gd" id="1_jwajh"]
+[ext_resource type="Script" uid="uid://c65b540schjyp" path="res://Scenes/Level Design/Hazzards + traps/Exploding Barrel/barrel.gd" id="1_jwajh"]
 [ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="2_au06h"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="3_5tsyg"]
 
