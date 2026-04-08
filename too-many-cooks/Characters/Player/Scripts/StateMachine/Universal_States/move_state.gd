@@ -18,6 +18,9 @@ func input_handler(_delta : float) -> void:
 	if(player.velocity == Vector2(0,0)):
 		player.change_state("idle_state")
 	
+	#changes to move up animation if player moves diagonally
+	if(player.velocity.y != 0):
+		player.get_node("Sprite2D").animation = "move up"
 	#changes to dash state if dash key is pressed
 	if(Input.is_action_just_pressed("dash")):
 		player.change_state("dash_state")

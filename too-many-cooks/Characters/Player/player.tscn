@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dmrmnqedpfckg" path="res://Characters/Player/Sprites/cat3.png" id="5_b71o8"]
 [ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Characters/Player/Scripts/StateMachine/Universal_States/move_state.gd" id="5_pwx6j"]
 [ext_resource type="Texture2D" uid="uid://bogj5hn8s0qau" path="res://Characters/Player/Sprites/cat4.png" id="6_x58m1"]
+[ext_resource type="Texture2D" uid="uid://2cjq7two4d6g" path="res://Characters/Player/Sprites/4.png" id="8_b6jp0"]
+[ext_resource type="Texture2D" uid="uid://bofwkmant5t1n" path="res://Characters/Player/Sprites/5.png" id="9_8k5s7"]
+[ext_resource type="Texture2D" uid="uid://xfnaaidjbh62" path="res://Characters/Player/Sprites/6.png" id="10_5elsd"]
 [ext_resource type="Script" uid="uid://b8r6bpm0nl0b2" path="res://System/Globals/PlayerStats.gd" id="12_u2wkb"]
 [ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/Universal_States/hurt_state.gd" id="13_b71o8"]
 [ext_resource type="Script" uid="uid://bi4b1xyv34gbw" path="res://Characters/Player/Scripts/StateMachine/Universal_States/death_state.gd" id="14_x58m1"]
@@ -47,6 +50,23 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b6jp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8k5s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b6jp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5elsd")
+}],
+"loop": true,
+"name": &"move up",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiypd"]
@@ -64,9 +84,8 @@ script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2079195409]
 sprite_frames = SubResource("SpriteFrames_7vev3")
-animation = &"hurt"
+animation = &"move up"
 autoplay = "idle"
-frame_progress = 0.30554876
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
 shape = SubResource("CapsuleShape2D_aiypd")
