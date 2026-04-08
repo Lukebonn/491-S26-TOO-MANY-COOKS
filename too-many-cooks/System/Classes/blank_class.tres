@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://cus2ghi0ntyg7"]
 
-[ext_resource type="Script" uid="uid://bip7x8vvk4jd" path="res://Characters/Player/Scripts/StateMachine/blank_class/attack_state.gd" id="1_5eqnr"]
+[ext_resource type="Script" uid="uid://bip7x8vvk4jd" path="res://Characters/Player/Scripts/StateMachine/blank_class/States/attack_state.gd" id="1_5eqnr"]
 [ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_gil0b"]
-[ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Characters/Player/Scripts/StateMachine/blank_class/dash_state.gd" id="2_u3022"]
-[ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Characters/Player/Scripts/StateMachine/blank_class/magic_state.gd" id="3_jbkd6"]
+[ext_resource type="Script" uid="uid://cujo6frcx3tbw" path="res://Characters/Player/Scripts/StateMachine/blank_class/States/dash_state.gd" id="2_u3022"]
+[ext_resource type="Script" uid="uid://14mfnnxegjy7" path="res://Characters/Player/Scripts/StateMachine/blank_class/States/magic_state.gd" id="3_jbkd6"]
 
 [resource]
 script = ExtResource("1_gil0b")

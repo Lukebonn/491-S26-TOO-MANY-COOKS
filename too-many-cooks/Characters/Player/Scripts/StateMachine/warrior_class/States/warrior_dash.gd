@@ -12,7 +12,7 @@ var cooldown_timer : Timer = Timer.new()
 
 var first_time : bool = true
 
-var dash_attack : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_dash_attack.tscn")
+var dash_attack : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_dash_attack.tscn")
 var power : float = 0.8
 
 signal player_in_hitbox(Area2D)

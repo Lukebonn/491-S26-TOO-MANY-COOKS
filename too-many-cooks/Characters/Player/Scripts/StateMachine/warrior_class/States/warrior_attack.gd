@@ -1,14 +1,14 @@
 extends PlayerState
 
-var attack_1 : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_attack_1.tscn")
+var attack_1 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_1.tscn")
 var duration_1 : float = 0.1
 var power_1 : float = 1.2
 
-var attack_2 : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_attack_1.tscn")
+var attack_2 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_1.tscn")
 var duration_2 : float = 0.1
 var power_2 : float = 1.3
 
-var attack_3 : PackedScene = load("res://Characters/Player/Attacks/warrior/warrior_attack_3.tscn")
+var attack_3 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_3.tscn")
 var duration_3 : float = 0.2
 var power_3 : float = 1.5
 

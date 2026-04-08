@@ -52,7 +52,7 @@ func sword_projectile():
 	attack.queue_free()
 
 func spin_attack():
-	var attack = preload("res://Characters/Player/Attacks/warrior/warrior_spin_attack.tscn").instantiate()
+	var attack = preload("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_spin_attack.tscn").instantiate()
 	player.add_child(attack)
 	
 	player.velocity = Vector2.ZERO

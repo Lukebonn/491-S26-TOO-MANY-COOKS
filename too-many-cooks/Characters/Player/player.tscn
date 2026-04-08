@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dgo6aajhlo8vt" path="res://Characters/Player/Sprites/teenycat.png" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://bv1hakmic3dkw" path="res://Characters/Player/Sprites/cat_hurt1.png" id="2_b6jp0"]
 [ext_resource type="Texture2D" uid="uid://v4npyqavw6xf" path="res://Characters/Player/Sprites/cat1.png" id="3_va6lm"]
-[ext_resource type="Script" uid="uid://6uhy5s6vb8xv" path="res://Characters/Player/Scripts/StateMachine/idle_state.gd" id="3_vr61t"]
+[ext_resource type="Script" uid="uid://6uhy5s6vb8xv" path="res://Characters/Player/Scripts/StateMachine/Universal_States/idle_state.gd" id="3_vr61t"]
 [ext_resource type="Texture2D" uid="uid://destkwcn8a2y" path="res://Characters/Player/Sprites/cat2.png" id="4_u2wkb"]
 [ext_resource type="Texture2D" uid="uid://dmrmnqedpfckg" path="res://Characters/Player/Sprites/cat3.png" id="5_b71o8"]
-[ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Characters/Player/Scripts/StateMachine/move_state.gd" id="5_pwx6j"]
+[ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Characters/Player/Scripts/StateMachine/Universal_States/move_state.gd" id="5_pwx6j"]
 [ext_resource type="Texture2D" uid="uid://bogj5hn8s0qau" path="res://Characters/Player/Sprites/cat4.png" id="6_x58m1"]
 [ext_resource type="Script" uid="uid://b8r6bpm0nl0b2" path="res://System/Globals/PlayerStats.gd" id="12_u2wkb"]
-[ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/hurt_state.gd" id="13_b71o8"]
-[ext_resource type="Script" uid="uid://bi4b1xyv34gbw" path="res://Characters/Player/Scripts/StateMachine/death_state.gd" id="14_x58m1"]
+[ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/Universal_States/hurt_state.gd" id="13_b71o8"]
+[ext_resource type="Script" uid="uid://bi4b1xyv34gbw" path="res://Characters/Player/Scripts/StateMachine/Universal_States/death_state.gd" id="14_x58m1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vev3"]
 animations = [{

@@ -1,6 +1,6 @@
 extends PlayerState
 
-var attack : PackedScene = load("res://Characters/Player/Attacks/blank_class/blank_attack.tscn")
+var attack : PackedScene = load("res://Characters/Player/Scripts/StateMachine/blank_class/Attacks/blank_attack.tscn")
 
 var power : float = 1.0
 

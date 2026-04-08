@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1jepf84ktk0s"]
 
-[ext_resource type="PackedScene" uid="uid://cpbindqs64pju" path="res://Characters/Player/Attacks/warrior/warrior_attack_1.tscn" id="1_4m32j"]
+[ext_resource type="PackedScene" uid="uid://cpbindqs64pju" path="res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_1.tscn" id="1_4m32j"]
 
 [node name="Hitbox" unique_id=607964857 instance=ExtResource("1_4m32j")]
 
