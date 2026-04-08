@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bnhw4f1sn6v5d" path="res://Scenes/Test/ProtoArt/Enemy/rat king.png" id="12_g56id"]
 [ext_resource type="PackedScene" uid="uid://bqne2320dex2t" path="res://Scenes/Level Design/Hazzards + traps/Spike Trap/spikes.tscn" id="13_g56id"]
 [ext_resource type="PackedScene" uid="uid://cgxhj8xrmp76d" path="res://Scenes/Level Design/Hazzards + traps/Teleporter trap/Teleport trap.tscn" id="14_mx150"]
+[ext_resource type="PackedScene" uid="uid://u4gsdq7ux57k" path="res://Scenes/Level Design/Hazzards + traps/Bear Trap/Bear Trap.tscn" id="15_bx7wk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")
@@ -289,5 +290,8 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Destination Point" parent="TeleportTrap" index="2" unique_id=1607782984]
 position = Vector2(149.99997, -784)
+
+[node name="BearTrap" parent="." unique_id=1808584410 instance=ExtResource("15_bx7wk")]
+position = Vector2(445, 365)
 
 [editable path="TeleportTrap"]

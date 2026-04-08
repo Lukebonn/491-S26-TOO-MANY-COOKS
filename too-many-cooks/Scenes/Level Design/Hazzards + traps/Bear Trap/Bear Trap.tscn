@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://u4gsdq7ux57k"]
+
+[ext_resource type="Script" uid="uid://xkoewosncmjd" path="res://Scenes/Level Design/Hazzards + traps/Bear Trap/bear_trap.gd" id="1_57qa1"]
+[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="2_26qns"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1faa"]
+radius = 27.073973
+
+[node name="BearTrap" type="Area2D" unique_id=1808584410]
+script = ExtResource("1_57qa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559795026]
+shape = SubResource("CircleShape2D_h1faa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420433779]
+texture = ExtResource("2_26qns")
+
+[node name="Timer" type="Timer" parent="." unique_id=127259392]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
