@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://4qcb860cr4xy"]
+
+[ext_resource type="Script" uid="uid://vgnkbfgsmhap" path="res://Characters/Player/Scripts/StateMachine/mage_class/States/mage_attack.gd" id="1_ekodn"]
+[ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_ta38c"]
+[ext_resource type="Script" uid="uid://tatndeivf0wm" path="res://Characters/Player/Scripts/StateMachine/mage_class/States/mage_dash.gd" id="2_mwfk1"]
+[ext_resource type="Script" uid="uid://oj6gm7xcg7gp" path="res://Characters/Player/Scripts/StateMachine/mage_class/States/mage_magic.gd" id="3_euenk"]
+[ext_resource type="Texture2D" uid="uid://tekcktkhvhru" path="res://Characters/Player/Sprites/Weapons/Wand/Wand1.png" id="5_mwfk1"]
+
+[resource]
+script = ExtResource("1_ta38c")
+attack = ExtResource("1_ekodn")
+dash = ExtResource("2_mwfk1")
+magic = ExtResource("3_euenk")
+str_mod = 1.0
+def_mod = 0.8
+spd_mod = 1.0
+weapon_sprite = ExtResource("5_mwfk1")
+metadata/_custom_type_script = "uid://cdjmfedbai0ha"

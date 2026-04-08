@@ -69,6 +69,6 @@ func reset_counter():
 	cooldown_timer.stop()
 	dash_counter = 0
 
-##player should not take damage in roll state
+##player should not take damage in dash state
 func hit_response(_source):
 	pass

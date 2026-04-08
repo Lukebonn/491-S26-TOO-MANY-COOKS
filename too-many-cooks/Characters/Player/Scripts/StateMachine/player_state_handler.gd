@@ -47,6 +47,8 @@ func _ready() -> void:
 			equipped_class = load("res://System/Classes/blank_class.tres")
 		PlayerStats.classes.warrior:
 			equipped_class = load("res://System/Classes/warrior.tres")
+		PlayerStats.classes.mage:
+			equipped_class = load("res://System/Classes/mage.tres")
 		_:
 			equipped_class = load("res://System/Classes/blank_class.tres")
 	

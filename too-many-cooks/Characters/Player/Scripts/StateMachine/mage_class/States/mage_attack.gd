@@ -15,8 +15,6 @@ func enter_state(player_node):
 	super(player_node)
 	
 	if(!on_cooldown):
-		#player lunges forward a small amount and has their hitbox enabled
-		player.velocity += player.local_mouse_pos.normalized() * 70
 		
 		var hitbox = attack.instantiate()
 		hitbox.connect("body_entered", on_attack_hit)
@@ -38,6 +36,8 @@ func enter_state(player_node):
 	
 	player.change_state("move_state")
 
+func input_handler(delta : float) -> void:
+	player.get_node("Weapon").rotation_degrees += 500 * player.current_x_dir * delta
 
 ##player is unable to attack until cooldown timer expires
 func start_cooldown():
