@@ -126,7 +126,7 @@ theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "meow TWO"
+text = "In the town of Litshire, the people lived in an age of prosperity. Year after year, their crops were bountiful, and traders came far and wide to engage in commerce."
 fit_content = true
 horizontal_alignment = 1
 
