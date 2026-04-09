@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bo0xn3ahm8nm5"
+path="res://.godot/imported/SubtitleVoiceline9.wav-294fd8f1f0da1c9c45de162db4121c47.sample"
+
+[deps]
+
+source_file="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline9.wav"
+dest_files=["res://.godot/imported/SubtitleVoiceline9.wav-294fd8f1f0da1c9c45de162db4121c47.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

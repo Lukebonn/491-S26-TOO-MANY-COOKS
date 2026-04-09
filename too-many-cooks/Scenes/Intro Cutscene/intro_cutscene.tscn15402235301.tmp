@@ -10,16 +10,6 @@
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="8_hhtmf"]
 [ext_resource type="Texture2D" uid="uid://dkkqcq82ntjex" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P5.webp" id="8_k7ifm"]
 [ext_resource type="Texture2D" uid="uid://cylyuy2wv0pir" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P6.webp" id="9_lna37"]
-[ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline1.wav" id="10_j8cwx"]
-[ext_resource type="AudioStream" uid="uid://bo2t82rts7l8j" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline3.wav" id="11_6wkej"]
-[ext_resource type="AudioStream" uid="uid://cwyd2wyshklu4" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline4.wav" id="12_11xfy"]
-[ext_resource type="AudioStream" uid="uid://nix28ggtl4hx" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline5.wav" id="13_py1tv"]
-[ext_resource type="AudioStream" uid="uid://b0qrwavdq8dq3" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline6.wav" id="14_ejlr2"]
-[ext_resource type="AudioStream" uid="uid://bklchj5w1pigv" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline2.wav" id="15_8og2a"]
-[ext_resource type="AudioStream" uid="uid://cl86fmkvr4k43" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline7.wav" id="16_r5ao7"]
-[ext_resource type="AudioStream" uid="uid://dkxq3qvdf675d" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline8.wav" id="17_efp4m"]
-[ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline9.wav" id="18_k2rm0"]
-[ext_resource type="AudioStream" uid="uid://b514xcxet0yvr" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline10.wav" id="19_ssywp"]
 
 [node name="IntroCutscene" type="Control" unique_id=5151694]
 z_index = 10
@@ -77,34 +67,22 @@ texture = ExtResource("9_lna37")
 [node name="Narrations" type="Node" parent="." unique_id=546478446]
 
 [node name="0" type="AudioStreamPlayer" parent="Narrations" unique_id=438893724]
-stream = ExtResource("10_j8cwx")
 
 [node name="1" type="AudioStreamPlayer" parent="Narrations" unique_id=71876580]
-stream = ExtResource("15_8og2a")
 
 [node name="2" type="AudioStreamPlayer" parent="Narrations" unique_id=1521303308]
-stream = ExtResource("11_6wkej")
 
 [node name="3" type="AudioStreamPlayer" parent="Narrations" unique_id=214642975]
-stream = ExtResource("12_11xfy")
 
 [node name="4" type="AudioStreamPlayer" parent="Narrations" unique_id=2069614410]
-stream = ExtResource("13_py1tv")
 
 [node name="5" type="AudioStreamPlayer" parent="Narrations" unique_id=1988622880]
-stream = ExtResource("14_ejlr2")
 
 [node name="6" type="AudioStreamPlayer" parent="Narrations" unique_id=1103604001]
-stream = ExtResource("16_r5ao7")
 
 [node name="7" type="AudioStreamPlayer" parent="Narrations" unique_id=814911912]
-stream = ExtResource("17_efp4m")
 
 [node name="8" type="AudioStreamPlayer" parent="Narrations" unique_id=1274901053]
-stream = ExtResource("18_k2rm0")
-
-[node name="9" type="AudioStreamPlayer" parent="Narrations" unique_id=1052767611]
-stream = ExtResource("19_ssywp")
 
 [node name="Subtitles" type="Node" parent="." unique_id=1010485060]
 
@@ -148,7 +126,7 @@ theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "In the town of Litshire, the people lived in an age of prosperity. "
+text = "meow TWO"
 fit_content = true
 horizontal_alignment = 1
 
@@ -161,16 +139,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -4.0
+offset_top = 52.0
 offset_right = 500.0
-offset_bottom = 164.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "Year after year, their crops were bountiful, and traders came far and wide to engage in commerce."
+text = "meow THREE"
 fit_content = true
 horizontal_alignment = 1
 
@@ -192,7 +170,7 @@ theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "Because of Litshire, the lands of Fuania began to prosper. There was peace."
+text = "meow FOUR"
 fit_content = true
 horizontal_alignment = 1
 
@@ -214,7 +192,7 @@ theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "The Rat King..."
+text = "meow FIVE"
 fit_content = true
 horizontal_alignment = 1
 
@@ -227,16 +205,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -4.0
+offset_top = 52.0
 offset_right = 500.0
-offset_bottom = 164.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "Like a plague, he and his marauder forces swept throughout the land. Plundering and crushing all in their way."
+text = "meow SIX"
 fit_content = true
 horizontal_alignment = 1
 
@@ -249,16 +227,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -4.0
+offset_top = 52.0
 offset_right = 500.0
-offset_bottom = 164.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "Many heroes began to come together to fight back against the Rat King and his legion."
+text = "meow SIX"
 fit_content = true
 horizontal_alignment = 1
 
@@ -271,16 +249,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -4.0
+offset_top = 52.0
 offset_right = 500.0
-offset_bottom = 164.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "But their efforts have been without advance. And they have all but been snuffed out."
+text = "meow SIX"
 fit_content = true
 horizontal_alignment = 1
 
@@ -293,29 +271,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -4.0
-offset_right = 500.0
-offset_bottom = 164.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("8_hhtmf")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
-text = "Tales of the Rat King's terror have spread throughout and to distant lands. And yet none have come to aid us."
-fit_content = true
-horizontal_alignment = 1
-
-[node name="9" type="RichTextLabel" parent="Subtitles" unique_id=1912160950]
-z_index = 10
-custom_minimum_size = Vector2(1000, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -4.0
+offset_top = 52.0
 offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
@@ -324,6 +280,6 @@ theme = ExtResource("8_hhtmf")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 56
-text = "And thus, we are doomed."
+text = "meow SIX"
 fit_content = true
 horizontal_alignment = 1
