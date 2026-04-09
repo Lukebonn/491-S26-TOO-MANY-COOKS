@@ -4,6 +4,7 @@ extends EnemyState
 
 func enter_state(enemy_node):
 	super(enemy_node)
+	drop = 1;
 	PlayerStats.Gold+=drop
 	if animation_name != "NONE":
 		await $"../AnimatedSprite2D".animation_finished

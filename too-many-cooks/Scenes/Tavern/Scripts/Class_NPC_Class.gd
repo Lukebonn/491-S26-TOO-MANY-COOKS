@@ -67,6 +67,14 @@ var new_passive_spd : float
 #---
 func _ready():
 	self.connect("pressed",_on_clicked)
+	self.connect("mouse_entered",_on_mouse_entered)
+	self.connect("mouse_exited",_on_mouse_exited)
+	self.modulate = Color(1,1,1)
+
+func _on_mouse_entered():
+	self.modulate = Color(1.25,1.25,1.25)
+func _on_mouse_exited():
+	self.modulate = Color(1,1,1)
 
 func _on_clicked():	
 	update_new_stats()
