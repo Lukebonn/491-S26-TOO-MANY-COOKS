@@ -207,7 +207,6 @@ text = "You Have Died!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="applyStatusEffect" from="." to="." method="_on_apply_status_effect"]
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

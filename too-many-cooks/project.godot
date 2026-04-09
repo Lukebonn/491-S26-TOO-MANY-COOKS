@@ -24,6 +24,7 @@ DamageNumbers="*uid://cqs4quf3yaur8"
 EnemyStats="*uid://c3r5te84hhitv"
 FadeInFadeOut="*uid://bgtyccjclp1y0"
 LevelQueue="*uid://ch1igdsyy8a1u"
+PlayerStatusEffects="*uid://b7iaibxa1wpy3"
 
 [display]
 
