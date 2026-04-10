@@ -63,25 +63,27 @@ func print_text(character: String, index, emotions):
 	Global.Is_In_Dialogue = false
 	
 #Find the emotions of the NPC based on a tag with the following patter [X]
-#0 = None, 1 = Sad, 2 = Mad, 3 = Smirking, * =  Base Emote
+#0 = Base Emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised
 func find_emote(character: String, emotions, line: String):
 	#print(line + "test")
 	$Container/SpeakerSprite.show()
 	var tag = line[1]
 	match tag:
 		"0":
-			pass
+			$Container/SpeakerSprite.texture = emotions[0]
+			print("I'm just here") 
 		"1":
 			$Container/SpeakerSprite.texture = emotions[1]
-			print("I should be crying wahh") 
+			print("I'm so happy") 
 		"2": 
 			$Container/SpeakerSprite.texture = emotions[2] 
-			print("I should be mad grrr")
+			print("I'm so sad")
 		"3": 
 			$Container/SpeakerSprite.texture = emotions[3]
-			print("I should be smirking")
-		_: 
-			$Container/SpeakerSprite.texture = emotions[0]
+			print("Grr, I'm mad")
+		"4": 
+			$Container/SpeakerSprite.texture = emotions[4]
+			print("Woah, I'm surprised")
 	
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
@@ -90,10 +92,10 @@ func find_emote(character: String, emotions, line: String):
 	#and sounds
 	
 #func find_options(character: String, line: String):
-	#$Container/Dialogue/DialogueOption1.show()
-	#$Container/Dialogue/DialogueOption2.show()
 	#var tag = line[1]
-	#if tag == "?":
+	#if tag == "b":
+		#$Container/Dialogue/DialogueOption1.show()
+		#$Container/Dialogue/DialogueOption2.show()
 		#match line[2]:
 			#"1":
 				#$Container/Dialogue/DialogueOption1.text
