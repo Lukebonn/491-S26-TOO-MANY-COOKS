@@ -29,11 +29,11 @@
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
 [ext_resource type="PackedScene" uid="uid://co1wdkv55yg55" path="res://Scenes/Tavern/class_menu.tscn" id="21_y33xb"]
 [ext_resource type="Script" uid="uid://dfktgotoe2b4l" path="res://Scenes/Tavern/Scripts/Class_NPC_Class.gd" id="23_djqff"]
-[ext_resource type="FontFile" uid="uid://bdsrppevtlams" path="res://UI/Themes/Fonts/cs-belric-pixel-font/CsbelricpixelRegularDemo-WpGYv.otf" id="24_tqgpy"]
 [ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
 [ext_resource type="Script" uid="uid://duffidar21ncd" path="res://Scenes/Tavern/debugbutton.gd" id="28_1gied"]
 [ext_resource type="PackedScene" uid="uid://dp2wyj4pxj1i6" path="res://Scenes/Tavern/act_select.tscn" id="29_0id2w"]
 [ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
+[ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="32_a55l7"]
 [ext_resource type="AudioStream" uid="uid://c3o3ouafmtp4b" path="res://Scenes/Tavern/Tavern.wav" id="33_1gied"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/SettingsMenu2.tscn" id="34_tvort"]
 
@@ -646,7 +646,7 @@ offset_left = 968.0
 offset_top = 22.0
 offset_right = 1033.0
 offset_bottom = 62.0
-theme_override_fonts/font = ExtResource("24_tqgpy")
+theme_override_fonts/font = ExtResource("32_a55l7")
 theme_override_font_sizes/font_size = 32
 text = "Pause"
 script = ExtResource("26_djqff")
