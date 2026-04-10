@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="1_1glo8"]
 [ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="2_q66ub"]
 [ext_resource type="Texture2D" uid="uid://j5pea85gjsg4" path="res://Scenes/Test/ProtoArt/gear.png" id="3_ldpx7"]
-[ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/SettingsMenu2.tscn" id="4_1glo8"]
+[ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/settings.tscn" id="4_1glo8"]
+[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="5_q66ub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol5do"]
 bg_color = Color(0.31246597, 0.3124661, 0.31246606, 1)
@@ -120,4 +121,72 @@ texture_normal = ExtResource("3_ldpx7")
 ignore_texture_size = true
 
 [node name="settings" parent="." unique_id=734773122 instance=ExtResource("4_1glo8")]
+visible = false
 position = Vector2(1152, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=350867196]
+layout_mode = 0
+offset_left = 1374.0
+offset_right = 1577.0
+offset_bottom = 649.0
+theme = ExtResource("5_q66ub")
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1047777819]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer" unique_id=1555160033]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "Save"
+
+[node name="JournalButton" type="Button" parent="VBoxContainer" unique_id=486309925]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "Journal"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=472459168]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="Button5" type="Button" parent="VBoxContainer" unique_id=2129828469]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button6" type="Button" parent="VBoxContainer" unique_id=168157426]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("5_q66ub")
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="background" type="ColorRect" parent="." unique_id=1340293995]
+z_index = 1
+layout_mode = 0
+offset_left = 0.35559082
+offset_top = 0.10183716
+offset_right = 477.71118
+offset_bottom = 647.1018
+color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
+
+[node name="cover" type="ColorRect" parent="." unique_id=2098344513]
+z_index = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.44705883)

@@ -1,0 +1,346 @@
+[gd_scene format=3 uid="uid://bp3qimvl4p8m4"]
+
+[ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scenes/Title/Scripts/settings.gd" id="1_5jne5"]
+[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_5jne5"]
+[ext_resource type="PackedScene" uid="uid://22b0j7kjctua" path="res://Scenes/Title/pause_ui.tscn" id="3_bv10w"]
+[ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="3_ldpcw"]
+
+[node name="settings" type="Node2D" unique_id=734773122]
+script = ExtResource("1_5jne5")
+
+[node name="background" type="ColorRect" parent="." unique_id=1813375192]
+z_index = 1
+offset_left = 1152.3555
+offset_top = 2.1018372
+offset_right = 1629.711
+offset_bottom = 649.1018
+color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
+
+[node name="cover" type="ColorRect" parent="." unique_id=1480557321]
+z_index = 1
+offset_left = 1152.0
+offset_top = 2.0
+offset_right = 2304.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="topleft" type="Marker2D" parent="." unique_id=1357075012]
+position = Vector2(1152.3555, 2.1018372)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1948197532]
+position = Vector2(848, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=686372798]
+position = Vector2(1152, 0)
+
+[node name="buttons" type="VBoxContainer" parent="." unique_id=181482053]
+offset_left = 1213.0
+offset_right = 1416.0
+offset_bottom = 649.0
+theme = ExtResource("2_5jne5")
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="SaveButton" type="Button" parent="buttons" unique_id=447781717]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "Save"
+
+[node name="JournalButton" type="Button" parent="buttons" unique_id=1178310031]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "Journal"
+
+[node name="ExitButton" type="Button" parent="buttons" unique_id=2071759466]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="Button5" type="Button" parent="buttons" unique_id=430778779]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Button6" type="Button" parent="buttons" unique_id=1393948121]
+z_index = 1
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 60
+text = "meow"
+
+[node name="Journals" type="Control" parent="." unique_id=418823849]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabContainer" type="TabContainer" parent="Journals" unique_id=1456895192]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 74.0
+offset_right = 299.0
+offset_bottom = 114.0
+current_tab = 0
+tab_2/title = "Purple"
+
+[node name="Warrior" type="MarginContainer" parent="Journals/TabContainer" unique_id=2033841847]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5jne5")
+metadata/_tab_index = 0
+
+[node name="Audio Sliders" type="VBoxContainer" parent="Journals/TabContainer/Warrior" unique_id=1956343010]
+custom_minimum_size = Vector2(320, 300)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5jne5")
+theme_override_constants/separation = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="Journals/TabContainer/Warrior/Audio Sliders" unique_id=1267970479]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Journals/TabContainer/Warrior/Audio Sliders" unique_id=1819930015]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "Audio"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders" unique_id=707484136]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+alignment = 1
+
+[node name="Master Audio" type="VBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer" unique_id=1121899174]
+z_index = 1
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("2_5jne5")
+
+[node name="Master" type="RichTextLabel" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer/Master Audio" unique_id=1969223947]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Master"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer/Master Audio" unique_id=1786898194]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("2_5jne5")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="masterlabel" type="Label" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer" unique_id=488973834]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 30
+text = "  100.0%"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders" unique_id=226205317]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+alignment = 1
+
+[node name="Music Audio" type="VBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer2" unique_id=1832960215]
+z_index = 1
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("2_5jne5")
+
+[node name="Music" type="RichTextLabel" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer2/Music Audio" unique_id=1752606971]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Music"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer2/Music Audio" unique_id=102124021]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("2_5jne5")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="musiclabel" type="Label" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer2" unique_id=891047086]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 30
+text = "  100.0%"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders" unique_id=1182570838]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+alignment = 1
+
+[node name="SFX Audio" type="VBoxContainer" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer3" unique_id=1416993865]
+z_index = 1
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("2_5jne5")
+
+[node name="SFX" type="RichTextLabel" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer3/SFX Audio" unique_id=1793610460]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "SFX"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer3/SFX Audio" unique_id=1270998803]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("2_5jne5")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="sfxlabel" type="Label" parent="Journals/TabContainer/Warrior/Audio Sliders/HBoxContainer3" unique_id=1482171158]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_font_sizes/font_size = 30
+text = "  100.0%"
+horizontal_alignment = 1
+
+[node name="Rogue" type="MarginContainer" parent="Journals/TabContainer" unique_id=1456971047]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+metadata/_tab_index = 1
+
+[node name="Graphics Settings" type="VBoxContainer" parent="Journals/TabContainer/Rogue" unique_id=622742617]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+
+[node name="Label" type="Label" parent="Journals/TabContainer/Rogue/Graphics Settings" unique_id=1015822389]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "Graphics"
+vertical_alignment = 1
+
+[node name="Fullscreen" type="HBoxContainer" parent="Journals/TabContainer/Rogue/Graphics Settings" unique_id=858655149]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+alignment = 1
+
+[node name="Fullscreen" type="RichTextLabel" parent="Journals/TabContainer/Rogue/Graphics Settings/Fullscreen" unique_id=1823672347]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Fullscreen"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Fullscreentoggle" type="CheckButton" parent="Journals/TabContainer/Rogue/Graphics Settings/Fullscreen" unique_id=1879353311]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+expand_icon = true
+script = ExtResource("3_ldpcw")
+
+[node name="Mage" type="MarginContainer" parent="Journals/TabContainer" unique_id=1972224127]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+metadata/_tab_index = 2
+metadata/_tab_name = "Purple"
+
+[node name="Purple Toggle" type="VBoxContainer" parent="Journals/TabContainer/Mage" unique_id=1540228439]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+
+[node name="Label" type="Label" parent="Journals/TabContainer/Mage/Purple Toggle" unique_id=819810115]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 60
+text = "Purple Toggle"
+vertical_alignment = 1
+
+[node name="Purple" type="HBoxContainer" parent="Journals/TabContainer/Mage/Purple Toggle" unique_id=1406774892]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+alignment = 1
+
+[node name="PurpleLabel" type="RichTextLabel" parent="Journals/TabContainer/Mage/Purple Toggle/Purple" unique_id=626645529]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Purple on?"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PurpleToggle" type="CheckButton" parent="Journals/TabContainer/Mage/Purple Toggle/Purple" unique_id=2054896819]
+layout_mode = 2
+theme = ExtResource("2_5jne5")
+expand_icon = true
+
+[node name="Pause UI" parent="." unique_id=95086748 instance=ExtResource("3_bv10w")]
+z_index = 2
+offset_left = 1152.0
+offset_top = 0.0
+offset_right = 1152.0
+offset_bottom = 0.0
+
+[connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="buttons/JournalButton" to="." method="_on_journal_button_pressed"]
+[connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="buttons/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="buttons/Button6" to="." method="_on_button_6_pressed"]
