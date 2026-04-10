@@ -28,6 +28,7 @@ Player = NodePath("../Player")
 
 [node name="Barrier" parent="." unique_id=1785926896 instance=ExtResource("10_pa5cx")]
 position = Vector2(0, -61)
+collision_layer = 69
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=482306515]
 

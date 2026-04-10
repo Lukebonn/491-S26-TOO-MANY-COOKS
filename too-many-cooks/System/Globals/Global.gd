@@ -13,3 +13,5 @@ var Is_In_Dialogue := false
 var First_Time_Combat := true
 
 var Paused_In_Tavern := false
+
+var Paused_In_Combat := false

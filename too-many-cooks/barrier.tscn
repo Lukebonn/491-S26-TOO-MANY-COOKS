@@ -2,20 +2,31 @@
 
 [ext_resource type="Script" uid="uid://dvik5b26p0u1v" path="res://barrier.gd" id="1_lfb78"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfb78"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_lfb78"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d85yw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfb78"]
+radius = 17.117243
 
-[node name="Barrier" type="Area2D" unique_id=1785926896]
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1004379491]
 collision_layer = 64
 collision_mask = 5
 script = ExtResource("1_lfb78")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=474255429]
-scale = Vector2(20, 20)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632816024]
+shape = SubResource("RectangleShape2D_lfb78")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1767889003]
+position = Vector2(-0.5, 0)
+scale = Vector2(21, 20)
 mesh = SubResource("BoxMesh_lfb78")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721828999]
-shape = SubResource("RectangleShape2D_d85yw")
+[node name="Area2D" type="Area2D" parent="." unique_id=927614872]
+collision_layer = 64
+collision_mask = 5
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=301522068]
+shape = SubResource("CircleShape2D_lfb78")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
