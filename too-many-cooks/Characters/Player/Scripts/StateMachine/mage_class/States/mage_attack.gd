@@ -9,6 +9,8 @@ var on_cooldown : bool = false
 
 var mana_gain : float = 30
 
+var current_spell : String = "ice spears"
+
 ##Calls player_state enter_state method to have 'player' reference player node
 func enter_state(player_node):
 	#print_debug("attack_state entered")

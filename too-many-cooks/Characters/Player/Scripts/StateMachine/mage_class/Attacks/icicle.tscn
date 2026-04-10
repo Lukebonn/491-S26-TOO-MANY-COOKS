@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b4l2vpcfwvq65"]
+
+[ext_resource type="Script" uid="uid://d3lj14kbsnj67" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/icicle.gd" id="1_vo3kw"]
+
+[node name="Icicle" type="RigidBody2D" unique_id=544606156]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_vo3kw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1983108707]
+polygon = PackedVector2Array(-10, 0, 0, -4, 10, 0, 0, 4)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=638128355]
+color = Color(0.38431373, 1, 1, 1)
+polygon = PackedVector2Array(-10, 0, 0, -4, 10, 0, 0, 4)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=711258664]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=2037062181]
+polygon = PackedVector2Array(-10, 0, 0, -4, 10, 0, 0, 4)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
