@@ -1,6 +1,6 @@
 extends Control
 
-@export var player: Node # stores a reference to the player node in the Combat Scene.
+var player: Node # stores a reference to the player node in the Combat Scene.
 
 signal flashManaBar()
 
@@ -30,6 +30,11 @@ signal flashManaBar()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$DeathScreen.visible = false
+	if $"../../Player":
+		player = $"../../Player"
+		player.connect("notEnoughMana", _on_player_not_enough_mana)
+		player.connect("playerDeath", _on_player_death)
+		print("hi")
 	show()
 	#print(player)
 	# testing purposes
@@ -96,6 +101,7 @@ func _process(delta: float) -> void:
 	
 func _on_player_not_enough_mana() -> void:
 	flashManaBar.emit()
+	print("Yo whatsuo")
 	# this signal tells the Mana bar to flash, indicating to the
 	# player that they do not have enough Mana.
 # Takes a singal and emits another signal that is more local to the

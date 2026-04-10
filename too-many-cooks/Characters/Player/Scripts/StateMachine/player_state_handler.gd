@@ -41,6 +41,8 @@ var num_keys : int = 0
 #player should be in idle state when loaded
 #loads the correct class for the player
 func _ready() -> void:
+	if %UI:
+		print("hi")
 	
 	match PlayerStats.current_class:
 		PlayerStats.classes.none:
