@@ -1,11 +1,18 @@
 extends Node2D
 signal on_spawn
 signal on_all_dead
-enum LocType {FixedRadius, AlongPath, RadiusRange}
-enum SpawnType {Burst, Constant}
+enum LocType {
+	FixedRadius, ##Enemies spawn a fixed distance away from the spawner.
+	AlongPath, ##Enemies spawn along the assigned SpawnPath.
+	RadiusRange, ##Enemies spawn within a min-max radius range. Works best with RandomLocation!
+	SetPoints ##Each Enemy spawns as the SpawnPoint of the same index. IGNORES RandomLocation!
+	}
+enum SpawnType {
+	Burst, ##Burst means enemies will spawn all at once.
+	Constant ##Constant means enemies will continuously spawn with some delay.
+	}
 
-##Whether or not enemies will spawn randomly in this spawner's given location type.
-##This must be true for the RadiusRange location type to work.
+##Whether or not enemies will spawn randomly in the given location type. IGNORED by SetPoints!
 @export var RandomLocation : bool = false
 ##The enemies to spawn from this Spawner.
 @export var Enemies : Array[PackedScene]
@@ -15,10 +22,6 @@ enum SpawnType {Burst, Constant}
 
 @export_group("Location Handling")
 ##The type of location handling to use when spawning from Enemies.
-##FixedRadius means enemies will spawn a fixed distance away from the spawner.
-##AlongPath means enemies will spawn along a Path2D (MUST be assigned!)
-##RadiusRange means enemies will spawn within a min-max radius range.
-##RadiusRange works best if RandomLocation is true!
 @export var LocationType : LocType
 ##The radius at which enemies will be spawned at, if LocationType is FixedRadius.
 @export var SpawnRadius : float = 32.0
@@ -28,11 +31,11 @@ enum SpawnType {Burst, Constant}
 @export var RadiusRangeMax : float = 64.0
 ##The Path2D enemies will spawn along, if LocationType is AlongPath.
 @export var SpawnPath : Path2D
+##The points to spawn each Enemy at, if LocationType is SetPoints. Assignments should be children of this Spawner!
+@export var SpawnPoints : Array[Node2D]
 
 @export_group("Spawn Handling")
 ##The spawn method to use while spawning enemies.
-##Burst means enemies will spawn all at once.
-##Constant means enemies will continuously spawn with some delay.
 @export var SpawnMethod : SpawnType
 ##The time (in seconds) to wait before spawning an additional enemy.
 ##Leave as 0.0 for a single "wave" of enemies spawned.
@@ -135,6 +138,8 @@ func calc_spawn_pos(i: int):
 		else:
 			#Return rotated Vec2 in min-max range based on incriment * index.
 			return Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
+	if LocationType == LocType.SetPoints:
+		return Vector2(SpawnPoints[i].position)
 
 func on_enemy_dead() -> void:
 	enemies_defeated += 1
