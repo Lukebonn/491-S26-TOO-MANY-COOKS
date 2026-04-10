@@ -1,6 +1,12 @@
 extends Node2D
+
+#Emits when enemies are spawned.
 signal on_spawn
+#Emits when "enemies dead" condition is reached (all dead, x dead).
 signal on_all_dead
+#Emits when this Spawner is destroyed.
+signal on_destroyed
+
 enum LocType {
 	FixedRadius, ##Enemies spawn a fixed distance away from the spawner.
 	AlongPath, ##Enemies spawn along the assigned SpawnPath.
@@ -45,6 +51,10 @@ enum SpawnType {
 ##The number of enemies that must be defeated for the "on_all_dead" signal to be emitted, if SpawnMethod is Constant.
 @export var DefeatCount : int = 8
 
+@export_group("Destructible Data")
+##The amount of HP this Spawner has.
+@export var HP : int = 20
+
 #Whether or not this Spawner is active (and thus should emit signals).
 var active : bool = true
 #Incriment of rotation, used in circle spawn logic.
@@ -64,6 +74,14 @@ var path_length : float = 0.0
 #Current step in Enemies, for Constant spawn method.
 var cur_step : int = 0
 
+func destroy_spawner() -> void:
+	on_destroyed.emit()
+	#Temporary code to "destroy" this Spawner visually.
+	#Will be replaced with proper visual changes later.
+	$Sprite2.hide()
+	$StaticBody2D.queue_free()
+	interval.stop()
+
 func _ready() -> void:
 	#Calculate rotation incriment for later.
 	rotInc = 360 * 1/float(Enemies.size())
@@ -71,6 +89,7 @@ func _ready() -> void:
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
 	interval = $Interval
 	$Sprite.hide()
+	$Area2D.current_health = HP
 	if SpawnPath:
 		path_length = SpawnPath.curve.get_baked_length()
 
