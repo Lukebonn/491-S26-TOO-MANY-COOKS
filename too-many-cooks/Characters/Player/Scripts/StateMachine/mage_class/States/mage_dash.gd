@@ -1,19 +1,41 @@
 extends PlayerState
 
-var mana_cost : int= 10
+var mana_cost : int = 10
 
 var teleport_vector : Vector2
 
 
 ##player should teleport a certain distance
 #distance traveled scales on speed
-#teleport vector should stop at walls (not sure how I'm going to do that yet)
+#teleport vector should stop at walls
 func enter_state(player_node):
 	super(player_node)
 	
-	teleport_vector = player.global_position + player.velocity.normalized() * (player.speed / 2)
-	player.global_position = teleport_vector
-	player.mana -= mana_cost
+	if(player.mana >= mana_cost):
+		
+		if(player.velocity == Vector2(0,0)):
+			teleport_vector = player.global_position + player.current_dir.normalized() * 50
+		else:
+			teleport_vector = player.global_position + player.velocity.normalized() * 50
+		
+		
+		var raycast = RayCast2D.new()
+		
+		raycast.set_collision_mask_value(7, true)
+		
+		player.add_child(raycast)
+		
+		raycast.target_position = teleport_vector
+		
+		
+		if(raycast.is_colliding()):
+			print_debug("raycast collision")
+			teleport_vector = raycast.get_collision_point()
+		
+		player.global_position = teleport_vector
+		player.mana -= mana_cost
+		
+		raycast.queue_free()
 	
 	player.change_state("move_state")
 

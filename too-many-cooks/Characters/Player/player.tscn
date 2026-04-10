@@ -36,6 +36,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_b6jp0")
+}],
+"loop": true,
+"name": &"idle up",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_va6lm")
 }, {
 "duration": 1.0,
@@ -84,7 +92,7 @@ script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2079195409]
 sprite_frames = SubResource("SpriteFrames_7vev3")
-animation = &"move up"
+animation = &"idle up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
@@ -98,6 +106,7 @@ collision_mask = 32
 shape = SubResource("CapsuleShape2D_pwx6j")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=387267039]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=1974573788]
 position = Vector2(14, 0)

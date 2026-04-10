@@ -13,7 +13,7 @@ var displayMana : int = int(mana)
 var strength : int = PlayerStats.base_str
 var defense : int = PlayerStats.base_def
 var magic : int = PlayerStats.base_mag
-var speed : int = 100
+var speed : int = PlayerStats.base_spd
 
 var damage : int
 
@@ -96,10 +96,11 @@ func _physics_process(delta: float) -> void:
 		current_x_dir = -1
 		$Weapon/Sprite2D.flip_v = true
 		$Sprite2D.flip_h = true
-	if(local_mouse_pos.x > 0):
+	elif(local_mouse_pos.x > 0):
 		current_x_dir = 1
 		$Weapon/Sprite2D.flip_v = false
 		$Sprite2D.flip_h = false
+	
 	
 	#hitbox is pointed towards the mouse unless the player is attacking
 	if(current_state != get_node("attack_state")):

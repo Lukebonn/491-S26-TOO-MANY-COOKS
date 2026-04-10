@@ -4,7 +4,7 @@ var attack : PackedScene = load("res://Characters/Player/Scripts/StateMachine/ma
 
 var power : float = 0.5
 
-var cooldown : float = 0.2
+var cooldown : float = 0.4
 var on_cooldown : bool = false
 
 var mana_gain : float = 30
