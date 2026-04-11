@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="6_nw2vy"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="7_pjequ"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="8_hskka"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/GoldPickup.tscn" id="9_iy4yc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
@@ -107,6 +108,8 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DeathState" type="Node" parent="." unique_id=297472194]
 script = ExtResource("8_hskka")
+Drop = ExtResource("9_iy4yc")
+Drop_Amount = 10
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

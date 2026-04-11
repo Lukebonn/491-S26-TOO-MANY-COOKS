@@ -1,4 +1,23 @@
-[0] WOAH!!!
-[0] I'll save you! Just hang on a little longer!
-[0] That was close!
-[0] I'm not a writer, but I'm sure I'll have more to say later!
+[0]No! I won’t let another one fall in this wretched place!
+[0]Hya! Take that!
+[0]*...panting…*
+[0].... I’m getting too old for this. Hmm, still breathing there? Good, you owe me now.#
+#-------intro tavern speech below
+[5]You’re awake now, good. Take it slow getting up, you were in rough shape. I’m no doctor but I've patched you up the best I could.
+[3]Now that I know you’re not dead, what in hells were you thinking going into the Tower like that? 
+[5]I don’t recognize you so you must be new to these lands. And you charged into the Tower as soon as you got here? Kids these days…
+[3]Listen, you want to go and clear out the scum in there? Fine by me, but if you leave as you are now you’ll get eaten alive. 
+[3]And besides, I risked my tailfeathers going in there and saving you. So in return, you’re going to help me out.
+[5]Don’t make that face, it’s nothing horrible. You’ll be helping me run this tavern.  Well I’ll be serving, and you will be fixing it up.
+[2]In return, I’m sure there will be some folks who might help you out as thanks. That's the power of community.
+[5]To start you off here’s some gold I picked up off the rats I beat off of you. That’s the one good thing about that cursed Tower, defeat anything in there and you get the gold they were carrying.
+[5]Take the gold over to something that’s broken down and use it to fix it up right. If we get this place back into shape, we’ll get more customers. At least some of them should be of use to you.
+[1]Oh, and take the time to talk to the people here. Like that fierce lion lady over there, she’s one of my last regulars. She’s been really busy lately, dealing with the overflow from the Tower.
+[5]Go ahead and ask her what you can do for her and if you prove yourself she can teach you some skills in return.
+[5]When you’re ready, make your way over to the exit on the right to head back to the Tower.
+[2]And remember kid, don’t die on me.#
+#-------- general talk act 1
+[5]What’re you still lingering around here for? Either grab a rag and clean something, talk to a patron to make them feel welcome, or get out of here and start working on clearing that Tower.#
+[4]Booze? Ran out of the good stuff months ago. Best I have is some ale that's so heavily watered down you could serve it to children. What? No, I don’t actually serve it to children. Did you really think I did?#
+#-------- question below for testing
+[0]This is a question/Text1,Text2,Text3

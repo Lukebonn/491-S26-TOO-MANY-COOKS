@@ -7,29 +7,40 @@ var is_printing_text = false
 var is_awaiting_response = false
 
 var in_dialogue = false
+var await_question = false
+var end_of_dialogue = false
 
 @export var text_speed = .01
 
 signal next_line
 signal message_complete
+signal show_question(questions : Array)
+signal done_printing
 
 #args character = which character are we talking to? pulled from a JSON list prolly
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
 func _input(event):
-	if event is InputEventMouseButton:
-		next_line.emit()
+	if Input.is_action_pressed("attack"):
+		if is_printing_text:
+			text_speed = 0
+			print("skipping")
+		if !is_awaiting_response:
+			next_line.emit()
+
 
 func show_dialogue(character: String, index, emotions):
 	in_dialogue = true
+	end_of_dialogue = false
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
 	print_text(character, index, emotions)
 	
-func hide_dialogue():
+func end_dialogue():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 	in_dialogue = false
+	Global.Is_In_Dialogue = false
 	message_complete.emit()
 	
 
@@ -42,36 +53,52 @@ func print_text(character: String, index, emotions):
 	
 	#check if its string (one line) or array (more than one)
 	if message_ref is String:
+		text_speed = .01
 		$Container/Dialogue/DialogueLabel.text = message_ref
 		$Container/Dialogue/DialogueLabel.visible_characters = 0
 		for letter in message_ref.length():
 			$Container/Dialogue/DialogueLabel.visible_characters += 1 
-			await get_tree().create_timer(text_speed).timeout
+			if text_speed != 0:
+				await get_tree().create_timer(text_speed).timeout
 		await next_line
-		hide_dialogue()
+		if end_of_dialogue:
+			end_dialogue()
 	else:
 		for line in message_ref:
-			var emote = find_emote(character, emotions, line)
+			text_speed = .01
+			if line.contains("/"):
+				is_awaiting_response = true
+				var split_line = line.split("/")
+				line = split_line[0]
+				var questions_array = split_line[1]
+				show_question.emit(questions_array)
+			if line.contains("#"):
+				end_of_dialogue = true
+				line = line.replace("#","")
+			#var emote = find_emote(character, emotions, line)
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line.right(-3)
+			
 			for letter in line.length():
 				$Container/Dialogue/DialogueLabel.visible_characters += 1 
-				await get_tree().create_timer(text_speed).timeout
+				if text_speed != 0:
+					await get_tree().create_timer(text_speed).timeout
+			done_printing.emit()
 			await next_line
-		hide_dialogue()
+		if end_of_dialogue:
+			end_dialogue()
 		$Container/SpeakerSprite.hide()
-	Global.Is_In_Dialogue = false
+	
 	
 #Find the emotions of the NPC based on a tag with the following patter [X]
-#0 = Base Emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised
+#0 = No Emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised 5 = Neutral
 func find_emote(character: String, emotions, line: String):
 	#print(line + "test")
 	$Container/SpeakerSprite.show()
 	var tag = line[1]
 	match tag:
 		"0":
-			$Container/SpeakerSprite.texture = emotions[0]
-			print("I'm just here") 
+			pass
 		"1":
 			$Container/SpeakerSprite.texture = emotions[1]
 			print("I'm so happy") 
@@ -84,6 +111,9 @@ func find_emote(character: String, emotions, line: String):
 		"4": 
 			$Container/SpeakerSprite.texture = emotions[4]
 			print("Woah, I'm surprised")
+		"5":
+			$Container/SpeakerSprite.texture = emotions[5]
+			print("I'm just here") 
 	
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
@@ -102,30 +132,12 @@ func find_emote(character: String, emotions, line: String):
 			#"2":
 				#$Container/Dialogue/DialogueOption1.text
 
-
 func find_message(character: String, index, emotions):
 	var text : Array[String]
 	var file
-	
 	match character:
-		"Meowy":
-			match index:
-				"default":
-					return ["I'm saying this", "And this."]
-				"other":
-					return "Sometimes I do this."
-		"KingArthur":
-			match index:
-				"scolding":
-					
-					return "I'm so mad about that thing that happened!"
-		"ChattyCatty":
-			match index:
-				pass
 		"Tutorial":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/NPC1.txt", FileAccess.READ)
-				
-		
 		"Playtest":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYTEST.txt", FileAccess.READ)
 			Global.Has_Finished_Playtest = true

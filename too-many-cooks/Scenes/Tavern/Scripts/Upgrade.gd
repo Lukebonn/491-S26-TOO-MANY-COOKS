@@ -28,11 +28,6 @@ signal Upgrade_Basic(stat:String, boost:int)
 signal Upgrade_Complicated(variant:String)
 
 func _ready():
-	#hacky solution until we find a way to load certain things properly
-	if PlayerStats.Magic == "Fireball" and name == "NPCMagic":
-		hide()
-	if PlayerStats.Magic == "Fireball" and name == "NPCEnd":
-		show()
 	self.connect("pressed",_on_upgrade)
 	self.connect("mouse_entered",_on_mouse_entered)
 	self.connect("mouse_exited",_on_mouse_exited)

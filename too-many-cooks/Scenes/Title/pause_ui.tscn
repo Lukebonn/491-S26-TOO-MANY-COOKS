@@ -48,14 +48,14 @@ mouse_filter = 2
 theme = ExtResource("1_xykjw")
 theme_override_font_sizes/font_size = 32
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 tab_2/title = "Secret..."
 tab_2/disabled = true
+tab_2/hidden = true
 tab_3/title = "Purple"
 tab_3/hidden = true
 
 [node name="Audio" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=705027667]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_xykjw")
@@ -201,6 +201,7 @@ text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="Graphics" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1077153258]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_xykjw")
 metadata/_tab_index = 1

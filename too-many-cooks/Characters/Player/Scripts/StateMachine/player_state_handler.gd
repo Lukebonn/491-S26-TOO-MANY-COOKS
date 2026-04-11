@@ -13,7 +13,8 @@ var displayMana : int = int(mana)
 var strength : int = PlayerStats.base_str
 var defense : int = PlayerStats.base_def
 var magic : int = PlayerStats.base_mag
-var speed : int = PlayerStats.base_spd
+var speed : int = 120
+var speed_mult : int = PlayerStats.base_spd
 
 var damage : int
 
@@ -111,11 +112,7 @@ func _physics_process(delta: float) -> void:
 	if(current_state):
 		current_state.input_handler(delta)
 	
-	if speed >= PlayerStats.Max_Speed:
-		speed = speed / 2
 	
-	if speed >= PlayerStats.Speed_Slowdown:
-		speed = PlayerStats.Speed_Slowdown
 	move_and_slide()
 
 

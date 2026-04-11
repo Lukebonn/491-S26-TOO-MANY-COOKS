@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dedpwrjxmd2km"]
+
+[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/orb_pickup.gd" id="1_sntfj"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="2_sntfj"]
+[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="3_efa58"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcjsq"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aqng"]
+radius = 5.0
+
+[sub_resource type="Curve" id="Curve_rqdct"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.8980377, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7gtmk"]
+offsets = PackedFloat32Array(0, 0.36477986, 0.7201258, 1)
+colors = PackedColorArray(1, 0.5562859, 0.49291265, 1, 1.6508848e-05, 0.88766235, 2.3102762e-06, 1, 0.4312825, 0.6115833, 1, 1, 1, 0.5710682, 0.50889343, 1)
+
+[node name="OrbPickup" type="CharacterBody2D" unique_id=1955872402]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_sntfj")
+Name = "Orb"
+Value = 1
+metadata/_custom_type_script = "uid://tgpwx3tswq0"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1657457641]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=998753768]
+shape = SubResource("CircleShape2D_e8js4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861499226]
+z_index = 1
+texture = ExtResource("2_sntfj")
+
+[node name="sight" type="Area2D" parent="." unique_id=408621695]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1691155092]
+z_index = 1
+shape = SubResource("CircleShape2D_lcjsq")
+debug_color = Color(0.99564105, 0.940498, 0.97477525, 0.08627451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181732196]
+shape = SubResource("CircleShape2D_3aqng")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1731360392]
+texture = ExtResource("3_efa58")
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_rqdct")
+color_ramp = SubResource("Gradient_7gtmk")
+hue_variation_max = 1.0

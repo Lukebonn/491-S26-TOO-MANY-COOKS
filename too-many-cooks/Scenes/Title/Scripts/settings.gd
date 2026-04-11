@@ -49,10 +49,15 @@ func _on_journal_button_pressed():
 
 
 func _on_exit_button_pressed():
+	$Mouse_Blocker.show()
 	do_settings_action("hide_menu")
 	in_menu = false
 	$Journals.hide_menu()
+	$JournalPanel.hide_menu()
 	$"Pause UI".hide_menu()
+	await get_tree().create_timer(1).timeout
+	$Mouse_Blocker.hide()
+	
 
 func _on_button_5_pressed():
 	print("Uhh...")

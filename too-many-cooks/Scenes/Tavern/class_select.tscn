@@ -91,12 +91,14 @@ text = "Warrior"
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Rogue"
 
 [node name="Magician" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1259405670]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Magician"
 
 [node name="sword" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1895565087]
@@ -106,12 +108,14 @@ scale = Vector2(10.214286, 10.214286)
 texture = ExtResource("3_rjcil")
 
 [node name="knife" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=186783298]
+visible = false
 z_index = 1
 position = Vector2(295, 102.5)
 scale = Vector2(10.214286, 10.214286)
 texture = ExtResource("4_1la83")
 
 [node name="staff" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=816185281]
+visible = false
 z_index = 1
 position = Vector2(492, 102.5)
 scale = Vector2(10.214286, 10.214286)
@@ -131,12 +135,14 @@ text = "Check Class"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Check Class"
 
 [node name="MagicianCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=826261879]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Check Class"
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]

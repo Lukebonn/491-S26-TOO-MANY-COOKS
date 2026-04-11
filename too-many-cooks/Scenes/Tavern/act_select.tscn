@@ -83,11 +83,13 @@ text = "Act 1"
 [node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Act 2"
 
 [node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Act 3"
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]

@@ -5,7 +5,8 @@ extends Node
 #make sure they are typed variables too, most will be floats
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
-var Gold := 0
+var Gold := 5
+var Orbs := 0
 
 ##speed stats for the player
 var Max_Speed = 200.0
@@ -19,10 +20,9 @@ var MaxHealth := 100.0
 var MaxMana := 100.0
 
 ##base player stats without any items for class modifiers
-#currently have no effect in game
 var base_str : int = 10
 var base_def : int = 10
-var base_spd : int = 10
+var base_spd : int = 1
 var base_mag : int = 10
 
 ##passive player stats that have been upgraded

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://o8n7p4lveipj"]
+
+[ext_resource type="Script" uid="uid://bak0aytwj4ug" path="res://Objects/Pickups/gold_pickup.gd" id="1_lcjsq"]
+[ext_resource type="Texture2D" uid="uid://ncvmbiugtx26" path="res://Objects/Pickups/coin.png" id="2_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcjsq"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aqng"]
+radius = 5.0
+
+[node name="GoldPickup" type="CharacterBody2D" unique_id=739019463]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_lcjsq")
+Name = "Gold"
+Value = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1657457641]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=998753768]
+shape = SubResource("CircleShape2D_e8js4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861499226]
+texture = ExtResource("2_e8js4")
+
+[node name="sight" type="Area2D" parent="." unique_id=408621695]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1691155092]
+z_index = 1
+shape = SubResource("CircleShape2D_lcjsq")
+debug_color = Color(1, 1, 0.05490196, 0.08627451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181732196]
+shape = SubResource("CircleShape2D_3aqng")

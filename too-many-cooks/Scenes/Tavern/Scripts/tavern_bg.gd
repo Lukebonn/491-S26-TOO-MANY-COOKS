@@ -41,6 +41,10 @@ func set_up_tavern():
 		$TavernBackgroundLong2.hide()
 		$TavernBackgroundLong3.show()
 		$"EndDoor".show()
+	if Global.Has_Mage_NPC:
+		$Class_NPCS/Mage_CLASS_NPC.show()
+	if Global.Has_Rogue_NPC:
+		$Class_NPCS/Rogue_CLASS_NPC.show()
 
 func _on_door_andy_pressed():
 	class_select_ref.show_menu()

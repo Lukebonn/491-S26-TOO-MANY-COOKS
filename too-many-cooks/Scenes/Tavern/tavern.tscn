@@ -5,17 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="2_djqff"]
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_tqgpy"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="3_3n42s"]
-[ext_resource type="Texture2D" uid="uid://dkxxv4gfpo8b6" path="res://Scenes/Tavern/Art/TavernBackgroundDamaged.png" id="5_msftv"]
+[ext_resource type="Script" uid="uid://cgpms88rse7y7" path="res://Scenes/Tavern/dialogue_options.gd" id="4_2xisf"]
+[ext_resource type="Texture2D" uid="uid://b8jwhwul72g1e" path="res://Scenes/Tavern/Art/TavernBackgroundDamaged.png" id="5_msftv"]
 [ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="5_vqw7w"]
-[ext_resource type="Texture2D" uid="uid://b3holf0drps5d" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade1.png" id="6_0b7ml"]
+[ext_resource type="Script" uid="uid://ddbwew0tmr1dg" path="res://Scenes/Tavern/Scripts/question.gd" id="5_vrssr"]
+[ext_resource type="Texture2D" uid="uid://cdxy0ilcetacg" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade1.png" id="6_0b7ml"]
 [ext_resource type="Script" uid="uid://jbdgoly6qy0n" path="res://Scenes/Tavern/Scripts/NPC_Class.gd" id="6_41fud"]
-[ext_resource type="Texture2D" uid="uid://chkxggdp3r60q" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade2.png" id="7_6jyd3"]
+[ext_resource type="Texture2D" uid="uid://4qm2v5tbotpi" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade2.png" id="7_6jyd3"]
 [ext_resource type="Texture2D" uid="uid://bh0bc2eq0lcxd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cat.png" id="7_535h7"]
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
 [ext_resource type="Texture2D" uid="uid://cd1c4eu47edfb" path="res://Scenes/Test/ProtoArt/chipmunk.png" id="8_ir5m0"]
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
+[ext_resource type="Texture2D" uid="uid://bk5fwno73txee" path="res://Scenes/Tavern/Art/MageArea_1.png" id="12_vrssr"]
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Script" uid="uid://c0g6qfd3sk4p7" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_attack.gd" id="14_p826n"]
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_dash.gd" id="15_1gied"]
@@ -33,6 +36,7 @@
 [ext_resource type="Script" uid="uid://duffidar21ncd" path="res://Scenes/Tavern/debugbutton.gd" id="28_1gied"]
 [ext_resource type="PackedScene" uid="uid://dp2wyj4pxj1i6" path="res://Scenes/Tavern/act_select.tscn" id="29_0id2w"]
 [ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
+[ext_resource type="Texture2D" uid="uid://bh5pdrpwqgj7" path="res://Scenes/Tavern/Art/JournalTavern.png" id="31_ulbsv"]
 [ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="32_a55l7"]
 [ext_resource type="AudioStream" uid="uid://c3o3ouafmtp4b" path="res://Scenes/Tavern/Tavern.wav" id="33_1gied"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/settings.tscn" id="34_tvort"]
@@ -46,11 +50,23 @@ size = Vector2(128, 128)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mmv1q"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2xisf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b3jjp"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vrssr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w0ln7"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1gied"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tvort"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0id2w"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ulbsv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gevxm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
 size = Vector2(128, 128)
@@ -63,37 +79,68 @@ dialogue_ref = NodePath("Dialogue Box")
 
 [node name="Dialogue Box" parent="." unique_id=2003466752 instance=ExtResource("2_djqff")]
 
-[node name="DialogueOption1" type="Button" parent="Dialogue Box" unique_id=1365432212]
-visible = false
+[node name="DialogueOptions" type="Control" parent="." unique_id=1383414466 node_paths=PackedStringArray("dialogue_box_ref")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 127.0
+offset_top = -340.0
+offset_right = 167.0
+offset_bottom = -300.0
+theme = ExtResource("2_tqgpy")
+script = ExtResource("4_2xisf")
+dialogue_box_ref = NodePath("../Dialogue Box")
+
+[node name="PlayerChoiceA" type="Button" parent="DialogueOptions" unique_id=1365432212 node_paths=PackedStringArray("dialogue_ref")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 293.0
-offset_top = 712.0
-offset_right = 785.0
-offset_bottom = 790.0
+offset_left = 273.0
+offset_top = -10.0
+offset_right = 765.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Option 1"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
 
-[node name="DialogueOption2" type="Button" parent="Dialogue Box" unique_id=811963169]
-visible = false
+[node name="PlayerChoiceB" type="Button" parent="DialogueOptions" unique_id=811963169 node_paths=PackedStringArray("dialogue_ref")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 293.0
-offset_top = 813.0
-offset_right = 785.0
-offset_bottom = 891.0
+offset_left = 273.0
+offset_top = 76.0
+offset_right = 765.0
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Option 2"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
+
+[node name="PlayerChoiceC" type="Button" parent="DialogueOptions" unique_id=788143335 node_paths=PackedStringArray("dialogue_ref")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.0
+offset_top = 164.0
+offset_right = 765.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 3"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
 
 [node name="Tavern BG" type="Control" parent="." unique_id=2002706169 node_paths=PackedStringArray("dialogue_box_ref", "class_menu_ref", "act_select_ref", "class_select_ref")]
 layout_mode = 3
@@ -119,6 +166,7 @@ texture = ExtResource("6_0b7ml")
 centered = false
 
 [node name="TavernBackgroundLong3" type="Sprite2D" parent="Tavern BG" unique_id=353033038]
+visible = false
 texture = ExtResource("7_6jyd3")
 centered = false
 
@@ -127,22 +175,23 @@ anchors_preset = 0
 theme = ExtResource("2_tqgpy")
 script = ExtResource("10_pv64h")
 
-[node name="NPCMagic" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
-visible = false
+[node name="MagicWorkshop0" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
+z_index = 1
 layout_mode = 0
-offset_left = 1377.0
-offset_top = 397.0
-offset_right = 1505.0
-offset_bottom = 525.0
+offset_left = 1392.0
+offset_top = 271.0
+offset_right = 1648.0
+offset_bottom = 361.0
 theme = ExtResource("2_tqgpy")
-texture_normal = SubResource("PlaceholderTexture2D_pv64h")
 script = ExtResource("10_gr732")
-Cost_Amount = Array[int]([1])
+Cost_Amount = Array[int]([5])
 Cost_Material = Array[int]([0])
-Upgrade_Reward = Array[String](["NPCMagic"])
+Upgrade_Reward = Array[String](["MagicWorkshop0"])
 Is_Complicated = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCMagic" unique_id=1903962225]
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/MagicWorkshop0" unique_id=1903962225]
+visible = false
+z_index = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_right = 40.0
@@ -155,26 +204,32 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/NPCMagic" unique_id=161632022]
+[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/MagicWorkshop0" unique_id=161632022]
 visible = false
-custom_minimum_size = Vector2(0, 40)
+z_index = 1
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -148.0
-offset_bottom = -88.0
+offset_top = -175.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/NPCMagic/Panel" unique_id=693083008]
+[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/MagicWorkshop0/Panel" unique_id=693083008]
 layout_mode = 0
-offset_right = 127.0
-offset_bottom = 60.0
+offset_right = 256.0
+offset_bottom = 120.0
 text = "Costs:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Upgrade Man/MagicWorkshop0" unique_id=1699434736]
+position = Vector2(128, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("12_vrssr")
 
 [node name="NPCEnd" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=1881978114]
 visible = false
@@ -235,15 +290,16 @@ offset_right = 1239.0
 
 [node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref")]
 layout_mode = 0
-offset_left = -443.0
-offset_top = 311.0
-offset_right = -315.0
-offset_bottom = 439.0
+offset_left = 1383.0
+offset_top = 346.0
+offset_right = 1511.0
+offset_bottom = 474.0
 texture_normal = ExtResource("15_mpp4l")
 texture_pressed = ExtResource("18_tqgpy")
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Warrior"
+Class_Level = 1
 Class_Attack = ExtResource("14_p826n")
 Class_Dash = ExtResource("15_1gied")
 Class_Magic = ExtResource("16_tvort")
@@ -256,7 +312,7 @@ Base_Max_Health = 100
 Base_Max_Mana = 100
 Base_Mana_Regen = 1.0
 Base_Defense = 10
-Base_Speed = 10
+Base_Speed = 1.0
 Passive_Strength = 3
 Passive_Max_HP = 10
 Passive_Defense = 1
@@ -280,18 +336,19 @@ horizontal_alignment = 1
 
 [node name="Warrior_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=984068586]
 layout_mode = 0
-offset_left = -473.0
-offset_top = -72.0
-offset_right = -433.0
-offset_bottom = -32.0
+offset_left = 1353.0
+offset_top = -37.0
+offset_right = 1393.0
+offset_bottom = 3.0
 mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Warrior"
-Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q")])
-Conversations = Array[String](["0,1,2", "10"])
+Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q"), SubResource("PlaceholderTexture2D_2xisf"), SubResource("PlaceholderTexture2D_b3jjp")])
+Conversations = Array[String](["0,1,2,3,4,5", "79,80", "82,83,84"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref")]
+visible = false
 layout_mode = 0
 offset_left = -645.0
 offset_top = 320.0
@@ -302,6 +359,7 @@ texture_pressed = ExtResource("18_tqgpy")
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Rogue"
+Class_Level = 1
 Class_Attack_Desc = "ranged attack!"
 Class_Dash_Desc = "something!"
 Class_Magic_Desc = "something!"
@@ -310,10 +368,10 @@ Base_Strength = 7
 Base_Max_Health = 80
 Base_Max_Mana = 80
 Base_Defense = 8
-Base_Speed = 15
+Base_Speed = 1.5
 Passive_Strength = 2
 Passive_Max_HP = 4
-Passive_Speed = 3
+Passive_Speed = 0.1
 Strength_Growth_Modifier = 1.2
 Max_Health_Growth_Modifier = 1.2
 Max_Mana_Growth_Modifier = 1.0
@@ -342,21 +400,23 @@ offset_bottom = -32.0
 mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Rogue"
-Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q")])
+Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q"), SubResource("PlaceholderTexture2D_vrssr"), SubResource("PlaceholderTexture2D_w0ln7")])
 Conversations = Array[String](["0", "10"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Mage_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1953501329 node_paths=PackedStringArray("Class_Menu_Ref")]
+visible = false
 layout_mode = 0
-offset_left = -830.0
-offset_top = 364.0
-offset_right = -702.0
-offset_bottom = 492.0
+offset_left = 155.0
+offset_top = 377.0
+offset_right = 283.0
+offset_bottom = 505.0
 texture_normal = ExtResource("15_mpp4l")
 texture_pressed = ExtResource("18_tqgpy")
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Mage"
+Class_Level = 1
 Class_Attack_Desc = "staff!"
 Class_Dash_Desc = "something!"
 Class_Magic_Desc = "something!"
@@ -366,10 +426,10 @@ Base_Max_Health = 60
 Base_Max_Mana = 150
 Base_Mana_Regen = 5.0
 Base_Defense = 6
-Base_Speed = 13
+Base_Speed = 1.2
 Passive_Max_HP = 4
 Passive_Max_Mana = 8
-Passive_Speed = 2
+Passive_Speed = 0.05
 Strength_Growth_Modifier = 1.5
 Max_Health_Growth_Modifier = 1.2
 Max_Mana_Growth_Modifier = 1.0
@@ -390,15 +450,15 @@ horizontal_alignment = 1
 
 [node name="Mage_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=806625376]
 layout_mode = 0
-offset_left = -473.0
-offset_top = -72.0
-offset_right = -433.0
-offset_bottom = -32.0
+offset_left = 585.0
+offset_top = -98.0
+offset_right = 625.0
+offset_bottom = -58.0
 mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Mage"
-Expressions = Array[Texture]([ExtResource("7_a44po"), SubResource("PlaceholderTexture2D_1gied"), SubResource("PlaceholderTexture2D_tvort"), SubResource("PlaceholderTexture2D_0id2w")])
-Conversations = Array[String](["0", "10"])
+Expressions = Array[Texture]([ExtResource("7_a44po"), SubResource("PlaceholderTexture2D_1gied"), SubResource("PlaceholderTexture2D_tvort"), SubResource("PlaceholderTexture2D_0id2w"), SubResource("PlaceholderTexture2D_ulbsv"), SubResource("PlaceholderTexture2D_gevxm")])
+Conversations = Array[String](["0,1,2,3,4,5", "7,8", "10,11,12,13,14"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="NPCs" type="Control" parent="Tavern BG" unique_id=1772715436]
@@ -406,7 +466,7 @@ anchors_preset = 0
 offset_left = 1239.0
 offset_right = 1239.0
 
-[node name="NPC1" type="TextureButton" parent="Tavern BG/NPCs" unique_id=952928426]
+[node name="Gramps" type="TextureButton" parent="Tavern BG/NPCs" unique_id=952928426]
 z_index = 1
 layout_mode = 0
 offset_left = 603.0
@@ -418,9 +478,9 @@ theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("8_ir5m0")
 texture_pressed = ExtResource("8_ir5m0")
 script = ExtResource("6_41fud")
-Name = "Tutorial"
+Name = "Gramps"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
-Conversations = Array[String](["0,1,2,3"])
+Conversations = Array[String](["19", "20"])
 
 [node name="ROGUE" type="TextureButton" parent="Tavern BG/NPCs" unique_id=655953505]
 visible = false
@@ -524,6 +584,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DebugKOButton" type="Button" parent="Tavern BG" unique_id=1500362303]
+visible = false
 layout_mode = 0
 offset_left = 134.0
 offset_top = 111.0
@@ -565,6 +626,11 @@ offset_top = 548.0
 offset_right = 1788.0
 offset_bottom = 644.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Journal" unique_id=1653704222]
+position = Vector2(61, 46)
+scale = Vector2(6, 6)
+texture = ExtResource("31_ulbsv")
 
 [node name="Class_Menu" parent="." unique_id=877217506 node_paths=PackedStringArray("dialogue_ref") instance=ExtResource("21_y33xb")]
 offset_left = 576.0
@@ -652,6 +718,7 @@ texture = ExtResource("16_6jyd3")
 flip_h = true
 
 [node name="Pause Button" type="Button" parent="HeadsUpUI" unique_id=1676192164]
+visible = false
 layout_mode = 0
 offset_left = 968.0
 offset_top = 22.0
@@ -840,13 +907,16 @@ text = "OK"
 
 [node name="TavernMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1904910536]
 stream = ExtResource("33_1gied")
+volume_db = -8.0
 autoplay = true
 bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=126700936]
 
 [node name="settings" parent="CanvasLayer" unique_id=734773122 instance=ExtResource("34_tvort")]
+visible = false
 
+[connection signal="show_question" from="Dialogue Box" to="DialogueOptions" method="_on_dialogue_box_show_question"]
 [connection signal="pressed" from="Tavern BG/NPCs/Chatty Catty" to="Tavern BG" method="_on_chatty_catty_pressed"]
 [connection signal="pressed" from="Tavern BG/NPCs/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]

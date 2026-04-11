@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://de0angmpdci63" path="res://Scenes/Title/journals_ui.gd" id="3_ldpcw"]
 [ext_resource type="Script" uid="uid://m1ratefdb4lj" path="res://Scenes/Tavern/Scripts/journal_entryy.gd" id="4_dkp74"]
 [ext_resource type="Script" uid="uid://ego2ey2td6r0" path="res://Scenes/Tavern/journals_panel.gd" id="5_11tbu"]
+[ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="6_ssjum"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mm4c"]
 
 [node name="settings" type="Node2D" unique_id=734773122]
 script = ExtResource("1_5jne5")
@@ -117,7 +120,7 @@ mouse_filter = 2
 theme = ExtResource("2_5jne5")
 columns = 2
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -126,10 +129,11 @@ script = ExtResource("4_dkp74")
 Author = "Warrior Name"
 Body = "I have heard rumblings of a new King taking hold of the old tower.  The locals have been speaking of a new illness growing over the land, and from what I gather the well-being of this land is somehow connected to that ancient tower, which is why it holds great importance over these people.  I would be amiss if I did not take it upon myself to enter the tower to see what I could do to help those abandoned by magic."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=110990707 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=110990707 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -138,10 +142,11 @@ script = ExtResource("4_dkp74")
 Author = "Warrior"
 Body = "The little rodents think they are a match for my sword.  They are sorely mistaken.  They run around carrying a banner for their king but they ought to be carrying around some sort of better weaponry."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=2146731276 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=2146731276 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -150,10 +155,11 @@ script = ExtResource("4_dkp74")
 Author = "Warrior"
 Body = "A curious little cat approached me after I couldn’t figure out one of the doors to climb up.  Despite it’s smaller stature it sure is capable of fending off the rats.  Maybe it is worth it to keep training the little critter.  They serve some pretty good food too."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1635940106 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1635940106 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -162,6 +168,7 @@ script = ExtResource("4_dkp74")
 Author = "Warrior"
 Body = "Despite all odds, the little kit has made its way towards the top of the tower.  I honestly do not know if I would be even able to do that.  I can’t be too bothered though.  It is nice being able to meet with the funny little raccoon and toad that have taken up home within this run down tavern.I have gotten quite the thrill watching the little fellow run around the tower, but I know their heart is with this Tavern, perhaps I take position and watch over the tower.  That little toad has talked about something similar, perhaps they will need a guard."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
@@ -178,51 +185,55 @@ mouse_filter = 2
 theme = ExtResource("2_5jne5")
 columns = 2
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 1"
 script = ExtResource("4_dkp74")
-Author = "Warrior Name"
-Body = "I have heard rumblings of a new King taking hold of the old tower.  The locals have been speaking of a new illness growing over the land, and from what I gather the well-being of this land is somehow connected to that ancient tower, which is why it holds great importance over these people.  I would be amiss if I did not take it upon myself to enter the tower to see what I could do to help those abandoned by magic."
+Author = "Rogue"
+Body = "“Trash Panda this- Trash Panda that- Im not some low class bin diving scum.  I have someone no one else does… class.  They say that tower is pretty heavily guarded huh?  Everything in there is just ancient relics that no one could be bothered to take.  Surely something in there will give me the acclaim I am seeking."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=735753074 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=735753074 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 2"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "The little rodents think they are a match for my sword.  They are sorely mistaken.  They run around carrying a banner for their king but they ought to be carrying around some sort of better weaponry."
+Author = "Rogue"
+Body = "That tower is supposed to be ABANDONED and now there are swarms of ARMED RATS  scouring the floors.  H*** F*** I better find something good in there.  Something like that gotta be on the top floor."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1525226597 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1525226597 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 3"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "A curious little cat approached me after I couldn’t figure out one of the doors to climb up.  Despite it’s smaller stature it sure is capable of fending off the rats.  Maybe it is worth it to keep training the little critter.  They serve some pretty good food too."
+Author = "Rogue"
+Body = "A little cat found me and brought me to this tavern.  Part of me doesn’t really trust them.  The other part of me is seeing what they are bringing back.  I wonder if I can get them to nab some nice stuff for me, maybe I could teach them some of my tricks."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1217085459 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1217085459 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 4"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "Despite all odds, the little kit has made its way towards the top of the tower.  I honestly do not know if I would be even able to do that.  I can’t be too bothered though.  It is nice being able to meet with the funny little raccoon and toad that have taken up home within this run down tavern.I have gotten quite the thrill watching the little fellow run around the tower, but I know their heart is with this Tavern, perhaps I take position and watch over the tower.  That little toad has talked about something similar, perhaps they will need a guard."
+Author = "Rogue"
+Body = "That little rascal is really something.  They finessed their way around the tower in a way I could never.  Even better, they have kept bringing back me some shinies to show my friends.  It feels weird though, I didn’t actually steal any of this…  Maybe I stick around and see what I can do for the little rascal."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
@@ -238,71 +249,132 @@ mouse_filter = 2
 theme = ExtResource("2_5jne5")
 columns = 2
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 1"
 script = ExtResource("4_dkp74")
-Author = "Warrior Name"
-Body = "I have heard rumblings of a new King taking hold of the old tower.  The locals have been speaking of a new illness growing over the land, and from what I gather the well-being of this land is somehow connected to that ancient tower, which is why it holds great importance over these people.  I would be amiss if I did not take it upon myself to enter the tower to see what I could do to help those abandoned by magic."
+Author = "Mage"
+Body = "That tower is supposed to protect the land, now everyone seems afraid of it.  Something evil is corrupting the heart of the tower and it needs to be stopped.  If I had to guess some form of energy is polluting the central crystal.  I must investigate further."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=1904525624 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=1904525624 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 2"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "The little rodents think they are a match for my sword.  They are sorely mistaken.  They run around carrying a banner for their king but they ought to be carrying around some sort of better weaponry."
+Author = "Mage"
+Body = "There is something seriously wrong here.  If only there were less rats around I would be able to take more time to do better research.  I think I saw some lion lady running around.  I wonder if she would be interested in protecting me."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=863285290 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=863285290 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 3"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "A curious little cat approached me after I couldn’t figure out one of the doors to climb up.  Despite it’s smaller stature it sure is capable of fending off the rats.  Maybe it is worth it to keep training the little critter.  They serve some pretty good food too."
+Author = "Mage"
+Body = "That funny little cat seems to be able to do everything.  They brought me, that warrior lion lady and a funny little raccoon to this old run town tavern that they seem to be renovating.  I must be honest, it has been awhile since I have had a meal this good.  Perhaps I can stay here awhile and rest, study what information I have right now.  Plus the little feline seems to be more than capable of handling themselves under my tutelage."
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=878879187 node_paths=PackedStringArray("journal_text_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=878879187 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Entry 4"
 script = ExtResource("4_dkp74")
-Author = "Warrior"
-Body = "Despite all odds, the little kit has made its way towards the top of the tower.  I honestly do not know if I would be even able to do that.  I can’t be too bothered though.  It is nice being able to meet with the funny little raccoon and toad that have taken up home within this run down tavern.I have gotten quite the thrill watching the little fellow run around the tower, but I know their heart is with this Tavern, perhaps I take position and watch over the tower.  That little toad has talked about something similar, perhaps they will need a guard."
+Author = "Mage"
+Body = "The cat made its way to the upper floors.  I do not know if I would have been able to do the same.  (Insert stuff about what is corrupting the tower).  But now that the cat has dealt with the Rat King, perhaps the crystal will be restored and with it, the blight on the land will be reversed.  I wonder if I could take homage in the tower, to keep it safe and to further my studies?"
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="JournalPanel" type="Panel" parent="." unique_id=1224800550]
 z_index = 2
 custom_minimum_size = Vector2(800, 600)
-offset_left = 1328.0
-offset_top = 18.0
-offset_right = 2128.0
-offset_bottom = 618.0
+offset_left = 1152.0
+offset_top = 40.0
+offset_right = 1952.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8mm4c")
 script = ExtResource("5_11tbu")
 
 [node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=568087088]
-custom_minimum_size = Vector2(800, 500)
-layout_mode = 0
-offset_left = -2.0
-offset_right = 798.0
-offset_bottom = 500.0
+z_index = 1
+custom_minimum_size = Vector2(540, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -249.0
+offset_right = 281.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_5jne5")
-text = "dummy text"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "dummy tex"
+scroll_active = false
+
+[node name="AuthorLabel" type="RichTextLabel" parent="JournalPanel" unique_id=896771501]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 219.0
+offset_right = 363.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5jne5")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 40
+text = "author..."
+horizontal_alignment = 2
+
+[node name="Container" type="Container" parent="JournalPanel" unique_id=952282719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="JournalPanel" unique_id=1974292828]
+position = Vector2(400, 300)
+texture = ExtResource("6_ssjum")
+
+[node name="ExitJournals" type="Button" parent="JournalPanel" unique_id=990289003]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 33.0
+offset_right = 767.0
+offset_bottom = 73.0
+theme = ExtResource("2_5jne5")
+text = "Exit"
 
 [node name="Pause UI" parent="." unique_id=95086748 instance=ExtResource("3_bv10w")]
 z_index = 2
@@ -311,10 +383,18 @@ offset_top = 0.0
 offset_right = 1152.0
 offset_bottom = 0.0
 
+[node name="Mouse_Blocker" type="Container" parent="." unique_id=994189039]
+visible = false
+custom_minimum_size = Vector2(1152, 640)
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="buttons/JournalButton" to="." method="_on_journal_button_pressed"]
 [connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="buttons/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="buttons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_pressed"]
+[connection signal="pressed" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_pressed"]
 [connection signal="closed_menu" from="Pause UI" to="." method="_on_pause_ui_closed_menu"]

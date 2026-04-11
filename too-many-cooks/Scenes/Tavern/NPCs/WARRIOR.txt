@@ -1,11 +1,85 @@
-[*] Hello!
-[*] I love swords!
-[*] Yay!!!
-[*] 4
-[*] 5
-[*] 6
-[*] 7
-[*] 8
-[*] 9
-[*] 10
-[*] I need you to slay 10 enemies for me!
+[4]Easy there. You’re standing, so that’s already a win in my book.
+[1]Old Simon pulled you out of the Tower, right? Then you’re tougher than you look.
+[5]Name’s Akari. This is where I train… and where people put themselves back together.
+[1]You don’t have to prove anything right now. Breathing’s enough.
+[5]When you’re ready, though… this is where that changes.
+[1]So, how bad did it get up there? /"I lost. Badly.","I almost had it.","I don’t want to go back."
+-# responses below, ABC
+[5]Good. Means you’re still here to learn from it.
+[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
+--
+[1]Almost counts for more than people think. You’ll get another shot.
+[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
+--
+[5]You don’t have to. But running and choosing are two different things.
+[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
+-# branches converge here
+[5]Though lately… quiet hasn’t meant safe.
+[3]There’s this group; they call themselves collectors, but they’re just scavengers with blades. They’ve been circling this place, testing me.
+[5]They are not strong on their own, but they keep coming back. Like they’re waiting for something.
+[5]If you’re looking to get back on your feet… taking down ten of them would help. Thin them out. Make them think twice.
+[1]You ever swing a greatsword? It’s like arguing with gravity. You don’t win, you just learn how to move with it.
+[5]Those dents in the wall? Not accidents. I hit until something gives. Usually the wall. 
+[5]I was a mercenary before coin got tight and jobs got tighter.
+[5]Towns around here used to pay fair. Now the Rat King’s lot takes everything worth a damn./"I’ll help the tavern.","What’s happening at the tavern?","Does it really matter?"
+-# ABC choices
+[5]Then start with the ones causing trouble outside. Those collectors.
+[1]Clear ten of them out, and people might start coming back through those doors again.
+-#
+[5]Less coin, more tension. People don’t stay long when they feel threatened.
+[5]Deal with the ones lurking around, and it changes things.
+-#
+[5]It does. Places like this survive on people feeling safe enough to stay.
+[3]And right now, those scavengers are taking that away
+-# branches converge here
+[5]I stay sharp here. If work comes back, I’ll be ready. If it doesn’t… I’ll still be ready.
+[5]Anyone can be a warrior, you know. Not born, made. One bruise at a time./"I don’t feel like a warrior.","I want to get stronger.","I’m not sure I can do this again."
+-# ABC choices
+[5]You don’t have to feel like one. You just have to keep getting up.
+[4]Hm? The ear? Yeah… lost the top half a long time ago.
+-#
+[5]Then you’re in the right place. We’ll make sure next time goes different.
+[4]Hm? The ear? Yeah… lost the top half a long time ago.
+-#
+[5]That doubt? Keep it. Just don’t let it stop you.
+[4]Hm? The ear? Yeah… lost the top half a long time ago.
+-# branches converge here
+[1]Scars tell better stories than trophies. Trophies just sit there looking pretty.
+[5]That dummy? Patch it up when you can. I break it faster than I’d like to admit.
+[1]Weapon rack wouldn’t hurt either. A blade deserves respect, even the chipped ones.
+[5]Armor stand too. This breastplate’s taken a beating… deserves a place to rest between fights.
+[1]A grinding stone? Now you’re speaking my language. Nothing like the sound of steel getting its bite back./"I’ll help fix this place.","This place suits you.","You live down here?"
+-#ABC choices
+[5]Then we’ll build something solid. You and me both.
+-#
+[1]Simple, solid, honest. Yeah… I’ll take that.
+-#
+[5]Live, train, think. It’s enough. More than I had before.
+-#branches converge here
+[5]If you’re serious about staying, you’ll want more than just a weapon
+[5]You’ll see marks everywhere down here. Cuts in the wood, dents in the beams… proof I’m still standing.
+[5]There’s… something else. Bit strange.
+[5]A Toad Mage. Yeah, I know how that sounds.
+[5]Smart. Reclusive. Kept talking about “anchoring knowledge to place.”
+[5]If you fix up that broken bookshelf over there… he might come back. Or something like him.
+[5]And if he does, he can teach you things I can’t. Real strange stuff. Definitely worth your while.
+[2]Haven’t been home in years. The calm life wasn’t for me… but I still write./"Why keep writing?","What do you tell them?","You should go back someday."
+-#ABC choices
+[2]Because it reminds me who I was… and why I left.
+-#
+[1]That I’m doing well. Staying strong. Keeps them from worrying.
+-#
+[5]Maybe. When I’ve got something worth bringing with me.
+-#branches converge here
+[4]Didn’t expect that, huh? Warrior with a pen.
+[1]I tell them I’m doing well. Strong. Respected. It’s not a lie… just not the whole truth.
+[5]Reputation matters. It’s the difference between being hired… and being forgotten.
+[3]And I don’t plan on being forgotten.
+[1]Stick around. Train with me sometime. I won’t go easy, but I won’t let you fall either.#
+-# random act 1 dialogue
+[5]You don't have to listen to me more than once, but look, here's some dialogue anyway.
+[5]But this isn't by the writers, so it ends here.#
+-# quest 1 dialogue
+[5]My aims are simple, all I request is that you vaniqush the monsters in the tower.
+[1]I can see you are apprehensive about this, Haha!
+[5]That's okay. For now, I only need you to defeat ten monsters. It should be light work with my power!#

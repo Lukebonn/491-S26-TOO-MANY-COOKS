@@ -4,8 +4,10 @@ var is_showing = false
 var current_class : String
 var current_level
 
+@onready var requires_label_ref = $Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Label
+
 signal back_pressed
-# any logic regarding 
+
 func show_menu():
 	is_showing = true
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
@@ -55,23 +57,37 @@ func set_other_descriptions(attack_des, dash_des, magic_des, other_des):
 	$Panel/VBoxContainer/HBoxContainer/Stats/DashDescription.text += str(dash_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/MagicDescription.text += str(magic_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/TrueOtherDescription.text += str(other_des)
-
+	_check_upgrade_avaliability()
+	
 func _check_upgrade_avaliability():
 	match current_class:
 		"Warrior":
 			match current_level:
-				0:
-					if PlayerStats.KillCount > -1: return true
-				1:
-					if PlayerStats.KillCount > 10: return true
-				2:
-					if PlayerStats.KillCount > 25: return true
-				3: 
-					if PlayerStats.KillCount > 50: return true
-				4: 
-					if PlayerStats.KillCount > 80: return true
 				5: 
-					if PlayerStats.KillCount > 150: return true
+					requires_label_ref.text = "Requires 150 KOs!"
+					if PlayerStats.KillCount > 150: 
+						return true
+				4: 
+					requires_label_ref.text = "Requires 80 KOs!"
+					if PlayerStats.KillCount > 80: 
+						return true
+				3: 
+					requires_label_ref.text = "Requires 50 KOs!"
+					if PlayerStats.KillCount > 50: 
+						return true
+				2:
+					requires_label_ref.text = "Requires 25 KOs!"
+					if PlayerStats.KillCount > 25: 
+						return true
+				1:
+					requires_label_ref.text = "Requires 10 KOs!"
+					if PlayerStats.KillCount > 10: 
+						return true
+				0:
+					if PlayerStats.KillCount > -1: 
+						requires_label_ref.text = "Free!"
+						return true
+
 		"Rogue":
 			match current_level:
 				0:
@@ -80,22 +96,43 @@ func _check_upgrade_avaliability():
 					if PlayerStats.Gold > 3: return true
 		"Mage":
 			match current_level:
-				0:
-					if PlayerStats.Gold > -1: return true
+				5:
+					requires_label_ref.text = "Requires 20 orbs!"
+					if PlayerStats.Orbs > 20: 
+						return true
+				4:
+					requires_label_ref.text = "Requires 10 orbs!"
+					if PlayerStats.Orbs > 10: 
+						return true
+				3:
+					requires_label_ref.text = "Requires 5 orbs!"
+					if PlayerStats.Orbs > 5: 
+						return true
+				2:
+					requires_label_ref.text = "Requires 3 orbs!"
+					if PlayerStats.Orbs > 3: 
+						return true
 				1:
-					if PlayerStats.Gold > 3: return true
+					requires_label_ref.text = "Requires 1 orb!"
+					if PlayerStats.Orbs > 1: 
+						return true
+				0:
+					requires_label_ref.text = "Free!"
+					if PlayerStats.Orbs > -1: 
+						return true
+
 	return false
 func _on_talk_pressed():
 	hide_menu_top()
 	match current_class:
 		"Warrior":
-			$"../Tavern BG/Class_NPCS/Warrior_NPC".conversation = 0
+			$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = -1
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
 		"Rogue":
-			$"../Tavern BG/Class_NPCS/Rogue_NPC".conversation = 0
+			$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = -1
 			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
 		"Mage":
-			$"../Tavern BG/Class_NPCS/Mage_NPC".conversation = 0
+			$"../Tavern BG/Class_NPCS/Mage_NPC".selected = -1
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
 	await dialogue_ref.message_complete
 	show_menu()
@@ -119,15 +156,15 @@ func _on_quest_pressed():
 	hide_menu_top()
 	match current_class:
 		"Warrior":
-			$"../Tavern BG/Class_NPCS/Warrior_NPC".conversation = 1
+			$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
 			Global.Has_Warrior_Quest_1 = true
 		"Rogue":
-			$"../Tavern BG/Class_NPCS/Rogue_NPC".conversation = 1
+			$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
 			Global.Has_Rogue_Quest_1 = true
 		"Mage":
-			$"../Tavern BG/Class_NPCS/Mage_NPC".conversation = 1 
+			$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
 	await dialogue_ref.message_complete
 	show_menu()

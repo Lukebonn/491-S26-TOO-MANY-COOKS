@@ -36,7 +36,10 @@ func _ready() -> void:
 	if $"../../Player":
 		player = $"../../Player"
 		player.connect("notEnoughMana", _on_player_not_enough_mana)
-		player.connect("playerDeath", _on_player_death)
+		
+		#catch case, we don't want "You Died!" screen in intro combat
+		if get_tree().current_scene.name != "IntroCombat":
+			player.connect("playerDeath", _on_player_death)
 		print("hi")
 	show()
 	#print(player)

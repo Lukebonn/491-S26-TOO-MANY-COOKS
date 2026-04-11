@@ -2,6 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="1_3hg0q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hg0q"]
+bg_color = Color(0.078814976, 0.07881499, 0.078814976, 0.7882353)
+
 [resource]
 default_font = ExtResource("1_3hg0q")
 default_font_size = 32
+Panel/styles/panel = SubResource("StyleBoxFlat_3hg0q")

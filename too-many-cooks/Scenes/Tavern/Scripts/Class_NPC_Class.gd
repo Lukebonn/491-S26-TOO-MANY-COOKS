@@ -31,14 +31,14 @@ class_name Class_NPC extends TextureButton
 #keep mana regen 0 on most classes since we get mana from swing
 @export var Base_Mana_Regen : float
 @export var Base_Defense : int
-@export var Base_Speed : int
+@export var Base_Speed : float
 
 @export_category("Passive Stats")
 @export var Passive_Strength : int
 @export var Passive_Max_HP : int
 @export var Passive_Max_Mana : int
 @export var Passive_Defense : int
-@export var Passive_Speed : int
+@export var Passive_Speed : float
 
 #each level the class gets stronger by (level*base*modifier)
 #this effects base and passive stats the same way
@@ -66,6 +66,7 @@ var new_passive_def : float
 var new_passive_spd : float
 #---
 func _ready():
+	update_new_stats()
 	self.connect("pressed",_on_clicked)
 	self.connect("mouse_entered",_on_mouse_entered)
 	self.connect("mouse_exited",_on_mouse_exited)
@@ -88,6 +89,11 @@ func change_class(new_class: String):
 	match new_class:
 		"Warrior":
 			PlayerStats.current_class = PlayerStats.classes.warrior
+			PlayerStats.base_str = new_str
+			PlayerStats.base_spd = new_spd
+			PlayerStats.base_def = new_def
+			PlayerStats.MaxHealth = new_hp
+			PlayerStats.MaxMana = new_mana
 		"Rogue":
 			PlayerStats.current_class = PlayerStats.classes.rogue
 		"Mage":

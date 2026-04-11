@@ -8,7 +8,7 @@ var last_direction: Vector2 = Vector2.RIGHT
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #Just a temp varaiable for now to showcase the player taking damage
-var health = 100
+var health = PlayerStats.MaxHealth
 
 
 	

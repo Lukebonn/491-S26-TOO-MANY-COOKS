@@ -7,5 +7,8 @@ func show_menu():
 
 func hide_menu():
 	var tween = get_tree().create_tween()
-	tween.parallel().tween_property(self,"position",Vector2(1152,0),2).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property(self,"position",Vector2(1152,0),.5).set_trans(Tween.TRANS_EXPO)
 	closed_menu.emit()
+
+func _on_exit_journals_pressed():
+	show_menu()

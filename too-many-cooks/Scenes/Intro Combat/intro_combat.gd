@@ -3,8 +3,9 @@ extends Node2D
 func _ready():
 	FadeInFadeOut.fade_in()
 	
+	
 func _on_player_player_death():
-	dialogue_ref.show_dialogue("Gramps","0,1","0,0")
+	dialogue_ref.show_dialogue("Gramps","0,1,2,3","0,0")
 	await dialogue_ref.message_complete
 	FadeInFadeOut.fade_out()
 	await get_tree().create_timer(1.2).timeout

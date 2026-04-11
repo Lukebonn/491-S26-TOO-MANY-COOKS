@@ -23,9 +23,10 @@ func _on_upgrade_complicated(variant):
 	#that are complex will likely be from npcs
 	#oh well...
 	match variant:
-		"NPCMagic":
-			$"../ROGUE".show()
-			$NPCEnd.show()
+		"MagicWorkshop0":
+			Global.Has_Mage_NPC = true
+			$"../Class_NPCS/Mage_CLASS_NPC".show()
+			#$NPCEnd.show()
 			$"../TavernBackgroundLong".hide()
 			$"../TavernBackgroundLong2".show()
 			

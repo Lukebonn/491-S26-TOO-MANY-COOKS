@@ -16,8 +16,9 @@ func input_handler(_delta : float) -> void:
 		player.get_node("Sprite2D").animation = "move"
 	
 	player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
-	player.velocity = player.velocity.normalized() * (player.speed * 10)
-	
+	player.velocity = player.velocity.normalized() * (player.speed * player.speed_mult)
+	print(player.speed)
+	print(player.speed_mult)
 	#changes to idle_state if player is not moving
 	if(player.velocity == Vector2(0,0)):
 		player.change_state("idle_state")

@@ -10,6 +10,7 @@ var subtitle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerStats.current_class = PlayerStats.classes.none
 	FadeInFadeOut.fade_in()
 	next_subtitle(0)
 	#turn_to_page(0)
