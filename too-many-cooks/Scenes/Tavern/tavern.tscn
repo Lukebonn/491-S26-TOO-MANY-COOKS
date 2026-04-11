@@ -55,6 +55,8 @@ size = Vector2(128, 128)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4hstr"]
 size = Vector2(128, 128)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a55l7"]
+
 [node name="Tavern" type="Node2D" unique_id=233294115 node_paths=PackedStringArray("dialogue_ref")]
 script = ExtResource("1_1uoo0")
 dialogue_ref = NodePath("Dialogue Box")
@@ -555,6 +557,15 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Journal" type="Button" parent="Tavern BG" unique_id=298545002]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 1668.0
+offset_top = 548.0
+offset_right = 1788.0
+offset_bottom = 644.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
+
 [node name="Class_Menu" parent="." unique_id=877217506 node_paths=PackedStringArray("dialogue_ref") instance=ExtResource("21_y33xb")]
 offset_left = 576.0
 offset_top = 1005.0
@@ -840,6 +851,7 @@ bus = &"Music"
 [connection signal="pressed" from="Tavern BG/NPCs/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
+[connection signal="pressed" from="Tavern BG/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]
 [connection signal="back_pressed" from="Class_Menu" to="Tavern BG" method="_on_class_menu_back_pressed"]
 [connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
 [connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
