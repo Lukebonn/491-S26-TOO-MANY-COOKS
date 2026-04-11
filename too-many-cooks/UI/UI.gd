@@ -4,6 +4,9 @@ var player: Node # stores a reference to the player node in the Combat Scene.
 
 signal flashManaBar()
 
+var warrior_quest_1 = "Quest: Kill 10 enemies"
+
+var rogue_quest_1 = "Quest: Get $3"
 #var statusEffects = []
 ## contains a list of status effects applied to the "player."
 #var effectDurations = []
@@ -123,6 +126,13 @@ func _on_return_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
 
+func _on_quest_received():
+	if Global.Has_Warrior_Quest_1 == true:
+		$Quest.set_text(warrior_quest_1)
+	elif Global.Has_Rogue_Quest_1 == true:
+		$Quest.set_text(rogue_quest_1)
+	else:
+		$Quest.set_text("")
 
 #func _on_poison_button_pressed() -> void:
 	##applyPoison.emit(5) 

@@ -121,9 +121,11 @@ func _on_quest_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_NPC".conversation = 1
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
+			Global.Has_Warrior_Quest_1 = true
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_NPC".conversation = 1
 			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
+			Global.Has_Rogue_Quest_1 = true
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_NPC".conversation = 1 
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()

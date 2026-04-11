@@ -15,3 +15,7 @@ var First_Time_Combat := true
 var Paused_In_Tavern := false
 
 var Paused_In_Combat := false
+
+var Has_Warrior_Quest_1 := false
+
+var Has_Rogue_Quest_1 := false
