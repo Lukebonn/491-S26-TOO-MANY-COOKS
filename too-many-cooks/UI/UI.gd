@@ -199,3 +199,14 @@ func quest_received():
 	# than the old duration).
 	# If the effect does not already exist, then apply the specified effect with the 
 	# specified duration.
+
+
+func _on_pause_retry_button_down() -> void:
+	get_tree().paused = false
+	PlayerStats.Gold = PlayerStats.temp_gold
+	get_tree().reload_current_scene()
+
+
+func _on_retry_return_button_down() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")

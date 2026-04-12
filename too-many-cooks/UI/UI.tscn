@@ -277,5 +277,5 @@ offset_bottom = 485.0
 [connection signal="timeout" from="HealthBar/Timer" to="HealthBar" method="_on_timer_timeout"]
 [connection signal="button_down" from="DeathScreen/RetryButton" to="." method="_on_retry_button_button_down"]
 [connection signal="button_down" from="DeathScreen/ReturnButton" to="." method="_on_return_button_button_down"]
-[connection signal="button_down" from="PauseMenu/RetryButton" to="." method="_on_retry_button_button_down"]
-[connection signal="button_down" from="PauseMenu/ReturnButton" to="." method="_on_return_button_button_down"]
+[connection signal="button_down" from="PauseMenu/RetryButton" to="." method="_on_pause_retry_button_down"]
+[connection signal="button_down" from="PauseMenu/ReturnButton" to="." method="_on_retry_return_button_down"]
