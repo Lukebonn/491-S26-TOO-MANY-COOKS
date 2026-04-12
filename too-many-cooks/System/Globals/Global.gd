@@ -16,7 +16,7 @@ var Paused_In_Tavern := false
 var Paused_In_Combat := false
 
 var Has_Warrior_Quest_1 := false
-var Has_Rogue_Quest_1 := false
+var Has_Mage_Quest_1 := false
 
 var Has_Mage_NPC := false
 var Has_Rogue_NPC := false

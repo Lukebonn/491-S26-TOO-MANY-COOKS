@@ -6,7 +6,7 @@ extends Node
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
 var Gold := 5
-var Orbs := 0
+var Orbs : int = 0
 
 ##speed stats for the player
 var Max_Speed = 200.0

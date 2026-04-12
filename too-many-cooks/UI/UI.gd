@@ -6,7 +6,7 @@ signal flashManaBar()
 
 var warrior_quest_1 = "Quest: Kill 10 enemies"
 
-var rogue_quest_1 = "Quest: Get $3"
+var mage_quest_1 = "Quest: Get an orb"
 #var statusEffects = []
 ## contains a list of status effects applied to the "player."
 #var effectDurations = []
@@ -96,7 +96,7 @@ func _process(delta: float) -> void:
 			#player.health -= 2.0 * delta # the poison effect removes 2 health per second.
 		#if (statusEffects.has("Regeneration")):
 			#player.health += 1.0 * delta # the regeneration effect heals 1 health per second.
-	
+		quest_received()
 	
 	
 	
@@ -129,13 +129,11 @@ func _on_return_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
 
-func _on_quest_received():
-	if Global.Has_Warrior_Quest_1 == true:
-		$Quest.set_text(warrior_quest_1)
-	elif Global.Has_Rogue_Quest_1 == true:
-		$Quest.set_text(rogue_quest_1)
-	else:
-		$Quest.set_text("")
+func quest_received():
+	if Global.Has_Warrior_Quest_1:
+		$Quest.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.KillCount])
+	if Global.Has_Mage_Quest_1:
+		$Quest.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Orbs])
 
 #func _on_poison_button_pressed() -> void:
 	##applyPoison.emit(5) 

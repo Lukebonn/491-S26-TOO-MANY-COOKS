@@ -18,6 +18,7 @@ func enter_state(enemy_node):
 	if animation_name != "NONE":
 		await $"../AnimatedSprite2D".animation_finished
 	get_parent().call_deferred("queue_free")
+	PlayerStats.KillCount += 1
 	
 	
 func drop_drops(amount):

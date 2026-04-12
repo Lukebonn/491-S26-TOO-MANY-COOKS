@@ -135,6 +135,8 @@ func _die() -> void:
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	$Sight/CollisionShape2D.set_deferred("disabled", true)
 	hide()
+	#Add the enemy to the player's kill count
+	PlayerStats.KillCount += 1
 
 #The function that gives the damage to the player
 func get_damage():

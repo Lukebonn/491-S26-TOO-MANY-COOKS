@@ -85,7 +85,7 @@ func _die() -> void:
 	
 	# Dawson - Adds 1 Gold to the Global Gold count
 	PlayerStats.Gold += 1
-	
+	PlayerStats.KillCount += 1
 	queue_free()
 	# Dawson - Spawns the exit staircase
 	allEnemiesDead.emit()
