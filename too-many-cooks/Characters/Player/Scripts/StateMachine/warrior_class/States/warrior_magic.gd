@@ -27,6 +27,9 @@ func enter_state(player_node):
 
 ##parry: player cannot be hit and will damage attackers for a quarter second
 func parry():
+	
+	player.play_sound(load("res://Audio/Sounds/Player/Warrior/Parry noise.mp3"))
+	
 	parrying = true
 	
 	player.velocity = Vector2.ZERO
@@ -52,6 +55,7 @@ func sword_projectile():
 	attack.queue_free()
 
 func spin_attack():
+	
 	var attack = preload("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_spin_attack.tscn").instantiate()
 	player.add_child(attack)
 	

@@ -5,7 +5,7 @@ var velocity : Vector2
 var damage : int
 
 func _ready():
-	damage = int(get_parent().damage * 1.4)
+	damage = int(get_parent().strength * 1.4)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

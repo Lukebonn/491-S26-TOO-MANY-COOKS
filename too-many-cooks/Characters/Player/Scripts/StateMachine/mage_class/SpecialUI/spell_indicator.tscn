@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cin1vb518smaf"]
+
+[ext_resource type="Script" uid="uid://wysgxey6k2yg" path="res://Characters/Player/Scripts/StateMachine/mage_class/SpecialUI/spell_indicator.gd" id="1_vtks1"]
+[ext_resource type="Texture2D" uid="uid://u3v27vs2xlba" path="res://Characters/Player/Sprites/Spells/ice_indicator_large1.png" id="2_7ulgw"]
+[ext_resource type="Texture2D" uid="uid://rhswkwha2xtj" path="res://Characters/Player/Sprites/Spells/vortex_indicator_small1.png" id="3_yn1ey"]
+[ext_resource type="Texture2D" uid="uid://btgwkwhp5x07x" path="res://Characters/Player/Sprites/Spells/fire_indicator_small1.png" id="4_l30xu"]
+
+[node name="SpellIndicator" type="Node2D" unique_id=542971699]
+z_index = 2
+script = ExtResource("1_vtks1")
+
+[node name="EquippedSpell" type="Sprite2D" parent="." unique_id=916905098]
+position = Vector2(0, -22)
+texture = ExtResource("2_7ulgw")
+
+[node name="LastSpell" type="Sprite2D" parent="." unique_id=1564886675]
+position = Vector2(9, -20)
+texture = ExtResource("3_yn1ey")
+
+[node name="NextSpell" type="Sprite2D" parent="." unique_id=389806448]
+position = Vector2(-9, -20)
+texture = ExtResource("4_l30xu")

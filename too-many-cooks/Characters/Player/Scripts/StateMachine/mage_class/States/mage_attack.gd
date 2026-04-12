@@ -50,12 +50,21 @@ func start_cooldown():
 	on_cooldown = false
 
 ##player regains mana when attacking enemies
+#also plays a sound effect
 func on_attack_hit(_body):
+	player.play_sound(load("res://Audio/Sounds/Player/Mage/mage staff smack.mp3"))
+	
 	player.mana += mana_gain
 
+
+##cycles to the next spell
+#ice spears -> fire blast -> vortex -> ice spears
 func change_spell():
+	player.get_node("SpellIndicator").cycle()
 	match current_spell:
 		"ice spears":
+			current_spell = "fire blast"
+		"fire blast":
 			current_spell = "vortex"
 		"vortex":
 			current_spell = "ice spears"

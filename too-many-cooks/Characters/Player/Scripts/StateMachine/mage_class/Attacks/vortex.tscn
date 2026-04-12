@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvc3h7jylbo1d" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/vortex.gd" id="1_gmxgs"]
 [ext_resource type="Texture2D" uid="uid://hgb5b4k3x8su" path="res://Characters/Player/Sprites/Spells/Vortex_placeholder1.png" id="2_m56xh"]
+[ext_resource type="AudioStream" uid="uid://c28qkrppjsfad" path="res://Audio/Sounds/Player/Mage/Vortex.wav" id="3_54e3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wnfhi"]
 radius = 16.0
@@ -10,6 +11,7 @@ radius = 16.0
 radius = 17.0
 
 [node name="Vortex" type="StaticBody2D" unique_id=583506329]
+z_index = -1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_gmxgs")
@@ -35,6 +37,10 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=633401974]
+stream = ExtResource("3_54e3b")
+autoplay = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

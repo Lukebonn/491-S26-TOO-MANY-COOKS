@@ -10,9 +10,17 @@ func enter_state(player_node):
 		
 		match player.get_node("attack_state").current_spell:
 			"ice spears":
-				ice_spears()
+				if(player.mana >= 20):
+					ice_spears()
 			"vortex":
-				summon_vortex()
+				if(player.mana >= 35):
+					summon_vortex()
+			"fire blast":
+				if(player.mana >= 20):
+					fire_blast()
+			_:
+				if(player.mana >= 20):
+					ice_spears()
 		
 		start_cooldown()
 	
@@ -41,7 +49,25 @@ func summon_vortex():
 	get_tree().get_root().add_child(vortex)
 	vortex.global_position = player.global_mouse_pos
 	
-	player.mana -= 15
+	player.mana -= 35
+
+
+##spawns a fire_blast centered on the player
+func fire_blast():
+	var blast = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.tscn").instantiate()
+	player.add_child(blast)
+	blast.position = Vector2.ZERO
+	
+	player.velocity = Vector2.ZERO
+	
+	player.set_damage(2.5)
+	
+	player.mana -= 20
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	blast.queue_free()
+
 
 ##player is unable to use the spell again until cooldown timer expires
 func start_cooldown():

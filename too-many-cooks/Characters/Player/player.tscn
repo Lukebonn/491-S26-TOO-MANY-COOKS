@@ -79,7 +79,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aiypd"]
-radius = 8.0
+radius = 7.0
 height = 21.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwx6j"]
@@ -111,6 +111,8 @@ z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=1974573788]
 position = Vector2(14, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=216793348]
 
 [node name="player_stats" type="Node" parent="." unique_id=1202790873]
 script = ExtResource("12_u2wkb")

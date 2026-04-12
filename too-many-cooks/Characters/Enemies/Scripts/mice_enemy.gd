@@ -58,16 +58,17 @@ func take_damage(self_damage: int, attacker_position: Vector2) -> void:
 	else:
 		print(health)
 		take_damage_sound.play() #pending audio to the take damage
-	
-		#Knockback
-		var knockback_direction = (position - attacker_position).normalized()
-		var target_position = position + knockback_direction * KNOCKBACK_FORCE
- 
 		
-		var tween = create_tween()
-		tween.set_ease(Tween.EASE_OUT)
-		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.tween_property(self, "position", target_position, 0.5)
+		if(attacker_position != Vector2.ZERO):
+			
+			#Knockback
+			var knockback_direction = (position - attacker_position).normalized()
+			var target_position = position + knockback_direction * KNOCKBACK_FORCE
+			
+			var tween = create_tween()
+			tween.set_ease(Tween.EASE_OUT)
+			tween.set_trans(Tween.TRANS_CUBIC)
+			tween.tween_property(self, "position", target_position, 0.5)
 		
 		#DamageNumbers.display_number(self_damage, damage_numbers_origin.global_position)
 		

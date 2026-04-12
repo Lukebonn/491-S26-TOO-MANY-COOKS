@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8b8urphe0s0x"
+path="res://.godot/imported/Sword Sharp.mp3-87ca492125c01efbb4d1fb4000047073.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/Player/Warrior/Sword Sharp.mp3"
+dest_files=["res://.godot/imported/Sword Sharp.mp3-87ca492125c01efbb4d1fb4000047073.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

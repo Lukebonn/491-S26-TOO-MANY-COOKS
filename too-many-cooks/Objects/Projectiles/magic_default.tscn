@@ -1,11 +1,25 @@
 [gd_scene format=3 uid="uid://drkk2ia10hkpl"]
 
 [ext_resource type="Script" uid="uid://q4wrlfwt3fdq" path="res://Objects/Projectiles/Scripts/magic_default.gd" id="1_vlsvx"]
+[ext_resource type="Texture2D" uid="uid://c1bfqhkncifk1" path="res://Characters/Player/Sprites/Spells/magic_default1.png" id="2_i7va0"]
+[ext_resource type="Texture2D" uid="uid://d16ko2v4xc1lh" path="res://Characters/Player/Sprites/Spells/magic_default2.png" id="3_5nftj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_anfya"]
 radius = 4.0
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_nppe8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo4x8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i7va0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5nftj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nppe8"]
 radius = 4.0
@@ -19,10 +33,11 @@ script = ExtResource("1_vlsvx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1102468948]
 shape = SubResource("CircleShape2D_anfya")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=614038975]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=442486743]
 position = Vector2(-1.1920929e-07, -2.3841858e-07)
-scale = Vector2(8, 8)
-texture = SubResource("CanvasTexture_nppe8")
+sprite_frames = SubResource("SpriteFrames_fo4x8")
+autoplay = "default"
+frame_progress = 0.93004507
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=874155800]
 collision_layer = 4
