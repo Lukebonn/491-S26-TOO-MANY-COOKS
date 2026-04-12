@@ -19,6 +19,6 @@ func _process(delta):
 		weight += delta
 	move_and_slide()
 
-func collect(body):
+func collect(_body):
 	PlayerStats.Gold += Value
 	queue_free()

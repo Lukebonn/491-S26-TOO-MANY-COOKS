@@ -121,6 +121,7 @@ func _on_player_death() -> void:
 	# wait 1 second, then display the death screen.
 
 func _on_retry_button_button_down() -> void:
+	PlayerStats.Gold = PlayerStats.temp_gold
 	get_tree().reload_current_scene()
 	# restarts the combat scene
 
