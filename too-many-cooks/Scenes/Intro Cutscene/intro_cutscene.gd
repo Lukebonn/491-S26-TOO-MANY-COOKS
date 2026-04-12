@@ -3,6 +3,7 @@ extends Control
 var can_advance_subtitle = true
 var current_page = 0
 var current_subtitle = 0
+@export var music : AudioStreamPlayer
 
 var narration
 var page
@@ -59,11 +60,13 @@ func next_subtitle(index: int):
 		match current_subtitle:
 			1:
 				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
-			2: # + Turn Page
+			2: # + Turn Page | Begin Music
 				page = $Pages.get_child(0)
 				tween.tween_property(page,"position",Vector2(576,320),1).set_trans(Tween.TRANS_CUBIC)
 				
 				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
+				if music:
+					music.play()
 			3: # + Adjusted Subtitle Vector
 				tween.tween_property(subtitle,"position",Vector2(76,475),1).set_trans(Tween.TRANS_CUBIC)
 			4: # + Turn Page

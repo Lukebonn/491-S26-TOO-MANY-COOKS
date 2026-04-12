@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://22b0j7kjctua" path="res://Scenes/Title/pause_ui.tscn" id="12_rv8x5"]
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="12_xruoh"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="13_72lsw"]
+[ext_resource type="AudioStream" uid="uid://bdqq53n0efejs" path="res://Audio/Music/TitleScreenMusic.ogg" id="15_fbuyo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
 sky_top_color = Color(5.390644e-06, 0.7529455, 0.9618829, 1)
@@ -275,7 +276,7 @@ theme_override_constants/outline_size = 12
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 theme_override_font_sizes/bold_italics_font_size = 60
-text = "Press Whatever"
+text = "Press Any Key"
 fit_content = true
 horizontal_alignment = 1
 
@@ -392,6 +393,10 @@ bus = &"Music"
 stream = ExtResource("13_72lsw")
 volume_db = -8.0
 bus = &"Music"
+
+[node name="TitleScreenMusic" type="AudioStreamPlayer" parent="." unique_id=1334846587]
+stream = ExtResource("15_fbuyo")
+autoplay = true
 
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Camera3D" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu part/MeshInstance3D" method="_on_title_ui_stop_spinning_enivonment"]

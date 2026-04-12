@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="2_p6tjk"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="3_k4shc"]
 [ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="4_0758p"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="6_0758p"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="7_2bhlx"]
 
 [node name="Pause UI" type="Control" unique_id=95086748]
 layout_mode = 3
@@ -307,7 +309,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_k4shc")
 
-[node name="Back" type="Button" parent="." unique_id=1178690095]
+[node name="Back" type="Button" parent="." unique_id=1178690095 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 0
 offset_left = 972.0
 offset_top = 23.0
@@ -318,6 +320,18 @@ theme_override_font_sizes/font_size = 64
 text = "Back
 "
 script = ExtResource("4_0758p")
+hoverSound = NodePath("../ButtonHoverSound")
+clickSound = NodePath("../ButtonClickSound")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1952456248]
+stream = ExtResource("6_0758p")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=1700152383]
+stream = ExtResource("7_2bhlx")
+volume_db = -8.0
+bus = &"Music"
 
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/Master" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]

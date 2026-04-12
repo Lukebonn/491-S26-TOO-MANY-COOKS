@@ -20,8 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://dkxq3qvdf675d" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline8.wav" id="17_efp4m"]
 [ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline9.wav" id="18_k2rm0"]
 [ext_resource type="AudioStream" uid="uid://b514xcxet0yvr" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline10.wav" id="19_ssywp"]
+[ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 
-[node name="IntroCutscene" type="Control" unique_id=5151694]
+[node name="IntroCutscene" type="Control" unique_id=5151694 node_paths=PackedStringArray("music")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -30,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ancq6")
+music = NodePath("IntroCutsceneMusic")
 
 [node name="PageArrow" type="Sprite2D" parent="." unique_id=1289254406]
 position = Vector2(1084.0001, 712.00006)
@@ -327,3 +329,7 @@ theme_override_font_sizes/normal_font_size = 56
 text = "And thus, we are doomed."
 fit_content = true
 horizontal_alignment = 1
+
+[node name="IntroCutsceneMusic" type="AudioStreamPlayer" parent="." unique_id=1854946087]
+stream = ExtResource("21_6wkej")
+volume_db = -8.0

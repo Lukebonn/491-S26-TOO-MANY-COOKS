@@ -38,8 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
 [ext_resource type="Texture2D" uid="uid://bh5pdrpwqgj7" path="res://Scenes/Tavern/Art/JournalTavern.png" id="31_ulbsv"]
 [ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="32_a55l7"]
-[ext_resource type="AudioStream" uid="uid://c3o3ouafmtp4b" path="res://Scenes/Tavern/Tavern.wav" id="33_1gied"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/settings.tscn" id="34_tvort"]
+[ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
@@ -906,8 +906,7 @@ theme_override_font_sizes/font_size = 24
 text = "OK"
 
 [node name="TavernMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1904910536]
-stream = ExtResource("33_1gied")
-volume_db = -8.0
+stream = ExtResource("39_ulbsv")
 autoplay = true
 bus = &"Music"
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="1_vmwr5"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="2_sli66"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="3_1lw8e"]
-[ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Scenes/Test/PlayerEnemyTest/Eli491_Combat softer.ogg" id="6_cjfr7"]
+[ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_cjfr7"]
 [ext_resource type="PackedScene" uid="uid://btkcewpw6f6r3" path="res://Objects/Staircase/staircase.tscn" id="6_vn22c"]
 [ext_resource type="Script" uid="uid://5h2nvu0najdi" path="res://Scenes/Test/PlayerEnemyTest/Scripts/combat_controls_playtest.gd" id="7_pjd3s"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="8_cjfr7"]
