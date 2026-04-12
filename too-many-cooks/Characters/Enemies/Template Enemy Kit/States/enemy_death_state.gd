@@ -15,6 +15,7 @@ func enter_state(enemy_node):
 			call_deferred("drop_drops", Drop_Amount)
 		else:
 			call_deferred("drop_drops", randi_range(Drop_Amount,Drop_Amount_Max))
+	get_parent().onEnemyDeath.emit()
 	if animation_name != "NONE":
 		await $"../AnimatedSprite2D".animation_finished
 	get_parent().call_deferred("queue_free")

@@ -1,9 +1,13 @@
 extends Node2D
 @export var dialogue_ref : Control
+@export var ambientMusic: AudioStreamPlayer
+@export var actionMusic: AudioStreamPlayer
 func _ready():
 	FadeInFadeOut.fade_in()
-	
-	
+	if ambientMusic:
+		ambientMusic.play()
+
+
 func _on_player_player_death():
 	dialogue_ref.show_dialogue("Gramps","0,1,2,3","0,0")
 	await dialogue_ref.message_complete
@@ -13,7 +17,22 @@ func _on_player_player_death():
 	get_tree().change_scene_to_packed(target_scene)
 
 
-func _on_first_guy_all_enemies_dead():
+#func _on_first_guy_all_enemies_dead():
+	#if ambientMusic:
+		#ambientMusic.stop()
+	#await get_tree().create_timer(0.5).timeout
+	#if actionMusic:
+		#actionMusic.play()
+	#$"Insta-KO Squad".process_mode = Node.PROCESS_MODE_INHERIT
+	#for node in $"Insta-KO Squad".get_children():
+		#node.show()
+
+func _on_first_rat_death() -> void:
+	if ambientMusic:
+		ambientMusic.stop()
+	await get_tree().create_timer(0.5).timeout
+	if actionMusic:
+		actionMusic.play()
 	$"Insta-KO Squad".process_mode = Node.PROCESS_MODE_INHERIT
 	for node in $"Insta-KO Squad".get_children():
 		node.show()
