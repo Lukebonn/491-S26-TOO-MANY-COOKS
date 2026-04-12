@@ -24,7 +24,6 @@
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_dash.gd" id="15_1gied"]
 [ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="15_16683"]
 [ext_resource type="Texture2D" uid="uid://dqmdofdis25ld" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/grinning.png" id="15_mpp4l"]
-[ext_resource type="Texture2D" uid="uid://kp5lvykfnbo7" path="res://UI/arrow_decorative_w.png" id="16_6jyd3"]
 [ext_resource type="Texture2D" uid="uid://cb5fb1jeprmjd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cry.png" id="16_arv5a"]
 [ext_resource type="Script" uid="uid://b6ugk1okk1c33" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_magic.gd" id="16_tvort"]
 [ext_resource type="Texture2D" uid="uid://by8schxoxexd5" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/rage.png" id="17_4f6a6"]
@@ -36,10 +35,17 @@
 [ext_resource type="Script" uid="uid://duffidar21ncd" path="res://Scenes/Tavern/debugbutton.gd" id="28_1gied"]
 [ext_resource type="PackedScene" uid="uid://dp2wyj4pxj1i6" path="res://Scenes/Tavern/act_select.tscn" id="29_0id2w"]
 [ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
+[ext_resource type="Texture2D" uid="uid://culnikyvvhbo6" path="res://UI/Img/IconTower.png" id="31_kb1dg"]
 [ext_resource type="Texture2D" uid="uid://bh5pdrpwqgj7" path="res://Scenes/Tavern/Art/JournalTavern.png" id="31_ulbsv"]
 [ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="32_a55l7"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/settings.tscn" id="34_tvort"]
+[ext_resource type="Texture2D" uid="uid://du40u5c3f4oix" path="res://UI/Img/IconArrowL.png" id="35_01gve"]
+[ext_resource type="Texture2D" uid="uid://cy28flxqvqj6r" path="res://UI/Img/IconArrowR.png" id="36_01gve"]
+[ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="38_gevxm"]
+[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="39_01gve"]
 [ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
+[ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="40_2wstm"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="42_2wstm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
@@ -603,7 +609,8 @@ offset_top = 279.0
 offset_right = 3325.0
 offset_bottom = 407.0
 theme = ExtResource("2_tqgpy")
-texture_normal = SubResource("PlaceholderTexture2D_4hstr")
+texture_normal = ExtResource("31_kb1dg")
+stretch_mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Exit" unique_id=270719110]
 custom_minimum_size = Vector2(128, 128)
@@ -683,8 +690,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(20, 20)
 theme = ExtResource("2_tqgpy")
-texture = ExtResource("16_6jyd3")
+texture = ExtResource("35_01gve")
+stretch_mode = 3
 
 [node name="RightPanel" type="Panel" parent="HeadsUpUI" unique_id=92928351]
 z_index = 2
@@ -713,9 +723,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(20, 20)
 theme = ExtResource("2_tqgpy")
-texture = ExtResource("16_6jyd3")
-flip_h = true
+texture = ExtResource("36_01gve")
+stretch_mode = 3
 
 [node name="Pause Button" type="Button" parent="HeadsUpUI" unique_id=1676192164]
 visible = false
@@ -728,6 +740,37 @@ theme_override_fonts/font = ExtResource("32_a55l7")
 theme_override_font_sizes/font_size = 32
 text = "Pause"
 script = ExtResource("26_djqff")
+
+[node name="IconGold" type="Sprite2D" parent="HeadsUpUI" unique_id=1427050592]
+position = Vector2(119.5, 24)
+texture = ExtResource("38_gevxm")
+
+[node name="CoinCount" type="RichTextLabel" parent="HeadsUpUI" unique_id=1443516047]
+layout_mode = 0
+offset_left = 143.5
+offset_top = 8.0
+offset_right = 231.5
+offset_bottom = 56.0
+theme = ExtResource("39_01gve")
+theme_override_font_sizes/normal_font_size = 30
+text = "10000"
+script = ExtResource("40_2wstm")
+
+[node name="IconOrb" type="Sprite2D" parent="HeadsUpUI" unique_id=2090706192]
+position = Vector2(119.5, 64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("42_2wstm")
+
+[node name="OrbCount" type="RichTextLabel" parent="HeadsUpUI" unique_id=1617422179]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 48.0
+offset_right = 232.0
+offset_bottom = 96.0
+theme = ExtResource("39_01gve")
+theme_override_font_sizes/normal_font_size = 30
+text = "10000"
+script = ExtResource("40_2wstm")
 
 [node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
 visible = false

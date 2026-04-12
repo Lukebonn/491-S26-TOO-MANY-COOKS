@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
 [ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/Img/HpBarBorder.png" id="5_8ktjv"]
+[ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Script" uid="uid://c1b5wyo40ayh6" path="res://UI/pause_menu.gd" id="9_qgmx8"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="10_r2vy3"]
 
 [node name="UI" type="Control" unique_id=1832120515]
 process_mode = 3
@@ -57,6 +59,7 @@ offset_left = 56.0
 offset_top = 24.0
 offset_right = 424.0
 offset_bottom = 88.0
+scale = Vector2(0.65, 0.65)
 theme = ExtResource("1_tabjk")
 value = 50.0
 nine_patch_stretch = true
@@ -93,10 +96,11 @@ texture = ExtResource("2_7ubs7")
 
 [node name="ManaBar" type="ProgressBar" parent="." unique_id=809030424]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 152.0
-offset_right = 424.0
-offset_bottom = 200.0
+offset_left = 32.0
+offset_top = 104.00001
+offset_right = 400.0
+offset_bottom = 152.0
+scale = Vector2(0.65, 0.65)
 theme = ExtResource("1_tabjk")
 show_percentage = false
 script = ExtResource("3_8ktjv")
@@ -125,31 +129,41 @@ text = "Health"
 
 [node name="ManaLabel" type="RichTextLabel" parent="." unique_id=618052939]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 104.0
-offset_right = 208.0
-offset_bottom = 152.0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 184.0
+offset_bottom = 120.0
 theme = ExtResource("1_tabjk")
 theme_override_font_sizes/normal_font_size = 30
 text = "Mana
 "
 
-[node name="CoinLabel" type="RichTextLabel" parent="." unique_id=1898203501]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 232.0
-offset_right = 168.0
-offset_bottom = 280.0
-theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 30
-text = "Gold:"
+[node name="IconGold" type="Sprite2D" parent="." unique_id=1476639175]
+position = Vector2(48, 160)
+texture = ExtResource("8_vx7wu")
 
 [node name="CoinCount" type="RichTextLabel" parent="." unique_id=1877924493]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 232.0
-offset_right = 248.0
-offset_bottom = 280.0
+offset_left = 72.0
+offset_top = 144.0
+offset_right = 160.0
+offset_bottom = 192.0
+theme = ExtResource("1_tabjk")
+theme_override_font_sizes/normal_font_size = 30
+text = "10000"
+script = ExtResource("4_snacm")
+
+[node name="IconOrb" type="Sprite2D" parent="." unique_id=1504229725]
+position = Vector2(48, 200)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_r2vy3")
+
+[node name="OrbCount" type="RichTextLabel" parent="." unique_id=265422067]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 184.0
+offset_right = 160.0
+offset_bottom = 232.0
 theme = ExtResource("1_tabjk")
 theme_override_font_sizes/normal_font_size = 30
 text = "10000"
