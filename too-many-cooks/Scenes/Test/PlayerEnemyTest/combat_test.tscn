@@ -31,13 +31,12 @@ position = Vector2(-64, 0)
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("2_sli66")]
 position = Vector2(64, 0)
 
-[node name="UI" parent="." unique_id=1031834621 node_paths=PackedStringArray("player") instance=ExtResource("3_1lw8e")]
+[node name="UI" parent="." unique_id=1031834621 instance=ExtResource("3_1lw8e")]
 offset_left = -109.00001
 offset_top = -65.0
 offset_right = -109.00001
 offset_bottom = -65.0
 scale = Vector2(0.15, 0.15)
-player = NodePath("../Player")
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=756298209]
 stream = ExtResource("6_cjfr7")

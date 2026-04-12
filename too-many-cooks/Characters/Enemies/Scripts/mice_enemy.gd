@@ -107,7 +107,7 @@ func _on_sight_body_exited(body: Node2D) -> void:
 		animated_sprite_2d.play("idle_front")
 
 func _on_damage_trigger_area_entered(area: Area2D) -> void:
-	if(player):
+	if(area.get_parent() == player):
 		take_damage(area.get_parent().damage,player.global_position)
 	else:
 		take_damage(area.get_parent().damage,Vector2.ZERO)

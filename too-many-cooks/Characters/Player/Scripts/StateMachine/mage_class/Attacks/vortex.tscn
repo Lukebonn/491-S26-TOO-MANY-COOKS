@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bttld8majq1dl"]
+
+[ext_resource type="Script" uid="uid://dvc3h7jylbo1d" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/vortex.gd" id="1_gmxgs"]
+[ext_resource type="Texture2D" uid="uid://hgb5b4k3x8su" path="res://Characters/Player/Sprites/Spells/Vortex_placeholder1.png" id="2_m56xh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wnfhi"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmxgs"]
+radius = 17.0
+
+[node name="Vortex" type="StaticBody2D" unique_id=583506329]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_gmxgs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1469738606]
+modulate = Color(1, 1, 1, 0.74509805)
+texture = ExtResource("2_m56xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=588539116]
+shape = SubResource("CircleShape2D_wnfhi")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2029278703]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1640295058]
+shape = SubResource("CircleShape2D_gmxgs")
+
+[node name="HitTimer" type="Timer" parent="." unique_id=898936600]
+autostart = true
+
+[node name="DurationTimer" type="Timer" parent="." unique_id=534804668]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

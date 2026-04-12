@@ -4,7 +4,7 @@ var attack : PackedScene = load("res://Characters/Player/Scripts/StateMachine/ma
 
 var power : float = 0.5
 
-var cooldown : float = 0.4
+var cooldown : float = 0.3
 var on_cooldown : bool = false
 
 var mana_gain : float = 30
@@ -32,7 +32,7 @@ func enter_state(player_node):
 		
 		hitbox.queue_free()
 		
-		player.velocity = Vector2(0,0)
+		change_spell()
 		
 		start_cooldown()
 	
@@ -52,6 +52,15 @@ func start_cooldown():
 ##player regains mana when attacking enemies
 func on_attack_hit(_body):
 	player.mana += mana_gain
+
+func change_spell():
+	match current_spell:
+		"ice spears":
+			current_spell = "vortex"
+		"vortex":
+			current_spell = "ice spears"
+		_:
+			current_spell = "ice spears"
 
 ##player should lose a certain amount of health
 func hit_response(source):
