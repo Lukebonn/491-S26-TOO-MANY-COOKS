@@ -5,4 +5,5 @@ func enter_state(player_node):
 	super(player_node)
 	
 	player.visible = false
+	player.velocity = Vector2(0,0)
 	get_parent().playerDeath.emit()
