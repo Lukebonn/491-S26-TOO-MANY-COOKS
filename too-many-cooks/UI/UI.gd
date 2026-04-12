@@ -139,6 +139,15 @@ func quest_received():
 		$Quest.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
 		if PlayerStats.Quest1Orbs >= 1:
 			$Quest.set_text("Quest complete! Talk to Mage!")
+	if PlayerStats.quests > 1:
+		if $Quest.text == (mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs]):
+			$Quest2.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs])
+			if PlayerStats.Quest1EnemiesKOs >= 10:
+				$Quest2.set_text("Quest complete! Talk to Warrior!")
+		elif $Quest.text == (warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs]):
+			$Quest2.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
+			if PlayerStats.Quest1Orbs >= 1:
+				$Quest2.set_text("Quest complete! Talk to Mage!")
 
 #func _on_poison_button_pressed() -> void:
 	##applyPoison.emit(5) 

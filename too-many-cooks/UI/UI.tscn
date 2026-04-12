@@ -270,6 +270,13 @@ offset_top = 374.0
 offset_right = 399.0
 offset_bottom = 485.0
 
+[node name="Quest2" type="Label" parent="." unique_id=1987583185]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 468.0
+offset_right = 399.0
+offset_bottom = 579.0
+
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]

@@ -143,12 +143,20 @@ func _on_upgrade_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
+			if Global.Has_Warrior_Quest_1:
+				Global.Has_Warrior_Quest_1 = false
+			if PlayerStats.quests > 0:
+				PlayerStats.quests -= 1
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
+			if Global.Has_Mage_Quest_1:
+				Global.Has_Mage_Quest_1 = false
+			if PlayerStats.quests > 0:
+				PlayerStats.quests -= 1
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
 
 
@@ -159,12 +167,14 @@ func _on_quest_pressed():
 			$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
 			Global.Has_Warrior_Quest_1 = true
+			PlayerStats.quests += 1
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 2
 			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
+			PlayerStats.quests += 1
 			Global.Has_Mage_Quest_1 = true
 	await dialogue_ref.message_complete
 	show_menu()

@@ -59,3 +59,6 @@ var KillCount : int = 0
 #variables to track how many enemies are killed during quests
 var Quest1EnemiesKOs : int = 0
 var Quest1Orbs : int = 0
+
+#variable to track how many quests we have
+var quests : int = 0
