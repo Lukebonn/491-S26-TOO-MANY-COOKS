@@ -13,6 +13,8 @@ func enter_state(player_node):
 	
 	if(player.mana >= mana_cost):
 		
+		player.play_sound(load("res://Audio/Sounds/Player/BlankClass/dash.mp3"))
+		
 		if(player.velocity == Vector2(0,0)):
 			teleport_vector = player.global_position + player.current_dir.normalized() * 50
 		else:

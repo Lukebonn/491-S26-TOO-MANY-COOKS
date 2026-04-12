@@ -52,6 +52,7 @@ func _ready() -> void:
 			equipped_class = load("res://System/Classes/warrior.tres")
 		PlayerStats.classes.mage:
 			equipped_class = load("res://System/Classes/mage.tres")
+			add_child(load("res://Characters/Player/Scripts/StateMachine/mage_class/SpecialUI/spell_indicator.tscn").instantiate())
 		_:
 			equipped_class = load("res://System/Classes/blank_class.tres")
 	
@@ -125,3 +126,9 @@ func _on_hurtbox_area_entered(area):
 #multipler: a float representing how the strength of the player's attack
 func set_damage(multiplier : float):
 	damage = int(strength * multiplier)
+
+
+##plays a sound effect from AudioStreamPlayer2D
+func play_sound(sound : AudioStream):
+	$AudioStreamPlayer2D.stream = sound
+	$AudioStreamPlayer2D.play()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qbviynuee7kd"
+path="res://.godot/imported/Sword woosh.mp3-88029326418dafaec97cc7592551f9ce.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/Player/Warrior/Sword woosh.mp3"
+dest_files=["res://.godot/imported/Sword woosh.mp3-88029326418dafaec97cc7592551f9ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

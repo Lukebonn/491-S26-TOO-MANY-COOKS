@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddekgva2cqnbm"]
+
+[ext_resource type="AudioStream" uid="uid://cssqg27bfaiag" path="res://Audio/Sounds/Player/Mage/fire ring.wav" id="1_6iwbg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_es7ai"]
+radius = 40.0
+
+[node name="FireBlast" type="Area2D" unique_id=864007785]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418160656]
+shape = SubResource("CircleShape2D_es7ai")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=43667181]
+z_index = 2
+position = Vector2(-3.0696392e-06, -8.046627e-07)
+scale = Vector2(1.7727274, 1.7727274)
+color = Color(1, 0.37, 0.37, 0.6431373)
+polygon = PackedVector2Array(-22, 0, -21, -6, -19, -11, -16, -15, -11, -19, -6, -21, 0, -22, 6, -21, 11, -19, 15, -16, 19, -11, 21, -6, 22, 0, 21, 6, 19, 11, 15, 16, 11, 19, 6, 21, 0, 22, -6, 21, -11, 19, -16, 15, -19, 11, -21, 6)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1231499647]
+position = Vector2(-3.0696392e-06, -8.046627e-07)
+scale = Vector2(1.7727274, 1.7727274)
+stream = ExtResource("1_6iwbg")
+autoplay = true

@@ -23,6 +23,8 @@ func enter_state(player_node):
 	#print_debug("dash_state entered")
 	super(player_node)
 	
+	player.play_sound(load("res://Audio/Sounds/Player/BlankClass/dash.mp3"))
+	
 	current_dash_speed = full_dash_speed
 	
 	if(first_time):

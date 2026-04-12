@@ -3,14 +3,17 @@ extends PlayerState
 var attack_1 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_1.tscn")
 var duration_1 : float = 0.1
 var power_1 : float = 1.2
+var sound_1 : AudioStream = load("res://Audio/Sounds/Player/Warrior/Sword woosh.mp3")
 
 var attack_2 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_1.tscn")
 var duration_2 : float = 0.1
 var power_2 : float = 1.3
+var sound_2 : AudioStream = load("res://Audio/Sounds/Player/Warrior/sword woosh 2.mp3")
 
 var attack_3 : PackedScene = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_attack_3.tscn")
 var duration_3 : float = 0.2
 var power_3 : float = 1.5
+var sound_3 : AudioStream = load("res://Audio/Sounds/Player/Warrior/Sword woosh 3.mp3")
 
 var cooldown : float = 0.2
 var on_cooldown : bool = false
@@ -43,16 +46,16 @@ func enter_state(player_node):
 		
 		match combo_counter:
 			0:
-				await execute_attack(attack_1, duration_1, power_1)
+				await execute_attack(attack_1, duration_1, power_1, sound_1)
 				combo_counter = 1
 			1:
-				await execute_attack(attack_2, duration_2, power_2)
+				await execute_attack(attack_2, duration_2, power_2, sound_2)
 				combo_counter = 2
 			2:
-				await execute_attack(attack_3, duration_3, power_3)
+				await execute_attack(attack_3, duration_3, power_3, sound_3)
 				combo_counter = 0
 			_:
-				await execute_attack(attack_1, duration_1, power_1)
+				await execute_attack(attack_1, duration_1, power_1, sound_1)
 				
 		#print_debug("Combo" + str(combo_counter))
 		
@@ -65,7 +68,9 @@ func enter_state(player_node):
 ##intantiates attack scene, adds it to player scene, rotates it to look at mouse, then waits for a duration and removes it from the tree
 #hitbox: attack scene to be instantiated
 #duration: how long the attack should be active
-func execute_attack(attack, duration, power):
+func execute_attack(attack, duration, power, sound):
+	player.play_sound(sound)
+	
 	var hitbox = attack.instantiate()
 	hitbox.connect("body_entered", on_attack_hit)
 	
