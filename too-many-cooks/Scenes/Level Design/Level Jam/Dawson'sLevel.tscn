@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_ybs0p"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_r4loo"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_doys6"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_uhsgw"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_uhsgw"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="10_bwg4t"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/OrbPickup.tscn" id="11_eci24"]
 
@@ -104,7 +104,6 @@ position = Vector2(-408, -48)
 
 [node name="SuperStrongRat" parent="." unique_id=1845722072 instance=ExtResource("9_uhsgw")]
 position = Vector2(32, -256)
-health = 1000
 
 [node name="Labels" type="Node" parent="." unique_id=1131383549]
 
