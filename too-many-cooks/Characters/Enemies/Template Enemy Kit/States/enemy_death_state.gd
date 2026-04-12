@@ -25,6 +25,8 @@ func enter_state(enemy_node):
 		await $"../AnimatedSprite2D".animation_finished
 	get_parent().call_deferred("queue_free")
 	PlayerStats.KillCount += 1
+	if Global.Has_Warrior_Quest_1:
+		PlayerStats.Quest1EnemiesKOs += 1
 	
 	
 func drop_drops(amount):

@@ -53,3 +53,7 @@ enum classes{
 
 ##"achievement" stats that go up and determine class avaliablity... among other things?
 var KillCount : int = 0
+
+#variables to track how many enemies are killed during quests
+var Quest1EnemiesKOs : int = 0
+var Quest1Orbs : int = 0

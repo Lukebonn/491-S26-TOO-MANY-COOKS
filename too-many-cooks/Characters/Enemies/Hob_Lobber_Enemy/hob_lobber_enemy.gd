@@ -138,7 +138,10 @@ func _die() -> void:
 	PlayerStats.Gold += 1
 	# Dawson - Spawns the exit staircase (Luke - going to disable this for my map scene)
 	#allEnemiesDead.emit()
-	
+	#Tyler - Adds 1 enemy to the kill count and 1 enemy to the amount of enemies needed to complete the warrior's 1st quest
+	PlayerStats.KillCount += 1
+	if Global.Has_Warrior_Quest_1:
+		PlayerStats.Quest1EnemiesKOs += 1
 	#disable collision
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	$Sight/CollisionShape2D.set_deferred("disabled", true)

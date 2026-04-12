@@ -131,9 +131,13 @@ func _on_return_button_button_down() -> void:
 
 func quest_received():
 	if Global.Has_Warrior_Quest_1:
-		$Quest.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.KillCount])
+		$Quest.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs])
+		if PlayerStats.Quest1EnemiesKOs >= 10:
+			$Quest.set_text("Quest complete! Talk to Warrior!")
 	if Global.Has_Mage_Quest_1:
-		$Quest.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Orbs])
+		$Quest.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
+		if PlayerStats.Quest1Orbs >= 1:
+			$Quest.set_text("Quest complete! Talk to Mage!")
 
 #func _on_poison_button_pressed() -> void:
 	##applyPoison.emit(5) 
