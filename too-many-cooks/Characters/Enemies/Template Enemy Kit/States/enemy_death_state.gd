@@ -7,9 +7,13 @@ extends EnemyState
 @export var Drop_Amount : int
 ##high end of drop, set if you want random drops like 1-3 coins
 @export var Drop_Amount_Max : int
+# The sound that plays when the enemy checks out early
+@export var Death_Sound: AudioStreamPlayer2D
 
 func enter_state(enemy_node):
 	super(enemy_node)
+	if Death_Sound:
+		Death_Sound.play()
 	if Drop_Amount > 0:
 		if Drop_Amount_Max <= Drop_Amount:
 			call_deferred("drop_drops", Drop_Amount)

@@ -28,11 +28,12 @@ func _on_player_player_death():
 		#node.show()
 
 func _on_first_rat_death() -> void:
-	if ambientMusic:
+	if ambientMusic and actionMusic:
 		ambientMusic.stop()
-	await get_tree().create_timer(0.5).timeout
-	if actionMusic:
 		actionMusic.play()
-	$"Insta-KO Squad".process_mode = Node.PROCESS_MODE_INHERIT
+	await get_tree().create_timer(0.1).timeout
+	#$"Insta-KO Squad".process_mode = Node.PROCESS_MODE_INHERIT
 	for node in $"Insta-KO Squad".get_children():
+		node.process_mode = Node.PROCESS_MODE_ALWAYS
 		node.show()
+		await get_tree().create_timer(1).timeout

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_1fhb1"]
 [ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="2_jxfaf"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_su5ma"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_su5ma"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_cu61l"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="5_mxcca"]
@@ -16,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
-radius = 81.68537
+radius = 320.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
 size = Vector2(16.5, 12.5)
@@ -43,7 +44,7 @@ script = ExtResource("1_1fhb1")
 health = 100
 damage = 10
 sight_state = NodePath("ChaseState")
-starting_state = NodePath("IdleState")
+starting_state = NodePath("ChaseState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
@@ -72,6 +73,7 @@ shape = SubResource("RectangleShape2D_f5e7n")
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_su5ma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)
@@ -112,10 +114,11 @@ Flee_Speed = 5.0
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
-[node name="HitState" type="Node" parent="." unique_id=2073522825]
+[node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
 script = ExtResource("9_taufn")
 Knockback_Strength = 50
 Hit_Stun = 0.3
+Hit_Sound = NodePath("../TakeDamage")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

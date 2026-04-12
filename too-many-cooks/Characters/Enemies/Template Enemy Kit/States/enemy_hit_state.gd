@@ -7,10 +7,15 @@ extends EnemyState
 ##how long enemy is "stunned" after hit, set 0 for none
 @export var Hit_Stun : float
 
+# The sound that plays when the enemy takes damage
+@export var Hit_Sound: AudioStreamPlayer2D
+
 var knockback = Vector2.ZERO
 
 func enter_state(enemy_node):
 	super(enemy_node)
+	if Hit_Sound:
+		Hit_Sound.play()
 	if enemy_ref.current_health <= 0:
 		exit_state()
 	if player_ref and enemy_ref:

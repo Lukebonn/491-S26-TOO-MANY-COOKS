@@ -1,10 +1,14 @@
 extends PlayerState
 
 var damage_hitbox : Area2D
+@export var Hurt_Sound: AudioStreamPlayer
 
 func enter_state(player_node):
 	#print_debug("hurt_state entered")
 	super(player_node)
+	
+	if Hurt_Sound:
+		Hurt_Sound.play()
 	
 	player.get_node("Sprite2D").animation = "hurt"
 	#player.modulate = Color(1.0, 0.382, 0.452, 1.0)

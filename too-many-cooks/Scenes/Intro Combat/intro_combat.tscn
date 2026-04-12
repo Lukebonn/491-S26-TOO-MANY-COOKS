@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="5_ltqhe"]
 [ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="7_sp0by"]
 [ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="9_efvaj"]
+[ext_resource type="PackedScene" uid="uid://df5nnvgfc8kvw" path="res://Characters/Enemies/Rat/TutorialRatEnemy.tscn" id="10_glbk7"]
 [ext_resource type="PackedScene" uid="uid://dh2e5arjhgwwb" path="res://barrier.tscn" id="10_pa5cx"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="11_ajqdd"]
 [ext_resource type="AudioStream" uid="uid://buuva0b5o55he" path="res://Audio/Music/HallwayAmbience.ogg" id="11_f0ry7"]
@@ -69,51 +70,51 @@ texture = ExtResource("9_efvaj")
 [node name="Insta-KO Squad" type="Node" parent="." unique_id=2122833505]
 process_mode = 4
 
-[node name="SuperStrongRat" parent="Insta-KO Squad" unique_id=1670622060 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy" parent="Insta-KO Squad" unique_id=1670622060 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(-104, -328)
+position = Vector2(-128, -344)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat8" parent="Insta-KO Squad" unique_id=494742019 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy2" parent="Insta-KO Squad" unique_id=1641367099 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(-40, -320)
+position = Vector2(120, -280)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat7" parent="Insta-KO Squad" unique_id=2088369754 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy3" parent="Insta-KO Squad" unique_id=318141752 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(40, -320)
+position = Vector2(0, -184)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat6" parent="Insta-KO Squad" unique_id=1439983497 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy4" parent="Insta-KO Squad" unique_id=1531104008 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(104, -336)
+position = Vector2(120, -344)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat5" parent="Insta-KO Squad" unique_id=1820610150 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy5" parent="Insta-KO Squad" unique_id=2028865621 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(104, -248)
+position = Vector2(-128, -280)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat4" parent="Insta-KO Squad" unique_id=588571168 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy6" parent="Insta-KO Squad" unique_id=618974826 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(40, -248)
+position = Vector2(120, -216)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat3" parent="Insta-KO Squad" unique_id=2013181484 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy7" parent="Insta-KO Squad" unique_id=1747242002 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(-40, -248)
+position = Vector2(-128, -216)
 health = 1000
 damage = 100
 
-[node name="SuperStrongRat2" parent="Insta-KO Squad" unique_id=462727710 instance=ExtResource("11_ajqdd")]
+[node name="TutorialRatEnemy8" parent="Insta-KO Squad" unique_id=585069560 instance=ExtResource("10_glbk7")]
 visible = false
-position = Vector2(-96, -248)
+position = Vector2(0, -344)
 health = 1000
 damage = 100
 

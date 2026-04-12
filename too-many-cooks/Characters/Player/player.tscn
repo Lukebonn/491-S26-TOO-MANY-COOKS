@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://b8r6bpm0nl0b2" path="res://System/Globals/PlayerStats.gd" id="12_u2wkb"]
 [ext_resource type="Script" uid="uid://cy3gnfxnqdw8x" path="res://Characters/Player/Scripts/StateMachine/Universal_States/hurt_state.gd" id="13_b71o8"]
 [ext_resource type="Script" uid="uid://bi4b1xyv34gbw" path="res://Characters/Player/Scripts/StateMachine/Universal_States/death_state.gd" id="14_x58m1"]
+[ext_resource type="AudioStream" uid="uid://mvi2wkrnr1ud" path="res://Audio/Sounds/PlayerHitSound.wav" id="16_8k5s7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vev3"]
 animations = [{
@@ -120,8 +121,9 @@ script = ExtResource("3_vr61t")
 [node name="move_state" type="Node" parent="." unique_id=945448675]
 script = ExtResource("5_pwx6j")
 
-[node name="hurt_state" type="Node" parent="." unique_id=475899646]
+[node name="hurt_state" type="Node" parent="." unique_id=475899646 node_paths=PackedStringArray("Hurt_Sound")]
 script = ExtResource("13_b71o8")
+Hurt_Sound = NodePath("../HurtSound")
 
 [node name="death_state" type="Node" parent="." unique_id=1569881533]
 script = ExtResource("14_x58m1")
@@ -131,5 +133,8 @@ script = ExtResource("14_x58m1")
 [node name="attack_state" type="Node" parent="." unique_id=1767612672]
 
 [node name="magic_state" type="Node" parent="." unique_id=265768770]
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=1493464822]
+stream = ExtResource("16_8k5s7")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
