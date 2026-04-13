@@ -5,5 +5,6 @@
 [node name="Hitbox" unique_id=607964857 instance=ExtResource("1_4m32j")]
 
 [node name="CollisionPolygon2D" parent="." index="0" unique_id=2089132905]
-position = Vector2(0, 7.450581e-09)
+position = Vector2(0.80555606, -6.8535155e-06)
+scale = Vector2(0.3843472, 0.22482014)
 polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.198822, 84.01198, 120.51458, 39.531975, 120.51458, -40.53202, 26.198822, -85.012024)
