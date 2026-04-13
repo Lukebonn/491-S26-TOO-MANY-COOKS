@@ -623,20 +623,6 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Journal" type="Button" parent="Tavern BG" unique_id=298545002]
-custom_minimum_size = Vector2(120, 60)
-layout_mode = 0
-offset_left = 1668.0
-offset_top = 548.0
-offset_right = 1788.0
-offset_bottom = 644.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
-
-[node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Journal" unique_id=1653704222]
-position = Vector2(61, 46)
-scale = Vector2(6, 6)
-texture = ExtResource("31_ulbsv")
-
 [node name="Class_Menu" parent="." unique_id=877217506 node_paths=PackedStringArray("dialogue_ref") instance=ExtResource("21_y33xb")]
 offset_left = 576.0
 offset_top = 1005.0
@@ -773,6 +759,20 @@ theme_override_font_sizes/normal_font_size = 30
 text = "10000"
 script = ExtResource("40_2wstm")
 counter = "Orbs"
+
+[node name="Journal" type="Button" parent="HeadsUpUI" unique_id=298545002]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 512.0
+offset_top = 548.0
+offset_right = 632.0
+offset_bottom = 644.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="HeadsUpUI/Journal" unique_id=1653704222]
+position = Vector2(61, 46)
+scale = Vector2(6, 6)
+texture = ExtResource("31_ulbsv")
 
 [node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
 visible = false
@@ -964,7 +964,6 @@ visible = false
 [connection signal="pressed" from="Tavern BG/NPCs/EndDoor" to="Tavern BG" method="_on_end_door_pressed"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
-[connection signal="pressed" from="Tavern BG/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]
 [connection signal="back_pressed" from="Class_Menu" to="Tavern BG" method="_on_class_menu_back_pressed"]
 [connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
 [connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
@@ -974,6 +973,7 @@ visible = false
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="pressed" from="HeadsUpUI/Pause Button" to="HeadsUpUI/Pause Button" method="_on_pressed"]
+[connection signal="pressed" from="HeadsUpUI/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]
 [connection signal="pressed" from="FirstTimeUI/FirstPanel/ButtonOne" to="FirstTimeUI" method="_on_button_one_pressed"]
 [connection signal="pressed" from="FirstTimeUI/SecondPanel/ButtonTwo" to="FirstTimeUI" method="_on_button_two_pressed"]
 [connection signal="pressed" from="FirstTimeUI/ThirdPanel/ButtonThree" to="FirstTimeUI" method="_on_button_three_pressed"]

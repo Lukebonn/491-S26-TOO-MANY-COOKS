@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qqer1sck7tqn"
-path="res://.godot/imported/2.png-e24a9e0ad0cdad6c1d08edf4a1c44e97.ctex"
+path="res://.godot/imported/2.png-ae97f4e9ad61a2c0a7b14cb1ae18c01d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/2.png"
-dest_files=["res://.godot/imported/2.png-e24a9e0ad0cdad6c1d08edf4a1c44e97.ctex"]
+source_file="res://Characters/Enemies/Mice/black/2.png"
+dest_files=["res://.godot/imported/2.png-ae97f4e9ad61a2c0a7b14cb1ae18c01d.ctex"]
 
 [params]
 
