@@ -7,8 +7,9 @@ extends Node
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
 var Gold := 0
 var Orbs : int = 0
-#Gold when entering floor, reverted back to on Retry to avoid infinite Gold farm.
+#Gold/Orbs when entering floor, reverted back to on Retry to avoid infinite farm.
 var temp_gold : int = 0
+var temp_orb : int = 0
 
 ##speed stats for the player
 #var Max_Speed = 200.0
