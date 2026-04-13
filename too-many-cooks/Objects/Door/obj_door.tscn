@@ -14,7 +14,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("../Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/path = NodePath("../Sprite2D2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,7 +42,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("../Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/path = NodePath("../Sprite2D2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +73,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("../Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +85,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/path = NodePath("../Sprite2D2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -106,8 +106,15 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_aslu8"]
 radius = 39.319206
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=509779703]
+[node name="Node2D" type="Node2D" unique_id=1546063147]
 script = ExtResource("1_5kuwq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=509779703]
+collision_layer = 64
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1786605134]
+shape = SubResource("RectangleShape2D_lfrka")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=234937811]
 position = Vector2(-8, 0)
@@ -120,16 +127,13 @@ texture = ExtResource("2_aslu8")
 hframes = 4
 frame = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786605134]
-shape = SubResource("RectangleShape2D_lfrka")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1107824209]
+root_node = NodePath("../StaticBody2D")
 libraries/ = SubResource("AnimationLibrary_17h6n")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=553935439]
-visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1890161688]
+[node name="Sight" type="CollisionShape2D" parent="Area2D" unique_id=1890161688]
 shape = SubResource("CircleShape2D_aslu8")
 
 [node name="doorClosing" type="AudioStreamPlayer2D" parent="." unique_id=1306148498]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpewu83cvmdt" path="res://Objects/Tilesets/ActOneAtlas.png" id="1_5c7qd"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_5c7qd"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_4huak"]
+[ext_resource type="PackedScene" uid="uid://dfsyceucp33qb" path="res://Objects/Door/room.tscn" id="3_q1dpn"]
 [ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_rat_enemy.tscn" id="4_macyy"]
 [ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="5_l0q1t"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_q1dpn"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_5c7qd"]
 [ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door/obj_door.tscn" id="11_macyy"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="12_l0q1t"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="14_li7w1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -1064,9 +1066,27 @@ text = "room 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ObjDoor" parent="." unique_id=907675044 instance=ExtResource("11_macyy")]
-position = Vector2(-176, -1377)
+[node name="Room Folder" type="Node" parent="." unique_id=271381554]
+
+[node name="Room 1A" parent="Room Folder" unique_id=1675144235 instance=ExtResource("3_q1dpn")]
+position = Vector2(-301, -1417)
+scale = Vector2(11.320001, 9.44)
+number_of_enemies = 1
+
+[node name="ObjDoor" parent="Room Folder/Room 1A" unique_id=907675044 instance=ExtResource("11_macyy")]
+position = Vector2(11.042403, 4.2372894)
 rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor2" parent="Room Folder/Room 1A" unique_id=509779703 instance=ExtResource("11_macyy")]
+position = Vector2(-10.15901, -8.474564)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor3" parent="Room Folder/Room 1A" unique_id=1780864431 instance=ExtResource("11_macyy")]
+position = Vector2(-11.660776, 8.580521)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_4huak")]
 position = Vector2(-17, -1376)
@@ -1091,7 +1111,6 @@ damage = 0
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("8_4y6nv")]
-visible = false
 
 [node name="SlimeEnemy3" parent="." unique_id=432302108 instance=ExtResource("6_q1dpn")]
 position = Vector2(369, 268)
@@ -1107,3 +1126,8 @@ stream = ExtResource("12_l0q1t")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="Enemies" type="Node" parent="." unique_id=531856231]
+
+[node name="RatEnemy13" parent="Enemies" unique_id=706991616 instance=ExtResource("14_li7w1")]
+position = Vector2(-325, -1345)

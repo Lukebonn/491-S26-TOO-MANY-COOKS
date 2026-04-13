@@ -1,5 +1,15 @@
-[gd_scene format=3 uid="uid://cs60pjudym6j4"]
+[gd_scene format=3 uid="uid://dfsyceucp33qb"]
 
-[node name="Area2D" type="Area2D" unique_id=1675144235]
+[ext_resource type="Script" uid="uid://bb65qf3elnwa6" path="res://Objects/Door/obj_room_lock.gd" id="1_yik11"]
 
-[node name="Room" type="Node2D" parent="." unique_id=1925471583]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yik11"]
+
+[node name="Room Parent" type="Area2D" unique_id=1675144235]
+collision_layer = 64
+collision_mask = 5
+script = ExtResource("1_yik11")
+
+[node name="LockZone" type="CollisionShape2D" parent="." unique_id=321534340]
+shape = SubResource("RectangleShape2D_yik11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

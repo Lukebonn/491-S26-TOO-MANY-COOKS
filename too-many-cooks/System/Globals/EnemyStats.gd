@@ -21,3 +21,6 @@ var airtime_of_lob_thrown_by_hob_lobber = 2
 #there is currently only one enemy throwing a AoE attack, 
 #so variable may need to change in the future
 var duration_of_poison_lobbed_by_hob_lobber = 10
+
+##NOTE: number enemies in a room
+var enemies_in_room = 0

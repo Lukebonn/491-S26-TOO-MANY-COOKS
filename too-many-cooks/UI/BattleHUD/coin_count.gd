@@ -9,4 +9,6 @@ func _process(_delta: float) -> void:
 			text = str(PlayerStats.Gold)
 		"Orbs":
 			text = str(PlayerStats.Orbs)
+		"Enemies":
+			text = str(EnemyStats.enemies_in_room)
 	# just keeps track of the gold count. Nothing too fancy.
