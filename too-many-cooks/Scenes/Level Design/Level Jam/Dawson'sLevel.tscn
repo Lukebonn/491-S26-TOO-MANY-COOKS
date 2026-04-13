@@ -3,15 +3,16 @@
 [ext_resource type="TileSet" uid="uid://7jh2571tyjfq" path="res://Objects/Tilesets/FloorOneSet.tres" id="1_hl18k"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_uhsgw"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_bwg4t"]
-[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/mice/ranged_rat_enemy.tscn" id="4_eci24"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Mice/ranged_rat_enemy.tscn" id="4_eci24"]
 [ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="5_74a3k"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_ybs0p"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_r4loo"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_doys6"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_uhsgw"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_uhsgw"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="10_bwg4t"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/OrbPickup.tscn" id="11_eci24"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="12_74a3k"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/GoldPickup.tscn" id="13_ybs0p"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -26,90 +27,15 @@ tile_set = ExtResource("1_hl18k")
 zoom = Vector2(4, 4)
 Player = NodePath("../Player")
 
-[node name="RangedSlimeEnemy" parent="." unique_id=260407340 instance=ExtResource("4_eci24")]
-position = Vector2(-108, 301)
-
-[node name="HobLobber" parent="." unique_id=1670622060 instance=ExtResource("5_74a3k")]
-position = Vector2(-264, 184)
-
-[node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("6_ybs0p")]
-position = Vector2(58, 362)
-
-[node name="SlimeEnemy2" parent="." unique_id=636021781 instance=ExtResource("6_ybs0p")]
-position = Vector2(208, 277)
-
-[node name="TemplateEnemy" parent="." unique_id=979431414 instance=ExtResource("7_r4loo")]
-position = Vector2(-371, 263)
-damage = 0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("8_doys6")]
 visible = false
 
-[node name="SlimeEnemy3" parent="." unique_id=432302108 instance=ExtResource("6_ybs0p")]
-position = Vector2(369, 268)
-
-[node name="RatEnemy" parent="." unique_id=921464640 instance=ExtResource("9_uhsgw")]
-position = Vector2(368, -40)
-
-[node name="RatEnemy8" parent="." unique_id=972249327 instance=ExtResource("9_uhsgw")]
-position = Vector2(368, -40)
-
-[node name="RatEnemy13" parent="." unique_id=983304169 instance=ExtResource("9_uhsgw")]
-position = Vector2(640, -240)
-
-[node name="RatEnemy14" parent="." unique_id=1599970985 instance=ExtResource("9_uhsgw")]
-position = Vector2(544, -240)
-
-[node name="RatEnemy15" parent="." unique_id=927071972 instance=ExtResource("9_uhsgw")]
-position = Vector2(544, -176)
-
-[node name="RatEnemy16" parent="." unique_id=825159875 instance=ExtResource("9_uhsgw")]
-position = Vector2(640, -176)
-
-[node name="RatEnemy17" parent="." unique_id=1303540617 instance=ExtResource("9_uhsgw")]
-position = Vector2(640, -112)
-
-[node name="RatEnemy18" parent="." unique_id=1165394129 instance=ExtResource("9_uhsgw")]
-position = Vector2(544, -112)
-
-[node name="RatEnemy4" parent="." unique_id=637185811 instance=ExtResource("9_uhsgw")]
-position = Vector2(-576, -296)
-
-[node name="RatEnemy9" parent="." unique_id=1242331178 instance=ExtResource("9_uhsgw")]
-position = Vector2(-496, -296)
-
-[node name="RatEnemy10" parent="." unique_id=2074211720 instance=ExtResource("9_uhsgw")]
-position = Vector2(-416, -296)
-
-[node name="RatEnemy11" parent="." unique_id=1297196142 instance=ExtResource("9_uhsgw")]
-position = Vector2(-536, -248)
-
-[node name="RatEnemy12" parent="." unique_id=1850765932 instance=ExtResource("9_uhsgw")]
-position = Vector2(-456, -248)
-
-[node name="RatEnemy2" parent="." unique_id=261106722 instance=ExtResource("9_uhsgw")]
-position = Vector2(368, 24)
-
-[node name="RatEnemy7" parent="." unique_id=1052228420 instance=ExtResource("9_uhsgw")]
-position = Vector2(328, -8)
-
-[node name="RatEnemy3" parent="." unique_id=2107517410 instance=ExtResource("9_uhsgw")]
-position = Vector2(-296, -48)
-
-[node name="RatEnemy5" parent="." unique_id=32011994 instance=ExtResource("9_uhsgw")]
-position = Vector2(-352, -8)
-
-[node name="RatEnemy6" parent="." unique_id=2100367114 instance=ExtResource("9_uhsgw")]
-position = Vector2(-408, -48)
-
-[node name="SuperStrongRat" parent="." unique_id=1845722072 instance=ExtResource("9_uhsgw")]
-position = Vector2(32, -256)
-
 [node name="Labels" type="Node" parent="." unique_id=1131383549]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Labels" unique_id=1157277081]
+visible = false
 offset_left = -56.0
 offset_top = 48.0
 offset_right = 56.0
@@ -120,6 +46,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Labels" unique_id=1200511278]
+visible = false
 offset_left = 336.0
 offset_top = -296.0
 offset_right = 448.0
@@ -130,6 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Labels" unique_id=1667023354]
+visible = false
 offset_left = -160.0
 offset_top = -168.0
 offset_right = -48.0
@@ -140,6 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="Labels" unique_id=2137654965]
+visible = false
 offset_left = -408.0
 offset_top = -128.0
 offset_right = -296.0
@@ -151,6 +80,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Labels" unique_id=1032009365]
+visible = false
 offset_left = 56.0
 offset_top = -352.0
 offset_right = 176.0
@@ -161,6 +91,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Labels" unique_id=1714049767]
+visible = false
 offset_left = 512.0
 offset_top = 176.0
 offset_right = 672.0
@@ -171,6 +102,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Labels" unique_id=15873611]
+visible = false
 offset_left = 632.0
 offset_top = 120.0
 offset_right = 760.0
@@ -181,6 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel26" type="RichTextLabel" parent="Labels" unique_id=62837126]
+visible = false
 offset_left = 528.0
 offset_top = -376.0
 offset_right = 656.0
@@ -191,6 +124,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Labels" unique_id=1298356912]
+visible = false
 offset_left = 616.0
 offset_top = 16.0
 offset_right = 664.0
@@ -201,6 +135,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel10" type="RichTextLabel" parent="Labels" unique_id=182839671]
+visible = false
 offset_left = 760.0
 offset_top = -192.0
 offset_right = 808.0
@@ -211,6 +146,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel11" type="RichTextLabel" parent="Labels" unique_id=1159035997]
+visible = false
 offset_left = 312.0
 offset_top = 112.0
 offset_right = 360.0
@@ -221,6 +157,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel12" type="RichTextLabel" parent="Labels" unique_id=1874572659]
+visible = false
 offset_left = 376.0
 offset_top = 112.0
 offset_right = 424.0
@@ -231,6 +168,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel13" type="RichTextLabel" parent="Labels" unique_id=1341139734]
+visible = false
 offset_left = 216.0
 offset_top = -144.0
 offset_right = 264.0
@@ -241,6 +179,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel14" type="RichTextLabel" parent="Labels" unique_id=1448931197]
+visible = false
 offset_left = 64.0
 offset_top = -272.0
 offset_right = 112.0
@@ -251,6 +190,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel15" type="RichTextLabel" parent="Labels" unique_id=1722157358]
+visible = false
 offset_left = 8.0
 offset_top = -336.0
 offset_right = 56.0
@@ -261,6 +201,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel16" type="RichTextLabel" parent="Labels" unique_id=1025584833]
+visible = false
 offset_left = -280.0
 offset_top = -304.0
 offset_right = -232.0
@@ -271,6 +212,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel24" type="RichTextLabel" parent="Labels" unique_id=1310136373]
+visible = false
 offset_left = -104.0
 offset_top = -312.0
 offset_right = -16.0
@@ -281,6 +223,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel25" type="RichTextLabel" parent="Labels" unique_id=1298362520]
+visible = false
 offset_left = 56.0
 offset_top = -96.0
 offset_right = 168.0
@@ -291,6 +234,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel17" type="RichTextLabel" parent="Labels" unique_id=148536769]
+visible = false
 offset_left = -440.0
 offset_top = -368.0
 offset_right = -392.0
@@ -301,6 +245,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel18" type="RichTextLabel" parent="Labels" unique_id=58401790]
+visible = false
 offset_left = -520.0
 offset_top = -368.0
 offset_right = -472.0
@@ -311,6 +256,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel19" type="RichTextLabel" parent="Labels" unique_id=2127958929]
+visible = false
 offset_left = -600.0
 offset_top = -368.0
 offset_right = -552.0
@@ -321,6 +267,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel20" type="RichTextLabel" parent="Labels" unique_id=1158947304]
+visible = false
 offset_left = -648.0
 offset_top = -288.0
 offset_right = -600.0
@@ -331,6 +278,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel21" type="RichTextLabel" parent="Labels" unique_id=1794785963]
+visible = false
 offset_left = -520.0
 offset_top = -144.0
 offset_right = -472.0
@@ -341,6 +289,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel23" type="RichTextLabel" parent="Labels" unique_id=1569422390]
+visible = false
 offset_left = -376.0
 offset_top = 8.0
 offset_right = -328.0
@@ -351,6 +300,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel22" type="RichTextLabel" parent="Labels" unique_id=790396045]
+visible = false
 offset_left = -616.0
 offset_top = 120.0
 offset_right = -568.0
@@ -361,6 +311,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="Labels" unique_id=1630025340]
+visible = false
 offset_left = 760.0
 offset_top = 120.0
 offset_right = 840.0
@@ -373,14 +324,210 @@ vertical_alignment = 1
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("10_bwg4t")]
 position = Vector2(592, -392)
 
-[node name="OrbPickup" parent="." unique_id=1955872402 instance=ExtResource("11_eci24")]
-position = Vector2(-256, -276)
-
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2101300214]
 stream = ExtResource("12_74a3k")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="Pickups" type="Node" parent="." unique_id=715601378]
+
+[node name="OrbPickup" parent="Pickups" unique_id=1955872402 instance=ExtResource("11_eci24")]
+position = Vector2(-256, -276)
+
+[node name="OrbPickup5" parent="Pickups" unique_id=933299269 instance=ExtResource("11_eci24")]
+position = Vector2(-504, -128)
+
+[node name="OrbPickup6" parent="Pickups" unique_id=1882005924 instance=ExtResource("11_eci24")]
+position = Vector2(-592, 152)
+
+[node name="OrbPickup2" parent="Pickups" unique_id=890064289 instance=ExtResource("11_eci24")]
+position = Vector2(424, -272)
+
+[node name="OrbPickup3" parent="Pickups" unique_id=1788858689 instance=ExtResource("11_eci24")]
+position = Vector2(792, -176)
+
+[node name="OrbPickup4" parent="Pickups" unique_id=1915472517 instance=ExtResource("11_eci24")]
+position = Vector2(776, 160)
+
+[node name="GoldPickup4" parent="Pickups" unique_id=739019463 instance=ExtResource("13_ybs0p")]
+position = Vector2(232, -120)
+
+[node name="GoldPickup5" parent="Pickups" unique_id=1958946212 instance=ExtResource("13_ybs0p")]
+position = Vector2(248, -120)
+
+[node name="GoldPickup28" parent="Pickups" unique_id=1436907906 instance=ExtResource("13_ybs0p")]
+position = Vector2(88, -264)
+
+[node name="GoldPickup29" parent="Pickups" unique_id=1528711566 instance=ExtResource("13_ybs0p")]
+position = Vector2(88, -240)
+
+[node name="GoldPickup30" parent="Pickups" unique_id=1740622518 instance=ExtResource("13_ybs0p")]
+position = Vector2(48, -312)
+
+[node name="GoldPickup31" parent="Pickups" unique_id=1587329751 instance=ExtResource("13_ybs0p")]
+position = Vector2(16, -312)
+
+[node name="GoldPickup11" parent="Pickups" unique_id=1349094450 instance=ExtResource("13_ybs0p")]
+position = Vector2(768, -208)
+
+[node name="GoldPickup12" parent="Pickups" unique_id=2026845556 instance=ExtResource("13_ybs0p")]
+position = Vector2(784, -144)
+
+[node name="GoldPickup6" parent="Pickups" unique_id=1728279616 instance=ExtResource("13_ybs0p")]
+position = Vector2(408, 120)
+
+[node name="GoldPickup7" parent="Pickups" unique_id=1565790490 instance=ExtResource("13_ybs0p")]
+position = Vector2(408, 144)
+
+[node name="GoldPickup16" parent="Pickups" unique_id=2134409938 instance=ExtResource("13_ybs0p")]
+position = Vector2(-424, -344)
+
+[node name="GoldPickup17" parent="Pickups" unique_id=428876777 instance=ExtResource("13_ybs0p")]
+position = Vector2(-408, -344)
+
+[node name="GoldPickup18" parent="Pickups" unique_id=834230743 instance=ExtResource("13_ybs0p")]
+position = Vector2(-504, -344)
+
+[node name="GoldPickup19" parent="Pickups" unique_id=1570162292 instance=ExtResource("13_ybs0p")]
+position = Vector2(-488, -344)
+
+[node name="GoldPickup20" parent="Pickups" unique_id=1126997476 instance=ExtResource("13_ybs0p")]
+position = Vector2(-584, -344)
+
+[node name="GoldPickup22" parent="Pickups" unique_id=1529928898 instance=ExtResource("13_ybs0p")]
+position = Vector2(-632, -280)
+
+[node name="GoldPickup23" parent="Pickups" unique_id=33604092 instance=ExtResource("13_ybs0p")]
+position = Vector2(-632, -264)
+
+[node name="GoldPickup24" parent="Pickups" unique_id=1235737832 instance=ExtResource("13_ybs0p")]
+position = Vector2(-624, 120)
+
+[node name="GoldPickup25" parent="Pickups" unique_id=77471292 instance=ExtResource("13_ybs0p")]
+position = Vector2(-624, 144)
+
+[node name="GoldPickup26" parent="Pickups" unique_id=1966494496 instance=ExtResource("13_ybs0p")]
+position = Vector2(-560, 144)
+
+[node name="GoldPickup27" parent="Pickups" unique_id=119087621 instance=ExtResource("13_ybs0p")]
+position = Vector2(-560, 120)
+
+[node name="GoldPickup32" parent="Pickups" unique_id=1346367561 instance=ExtResource("13_ybs0p")]
+position = Vector2(-368, 32)
+
+[node name="GoldPickup33" parent="Pickups" unique_id=837119379 instance=ExtResource("13_ybs0p")]
+position = Vector2(-336, 32)
+
+[node name="GoldPickup34" parent="Pickups" unique_id=1622923204 instance=ExtResource("13_ybs0p")]
+position = Vector2(-352, 16)
+
+[node name="GoldPickup21" parent="Pickups" unique_id=175770154 instance=ExtResource("13_ybs0p")]
+position = Vector2(-568, -344)
+
+[node name="GoldPickup13" parent="Pickups" unique_id=2095173704 instance=ExtResource("13_ybs0p")]
+position = Vector2(648, 8)
+
+[node name="GoldPickup15" parent="Pickups" unique_id=3068880 instance=ExtResource("13_ybs0p")]
+position = Vector2(648, 32)
+
+[node name="GoldPickup14" parent="Pickups" unique_id=1712433388 instance=ExtResource("13_ybs0p")]
+position = Vector2(648, 56)
+
+[node name="GoldPickup10" parent="Pickups" unique_id=1153538568 instance=ExtResource("13_ybs0p")]
+position = Vector2(368, 160)
+
+[node name="GoldPickup8" parent="Pickups" unique_id=413664090 instance=ExtResource("13_ybs0p")]
+position = Vector2(328, 144)
+
+[node name="GoldPickup9" parent="Pickups" unique_id=790856631 instance=ExtResource("13_ybs0p")]
+position = Vector2(328, 120)
+
+[node name="Enemies" type="Node" parent="." unique_id=1984233044]
+
+[node name="RatEnemy" parent="Enemies" unique_id=921464640 instance=ExtResource("9_uhsgw")]
+position = Vector2(368, -40)
+
+[node name="RatEnemy8" parent="Enemies" unique_id=972249327 instance=ExtResource("9_uhsgw")]
+position = Vector2(368, -40)
+
+[node name="RatEnemy13" parent="Enemies" unique_id=983304169 instance=ExtResource("9_uhsgw")]
+position = Vector2(640, -240)
+
+[node name="RatEnemy14" parent="Enemies" unique_id=1599970985 instance=ExtResource("9_uhsgw")]
+position = Vector2(544, -240)
+
+[node name="RatEnemy15" parent="Enemies" unique_id=927071972 instance=ExtResource("9_uhsgw")]
+position = Vector2(544, -176)
+
+[node name="RatEnemy16" parent="Enemies" unique_id=825159875 instance=ExtResource("9_uhsgw")]
+position = Vector2(640, -176)
+
+[node name="RatEnemy17" parent="Enemies" unique_id=1303540617 instance=ExtResource("9_uhsgw")]
+position = Vector2(640, -112)
+
+[node name="RatEnemy18" parent="Enemies" unique_id=1165394129 instance=ExtResource("9_uhsgw")]
+position = Vector2(544, -112)
+
+[node name="RatEnemy4" parent="Enemies" unique_id=637185811 instance=ExtResource("9_uhsgw")]
+position = Vector2(-576, -296)
+
+[node name="RatEnemy9" parent="Enemies" unique_id=1242331178 instance=ExtResource("9_uhsgw")]
+position = Vector2(-496, -296)
+
+[node name="RatEnemy10" parent="Enemies" unique_id=2074211720 instance=ExtResource("9_uhsgw")]
+position = Vector2(-416, -296)
+
+[node name="RatEnemy11" parent="Enemies" unique_id=1297196142 instance=ExtResource("9_uhsgw")]
+position = Vector2(-536, -248)
+
+[node name="RatEnemy12" parent="Enemies" unique_id=1850765932 instance=ExtResource("9_uhsgw")]
+position = Vector2(-456, -248)
+
+[node name="RatEnemy2" parent="Enemies" unique_id=261106722 instance=ExtResource("9_uhsgw")]
+position = Vector2(368, 24)
+
+[node name="RatEnemy7" parent="Enemies" unique_id=1052228420 instance=ExtResource("9_uhsgw")]
+position = Vector2(328, -8)
+
+[node name="RatEnemy3" parent="Enemies" unique_id=2107517410 instance=ExtResource("9_uhsgw")]
+position = Vector2(-296, -48)
+
+[node name="RatEnemy5" parent="Enemies" unique_id=32011994 instance=ExtResource("9_uhsgw")]
+position = Vector2(-352, -8)
+
+[node name="RatEnemy6" parent="Enemies" unique_id=2100367114 instance=ExtResource("9_uhsgw")]
+position = Vector2(-408, -48)
+
+[node name="SuperStrongRat" parent="Enemies" unique_id=1845722072 instance=ExtResource("9_uhsgw")]
+position = Vector2(32, -256)
+
+[node name="Unused Enemies" type="Node" parent="." unique_id=2035942046]
+
+[node name="RangedSlimeEnemy" parent="Unused Enemies" unique_id=260407340 instance=ExtResource("4_eci24")]
+visible = false
+position = Vector2(-108, 301)
+
+[node name="HobLobber" parent="Unused Enemies" unique_id=1670622060 instance=ExtResource("5_74a3k")]
+visible = false
+position = Vector2(-264, 184)
+
+[node name="SlimeEnemy" parent="Unused Enemies" unique_id=1633737342 instance=ExtResource("6_ybs0p")]
+visible = false
+position = Vector2(58, 362)
+
+[node name="SlimeEnemy2" parent="Unused Enemies" unique_id=636021781 instance=ExtResource("6_ybs0p")]
+visible = false
+position = Vector2(208, 277)
+
+[node name="TemplateEnemy" parent="Unused Enemies" unique_id=979431414 instance=ExtResource("7_r4loo")]
+visible = false
+position = Vector2(-371, 263)
+damage = 0
+
+[node name="SlimeEnemy3" parent="Unused Enemies" unique_id=432302108 instance=ExtResource("6_ybs0p")]
+visible = false
+position = Vector2(369, 268)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]

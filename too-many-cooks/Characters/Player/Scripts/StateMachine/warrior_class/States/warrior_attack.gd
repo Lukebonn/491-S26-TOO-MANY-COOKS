@@ -42,7 +42,7 @@ func enter_state(player_node):
 		
 		player.get_node("Weapon").rotation_degrees -= 50 * player.current_x_dir
 		
-		lunge_player()
+		#lunge_player()
 		
 		match combo_counter:
 			0:
