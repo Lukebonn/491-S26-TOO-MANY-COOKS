@@ -29,10 +29,12 @@ var global_mouse_pos : Vector2
 
 var current_state : PlayerState
 
+#Emitted when attempting to use Special, but no MP is available.
 signal notEnoughMana()
-# Is emitted when a spell is used without having enough Mana.
+#Emitted when the player has died.
 signal playerDeath()
-# I think this one might be emitted when the player dies, not sure.
+#Bool var for quick death state checking.
+var dead : bool = false
 
 var num_keys : int = 0
 #Number of held Keys, used by Key and Lock objects.

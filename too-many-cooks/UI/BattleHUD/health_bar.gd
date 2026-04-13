@@ -7,8 +7,8 @@ func _ready() -> void:
 	max_value = PlayerStats.MaxHealth
 	# ensures that the maximum value for the Health bar matches 
 	# that of the player's max Health.
-	self_modulate = Color(10.0, 0.0, 0.0, 1.0)
-	# sets the color of the Health bar to be red
+	#self_modulate = Color(10.0, 0.0, 0.0, 1.0)
+	## sets the color of the Health bar to be red
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 				# if the player's health reaches 0 (when they "die")
 				# stop the health bar from flashing, and set the color
 				# of the health bar to black
-				self_modulate = Color(0.0, 0.0, 0.0, 1.0)
+				#self_modulate = Color(0.0, 0.0, 0.0, 1.0)
 				$Timer.stop() # Stops the flash timer, as the player has died.
 				enteredCriticalHealth = false # used to stop the flashing
 		else: # this code will only run if the player is not in critical health
@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 			$Timer.stop() 
 			# prevents the flash timer from starting because the player
 			# should not be in critical health.
-			self_modulate = Color(10.0, 0.0, 0.0, 1.0)
+			self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 			# changes color of the Health bar to its default, in case
 			# it needs to be changed by any status effects.
 			if PlayerStatusEffects.statusEffects.has("Regeneration"):
@@ -66,6 +66,6 @@ func _on_timer_timeout() -> void:
 		self_modulate = Color(5.0, 5.0, 5.0, 1.0)
 		flash = false
 	else:
-		self_modulate = Color(10.0, 0.0, 0.0, 1.0)
+		self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		flash = true
 	# woaw this code makes the health bar flash how awesome.

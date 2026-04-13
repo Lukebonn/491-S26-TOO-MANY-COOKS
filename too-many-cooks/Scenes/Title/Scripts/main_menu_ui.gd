@@ -34,3 +34,4 @@ func _on_pause_ui_closed_menu():
 	var tween = get_tree().create_tween().set_parallel(true)
 	for panel in $Sidebar.get_children():
 		tween.tween_property(panel,"position",(Vector2(0,0)),panel.get_index()+1*.6).set_trans(Tween.TRANS_EXPO)
+	tween.parallel().tween_property($"../Title UI/titletop","position",Vector2(576,-0),.3)

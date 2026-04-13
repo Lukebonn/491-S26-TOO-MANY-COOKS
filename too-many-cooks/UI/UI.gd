@@ -122,6 +122,7 @@ func _on_player_death() -> void:
 
 func _on_retry_button_button_down() -> void:
 	PlayerStats.Gold = PlayerStats.temp_gold
+	PlayerStats.Orbs = PlayerStats.temp_orb
 	get_tree().reload_current_scene()
 	# restarts the combat scene
 
@@ -213,6 +214,7 @@ func quest_received():
 func _on_pause_retry_button_down() -> void:
 	get_tree().paused = false
 	PlayerStats.Gold = PlayerStats.temp_gold
+	PlayerStats.Orbs = PlayerStats.temp_orb
 	get_tree().reload_current_scene()
 
 
