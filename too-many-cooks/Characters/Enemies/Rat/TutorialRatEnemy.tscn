@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://df5nnvgfc8kvw"]
 
-[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_1fhb1"]
-[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="2_jxfaf"]
+[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/rat/rat_enemy.gd" id="1_1fhb1"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_su5ma"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_su5ma"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_cu61l"]
@@ -10,9 +9,12 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_886er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Scenes/arrow.tscn" id="8_tl2oi"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_taufn"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_nnmt0"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_nnmt0"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_abqjk"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/GoldPickup.tscn" id="12_ggai0"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="13_kqgyc"]
+[ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/mice/black/2.png" id="14_g1fmx"]
+[ext_resource type="Texture2D" uid="uid://blf2g0ay12jtq" path="res://Characters/Enemies/mice/black/3.png" id="15_bs8a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
@@ -24,14 +26,32 @@ size = Vector2(16.5, 12.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocypi"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kqgyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_g1fmx")
+}],
 "loop": true,
 "name": &"chase",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kqgyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kqgyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bs8a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bs8a6")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -49,7 +69,7 @@ metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
 collision_layer = 16
-collision_mask = 68
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
 shape = SubResource("RectangleShape2D_jonyw")
@@ -74,15 +94,6 @@ shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
 stream = ExtResource("2_su5ma")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
-position = Vector2(0.25, -2.75)
-sprite_frames = SubResource("SpriteFrames_wcvgi")
-animation = &"chase"
-
-[node name="template sprite" type="Sprite2D" parent="." unique_id=1448242322]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_jxfaf")
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("3_su5ma")]
 offset_top = -16.5
@@ -139,6 +150,13 @@ Drop_Amount = 1
 Drop_Amount_Max = 2
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=439426406]
+modulate = Color(1, 0.6210423, 0.56365764, 1)
+position = Vector2(0.25, -2.75)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ocypi")
+animation = &"idle"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

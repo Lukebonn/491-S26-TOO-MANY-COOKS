@@ -44,6 +44,8 @@ func set_up_tavern():
 	if Global.Has_Mage_NPC:
 		$Class_NPCS/Mage_CLASS_NPC.show()
 		$"Upgrade Man/MagicWorkshop0".hide()
+		$TavernBackgroundLong2.show()
+		
 	if Global.Has_Rogue_NPC:
 		$Class_NPCS/Rogue_CLASS_NPC.show()
 

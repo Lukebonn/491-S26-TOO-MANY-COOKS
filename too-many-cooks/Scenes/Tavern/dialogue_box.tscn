@@ -17,6 +17,8 @@ corner_radius_bottom_left = 10
 corner_detail = 5
 shadow_size = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pecbt"]
+
 [node name="Dialogue Box" type="Control" unique_id=2003466752]
 z_index = 1
 layout_mode = 3
@@ -111,3 +113,11 @@ autowrap_trim_flags = 128
 [node name="SpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
 z_index = 1
 position = Vector2(-45, -326)
+
+[node name="MouseBlocker" type="Panel" parent="Container" unique_id=1929785020]
+layout_mode = 0
+offset_left = -576.0
+offset_top = -266.0
+offset_right = 579.0
+offset_bottom = -27.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pecbt")

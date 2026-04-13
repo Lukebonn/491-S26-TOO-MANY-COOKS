@@ -21,7 +21,7 @@ signal done_printing
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
 func _input(event):
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
 		if in_dialogue:
 			text_speed = 0
 			print("skipping")
@@ -34,6 +34,7 @@ func show_dialogue(character: String, index, emotions):
 	end_of_dialogue = false
 	var tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
+	
 	print_text(character, index, emotions)
 	
 func end_dialogue():

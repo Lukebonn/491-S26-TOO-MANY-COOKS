@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccknvsbk3xdax"]
 
 [ext_resource type="Script" uid="uid://baom06ojl8ofv" path="res://Characters/Enemies/Scripts/enemy_arrow.gd" id="1_osdl6"]
-[ext_resource type="Texture2D" uid="uid://ci160oexc3cew" path="res://Characters/Enemies/Rat/cheese.png" id="2_kxdl1"]
+[ext_resource type="Texture2D" uid="uid://ci160oexc3cew" path="res://Characters/Enemies/rat/cheese.png" id="2_kxdl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fehqi"]
 size = Vector2(131.66666, 99.999985)

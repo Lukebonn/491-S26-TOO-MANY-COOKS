@@ -34,23 +34,23 @@ Player = NodePath("../Player")
 
 [node name="Barrier" parent="." unique_id=1785926896 instance=ExtResource("10_pa5cx")]
 position = Vector2(0, -98)
-collision_layer = 69
+collision_mask = 4
 
 [node name="Barrier2" parent="." unique_id=1004379491 instance=ExtResource("10_pa5cx")]
 position = Vector2(21, -98)
-collision_layer = 69
+collision_mask = 4
 
 [node name="Barrier3" parent="." unique_id=457043127 instance=ExtResource("10_pa5cx")]
 position = Vector2(42, -98)
-collision_layer = 69
+collision_mask = 4
 
 [node name="Barrier4" parent="." unique_id=745719832 instance=ExtResource("10_pa5cx")]
 position = Vector2(-42, -98)
-collision_layer = 69
+collision_mask = 4
 
 [node name="Barrier5" parent="." unique_id=1202399102 instance=ExtResource("10_pa5cx")]
 position = Vector2(-21, -98)
-collision_layer = 69
+collision_mask = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=482306515]
 

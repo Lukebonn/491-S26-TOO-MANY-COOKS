@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://ja87ubeb3t44"]
 
 [ext_resource type="Script" uid="uid://db8aisup6xpsj" path="res://Characters/Player/Scripts/StateMachine/player_state_handler.gd" id="1_oijlg"]
-[ext_resource type="Texture2D" uid="uid://dgo6aajhlo8vt" path="res://Characters/Player/Sprites/teenycat.png" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://bv1hakmic3dkw" path="res://Characters/Player/Sprites/cat_hurt1.png" id="2_b6jp0"]
-[ext_resource type="Texture2D" uid="uid://v4npyqavw6xf" path="res://Characters/Player/Sprites/cat1.png" id="3_va6lm"]
 [ext_resource type="Script" uid="uid://6uhy5s6vb8xv" path="res://Characters/Player/Scripts/StateMachine/Universal_States/idle_state.gd" id="3_vr61t"]
-[ext_resource type="Texture2D" uid="uid://destkwcn8a2y" path="res://Characters/Player/Sprites/cat2.png" id="4_u2wkb"]
-[ext_resource type="Texture2D" uid="uid://dmrmnqedpfckg" path="res://Characters/Player/Sprites/cat3.png" id="5_b71o8"]
+[ext_resource type="Texture2D" uid="uid://fjdumjtc3715" path="res://Characters/Player/Sprites/1.png" id="3_x58m1"]
+[ext_resource type="Texture2D" uid="uid://crlkullwijt42" path="res://Characters/Player/Sprites/2.png" id="5_b6jp0"]
 [ext_resource type="Script" uid="uid://ccody8gnos5eo" path="res://Characters/Player/Scripts/StateMachine/Universal_States/move_state.gd" id="5_pwx6j"]
-[ext_resource type="Texture2D" uid="uid://bogj5hn8s0qau" path="res://Characters/Player/Sprites/cat4.png" id="6_x58m1"]
+[ext_resource type="Texture2D" uid="uid://dmgwh3652cjrc" path="res://Characters/Player/Sprites/3.png" id="6_8k5s7"]
 [ext_resource type="Texture2D" uid="uid://2cjq7two4d6g" path="res://Characters/Player/Sprites/4.png" id="8_b6jp0"]
 [ext_resource type="Texture2D" uid="uid://bofwkmant5t1n" path="res://Characters/Player/Sprites/5.png" id="9_8k5s7"]
 [ext_resource type="Texture2D" uid="uid://xfnaaidjbh62" path="res://Characters/Player/Sprites/6.png" id="10_5elsd"]
@@ -29,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3smsa")
+"texture": ExtResource("3_x58m1")
 }],
 "loop": true,
 "name": &"idle",
@@ -45,16 +43,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_va6lm")
+"texture": ExtResource("3_x58m1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_u2wkb")
+"texture": ExtResource("5_b6jp0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_b71o8")
+"texture": ExtResource("3_x58m1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_x58m1")
+"texture": ExtResource("6_8k5s7")
 }],
 "loop": true,
 "name": &"move",
@@ -93,7 +91,7 @@ script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2079195409]
 sprite_frames = SubResource("SpriteFrames_7vev3")
-animation = &"idle up"
+animation = &"move"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]
