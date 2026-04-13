@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfsyceucp33qb"]
 
-[ext_resource type="Script" uid="uid://bb65qf3elnwa6" path="res://Objects/Door/obj_room_lock.gd" id="1_yik11"]
+[ext_resource type="Script" uid="uid://bb65qf3elnwa6" path="res://Objects/Door + room(door parent)/obj_room_lock.gd" id="1_yik11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yik11"]
 

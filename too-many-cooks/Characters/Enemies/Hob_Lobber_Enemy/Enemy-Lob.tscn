@@ -144,6 +144,8 @@ radius = 268.01678
 
 [node name="Area2D" type="Area2D" unique_id=724398940]
 script = ExtResource("1_r24qm")
+projectile_gravity = 100.0
+launch_speed = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=481920401]
 position = Vector2(-1.0000005, 0)

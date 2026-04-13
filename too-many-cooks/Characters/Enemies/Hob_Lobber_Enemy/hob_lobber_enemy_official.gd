@@ -2,7 +2,7 @@ class_name HobLobberEnemy
 extends CharacterBody2D
 
 var player_in_sight : bool = false
-var player_ref : CharacterBody2D = null
+var player_ref : Area2D = null
 var current_state : EnemyState = null
 
 @export var health : int = 10
@@ -39,7 +39,9 @@ func _physics_process(delta):
 		current_state.process(delta)
 
 func get_player_vector():
-	return (player_ref.position - position).normalized()
+	if player_ref == null:
+		return Vector2.ZERO
+	return (player_ref.global_position - global_position).normalized()
 
 func take_damage(amount: int):
 	current_health -= amount
@@ -48,18 +50,18 @@ func take_damage(amount: int):
 
 # SIGNALS -----------------------------------------------------------------
 
-func _on_sight_body_entered(body):
-	if body.name == "Player":
-		player_ref = body
-		player_in_sight = true
-		
-		if sight_state:
-			change_state(sight_state.name)
-
-func _on_sight_body_exited(body):
-	if body.name == "Player":
-		player_in_sight = false
-		change_state("IdleState")
+#func _on_sight_body_entered(body):
+	#if body.name == "Player":
+		#player_ref = body
+		#player_in_sight = true
+		#
+		#if sight_state:
+			#change_state(sight_state.name)
+#
+#func _on_sight_body_exited(body):
+	#if body.name == "Player":
+		#player_in_sight = false
+		#change_state("IdleState")
 
 ##these have been temporarily disabled for testing
 #func _on_hurtbox_area_entered(area):
@@ -74,3 +76,20 @@ func _on_sight_body_exited(body):
 	#
 	#if current_state != $HitState:
 		#change_state("HitState")
+
+
+func _on_sight_area_entered(area: Area2D) -> void:
+	print(area.name)
+	if area.name == "Player":
+		player_ref = area
+		player_in_sight = true
+		
+		if sight_state:
+			change_state("ProjectileState")
+
+
+func _on_sight_area_exited(area: Area2D) -> void:
+	print(area.name)
+	if area.name == "Player":
+		player_in_sight = false
+		change_state("IdleState")

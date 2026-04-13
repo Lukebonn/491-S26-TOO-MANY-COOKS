@@ -298,6 +298,7 @@ offset_bottom = 579.0
 text = "test"
 
 [node name="IconEnemy" type="Sprite2D" parent="." unique_id=826344231]
+visible = false
 position = Vector2(1049, 21)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_qhxh2")

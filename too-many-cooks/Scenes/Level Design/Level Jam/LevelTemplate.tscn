@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpewu83cvmdt" path="res://Objects/Tilesets/ActOneAtlas.png" id="1_dsrmt"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_44rpy"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_l0njl"]
-[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Scenes/ranged_rat_enemy.tscn" id="4_sqboc"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/mice/ranged_rat_enemy.tscn" id="4_sqboc"]
 [ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="5_mkukw"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_kogml"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_emnbp"]

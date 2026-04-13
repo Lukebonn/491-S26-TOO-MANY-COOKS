@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjmw5jy4mmifb"]
 
-[ext_resource type="Script" uid="uid://dotxbh7pk5ny" path="res://Objects/Door/obj_door.gd" id="1_5kuwq"]
+[ext_resource type="Script" uid="uid://dotxbh7pk5ny" path="res://Objects/Door + room(door parent)/obj_door.gd" id="1_5kuwq"]
 [ext_resource type="Texture2D" uid="uid://j5q2afh8glo3" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdDoorSheet.png" id="2_aslu8"]
 [ext_resource type="AudioStream" uid="uid://bg827sqplq45y" path="res://Audio/Sounds/doorClosing.mp3" id="3_lfrka"]
 [ext_resource type="AudioStream" uid="uid://bxwh1ula70xab" path="res://Audio/Sounds/doorOpening.mp3" id="4_cj2kf"]

@@ -16,6 +16,7 @@ extends EnemyState
 var fired = true
 
 func enter_state(enemy_node):
+	print("entered projectile state")
 	fired = true
 	super(enemy_node)
 	await get_tree().create_timer(Idle_Time/2).timeout
@@ -31,7 +32,7 @@ func fire():
 	fired = true
 	#make a raycast to get a vector or position for projectiles to go to
 	var raycast = RayCast2D.new()
-	raycast.position = enemy_ref.position
+	raycast.global_position = enemy_ref.global_position
 	raycast.target_position = enemy_ref.get_player_vector() * Projectile_Speed
 	add_child(raycast)
 	#make a new projectile, set its stuff
@@ -43,8 +44,10 @@ func fire():
 		new_proj.playerLocation = player_ref.global_position
 	#adds as sibling so projectile doesn't vanish if enemy is KO'd
 	add_sibling(new_proj)
+	print("fired new_proj")
 	await get_tree().create_timer(Idle_Time).timeout
 	fired = false
+	exit_state()
 func flee():
 	enemy_ref.velocity = enemy_ref.get_player_vector() * -1 * Flee_Speed
 	while enemy_ref.velocity.length() > 1:

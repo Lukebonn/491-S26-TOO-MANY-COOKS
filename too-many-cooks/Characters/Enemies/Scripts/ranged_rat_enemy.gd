@@ -77,6 +77,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite_2d.play("Idle")
 
 func _on_sight_area_entered(body: Area2D) -> void:
+	print(body.name)
 	if body.name == "Hurtbox":
 		playerNode = body
 		inRange = true
