@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://cg2nyu8ql7ij2"
+path="res://.godot/imported/Chapterselect.png-dd4d33417f32d504f5d11967502f0d0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/Chapterselect.png"
+dest_files=["res://.godot/imported/Chapterselect.png-dd4d33417f32d504f5d11967502f0d0e.ctex"]
 
 [params]
 

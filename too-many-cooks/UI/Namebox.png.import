@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bnd47m2uos4u3"
+path="res://.godot/imported/Namebox.png-947899fcdb3719db146efba03dc3a7f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/Namebox.png"
+dest_files=["res://.godot/imported/Namebox.png-947899fcdb3719db146efba03dc3a7f2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://dirne86kb1of5"
+path="res://.godot/imported/AbbyP_Textbox_UI-V2.png-605bf7d9713fba9035ee6d15e186de13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/AbbyP_Textbox_UI-V2.png"
+dest_files=["res://.godot/imported/AbbyP_Textbox_UI-V2.png-605bf7d9713fba9035ee6d15e186de13.ctex"]
 
 [params]
 

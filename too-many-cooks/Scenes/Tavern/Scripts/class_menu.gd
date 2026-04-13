@@ -49,9 +49,9 @@ func set_passive_labels(passive_str, passive_hp, passive_def, passive_spd, passi
 	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/MANA.text = str(int(passive_mana))
 	
 func set_other_descriptions(attack_des, dash_des, magic_des, other_des):
-	$Panel/VBoxContainer/HBoxContainer/Stats/AttackDescription.text = "Attack becomes a [color=red]"
-	$Panel/VBoxContainer/HBoxContainer/Stats/DashDescription.text = "Dash becomes a [color=yellow]"
-	$Panel/VBoxContainer/HBoxContainer/Stats/MagicDescription.text = "Magic becomes a [color=lightblue]"
+	$Panel/VBoxContainer/HBoxContainer/Stats/AttackDescription.text = "Attack becomes a [color=dark_red]"
+	$Panel/VBoxContainer/HBoxContainer/Stats/DashDescription.text = "Dash becomes a [color=dark_goldenrod]"
+	$Panel/VBoxContainer/HBoxContainer/Stats/MagicDescription.text = "Magic becomes a [color=midnight_blue]"
 	$Panel/VBoxContainer/HBoxContainer/Stats/TrueOtherDescription.text = ""
 	$Panel/VBoxContainer/HBoxContainer/Stats/AttackDescription.text += str(attack_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/DashDescription.text += str(dash_des)

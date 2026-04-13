@@ -3,15 +3,45 @@
 [ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_sedxj"]
 [ext_resource type="Script" uid="uid://bdj1daavcuomn" path="res://Scenes/Tavern/door_class_select.gd" id="2_rjcil"]
 [ext_resource type="Texture2D" uid="uid://cmurr5fnovyih" path="res://Characters/Player/Sprites/Weapons/Sword/sword1.png" id="3_rjcil"]
+[ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tsy5r"]
 [ext_resource type="Texture2D" uid="uid://cv0jm0phuf3cp" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyTown/KttBow.png" id="4_1la83"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_4b76g"]
 [ext_resource type="Texture2D" uid="uid://qon1yyruwokm" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdArrow.png" id="5_tsy5r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y33xb"]
-bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.8980392)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_150b5"]
+texture = ExtResource("3_tsy5r")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwykc"]
+bg_color = Color(0.9019608, 0.81960785, 0.64705884, 0.72156864)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lj0bv"]
+bg_color = Color(0.79607844, 0.6901961, 0.4627451, 0.72156864)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kqe0"]
+bg_color = Color(0.92941177, 0.8627451, 0.7294118, 0.72156864)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr3at"]
+bg_color = Color(0.92941177, 0.8627451, 0.7294118, 0.72156864)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 
 [node name="Class Select" type="Control" unique_id=877217506]
 z_index = 3
@@ -37,7 +67,7 @@ offset_left = -400.0
 offset_top = -250.0
 offset_right = 400.0
 offset_bottom = 250.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_y33xb")
+theme_override_styles/panel = SubResource("StyleBoxTexture_150b5")
 
 [node name="Close" type="Button" parent="Panel" unique_id=2059311441]
 z_index = 1
@@ -45,11 +75,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -66.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 47.0
+offset_left = -449.0
+offset_top = 76.0
+offset_right = -350.0
+offset_bottom = 122.0
 grow_horizontal = 0
+theme = ExtResource("4_4b76g")
 text = "Close"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
@@ -62,6 +93,7 @@ mouse_filter = 2
 [node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
+theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "What class should I be?"
 fit_content = true
@@ -75,6 +107,7 @@ size_flags_vertical = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer2" unique_id=1523503634]
 layout_mode = 2
+theme = ExtResource("4_4b76g")
 
 [node name="Classes" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1269665270]
 layout_mode = 2
@@ -85,12 +118,20 @@ alignment = 1
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwykc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lj0bv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 text = "Warrior"
 
 [node name="Rogue" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1154282168]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwykc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lj0bv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 disabled = true
 text = "Rogue"
 
@@ -98,14 +139,12 @@ text = "Rogue"
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vwykc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lj0bv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 disabled = true
 text = "Magician"
-
-[node name="sword" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1895565087]
-z_index = 1
-position = Vector2(98, 102.5)
-scale = Vector2(10.214286, 10.214286)
-texture = ExtResource("3_rjcil")
 
 [node name="knife" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=186783298]
 visible = false
@@ -113,6 +152,12 @@ z_index = 1
 position = Vector2(295, 102.5)
 scale = Vector2(10.214286, 10.214286)
 texture = ExtResource("4_1la83")
+
+[node name="sword" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1895565087]
+z_index = 1
+position = Vector2(98, 102.5)
+scale = Vector2(10.214286, 10.214286)
+texture = ExtResource("3_rjcil")
 
 [node name="staff" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=816185281]
 visible = false

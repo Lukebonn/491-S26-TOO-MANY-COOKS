@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://8i3srlssm5v"
+path="res://.godot/imported/akari-sitting-sprite.png-068c015c598acf7a71f0973f9086f87b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Scenes/Tavern/Art/akari-sitting-sprite.png"
+dest_files=["res://.godot/imported/akari-sitting-sprite.png-068c015c598acf7a71f0973f9086f87b.ctex"]
 
 [params]
 

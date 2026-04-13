@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bg4dwvgfff8qs"
+path="res://.godot/imported/Scrollbar.png-802b8e537916fce55f0b9b9df35eb73b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/Scrollbar.png"
+dest_files=["res://.godot/imported/Scrollbar.png-802b8e537916fce55f0b9b9df35eb73b.ctex"]
 
 [params]
 

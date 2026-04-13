@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://cfkc7bgncab8v"
+path="res://.godot/imported/mage-standing-sprite.png-baa387b5ab83bf40085998edf25d5337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Scenes/Tavern/Art/mage-standing-sprite.png"
+dest_files=["res://.godot/imported/mage-standing-sprite.png-baa387b5ab83bf40085998edf25d5337.ctex"]
 
 [params]
 
