@@ -2,6 +2,9 @@ extends Node2D
 @export var dialogue_ref : Control
 @export var ambientMusic: AudioStreamPlayer
 @export var actionMusic: AudioStreamPlayer
+
+var deadRats = 0
+
 func _ready():
 	FadeInFadeOut.fade_in()
 	if ambientMusic:
@@ -37,3 +40,21 @@ func _on_first_rat_death() -> void:
 		node.process_mode = Node.PROCESS_MODE_ALWAYS
 		node.show()
 		await get_tree().create_timer(1).timeout
+
+
+func _on_tutorial_rat_enemy_death() -> void:
+	deadRats += 1
+	if deadRats == 8:
+		if actionMusic:
+			actionMusic.stop()
+		$Player.process_mode = Node.PROCESS_MODE_DISABLED
+		dialogue_ref.show_dialogue("Player","0,1,2,3", "0,0")
+		await dialogue_ref.message_complete
+		$Player.hide()
+		dialogue_ref.show_dialogue("Narrator","0,1,2,3,4", "0,0")
+		await dialogue_ref.message_complete
+		FadeInFadeOut.fade_out()
+		await get_tree().create_timer(1.2).timeout
+		push_warning("THIS IS PROBABLY WHERE THE CREDITS WOULD PLAY")
+		FadeInFadeOut.fade_in()
+		get_tree().change_scene_to_file("res://Scenes/Title/title_screen.tscn")
