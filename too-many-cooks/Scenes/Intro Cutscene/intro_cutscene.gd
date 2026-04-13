@@ -97,7 +97,7 @@ func next_subtitle(index: int):
 				
 				tween.tween_property(subtitle,"position",Vector2(76,475),1).set_trans(Tween.TRANS_CUBIC)
 			10:
-				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
+				tween.tween_property(subtitle,"position",Vector2(76,550),1).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property($PageArrow,"position",Vector2(1084,728),.2).set_trans(Tween.TRANS_CUBIC)
 		#tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
 		await tween.finished

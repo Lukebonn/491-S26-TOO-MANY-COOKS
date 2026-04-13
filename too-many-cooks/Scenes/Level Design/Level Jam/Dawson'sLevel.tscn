@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_ybs0p"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_r4loo"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_doys6"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_uhsgw"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_uhsgw"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="10_bwg4t"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/OrbPickup.tscn" id="11_eci24"]
+[ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="12_74a3k"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -373,6 +374,12 @@ position = Vector2(592, -392)
 
 [node name="OrbPickup" parent="." unique_id=1955872402 instance=ExtResource("11_eci24")]
 position = Vector2(-256, -276)
+
+[node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2101300214]
+stream = ExtResource("12_74a3k")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]

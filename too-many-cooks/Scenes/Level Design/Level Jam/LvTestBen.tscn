@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_g380y"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_hah25"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="9_k28en"]
+[ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="10_how2r"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -208,9 +209,8 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
-[node name="UI" parent="CanvasLayer" unique_id=1832120515 node_paths=PackedStringArray("player") instance=ExtResource("8_g380y")]
+[node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("8_g380y")]
 visible = false
-player = NodePath("../../Player")
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("9_hah25")]
 position = Vector2(-80, -1392)
@@ -384,3 +384,9 @@ vertical_alignment = 1
 
 [node name="ObjDestructibleSpawner" parent="." unique_id=2060713828 instance=ExtResource("9_k28en")]
 position = Vector2(0, -168)
+
+[node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1535045514]
+stream = ExtResource("10_how2r")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"
