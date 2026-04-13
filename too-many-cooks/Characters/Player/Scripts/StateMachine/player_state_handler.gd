@@ -13,7 +13,7 @@ var displayMana : int = int(mana)
 var strength : int = PlayerStats.base_str
 var defense : int = PlayerStats.base_def
 var magic : int = PlayerStats.base_mag
-var speed : int = 120
+var speed : int = 12
 var speed_mult : int = PlayerStats.base_spd
 
 var damage : int

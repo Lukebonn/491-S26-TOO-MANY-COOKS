@@ -11,8 +11,8 @@ var Orbs : int = 0
 var temp_gold : int = 0
 
 ##speed stats for the player
-var Max_Speed = 200.0
-var Speed_Slowdown = 150.0
+#var Max_Speed = 200.0
+#var Speed_Slowdown = 150.0
 
 ##health and mana, 
 #these are directly edited from tavern upgrades
@@ -24,7 +24,7 @@ var MaxMana := 100.0
 ##base player stats without any items for class modifiers
 var base_str : int = 10
 var base_def : int = 10
-var base_spd : int = 1
+var base_spd : int = 10
 var base_mag : int = 10
 
 ##passive player stats that have been upgraded

@@ -113,7 +113,7 @@ func update_new_stats():
 	new_mana = Class_Level * Base_Max_Mana * Max_Mana_Growth_Modifier
 	new_mana_regen = Class_Level * Base_Mana_Regen * Mana_Regen_Growth_Modifier
 	new_def = Class_Level * Base_Defense * Defense_Growth_Modifier
-	new_spd = Class_Level * Base_Speed * Speed_Growth_Modifier
+	new_spd = Class_Level + PlayerStats.base_spd
 
 	new_passive_str = Class_Level * Passive_Strength * Strength_Growth_Modifier
 	new_passive_hp = Class_Level * Passive_Max_HP * Max_Health_Growth_Modifier
