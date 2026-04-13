@@ -33,7 +33,7 @@ func hide_menu_top():
 
 func _on_act_1_pressed():
 	#later hook this up to a level queue that picks N unique levels out of the scenes in a given folder
-	make_level_queue("res://Scenes/Level Design/Level Jam/",3)
+	make_level_queue("res://Scenes/Level Design/Playtest2LevelPack",2)
 	pass # Replace with function body.
 
 

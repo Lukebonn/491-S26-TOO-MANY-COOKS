@@ -43,6 +43,7 @@ func set_up_tavern():
 		$"EndDoor".show()
 	if Global.Has_Mage_NPC:
 		$Class_NPCS/Mage_CLASS_NPC.show()
+		$"Upgrade Man/MagicWorkshop0".hide()
 	if Global.Has_Rogue_NPC:
 		$Class_NPCS/Rogue_CLASS_NPC.show()
 
