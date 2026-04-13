@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dotxbh7pk5ny" path="res://Objects/Door/obj_door.gd" id="1_5kuwq"]
 [ext_resource type="Texture2D" uid="uid://j5q2afh8glo3" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdDoorSheet.png" id="2_aslu8"]
+[ext_resource type="AudioStream" uid="uid://bg827sqplq45y" path="res://Audio/Sounds/doorClosing.mp3" id="3_lfrka"]
+[ext_resource type="AudioStream" uid="uid://bxwh1ula70xab" path="res://Audio/Sounds/doorOpening.mp3" id="4_cj2kf"]
+[ext_resource type="AudioStream" uid="uid://cye5lanm4tjlk" path="res://Audio/Sounds/doorUnlcoking.mp3" id="5_kuohc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfrka"]
+size = Vector2(32, 16)
 
 [sub_resource type="Animation" id="Animation_17h6n"]
 length = 0.001
@@ -12,6 +18,18 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -28,11 +46,26 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.12505619, 0.25011238, 0.37613055),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3, 2, 1, 0, 0]
+"values": [3, 2, 1, 0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12505619, 0.25107434, 0.37613055),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_lfrka"]
+resource_name = "close2.0"
 
 [sub_resource type="Animation" id="Animation_aslu8"]
 resource_name = "open"
@@ -44,7 +77,19 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"times": PackedFloat32Array(0, 0.1279421, 0.25011238, 0.37613055),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13467589, 0.25780815, 0.38094038),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -54,15 +99,47 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_17h6n"),
 &"close": SubResource("Animation_nopuj"),
+&"close2.0": SubResource("Animation_lfrka"),
 &"open": SubResource("Animation_aslu8")
 }
 
-[node name="ObjDoor" type="Node2D" unique_id=907675044]
+[sub_resource type="CircleShape2D" id="CircleShape2D_aslu8"]
+radius = 39.319206
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=509779703]
 script = ExtResource("1_5kuwq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2082492924]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=234937811]
+position = Vector2(-8, 0)
 texture = ExtResource("2_aslu8")
 hframes = 4
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2082492924]
+position = Vector2(8, 0)
+texture = ExtResource("2_aslu8")
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786605134]
+shape = SubResource("RectangleShape2D_lfrka")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1107824209]
 libraries/ = SubResource("AnimationLibrary_17h6n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=553935439]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1890161688]
+shape = SubResource("CircleShape2D_aslu8")
+
+[node name="doorClosing" type="AudioStreamPlayer2D" parent="." unique_id=1306148498]
+stream = ExtResource("3_lfrka")
+
+[node name="doorOpening" type="AudioStreamPlayer2D" parent="." unique_id=1431812206]
+stream = ExtResource("4_cj2kf")
+
+[node name="doorUnlocking" type="AudioStreamPlayer2D" parent="." unique_id=592569611]
+stream = ExtResource("5_kuohc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
