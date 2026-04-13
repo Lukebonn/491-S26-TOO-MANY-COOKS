@@ -142,7 +142,7 @@ text = "Mana
 position = Vector2(48, 160)
 texture = ExtResource("8_vx7wu")
 
-[node name="CoinCount" type="RichTextLabel" parent="." unique_id=1877924493]
+[node name="GoldCount" type="RichTextLabel" parent="." unique_id=1877924493]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 144.0
@@ -150,8 +150,8 @@ offset_right = 160.0
 offset_bottom = 192.0
 theme = ExtResource("1_tabjk")
 theme_override_font_sizes/normal_font_size = 30
-text = "10000"
 script = ExtResource("4_snacm")
+counter = "Gold"
 
 [node name="IconOrb" type="Sprite2D" parent="." unique_id=1504229725]
 position = Vector2(48, 200)
@@ -166,8 +166,9 @@ offset_right = 160.0
 offset_bottom = 232.0
 theme = ExtResource("1_tabjk")
 theme_override_font_sizes/normal_font_size = 30
-text = "10000"
+bbcode_enabled = true
 script = ExtResource("4_snacm")
+counter = "Orbs"
 
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=1649117116]
 visible = false
@@ -278,18 +279,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Quest" type="Label" parent="." unique_id=1913761903]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 374.0
 offset_right = 399.0
 offset_bottom = 485.0
+text = "test"
 
 [node name="Quest2" type="Label" parent="." unique_id=1987583185]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 468.0
 offset_right = 399.0
 offset_bottom = 579.0
+text = "test"
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]

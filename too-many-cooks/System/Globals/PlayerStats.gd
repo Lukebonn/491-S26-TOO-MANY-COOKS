@@ -5,7 +5,7 @@ extends Node
 #make sure they are typed variables too, most will be floats
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
-var Gold := 5
+var Gold := 0
 var Orbs : int = 0
 #Gold when entering floor, reverted back to on Retry to avoid infinite Gold farm.
 var temp_gold : int = 0

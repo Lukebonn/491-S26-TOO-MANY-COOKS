@@ -2,11 +2,17 @@ extends Control
 @export var dialogue_box_ref : Control
 
 func show_menu():
+	$PlayerChoiceA.disabled = false
+	$PlayerChoiceB.disabled = false
+	$PlayerChoiceC.disabled = false
 	await dialogue_box_ref.done_printing
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,174),.5).set_trans(Tween.TRANS_CUBIC)
 
 func hide_menu():
+	$PlayerChoiceA.disabled = true
+	$PlayerChoiceB.disabled = true
+	$PlayerChoiceC.disabled = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,-340),.5).set_trans(Tween.TRANS_CUBIC)
 	await tween.finished

@@ -22,7 +22,7 @@ signal done_printing
 
 func _input(event):
 	if Input.is_action_pressed("attack"):
-		if is_printing_text:
+		if in_dialogue:
 			text_speed = 0
 			print("skipping")
 		if !is_awaiting_response:
@@ -84,6 +84,7 @@ func print_text(character: String, index, emotions):
 				if text_speed != 0:
 					await get_tree().create_timer(text_speed).timeout
 			done_printing.emit()
+			is_printing_text = false
 			await next_line
 		if end_of_dialogue:
 			end_dialogue()

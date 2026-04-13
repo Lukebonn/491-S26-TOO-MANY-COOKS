@@ -755,6 +755,7 @@ theme = ExtResource("39_01gve")
 theme_override_font_sizes/normal_font_size = 30
 text = "10000"
 script = ExtResource("40_2wstm")
+counter = "Gold"
 
 [node name="IconOrb" type="Sprite2D" parent="HeadsUpUI" unique_id=2090706192]
 position = Vector2(119.5, 64)
@@ -771,6 +772,7 @@ theme = ExtResource("39_01gve")
 theme_override_font_sizes/normal_font_size = 30
 text = "10000"
 script = ExtResource("40_2wstm")
+counter = "Orbs"
 
 [node name="FirstTimeUI" type="Control" parent="." unique_id=1270136097]
 visible = false
