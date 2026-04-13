@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
+[ext_resource type="Texture2D" uid="uid://dhngis7eqoj45" path="res://Scenes/Tavern/Art/akari-sitting-sprite.jpg" id="12_jt0a5"]
 [ext_resource type="Texture2D" uid="uid://bk5fwno73txee" path="res://Scenes/Tavern/Art/MageArea_1.png" id="12_vrssr"]
 [ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="14_7td72"]
 [ext_resource type="Script" uid="uid://c0g6qfd3sk4p7" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_attack.gd" id="14_p826n"]
@@ -29,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://by8schxoxexd5" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/rage.png" id="17_4f6a6"]
 [ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="18_tqgpy"]
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="20_7td72"]
+[ext_resource type="Texture2D" uid="uid://cu2s5yhhmhv1" path="res://Scenes/Tavern/Art/renly-sitting-sprite.jpg" id="20_ls4nc"]
+[ext_resource type="Texture2D" uid="uid://duydbeyy5dmgo" path="res://Scenes/Tavern/Art/mage-standing-sprite.jpg" id="21_pcv2t"]
 [ext_resource type="PackedScene" uid="uid://co1wdkv55yg55" path="res://Scenes/Tavern/class_menu.tscn" id="21_y33xb"]
 [ext_resource type="Script" uid="uid://dfktgotoe2b4l" path="res://Scenes/Tavern/Scripts/Class_NPC_Class.gd" id="23_djqff"]
 [ext_resource type="Script" uid="uid://dtxjs2bbhgpjq" path="res://Scenes/Tavern/pause_button.gd" id="26_djqff"]
@@ -294,12 +297,13 @@ offset_right = 1239.0
 
 [node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref")]
 layout_mode = 0
-offset_left = 1383.0
-offset_top = 346.0
-offset_right = 1511.0
-offset_bottom = 474.0
-texture_normal = ExtResource("15_mpp4l")
+offset_left = 1541.0
+offset_top = 371.0
+offset_right = 1583.0
+offset_bottom = 443.0
+texture_normal = ExtResource("12_jt0a5")
 texture_pressed = ExtResource("18_tqgpy")
+stretch_mode = 0
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Warrior"
@@ -329,10 +333,10 @@ metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" unique_id=990799324]
 layout_mode = 0
-offset_left = 27.99997
-offset_top = 44.0
-offset_right = 93.99997
-offset_bottom = 75.0
+offset_left = -23.00003
+offset_top = -39.0
+offset_right = 68.99997
+offset_bottom = -8.0
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 30
 text = "warrior"
@@ -356,10 +360,11 @@ visible = false
 layout_mode = 0
 offset_left = -645.0
 offset_top = 320.0
-offset_right = -517.0
-offset_bottom = 448.0
-texture_normal = ExtResource("15_mpp4l")
+offset_right = -614.0
+offset_bottom = 394.0
+texture_normal = ExtResource("20_ls4nc")
 texture_pressed = ExtResource("18_tqgpy")
+stretch_mode = 0
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Rogue"
@@ -386,10 +391,10 @@ metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Rogue_CLASS_NPC" unique_id=673501371]
 layout_mode = 0
-offset_left = 27.99997
-offset_top = 44.0
-offset_right = 93.99997
-offset_bottom = 75.0
+offset_left = -23.00003
+offset_top = -34.0
+offset_right = 59.99997
+offset_bottom = -3.0
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 30
 text = "ranger"
@@ -410,13 +415,15 @@ metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Mage_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1953501329 node_paths=PackedStringArray("Class_Menu_Ref")]
 visible = false
+z_index = 1
 layout_mode = 0
-offset_left = 155.0
-offset_top = 377.0
-offset_right = 283.0
-offset_bottom = 505.0
-texture_normal = ExtResource("15_mpp4l")
+offset_left = 158.0
+offset_top = 374.0
+offset_right = 198.0
+offset_bottom = 451.0
+texture_normal = ExtResource("21_pcv2t")
 texture_pressed = ExtResource("18_tqgpy")
+stretch_mode = 0
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Mage"
@@ -443,10 +450,9 @@ metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Mage_CLASS_NPC" unique_id=51842102]
 layout_mode = 0
-offset_left = 27.99997
-offset_top = 44.0
-offset_right = 93.99997
-offset_bottom = 75.0
+offset_left = -11.0
+offset_top = -31.0
+offset_right = 55.0
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 30
 text = "mage"
