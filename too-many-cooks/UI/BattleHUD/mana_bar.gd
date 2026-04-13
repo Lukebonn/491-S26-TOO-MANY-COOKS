@@ -1,16 +1,16 @@
-extends ProgressBar
+extends TextureProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	max_value = PlayerStats.MaxMana
 	# ensures that the maximum value for the Mana bar matches 
 	# that of the player's max Mana.
-	self_modulate = Color(10, 0.0, 10, 1.0)
-	# sets the color of the Mana bar to be whatever this color is!
+	#self_modulate = Color(10, 0.0, 10, 1.0)
+	## sets the color of the Mana bar to be whatever this color is!
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not get_parent().player:
 		pass
 	else:
@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 func _on_flash_mana_bar() -> void:
 	self_modulate = Color(5.0, 5.0, 5.0, 1.0)
 	await get_tree().create_timer(0.1).timeout
-	self_modulate = Color(10, 0.0, 10, 1.0)
+	#self_modulate = Color(10, 0.0, 10, 1.0)
+	self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 # When the player does not have enough Mana to cast their spell, the
 # bar will flash to indicate to the player that they don't have enough Mana.
