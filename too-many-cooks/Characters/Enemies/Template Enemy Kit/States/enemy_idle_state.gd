@@ -3,6 +3,7 @@ extends EnemyState
 
 func enter_state(enemy_node):
 	super(enemy_node)
+	enemy_node.get_node("AnimatedSprite2D").play("idle")
 	enemy_ref.velocity = Vector2(0,0)
 	if enemy_ref.player_in_sight:
 		enemy_ref.change_state(str(enemy_ref.sight_state))
