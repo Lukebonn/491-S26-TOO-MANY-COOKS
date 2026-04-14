@@ -11,5 +11,6 @@
 [5]For your first task, I entreat upon you to bring back samples of concentrated essence consisting of the creatures residing in the Tower. 
 [5]There are a few areas on each floor where the miscreants gather together, when you approach it will be as if a never ending flood of foes wash over you.
 [5]Take out their point of entry and you will be able to gather the very essence that I seek, so concentrated that even a novice mage such as yourself should be able to visualize it as small floating orbs. 
-[5]Do as I ask and I will teach you one of my most basic but essential spells, the fireball. I remember when my father first taught me that spell. Why I was still a boy of only a decade and a half, I hadn’t even earned my staff yet.
+[5]Do as I ask and I will teach you one of my most basic but essential spells, the fireball. 
+[5]I remember when my father first taught me that spell. Why I was still a boy of only a decade and a half, I hadn’t even earned my staff yet.
 [1]Instead I had to cast directly from my body, which is possible but lacking a focus the magic was often, well, unfocused. This in turn would cause the spells to react wildly, arcing in strange directions or…#

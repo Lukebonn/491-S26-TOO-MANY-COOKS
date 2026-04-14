@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_dash.gd" id="15_1gied"]
 [ext_resource type="Texture2D" uid="uid://dqmdofdis25ld" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/grinning.png" id="15_mpp4l"]
 [ext_resource type="Script" uid="uid://b6ugk1okk1c33" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_magic.gd" id="16_tvort"]
-[ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="18_tqgpy"]
 [ext_resource type="Texture2D" uid="uid://b5ed7gybd4alq" path="res://Scenes/Tavern/Art/renly-sitting-sprite.png" id="20_ls4nc"]
 [ext_resource type="Texture2D" uid="uid://cfkc7bgncab8v" path="res://Scenes/Tavern/Art/mage-standing-sprite.png" id="21_pcv2t"]
 [ext_resource type="PackedScene" uid="uid://co1wdkv55yg55" path="res://Scenes/Tavern/class_menu.tscn" id="21_y33xb"]
@@ -426,7 +425,7 @@ offset_top = 192.0
 offset_right = -603.0
 offset_bottom = 346.0
 texture_normal = ExtResource("21_pcv2t")
-texture_pressed = ExtResource("18_tqgpy")
+texture_pressed = ExtResource("21_pcv2t")
 stretch_mode = 0
 script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
@@ -473,7 +472,7 @@ mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Mage"
 Expressions = Array[Texture]([ExtResource("7_a44po"), SubResource("PlaceholderTexture2D_1gied"), SubResource("PlaceholderTexture2D_tvort"), SubResource("PlaceholderTexture2D_0id2w"), SubResource("PlaceholderTexture2D_ulbsv"), SubResource("PlaceholderTexture2D_gevxm")])
-Conversations = Array[String](["0,1,2,3,4,5", "7,8", "10,11,12,13,14"])
+Conversations = Array[String](["0,1,2,3,4,5", "7,8", "10,11,12,13,14,15"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="NPCs" type="Control" parent="Tavern BG" unique_id=1772715436]
