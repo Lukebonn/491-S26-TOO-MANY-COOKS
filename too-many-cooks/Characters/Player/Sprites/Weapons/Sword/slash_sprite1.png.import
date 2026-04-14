@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"
+uid="uid://dplfqmakclcie"
+path="res://.godot/imported/slash_sprite1.png-13e5bad599e6efcfa978dfb4fca37a7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"]
+source_file="res://Characters/Player/Sprites/Weapons/Sword/slash_sprite1.png"
+dest_files=["res://.godot/imported/slash_sprite1.png-13e5bad599e6efcfa978dfb4fca37a7e.ctex"]
 
 [params]
 

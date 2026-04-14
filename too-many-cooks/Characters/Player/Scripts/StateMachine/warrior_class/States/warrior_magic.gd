@@ -20,7 +20,7 @@ func enter_state(player_node):
 					sword_projectile()
 			2:
 				if(player.mana >= 25):
-					await spin_attack()
+					spin_attack()
 	
 	start_cooldown()
 	player.change_state("move_state")
@@ -44,8 +44,8 @@ func parry():
 
 func sword_projectile():
 	var attack = preload("res://Objects/Projectiles/magic_sword_projectile.tscn").instantiate()
-	player.add_child(attack)
-	attack.position += player.local_mouse_pos.normalized() * 15
+	get_tree().get_root().add_child(attack)
+	attack.global_position = player.global_position + player.local_mouse_pos.normalized() * 15
 	attack.velocity = player.local_mouse_pos.normalized() * 2
 	
 	player.mana -= 15
@@ -59,7 +59,7 @@ func spin_attack():
 	var attack = preload("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/warrior_spin_attack.tscn").instantiate()
 	player.add_child(attack)
 	
-	player.velocity = Vector2.ZERO
+	#player.velocity = Vector2.ZERO
 	
 	player.mana -= 25
 	

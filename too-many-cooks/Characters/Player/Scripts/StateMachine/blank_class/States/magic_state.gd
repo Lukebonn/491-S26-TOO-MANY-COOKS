@@ -15,8 +15,8 @@ func enter_state(player_node):
 		var spell
 		
 		spell = preload("res://Objects/Projectiles/magic_default.tscn").instantiate()
-		player.add_child(spell)
-		spell.position += player.local_mouse_pos.normalized() * 15
+		get_tree().get_root().add_child(spell)
+		spell.global_position = player.global_position + player.local_mouse_pos.normalized() * 15
 		spell.velocity = player.local_mouse_pos.normalized() * 5
 		player.mana -= mana_cost
 		

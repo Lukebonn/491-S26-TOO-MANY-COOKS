@@ -32,8 +32,8 @@ func enter_state(player_node):
 func ice_spears():
 	for i in 5:
 		var icicle = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/icicle.tscn").instantiate()
-		player.add_child(icicle)
-		icicle.position += player.local_mouse_pos.normalized() * 15
+		get_tree().get_root().add_child(icicle)
+		icicle.global_position = player.global_position + player.local_mouse_pos.normalized() * 15
 		icicle.velocity = player.local_mouse_pos.normalized() * 10
 		
 		icicle.look_at(player.global_mouse_pos)

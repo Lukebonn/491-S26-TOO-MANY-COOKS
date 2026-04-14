@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddekgva2cqnbm"]
 
 [ext_resource type="AudioStream" uid="uid://cssqg27bfaiag" path="res://Audio/Sounds/Player/Mage/fire ring.wav" id="1_6iwbg"]
+[ext_resource type="Script" uid="uid://dimtn2kkpv8t2" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.gd" id="1_d08n7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_es7ai"]
 radius = 40.0
@@ -8,6 +9,7 @@ radius = 40.0
 [node name="FireBlast" type="Area2D" unique_id=864007785]
 collision_layer = 4
 collision_mask = 16
+script = ExtResource("1_d08n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418160656]
 shape = SubResource("CircleShape2D_es7ai")

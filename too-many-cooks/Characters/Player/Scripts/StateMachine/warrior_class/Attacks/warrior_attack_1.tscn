@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpbindqs64pju"]
 
 [ext_resource type="PackedScene" uid="uid://4xcgo6wurbfm" path="res://Characters/Player/Scripts/StateMachine/blank_class/Attacks/blank_attack.tscn" id="1_3hwd6"]
+[ext_resource type="Texture2D" uid="uid://dplfqmakclcie" path="res://Characters/Player/Sprites/Weapons/Sword/slash_sprite1.png" id="2_tuify"]
 
 [node name="Hitbox" unique_id=607964857 instance=ExtResource("1_3hwd6")]
 
@@ -11,5 +12,11 @@ polygon = PackedVector2Array(41.918114, -40.53202, 41.918114, 39.531975, 26.1988
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=323557212]
 visible = false
+autoplay = ""
 frame = 0
 frame_progress = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=726721652]
+position = Vector2(26, 0)
+scale = Vector2(1.4285718, 1.375)
+texture = ExtResource("2_tuify")
