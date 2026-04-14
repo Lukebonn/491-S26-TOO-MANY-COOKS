@@ -9,3 +9,8 @@ func _ready():
 
 func _physics_process(_delta):
 	move_and_collide(velocity)
+
+
+##projectile should disappear when it hits a wall
+func _on_hitbox_body_entered(_body: Node2D) -> void:
+	queue_free()

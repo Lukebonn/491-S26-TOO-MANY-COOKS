@@ -12,3 +12,8 @@ func _process(delta: float) -> void:
 	rotation_degrees += 800 * delta
 	velocity -= velocity/3 * delta
 	move_and_collide(velocity)
+
+
+##projectile should disappear when it hits a wall
+func _on_hitbox_body_entered(_body: Node2D) -> void:
+	queue_free()

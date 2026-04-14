@@ -52,7 +52,8 @@ func sword_projectile():
 	
 	await get_tree().create_timer(1).timeout
 	
-	attack.queue_free()
+	if(attack):
+		attack.queue_free()
 
 func spin_attack():
 	

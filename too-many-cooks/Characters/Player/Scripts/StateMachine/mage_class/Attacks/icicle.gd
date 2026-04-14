@@ -14,3 +14,7 @@ func _physics_process(_delta):
 #projectile despawns when hitting an enemy
 func _on_hitbox_area_entered(_area):
 	queue_free()
+
+##projectile should disappear when it hits a wall
+func _on_hitbox_body_entered(_body: Node2D) -> void:
+	queue_free()
