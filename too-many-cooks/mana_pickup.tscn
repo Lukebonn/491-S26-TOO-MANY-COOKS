@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dywvbhqvv5j1i"]
+
+[ext_resource type="Script" uid="uid://cbke46xydedkf" path="res://mana_pickup.gd" id="1_ofee8"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="2_65yrc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mkuk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gycbf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qfou"]
+radius = 33.01515
+
+[node name="mana_pickup" type="CharacterBody2D" unique_id=1379705406]
+script = ExtResource("1_ofee8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=224484780]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=507567947]
+shape = SubResource("CircleShape2D_4mkuk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=743518447]
+modulate = Color(1, 0.32941177, 1, 1)
+texture = ExtResource("2_65yrc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=179717350]
+shape = SubResource("CircleShape2D_gycbf")
+
+[node name="sight" type="Area2D" parent="." unique_id=584921485]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1485046187]
+shape = SubResource("CircleShape2D_0qfou")
