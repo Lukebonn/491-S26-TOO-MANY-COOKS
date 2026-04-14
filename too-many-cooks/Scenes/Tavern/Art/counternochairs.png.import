@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu2s5yhhmhv1"
-path="res://.godot/imported/renly-sitting-sprite.jpg-593880b34e25e1ad5679847b933e7290.ctex"
+uid="uid://c7f0gi2s8k3or"
+path="res://.godot/imported/counternochairs.png-779164e50d1a3a82d905ef7d85a7d26a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tavern/Art/renly-sitting-sprite.jpg"
-dest_files=["res://.godot/imported/renly-sitting-sprite.jpg-593880b34e25e1ad5679847b933e7290.ctex"]
+source_file="res://Scenes/Tavern/Art/counternochairs.png"
+dest_files=["res://.godot/imported/counternochairs.png-779164e50d1a3a82d905ef7d85a7d26a.ctex"]
 
 [params]
 

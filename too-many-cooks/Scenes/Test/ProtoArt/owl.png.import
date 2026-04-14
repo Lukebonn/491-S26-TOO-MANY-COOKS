@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhngis7eqoj45"
-path="res://.godot/imported/akari-sitting-sprite.jpg-cc0f8497c5f1328937c7915c121c2545.ctex"
+uid="uid://cpckjjvf1m3x8"
+path="res://.godot/imported/owl.png-82223f4beb744de53a5523030ed551a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tavern/Art/akari-sitting-sprite.jpg"
-dest_files=["res://.godot/imported/akari-sitting-sprite.jpg-cc0f8497c5f1328937c7915c121c2545.ctex"]
+source_file="res://Scenes/Test/ProtoArt/owl.png"
+dest_files=["res://.godot/imported/owl.png-82223f4beb744de53a5523030ed551a9.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

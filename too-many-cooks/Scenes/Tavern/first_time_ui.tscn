@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://c32fhh5aee0ah"]
+
+[ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="1_j5ms4"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_owxew"]
+
+[node name="FirstTimeUI" type="Control" unique_id=1697375891]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_owxew")
+script = ExtResource("1_j5ms4")
+
+[node name="FirstPanel" type="Panel" parent="." unique_id=323025489]
+layout_mode = 1
+offset_left = 360.0
+offset_top = 202.0
+offset_right = 798.0
+offset_bottom = 414.0
+
+[node name="Label" type="Label" parent="FirstPanel" unique_id=693030681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -82.5
+offset_right = 196.0
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Welcome to the Tavern!
+This is where you can upgrade and talk to NPCs to help you get stronger."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="FirstPanel" unique_id=11809731]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -47.0
+offset_right = 26.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[node name="SecondPanel" type="Panel" parent="." unique_id=1735700998]
+visible = false
+layout_mode = 1
+offset_left = 360.0
+offset_top = 217.0
+offset_right = 798.0
+offset_bottom = 414.0
+
+[node name="Label" type="Label" parent="SecondPanel" unique_id=2032398596]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -68.5
+offset_right = 209.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "You can upgrade your tavern by hovering over various things and clicking them."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="SecondPanel" unique_id=1543650504]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -47.0
+offset_right = 26.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[node name="ThirdPanel" type="Panel" parent="." unique_id=1416949147]
+visible = false
+layout_mode = 1
+offset_left = 556.0
+offset_top = 105.0
+offset_right = 994.0
+offset_bottom = 302.0
+
+[node name="Label" type="Label" parent="ThirdPanel" unique_id=1316733286]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -89.5
+offset_right = 209.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "These are NPCs.
+You can talk to them with the mouse.
+Some may make you stronger!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="ThirdPanel" unique_id=1084553305]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -47.0
+offset_right = 26.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[node name="FourthPanel" type="Panel" parent="." unique_id=1592204307]
+visible = false
+layout_mode = 1
+offset_left = 360.0
+offset_top = 217.0
+offset_right = 798.0
+offset_bottom = 414.0
+
+[node name="Label" type="Label" parent="FourthPanel" unique_id=59908728]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -69.5
+offset_right = 209.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Hover over the right and left arrows on the side to move around the tavern."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="FourthPanel" unique_id=995448073]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -47.0
+offset_right = 26.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "OK"
+
+[connection signal="pressed" from="FirstPanel/Button" to="." method="_on_button_one_pressed"]
+[connection signal="pressed" from="SecondPanel/Button" to="." method="_on_button_two_pressed"]
+[connection signal="pressed" from="ThirdPanel/Button" to="." method="_on_button_three_pressed"]
+[connection signal="pressed" from="FourthPanel/Button" to="." method="_on_button_four_pressed"]

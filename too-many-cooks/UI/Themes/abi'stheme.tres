@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bejhfnvpr2bas"]
 
+[ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="1_trhw8"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4lqs"]
 bg_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 border_width_left = 4
@@ -57,6 +59,7 @@ border_width_bottom = 4
 border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 
 [resource]
+default_font = ExtResource("1_trhw8")
 Button/colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
