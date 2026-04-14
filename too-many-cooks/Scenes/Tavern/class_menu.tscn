@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_veqpr"]
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tj6yy"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_6abwf"]
+[ext_resource type="FontFile" uid="uid://dwou2mmwlxkrl" path="res://UI/Themes/Fonts/unifontex-font/Unifontexmono-lxY45.ttf" id="5_6abwf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn838"]
 texture = ExtResource("3_tj6yy")
@@ -73,7 +74,7 @@ mouse_filter = 2
 [node name="Class_Name" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "The "
 fit_content = true
@@ -97,7 +98,7 @@ size_flags_vertical = 0
 layout_mode = 2
 tooltip_text = "What your stats will be modified by when this class is chosen"
 mouse_filter = 0
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 text = "Active Stat Changes"
 horizontal_alignment = 1
 
@@ -109,7 +110,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Strength"
 fit_content = true
@@ -119,7 +120,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "HP"
 fit_content = true
@@ -129,7 +130,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Defense"
 fit_content = true
@@ -139,7 +140,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Speed"
 fit_content = true
@@ -149,7 +150,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Mana"
 fit_content = true
@@ -163,7 +164,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -172,7 +173,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -181,7 +182,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -190,7 +191,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -199,7 +200,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -208,7 +209,7 @@ horizontal_alignment = 1
 layout_mode = 2
 tooltip_text = "What your stats will be modified by even when this class is not chosen"
 mouse_filter = 0
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 text = "Passive Stat Changes"
 horizontal_alignment = 1
 
@@ -220,7 +221,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Strength"
 fit_content = true
@@ -230,7 +231,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "HP"
 fit_content = true
@@ -240,7 +241,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Defense"
 fit_content = true
@@ -250,7 +251,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Speed"
 fit_content = true
@@ -260,7 +261,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
 text = "Mana"
 fit_content = true
@@ -274,7 +275,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -283,7 +284,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -292,7 +293,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -301,7 +302,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -310,20 +311,20 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "0"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="Other" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=597595398]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 text = "Other:"
 horizontal_alignment = 1
 
 [node name="AttackDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1361897609]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Attack becomes a [color=dark_red]"
@@ -331,7 +332,7 @@ fit_content = true
 
 [node name="DashDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=933498308]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Dash becomes a [color=sienna]"
@@ -339,7 +340,7 @@ fit_content = true
 
 [node name="MagicDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=88970703]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Magic becomes a [color=midnight_blue]"
@@ -363,6 +364,7 @@ z_index = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("4_6abwf")
+theme_override_fonts/font = ExtResource("5_6abwf")
 text = "Talk"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1463405284]
@@ -375,20 +377,17 @@ alignment = 1
 
 [node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=199862697]
 z_index = 1
-custom_minimum_size = Vector2(130, 100)
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 2
 theme = ExtResource("4_6abwf")
+theme_override_fonts/font = ExtResource("5_6abwf")
 text = "Upgrade"
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=587582743]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=62058358]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 text = "Requires Quest Done"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -402,6 +401,7 @@ z_index = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("4_6abwf")
+theme_override_fonts/font = ExtResource("5_6abwf")
 text = "Quest"
 
 [connection signal="pressed" from="Panel/Close" to="." method="hide_menu"]

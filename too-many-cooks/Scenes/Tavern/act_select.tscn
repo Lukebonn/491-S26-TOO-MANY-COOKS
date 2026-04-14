@@ -8,95 +8,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxpr4"]
 texture = ExtResource("3_jrdk3")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igd0f"]
-bg_color = Color(0.9019608, 0.81960785, 0.64705884, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2lnf"]
-bg_color = Color(0.79607844, 0.6901961, 0.4627451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc5dc"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrdk3"]
-bg_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr6uo"]
-bg_color = Color(0.9019608, 0.81960785, 0.64705884, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxpr4"]
-bg_color = Color(0.79607844, 0.6901961, 0.4627451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbyfj"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ynda"]
-bg_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxcy4"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo2e5"]
-bg_color = Color(0.9019608, 0.81960785, 0.64705884, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb7ik"]
-bg_color = Color(0.79607844, 0.6901961, 0.4627451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0kcw"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13luu"]
-bg_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-
 [node name="Act Select" type="Control" unique_id=877217506]
 z_index = 3
 layout_mode = 3
@@ -147,7 +58,7 @@ mouse_filter = 2
 [node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "Where should I go...?"
 fit_content = true
@@ -162,50 +73,26 @@ size_flags_vertical = 6
 [node name="Levels" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2" unique_id=1269665270]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_oxpr4")
 alignment = 1
 
 [node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-theme_override_colors/font_focus_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_colors/font_hover_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_igd0f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_d2lnf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fc5dc")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_jrdk3")
+theme = ExtResource("1_37k14")
 text = "Act 1"
 
 [node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-theme_override_colors/font_focus_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_colors/font_hover_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_sr6uo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oxpr4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vbyfj")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_0ynda")
-theme_override_styles/focus = SubResource("StyleBoxFlat_jxcy4")
+theme = ExtResource("1_37k14")
 disabled = true
 text = "Act 2"
 
 [node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-theme_override_colors/font_focus_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_colors/font_hover_color = Color(0.4392157, 0.24705882, 0.043137256, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.22745098, 0.11764706, 0.011764706, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_mo2e5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pb7ik")
-theme_override_styles/hover = SubResource("StyleBoxFlat_y0kcw")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_13luu")
+theme = ExtResource("1_37k14")
 disabled = true
 text = "Act 3"
 

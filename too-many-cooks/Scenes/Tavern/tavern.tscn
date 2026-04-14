@@ -40,11 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://du40u5c3f4oix" path="res://UI/Img/IconArrowL.png" id="35_01gve"]
 [ext_resource type="Texture2D" uid="uid://cy28flxqvqj6r" path="res://UI/Img/IconArrowR.png" id="36_01gve"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="38_gevxm"]
-[ext_resource type="Texture2D" uid="uid://bg4dwvgfff8qs" path="res://UI/Scrollbar.png" id="38_pcv2t"]
 [ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="39_01gve"]
 [ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="40_2wstm"]
-[ext_resource type="Texture2D" uid="uid://c47n260yljqmg" path="res://UI/Scrollbar2.png" id="40_84rqq"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="42_2wstm"]
 [ext_resource type="PackedScene" uid="uid://c32fhh5aee0ah" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
 
@@ -77,11 +75,9 @@ size = Vector2(128, 128)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a55l7"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpyct"]
-texture = ExtResource("38_pcv2t")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wstm"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7eab"]
-texture = ExtResource("40_84rqq")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb1dg"]
 
 [node name="Tavern" type="Node2D" unique_id=233294115 node_paths=PackedStringArray("dialogue_ref")]
 script = ExtResource("1_1uoo0")
@@ -597,7 +593,7 @@ offset_right = 96.0
 offset_bottom = 608.0
 grow_vertical = 2
 theme = ExtResource("2_tqgpy")
-theme_override_styles/panel = SubResource("StyleBoxTexture_gpyct")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2wstm")
 
 [node name="LeftPanelArrow" type="TextureRect" parent="HeadsUpUI/LeftPanel" unique_id=674523534]
 layout_mode = 1
@@ -607,9 +603,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -22.5
-offset_top = -42.0
+offset_top = -24.0
 offset_right = 22.5
-offset_bottom = -2.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -631,7 +627,7 @@ offset_bottom = 608.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_tqgpy")
-theme_override_styles/panel = SubResource("StyleBoxTexture_y7eab")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kb1dg")
 
 [node name="RightPanelArrow" type="TextureRect" parent="HeadsUpUI/RightPanel" unique_id=1739437180]
 layout_mode = 1
@@ -641,9 +637,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -22.5
-offset_top = -1.0
+offset_top = -24.0
 offset_right = 22.5
-offset_bottom = 39.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
