@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7mtvcfyorufg"]
 
 [ext_resource type="Script" uid="uid://j807jo3j658r" path="res://Scenes/Intro Cutscene/intro_cutscene.gd" id="1_ancq6"]
-[ext_resource type="Texture2D" uid="uid://du40u5c3f4oix" path="res://UI/Img/IconArrowL.png" id="2_6wkej"]
+[ext_resource type="Texture2D" uid="uid://cy28flxqvqj6r" path="res://UI/Img/IconArrowR.png" id="2_6wkej"]
 [ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="2_ct673"]
 [ext_resource type="Texture2D" uid="uid://usglfupm6fry" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P1.png" id="3_w8r81"]
 [ext_resource type="Texture2D" uid="uid://cjehyy065fx5x" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P2.png" id="4_04lgd"]
@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cl86fmkvr4k43" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline7.wav" id="16_r5ao7"]
 [ext_resource type="AudioStream" uid="uid://dkxq3qvdf675d" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline8.wav" id="17_efp4m"]
 [ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline9.wav" id="18_k2rm0"]
-[ext_resource type="AudioStream" uid="uid://b514xcxet0yvr" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline10.wav" id="19_ssywp"]
+[ext_resource type="AudioStream" uid="uid://bg6r2imvjm00r" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline10.wav" id="19_ssywp"]
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 
 [node name="IntroCutscene" type="Control" unique_id=5151694 node_paths=PackedStringArray("music")]
@@ -35,7 +35,6 @@ music = NodePath("IntroCutsceneMusic")
 
 [node name="PageArrow" type="Sprite2D" parent="." unique_id=1289254406]
 position = Vector2(1084.0001, 712.00006)
-rotation = 3.1415927
 scale = Vector2(3.0595934, 3.0595934)
 texture = ExtResource("2_6wkej")
 

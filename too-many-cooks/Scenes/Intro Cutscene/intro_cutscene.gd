@@ -58,8 +58,8 @@ func next_subtitle(index: int):
 		
 		tween.set_parallel(true)
 		match current_subtitle:
-			1:
-				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
+			1: # + Adjusted Subtitle Vector
+				tween.tween_property(subtitle,"position",Vector2(76,550),1).set_trans(Tween.TRANS_CUBIC)
 			2: # + Turn Page | Begin Music
 				page = $Pages.get_child(0)
 				tween.tween_property(page,"position",Vector2(576,320),1).set_trans(Tween.TRANS_CUBIC)
@@ -74,11 +74,11 @@ func next_subtitle(index: int):
 				tween.tween_property(page,"position",Vector2(576,320),1).set_trans(Tween.TRANS_CUBIC)
 				
 				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
-			5: # + Turn Page
+			5: # + Turn Page | Adjusted Subtitle Vector
 				page = $Pages.get_child(2)
 				tween.tween_property(page,"position",Vector2(576,320),1).set_trans(Tween.TRANS_CUBIC)
 				
-				tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
+				tween.tween_property(subtitle,"position",Vector2(76,550),1).set_trans(Tween.TRANS_CUBIC)
 			6: # + Adjusted Subtitle Vector
 				tween.tween_property(subtitle,"position",Vector2(76,475),1).set_trans(Tween.TRANS_CUBIC)
 			7: # + Turn Page | Adjusted Subtitle Vector
@@ -98,11 +98,11 @@ func next_subtitle(index: int):
 				tween.tween_property(subtitle,"position",Vector2(76,475),1).set_trans(Tween.TRANS_CUBIC)
 			10:
 				tween.tween_property(subtitle,"position",Vector2(76,550),1).set_trans(Tween.TRANS_CUBIC)
-		tween.tween_property($PageArrow,"position",Vector2(1084,728),.2).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property($PageArrow,"position",Vector2(1070,728),.2).set_trans(Tween.TRANS_CUBIC)
 		#tween.tween_property(subtitle,"position",Vector2(76,514),1).set_trans(Tween.TRANS_CUBIC)
 		await tween.finished
 		var arrow_tween = get_tree().create_tween()
-		arrow_tween.tween_property($PageArrow,"position",Vector2(1084,584),.2).set_trans(Tween.TRANS_CUBIC)
+		arrow_tween.tween_property($PageArrow,"position",Vector2(1070,584),.2).set_trans(Tween.TRANS_CUBIC)
 		await arrow_tween.finished
 		print("Finished subtitle " + str(current_subtitle))
 		
