@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c7f0gi2s8k3or" path="res://Scenes/Tavern/Art/counternochairs.png" id="6_gpyct"]
 [ext_resource type="Texture2D" uid="uid://bh0bc2eq0lcxd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cat.png" id="7_535h7"]
 [ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_a44po"]
+[ext_resource type="Texture2D" uid="uid://cdxy0ilcetacg" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade1.png" id="8_j2eke"]
+[ext_resource type="Texture2D" uid="uid://4qm2v5tbotpi" path="res://Scenes/Tavern/Art/TavernBackgroundUpgrade2.png" id="9_3lod4"]
 [ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="9_rulk3"]
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
@@ -73,13 +75,13 @@ size = Vector2(128, 128)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gevxm"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a55l7"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpyct"]
 texture = ExtResource("38_pcv2t")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7eab"]
 texture = ExtResource("40_84rqq")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a55l7"]
 
 [node name="Tavern" type="Node2D" unique_id=233294115 node_paths=PackedStringArray("dialogue_ref")]
 script = ExtResource("1_1uoo0")
@@ -169,6 +171,16 @@ texture = ExtResource("6_gpyct")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
 texture = ExtResource("5_msftv")
+centered = false
+
+[node name="TavernBackgroundLong2" type="Sprite2D" parent="Tavern BG" unique_id=1529116873]
+visible = false
+texture = ExtResource("8_j2eke")
+centered = false
+
+[node name="TavernBackgroundLong3" type="Sprite2D" parent="Tavern BG" unique_id=847620726]
+visible = false
+texture = ExtResource("9_3lod4")
 centered = false
 
 [node name="Upgrade Man" type="Control" parent="Tavern BG" unique_id=2040262124]
@@ -305,10 +317,10 @@ Class_Level = 1
 Class_Attack = ExtResource("14_p826n")
 Class_Dash = ExtResource("15_1gied")
 Class_Magic = ExtResource("16_tvort")
-Class_Attack_Desc = "sword"
+Class_Attack_Desc = "sword."
 Class_Dash_Desc = "one with a hitbox!"
-Class_Magic_Desc = "something!"
-Class_Other_Desc = "I too am in this episode!"
+Class_Magic_Desc = "various magic!"
+Class_Other_Desc = "Cast with right click."
 Base_Strength = 10
 Base_Max_Health = 100
 Base_Max_Mana = 100
@@ -425,9 +437,9 @@ Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Mage"
 Class_Level = 1
 Class_Attack_Desc = "staff!"
-Class_Dash_Desc = "something!"
-Class_Magic_Desc = "something!"
-Class_Other_Desc = "This class has passive mana regen."
+Class_Dash_Desc = "teleport!"
+Class_Magic_Desc = "various spells!"
+Class_Other_Desc = "Cycle spell with left click."
 Base_Strength = 3
 Base_Max_Health = 60
 Base_Max_Mana = 150
@@ -530,6 +542,21 @@ Tower"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Journal" type="Button" parent="Tavern BG" unique_id=298545002]
+z_index = 1
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = 1732.0
+offset_top = 540.0
+offset_right = 1852.0
+offset_bottom = 636.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Journal" unique_id=1653704222]
+position = Vector2(61, 46)
+scale = Vector2(6, 6)
+texture = ExtResource("31_ulbsv")
 
 [node name="Class_Menu" parent="." unique_id=877217506 node_paths=PackedStringArray("dialogue_ref") instance=ExtResource("21_y33xb")]
 offset_left = 576.0
@@ -675,21 +702,6 @@ text = "10000"
 script = ExtResource("40_2wstm")
 counter = "Orbs"
 
-[node name="Journal" type="Button" parent="HeadsUpUI" unique_id=298545002]
-z_index = 1
-custom_minimum_size = Vector2(120, 60)
-layout_mode = 0
-offset_left = 512.0
-offset_top = 548.0
-offset_right = 632.0
-offset_bottom = 644.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
-
-[node name="Sprite2D" type="Sprite2D" parent="HeadsUpUI/Journal" unique_id=1653704222]
-position = Vector2(61, 46)
-scale = Vector2(6, 6)
-texture = ExtResource("31_ulbsv")
-
 [node name="FirstTimeUI" parent="." unique_id=1244911793 instance=ExtResource("43_2wstm")]
 visible = false
 
@@ -705,6 +717,7 @@ visible = false
 
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
+[connection signal="pressed" from="Tavern BG/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]
 [connection signal="back_pressed" from="Class_Menu" to="Tavern BG" method="_on_class_menu_back_pressed"]
 [connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
 [connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
@@ -714,4 +727,3 @@ visible = false
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="pressed" from="HeadsUpUI/Pause Button" to="HeadsUpUI/Pause Button" method="_on_pressed"]
-[connection signal="pressed" from="HeadsUpUI/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]

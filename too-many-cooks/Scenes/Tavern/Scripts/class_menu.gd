@@ -143,6 +143,7 @@ func _on_upgrade_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
+			
 			if Global.Has_Warrior_Quest_1:
 				Global.Has_Warrior_Quest_1 = false
 			if PlayerStats.quests > 0:

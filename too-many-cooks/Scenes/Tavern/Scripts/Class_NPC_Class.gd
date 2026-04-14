@@ -66,6 +66,7 @@ var new_passive_def : float
 var new_passive_spd : float
 #---
 func _ready():
+	prepare_level()
 	update_new_stats()
 	self.connect("pressed",_on_clicked)
 	self.connect("mouse_entered",_on_mouse_entered)
@@ -81,23 +82,24 @@ func _on_clicked():
 	update_new_stats()
 	if Class_Menu_Ref.is_showing == false:
 		Class_Menu_Ref.set_title(Class_Name, Class_Level)
-		Class_Menu_Ref.set_active_labels(new_str,new_hp,new_def,new_spd,new_mana)
+		Class_Menu_Ref.set_active_labels(new_str-new_passive_str,new_hp-new_passive_hp,new_def-new_passive_def,new_spd-new_passive_spd,new_mana-new_passive_mana)
 		Class_Menu_Ref.set_passive_labels(new_passive_str,new_passive_hp,new_passive_def,new_passive_spd,new_passive_mana)
 		Class_Menu_Ref.set_other_descriptions(Class_Attack_Desc,Class_Dash_Desc,Class_Magic_Desc,Class_Other_Desc)
 		Class_Menu_Ref.show_menu()
 func change_class(new_class: String):
+	update_new_stats()
 	match new_class:
 		"Warrior":
 			PlayerStats.current_class = PlayerStats.classes.warrior
-			PlayerStats.base_str = new_str
-			PlayerStats.base_spd = new_spd
-			PlayerStats.base_def = new_def
-			PlayerStats.MaxHealth = new_hp
-			PlayerStats.MaxMana = new_mana
 		"Rogue":
 			PlayerStats.current_class = PlayerStats.classes.rogue
 		"Mage":
 			PlayerStats.current_class = PlayerStats.classes.mage
+	PlayerStats.base_str = new_str
+	PlayerStats.base_spd = new_spd
+	PlayerStats.base_def = new_def
+	PlayerStats.MaxHealth = new_hp
+	PlayerStats.MaxMana = new_mana
 	#i do this later !!! :3
 	
 func update_sheet():
@@ -108,17 +110,26 @@ func update_sheet():
 	Class_Menu_Ref.set_other_descriptions(Class_Attack_Desc,Class_Dash_Desc,Class_Magic_Desc,Class_Other_Desc)
 		
 func update_new_stats():
-	new_str = Class_Level * Base_Strength * Strength_Growth_Modifier
-	new_hp = Class_Level * Base_Max_Health * Max_Health_Growth_Modifier
-	new_mana = Class_Level * Base_Max_Mana * Max_Mana_Growth_Modifier
-	new_mana_regen = Class_Level * Base_Mana_Regen * Mana_Regen_Growth_Modifier
-	new_def = Class_Level * Base_Defense * Defense_Growth_Modifier
-	new_spd = Class_Level + PlayerStats.base_spd
-
 	new_passive_str = Class_Level * Passive_Strength * Strength_Growth_Modifier
 	new_passive_hp = Class_Level * Passive_Max_HP * Max_Health_Growth_Modifier
 	new_passive_mana = Class_Level * Passive_Max_Mana * Max_Mana_Growth_Modifier
 	new_passive_def = Class_Level * Passive_Defense * Defense_Growth_Modifier
 	new_passive_spd = Class_Level * Passive_Speed * Speed_Growth_Modifier
+	
+	new_str = Class_Level * Base_Strength * Strength_Growth_Modifier + new_passive_str
+	new_hp = Class_Level * Base_Max_Health * Max_Health_Growth_Modifier + new_passive_hp
+	new_mana = Class_Level * Base_Max_Mana * Max_Mana_Growth_Modifier + new_passive_mana
+	new_mana_regen = Class_Level * Base_Mana_Regen * Mana_Regen_Growth_Modifier 
+	new_def = Class_Level * Base_Defense * Defense_Growth_Modifier + new_passive_def
+	new_spd = PlayerStats.base_spd
+
+func prepare_level():
+	match Class_Name:
+		"Warrior":
+			Class_Level = PlayerStats.MeleeClassLevel
+		"Rogue":
+			Class_Level = PlayerStats.RogueClassLevel
+		"Mage":
+			Class_Level = PlayerStats.MageClassLevel
 	
 	

@@ -63,3 +63,8 @@ var Quest1Orbs : int = 0
 
 #variable to track how many quests we have
 var quests : int = 0
+
+#vars to track NPC class levels, read by the class NPCs on tavern load
+var MeleeClassLevel : int = 1
+var MageClassLevel : int = 0
+var RogueClassLevel : int = 0
