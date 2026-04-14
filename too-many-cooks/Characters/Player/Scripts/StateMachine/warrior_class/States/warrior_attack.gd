@@ -89,12 +89,12 @@ func input_handler(delta : float) -> void:
 
 
 ##makes the player do a short lunge forward when attacking
-func lunge_player():
-	player.velocity += player.local_mouse_pos.normalized() * 70
-	
-	await get_tree().create_timer(0.1).timeout
-	
-	player.velocity = Vector2(0,0)
+#func lunge_player():
+#	player.velocity += player.local_mouse_pos.normalized() * 70
+#	
+#	await get_tree().create_timer(0.1).timeout
+#	
+#	player.velocity = Vector2(0,0)
 
 
 ##player is unable to attack until cooldown timer expires
