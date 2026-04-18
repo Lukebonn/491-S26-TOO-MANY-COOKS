@@ -43,7 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="40_2wstm"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="42_2wstm"]
-[ext_resource type="PackedScene" uid="uid://c32fhh5aee0ah" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
+[ext_resource type="PackedScene" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)

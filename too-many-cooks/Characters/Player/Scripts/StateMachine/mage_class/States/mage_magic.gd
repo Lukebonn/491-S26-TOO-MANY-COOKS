@@ -12,16 +12,24 @@ func enter_state(player_node):
 			"ice spears":
 				if(player.mana >= 20):
 					ice_spears()
+				else:
+					get_parent().notEnoughMana.emit()
 			"vortex":
 				if(player.mana >= 35):
 					summon_vortex()
+				else:
+					get_parent().notEnoughMana.emit()
 			"fire blast":
 				if(player.mana >= 20):
 					fire_blast()
+				else:
+					get_parent().notEnoughMana.emit()
 					
 			_:
 				if(player.mana >= 20):
 					ice_spears()
+				else:
+					get_parent().notEnoughMana.emit()
 		
 		start_cooldown()
 	

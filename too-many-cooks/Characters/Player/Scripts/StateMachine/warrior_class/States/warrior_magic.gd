@@ -15,12 +15,18 @@ func enter_state(player_node):
 			0:
 				if(player.mana >= 10):
 					await parry()
+				else:
+					get_parent().notEnoughMana.emit()
 			1:
 				if(player.mana >= 15):
 					sword_projectile()
+				else:
+					get_parent().notEnoughMana.emit()
 			2:
 				if(player.mana >= 25):
 					spin_attack()
+				else:
+					get_parent().notEnoughMana.emit()
 	
 	start_cooldown()
 	player.change_state("move_state")
