@@ -18,6 +18,7 @@ func enter_state(player_node):
 			"fire blast":
 				if(player.mana >= 20):
 					fire_blast()
+					
 			_:
 				if(player.mana >= 20):
 					ice_spears()
@@ -47,26 +48,38 @@ func ice_spears():
 func summon_vortex():
 	var vortex = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/vortex.tscn").instantiate()
 	get_tree().get_root().add_child(vortex)
-	vortex.global_position = player.global_mouse_pos
+	
+	player.get_node("RayCast2D").target_position = player.local_mouse_pos
+	
+	await get_tree().process_frame
+	
+	if(player.get_node("RayCast2D").is_colliding()):
+		vortex.global_position = player.get_node("RayCast2D").get_collision_point()/1.35
+	else:
+		vortex.global_position = player.global_mouse_pos
 	
 	player.mana -= 35
 
 
 ##spawns a fire_blast centered on the player
 func fire_blast():
-	var blast = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.tscn").instantiate()
-	player.add_child(blast)
-	blast.position = Vector2.ZERO
+	#var blast = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.tscn").instantiate()
+	#player.add_child(blast)
+	#blast.position = Vector2.ZERO
 	
-	player.velocity = Vector2.ZERO
+	#player.velocity = Vector2.ZERO
 	
-	player.set_damage(2.5)
+	#player.set_damage(2.5)
 	
-	player.mana -= 20
+	#player.mana -= 20
 	
-	await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0).timeout
 	
-	blast.queue_free()
+	#blast.queue_free()
+	
+	await get_tree().process_frame
+	
+	player.change_state("fire_state")
 
 
 ##player is unable to use the spell again until cooldown timer expires

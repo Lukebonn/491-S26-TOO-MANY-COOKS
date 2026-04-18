@@ -26,3 +26,9 @@ position = Vector2(-3.0696392e-06, -8.046627e-07)
 scale = Vector2(1.7727274, 1.7727274)
 stream = ExtResource("1_6iwbg")
 autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=38749908]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

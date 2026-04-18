@@ -112,6 +112,10 @@ position = Vector2(14, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=216793348]
 
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=242940724]
+target_position = Vector2(0, 0)
+collision_mask = 64
+
 [node name="player_stats" type="Node" parent="." unique_id=1202790873]
 script = ExtResource("12_u2wkb")
 

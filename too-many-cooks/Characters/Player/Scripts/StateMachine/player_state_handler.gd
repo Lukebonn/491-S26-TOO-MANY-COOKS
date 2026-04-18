@@ -55,6 +55,12 @@ func _ready() -> void:
 		PlayerStats.classes.mage:
 			equipped_class = load("res://System/Classes/mage.tres")
 			add_child(load("res://Characters/Player/Scripts/StateMachine/mage_class/SpecialUI/spell_indicator.tscn").instantiate())
+			
+			##adds a new state node to the player that is used for the mage's fire blast spell
+			var fire_state = Node.new()
+			add_child(fire_state)
+			fire_state.name = "fire_state"
+			fire_state.set_script(load("res://Characters/Player/Scripts/StateMachine/mage_class/States/fireball_state.gd"))
 		_:
 			equipped_class = load("res://System/Classes/blank_class.tres")
 	

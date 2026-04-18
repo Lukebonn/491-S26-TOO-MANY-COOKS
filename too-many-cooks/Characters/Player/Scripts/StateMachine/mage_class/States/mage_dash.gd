@@ -16,28 +16,22 @@ func enter_state(player_node):
 		player.play_sound(load("res://Audio/Sounds/Player/BlankClass/dash.mp3"))
 		
 		if(player.velocity == Vector2(0,0)):
-			teleport_vector = player.global_position + player.current_dir.normalized() * 50
+			teleport_vector = player.position + player.current_dir.normalized() * 50
 		else:
-			teleport_vector = player.global_position + player.velocity.normalized() * 50
+			teleport_vector = player.position + player.velocity.normalized() * 50
 		
 		
-		var raycast = RayCast2D.new()
+		player.get_node("RayCast2D").target_position = player.velocity.normalized() * 50
 		
-		raycast.set_collision_mask_value(7, true)
+		await get_tree().process_frame
 		
-		player.add_child(raycast)
-		
-		raycast.target_position = teleport_vector
-		
-		
-		if(raycast.is_colliding()):
+		if(player.get_node("RayCast2D").is_colliding()):
 			print_debug("raycast collision")
-			teleport_vector = raycast.get_collision_point()
+			teleport_vector = player.get_node("RayCast2D").get_collision_point()
 		
 		player.global_position = teleport_vector
 		player.mana -= mana_cost
 		
-		raycast.queue_free()
 	
 	player.change_state("move_state")
 
