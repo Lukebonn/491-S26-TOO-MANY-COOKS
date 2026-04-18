@@ -5,10 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://c28qkrppjsfad" path="res://Audio/Sounds/Player/Mage/Vortex.wav" id="3_54e3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wnfhi"]
-radius = 16.0
+radius = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmxgs"]
-radius = 17.0
+radius = 27.0
 
 [node name="Vortex" type="StaticBody2D" unique_id=583506329]
 z_index = -1
@@ -18,20 +18,18 @@ script = ExtResource("1_gmxgs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1469738606]
 modulate = Color(1, 1, 1, 0.74509805)
+scale = Vector2(1.625, 1.59375)
 texture = ExtResource("2_m56xh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=588539116]
 shape = SubResource("CircleShape2D_wnfhi")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2029278703]
-collision_layer = 4
-collision_mask = 16
+collision_layer = 0
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1640295058]
 shape = SubResource("CircleShape2D_gmxgs")
-
-[node name="HitTimer" type="Timer" parent="." unique_id=898936600]
-autostart = true
 
 [node name="DurationTimer" type="Timer" parent="." unique_id=534804668]
 wait_time = 5.0
@@ -44,5 +42,6 @@ autoplay = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
-[connection signal="timeout" from="HitTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
