@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cva367os2jx7d"]
 
-[ext_resource type="Texture2D" uid="uid://d2pc0b8u0yb5h" path="res://Characters/Player/Sprites/pixil-frame-0.png" id="1_8nyk8"]
+[ext_resource type="Texture2D" uid="uid://d2pc0b8u0yb5h" path="res://UI/Img/pixil-frame-0.png" id="1_8nyk8"]
 [ext_resource type="Script" uid="uid://c5aq7so28d7o7" path="res://tutorial_prompt.gd" id="1_e0c0h"]
 [ext_resource type="FontFile" uid="uid://cq4db84i8bay1" path="res://PixelPurl.ttf" id="2_tx223"]
 

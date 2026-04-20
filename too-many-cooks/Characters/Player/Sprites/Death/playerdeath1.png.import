@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://rjyvuded6gwj"
+path="res://.godot/imported/playerdeath1.png-668fe578b2e1accac5a74b671513aa0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Player/Sprites/Death/playerdeath1.png"
+dest_files=["res://.godot/imported/playerdeath1.png-668fe578b2e1accac5a74b671513aa0b.ctex"]
 
 [params]
 
