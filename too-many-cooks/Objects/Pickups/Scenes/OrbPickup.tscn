@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dedpwrjxmd2km"]
 
-[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/orb_pickup.gd" id="1_sntfj"]
-[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="2_sntfj"]
+[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="1_sntfj"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="2_sntfj"]
 [ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="3_efa58"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]

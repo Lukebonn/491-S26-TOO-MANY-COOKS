@@ -12,9 +12,9 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_xax86"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/mice/arrow.tscn" id="8_k2kcg"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_aeqaf"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_o3n35"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_o3n35"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_w667s"]
-[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/GoldPickup.tscn" id="12_egmnq"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="12_egmnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(18, 9)
