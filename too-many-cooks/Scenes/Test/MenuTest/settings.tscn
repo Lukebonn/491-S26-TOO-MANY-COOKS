@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bp3qimvl4p8m4"]
 
 [ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scenes/Title/Scripts/settings.gd" id="1_5jne5"]
-[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_5jne5"]
 [ext_resource type="PackedScene" uid="uid://22b0j7kjctua" path="res://Scenes/Title/pause_ui.tscn" id="3_bv10w"]
 [ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="3_hnlrl"]
 [ext_resource type="Script" uid="uid://de0angmpdci63" path="res://Scenes/Title/journals_ui.gd" id="3_ldpcw"]
 [ext_resource type="Script" uid="uid://m1ratefdb4lj" path="res://Scenes/Tavern/Scripts/journal_entryy.gd" id="4_dkp74"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_ocaao"]
 [ext_resource type="Script" uid="uid://ego2ey2td6r0" path="res://Scenes/Tavern/journals_panel.gd" id="5_11tbu"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="6_ssjum"]
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="9_ocaao"]
@@ -43,14 +43,14 @@ position = Vector2(1152, 0)
 offset_left = 1213.0
 offset_right = 1416.0
 offset_bottom = 649.0
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_constants/separation = 40
 alignment = 1
 
 [node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "Settings"
 script = ExtResource("3_hnlrl")
@@ -60,7 +60,7 @@ clickSound = NodePath("../../ButtonClickSound")
 [node name="SaveButton" type="Button" parent="buttons" unique_id=447781717 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "Save"
 script = ExtResource("3_hnlrl")
@@ -70,7 +70,7 @@ clickSound = NodePath("../../ButtonClickSound")
 [node name="JournalButton" type="Button" parent="buttons" unique_id=1178310031 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "Journal"
 script = ExtResource("3_hnlrl")
@@ -80,7 +80,7 @@ clickSound = NodePath("../../ButtonClickSound")
 [node name="ExitButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "Exit"
 script = ExtResource("3_hnlrl")
@@ -91,7 +91,7 @@ clickSound = NodePath("../../ButtonClickSound")
 visible = false
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "meow"
 script = ExtResource("3_hnlrl")
@@ -102,7 +102,7 @@ clickSound = NodePath("../../ButtonClickSound")
 visible = false
 z_index = 1
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "meow"
 script = ExtResource("3_hnlrl")
@@ -115,6 +115,7 @@ anchors_preset = 0
 offset_left = 1152.0
 offset_right = 1192.0
 offset_bottom = 40.0
+theme = ExtResource("4_ocaao")
 script = ExtResource("3_ldpcw")
 
 [node name="TabContainer" type="TabContainer" parent="Journals" unique_id=1456895192]
@@ -124,27 +125,28 @@ offset_left = 192.0
 offset_top = 74.0
 offset_right = 692.0
 offset_bottom = 574.0
-theme = ExtResource("2_5jne5")
-current_tab = 2
+theme = ExtResource("4_ocaao")
+current_tab = 1
 
 [node name="Warrior" type="MarginContainer" parent="Journals/TabContainer" unique_id=2033841847]
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 metadata/_tab_index = 0
 
 [node name="Entries" type="GridContainer" parent="Journals/TabContainer/Warrior" unique_id=710095474]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 1"
 script = ExtResource("4_dkp74")
 Author = "Warrior Name"
@@ -158,6 +160,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 2"
 script = ExtResource("4_dkp74")
 Author = "Warrior"
@@ -171,6 +174,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 3"
 script = ExtResource("4_dkp74")
 Author = "Warrior"
@@ -184,6 +188,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 4"
 script = ExtResource("4_dkp74")
 Author = "Warrior"
@@ -194,22 +199,22 @@ journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="Rogue" type="MarginContainer" parent="Journals/TabContainer" unique_id=1456971047]
-visible = false
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 metadata/_tab_index = 1
 
 [node name="Entries" type="GridContainer" parent="Journals/TabContainer/Rogue" unique_id=459778636]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 1"
 script = ExtResource("4_dkp74")
 Author = "Rogue"
@@ -223,6 +228,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 2"
 script = ExtResource("4_dkp74")
 Author = "Rogue"
@@ -236,6 +242,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 3"
 script = ExtResource("4_dkp74")
 Author = "Rogue"
@@ -249,6 +256,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 4"
 script = ExtResource("4_dkp74")
 Author = "Rogue"
@@ -259,21 +267,23 @@ journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="Mage" type="MarginContainer" parent="Journals/TabContainer" unique_id=1972224127]
+visible = false
 layout_mode = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 metadata/_tab_index = 2
 
 [node name="Entries" type="GridContainer" parent="Journals/TabContainer/Mage" unique_id=1739284250]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 1"
 script = ExtResource("4_dkp74")
 Author = "Mage"
@@ -287,6 +297,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 2"
 script = ExtResource("4_dkp74")
 Author = "Mage"
@@ -300,6 +311,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 3"
 script = ExtResource("4_dkp74")
 Author = "Mage"
@@ -313,6 +325,7 @@ metadata/_custom_type_script = "uid://m1ratefdb4lj"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_ocaao")
 text = "Entry 4"
 script = ExtResource("4_dkp74")
 Author = "Mage"
@@ -329,6 +342,7 @@ offset_left = 1152.0
 offset_top = 40.0
 offset_right = 1952.0
 offset_bottom = 640.0
+theme = ExtResource("4_ocaao")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8mm4c")
 script = ExtResource("5_11tbu")
 
@@ -347,7 +361,7 @@ offset_right = 281.0
 offset_bottom = 211.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -369,7 +383,7 @@ offset_right = 363.0
 offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 40
@@ -383,6 +397,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_ocaao")
 
 [node name="Sprite2D" type="Sprite2D" parent="JournalPanel" unique_id=1974292828]
 position = Vector2(400, 300)
@@ -394,7 +409,7 @@ offset_left = 707.0
 offset_top = 33.0
 offset_right = 767.0
 offset_bottom = 73.0
-theme = ExtResource("2_5jne5")
+theme = ExtResource("4_ocaao")
 text = "Exit"
 
 [node name="Pause UI" parent="." unique_id=95086748 instance=ExtResource("3_bv10w")]
@@ -409,6 +424,7 @@ visible = false
 custom_minimum_size = Vector2(1152, 640)
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("4_ocaao")
 
 [node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1338156437]
 stream = ExtResource("9_ocaao")

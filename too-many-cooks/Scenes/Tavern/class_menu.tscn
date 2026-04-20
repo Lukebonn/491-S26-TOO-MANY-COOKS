@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://co1wdkv55yg55"]
 
 [ext_resource type="Script" uid="uid://cf1ldi44kyffq" path="res://Scenes/Tavern/Scripts/class_menu.gd" id="1_bjonv"]
-[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_veqpr"]
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tj6yy"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_6abwf"]
-[ext_resource type="FontFile" uid="uid://dwou2mmwlxkrl" path="res://UI/Themes/Fonts/unifontex-font/Unifontexmono-lxY45.ttf" id="5_6abwf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn838"]
 texture = ExtResource("3_tj6yy")
@@ -23,7 +21,7 @@ offset_right = -536.0
 offset_bottom = -284.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_veqpr")
+theme = ExtResource("4_6abwf")
 script = ExtResource("1_bjonv")
 
 [node name="Panel" type="Panel" parent="." unique_id=1351599176]
@@ -33,6 +31,7 @@ offset_left = -400.0
 offset_top = -250.0
 offset_right = 400.0
 offset_bottom = 250.0
+theme = ExtResource("4_6abwf")
 theme_override_styles/panel = SubResource("StyleBoxTexture_jn838")
 
 [node name="Close" type="Button" parent="Panel" unique_id=2059311441]
@@ -61,6 +60,7 @@ offset_top = 16.0
 offset_right = -16.0
 offset_bottom = 47.0
 grow_horizontal = 0
+theme = ExtResource("4_6abwf")
 text = "Back
 "
 
@@ -70,10 +70,12 @@ offset_top = 19.0
 offset_right = 800.0
 offset_bottom = 500.0
 mouse_filter = 2
+theme = ExtResource("4_6abwf")
 
 [node name="Class_Name" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "The "
@@ -83,36 +85,43 @@ horizontal_alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1327689756]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1269665270]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_6abwf")
 alignment = 1
 
 [node name="Stats" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1944775991]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 
 [node name="ActiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1322756572]
 layout_mode = 2
 tooltip_text = "What your stats will be modified by when this class is chosen"
 mouse_filter = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-text = "Active Stat Changes"
+theme_override_font_sizes/font_size = 24
+text = "ACTIVE STATS"
 horizontal_alignment = 1
 
 [node name="ActiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1226013473]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=970081200]
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Strength"
+theme_override_font_sizes/normal_font_size = 32
+text = "STR"
 fit_content = true
 horizontal_alignment = 1
 
@@ -120,8 +129,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 32
 text = "HP"
 fit_content = true
 horizontal_alignment = 1
@@ -130,9 +140,10 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Defense"
+theme_override_font_sizes/normal_font_size = 32
+text = "DEF"
 fit_content = true
 horizontal_alignment = 1
 
@@ -140,9 +151,10 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Speed"
+theme_override_font_sizes/normal_font_size = 32
+text = "SPD"
 fit_content = true
 horizontal_alignment = 1
 
@@ -150,21 +162,25 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Mana"
+theme_override_font_sizes/normal_font_size = 32
+text = "MP"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="ActiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1484648764]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=128738324]
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -173,7 +189,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -182,7 +200,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -191,7 +211,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -200,7 +222,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -209,21 +233,25 @@ horizontal_alignment = 1
 layout_mode = 2
 tooltip_text = "What your stats will be modified by even when this class is not chosen"
 mouse_filter = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-text = "Passive Stat Changes"
+theme_override_font_sizes/font_size = 24
+text = "PASSIVE STATS"
 horizontal_alignment = 1
 
 [node name="PassiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=444837674]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=844642486]
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Strength"
+theme_override_font_sizes/normal_font_size = 32
+text = "STR"
 fit_content = true
 horizontal_alignment = 1
 
@@ -231,8 +259,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 32
 text = "HP"
 fit_content = true
 horizontal_alignment = 1
@@ -241,9 +270,10 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Defense"
+theme_override_font_sizes/normal_font_size = 32
+text = "DEF"
 fit_content = true
 horizontal_alignment = 1
 
@@ -251,9 +281,10 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Speed"
+theme_override_font_sizes/normal_font_size = 32
+text = "SPD"
 fit_content = true
 horizontal_alignment = 1
 
@@ -261,21 +292,25 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 24
-text = "Mana"
+theme_override_font_sizes/normal_font_size = 32
+text = "MP"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="PassiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1230890971]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1254821010]
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -284,7 +319,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -293,7 +330,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -302,7 +341,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
@@ -311,19 +352,24 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
 text = "0"
 fit_content = true
 horizontal_alignment = 1
 
 [node name="Other" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=597595398]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-text = "Other:"
+theme_override_font_sizes/font_size = 24
+text = "ACTIONS"
 horizontal_alignment = 1
 
 [node name="AttackDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1361897609]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -332,6 +378,7 @@ fit_content = true
 
 [node name="DashDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=933498308]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -340,6 +387,7 @@ fit_content = true
 
 [node name="MagicDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=88970703]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -348,6 +396,7 @@ fit_content = true
 
 [node name="TrueOtherDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=891058085]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -357,6 +406,7 @@ fit_content = true
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
 alignment = 1
 
 [node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=129194331]
@@ -364,15 +414,17 @@ z_index = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("4_6abwf")
-theme_override_fonts/font = ExtResource("5_6abwf")
+theme_override_font_sizes/font_size = 48
 text = "Talk"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1463405284]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1417052867]
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 alignment = 1
 
 [node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=199862697]
@@ -381,28 +433,33 @@ custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 2
 theme = ExtResource("4_6abwf")
-theme_override_fonts/font = ExtResource("5_6abwf")
-text = "Upgrade"
+theme_override_font_sizes/font_size = 32
+text = "Upgrade
+Class"
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=62058358]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-text = "Requires Quest Done"
+theme_override_font_sizes/font_size = 24
+text = "Requires
+Quest Done"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1862622720]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme = ExtResource("4_6abwf")
 
 [node name="Quest" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1924907551]
 z_index = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("4_6abwf")
-theme_override_fonts/font = ExtResource("5_6abwf")
-text = "Quest"
+theme_override_font_sizes/font_size = 48
+text = "View Quest"
 
 [connection signal="pressed" from="Panel/Close" to="." method="hide_menu"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://616qwfcuf6yj" path="res://Scenes/Test/ProtoArt/Pine Tree - GREEN  - 0000.png" id="4_l1yp5"]
 [ext_resource type="Texture2D" uid="uid://cyix2bhc0xyqk" path="res://Scenes/Test/ProtoArt/Pine Tree - YELLOW  - 0000.png" id="5_rv8x5"]
 [ext_resource type="Script" uid="uid://5as35m4y32nc" path="res://Scenes/Title/Scripts/title_ui.gd" id="6_fbuyo"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="7_xruoh"]
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="7_xsi77"]
 [ext_resource type="Script" uid="uid://dctswcphgacr7" path="res://Scenes/Title/Scripts/main_menu_ui.gd" id="8_72lsw"]
 [ext_resource type="Texture2D" uid="uid://d11fk85gj3btm" path="res://Scenes/Title/Art/TotT-Logo.png" id="9_rv8x5"]
@@ -194,7 +195,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 script = ExtResource("6_fbuyo")
 
 [node name="titletop" type="Control" parent="Title UI" unique_id=1580252919]
@@ -203,7 +204,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 
 [node name="MarginContainer" type="MarginContainer" parent="Title UI/titletop" unique_id=148839172]
 custom_minimum_size = Vector2(400, 200)
@@ -252,7 +253,7 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 
 [node name="MarginContainer" type="MarginContainer" parent="Title UI/titlebottom" unique_id=1713905387]
 custom_minimum_size = Vector2(400, 200)
@@ -264,13 +265,13 @@ offset_left = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 grow_horizontal = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_constants/margin_top = 100
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Title UI/titlebottom/MarginContainer" unique_id=843791403]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/normal_font_size = 60
@@ -286,7 +287,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 script = ExtResource("8_72lsw")
 
 [node name="Sidebar" type="Control" parent="Menu UI" unique_id=229459287]
@@ -294,7 +295,7 @@ anchors_preset = 0
 offset_left = 1152.0
 offset_right = 1192.0
 offset_bottom = 40.0
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 
 [node name="PanelMain" type="Panel" parent="Menu UI/Sidebar" unique_id=1977620025]
 layout_mode = 1
@@ -321,20 +322,20 @@ theme = ExtResource("7_xsi77")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu UI/Buttons" unique_id=1833951934]
 layout_mode = 1
 offset_left = 1152.0
 offset_right = 1442.0
 offset_bottom = 645.0
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Start" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1338371057 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 script = ExtResource("11_fbuyo")
@@ -343,7 +344,7 @@ clickSound = NodePath("../../../../ButtonClickSound")
 
 [node name="Continue" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=31611018 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Continue"
@@ -353,7 +354,7 @@ clickSound = NodePath("../../../../ButtonClickSound")
 
 [node name="Settings" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1627223092 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 text = "Settings"
 script = ExtResource("11_fbuyo")
@@ -362,7 +363,7 @@ clickSound = NodePath("../../../../ButtonClickSound")
 
 [node name="Credits" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=745377423 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 text = "Credits"
 script = ExtResource("11_fbuyo")
@@ -371,7 +372,7 @@ clickSound = NodePath("../../../../ButtonClickSound")
 
 [node name="Quit" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=911186619 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
-theme = ExtResource("7_xsi77")
+theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Quit"

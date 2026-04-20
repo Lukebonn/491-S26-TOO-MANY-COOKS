@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bejhfnvpr2bas"]
 
-[ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="1_trhw8"]
+[ext_resource type="FontFile" uid="uid://c06ko33jtwss" path="res://UI/Themes/Good Neighbors Fill.otf" id="1_trhw8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4lqs"]
 bg_color = Color(0.24313726, 0.10980392, 0.043137256, 1)

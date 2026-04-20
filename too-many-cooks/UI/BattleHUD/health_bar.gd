@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 		pass
 	else:
 		value = get_parent().player.displayHealth
-		$HealthValue.text = str(get_parent().player.displayHealth)
+		$"../HealthValue".text = str(get_parent().player.displayHealth)
 		
 		# These two lines of code make sure that the values on the bar
 		# are always up to date.

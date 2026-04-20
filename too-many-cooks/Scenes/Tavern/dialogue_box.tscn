@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b6g02boy87hiu" path="res://Scenes/Tavern/Scripts/dialogue_box.gd" id="2_frwkt"]
 [ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="3_3p3df"]
 [ext_resource type="Texture2D" uid="uid://dirne86kb1of5" path="res://UI/AbbyP_Textbox_UI-V2.png" id="3_frwkt"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_3p3df"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p3df"]
 texture = ExtResource("3_frwkt")
@@ -48,15 +49,16 @@ theme = ExtResource("1_pecbt")
 
 [node name="Dialogue" type="Panel" parent="Container" unique_id=887432028]
 z_index = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -451.5
-offset_top = -229.99997
-offset_right = 394.30554
-offset_bottom = -78.0
+offset_left = -448.0
+offset_top = -225.99997
+offset_right = 397.80554
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_pecbt")
@@ -73,10 +75,10 @@ offset_right = -12.564941
 offset_bottom = -13.852982
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pecbt")
+theme = ExtResource("4_3p3df")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.827451, 0.5294118, 0.40784314, 1)
-theme_override_constants/outline_size = 9
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 36
 text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
 fit_content = true
@@ -91,10 +93,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -451.5
-offset_top = -316.0
-offset_right = -376.83398
-offset_bottom = -248.46399
+offset_left = -448.0
+offset_top = -290.0
+offset_right = -373.33398
+offset_bottom = -230.46399
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_pecbt")
@@ -107,23 +109,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.5000076
-offset_top = 6.000023
-offset_right = 532.834
-offset_bottom = -16.041084
+offset_left = 8.000008
+offset_top = 7.999977
+offset_right = 533.334
+offset_bottom = -6.5360336
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pecbt")
+theme = ExtResource("4_3p3df")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.827451, 0.5294118, 0.40784314, 1)
-theme_override_constants/shadow_outline_size = 1
-theme_override_constants/outline_size = 9
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 44
 text = "you"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 autowrap_trim_flags = 128
+vertical_alignment = 1
 
 [node name="SpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
 z_index = 1

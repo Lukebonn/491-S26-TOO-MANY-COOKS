@@ -58,9 +58,10 @@ mouse_filter = 2
 [node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("4_oxpr4")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
-text = "Where should I go...?"
+text = "SELECT AN AREA"
 fit_content = true
 horizontal_alignment = 1
 
@@ -79,20 +80,23 @@ alignment = 1
 [node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_37k14")
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
 text = "Act 1"
 
 [node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_37k14")
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 2"
 
 [node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_37k14")
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 3"
 

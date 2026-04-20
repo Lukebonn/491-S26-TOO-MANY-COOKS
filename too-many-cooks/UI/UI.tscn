@@ -8,13 +8,15 @@
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
 [ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/Img/HpBarBorder.png" id="5_8ktjv"]
+[ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="6_t31p1"]
 [ext_resource type="Texture2D" uid="uid://c2ohtwxdxq5a5" path="res://UI/BattleHUD/Img/MpBarBack.png" id="7_6q2ik"]
 [ext_resource type="Texture2D" uid="uid://brkecisggyy3v" path="res://UI/BattleHUD/Img/MpBarBorder.png" id="8_017wa"]
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Script" uid="uid://c1b5wyo40ayh6" path="res://UI/pause_menu.gd" id="9_qgmx8"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 
 [node name="UI" type="Control" unique_id=1832120515]
 process_mode = 3
@@ -57,6 +59,17 @@ theme = ExtResource("1_tabjk")
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
 
+[node name="HealthValue" type="Label" parent="." unique_id=1696297344]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 40.0
+theme = ExtResource("1_tabjk")
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 2
+
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1201939551]
 layout_mode = 0
 offset_left = 62.000004
@@ -76,21 +89,20 @@ script = ExtResource("2_snacm")
 [node name="Timer" type="Timer" parent="HealthBar" unique_id=488911210]
 wait_time = 0.1
 
-[node name="HealthValue" type="RichTextLabel" parent="HealthBar" unique_id=383234510]
-layout_mode = 0
-offset_left = 29.230768
-offset_top = -52.307693
-offset_right = 221.23077
-offset_bottom = -3.0769196
-theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 48
-text = "000"
-vertical_alignment = 2
-
 [node name="HealthBarBorder" type="Sprite2D" parent="HealthBar" unique_id=42185410]
 position = Vector2(163.07692, 3.0769196)
 scale = Vector2(3.6222222, 3.8285718)
 texture = ExtResource("5_8ktjv")
+
+[node name="ManaValue" type="Label" parent="." unique_id=1091841851]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 96.0
+offset_right = 280.0
+offset_bottom = 131.69229
+theme = ExtResource("1_tabjk")
+text = "000"
+label_settings = ExtResource("6_t31p1")
 
 [node name="ManaBar" type="TextureProgressBar" parent="." unique_id=1169557656]
 layout_mode = 0
@@ -106,16 +118,6 @@ texture_under = ExtResource("7_6q2ik")
 texture_progress = ExtResource("8_t31p1")
 script = ExtResource("3_8ktjv")
 
-[node name="ManaValue" type="RichTextLabel" parent="ManaBar" unique_id=408674144]
-layout_mode = 0
-offset_left = 32.307693
-offset_top = 16.923063
-offset_right = 224.3077
-offset_bottom = 64.923065
-theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 48
-text = "000"
-
 [node name="MpBarBorder" type="Sprite2D" parent="ManaBar" unique_id=965585656]
 position = Vector2(166.61542, 29.230774)
 scale = Vector2(3.6215389, 3.8292313)
@@ -125,14 +127,16 @@ texture = ExtResource("8_017wa")
 position = Vector2(47.5, 144)
 texture = ExtResource("8_vx7wu")
 
-[node name="GoldCount" type="RichTextLabel" parent="." unique_id=1877924493]
+[node name="GoldCount" type="Label" parent="." unique_id=1019659891]
 layout_mode = 0
 offset_left = 71.5
 offset_top = 128.0
 offset_right = 159.5
-offset_bottom = 176.0
+offset_bottom = 160.0
 theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 30
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 1
 script = ExtResource("4_snacm")
 counter = "Gold"
 
@@ -141,15 +145,16 @@ position = Vector2(47.5, 184)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_r2vy3")
 
-[node name="OrbCount" type="RichTextLabel" parent="." unique_id=265422067]
+[node name="OrbCount" type="Label" parent="." unique_id=331014531]
 layout_mode = 0
 offset_left = 71.5
 offset_top = 168.0
 offset_right = 159.5
-offset_bottom = 216.0
+offset_bottom = 200.0
 theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 1
 script = ExtResource("4_snacm")
 counter = "Orbs"
 
@@ -175,6 +180,7 @@ offset_right = -41.0
 offset_bottom = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 45
 text = "Retry"
 
@@ -184,6 +190,7 @@ offset_left = 40.0
 offset_top = 224.0
 offset_right = 232.0
 offset_bottom = 320.0
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 30
 text = "Return to
 Tavern"
@@ -201,7 +208,7 @@ offset_right = 208.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_tabjk")
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/normal_font_size = 53
 text = "You Have Died!"
 horizontal_alignment = 1
@@ -229,6 +236,7 @@ offset_right = -41.0
 offset_bottom = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 45
 text = "Retry"
 
@@ -238,6 +246,7 @@ offset_left = 40.0
 offset_top = 224.0
 offset_right = 232.0
 offset_bottom = 320.0
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 30
 text = "Return to
 Tavern"
@@ -255,7 +264,7 @@ offset_right = 208.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_tabjk")
+theme = ExtResource("16_kncd2")
 theme_override_font_sizes/normal_font_size = 53
 text = "Paused"
 horizontal_alignment = 1
@@ -285,15 +294,15 @@ position = Vector2(1049, 21)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_qhxh2")
 
-[node name="RoomEnemyCount" type="RichTextLabel" parent="." unique_id=1467880708]
+[node name="RoomEnemyCount" type="Label" parent="." unique_id=630786054]
+visible = false
 layout_mode = 0
 offset_left = 1063.0
 offset_right = 1151.0
 offset_bottom = 48.0
 theme = ExtResource("1_tabjk")
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
 script = ExtResource("4_snacm")
+counter = "Enemies"
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]

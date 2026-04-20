@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bb7uucsrpfp4w" path="res://Scenes/Tavern/Scripts/Upgrade.gd" id="10_gr732"]
 [ext_resource type="Script" uid="uid://cmwxcu0tnax4e" path="res://Scenes/Tavern/Scripts/upgrade_manager.gd" id="10_pv64h"]
 [ext_resource type="Texture2D" uid="uid://8i3srlssm5v" path="res://Scenes/Tavern/Art/akari-sitting-sprite.png" id="12_jt0a5"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="12_kb1dg"]
 [ext_resource type="Texture2D" uid="uid://bk5fwno73txee" path="res://Scenes/Tavern/Art/MageArea_1.png" id="12_vrssr"]
 [ext_resource type="Script" uid="uid://c0g6qfd3sk4p7" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_attack.gd" id="14_p826n"]
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_dash.gd" id="15_1gied"]
@@ -42,8 +43,9 @@
 [ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="39_01gve"]
 [ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="40_2wstm"]
+[ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="40_kb1dg"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="42_2wstm"]
-[ext_resource type="PackedScene" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
+[ext_resource type="PackedScene" uid="uid://c32fhh5aee0ah" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
@@ -205,6 +207,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
+theme = ExtResource("12_kb1dg")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Upgrade!"
@@ -230,6 +233,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 120.0
+theme = ExtResource("12_kb1dg")
 text = "Costs:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -260,7 +264,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
-theme = ExtResource("2_tqgpy")
+theme = ExtResource("12_kb1dg")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 text = "Upgrade!"
@@ -286,7 +290,7 @@ theme = ExtResource("2_tqgpy")
 layout_mode = 0
 offset_right = 127.0
 offset_bottom = 60.0
-theme = ExtResource("2_tqgpy")
+theme = ExtResource("12_kb1dg")
 text = "Costs:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -338,10 +342,12 @@ offset_left = -23.00003
 offset_top = -39.0
 offset_right = 68.99997
 offset_bottom = -8.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme = ExtResource("12_kb1dg")
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_colors/font_shadow_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 30
-text = "warrior"
+text = "Warrior"
 horizontal_alignment = 1
 
 [node name="Warrior_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=984068586]
@@ -396,10 +402,12 @@ layout_mode = 0
 offset_left = -13.0000305
 offset_top = -31.0
 offset_right = 69.99997
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme = ExtResource("12_kb1dg")
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_colors/font_shadow_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 30
-text = "ranger"
+text = "Rogue"
 horizontal_alignment = 1
 
 [node name="Rogue_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1261395280]
@@ -456,10 +464,12 @@ layout_mode = 0
 offset_left = -11.0
 offset_top = -31.0
 offset_right = 55.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme = ExtResource("12_kb1dg")
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_colors/font_shadow_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 30
-text = "mage"
+text = "Mage"
 horizontal_alignment = 1
 
 [node name="Mage_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=806625376]
@@ -522,14 +532,15 @@ stretch_mode = 0
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 0
 offset_left = 2.0
-offset_top = -18.0
+offset_top = -15.0
 offset_right = 130.0
-offset_bottom = 142.0
+offset_bottom = 145.0
 mouse_filter = 1
+theme = ExtResource("12_kb1dg")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
-text = "The 
+text = "Enter the 
 
 
 
@@ -659,41 +670,38 @@ theme_override_font_sizes/font_size = 32
 text = "Pause"
 script = ExtResource("26_djqff")
 
-[node name="IconGold" type="Sprite2D" parent="HeadsUpUI" unique_id=1427050592]
-position = Vector2(104, 14)
+[node name="IconGold" type="Sprite2D" parent="HeadsUpUI" unique_id=653634680]
+position = Vector2(111.5, 48)
 texture = ExtResource("38_gevxm")
-centered = false
 
-[node name="CoinCount" type="RichTextLabel" parent="HeadsUpUI" unique_id=1443516047]
+[node name="GoldCount" type="Label" parent="HeadsUpUI" unique_id=163409653]
 layout_mode = 0
-offset_left = 143.5
-offset_top = 8.0
-offset_right = 231.5
-offset_bottom = 56.0
+offset_left = 135.5
+offset_top = 32.0
+offset_right = 223.5
+offset_bottom = 64.0
 theme = ExtResource("39_01gve")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 3
-theme_override_font_sizes/normal_font_size = 30
-text = "10000"
+text = "000"
+label_settings = ExtResource("40_kb1dg")
+vertical_alignment = 1
 script = ExtResource("40_2wstm")
 counter = "Gold"
 
-[node name="IconOrb" type="Sprite2D" parent="HeadsUpUI" unique_id=2090706192]
-position = Vector2(119, 64)
-scale = Vector2(2, 2)
+[node name="IconOrb" type="Sprite2D" parent="HeadsUpUI" unique_id=979618541]
+position = Vector2(111.5, 88)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("42_2wstm")
 
-[node name="OrbCount" type="RichTextLabel" parent="HeadsUpUI" unique_id=1617422179]
+[node name="OrbCount" type="Label" parent="HeadsUpUI" unique_id=553800704]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 48.0
-offset_right = 232.0
-offset_bottom = 96.0
+offset_left = 135.5
+offset_top = 72.0
+offset_right = 223.5
+offset_bottom = 104.0
 theme = ExtResource("39_01gve")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 3
-theme_override_font_sizes/normal_font_size = 30
-text = "10000"
+text = "000"
+label_settings = ExtResource("40_kb1dg")
+vertical_alignment = 1
 script = ExtResource("40_2wstm")
 counter = "Orbs"
 
