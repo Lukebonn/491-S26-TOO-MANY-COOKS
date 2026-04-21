@@ -2,6 +2,7 @@ extends Control
 
 var player: Node # stores a reference to the player node in the Combat Scene.
 @export var settings: Node2D
+var pauseDisabled = false
 
 signal flashManaBar()
 
@@ -53,11 +54,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and not settings.in_settings_menu:
+	if Input.is_action_just_pressed("pause") and (not settings.in_settings_menu) and (not pauseDisabled):
+		pauseDisabled = true
 		if settings.in_menu == true:
 			settings.do_settings_action("hide_menu")
 		else:
 			settings.do_settings_action("show_menu")
+		get_tree().create_timer(1, true).timeout.connect(on_pause_cooldown_finished)
 	if settings.in_menu == true:
 		get_tree().paused = true
 	else:
@@ -228,3 +231,6 @@ func _on_pause_retry_button_down() -> void:
 func _on_retry_return_button_down() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+
+func on_pause_cooldown_finished() -> void:
+	pauseDisabled = false
