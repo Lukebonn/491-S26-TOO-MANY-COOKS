@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://22b0j7kjctua"]
 
-[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="1_xykjw"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="1_0758p"]
 [ext_resource type="Script" uid="uid://dmw0wdh1gtrgt" path="res://Scenes/Title/pause_ui.gd" id="2_k4shc"]
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="2_p6tjk"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="3_k4shc"]
@@ -20,7 +20,7 @@ offset_bottom = -648.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 script = ExtResource("2_k4shc")
 
 [node name="PauseStuff" type="HBoxContainer" parent="." unique_id=1954907877]
@@ -35,19 +35,19 @@ offset_bottom = 580.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseStuff" unique_id=474902922]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="TabContainer" type="TabContainer" parent="PauseStuff/MarginContainer" unique_id=300953247]
 custom_minimum_size = Vector2(600, 500)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 32
 tab_alignment = 1
 current_tab = 0
@@ -60,25 +60,26 @@ tab_3/hidden = true
 [node name="Audio" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=705027667]
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 metadata/_tab_index = 0
 
 [node name="Audio Sliders" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio" unique_id=361728027]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_constants/separation = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1119244215]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+theme = ExtResource("1_0758p")
 
 [node name="Label" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=320394100]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
@@ -87,18 +88,18 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=7758929]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="Master Audio" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer" unique_id=1803195103]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="Master" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" unique_id=1803276482]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -111,7 +112,7 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -119,25 +120,25 @@ value = 1.0
 [node name="masterlabel" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer" unique_id=1358147791]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 30
 text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=1366031270]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="Music Audio" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2" unique_id=1984065927]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="Music" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio" unique_id=419847723]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -150,7 +151,7 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -158,25 +159,25 @@ value = 1.0
 [node name="musiclabel" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2" unique_id=1755358124]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 30
 text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders" unique_id=537957074]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="SFX Audio" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3" unique_id=880788920]
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="SFX" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio" unique_id=1579558572]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -189,7 +190,7 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -197,7 +198,7 @@ value = 1.0
 [node name="sfxlabel" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3" unique_id=428394261]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 30
 text = "  100.0%"
 horizontal_alignment = 1
@@ -205,19 +206,19 @@ horizontal_alignment = 1
 [node name="Graphics" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1077153258]
 visible = false
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 metadata/_tab_index = 1
 
 [node name="Graphics Settings" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics" unique_id=1206408645]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="Label" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=838424765]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
@@ -226,13 +227,13 @@ vertical_alignment = 1
 
 [node name="Fullscreen" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=621846773]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="Fullscreen" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen" unique_id=1832332149]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -242,34 +243,34 @@ horizontal_alignment = 1
 
 [node name="Fullscreentoggle" type="CheckButton" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen" unique_id=2060748264]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 expand_icon = true
 script = ExtResource("2_p6tjk")
 
 [node name="Secret" type="Control" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1286230963]
 visible = false
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 metadata/_tab_index = 2
 metadata/_tab_name = "Secret..."
 
 [node name="Graphics2" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1834356745]
 visible = false
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 metadata/_tab_index = 3
 metadata/_tab_name = "Purple"
 
 [node name="Purple Toggle" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics2" unique_id=1934872802]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 
 [node name="Label" type="Label" parent="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle" unique_id=1591056961]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 60
@@ -278,13 +279,13 @@ vertical_alignment = 1
 
 [node name="Purple" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle" unique_id=2053287913]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 alignment = 1
 
 [node name="PurpleLabel" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple" unique_id=336031068]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
@@ -294,13 +295,13 @@ horizontal_alignment = 1
 
 [node name="PurpleToggle" type="CheckButton" parent="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple" unique_id=1351051636]
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 expand_icon = true
 
 [node name="TooltipReader" type="RichTextLabel" parent="PauseStuff" unique_id=225402278]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 40
 text = "Hello!"
@@ -315,7 +316,7 @@ offset_left = 972.0
 offset_top = 23.0
 offset_right = 1128.0
 offset_bottom = 119.0
-theme = ExtResource("1_xykjw")
+theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 64
 text = "Back
 "

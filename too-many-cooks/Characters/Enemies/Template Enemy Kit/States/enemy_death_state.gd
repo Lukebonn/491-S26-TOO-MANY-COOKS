@@ -1,6 +1,8 @@
 extends EnemyState
 #this state is called when the enemy current_health = 0 VIA the hitstate
 
+@export var Drops: Array[PickupData] = []
+
 ##scene that enemy drops when killed
 @export var Drop : PackedScene
 ##the low end (or amount always) that enemy drops of the above variable
@@ -18,11 +20,7 @@ func enter_state(enemy_node):
 		super(enemy_node)
 		if Death_Sound:
 			Death_Sound.play()
-		if Drop_Amount > 0:
-			if Drop_Amount_Max <= Drop_Amount:
-				call_deferred("drop_drops", Drop_Amount)
-			else:
-				call_deferred("drop_drops", randi_range(Drop_Amount,Drop_Amount_Max))
+		call_deferred("drop_drops")
 		if get_parent().has_signal("onEnemyDeath"):
 			get_parent().onEnemyDeath.emit()
 		if animation_name != "NONE":
@@ -34,8 +32,16 @@ func enter_state(enemy_node):
 		if Global.Has_Warrior_Quest_1:
 			PlayerStats.Quest1EnemiesKOs += 1
 
-func drop_drops(amount):
-	for i in amount:
-		var drop = Drop.instantiate()
-		drop.global_position = enemy_ref.global_position
-		get_parent().add_sibling(drop)
+func drop_drops():
+	#for i in amount:
+		#var drop = Drop.instantiate()
+		#drop.global_position = enemy_ref.global_position
+		#get_parent().add_sibling(drop)
+	for drop in Drops:
+		var c = randf_range(0.0, 1.0)
+		if drop.DropChance >= c:
+			var i = int(randf_range(drop.DropCountRange.x, drop.DropCountRange.y))
+			for d in i:
+				var inst = drop.SceneToSpawn.instantiate()
+				inst.global_position = enemy_ref.global_position
+				get_parent().add_sibling(inst)

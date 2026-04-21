@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dcph8r5jg0jch"]
+
+[ext_resource type="Script" uid="uid://bexjxuub2wfje" path="res://Objects/Pickups/Scripts/hp_pickup.gd" id="1_y0pw6"]
+[ext_resource type="Texture2D" uid="uid://l7m781fvboxv" path="res://Objects/Pickups/Img/PickupHp.png" id="2_2rmb5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcjsq"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aqng"]
+radius = 5.0
+
+[node name="GoldPickup" type="CharacterBody2D" unique_id=739019463]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_y0pw6")
+Name = "HP"
+Value = 10
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1657457641]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=998753768]
+shape = SubResource("CircleShape2D_e8js4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861499226]
+texture = ExtResource("2_2rmb5")
+
+[node name="sight" type="Area2D" parent="." unique_id=408621695]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=1691155092]
+z_index = 1
+shape = SubResource("CircleShape2D_lcjsq")
+debug_color = Color(1, 1, 0.05490196, 0.08627451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181732196]
+shape = SubResource("CircleShape2D_3aqng")

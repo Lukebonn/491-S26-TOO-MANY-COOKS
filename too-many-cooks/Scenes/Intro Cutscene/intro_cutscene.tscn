@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cjehyy065fx5x" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P2.png" id="4_04lgd"]
 [ext_resource type="Texture2D" uid="uid://kynperywo8m" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P3.png" id="5_hhtmf"]
 [ext_resource type="Texture2D" uid="uid://bvdsehvvr7m07" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P4.png" id="6_ceprt"]
-[ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="8_hhtmf"]
 [ext_resource type="Texture2D" uid="uid://dkkqcq82ntjex" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P5.webp" id="8_k7ifm"]
 [ext_resource type="Texture2D" uid="uid://cylyuy2wv0pir" path="res://Scenes/Intro Cutscene/Intro Images/INTROCUT-P6.webp" id="9_lna37"]
 [ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline1.wav" id="10_j8cwx"]
@@ -20,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dkxq3qvdf675d" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline8.wav" id="17_efp4m"]
 [ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline9.wav" id="18_k2rm0"]
 [ext_resource type="AudioStream" uid="uid://bg6r2imvjm00r" path="res://Scenes/Intro Cutscene/Intro Voicelines/SubtitleVoiceline10.wav" id="19_ssywp"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="20_6wkej"]
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 
 [node name="IntroCutscene" type="Control" unique_id=5151694 node_paths=PackedStringArray("music")]
@@ -123,13 +123,14 @@ offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Let me spin you a yarn..."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="1" type="RichTextLabel" parent="Subtitles" unique_id=1941761504]
 z_index = 10
@@ -145,13 +146,14 @@ offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
-text = "In the town of Litshire, the people lived in an age of prosperity. "
+theme_override_font_sizes/normal_font_size = 32
+text = "In the town of Litshire, the people lived in an age of prosperity."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="2" type="RichTextLabel" parent="Subtitles" unique_id=1775240174]
 z_index = 10
@@ -167,13 +169,14 @@ offset_right = 500.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Year after year, their crops were bountiful, and traders came far and wide to engage in commerce."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="3" type="RichTextLabel" parent="Subtitles" unique_id=1939497237]
 z_index = 10
@@ -189,13 +192,14 @@ offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Because of Litshire, the lands of Fuania began to prosper. There was peace."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="4" type="RichTextLabel" parent="Subtitles" unique_id=788887280]
 z_index = 10
@@ -211,13 +215,14 @@ offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "The Rat King..."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="5" type="RichTextLabel" parent="Subtitles" unique_id=851179754]
 z_index = 10
@@ -233,13 +238,14 @@ offset_right = 500.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Like a plague, he and his marauder forces swept throughout the land. Plundering and crushing all in their way."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="6" type="RichTextLabel" parent="Subtitles" unique_id=84728711]
 z_index = 10
@@ -255,13 +261,14 @@ offset_right = 500.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Many heroes began to come together to fight back against the Rat King and his legion."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="7" type="RichTextLabel" parent="Subtitles" unique_id=515201886]
 z_index = 10
@@ -277,13 +284,14 @@ offset_right = 500.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "But their efforts have been without advance. And they have all but been snuffed out."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="8" type="RichTextLabel" parent="Subtitles" unique_id=1520352997]
 z_index = 10
@@ -299,13 +307,14 @@ offset_right = 500.0
 offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "Tales of the Rat King's terror have spread throughout and to distant lands. And yet none have come to aid us."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="9" type="RichTextLabel" parent="Subtitles" unique_id=1912160950]
 z_index = 10
@@ -321,13 +330,14 @@ offset_right = 500.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("8_hhtmf")
+theme = ExtResource("20_6wkej")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 56
+theme_override_font_sizes/normal_font_size = 32
 text = "And thus, we are doomed."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="IntroCutsceneMusic" type="AudioStreamPlayer" parent="." unique_id=1854946087]
 stream = ExtResource("21_6wkej")

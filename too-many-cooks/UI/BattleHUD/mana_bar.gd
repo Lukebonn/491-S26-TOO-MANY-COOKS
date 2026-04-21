@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 		pass
 	else:
 		value = get_parent().player.displayMana
-		$ManaValue.text = str(get_parent().player.displayMana)
+		$"../ManaValue".text = str(get_parent().player.displayMana)
 		# These two lines of code make sure that the values on the bar
 		# are always up to date.
 		

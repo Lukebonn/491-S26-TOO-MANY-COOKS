@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dywvbhqvv5j1i"]
 
 [ext_resource type="Script" uid="uid://cbke46xydedkf" path="res://mana_pickup.gd" id="1_ofee8"]
-[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/orb.png" id="2_65yrc"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="2_65yrc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mkuk"]
 

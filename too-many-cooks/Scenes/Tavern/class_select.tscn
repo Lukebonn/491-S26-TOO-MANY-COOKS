@@ -93,9 +93,10 @@ mouse_filter = 2
 [node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("4_4b76g")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
-text = "What class should I be?"
+text = "SELECT A CLASS"
 fit_content = true
 horizontal_alignment = 1
 

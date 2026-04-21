@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_7xnas"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_d65q5"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_4v70l"]
-[ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/OrbPickup.tscn" id="6_yie16"]
-[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/GoldPickup.tscn" id="7_ssysm"]
+[ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="6_yie16"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="7_ssysm"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_wfqkj"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="9_ga6jb"]
 

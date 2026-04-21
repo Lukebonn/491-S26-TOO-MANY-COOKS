@@ -93,7 +93,7 @@ func spawn_enemies() -> void:
 		#Iterate and spawn all enemies at once.
 		for i in Enemies.size():
 			var instance = Enemies[i].instantiate()
-			add_child(instance)
+			get_parent().add_child(instance)
 			instance.position = calc_spawn_pos(i)
 			instance.tree_exited.connect(on_enemy_dead)
 			enemy_count += 1
@@ -102,7 +102,7 @@ func spawn_enemies() -> void:
 		if cur_step >= array_length:
 			cur_step = 0
 		var instance = Enemies[cur_step].instantiate()
-		add_child(instance)
+		get_parent().add_child(instance)
 		instance.position = calc_spawn_pos(cur_step)
 		instance.tree_exited.connect(on_enemy_dead)
 		enemy_count += 1
@@ -112,34 +112,33 @@ func calc_spawn_pos(i: int):
 	if LocationType == LocType.FixedRadius:
 		if RandomLocation:
 			#Return rotated Vec2 based on random float in range.
-			return Vector2(SpawnRadius,0).rotated(deg_to_rad(randf_range(0, 360)))
+			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(randf_range(0, 360)))
 		else:
 			#Return rotated Vec2 based on incriment * index.
-			return Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
+			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
 	if LocationType == LocType.AlongPath:
 		#Check that SpawnPath is actually valid (assigned).
 		if SpawnPath:
 			if RandomLocation:
 				#Return random point along path between 0 and path length.
-				return Vector2(SpawnPath.curve.sample_baked(randf_range(0, path_length)))
+				return position + Vector2(SpawnPath.curve.sample_baked(randf_range(0, path_length)))
 			else:
 				#Return even point along path using incriment * index.
 				var path_inc = path_length * (1.0/float(array_length))
-				return Vector2(SpawnPath.curve.sample_baked(path_inc * i))
-				#ISSUE: location is offset from actual visual point on path!!!
+				return position + Vector2(SpawnPath.curve.sample_baked(path_inc * i))
 		else:
 			#Invalid SpawnPath, push error and return world origin as fallback.
 			push_error(self.name + " uses AlongPath spawning, but no Path2D is assigned!")
-			return Vector2(0, 0)
+			return position + Vector2(0, 0)
 	if LocationType == LocType.RadiusRange:
 		if RandomLocation:
 			#Return rotated Vec2 in min-max range based on random float in range.
-			return Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(rotInc * i))
+			return position + Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(rotInc * i))
 		else:
 			#Return rotated Vec2 in min-max range based on incriment * index.
-			return Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
+			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
 	if LocationType == LocType.SetPoints:
-		return Vector2(SpawnPoints[i].position)
+		return position + Vector2(SpawnPoints[i].position)
 
 func on_enemy_dead() -> void:
 	enemies_defeated += 1

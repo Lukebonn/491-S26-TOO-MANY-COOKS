@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_5c7qd"]
 [ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door + room(door parent)/obj_door.tscn" id="11_macyy"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="12_l0q1t"]
-[ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/OrbPickup.tscn" id="14_4y6nv"]
+[ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="14_4y6nv"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="14_li7w1"]
 [ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="16_ft3hf"]
 
