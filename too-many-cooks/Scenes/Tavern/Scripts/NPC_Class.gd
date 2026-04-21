@@ -5,6 +5,8 @@ class_name NPC extends TextureButton
 @export var Expressions : Array[Texture]
 @export var Conversations : Array[String]
 @export var Times_Spoken_With : int
+@export var clickSound : AudioStreamPlayer
+@export var hoverSound : AudioStreamPlayer
 var selected = -1
 var conversation: int = 0
 func _ready():
@@ -17,6 +19,7 @@ func _send_conversation():
 	#maybe variant takes from ur current spell,
 	#or the npc's current relation with you (a new variable)
 	#or a boss thats been defeated
+	clickSound.play()
 	if !Global.Is_In_Dialogue:
 		if selected != -1:
 			DialogueBox.show_dialogue(Name,Conversations[selected], Expressions)
@@ -29,5 +32,6 @@ func _send_conversation():
 
 func _on_mouse_entered():
 	self.modulate = Color(1,1,1)
+	hoverSound.play()
 func _on_mouse_exited():
 	self.modulate = Color(.5,.5,.5)

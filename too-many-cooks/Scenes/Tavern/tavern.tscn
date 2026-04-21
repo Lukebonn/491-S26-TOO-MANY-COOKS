@@ -46,6 +46,8 @@
 [ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="40_kb1dg"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="42_2wstm"]
 [ext_resource type="PackedScene" uid="uid://c32fhh5aee0ah" path="res://Scenes/Tavern/first_time_ui.tscn" id="43_2wstm"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="47_3lod4"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="48_jt0a5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)
@@ -96,7 +98,7 @@ theme = ExtResource("2_tqgpy")
 script = ExtResource("4_2xisf")
 dialogue_box_ref = NodePath("../Dialogue Box")
 
-[node name="PlayerChoiceA" type="Button" parent="DialogueOptions" unique_id=1365432212 node_paths=PackedStringArray("dialogue_ref")]
+[node name="PlayerChoiceA" type="Button" parent="DialogueOptions" unique_id=1365432212 node_paths=PackedStringArray("dialogue_ref", "hoverSound", "clickSound")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,6 +114,8 @@ grow_vertical = 2
 text = "Option 1"
 script = ExtResource("5_vrssr")
 dialogue_ref = NodePath("../../Dialogue Box")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="PlayerChoiceB" type="Button" parent="DialogueOptions" unique_id=811963169 node_paths=PackedStringArray("dialogue_ref")]
 layout_mode = 1
@@ -300,7 +304,7 @@ anchors_preset = 0
 offset_left = 1239.0
 offset_right = 1239.0
 
-[node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref")]
+[node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
 layout_mode = 0
 offset_left = 799.0
 offset_top = 364.0
@@ -334,6 +338,8 @@ Max_Health_Growth_Modifier = 1.2
 Max_Mana_Growth_Modifier = 1.0
 Defense_Growth_Modifier = 1.2
 Speed_Growth_Modifier = 1.0
+clickSound = NodePath("../../../ButtonClickSound")
+hoverSound = NodePath("../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" unique_id=990799324]
@@ -705,8 +711,10 @@ vertical_alignment = 1
 script = ExtResource("40_2wstm")
 counter = "Orbs"
 
-[node name="FirstTimeUI" parent="." unique_id=1244911793 instance=ExtResource("43_2wstm")]
+[node name="FirstTimeUI" parent="." unique_id=1244911793 node_paths=PackedStringArray("clickSound", "hoverSound") instance=ExtResource("43_2wstm")]
 visible = false
+clickSound = NodePath("../ButtonClickSound")
+hoverSound = NodePath("../ButtonHoverSound")
 
 [node name="TavernMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1904910536]
 stream = ExtResource("39_ulbsv")
@@ -718,6 +726,16 @@ bus = &"Music"
 [node name="settings" parent="CanvasLayer" unique_id=734773122 instance=ExtResource("34_tvort")]
 visible = false
 
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=2014889228]
+stream = ExtResource("47_3lod4")
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=812580467]
+stream = ExtResource("48_jt0a5")
+
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceA" to="DialogueOptions/PlayerChoiceA" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceB" to="DialogueOptions/PlayerChoiceB" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceC" to="DialogueOptions/PlayerChoiceC" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" to="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" method="_on_mouse_entered"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="pressed" from="Tavern BG/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]

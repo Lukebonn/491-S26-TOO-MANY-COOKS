@@ -1,10 +1,13 @@
 extends TextureProgressBar
-
+var level_mana = 0
+var keep_mana = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	max_value = PlayerStats.MaxMana
 	# ensures that the maximum value for the Mana bar matches 
 	# that of the player's max Mana.
+	if keep_mana:
+		PlayerStats.MaxMana = level_mana
 	#self_modulate = Color(10, 0.0, 10, 1.0)
 	## sets the color of the Mana bar to be whatever this color is!
 
@@ -15,8 +18,9 @@ func _process(_delta: float) -> void:
 		pass
 	else:
 		value = get_parent().player.displayMana
+		level_mana = value
 		$"../ManaValue".text = str(get_parent().player.displayMana)
-		# These two lines of code make sure that the values on the bar
+		# Two of these lines of code make sure that the values on the bar
 		# are always up to date.
 		
 		# Deprecated "spell" function that gave the player regeneration for
@@ -39,3 +43,7 @@ func _on_flash_mana_bar() -> void:
 	self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 # When the player does not have enough Mana to cast their spell, the
 # bar will flash to indicate to the player that they don't have enough Mana.
+
+
+func _on_ui_update_mana_bar():
+	keep_mana = true

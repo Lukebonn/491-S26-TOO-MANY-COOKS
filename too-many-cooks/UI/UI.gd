@@ -9,6 +9,8 @@ signal flashManaBar()
 var warrior_quest_1 = "Quest: Kill 10 enemies"
 
 var mage_quest_1 = "Quest: Get an orb"
+signal update_health_bar
+signal update_mana_bar
 #var statusEffects = []
 ## contains a list of status effects applied to the "player."
 #var effectDurations = []
@@ -234,3 +236,11 @@ func _on_retry_return_button_down() -> void:
 
 func on_pause_cooldown_finished() -> void:
 	pauseDisabled = false
+
+
+func _on_exit_current_health() -> void:
+	update_health_bar.emit()
+
+
+func _on_exit_current_mana() -> void:
+	update_mana_bar.emit()

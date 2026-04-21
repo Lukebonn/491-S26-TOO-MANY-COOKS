@@ -1,12 +1,15 @@
 extends TextureProgressBar
 var enteredCriticalHealth = false
 var flash = true
-
+var level_value = 0
+var keep_health = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	max_value = PlayerStats.MaxHealth
 	# ensures that the maximum value for the Health bar matches 
 	# that of the player's max Health.
+	if keep_health:
+		PlayerStats.MaxHealth = level_value
 	#self_modulate = Color(10.0, 0.0, 0.0, 1.0)
 	## sets the color of the Health bar to be red
 
@@ -16,6 +19,7 @@ func _process(_delta: float) -> void:
 		pass
 	else:
 		value = get_parent().player.displayHealth
+		level_value = value
 		$"../HealthValue".text = str(get_parent().player.displayHealth)
 		
 		# These two lines of code make sure that the values on the bar
@@ -69,3 +73,7 @@ func _on_timer_timeout() -> void:
 		self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		flash = true
 	# woaw this code makes the health bar flash how awesome.
+
+
+func _on_ui_update_health_bar() -> void:
+	keep_health = true

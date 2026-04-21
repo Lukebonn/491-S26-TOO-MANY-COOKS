@@ -1,10 +1,12 @@
 extends Button
 @export var dialogue_ref : Control
-
+@export var hoverSound : AudioStreamPlayer
+@export var clickSound : AudioStreamPlayer
 func _ready():
 	self.connect("pressed",_on_pressed)
 
 func _on_pressed():
+	clickSound.play()
 	match text:
 		"\"I lost. Badly.\"":
 			dialogue_ref.show_dialogue("Warrior","7,8,16,17,18,19,20,21,22,23","0,0")
@@ -45,3 +47,7 @@ func _on_pressed():
 
 	get_parent().hide_menu()
 	dialogue_ref.is_awaiting_response = false
+
+
+func _on_mouse_entered() -> void:
+	hoverSound.play()

@@ -65,6 +65,9 @@ var new_passive_mana : float
 var new_passive_def : float
 var new_passive_spd : float
 #---
+@export_category("Sounds")
+@export var clickSound : AudioStreamPlayer
+@export var hoverSound : AudioStreamPlayer
 func _ready():
 	prepare_level()
 	update_new_stats()
@@ -75,11 +78,13 @@ func _ready():
 
 func _on_mouse_entered():
 	self.modulate = Color(1.25,1.25,1.25)
+	hoverSound.play()
 func _on_mouse_exited():
 	self.modulate = Color(1,1,1)
 
 func _on_clicked():	
 	update_new_stats()
+	clickSound.play()
 	if Class_Menu_Ref.is_showing == false:
 		Class_Menu_Ref.set_title(Class_Name, Class_Level)
 		Class_Menu_Ref.set_active_labels(new_str-new_passive_str,new_hp-new_passive_hp,new_def-new_passive_def,new_spd-new_passive_spd,new_mana-new_passive_mana)

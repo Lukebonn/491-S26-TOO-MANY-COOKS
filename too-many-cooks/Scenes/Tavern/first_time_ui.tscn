@@ -179,7 +179,11 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "OK"
 
+[connection signal="mouse_entered" from="FirstPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="FirstPanel/Button" to="." method="_on_button_one_pressed"]
+[connection signal="mouse_entered" from="SecondPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="SecondPanel/Button" to="." method="_on_button_two_pressed"]
+[connection signal="mouse_entered" from="ThirdPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ThirdPanel/Button" to="." method="_on_button_three_pressed"]
+[connection signal="mouse_entered" from="FourthPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="FourthPanel/Button" to="." method="_on_button_four_pressed"]

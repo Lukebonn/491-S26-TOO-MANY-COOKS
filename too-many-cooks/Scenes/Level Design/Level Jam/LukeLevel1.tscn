@@ -1272,3 +1272,6 @@ position = Vector2(-1098, -1668)
 
 [node name="ObjLock" parent="." unique_id=269246272 instance=ExtResource("16_ft3hf")]
 position = Vector2(-10, -1304)
+
+[connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
+[connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
