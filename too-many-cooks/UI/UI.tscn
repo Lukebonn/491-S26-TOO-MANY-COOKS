@@ -13,17 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://brkecisggyy3v" path="res://UI/BattleHUD/Img/MpBarBorder.png" id="8_017wa"]
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
-[ext_resource type="Script" uid="uid://c1b5wyo40ayh6" path="res://UI/pause_menu.gd" id="9_qgmx8"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
+[ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 
-[node name="UI" type="Control" unique_id=1832120515]
+[node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_tabjk")
 script = ExtResource("1_dvulo")
+settings = NodePath("PauseMenu2")
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
 visible = false
@@ -215,13 +216,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PauseMenu" type="ColorRect" parent="." unique_id=2000353118]
+visible = false
 layout_mode = 0
 offset_left = 290.0
 offset_top = 159.0
 offset_right = 866.0
 offset_bottom = 519.0
 color = Color(0.1927709, 0.1927709, 0.1927709, 0.5882353)
-script = ExtResource("9_qgmx8")
 
 [node name="RetryButton" type="Button" parent="PauseMenu" unique_id=930502395]
 layout_mode = 1
@@ -303,6 +304,8 @@ offset_bottom = 48.0
 theme = ExtResource("1_tabjk")
 script = ExtResource("4_snacm")
 counter = "Enemies"
+
+[node name="PauseMenu2" parent="." unique_id=734773122 instance=ExtResource("18_1sm7k")]
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]

@@ -1,14 +1,16 @@
 extends Control
 signal closed_menu
+signal opened_menu
 
 func show_menu():
 	$"PauseStuff/TooltipReader".text = "Hello!"
-	var tween = get_tree().create_tween()
+	var tween = self.create_tween()
 	tween.parallel().tween_property(self,"position",Vector2(0,0),2).set_trans(Tween.TRANS_EXPO)
+	opened_menu.emit()
 
 func hide_menu():
 	$"PauseStuff/TooltipReader".text = "Bye!"
-	var tween = get_tree().create_tween()
+	var tween = self.create_tween()
 	tween.parallel().tween_property(self,"position",Vector2(1152,0),2).set_trans(Tween.TRANS_EXPO)
 	closed_menu.emit()
 func _on_back_pressed():

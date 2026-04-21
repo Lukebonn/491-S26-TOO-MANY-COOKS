@@ -1,6 +1,7 @@
 extends Control
 
 var player: Node # stores a reference to the player node in the Combat Scene.
+@export var settings: Node2D
 
 signal flashManaBar()
 
@@ -32,10 +33,11 @@ var mage_quest_1 = "Quest: Get an orb"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	settings.in_menu = false
 	$DeathScreen.visible = false
 	if $"../../Player":
 		player = $"../../Player"
-		player.connect("notEnoughMana", _on_player_not_enough_mana)
+		#player.connect("notEnoughMana", _on_player_not_enough_mana)
 		
 		#catch case, we don't want "You Died!" screen in intro combat
 		if get_tree().current_scene.name != "IntroCombat":
@@ -51,10 +53,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !player:
-		pass
+	if Input.is_action_just_pressed("pause") and not settings.in_settings_menu:
+		if settings.in_menu == true:
+			settings.do_settings_action("hide_menu")
+		else:
+			settings.do_settings_action("show_menu")
+	if settings.in_menu == true:
+		get_tree().paused = true
 	else:
-		
+		get_tree().paused = false
+	if player:
 		# ensures that the player's Health can only ever be between
 		# 0 and the player's Max Health.
 		player.health = clamp(player.health, 0, PlayerStats.MaxHealth)
@@ -107,7 +115,6 @@ func _process(delta: float) -> void:
 	
 func _on_player_not_enough_mana() -> void:
 	flashManaBar.emit()
-	print("Yo whatsuo")
 	# this signal tells the Mana bar to flash, indicating to the
 	# player that they do not have enough Mana.
 # Takes a singal and emits another signal that is more local to the
