@@ -127,7 +127,23 @@ autowrap_mode = 2
 autowrap_trim_flags = 128
 vertical_alignment = 1
 
-[node name="SpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
+[node name="GrampsSpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
+visible = false
+z_index = 1
+position = Vector2(-45, -326)
+
+[node name="WarriorSpeakerSprite" type="Sprite2D" parent="Container" unique_id=2145478359]
+visible = false
+z_index = 1
+position = Vector2(-45, -326)
+
+[node name="RogueSpeakerSprite" type="Sprite2D" parent="Container" unique_id=820128635]
+visible = false
+z_index = 1
+position = Vector2(-45, -326)
+
+[node name="MageSpeakerSprite" type="Sprite2D" parent="Container" unique_id=667372467]
+visible = false
 z_index = 1
 position = Vector2(-45, -326)
 
