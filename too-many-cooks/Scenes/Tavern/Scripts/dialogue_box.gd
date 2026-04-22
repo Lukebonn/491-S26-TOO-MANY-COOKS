@@ -162,3 +162,17 @@ func find_message(character: String, index, emotions):
 		print(body.get(line.to_int()))
 		text.append(body.get(line.to_int()))
 	return text
+
+#func find_portrait(character: String, index, emotions):
+	#var portrait
+	#match character:
+		#"Gramps":
+			#portrait = "File path"
+			#
+		#"Warrior":
+			#portrait = "File path"
+		#"Rogue":
+			#portrait = "File path"
+		#"Mage":
+			#portrait = "File path"
+	
