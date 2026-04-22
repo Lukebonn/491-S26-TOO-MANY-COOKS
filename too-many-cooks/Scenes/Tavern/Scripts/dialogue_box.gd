@@ -76,7 +76,7 @@ func print_text(character: String, index, emotions):
 			if line.contains("#"):
 				end_of_dialogue = true
 				line = line.replace("#","")
-			#var emote = find_emote(character, emotions, line)
+			#find_portrait(character, index, emotions, line)
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line.right(-3)
 			
@@ -89,33 +89,33 @@ func print_text(character: String, index, emotions):
 			await next_line
 		if end_of_dialogue:
 			end_dialogue()
-		$Container/SpeakerSprite.hide()
+		#$Container/SpeakerSprite.hide()
 	
 	
 #Find the emotions of the NPC based on a tag with the following patter [X]
 #0 = No Emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised 5 = Neutral
-func find_emote(character: String, emotions, line: String):
-	#print(line + "test")
-	$Container/SpeakerSprite.show()
-	var tag = line[1]
-	match tag:
-		"0":
-			pass
-		"1":
-			$Container/SpeakerSprite.texture = emotions[1]
-			print("I'm so happy") 
-		"2": 
-			$Container/SpeakerSprite.texture = emotions[2] 
-			print("I'm so sad")
-		"3": 
-			$Container/SpeakerSprite.texture = emotions[3]
-			print("Grr, I'm mad")
-		"4": 
-			$Container/SpeakerSprite.texture = emotions[4]
-			print("Woah, I'm surprised")
-		"5":
-			$Container/SpeakerSprite.texture = emotions[5]
-			print("I'm just here") 
+#func find_emote(character: String, emotions, line: String):
+	##print(line + "test")
+	#$Container/SpeakerSprite.show()
+	#var tag = line[1]
+	#match tag:
+		#"0":
+			#pass
+		#"1":
+			#$Container/SpeakerSprite.texture = emotions[1]
+			#print("I'm so happy") 
+		#"2": 
+			#$Container/SpeakerSprite.texture = emotions[2] 
+			#print("I'm so sad")
+		#"3": 
+			#$Container/SpeakerSprite.texture = emotions[3]
+			#print("Grr, I'm mad")
+		#"4": 
+			#$Container/SpeakerSprite.texture = emotions[4]
+			#print("Woah, I'm surprised")
+		#"5":
+			#$Container/SpeakerSprite.texture = emotions[5]
+			#print("I'm just here") 
 	
 		#$Container/Dialogue/DialogueLabel.text = line
 	#find the text we want from loaded dictionary of text in our game
@@ -163,12 +163,33 @@ func find_message(character: String, index, emotions):
 		text.append(body.get(line.to_int()))
 	return text
 
-#func find_portrait(character: String, index, emotions):
+#Will read to find the correct character speaker and then look for the tag
+# that will load the correct emotion. The portraits will get direct references
+#func find_portrait(character: String, index, emotions, line: String):
 	#var portrait
+	#var tag = line[1]
 	#match character:
 		#"Gramps":
-			#portrait = "File path"
-			#
+			#$Container/GrampsSpeakerSprite.show()
+			#match tag:
+				#"0":
+					#$Container/GrampsSpeakerSprite.texture = emotions[0]
+				#"1":
+					#portrait = $Container/GrampsSpeakerSprite
+					#$Container/GrampsSpeakerSprite.texture = emotions[1]
+					#print("I'm so happy") 
+				#"2": 
+					#$Container/GrampsSpeakerSprite.texture = emotions[2] 
+					#print("I'm so sad")
+				#"3": 
+					#$Container/GrampsSpeakerSprite.texture = emotions[3]
+					#print("Grr, I'm mad")
+				#"4": 
+					#$Container/GrampsSpeakerSprite.texture = emotions[4]
+					#print("Woah, I'm surprised")
+				##"5":
+					##$Container/GrampsSpeakerSprite.texture = emotions[5]
+					##print("I'm just here") 
 		#"Warrior":
 			#portrait = "File path"
 		#"Rogue":

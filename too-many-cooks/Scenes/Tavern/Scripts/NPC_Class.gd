@@ -19,7 +19,7 @@ func _send_conversation():
 	#maybe variant takes from ur current spell,
 	#or the npc's current relation with you (a new variable)
 	#or a boss thats been defeated
-	clickSound.play()
+	#clickSound.play()
 	if !Global.Is_In_Dialogue:
 		if selected != -1:
 			DialogueBox.show_dialogue(Name,Conversations[selected], Expressions)
