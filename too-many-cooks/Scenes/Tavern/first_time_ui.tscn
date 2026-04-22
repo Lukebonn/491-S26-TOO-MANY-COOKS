@@ -31,9 +31,9 @@ offset_right = 196.0
 offset_bottom = 104.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "Welcome to the Tavern!
-This is where you can upgrade and talk to NPCs to help you get stronger."
+Here, you can talk to NPCs and upgrade classes to get stronger."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -154,14 +154,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
-offset_top = -69.5
-offset_right = 209.0
-offset_bottom = 86.0
+offset_left = -211.0
+offset_top = -83.5
+offset_right = 206.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Hover over the right and left arrows on the side to move around the tavern."
+text = "Hover over the arrows on the sides of the screen to move around. The bar at the top shows your current position."
 horizontal_alignment = 1
 autowrap_mode = 2
 
