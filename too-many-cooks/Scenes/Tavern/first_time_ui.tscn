@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dluserkno4jvu" path="res://Scenes/Tavern/Scripts/first_time_ui.gd" id="1_j5ms4"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_owxew"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="3_yecbg"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="4_j5ms4"]
 
 [node name="FirstTimeUI" type="Control" unique_id=1697375891]
 layout_mode = 3
@@ -178,6 +180,12 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "OK"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=713553985]
+stream = ExtResource("3_yecbg")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1433893241]
+stream = ExtResource("4_j5ms4")
 
 [connection signal="mouse_entered" from="FirstPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="FirstPanel/Button" to="." method="_on_button_one_pressed"]

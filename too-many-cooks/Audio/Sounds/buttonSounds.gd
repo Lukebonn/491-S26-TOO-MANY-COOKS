@@ -10,3 +10,7 @@ func _on_mouse_entered() -> void:
 func _on_button_down() -> void:
 	if clickSound:
 		clickSound.play()
+
+func continue_enable():
+	if SaveMgr.GameData != null:
+		Button.disabled = false

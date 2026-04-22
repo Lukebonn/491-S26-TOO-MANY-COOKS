@@ -21,6 +21,8 @@ class_name Upgrade extends TextureButton
 @export var Upgrade_Reward : Array[String]
 
 @export var Is_Complicated : bool
+@export var clickSound : AudioStreamPlayer
+@export var hoverSound : AudioStreamPlayer
 #for stat boosts
 signal Upgrade_Basic(stat:String, boost:int)
 
@@ -35,6 +37,7 @@ func _ready():
 	
 func _on_upgrade():
 	print("Upgrading...")
+	clickSound.play()
 	if check_cost(Cost_Amount,Cost_Material) == true:
 		print("Upgrade successful, emitting signal and removing materials")
 		if Is_Complicated:
@@ -44,6 +47,7 @@ func _on_upgrade():
 		queue_free()
 	else:
 		print("Upgrade failed")
+		clickSound.play()
 		modulate = Color(1,0,0)
 		await get_tree().create_timer(1).timeout
 		modulate = Color(1,1,1)
@@ -90,6 +94,7 @@ func setup_label():
 
 func _on_mouse_entered():
 	$Panel.show()
+	hoverSound.play()
 	setup_label()
 func _on_mouse_exited():
 	$Panel.hide()

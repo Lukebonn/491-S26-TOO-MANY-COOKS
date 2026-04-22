@@ -189,7 +189,7 @@ anchors_preset = 0
 theme = ExtResource("2_tqgpy")
 script = ExtResource("10_pv64h")
 
-[node name="MagicWorkshop0" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327]
+[node name="MagicWorkshop0" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=904616327 node_paths=PackedStringArray("clickSound", "hoverSound")]
 z_index = 1
 layout_mode = 0
 offset_left = 449.0
@@ -202,6 +202,8 @@ Cost_Amount = Array[int]([5])
 Cost_Material = Array[int]([0])
 Upgrade_Reward = Array[String](["MagicWorkshop0"])
 Is_Complicated = true
+clickSound = NodePath("../../../ButtonClickSound")
+hoverSound = NodePath("../../../ButtonHoverSound")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/MagicWorkshop0" unique_id=1903962225]
 visible = false
