@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdeqbgadkhott"]
+
+[ext_resource type="Script" uid="uid://b8py0k2lejels" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/weaken.gd" id="1_2w5mt"]
+
+[node name="weaken" type="Node" unique_id=1647439974]
+script = ExtResource("1_2w5mt")

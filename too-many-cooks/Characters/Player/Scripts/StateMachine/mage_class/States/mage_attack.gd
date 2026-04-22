@@ -32,7 +32,7 @@ func enter_state(player_node):
 		
 		hitbox.queue_free()
 		
-		change_spell()
+		switch_equipped()
 		
 		start_cooldown()
 	
@@ -58,9 +58,11 @@ func on_attack_hit(_body):
 
 
 ##cycles to the next spell
-#ice spears -> fire blast -> vortex -> ice spears
-func change_spell():
-	player.get_node("SpellIndicator").cycle()
+#scroll up: ice spears -> fire blast -> vortex -> ice spears
+#scroll down: ice spears -> vortex -> fire blast -> ice spears
+func switch_equipped():
+	
+	player.get_node("SpellIndicator").cycle_up()
 	match current_spell:
 		"ice spears":
 			current_spell = "fire blast"
@@ -70,6 +72,30 @@ func change_spell():
 			current_spell = "ice spears"
 		_:
 			current_spell = "ice spears"
+	
+	#if(Input.is_action_just_pressed("scroll_up")):
+	#	player.get_node("SpellIndicator").cycle_up()
+	#	match current_spell:
+	#		"ice spears":
+	#			current_spell = "fire blast"
+	#		"fire blast":
+	#			current_spell = "vortex"
+	#		"vortex":
+	#			current_spell = "ice spears"
+	#		_:
+	#			current_spell = "ice spears"
+	
+	#if(Input.is_action_just_pressed("scroll_down")):
+	#	player.get_node("SpellIndicator").cycle_down()
+	#	match current_spell:
+	#		"ice spears":
+	#			current_spell = "vortex"
+	#		"vortex":
+	#			current_spell = "fire blast"
+	#		"fire blast":
+	#			current_spell = "ice spears"
+	#		_:
+	#			current_spell = "ice spears"
 
 ##player should lose a certain amount of health
 func hit_response(source):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://7daebneftgah"
+path="res://.godot/imported/ThrowingKnife1.png-68762d79c4f650f6436b7bc919f411a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Player/Sprites/Weapons/Knife/ThrowingKnife1.png"
+dest_files=["res://.godot/imported/ThrowingKnife1.png-68762d79c4f650f6436b7bc919f411a6.ctex"]
 
 [params]
 

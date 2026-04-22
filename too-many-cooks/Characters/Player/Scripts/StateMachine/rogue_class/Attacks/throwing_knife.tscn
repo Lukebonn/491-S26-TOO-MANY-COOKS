@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bocd3g5qpie76"]
+
+[ext_resource type="Script" uid="uid://b67eknknlootu" path="res://Characters/Player/Scripts/StateMachine/rogue_class/Attacks/throwing_knife.gd" id="1_1t1gv"]
+[ext_resource type="Texture2D" uid="uid://7daebneftgah" path="res://Characters/Player/Sprites/Weapons/Knife/ThrowingKnife1.png" id="1_mu0em"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4pk0o"]
+radius = 3.0
+height = 16.0
+
+[node name="ThrowingKnife" type="RigidBody2D" unique_id=1424596854]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_1t1gv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015298301]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4pk0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=508356715]
+position = Vector2(2, 0)
+rotation = 0.7869005
+texture = ExtResource("1_mu0em")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=529237857]
+collision_layer = 4
+collision_mask = 80
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1741369049]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4pk0o")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

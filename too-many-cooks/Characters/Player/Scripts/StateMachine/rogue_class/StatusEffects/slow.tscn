@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwkmcvuvk4lwn"]
+
+[ext_resource type="Script" uid="uid://utwdaaeu2iow" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/slow.gd" id="1_g5vhm"]
+
+[node name="slow" type="Node" unique_id=1454988779]
+script = ExtResource("1_g5vhm")

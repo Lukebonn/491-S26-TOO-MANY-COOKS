@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerClass" format=3 uid="uid://dr2gio4su3fmw"]
+
+[ext_resource type="Script" uid="uid://tk1uq1t3lj1u" path="res://Characters/Player/Scripts/StateMachine/rogue_class/States/rogue_attack.gd" id="1_a3llb"]
+[ext_resource type="Script" uid="uid://cdjmfedbai0ha" path="res://System/Classes/player_class.gd" id="1_cspg3"]
+[ext_resource type="Script" uid="uid://cscp2ojvakmmr" path="res://Characters/Player/Scripts/StateMachine/rogue_class/States/rogue_dash.gd" id="2_q6afp"]
+[ext_resource type="Script" uid="uid://c40gxq4fsnroa" path="res://Characters/Player/Scripts/StateMachine/rogue_class/States/rogue_magic.gd" id="3_bh05s"]
+[ext_resource type="Texture2D" uid="uid://7daebneftgah" path="res://Characters/Player/Sprites/Weapons/Knife/ThrowingKnife1.png" id="5_q6afp"]
+
+[resource]
+script = ExtResource("1_cspg3")
+attack = ExtResource("1_a3llb")
+dash = ExtResource("2_q6afp")
+magic = ExtResource("3_bh05s")
+str_mod = 1.0
+def_mod = 1.0
+spd_mod = 1.5
+mag_mod = 1.0
+weapon_sprite = ExtResource("5_q6afp")
+metadata/_custom_type_script = "uid://cdjmfedbai0ha"

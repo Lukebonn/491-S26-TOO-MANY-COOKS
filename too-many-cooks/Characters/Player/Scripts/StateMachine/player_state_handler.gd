@@ -44,8 +44,8 @@ var num_keys : int = 0
 #player should be in idle state when loaded
 #loads the correct class for the player
 func _ready() -> void:
-	if %UI:
-		print("hi")
+	#if %UI:
+	#	print("hi")
 	
 	match PlayerStats.current_class:
 		PlayerStats.classes.none:
@@ -61,6 +61,8 @@ func _ready() -> void:
 			add_child(fire_state)
 			fire_state.name = "fire_state"
 			fire_state.set_script(load("res://Characters/Player/Scripts/StateMachine/mage_class/States/fireball_state.gd"))
+		PlayerStats.classes.rogue:
+			equipped_class = load("res://System/Classes/rogue.tres")
 		_:
 			equipped_class = load("res://System/Classes/blank_class.tres")
 	
@@ -121,6 +123,10 @@ func _physics_process(delta: float) -> void:
 	if(current_state):
 		current_state.input_handler(delta)
 	
+	#when using the rogue or mage classes, player can use the mouse wheel to switch their equipped status effect or spell
+	if((PlayerStats.current_class == PlayerStats.classes.rogue) and 
+	(Input.is_action_just_pressed("scroll_up") or Input.is_action_just_pressed("scroll_down"))):
+		$attack_state.switch_equipped()
 	
 	move_and_slide()
 

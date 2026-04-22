@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ce6mc1n7fqjw5"]
+
+[ext_resource type="Script" uid="uid://dliaa0oq628ge" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/poison.gd" id="1_710si"]
+
+[node name="poison" type="Node" unique_id=1715645303]
+script = ExtResource("1_710si")
+
+[node name="Timer" type="Timer" parent="." unique_id=740661631]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
