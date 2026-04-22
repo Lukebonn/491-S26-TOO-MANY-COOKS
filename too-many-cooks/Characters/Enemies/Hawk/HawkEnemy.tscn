@@ -1,20 +1,20 @@
-[gd_scene format=3 uid="uid://c8osew8i4x2lu"]
+[gd_scene format=3 uid="uid://ds5nw70mq58tu"]
 
-[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_rl6xh"]
-[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_cex3y"]
-[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_7iyv3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="3_pa5n2"]
-[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_gb4p2"]
-[ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/Mice/black/2.png" id="4_k17hw"]
-[ext_resource type="Texture2D" uid="uid://blf2g0ay12jtq" path="res://Characters/Enemies/Mice/black/3.png" id="5_pa5n2"]
-[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="5_wucg0"]
-[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="6_ypite"]
-[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_xax86"]
-[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="8_k2kcg"]
-[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_aeqaf"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_o3n35"]
-[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_w667s"]
-[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="12_egmnq"]
+[ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_7syrx"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_80611"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="3_72ye0"]
+[ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/Mice/black/2.png" id="4_oodp0"]
+[ext_resource type="Texture2D" uid="uid://blf2g0ay12jtq" path="res://Characters/Enemies/Mice/black/3.png" id="5_hn7q8"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="6_dedhg"]
+[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="7_2v1gg"]
+[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="8_gyy8f"]
+[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="9_7ye8k"]
+[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_6u5ja"]
+[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
+[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(18, 9)
@@ -32,10 +32,10 @@ size = Vector2(18, 10)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_pa5n2")
+"texture": ExtResource("3_72ye0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_k17hw")
+"texture": ExtResource("4_oodp0")
 }],
 "loop": true,
 "name": &"chase",
@@ -43,29 +43,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_pa5n2")
+"texture": ExtResource("3_72ye0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_pa5n2")
+"texture": ExtResource("3_72ye0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_pa5n2")
+"texture": ExtResource("5_hn7q8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_pa5n2")
+"texture": ExtResource("5_hn7q8")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
 
-[node name="RatEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
+[node name="HawkEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
 collision_layer = 8
 collision_mask = 64
-script = ExtResource("1_rl6xh")
+script = ExtResource("1_7syrx")
 health = 100
 damage = 10
-sight_state = NodePath("ChaseState")
+sight_state = NodePath("DashState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -98,39 +98,40 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
-stream = ExtResource("2_cex3y")
+stream = ExtResource("2_80611")
 
 [node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
-stream = ExtResource("2_cex3y")
+stream = ExtResource("2_80611")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"idle"
 
-[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("3_7iyv3")]
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_dedhg")]
 offset_top = -16.5
 offset_bottom = -12.5
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
-script = ExtResource("4_gb4p2")
+script = ExtResource("7_2v1gg")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
-script = ExtResource("5_wucg0")
+script = ExtResource("8_gyy8f")
 Chase_Speed = 50
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DashState" type="Node" parent="." unique_id=1342912869]
-script = ExtResource("6_ypite")
+script = ExtResource("9_7ye8k")
+speed = 0.5
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ProjectileState" type="Node" parent="." unique_id=742252322]
-script = ExtResource("7_xax86")
-Projectile = ExtResource("8_k2kcg")
+script = ExtResource("10_6u5ja")
+Projectile = ExtResource("11_ui3by")
 Projectile_Speed = 2
 Idle_Time = 1.0
 Flee_While_Firing = true
@@ -139,7 +140,7 @@ animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
-script = ExtResource("9_aeqaf")
+script = ExtResource("12_luwkr")
 Knockback_Strength = 50
 Hit_Stun = 0.3
 Hit_Sound = NodePath("../TakeDamage")
@@ -151,14 +152,14 @@ wait_time = 0.3
 one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
-script = ExtResource("10_o3n35")
+script = ExtResource("13_qs7f2")
 Possibilities = [NodePath("../ChaseState"), NodePath("../DashState"), NodePath("../ProjectileState")]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DeathState" type="Node" parent="." unique_id=297472194 node_paths=PackedStringArray("Death_Sound")]
-script = ExtResource("11_w667s")
-Drop = ExtResource("12_egmnq")
+script = ExtResource("14_kcit4")
+Drop = ExtResource("15_x328g")
 Drop_Amount = 1
 Drop_Amount_Max = 2
 Death_Sound = NodePath("../Die")

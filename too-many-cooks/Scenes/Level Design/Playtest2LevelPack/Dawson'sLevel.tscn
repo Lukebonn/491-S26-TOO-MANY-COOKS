@@ -8,11 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_4h827"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_pfrqb"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="8_uxbry"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_0x0i3"]
-[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/mice/ranged_rat_enemy.tscn" id="10_chfxb"]
-[ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="11_5n6rv"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_0x0i3"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/ranged_rat_enemy.tscn" id="10_chfxb"]
+[ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Spell Caster Enemy/hob_lobber_enemy_official.tscn" id="11_5n6rv"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="12_4g78r"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="13_b5ldo"]
+[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_lqe51"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -500,7 +501,7 @@ position = Vector2(-352, -8)
 position = Vector2(-408, -48)
 
 [node name="SuperStrongRat" parent="Enemies" unique_id=1845722072 instance=ExtResource("9_0x0i3")]
-position = Vector2(32, -256)
+position = Vector2(232, -248)
 
 [node name="Unused Enemies" type="Node" parent="." unique_id=2035942046]
 
@@ -528,6 +529,9 @@ damage = 0
 [node name="SlimeEnemy3" parent="Unused Enemies" unique_id=432302108 instance=ExtResource("12_4g78r")]
 visible = false
 position = Vector2(369, 268)
+
+[node name="HawkEnemy" parent="." unique_id=346107231 instance=ExtResource("14_lqe51")]
+position = Vector2(-72, -248)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]

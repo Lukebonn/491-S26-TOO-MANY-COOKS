@@ -3,13 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bvpewu83cvmdt" path="res://Objects/Tilesets/ActOneAtlas.png" id="1_dsrmt"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_44rpy"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_l0njl"]
-[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/mice/ranged_rat_enemy.tscn" id="4_sqboc"]
-[ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Hob_Lobber_Enemy/hob_lobber_enemy_official.tscn" id="5_mkukw"]
+[ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/ranged_rat_enemy.tscn" id="4_sqboc"]
+[ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Spell Caster Enemy/hob_lobber_enemy_official.tscn" id="5_mkukw"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="6_kogml"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_emnbp"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_okbhx"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_j2agl"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="10_44rpy"]
+[ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="11_l0njl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -197,7 +198,7 @@ zoom = Vector2(4, 4)
 position = Vector2(-108, 301)
 
 [node name="HobLobber" parent="." unique_id=1670622060 instance=ExtResource("5_mkukw")]
-position = Vector2(151, 37)
+position = Vector2(184, 40)
 
 [node name="SlimeEnemy" parent="." unique_id=1633737342 instance=ExtResource("6_kogml")]
 position = Vector2(58, 362)
@@ -225,3 +226,6 @@ stream = ExtResource("10_44rpy")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="RangedEnemy" parent="." unique_id=320445517 instance=ExtResource("11_l0njl")]
+position = Vector2(-40, 80)
