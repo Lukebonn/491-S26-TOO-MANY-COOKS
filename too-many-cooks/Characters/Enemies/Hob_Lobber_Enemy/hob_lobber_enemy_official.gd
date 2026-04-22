@@ -15,7 +15,7 @@ var current_health : int
 func _ready():
 	current_health = health
 	current_state = starting_state
-	
+	self.modulate=Color(0.0, 0.498, 0.0, 1.0)
 	if current_state:
 		current_state.enter_state(self)
 	else:
