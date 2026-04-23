@@ -9,7 +9,7 @@ func _on_warrior_pressed():
 	hide_menu_top()
 
 func _on_rogue_pressed():
-	class_selected.emit("Rouge")
+	class_selected.emit("Rogue")
 	hide_menu_top()
 
 
@@ -24,7 +24,7 @@ func _on_warrior_check_pressed():
 
 
 func _on_rogue_check_pressed():
-	class_checked.emit("Rouge")
+	class_checked.emit("Rogue")
 	hide_menu_top()
 
 

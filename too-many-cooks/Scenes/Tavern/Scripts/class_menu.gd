@@ -3,9 +3,11 @@ var is_showing = false
 @export var dialogue_ref : Control
 var current_class : String
 var current_level
-
+var current_ability_level 
+var gold_upgrade_price
+var orb_upgrade_price
 @onready var requires_label_ref = $Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Label
-
+@onready var ability_label_ref = $Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Label
 signal back_pressed
 
 func show_menu():
@@ -27,25 +29,26 @@ func hide_menu_top():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,-1000),.5).set_trans(Tween.TRANS_CUBIC)
 
-func set_title(new_name, level):
+func set_title(new_name, level, ability_level):
 	$Panel/VBoxContainer/Class_Name.text = "The "
 	$Panel/VBoxContainer/Class_Name.text += str(new_name)
 	$Panel/VBoxContainer/Class_Name.text += ", Level " + str(level)
 	current_class = new_name
 	current_level = level
+	current_ability_level = ability_level
 	
 func set_active_labels(active_str, active_hp, active_def, active_spd, active_mana):
 	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/STR.text = str(int(active_str))
 	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/HP.text = str(int(active_hp))
 	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/DEF.text = str(int(active_def))
-	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/SPD.text = str(int(active_spd))
+	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/SPD.text = str(snapped(active_spd, 0.01))
 	$Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers/MANA.text = str(int(active_mana))
 	
 func set_passive_labels(passive_str, passive_hp, passive_def, passive_spd, passive_mana):
 	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/STR.text = str(int(passive_str))
 	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/HP.text = str(int(passive_hp))
 	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/DEF.text = str(int(passive_def))
-	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/SPD.text = str(int(passive_spd))
+	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/SPD.text = str(snapped(passive_spd, 0.01))
 	$Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers/MANA.text = str(int(passive_mana))
 	
 func set_other_descriptions(attack_des, dash_des, magic_des, other_des):
@@ -58,70 +61,22 @@ func set_other_descriptions(attack_des, dash_des, magic_des, other_des):
 	$Panel/VBoxContainer/HBoxContainer/Stats/MagicDescription.text += str(magic_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/TrueOtherDescription.text += str(other_des)
 	_check_upgrade_avaliability()
+	_check_ability_avaliability()
 	
 func _check_upgrade_avaliability():
-	match current_class:
-		"Warrior":
-			match current_level:
-				5: 
-					requires_label_ref.text = "Requires 150 KOs!"
-					if PlayerStats.KillCount > 150: 
-						return true
-				4: 
-					requires_label_ref.text = "Requires 80 KOs!"
-					if PlayerStats.KillCount > 80: 
-						return true
-				3: 
-					requires_label_ref.text = "Requires 50 KOs!"
-					if PlayerStats.KillCount > 50: 
-						return true
-				2:
-					requires_label_ref.text = "Requires 25 KOs!"
-					if PlayerStats.KillCount > 25: 
-						return true
-				1:
-					requires_label_ref.text = "Requires 10 KOs!"
-					if PlayerStats.KillCount > 10: 
-						return true
-				0:
-					if PlayerStats.KillCount > -1: 
-						requires_label_ref.text = "Free!"
-						return true
-
-		"Rogue":
-			match current_level:
-				0:
-					if PlayerStats.Gold > -1: return true
-				1:
-					if PlayerStats.Gold > 3: return true
-		"Mage":
-			match current_level:
-				5:
-					requires_label_ref.text = "Requires 20 orbs!"
-					if PlayerStats.Orbs > 20: 
-						return true
-				4:
-					requires_label_ref.text = "Requires 10 orbs!"
-					if PlayerStats.Orbs > 10: 
-						return true
-				3:
-					requires_label_ref.text = "Requires 5 orbs!"
-					if PlayerStats.Orbs > 5: 
-						return true
-				2:
-					requires_label_ref.text = "Requires 3 orbs!"
-					if PlayerStats.Orbs > 3: 
-						return true
-				1:
-					requires_label_ref.text = "Requires 1 orb!"
-					if PlayerStats.Orbs > 1: 
-						return true
-				0:
-					requires_label_ref.text = "Free!"
-					if PlayerStats.Orbs > -1: 
-						return true
-
-	return false
+	gold_upgrade_price = floor((10 * current_level)**1.3)
+	requires_label_ref.text = "Costs " + str(gold_upgrade_price) + " Gold"
+	if PlayerStats.Gold >= gold_upgrade_price:
+		return true
+	else:
+		return false
+func _check_ability_avaliability():
+	orb_upgrade_price = floor((2 * current_ability_level)**1.3)
+	ability_label_ref.text = "Costs " + str(orb_upgrade_price) + " Orbs"
+	if PlayerStats.Orbs >= orb_upgrade_price:
+		return true
+	else:
+		return false
 func _on_talk_pressed():
 	hide_menu_top()
 	match current_class:
@@ -139,47 +94,32 @@ func _on_talk_pressed():
 
 
 func _on_upgrade_pressed():
+	PlayerStats.Gold -= gold_upgrade_price
 	match current_class:
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
-			
-			if Global.Has_Warrior_Quest_1:
-				Global.Has_Warrior_Quest_1 = false
-			if PlayerStats.quests > 0:
-				PlayerStats.quests -= 1
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
-			if Global.Has_Mage_Quest_1:
-				Global.Has_Mage_Quest_1 = false
-			if PlayerStats.quests > 0:
-				PlayerStats.quests -= 1
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
 
-
-func _on_quest_pressed():
-	hide_menu_top()
+func _on_upgrade_ability_pressed():
+	PlayerStats.Orbs -= orb_upgrade_price
 	match current_class:
 		"Warrior":
-			$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 2
-			$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
-			Global.Has_Warrior_Quest_1 = true
-			PlayerStats.quests += 1
+			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level += 1
+			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
 		"Rogue":
-			$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 2
-			$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
+			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level += 1
+			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
 		"Mage":
-			$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 2
-			$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
-			PlayerStats.quests += 1
-			Global.Has_Mage_Quest_1 = true
-	await dialogue_ref.message_complete
-	show_menu()
-
+			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level += 1
+			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
+	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Upgrade.disabled = !_check_ability_avaliability()
 func _on_back_pressed():
 	back_pressed.emit()
 	hide_menu()

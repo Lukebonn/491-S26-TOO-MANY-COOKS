@@ -5,8 +5,8 @@ extends Node
 #make sure they are typed variables too, most will be floats
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
-var Gold := 0
-var Orbs : int = 0
+var Gold := 999
+var Orbs : int = 999
 #Gold/Orbs when entering floor, reverted back to on Retry to avoid infinite farm.
 var temp_gold : int = 0
 var temp_orb : int = 0
@@ -66,5 +66,9 @@ var quests : int = 0
 
 #vars to track NPC class levels, read by the class NPCs on tavern load
 var MeleeClassLevel : int = 1
-var MageClassLevel : int = 0
-var RogueClassLevel : int = 0
+var MageClassLevel : int = 1
+var RogueClassLevel : int = 1
+#same but for abilities
+var MeleeClassAbilityLevel : int = 1
+var MageClassAbilityLevel : int = 1
+var RogueClassAbilityLevel : int = 1

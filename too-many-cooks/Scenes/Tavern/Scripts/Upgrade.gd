@@ -62,7 +62,7 @@ func check_cost(CostNumberArray:Array,CostMaterialArray:Array):
 				if PlayerStats.Gold < CostNumberArray[mat_type]:
 					return false
 				else:
-					gold_cost = 1
+					gold_cost = 30
 			1:
 				pass
 			2:

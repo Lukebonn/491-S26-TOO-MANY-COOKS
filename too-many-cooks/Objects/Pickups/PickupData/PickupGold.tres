@@ -7,4 +7,4 @@
 script = ExtResource("1_7qetl")
 SceneToSpawn = ExtResource("1_7h7in")
 DropCountRange = Vector2(1, 5)
-DropChance = 0.75
+DropChance = 1.0

@@ -1,20 +1,20 @@
 extends CharacterBody2D
 
-var health : float = PlayerStats.MaxHealth
+var health : float = PlayerStats.MaxHealth + PlayerStats.passive_hp
 var displayHealth : int = int(health)
 
-var mana : float = PlayerStats.MaxMana 
+var mana : float = PlayerStats.MaxMana + PlayerStats.passive_mana
 # Dawson - not entirely sure if Mana needs to be a float since we'll
 # likely just be using whole numbers for it.
 var displayMana : int = int(mana)
 
 ##current stats including modifiers
 #currently unused except for speed
-var strength : int = PlayerStats.base_str
-var defense : int = PlayerStats.base_def
-var magic : int = PlayerStats.base_mag
+var strength : int = PlayerStats.base_str + PlayerStats.passive_str
+var defense : int = PlayerStats.base_def + PlayerStats.passive_def
+var magic : int = PlayerStats.base_mag + PlayerStats.passive_mana
 var speed : int = 12
-var speed_mult : int = PlayerStats.base_spd
+var speed_mult : int = PlayerStats.base_spd + PlayerStats.passive_spd
 
 var damage : int
 

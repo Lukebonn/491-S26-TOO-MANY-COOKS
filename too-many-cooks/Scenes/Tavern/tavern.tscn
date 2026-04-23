@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://8i3srlssm5v" path="res://Scenes/Tavern/Art/akari-sitting-sprite.png" id="12_jt0a5"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="12_kb1dg"]
 [ext_resource type="Texture2D" uid="uid://bk5fwno73txee" path="res://Scenes/Tavern/Art/MageArea_1.png" id="12_vrssr"]
+[ext_resource type="Script" uid="uid://71xijltufuff" path="res://Scenes/Tavern/class_npcs.gd" id="14_84rqq"]
+[ext_resource type="Texture2D" uid="uid://8uworcmh5gtm" path="res://Scenes/Tavern/Art/RogueArea_1_ClosedCurtain.png" id="14_gpyct"]
 [ext_resource type="Script" uid="uid://c0g6qfd3sk4p7" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_attack.gd" id="14_p826n"]
 [ext_resource type="Script" uid="uid://chjk5qu4rb3rq" path="res://Characters/Player/Scripts/StateMachine/warrior_class/States/warrior_dash.gd" id="15_1gied"]
 [ext_resource type="Texture2D" uid="uid://dqmdofdis25ld" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/grinning.png" id="15_mpp4l"]
@@ -201,7 +203,7 @@ offset_right = 705.0
 offset_bottom = 321.0
 theme = ExtResource("2_tqgpy")
 script = ExtResource("10_gr732")
-Cost_Amount = Array[int]([5])
+Cost_Amount = Array[int]([30])
 Cost_Material = Array[int]([0])
 Upgrade_Reward = Array[String](["MagicWorkshop0"])
 Is_Complicated = true
@@ -251,6 +253,66 @@ vertical_alignment = 1
 position = Vector2(128, 33)
 scale = Vector2(2, 2)
 texture = ExtResource("12_vrssr")
+
+[node name="RogueWorkshop0" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=1111138405 node_paths=PackedStringArray("clickSound", "hoverSound")]
+z_index = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = 222.0
+offset_right = 245.0
+offset_bottom = 312.0
+theme = ExtResource("2_tqgpy")
+script = ExtResource("10_gr732")
+Cost_Amount = Array[int]([30])
+Cost_Material = Array[int]([0])
+Upgrade_Reward = Array[String](["RogueWorkshop0"])
+Is_Complicated = true
+clickSound = NodePath("../../../ButtonClickSound")
+hoverSound = NodePath("../../../ButtonHoverSound")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Upgrade Man/RogueWorkshop0" unique_id=1927271533]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+theme = ExtResource("12_kb1dg")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "Upgrade!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Tavern BG/Upgrade Man/RogueWorkshop0" unique_id=249264713]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -175.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="Tavern BG/Upgrade Man/RogueWorkshop0/Panel" unique_id=1870765526]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 120.0
+theme = ExtResource("12_kb1dg")
+text = "Costs:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Upgrade Man/RogueWorkshop0" unique_id=553065477]
+position = Vector2(128, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("14_gpyct")
 
 [node name="NPCEnd" type="TextureButton" parent="Tavern BG/Upgrade Man" unique_id=1881978114]
 visible = false
@@ -308,6 +370,7 @@ vertical_alignment = 1
 anchors_preset = 0
 offset_left = 1239.0
 offset_right = 1239.0
+script = ExtResource("14_84rqq")
 
 [node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
 layout_mode = 0
@@ -322,6 +385,7 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Warrior"
 Class_Level = 1
+Class_Ability_Level = 1
 Class_Attack = ExtResource("14_p826n")
 Class_Dash = ExtResource("15_1gied")
 Class_Magic = ExtResource("16_tvort")
@@ -334,15 +398,16 @@ Base_Max_Health = 100
 Base_Max_Mana = 100
 Base_Mana_Regen = 1.0
 Base_Defense = 10
-Base_Speed = 1.0
-Passive_Strength = 3
-Passive_Max_HP = 10
-Passive_Defense = 1
-Strength_Growth_Modifier = 1.5
-Max_Health_Growth_Modifier = 1.2
-Max_Mana_Growth_Modifier = 1.0
-Defense_Growth_Modifier = 1.2
-Speed_Growth_Modifier = 1.0
+Base_Speed = 10.0
+Passive_Strength = 4
+Passive_Max_HP = 20
+Passive_Max_Mana = 2
+Passive_Speed = 0.1
+Strength_Growth_Modifier = 8.0
+Max_Health_Growth_Modifier = 40.0
+Max_Mana_Growth_Modifier = 4.0
+Defense_Growth_Modifier = 4.0
+Speed_Growth_Modifier = 0.4
 clickSound = NodePath("../../../ButtonClickSound")
 hoverSound = NodePath("../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://dfktgotoe2b4l"
@@ -374,13 +439,13 @@ Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderT
 Conversations = Array[String](["0,1,2,3,4,5", "79,80", "82,83,84"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
-[node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref")]
+[node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
 visible = false
 layout_mode = 0
-offset_left = -33.0
-offset_top = 203.0
-offset_right = 29.0
-offset_bottom = 351.0
+offset_left = -986.0
+offset_top = 318.0
+offset_right = -924.0
+offset_bottom = 466.0
 texture_normal = ExtResource("20_ls4nc")
 texture_pressed = ExtResource("20_ls4nc")
 stretch_mode = 0
@@ -388,6 +453,7 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Rogue"
 Class_Level = 1
+Class_Ability_Level = 1
 Class_Attack_Desc = "ranged attack!"
 Class_Dash_Desc = "something!"
 Class_Magic_Desc = "something!"
@@ -396,16 +462,19 @@ Base_Strength = 7
 Base_Max_Health = 80
 Base_Max_Mana = 80
 Base_Defense = 8
-Base_Speed = 1.5
-Passive_Strength = 2
-Passive_Max_HP = 4
-Passive_Speed = 0.1
-Strength_Growth_Modifier = 1.2
-Max_Health_Growth_Modifier = 1.2
-Max_Mana_Growth_Modifier = 1.0
+Base_Speed = 13.0
+Passive_Strength = 3
+Passive_Max_HP = 6
+Passive_Max_Mana = 2
+Passive_Speed = 0.4
+Strength_Growth_Modifier = 6.0
+Max_Health_Growth_Modifier = 12.0
+Max_Mana_Growth_Modifier = 3.0
 Mana_Regen_Growth_Modifier = 1.0
-Defense_Growth_Modifier = 1.2
-Speed_Growth_Modifier = 1.3
+Defense_Growth_Modifier = 1.0
+Speed_Growth_Modifier = 1.0
+clickSound = NodePath("../../../ButtonClickSound")
+hoverSound = NodePath("../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Rogue_CLASS_NPC" unique_id=673501371]
@@ -435,7 +504,7 @@ Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderT
 Conversations = Array[String](["0", "10"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
-[node name="Mage_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1953501329 node_paths=PackedStringArray("Class_Menu_Ref")]
+[node name="Mage_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1953501329 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -450,6 +519,7 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Mage"
 Class_Level = 1
+Class_Ability_Level = 1
 Class_Attack_Desc = "staff!"
 Class_Dash_Desc = "teleport!"
 Class_Magic_Desc = "various spells!"
@@ -459,15 +529,18 @@ Base_Max_Health = 60
 Base_Max_Mana = 150
 Base_Mana_Regen = 5.0
 Base_Defense = 6
-Base_Speed = 1.2
-Passive_Max_HP = 4
-Passive_Max_Mana = 8
-Passive_Speed = 0.05
-Strength_Growth_Modifier = 1.5
-Max_Health_Growth_Modifier = 1.2
-Max_Mana_Growth_Modifier = 1.0
+Base_Speed = 10.0
+Passive_Strength = 1
+Passive_Max_HP = 2
+Passive_Max_Mana = 5
+Passive_Speed = 0.3
+Strength_Growth_Modifier = 2.0
+Max_Health_Growth_Modifier = 4.0
+Max_Mana_Growth_Modifier = 10.0
 Defense_Growth_Modifier = 1.2
-Speed_Growth_Modifier = 1.0
+Speed_Growth_Modifier = 0.5
+clickSound = NodePath("../../../ButtonClickSound")
+hoverSound = NodePath("../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://dfktgotoe2b4l"
 
 [node name="Label" type="Label" parent="Tavern BG/Class_NPCS/Mage_CLASS_NPC" unique_id=51842102]
