@@ -531,7 +531,7 @@ visible = false
 position = Vector2(369, 268)
 
 [node name="HawkEnemy" parent="." unique_id=346107231 instance=ExtResource("14_lqe51")]
-position = Vector2(-72, -248)
+position = Vector2(-72, -232)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
