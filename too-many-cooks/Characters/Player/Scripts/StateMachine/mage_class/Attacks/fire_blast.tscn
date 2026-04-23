@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://cssqg27bfaiag" path="res://Audio/Sounds/Player/Mage/fire ring.wav" id="1_6iwbg"]
 [ext_resource type="Script" uid="uid://dimtn2kkpv8t2" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.gd" id="1_d08n7"]
+[ext_resource type="PackedScene" uid="uid://7685wicrpig8" path="res://Characters/Player/Particles/Spells/fireBlast_particles.tscn" id="3_q3vsx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_es7ai"]
 radius = 40.0
@@ -15,6 +16,7 @@ script = ExtResource("1_d08n7")
 shape = SubResource("CircleShape2D_es7ai")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=43667181]
+visible = false
 z_index = 2
 position = Vector2(-3.0696392e-06, -8.046627e-07)
 scale = Vector2(1.7727274, 1.7727274)
@@ -30,5 +32,7 @@ autoplay = true
 [node name="Timer" type="Timer" parent="." unique_id=38749908]
 wait_time = 0.5
 autostart = true
+
+[node name="FireBlastParticles" parent="." unique_id=339703278 instance=ExtResource("3_q3vsx")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
