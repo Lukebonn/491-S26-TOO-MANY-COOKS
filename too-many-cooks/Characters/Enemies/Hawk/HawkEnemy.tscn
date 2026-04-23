@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="8_gyy8f"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="9_7ye8k"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_6u5ja"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="10_sqkpv"]
+[ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
 [ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
@@ -23,7 +25,13 @@ size = Vector2(18, 9)
 radius = 81.68537
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
-size = Vector2(19, 7.25)
+size = Vector2(16, 7.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqkpv"]
+size = Vector2(20, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
+radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 size = Vector2(18, 10)
@@ -65,7 +73,7 @@ collision_mask = 64
 script = ExtResource("1_7syrx")
 health = 100
 damage = 10
-sight_state = NodePath("DashState")
+sight_state = NodePath("ApproachState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -93,6 +101,26 @@ collision_mask = 2
 position = Vector2(-0.5, -2.625)
 shape = SubResource("RectangleShape2D_f5e7n")
 
+[node name="Slash Hitbox" type="Area2D" parent="." unique_id=599952008]
+process_mode = 4
+visible = false
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slash Hitbox" unique_id=999639537]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_sqkpv")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Near Zone" type="Area2D" parent="." unique_id=2057668559]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Near Zone" unique_id=832811309]
+shape = SubResource("CircleShape2D_sqkpv")
+debug_color = Color(0, 1, 0, 0.41960785)
+
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_bhto8")
@@ -119,7 +147,6 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("8_gyy8f")
-Chase_Speed = 50
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -127,6 +154,16 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 script = ExtResource("9_7ye8k")
 speed = 0.5
 animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="SlashState" type="Node" parent="." unique_id=1572581232 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("10_sqkpv")
+state_to_enter = NodePath("../ApproachState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ApproachState" type="Node" parent="." unique_id=1069220951 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("11_fs6er")
+state_to_enter = NodePath("../SlashState")
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ProjectileState" type="Node" parent="." unique_id=742252322]
@@ -172,3 +209,5 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
+[connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
