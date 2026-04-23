@@ -15,7 +15,7 @@ var current_health : int
 func _ready():
 	current_health = health
 	current_state = starting_state
-	self.modulate=Color(0.0, 0.498, 0.0, 1.0)
+	$AnimatedSprite2D.modulate=Color(0.0, 0.806, 0.0, 1.0)
 	if current_state:
 		current_state.enter_state(self)
 	else:
@@ -54,7 +54,6 @@ func take_damage(amount: int):
 	#if body.name == "Player":
 		#player_ref = body
 		#player_in_sight = true
-		#
 		#if sight_state:
 			#change_state(sight_state.name)
 #
@@ -63,19 +62,19 @@ func take_damage(amount: int):
 		#player_in_sight = false
 		#change_state("IdleState")
 
-##these have been temporarily disabled for testing
-#func _on_hurtbox_area_entered(area):
-	#take_damage(area.get_parent().damage)
-#
-	#if current_state != $HitState:
-		#change_state("HitState")
-#
-#func _on_hurtbox_body_entered(body):
-	#if body.has_method("take_damage"):
-		#body.take_damage(damage)
-	#
-	#if current_state != $HitState:
-		#change_state("HitState")
+
+func _on_hurtbox_area_entered(area):
+	take_damage(area.get_parent().damage)
+
+	if current_state != $HitState:
+		change_state("HitState")
+
+func _on_hurtbox_body_entered(body):
+	if body.has_method("take_damage"):
+		body.take_damage(damage)
+	
+	if current_state != $HitState:
+		change_state("HitState")
 
 
 func _on_sight_area_entered(area: Area2D) -> void:
@@ -83,7 +82,6 @@ func _on_sight_area_entered(area: Area2D) -> void:
 	if area.name == "Player":
 		player_ref = area
 		player_in_sight = true
-		
 		if sight_state:
 			change_state("ProjectileState")
 

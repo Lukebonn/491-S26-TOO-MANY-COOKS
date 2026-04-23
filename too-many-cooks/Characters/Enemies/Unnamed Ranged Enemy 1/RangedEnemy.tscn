@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_euyqm"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="8_xy53g"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_8bdog"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_fip0q"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_fip0q"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_jm3rd"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_p24jc"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="13_ljnpv"]
@@ -147,7 +147,6 @@ script = ExtResource("7_euyqm")
 Projectile = ExtResource("8_xy53g")
 Projectile_Speed = 2
 Idle_Time = 1.0
-Flee_While_Firing = true
 Flee_Speed = 5.0
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
