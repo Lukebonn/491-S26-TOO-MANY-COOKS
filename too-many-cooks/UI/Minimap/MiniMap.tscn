@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://datwflplfxsxh"]
+
+[ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="1_bhlx6"]
+[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="2_bbufj"]
+
+[node name="MiniMap" type="Node2D" unique_id=2081874814]
+
+[node name="MiniMap" type="CanvasLayer" parent="." unique_id=1928942930]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMap" unique_id=1725212608]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.0
+offset_top = 24.0
+offset_right = -8.0
+offset_bottom = 282.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="MiniMap/SubViewportContainer" unique_id=242619080]
+handle_input_locally = false
+size = Vector2i(258, 258)
+render_target_update_mode = 4
+script = ExtResource("1_bhlx6")
+
+[node name="Camera2D" type="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" unique_id=2073602779]
+position = Vector2(-8, 24)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Line2D" type="Line2D" parent="MiniMap/SubViewportContainer" unique_id=183169978]
+position = Vector2(3.9280577, -7.956522)
+scale = Vector2(0.9928058, 1.0217391)
+points = PackedVector2Array(-1.9420166, 7.7872343, -1.9420166, 258.34042, 255.91302, 258.34042, 255.91302, 7.787234)
+closed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MiniMap/SubViewportContainer" unique_id=990057017]
+position = Vector2(130, 128)
+scale = Vector2(0.045410108, 0.04931638)
+texture = ExtResource("2_bbufj")
