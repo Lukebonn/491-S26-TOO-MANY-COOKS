@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"
+uid="uid://csp322fud8o7h"
+path="res://.godot/imported/Untitled1435_20260424113527.png-7129c50cd1fbffb8fd6648d0e7895345.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"]
+source_file="res://Scenes/Tavern/Art/Warrior/Untitled1435_20260424113527.png"
+dest_files=["res://.godot/imported/Untitled1435_20260424113527.png-7129c50cd1fbffb8fd6648d0e7895345.ctex"]
 
 [params]
 
