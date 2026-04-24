@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvbt83bfd0o3o"
-path="res://.godot/imported/Level2_TileAtlas.png-7782bbced7102b7524f6b97ad360b633.ctex"
+uid="uid://dffevx5ewcnf7"
+path="res://.godot/imported/ActTwoAtlas.png-408102ecc18f5519a35a262b0b9a6a08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Tilesets/Level2_TileAtlas.png"
-dest_files=["res://.godot/imported/Level2_TileAtlas.png-7782bbced7102b7524f6b97ad360b633.ctex"]
+source_file="res://Objects/Tilesets/ActTwoAtlas.png"
+dest_files=["res://.godot/imported/ActTwoAtlas.png-408102ecc18f5519a35a262b0b9a6a08.ctex"]
 
 [params]
 
