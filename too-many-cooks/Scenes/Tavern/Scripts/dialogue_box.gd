@@ -17,6 +17,12 @@ signal message_complete
 signal show_question(questions : Array)
 signal done_printing
 
+@export var GrampsPortraits: Array[Sprite2D]
+@export var WarriorPortraits: Array[Sprite2D]
+@export var MagePortraits: Array[Sprite2D]
+@export var RoguePortraits: Array[Sprite2D]
+
+
 #args character = which character are we talking to? pulled from a JSON list prolly
 #args index = which bit of dialogue are we pulling from? characters will have multiple diff things to say
 
@@ -165,35 +171,89 @@ func find_message(character: String, index, emotions):
 
 #Will read to find the correct character speaker and then look for the tag
 # that will load the correct emotion. The portraits will get direct references
-#func find_portrait(character: String, index, emotions, line: String):
-	#var portrait
-	#var tag = line[1]
-	#match character:
-		#"Gramps":
-			#$Container/GrampsSpeakerSprite.show()
-			#match tag:
-				#"0":
-					#$Container/GrampsSpeakerSprite.texture = emotions[0]
-				#"1":
-					#portrait = $Container/GrampsSpeakerSprite
-					#$Container/GrampsSpeakerSprite.texture = emotions[1]
-					#print("I'm so happy") 
-				#"2": 
-					#$Container/GrampsSpeakerSprite.texture = emotions[2] 
-					#print("I'm so sad")
-				#"3": 
-					#$Container/GrampsSpeakerSprite.texture = emotions[3]
-					#print("Grr, I'm mad")
-				#"4": 
-					#$Container/GrampsSpeakerSprite.texture = emotions[4]
-					#print("Woah, I'm surprised")
-				##"5":
-					##$Container/GrampsSpeakerSprite.texture = emotions[5]
-					##print("I'm just here") 
-		#"Warrior":
-			#portrait = "File path"
-		#"Rogue":
-			#portrait = "File path"
-		#"Mage":
-			#portrait = "File path"
+#0 = No Emote/Keeps previous emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised 5 = Neutral
+func find_portrait(character: String, index, emotions, line: String):
+	var tag = line[1]
+	$Container/SpeakerSprite.show()
+	match character:
+		"Gramps":
+			match tag:
+				"0":
+					pass
+					#$Container/SpeakerSprite.texture = $Gramps.emotions[0]
+				"1":
+					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[1]
+					print("Gramps so happy") 
+				"2": 
+					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[2] 
+					print("Gramps so sad")
+				"3": 
+					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[3]
+					print("Grr, Gramps mad")
+				"4": 
+					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[4]
+					print("Woah, Gra,ps surprised")
+				"5":
+					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[5]
+					print("Gramps just here") 
+		"Warrior":
+			match tag:
+				"0":
+					pass
+					#$Container/SpeakerSprite.texture = $Warrior.emotions[0]
+				"1":
+					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[1]
+					print("Warrior so happy") 
+				"2": 
+					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[2] 
+					print("Warrior so sad")
+				"3": 
+					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[3]
+					print("Grr, Warrior mad")
+				"4": 
+					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[4]
+					print("Woah, Warrior surprised")
+				"5":
+					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[5]
+					print("Warrior just here")
+		"Rogue":
+			match tag:
+				"0":
+					pass
+					#$Container/SpeakerSprite.texture = $Rogue.emotions[0]
+				"1":
+					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[1]
+					print("Rogue so happy") 
+				"2": 
+					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[2] 
+					print("Rogue so sad")
+				"3": 
+					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[3]
+					print("Grr, Rogue mad")
+				"4": 
+					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[4]
+					print("Woah, Rogue surprised")
+				"5":
+					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[5]
+					print("Rogue just here")
+		"Mage":
+			match tag:
+				"0":
+					pass
+					#$Container/SpeakerSprite.texture = $Mage.emotions[0]
+				"1":
+					$Container/SpeakerSprite.texture = $MagePortraits.emotions[1]
+					print("Mage so happy") 
+				"2": 
+					$Container/SpeakerSprite.texture = $MagePortraits.emotions[2] 
+					print("Mage so sad")
+				"3": 
+					$Container/SpeakerSprite.texture = $MagePortraits.emotions[3]
+					print("Grr, Mage mad")
+				"4": 
+					$Container/SpeakerSprite.texture = $MagePortraits.emotions[4]
+					print("Woah, Mage surprised")
+				"5":
+					$Container/SpeakerSprite.texture = $MagePortraits.emotions[5]
+					print("Mage just here")
 	

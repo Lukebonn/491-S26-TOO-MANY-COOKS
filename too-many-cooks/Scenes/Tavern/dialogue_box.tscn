@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dirne86kb1of5" path="res://UI/AbbyP_Textbox_UI-V2.png" id="3_frwkt"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_3p3df"]
 [ext_resource type="Texture2D" uid="uid://cpckjjvf1m3x8" path="res://Scenes/Test/ProtoArt/owl.png" id="6_44sfb"]
-[ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="7_ybexe"]
-[ext_resource type="Texture2D" uid="uid://cd1c4eu47edfb" path="res://Scenes/Test/ProtoArt/chipmunk.png" id="8_0ohlx"]
-[ext_resource type="Texture2D" uid="uid://c5873k15axuya" path="res://Scenes/Test/ProtoArt/sauropod.png" id="9_uu58w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p3df"]
 texture = ExtResource("3_frwkt")
@@ -31,12 +28,13 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pecbt"]
 
-[node name="Dialogue Box" type="Control" unique_id=2003466752]
+[node name="Dialogue Box" type="Control" unique_id=2003466752 node_paths=PackedStringArray("GrampsPortraits")]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_pecbt")
 script = ExtResource("2_frwkt")
+GrampsPortraits = [null, null, null, null, null]
 
 [node name="Container" type="Control" parent="." unique_id=629549548]
 layout_mode = 1
@@ -83,7 +81,7 @@ theme = ExtResource("4_3p3df")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.827451, 0.5294118, 0.40784314, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 28
 text = "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
 fit_content = true
 scroll_active = false
@@ -131,32 +129,11 @@ autowrap_mode = 2
 autowrap_trim_flags = 128
 vertical_alignment = 1
 
-[node name="GrampsSpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
-visible = false
+[node name="SpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
 z_index = 1
-position = Vector2(-20, -372)
+position = Vector2(-36, -365)
 scale = Vector2(0.5234375, 0.5234375)
 texture = ExtResource("6_44sfb")
-
-[node name="WarriorSpeakerSprite" type="Sprite2D" parent="Container" unique_id=2145478359]
-visible = false
-z_index = 1
-position = Vector2(-45, -326)
-texture = ExtResource("7_ybexe")
-
-[node name="RogueSpeakerSprite" type="Sprite2D" parent="Container" unique_id=820128635]
-visible = false
-z_index = 1
-position = Vector2(-22, -358)
-scale = Vector2(0.40625, 0.40625)
-texture = ExtResource("8_0ohlx")
-
-[node name="MageSpeakerSprite" type="Sprite2D" parent="Container" unique_id=667372467]
-visible = false
-z_index = 1
-position = Vector2(-4, -354)
-scale = Vector2(0.40234375, 0.40234375)
-texture = ExtResource("9_uu58w")
 
 [node name="MouseBlocker" type="Panel" parent="Container" unique_id=1929785020]
 layout_mode = 0

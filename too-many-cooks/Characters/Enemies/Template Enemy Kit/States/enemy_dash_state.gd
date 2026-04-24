@@ -110,6 +110,7 @@ func dash(direction: String):
 				"position", 
 				Vector2(enemy_ref.position.x - abs(xDifference) - additional_distance, enemy_ref.position.y), 
 				speed).set_trans(Tween.TRANS_EXPO)
+			enemy_ref.get_node("AnimatedSprite2D").flip_h = false
 		"Left":
 			$"../DashLine".target_position = Vector2(xDifference + 35, 0)
 			if $"../DashLine".is_colliding(): additional_distance = 0
@@ -118,5 +119,6 @@ func dash(direction: String):
 				"position", 
 				Vector2(enemy_ref.position.x + abs(xDifference) + additional_distance, enemy_ref.position.y), 
 				speed).set_trans(Tween.TRANS_EXPO)
+			enemy_ref.get_node("AnimatedSprite2D").flip_h = true
 	await get_tree().create_timer(1.0).timeout
 	dashComplete.emit()
