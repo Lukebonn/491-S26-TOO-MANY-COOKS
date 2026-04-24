@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"
+uid="uid://ddjq834dc35xh"
+path="res://.godot/imported/smash 1.png-814290ee34c75a161baed09e9ea13515.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"]
+source_file="res://Characters/Enemies/Macho Mouse/smash/smash 1.png"
+dest_files=["res://.godot/imported/smash 1.png-814290ee34c75a161baed09e9ea13515.ctex"]
 
 [params]
 
