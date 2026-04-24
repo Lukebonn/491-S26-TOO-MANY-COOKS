@@ -27,6 +27,7 @@ func enter_state(enemy_node):
 			await get_tree().create_timer(Hit_Stun).timeout
 			#$Timer.start(Hit_Stun)
 			#await $Timer.timeout
+		enemy_node.get_node("AnimatedSprite2D").play("hit")
 		exit_state()
 
 func process(delta):

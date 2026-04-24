@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bh5oj66l7bnnd"
+path="res://.godot/imported/walk 1.png-c812c4c2cbffc93354c519f31e479c61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png"
+dest_files=["res://.godot/imported/walk 1.png-c812c4c2cbffc93354c519f31e479c61.ctex"]
 
 [params]
 

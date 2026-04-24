@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://dfpch4yask8nq"
+path="res://.godot/imported/damage 1.png-0704e1f62cbf30b90ab9c7e87fe8b9b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png"
+dest_files=["res://.godot/imported/damage 1.png-0704e1f62cbf30b90ab9c7e87fe8b9b6.ctex"]
 
 [params]
 

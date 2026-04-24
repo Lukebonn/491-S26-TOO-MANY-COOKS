@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bmcwpnej62qdd"
+path="res://.godot/imported/swing 1.png-e1407af0414d9a4abc75996f6f16637c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png"
+dest_files=["res://.godot/imported/swing 1.png-e1407af0414d9a4abc75996f6f16637c.ctex"]
 
 [params]
 
