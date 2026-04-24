@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://boy7iffle7uhh"]
 
-[ext_resource type="Script" uid="uid://c8h7c1dn7s6yr" path="res://Characters/Enemies/Scripts/ranged_rat_enemy.gd" id="1_3nqw6"]
 [ext_resource type="Texture2D" uid="uid://b046jw0c178jd" path="res://Characters/Enemies/mice/wizard/5 (1).png" id="1_er6ej"]
+[ext_resource type="Script" uid="uid://bawhtnehgi4y7" path="res://wizard_mouse.gd" id="1_n1o01"]
 [ext_resource type="Texture2D" uid="uid://bo87e6in8k5o8" path="res://Characters/Enemies/mice/wizard/1.png" id="2_3nqw6"]
 [ext_resource type="Texture2D" uid="uid://1fckt4yw5nef" path="res://Characters/Enemies/mice/wizard/2.png" id="3_n1o01"]
 [ext_resource type="Texture2D" uid="uid://w4br41rxlo4t" path="res://Characters/Enemies/mice/wizard/3.png" id="4_jawtd"]
 [ext_resource type="Texture2D" uid="uid://i78x7chj6h0v" path="res://Characters/Enemies/mice/wizard/4 (1).png" id="5_ao740"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="7_n1o01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2arf8"]
 
@@ -17,6 +18,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_er6ej")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -43,14 +52,14 @@ radius = 51.009804
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nqw6"]
 
 [node name="Wizard_Mouse" type="CharacterBody2D" unique_id=1350251460]
-script = ExtResource("1_3nqw6")
+script = ExtResource("1_n1o01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2084009752]
 shape = SubResource("CircleShape2D_2arf8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1259690587]
 sprite_frames = SubResource("SpriteFrames_70ytt")
-animation = &"attack"
+animation = &"idle"
 
 [node name="Sight" type="Area2D" parent="." unique_id=2136706686]
 
@@ -58,13 +67,6 @@ animation = &"attack"
 shape = SubResource("CircleShape2D_er6ej")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1358728675]
-
-[node name="Temp Health Bar" type="ProgressBar" parent="." unique_id=1060562643]
-offset_left = -35.0
-offset_top = -38.0
-offset_right = 25.0
-offset_bottom = -11.0
-show_percentage = false
 
 [node name="rotationNode" type="Node2D" parent="." unique_id=1132200662]
 
@@ -74,5 +76,7 @@ show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=462263709]
 shape = SubResource("CircleShape2D_3nqw6")
+
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("7_n1o01")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

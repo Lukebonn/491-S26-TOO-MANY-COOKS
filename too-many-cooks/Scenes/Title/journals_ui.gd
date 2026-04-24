@@ -1,5 +1,7 @@
 extends Control
 signal closed_menu
+@export var clickSound : AudioStreamPlayer
+@export var hoverSound : AudioStreamPlayer
 
 func show_menu():
 	var tween = get_tree().create_tween()
@@ -11,4 +13,9 @@ func hide_menu():
 	closed_menu.emit()
 
 func _on_exit_journals_pressed():
+	clickSound.play()
 	show_menu()
+
+
+func _on_exit_journals_mouse_entered():
+	hoverSound.play()

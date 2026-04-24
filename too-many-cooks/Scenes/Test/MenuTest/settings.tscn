@@ -109,7 +109,7 @@ script = ExtResource("3_hnlrl")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
-[node name="Journals" type="Control" parent="." unique_id=418823849]
+[node name="Journals" type="Control" parent="." unique_id=418823849 node_paths=PackedStringArray("clickSound", "hoverSound")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1152.0
@@ -117,6 +117,8 @@ offset_right = 1192.0
 offset_bottom = 40.0
 theme = ExtResource("4_ocaao")
 script = ExtResource("3_ldpcw")
+clickSound = NodePath("../ButtonClickSound")
+hoverSound = NodePath("../ButtonHoverSound")
 
 [node name="TabContainer" type="TabContainer" parent="Journals" unique_id=1456895192]
 custom_minimum_size = Vector2(500, 500)
@@ -335,7 +337,7 @@ journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="JournalPanel" type="Panel" parent="." unique_id=1224800550]
+[node name="JournalPanel" type="Panel" parent="." unique_id=1224800550 node_paths=PackedStringArray("ClickSound", "HoverSound")]
 z_index = 2
 custom_minimum_size = Vector2(800, 600)
 offset_left = 1152.0
@@ -345,6 +347,8 @@ offset_bottom = 640.0
 theme = ExtResource("4_ocaao")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8mm4c")
 script = ExtResource("5_11tbu")
+ClickSound = NodePath("../ButtonClickSound")
+HoverSound = NodePath("../ButtonHoverSound")
 
 [node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=568087088]
 z_index = 1
@@ -454,6 +458,8 @@ bus = &"Music"
 [connection signal="button_down" from="buttons/Button6" to="buttons/Button6" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/Button6" to="buttons/Button6" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="mouse_entered" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_mouse_entered"]
+[connection signal="mouse_entered" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_mouse_entered"]
 [connection signal="pressed" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_pressed"]
 [connection signal="pressed" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_pressed"]
 [connection signal="closed_menu" from="Pause UI" to="." method="_on_pause_ui_closed_menu"]
