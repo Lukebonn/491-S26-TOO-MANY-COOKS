@@ -5,6 +5,9 @@ var current_page = 0
 var current_subtitle = 0
 @export var music : AudioStreamPlayer
 
+@export var Subtitles : Array[String]
+@export var Voice : Array[AudioStream]
+
 var narration
 var page
 var subtitle
@@ -17,8 +20,9 @@ func _ready():
 	#turn_to_page(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_anything_pressed():
+func _process(_delta):
+	var input = Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("dash")
+	if input:
 		next_subtitle(current_subtitle)
 
 #func turn_to_page(index: int):
@@ -44,10 +48,11 @@ func _process(delta):
 
 func next_subtitle(index: int):
 	if can_advance_subtitle and current_subtitle < 10:
+		#Fade subtitle out.
 		var tween = get_tree().create_tween()
-		tween.tween_property($Subtitles.get_child(index-1),"position",Vector2(76,1300),1).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property($Subtitle.get_child(index-1),"position",Vector2(76,1300),1).set_trans(Tween.TRANS_CUBIC)
 		
-		$Narrations.get_child(index-1).playing = false
+		$Voice.playing = false
 		can_advance_subtitle = false
 		current_subtitle += 1
 		
