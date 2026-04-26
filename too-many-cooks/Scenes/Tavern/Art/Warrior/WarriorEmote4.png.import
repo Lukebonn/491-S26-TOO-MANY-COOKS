@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brh4p1w4417g0"
-path="res://.godot/imported/Untitled1435_20260424115720.png-d45bc8e4271c56748a40a6d2cc140b88.ctex"
+uid="uid://3b71e3mr4dj"
+path="res://.godot/imported/WarriorEmote4.png-50cd3f0cf3400d0c0c9c223043af10f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tavern/Art/Warrior/Untitled1435_20260424115720.png"
-dest_files=["res://.godot/imported/Untitled1435_20260424115720.png-d45bc8e4271c56748a40a6d2cc140b88.ctex"]
+source_file="res://Scenes/Tavern/Art/Warrior/WarriorEmote4.png"
+dest_files=["res://.godot/imported/WarriorEmote4.png-50cd3f0cf3400d0c0c9c223043af10f0.ctex"]
 
 [params]
 

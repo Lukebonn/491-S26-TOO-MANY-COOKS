@@ -172,10 +172,11 @@ class_select_ref = NodePath("../Class Select")
 
 [node name="Counter" type="Sprite2D" parent="Tavern BG" unique_id=1418745470]
 z_index = 1
-position = Vector2(1728, 326)
+position = Vector2(1640, 296)
 texture = ExtResource("6_gpyct")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
+position = Vector2(-88, -28)
 texture = ExtResource("5_msftv")
 centered = false
 
@@ -368,8 +369,10 @@ vertical_alignment = 1
 
 [node name="Class_NPCS" type="Control" parent="Tavern BG" unique_id=1807586656]
 anchors_preset = 0
-offset_left = 1239.0
-offset_right = 1239.0
+offset_left = 1151.0
+offset_top = -30.0
+offset_right = 1151.0
+offset_bottom = -30.0
 script = ExtResource("14_84rqq")
 
 [node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
@@ -571,8 +574,10 @@ metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="NPCs" type="Control" parent="Tavern BG" unique_id=1772715436]
 anchors_preset = 0
-offset_left = 1239.0
-offset_right = 1239.0
+offset_left = 1151.0
+offset_top = -30.0
+offset_right = 1151.0
+offset_bottom = -30.0
 
 [node name="Gramps" type="TextureButton" parent="Tavern BG/NPCs" unique_id=952928426]
 layout_mode = 0
@@ -604,10 +609,10 @@ script = ExtResource("28_1gied")
 [node name="Exit" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
 z_index = 1
 layout_mode = 0
-offset_left = 3130.0
-offset_top = 95.0
-offset_right = 3258.0
-offset_bottom = 223.0
+offset_left = 3042.0
+offset_top = 65.0
+offset_right = 3170.0
+offset_bottom = 193.0
 theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("31_kb1dg")
 stretch_mode = 0
@@ -637,10 +642,10 @@ vertical_alignment = 1
 z_index = 1
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 0
-offset_left = 1732.0
-offset_top = 540.0
-offset_right = 1852.0
-offset_bottom = 636.0
+offset_left = 1644.0
+offset_top = 510.0
+offset_right = 1764.0
+offset_bottom = 606.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Journal" unique_id=1653704222]

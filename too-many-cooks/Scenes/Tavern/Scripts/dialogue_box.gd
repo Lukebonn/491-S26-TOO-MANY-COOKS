@@ -17,10 +17,10 @@ signal message_complete
 signal show_question(questions : Array)
 signal done_printing
 
-@export var GrampsPortraits: Array[Sprite2D]
-@export var WarriorPortraits: Array[Sprite2D]
-@export var MagePortraits: Array[Sprite2D]
-@export var RoguePortraits: Array[Sprite2D]
+@export var GrampsPortraits: Array[Texture]
+@export var WarriorPortraits: Array[Texture]
+@export var MagePortraits: Array[Texture]
+@export var RoguePortraits: Array[Texture]
 
 
 #args character = which character are we talking to? pulled from a JSON list prolly
@@ -39,12 +39,17 @@ func show_dialogue(character: String, index, emotions):
 	in_dialogue = true
 	end_of_dialogue = false
 	var tween = get_tree().create_tween()
+	#var portrait_tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
+	#portrait_tween.tween_property($Container/SpeakerSprite,"position",Vector2($Container/SpeakerSprite.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
+	#print($Container.global_position)
+	#print($Container/SpeakerSprite.global_position)
 	
 	print_text(character, index, emotions)
 	
 func end_dialogue():
 	var tween = get_tree().create_tween()
+	#var portrait_tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 	in_dialogue = false
 	Global.Is_In_Dialogue = false
@@ -82,7 +87,7 @@ func print_text(character: String, index, emotions):
 			if line.contains("#"):
 				end_of_dialogue = true
 				line = line.replace("#","")
-			#find_portrait(character, index, emotions, line)
+			find_portrait(character, index, emotions, line)
 			$Container/Dialogue/DialogueLabel.visible_characters = 0
 			$Container/Dialogue/DialogueLabel.text = line.right(-3)
 			
@@ -95,50 +100,9 @@ func print_text(character: String, index, emotions):
 			await next_line
 		if end_of_dialogue:
 			end_dialogue()
-		#$Container/SpeakerSprite.hide()
-	
-	
-#Find the emotions of the NPC based on a tag with the following patter [X]
-#0 = No Emote, 1 = Happy/Smiling, 2 = Sad/Frown, 3 = Mad, 4 = Surprised 5 = Neutral
-#func find_emote(character: String, emotions, line: String):
-	##print(line + "test")
-	#$Container/SpeakerSprite.show()
-	#var tag = line[1]
-	#match tag:
-		#"0":
-			#pass
-		#"1":
-			#$Container/SpeakerSprite.texture = emotions[1]
-			#print("I'm so happy") 
-		#"2": 
-			#$Container/SpeakerSprite.texture = emotions[2] 
-			#print("I'm so sad")
-		#"3": 
-			#$Container/SpeakerSprite.texture = emotions[3]
-			#print("Grr, I'm mad")
-		#"4": 
-			#$Container/SpeakerSprite.texture = emotions[4]
-			#print("Woah, I'm surprised")
-		#"5":
-			#$Container/SpeakerSprite.texture = emotions[5]
-			#print("I'm just here") 
-	
-		#$Container/Dialogue/DialogueLabel.text = line
-	#find the text we want from loaded dictionary of text in our game
-	#then print it out
-	#we also want to be able to encode things like expressions
-	#and sounds
-	
-#func find_options(character: String, line: String):
-	#var tag = line[1]
-	#if tag == "b":
-		#$Container/Dialogue/DialogueOption1.show()
-		#$Container/Dialogue/DialogueOption2.show()
-		#match line[2]:
-			#"1":
-				#$Container/Dialogue/DialogueOption1.text
-			#"2":
-				#$Container/Dialogue/DialogueOption1.text
+			var portrait_tween = get_tree().create_tween()
+			portrait_tween.tween_property($Container/SpeakerSprite,"position",Vector2($Container/SpeakerSprite.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
+			#$Container/SpeakerSprite.hide()
 
 func find_message(character: String, index, emotions):
 	var text : Array[String]
@@ -182,19 +146,19 @@ func find_portrait(character: String, index, emotions, line: String):
 					pass
 					#$Container/SpeakerSprite.texture = $Gramps.emotions[0]
 				"1":
-					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[1]
+					$Container/SpeakerSprite.texture = GrampsPortraits[0]
 					print("Gramps so happy") 
 				"2": 
-					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[2] 
+					$Container/SpeakerSprite.texture = GrampsPortraits[1] 
 					print("Gramps so sad")
 				"3": 
-					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[3]
+					$Container/SpeakerSprite.texture = GrampsPortraits[2]
 					print("Grr, Gramps mad")
 				"4": 
-					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[4]
-					print("Woah, Gra,ps surprised")
+					$Container/SpeakerSprite.texture = GrampsPortraits[3]
+					print("Woah, Gramps surprised")
 				"5":
-					$Container/SpeakerSprite.texture = $GrampsPortraits.emotions[5]
+					$Container/SpeakerSprite.texture = GrampsPortraits[4]
 					print("Gramps just here") 
 		"Warrior":
 			match tag:
@@ -202,19 +166,19 @@ func find_portrait(character: String, index, emotions, line: String):
 					pass
 					#$Container/SpeakerSprite.texture = $Warrior.emotions[0]
 				"1":
-					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[1]
+					$Container/SpeakerSprite.texture = WarriorPortraits[0]
 					print("Warrior so happy") 
 				"2": 
-					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[2] 
+					$Container/SpeakerSprite.texture = WarriorPortraits[1] 
 					print("Warrior so sad")
 				"3": 
-					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[3]
+					$Container/SpeakerSprite.texture = WarriorPortraits[2]
 					print("Grr, Warrior mad")
 				"4": 
-					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[4]
+					$Container/SpeakerSprite.texture = WarriorPortraits[3]
 					print("Woah, Warrior surprised")
 				"5":
-					$Container/SpeakerSprite.texture = $WarriorPortraits.emotions[5]
+					$Container/SpeakerSprite.texture = WarriorPortraits[4]
 					print("Warrior just here")
 		"Rogue":
 			match tag:
@@ -222,19 +186,19 @@ func find_portrait(character: String, index, emotions, line: String):
 					pass
 					#$Container/SpeakerSprite.texture = $Rogue.emotions[0]
 				"1":
-					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[1]
+					$Container/SpeakerSprite.texture = RoguePortraits[0]
 					print("Rogue so happy") 
 				"2": 
-					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[2] 
+					$Container/SpeakerSprite.texture = RoguePortraits[1] 
 					print("Rogue so sad")
 				"3": 
-					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[3]
+					$Container/SpeakerSprite.texture = RoguePortraits[2]
 					print("Grr, Rogue mad")
 				"4": 
-					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[4]
+					$Container/SpeakerSprite.texture = RoguePortraits[3]
 					print("Woah, Rogue surprised")
 				"5":
-					$Container/SpeakerSprite.texture = $RoguePortraits.emotions[5]
+					$Container/SpeakerSprite.texture = RoguePortraits[4]
 					print("Rogue just here")
 		"Mage":
 			match tag:
@@ -242,18 +206,17 @@ func find_portrait(character: String, index, emotions, line: String):
 					pass
 					#$Container/SpeakerSprite.texture = $Mage.emotions[0]
 				"1":
-					$Container/SpeakerSprite.texture = $MagePortraits.emotions[1]
+					$Container/SpeakerSprite.texture = MagePortraits[0]
 					print("Mage so happy") 
 				"2": 
-					$Container/SpeakerSprite.texture = $MagePortraits.emotions[2] 
+					$Container/SpeakerSprite.texture = MagePortraits[1] 
 					print("Mage so sad")
 				"3": 
-					$Container/SpeakerSprite.texture = $MagePortraits.emotions[3]
+					$Container/SpeakerSprite.texture = MagePortraits[2]
 					print("Grr, Mage mad")
 				"4": 
-					$Container/SpeakerSprite.texture = $MagePortraits.emotions[4]
+					$Container/SpeakerSprite.texture = MagePortraits[3]
 					print("Woah, Mage surprised")
 				"5":
-					$Container/SpeakerSprite.texture = $MagePortraits.emotions[5]
+					$Container/SpeakerSprite.texture = MagePortraits[4]
 					print("Mage just here")
-	
