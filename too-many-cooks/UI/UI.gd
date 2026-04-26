@@ -2,6 +2,7 @@ extends Control
 
 var player: Node # stores a reference to the player node in the Combat Scene.
 @export var settings: Node2D
+@export var key_sprites: Array[Texture2D]
 var pauseDisabled = false
 
 signal flashManaBar()
@@ -12,8 +13,25 @@ var mage_quest_1 = "Quest: Get an orb"
 signal update_health_bar
 signal update_mana_bar
 
+#allows the ability to toggle visibility of the key depending on how many and which keys are in inventory
+var current_visible_keys: int = 0
+@onready var key_1: Sprite2D = $KeysHeld/Key1
+@onready var key_2: Sprite2D = $KeysHeld/Key2
+@onready var key_3: Sprite2D = $KeysHeld/Key3
+@onready var key_4: Sprite2D = $KeysHeld/Key4
+@onready var key_5: Sprite2D = $KeysHeld/Key5
+@onready var key_slots: Array[Sprite2D] = [
+	$KeysHeld/Key1,
+	$KeysHeld/Key2,
+	$KeysHeld/Key3,
+	$KeysHeld/Key4,
+	$KeysHeld/Key5
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for key in key_slots:
+		key.hide()
 	settings.in_menu = false
 	$DeathScreen.visible = false
 	if $"../../Player":
@@ -51,7 +69,19 @@ func _process(delta: float) -> void:
 		# updates the values for displayHealth & displayMana 
 		# to display as integers.
 		quest_received()
-	
+	##will check every frame whether or not there is a chnage in the key array, if there is it will remove a sprite from the listing
+	current_visible_keys = 0
+	for i in range(PlayerStats.keys.size()):
+		var sprite = key_slots[i]
+		sprite.show()
+		sprite.texture = key_sprites[PlayerStats.keys[i]]
+	for i in range(5):
+		var sprite = key_slots[i]
+		if sprite.visible:
+			current_visible_keys += 1
+	while (PlayerStats.keys.size() < current_visible_keys):
+		key_slots[current_visible_keys-1].hide()
+		current_visible_keys -= 1
 	
 	
 	# testing purposes

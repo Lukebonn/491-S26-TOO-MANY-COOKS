@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2j72eo3g3s8s"
-path="res://.godot/imported/JadeKey.webp-4b6ce587913af60b576711701e3b68d4.ctex"
+uid="uid://bl2n83mnd5s71"
+path="res://.godot/imported/JadeKey.jpg-abbb5ad8368f4b7826abcf84ceb31b2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Key/Sprites (temp)/JadeKey.webp"
-dest_files=["res://.godot/imported/JadeKey.webp-4b6ce587913af60b576711701e3b68d4.ctex"]
+source_file="res://Objects/Key/Sprites (temp)/JadeKey.jpg"
+dest_files=["res://.godot/imported/JadeKey.jpg-abbb5ad8368f4b7826abcf84ceb31b2d.ctex"]
 
 [params]
 

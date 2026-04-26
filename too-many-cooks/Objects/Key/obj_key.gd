@@ -34,5 +34,5 @@ func _on_visibility_changed() -> void:
 func give_key() -> void:
 	key_collected.emit()
 	PlayerStats.add_key(keyType)
-	print("Player picked up: " + displayName + " Key!")
+	print("Player picked up the " + displayName + "!")
 	queue_free()

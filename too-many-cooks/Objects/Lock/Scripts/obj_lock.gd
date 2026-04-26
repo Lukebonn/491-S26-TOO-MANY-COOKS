@@ -12,7 +12,7 @@ func _ready() -> void:
 func unlock() -> void:
 	if PlayerStats.has_key(keyType):
 		PlayerStats.remove_key(keyType)
-		print("You unlocked: " + displayName + " Key door")
+		print("You unlocked a door using the " + displayName)
 		on_unlock.emit()
 		queue_free()
 	else:
