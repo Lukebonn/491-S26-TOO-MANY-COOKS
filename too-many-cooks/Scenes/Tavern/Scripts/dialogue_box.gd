@@ -41,6 +41,7 @@ func show_dialogue(character: String, index, emotions):
 	var tween = get_tree().create_tween()
 	#var portrait_tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
+	print($Portr)
 	#portrait_tween.tween_property($Container/SpeakerSprite,"position",Vector2($Container/SpeakerSprite.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
 	#print($Container.global_position)
 	#print($Container/SpeakerSprite.global_position)
@@ -50,7 +51,7 @@ func show_dialogue(character: String, index, emotions):
 func end_dialogue():
 	var tween = get_tree().create_tween()
 	#var portrait_tween = get_tree().create_tween()
-	tween.tween_property($Container,"position",Vector2($Container.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property($Container,"position",Vector2($Container.position.x,2000),.5).set_trans(Tween.TRANS_CUBIC)
 	in_dialogue = false
 	Global.Is_In_Dialogue = false
 	message_complete.emit()
@@ -101,7 +102,6 @@ func print_text(character: String, index, emotions):
 		if end_of_dialogue:
 			end_dialogue()
 			var portrait_tween = get_tree().create_tween()
-			portrait_tween.tween_property($Container/SpeakerSprite,"position",Vector2($Container/SpeakerSprite.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 			#$Container/SpeakerSprite.hide()
 
 func find_message(character: String, index, emotions):

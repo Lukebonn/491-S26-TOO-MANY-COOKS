@@ -154,7 +154,7 @@ scale = Vector2(0.8476637, 0.84766376)
 [node name="MouseBlocker" type="Panel" parent="Container" unique_id=1929785020]
 layout_mode = 0
 offset_left = -576.0
-offset_top = -266.0
+offset_top = -524.0
 offset_right = 579.0
 offset_bottom = -27.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pecbt")
