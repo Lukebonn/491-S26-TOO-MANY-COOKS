@@ -7,6 +7,7 @@ func _ready() -> void:
 func make_visible() -> void:
 	show()
 	$CollisionShape2D.disabled = false
+	
 
 func destroy_barrier() -> void:
 	queue_free()

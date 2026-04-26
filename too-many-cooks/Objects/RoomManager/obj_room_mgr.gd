@@ -29,9 +29,9 @@ func start_room() -> void:
 	for s in Spawners:
 		s.try_spawn_enemies()
 	for b in Barriers:
-		b.make_visible()
+		b.call_deferred("make_visible")
 
 func stop_room() -> void:
 	active = false
 	for b in Barriers:
-		b.destroy_barrier()
+		b.call_deferred("destroy_barrier")

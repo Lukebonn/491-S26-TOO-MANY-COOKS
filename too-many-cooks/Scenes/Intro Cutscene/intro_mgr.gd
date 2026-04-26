@@ -17,6 +17,8 @@ var voice_ref : AudioStreamPlayer
 var wait_ref : Timer
 
 func _ready():
+	Global.First_Time_Combat = true
+	Global.First_Time_Tavern = true
 	PlayerStats.current_class = PlayerStats.classes.none
 	FadeInFadeOut.fade_in()
 	sub_ref = $Subtitle
@@ -39,7 +41,7 @@ func next_line(i: int):
 		
 		#Fade subtitle out, wait for fade to complete.
 		voice_ref.stop()
-		var tween = get_tree().create_tween()
+		var tween = get_tree().create_tween().set_parallel(true)
 		tween.tween_property(sub_ref,"position",Vector2(76,700.0),.5).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property($PageArrow,"position",Vector2(1070,728),.4).set_trans(Tween.TRANS_CUBIC)
 		wait_ref.start()

@@ -20,3 +20,6 @@ var Has_Mage_Quest_1 := false
 
 var Has_Mage_NPC := false
 var Has_Rogue_NPC := false
+
+var Act_2_Unlocked := false
+var Act_3_Unlocked := false

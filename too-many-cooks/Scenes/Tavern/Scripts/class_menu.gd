@@ -60,8 +60,8 @@ func set_other_descriptions(attack_des, dash_des, magic_des, other_des):
 	$Panel/VBoxContainer/HBoxContainer/Stats/DashDescription.text += str(dash_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/MagicDescription.text += str(magic_des)
 	$Panel/VBoxContainer/HBoxContainer/Stats/TrueOtherDescription.text += str(other_des)
-	_check_upgrade_avaliability()
-	_check_ability_avaliability()
+	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
+	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Upgrade.disabled = !_check_ability_avaliability()
 	
 func _check_upgrade_avaliability():
 	gold_upgrade_price = floor((10 * current_level)**1.3)
@@ -106,7 +106,6 @@ func _on_upgrade_pressed():
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Level += 1
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
-
 func _on_upgrade_ability_pressed():
 	PlayerStats.Orbs -= orb_upgrade_price
 	match current_class:

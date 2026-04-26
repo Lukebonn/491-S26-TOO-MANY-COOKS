@@ -7,7 +7,7 @@ size = Vector2(32, 32)
 
 [node name="ObjBarrier" type="StaticBody2D" unique_id=273527535]
 collision_layer = 64
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_yktmm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1032617379]

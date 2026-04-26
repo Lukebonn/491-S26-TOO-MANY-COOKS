@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://0aulhipdltmu"]
 
 [ext_resource type="Script" uid="uid://byk0d34bqg72" path="res://Scenes/Level Design/Exit Stairs/exit.gd" id="1_2rtbg"]
-[ext_resource type="Texture2D" uid="uid://t56ir8n6wmac" path="res://Characters/Player/Sprites/Staircase Test.png" id="2_dxa7i"]
+[ext_resource type="Texture2D" uid="uid://c0bn7xqprmrd4" path="res://Scenes/Level Design/Props/functional/stairs.png" id="2_2rtbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuaim"]
-size = Vector2(65, 30)
+size = Vector2(30, 30)
 
 [node name="Exit" type="Area2D" unique_id=1591480781]
 script = ExtResource("1_2rtbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402429632]
-position = Vector2(-0.5, -1)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_yuaim")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642699966]
-texture = ExtResource("2_dxa7i")
+texture = ExtResource("2_2rtbg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
