@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d3kyhoaa2p1tq"]
+
+[ext_resource type="Script" uid="uid://dh4nnx4sl7bt4" path="res://Objects/Barrier/obj_barrier.gd" id="1_yktmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1nit"]
+size = Vector2(32, 32)
+
+[node name="ObjBarrier" type="StaticBody2D" unique_id=273527535]
+collision_layer = 64
+collision_mask = 5
+script = ExtResource("1_yktmm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1032617379]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778641944]
+shape = SubResource("RectangleShape2D_e1nit")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PickupData" format=3 uid="uid://b2ydgw0c2far6"]
+
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="1_sfowi"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="2_6b7qw"]
+
+[resource]
+script = ExtResource("2_6b7qw")
+SceneToSpawn = ExtResource("1_sfowi")
+DropCountRange = Vector2(18, 20)
+DropChance = 1.0

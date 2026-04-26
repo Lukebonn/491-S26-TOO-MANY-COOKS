@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c63ktfb6ib3fm"]
+
+[ext_resource type="Script" uid="uid://eh6608tbetc3" path="res://Objects/RoomManager/obj_room_mgr.gd" id="1_0blay"]
+
+[node name="ObjRoomMgr" type="Area2D" unique_id=1778230442]
+collision_layer = 0
+script = ExtResource("1_0blay")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

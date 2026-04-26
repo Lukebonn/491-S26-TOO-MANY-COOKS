@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="1_0gd6u"]
 [ext_resource type="Script" uid="uid://dt0j3sqh88n56" path="res://Objects/EnemySpawner/Scripts/destructible_spawner.gd" id="2_3hgi4"]
 [ext_resource type="Script" uid="uid://jds2e01uhgmt" path="res://Objects/EnemySpawner/Scripts/desCol.gd" id="2_3mj1u"]
-[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="4_utcjh"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="3_utcjh"]
+[ext_resource type="Resource" uid="uid://djqffdti4cmy8" path="res://Objects/Pickups/PickupData/PickupOrb.tres" id="4_oquvc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mj1u"]
 load_path = "res://.godot/imported/tile_spawner.png-7dedee25e211ebeb930e97f86b11be31.ctex"
@@ -13,9 +14,15 @@ load_path = "res://.godot/imported/tile_spawner.png-7dedee25e211ebeb930e97f86b11
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mj1u"]
 radius = 16.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qqly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmkgu"]
+bg_color = Color(1, 0.06999999, 0.08549976, 1)
+
 [node name="ObjDestructibleSpawner" unique_id=817439483 instance=ExtResource("1_0gd6u")]
 script = ExtResource("2_3hgi4")
 HP = 20
+Drops = Array[ExtResource("3_utcjh")]([ExtResource("4_oquvc")])
 
 [node name="Sprite2" type="Sprite2D" parent="." index="1" unique_id=1945316062]
 texture = SubResource("CompressedTexture2D_3mj1u")
@@ -33,8 +40,14 @@ script = ExtResource("2_3mj1u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1018282551]
 shape = SubResource("CircleShape2D_3mj1u")
 
-[node name="EnemyHealthBar" parent="Area2D" index="1" unique_id=1226760327 instance=ExtResource("4_utcjh")]
-offset_top = -16.5
-offset_bottom = -12.5
+[node name="HealthBar" type="ProgressBar" parent="Area2D" index="1" unique_id=1352274992]
+offset_left = -15.0
+offset_top = -16.0
+offset_right = 15.5
+offset_bottom = -12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3qqly")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nmkgu")
+value = 50.0
+show_percentage = false
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
