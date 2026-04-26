@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		if body.num_keys > 0:
-			lock.unlock()
-			body.num_keys -= 1
+		lock.unlock()
+		#if body.num_keys > 0:
+			#lock.unlock()
+			#body.num_keys -= 1

@@ -7,8 +7,15 @@ var player : Node2D
 ##Set to True if this Key must be collected after some event,
 ##like defeating enemies from a Spawner.
 @export var StartHidden = false
+@export var keyType: PlayerStats.KeyType
+@export var displayName: String = "_Untitled_ Key"
+@export var key_sprites: Array[Texture2D]
+@onready var sprite: Sprite2D = $Sprite2D
+
 
 func _ready() -> void:
+	add_to_group("key")
+	sprite.texture = key_sprites[keyType]
 	visible = not StartHidden
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -26,5 +33,6 @@ func _on_visibility_changed() -> void:
 
 func give_key() -> void:
 	key_collected.emit()
-	player.num_keys += 1
+	PlayerStats.add_key(keyType)
+	print("Player picked up: " + displayName + " Key!")
 	queue_free()

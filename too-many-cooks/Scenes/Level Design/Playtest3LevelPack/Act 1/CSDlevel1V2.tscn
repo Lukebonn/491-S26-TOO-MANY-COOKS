@@ -194,95 +194,6 @@ tile_set = SubResource("TileSet_l0njl")
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_n7ge3")]
 zoom = Vector2(4, 4)
 
-[node name="Room 1" parent="." unique_id=1675144235 instance=ExtResource("4_uiytw")]
-position = Vector2(19, 162)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 5
-
-[node name="CollisionPolygon2D" parent="Room 1" index="0" unique_id=1581978368]
-position = Vector2(0.35335687, -0.42372882)
-polygon = PackedVector2Array(0.08833921, -0.42372704, 4.240282, -5.0847454, 1.8551236, -3.9194918, -5.8303885, -3.9194918, -8.657243, -4.978813, -5.2120137, -0.6355915)
-
-[node name="ObjDoor2" parent="Room 1" unique_id=1546063147 instance=ExtResource("5_foj7l")]
-position = Vector2(-3.7985864, -7.097458)
-scale = Vector2(0.08833922, 0.105932206)
-
-[node name="ObjDoor4" parent="Room 1" unique_id=1797466794 instance=ExtResource("5_foj7l")]
-position = Vector2(-0.9717314, -7.097458)
-scale = Vector2(0.08833922, 0.105932206)
-
-[node name="Room 2" parent="." unique_id=1525477123 instance=ExtResource("4_uiytw")]
-position = Vector2(14, -13)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 9
-
-[node name="CollisionPolygon2D" parent="Room 2" index="0" unique_id=1581978368]
-polygon = PackedVector2Array(-0.795053, 5.720339, 1.8551236, 5.614407, 1.8551236, -3.9194918, -5.8303885, -3.9194918, -8.833921, -0.74152553, -8.480565, 6.355932)
-
-[node name="ObjDoor" parent="Room 2" unique_id=1038112294 instance=ExtResource("5_foj7l")]
-position = Vector2(11.572438, -11.334745)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor2" parent="Room 2" unique_id=1496808306 instance=ExtResource("5_foj7l")]
-position = Vector2(-3.3568902, 8.15678)
-scale = Vector2(0.08833922, 0.105932206)
-
-[node name="ObjDoor3" parent="Room 2" unique_id=597006979 instance=ExtResource("5_foj7l")]
-position = Vector2(11.572438, -14.724577)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor4" parent="Room 2" unique_id=2026611160 instance=ExtResource("5_foj7l")]
-position = Vector2(-0.5300353, 8.15678)
-scale = Vector2(0.08833922, 0.105932206)
-
-[node name="Room 3" parent="." unique_id=1044317685 instance=ExtResource("4_uiytw")]
-position = Vector2(309, -157)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 7
-
-[node name="CollisionPolygon2D" parent="Room 3" index="0" unique_id=1581978368]
-polygon = PackedVector2Array(-9.452295, 10.381357, -5.918728, 8.580509, -5.5653706, -3.9194908, -8.657244, -4.2372875, -7.6855125, -0.847456, -7.597172, 6.4618654)
-
-[node name="ObjDoor" parent="Room 3" unique_id=1373610992 instance=ExtResource("5_foj7l")]
-position = Vector2(12.367491, 2.224577)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor3" parent="Room 3" unique_id=138859274 instance=ExtResource("5_foj7l")]
-position = Vector2(12.367491, -1.1652546)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor2" parent="Room 3" unique_id=1579068290 instance=ExtResource("5_foj7l")]
-position = Vector2(-10.512367, 3.9194922)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor4" parent="Room 3" unique_id=677164406 instance=ExtResource("5_foj7l")]
-position = Vector2(-10.512367, 0.5296607)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="Room 4" parent="." unique_id=157659041 instance=ExtResource("4_uiytw")]
-position = Vector2(612, -177)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 4
-
-[node name="CollisionPolygon2D" parent="Room 4" index="0" unique_id=1581978368]
-polygon = PackedVector2Array(-6.448765, 9.322034, -3.7985878, 8.156779, -3.4452324, -2.648306, -6.360424, -2.9661026, -5.212017, -0.3177967, -5.212017, 6.355932)
-
-[node name="ObjDoor" parent="Room 4" unique_id=678450460 instance=ExtResource("5_foj7l")]
-position = Vector2(-7.508833, 4.449154)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor3" parent="Room 4" unique_id=830627663 instance=ExtResource("5_foj7l")]
-position = Vector2(-7.508833, 1.0593221)
-rotation = -1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("6_gwn22")]
@@ -418,10 +329,101 @@ position = Vector2(-60, 234)
 [node name="GoldPickup9" parent="Pickups" unique_id=1582464160 instance=ExtResource("11_cpvl3")]
 position = Vector2(-85, 228)
 
+[node name="Rooms" type="Node2D" parent="." unique_id=1584444359]
+
+[node name="Room 1" parent="Rooms" unique_id=1675144235 instance=ExtResource("4_uiytw")]
+position = Vector2(19, 162)
+scale = Vector2(11.320001, 9.44)
+number_of_enemies = 5
+
+[node name="CollisionPolygon2D" parent="Rooms/Room 1" index="0" unique_id=1581978368]
+position = Vector2(0.35335687, -0.42372882)
+polygon = PackedVector2Array(0.08833921, -0.42372704, 4.240282, -5.0847454, 1.8551236, -3.9194918, -5.8303885, -3.9194918, -8.657243, -4.978813, -5.2120137, -0.6355915)
+
+[node name="ObjDoor2" parent="Rooms/Room 1" unique_id=1546063147 instance=ExtResource("5_foj7l")]
+position = Vector2(-3.7985864, -7.097458)
+scale = Vector2(0.08833922, 0.105932206)
+
+[node name="ObjDoor4" parent="Rooms/Room 1" unique_id=1797466794 instance=ExtResource("5_foj7l")]
+position = Vector2(-0.9717314, -7.097458)
+scale = Vector2(0.08833922, 0.105932206)
+
+[node name="Room 2" parent="Rooms" unique_id=1525477123 instance=ExtResource("4_uiytw")]
+position = Vector2(14, -13)
+scale = Vector2(11.320001, 9.44)
+number_of_enemies = 9
+
+[node name="CollisionPolygon2D" parent="Rooms/Room 2" index="0" unique_id=1581978368]
+polygon = PackedVector2Array(-0.795053, 5.720339, 1.8551236, 5.614407, 1.8551236, -3.9194918, -5.8303885, -3.9194918, -8.833921, -0.74152553, -8.480565, 6.355932)
+
+[node name="ObjDoor" parent="Rooms/Room 2" unique_id=1038112294 instance=ExtResource("5_foj7l")]
+position = Vector2(11.572438, -11.334745)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor2" parent="Rooms/Room 2" unique_id=1496808306 instance=ExtResource("5_foj7l")]
+position = Vector2(-3.3568902, 8.15678)
+scale = Vector2(0.08833922, 0.105932206)
+
+[node name="ObjDoor3" parent="Rooms/Room 2" unique_id=597006979 instance=ExtResource("5_foj7l")]
+position = Vector2(11.572438, -14.724577)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor4" parent="Rooms/Room 2" unique_id=2026611160 instance=ExtResource("5_foj7l")]
+position = Vector2(-0.5300353, 8.15678)
+scale = Vector2(0.08833922, 0.105932206)
+
+[node name="Room 3" parent="Rooms" unique_id=1044317685 instance=ExtResource("4_uiytw")]
+position = Vector2(309, -157)
+scale = Vector2(11.320001, 9.44)
+number_of_enemies = 7
+
+[node name="CollisionPolygon2D" parent="Rooms/Room 3" index="0" unique_id=1581978368]
+polygon = PackedVector2Array(-9.452295, 10.381357, -5.918728, 8.580509, -5.5653706, -3.9194908, -8.657244, -4.2372875, -7.6855125, -0.847456, -7.597172, 6.4618654)
+
+[node name="ObjDoor" parent="Rooms/Room 3" unique_id=1373610992 instance=ExtResource("5_foj7l")]
+position = Vector2(12.367491, 2.224577)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor3" parent="Rooms/Room 3" unique_id=138859274 instance=ExtResource("5_foj7l")]
+position = Vector2(12.367491, -1.1652546)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor2" parent="Rooms/Room 3" unique_id=1579068290 instance=ExtResource("5_foj7l")]
+position = Vector2(-10.512367, 3.9194922)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor4" parent="Rooms/Room 3" unique_id=677164406 instance=ExtResource("5_foj7l")]
+position = Vector2(-10.512367, 0.5296607)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="Room 4" parent="Rooms" unique_id=157659041 instance=ExtResource("4_uiytw")]
+position = Vector2(612, -177)
+scale = Vector2(11.320001, 9.44)
+number_of_enemies = 4
+
+[node name="CollisionPolygon2D" parent="Rooms/Room 4" index="0" unique_id=1581978368]
+polygon = PackedVector2Array(-6.448765, 9.322034, -3.7985878, 8.156779, -3.4452324, -2.648306, -6.360424, -2.9661026, -5.212017, -0.3177967, -5.212017, 6.355932)
+
+[node name="ObjDoor" parent="Rooms/Room 4" unique_id=678450460 instance=ExtResource("5_foj7l")]
+position = Vector2(-7.508833, 4.449154)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
+[node name="ObjDoor3" parent="Rooms/Room 4" unique_id=830627663 instance=ExtResource("5_foj7l")]
+position = Vector2(-7.508833, 1.0593221)
+rotation = -1.5707964
+scale = Vector2(0.105932206, 0.08833922)
+
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
 
-[editable path="Room 1"]
-[editable path="Room 2"]
-[editable path="Room 3"]
-[editable path="Room 4"]
+[editable path="Rooms/Room 1"]
+[editable path="Rooms/Room 2"]
+[editable path="Rooms/Room 3"]
+[editable path="Rooms/Room 4"]

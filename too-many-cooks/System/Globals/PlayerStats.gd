@@ -15,6 +15,32 @@ var temp_orb : int = 0
 #var Max_Speed = 200.0
 #var Speed_Slowdown = 150.0
 
+##inventory item cache
+#this is meant to only be a temporary storage area for these kind of level exclusive variables
+#these variables will be reset whenever the player switches to a new scene by default
+#just so that the complexity of this variable doesn't outweigh any existing persistence and for simplicity
+##types of keys the player can pick up in a level
+enum KeyType {
+	BLOOD,
+	GOLD,
+	JADE,
+	CRYSTAL,
+	IRON
+}
+
+##erased at the beginning of every scene IMPORTANT (for now)
+var keys: Array[KeyType] = []
+
+func add_key(key: KeyType) -> void:
+	if key not in keys:
+		keys.append(key)
+
+func has_key(key: KeyType) -> bool:
+	return key in keys
+
+func remove_key(key: KeyType) -> void:
+	keys.erase(key)
+
 ##health and mana, 
 #these are directly edited from tavern upgrades
 #but in gameplay realtime health and mana

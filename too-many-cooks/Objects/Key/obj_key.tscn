@@ -2,11 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://c571te2vh53u7" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdKey.png" id="1_cv8jh"]
 [ext_resource type="Script" uid="uid://b5s248q2a2ndc" path="res://Objects/Key/obj_key.gd" id="1_passb"]
+[ext_resource type="Texture2D" uid="uid://cm42ky7i8w4je" path="res://Objects/Key/Sprites (temp)/BloodKey.png" id="2_g6jbp"]
+[ext_resource type="Texture2D" uid="uid://dfa65v8xucjww" path="res://Objects/Key/Sprites (temp)/GoldKey.png" id="3_0lqt5"]
+[ext_resource type="Texture2D" uid="uid://b2j72eo3g3s8s" path="res://Objects/Key/Sprites (temp)/JadeKey.webp" id="4_j056a"]
+[ext_resource type="Texture2D" uid="uid://cjgn7h7w0ofy7" path="res://Objects/Key/Sprites (temp)/CrystalKey.png" id="5_7rlbc"]
+[ext_resource type="Texture2D" uid="uid://bnwdbcqhgbrhq" path="res://Objects/Key/Sprites (temp)/IronKey.png" id="6_f210j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_passb"]
 
 [node name="ObjKey" type="Node2D" unique_id=150755072]
 script = ExtResource("1_passb")
+key_sprites = Array[Texture2D]([ExtResource("2_g6jbp"), ExtResource("3_0lqt5"), ExtResource("4_j056a"), ExtResource("5_7rlbc"), ExtResource("6_f210j")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1743266336]
 texture = ExtResource("1_cv8jh")
