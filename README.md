@@ -1,4 +1,4 @@
-#Tales of the Tower
+Tales of the Tower
 
 We are Too Many Cooks. We are a 24 student video game developer studio!
 
