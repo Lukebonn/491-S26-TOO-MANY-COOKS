@@ -5,13 +5,6 @@ extends Area2D
 var current_health : int
 #Whether or not the Spawner is destroyed and shouldn't be able to be attacked.
 var dead : bool = false
-#Filler variable exclusively because of dependencies in EnemyHealthBar.
-var health = current_health
-
-func change_state() -> void:
-	#Empty function for now because EnemyHealthBar depends on having this method.
-	#Will talk to Carson later about alternative method of assigning parent.
-	pass
 
 func take_damage(inc_damage: int):
 	if not dead:
@@ -19,6 +12,7 @@ func take_damage(inc_damage: int):
 		var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
 		damage_number.Number = inc_damage
 		add_child(damage_number)
+		$HealthBar.value = current_health
 		if current_health <= 0:
 			dead = true
 			$"..".destroy_spawner()

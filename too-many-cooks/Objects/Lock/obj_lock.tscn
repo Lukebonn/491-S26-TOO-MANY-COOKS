@@ -8,6 +8,7 @@
 
 [node name="ObjLock" type="Node2D" unique_id=269246272]
 script = ExtResource("1_gml1x")
+CollisionRadius = 32.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056122697]
 texture = ExtResource("1_qrrbs")

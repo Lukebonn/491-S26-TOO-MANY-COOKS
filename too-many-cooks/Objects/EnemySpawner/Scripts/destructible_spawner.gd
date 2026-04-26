@@ -54,6 +54,8 @@ enum SpawnType {
 @export_group("Destructible Data")
 ##The amount of HP this Spawner has.
 @export var HP : int = 20
+##The Pickups to drop when this Spawner is destroyed.
+@export var Drops: Array[PickupData] = []
 
 #Whether or not this Spawner is active (and thus should emit signals).
 var active : bool = true
@@ -75,6 +77,14 @@ var path_length : float = 0.0
 var cur_step : int = 0
 
 func destroy_spawner() -> void:
+	for drop in Drops:
+		var c = randf_range(0.0, 1.0)
+		if drop.DropChance >= c:
+			var i = int(randf_range(drop.DropCountRange.x, drop.DropCountRange.y))
+			for d in i:
+				var inst = drop.SceneToSpawn.instantiate()
+				inst.global_position = global_position
+				get_parent().add_sibling(inst)
 	on_destroyed.emit()
 	interval.stop()
 	queue_free()
@@ -87,6 +97,8 @@ func _ready() -> void:
 	interval = $Interval
 	$Sprite.hide()
 	$Area2D.current_health = HP
+	$Area2D/HealthBar.value = HP
+	$Area2D/HealthBar.max_value = HP
 	if SpawnPath:
 		path_length = SpawnPath.curve.get_baked_length()
 
@@ -149,7 +161,7 @@ func calc_spawn_pos(i: int):
 	if LocationType == LocType.RadiusRange:
 		if RandomLocation:
 			#Return rotated Vec2 in min-max range based on random float in range.
-			return position + Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(rotInc * i))
+			return position + Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(randf_range(0, 360)))
 		else:
 			#Return rotated Vec2 in min-max range based on incriment * index.
 			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))

@@ -6,7 +6,7 @@ func _ready():
 	self.connect("pressed",_on_pressed)
 
 func _on_pressed():
-	clickSound.play()
+	#clickSound.play()
 	match text:
 		"\"I lost. Badly.\"":
 			dialogue_ref.show_dialogue("Warrior","7,8,16,17,18,19,20,21,22,23","0,0")
@@ -49,5 +49,5 @@ func _on_pressed():
 	dialogue_ref.is_awaiting_response = false
 
 
-func _on_mouse_entered() -> void:
-	hoverSound.play()
+#func _on_mouse_entered() -> void:
+	#hoverSound.play()

@@ -133,7 +133,7 @@ func calc_spawn_pos(i: int):
 	if LocationType == LocType.RadiusRange:
 		if RandomLocation:
 			#Return rotated Vec2 in min-max range based on random float in range.
-			return position + Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(rotInc * i))
+			return position + Vector2(randf_range(RadiusRangeMin, RadiusRangeMax),0).rotated(deg_to_rad(randf_range(0, 360)))
 		else:
 			#Return rotated Vec2 in min-max range based on incriment * index.
 			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))

@@ -2,11 +2,11 @@ extends Camera2D
 @export var Player : CharacterBody2D
 #vars for camera shake
 @export var decay: float = 0.8
-@export var max_offset: Vector2 = Vector2(100, 75)
+@export var max_offset: Vector2 = Vector2(20, 20)
 @export var max_roll: float = 0.1
 
 var trauma: float = 0.0
-var trauma_power: int = 2
+var trauma_power: int = 10
 
 #for if we want to move the camera away from the character sometimes 
 #like to introduce a boss or something
@@ -31,7 +31,9 @@ func _process(delta):
 	#this is for the camera shake functionality and is constantly checking if the camera shake functionality has been called
 	if trauma: 
 		trauma = max(trauma - decay * delta, 0)
-		shake()
+		#shake()
+		#the screenshake is so much lmao i commented out because
+		#its so intense
 
 func get_mouse_vector():
 	var value = Player.position + get_local_mouse_position()

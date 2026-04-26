@@ -25,8 +25,7 @@ func _ready():
 	current_state = starting_state
 	current_state.enter_state(self)
 	current_health = health
-	if $"../Player":
-		player_ref = $"../Player"
+	player_ref = get_tree().get_first_node_in_group("Player")
 	
 func change_state(new_state : String):
 	if !current_state: #just in case current_state is null for some reason

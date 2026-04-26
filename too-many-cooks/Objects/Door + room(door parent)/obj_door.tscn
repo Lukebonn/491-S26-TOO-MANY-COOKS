@@ -111,7 +111,7 @@ script = ExtResource("1_5kuwq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=509779703]
 collision_layer = 64
-collision_mask = 5
+collision_mask = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1786605134]
 shape = SubResource("RectangleShape2D_lfrka")
@@ -138,12 +138,15 @@ shape = SubResource("CircleShape2D_aslu8")
 
 [node name="doorClosing" type="AudioStreamPlayer2D" parent="." unique_id=1306148498]
 stream = ExtResource("3_lfrka")
+volume_db = -8.0
 
 [node name="doorOpening" type="AudioStreamPlayer2D" parent="." unique_id=1431812206]
 stream = ExtResource("4_cj2kf")
+volume_db = -8.0
 
 [node name="doorUnlocking" type="AudioStreamPlayer2D" parent="." unique_id=592569611]
 stream = ExtResource("5_kuohc")
+volume_db = -8.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

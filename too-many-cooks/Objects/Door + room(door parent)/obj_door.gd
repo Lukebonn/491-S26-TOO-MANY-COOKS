@@ -10,6 +10,8 @@ var spriteRef : Sprite2D
 var spriteRef2 : Sprite2D
 #Ref to Sprite2D.
 var camera
+#to check whether or not this door is attached to a room or attached to a lock
+var is_key_lock_door: bool = false
 #needs to get the camera for camera shake
 ##Whether or not this Door should start already open.
 @export var StartOpen = false
@@ -19,6 +21,7 @@ var camera
 @onready var door_unlocking: AudioStreamPlayer2D = $doorUnlocking
 
 
+
 func _ready() -> void:
 	add_to_group("door")
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
@@ -26,6 +29,12 @@ func _ready() -> void:
 	spriteRef = $Sprite2D
 	spriteRef2 = $Sprite2D2
 	is_open = StartOpen
+	for child in get_children():
+		if child.is_in_group("lock"):
+			is_key_lock_door = true
+			child.on_unlock.connect(_on_child_lock_unlocked)
+			set_locked(true)
+			break
 	camera = get_tree().get_first_node_in_group("camera")
 	if is_open:
 		spriteRef.frame = 3
@@ -77,3 +86,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	print("door closed")
 	if body.name == "Player":
 		set_open(false)
+
+#on the chance that this door is not a child of a room, but instead a parent of alock this will
+#connect tehe signal of the lock unlocking to this door instance in the scene and unlock the door
+func _on_child_lock_unlocked() -> void:
+	print("Door received unlock signal from child from inserting a key")
+	set_locked(false)

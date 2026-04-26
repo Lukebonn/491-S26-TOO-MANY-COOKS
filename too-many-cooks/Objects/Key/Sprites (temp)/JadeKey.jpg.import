@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brh4p1w4417g0"
-path="res://.godot/imported/Untitled1435_20260424115720.png-d45bc8e4271c56748a40a6d2cc140b88.ctex"
+uid="uid://bl2n83mnd5s71"
+path="res://.godot/imported/JadeKey.jpg-abbb5ad8368f4b7826abcf84ceb31b2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tavern/Art/Warrior/Untitled1435_20260424115720.png"
-dest_files=["res://.godot/imported/Untitled1435_20260424115720.png-d45bc8e4271c56748a40a6d2cc140b88.ctex"]
+source_file="res://Objects/Key/Sprites (temp)/JadeKey.jpg"
+dest_files=["res://.godot/imported/JadeKey.jpg-abbb5ad8368f4b7826abcf84ceb31b2d.ctex"]
 
 [params]
 

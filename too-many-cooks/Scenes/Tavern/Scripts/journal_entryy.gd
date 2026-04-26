@@ -10,8 +10,8 @@ class_name journal_entry extends Button
 
 func _ready():
 	self.connect("pressed",_on_pressed)
-	clickSound = $"ButtonClickSound"
-	hoverSound = $"ButtonHoverSound"
+	#clickSound = $"ButtonClickSound"
+	#hoverSound = $"ButtonHoverSound"
 
 	
 func _on_pressed():

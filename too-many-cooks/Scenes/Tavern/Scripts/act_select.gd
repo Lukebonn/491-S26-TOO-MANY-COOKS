@@ -3,7 +3,10 @@ var is_showing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if Global.Act_2_Unlocked:
+		$Panel/VBoxContainer/MarginContainer2/Levels/Act2.disabled = false
+	if Global.Act_3_Unlocked:
+		$Panel/VBoxContainer/MarginContainer2/Levels/Act3.disabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,18 +36,18 @@ func hide_menu_top():
 
 func _on_act_1_pressed():
 	#later hook this up to a level queue that picks N unique levels out of the scenes in a given folder
-	make_level_queue("res://Scenes/Level Design/Playtest2LevelPack",2)
+	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 1",3, 1)
 	pass # Replace with function body.
 
 
 func _on_act_2_pressed():
-	pass # Replace with function body.
+	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 2",4, 2)
 
 
 func _on_act_3_pressed():
-	pass # Replace with function body.
+	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 1",5, 3)
 	
-func make_level_queue(dir: String, amount : int):
+func make_level_queue(dir: String, amount : int, act: int):
 	var files = DirAccess.get_files_at(dir)
 	var levels: Array = []
 	for file in files:
@@ -53,7 +56,7 @@ func make_level_queue(dir: String, amount : int):
 			levels.append(file)
 	var indicies_queued: Array = []
 	print(files)
-	while LevelQueue.Queue.size() < amount:
+	while LevelQueue.Queue.size() < amount-1:
 		var rng = randi_range(0,(levels.size()-1))
 		if rng not in indicies_queued:
 			var new_level = levels.get(rng)
@@ -64,6 +67,19 @@ func make_level_queue(dir: String, amount : int):
 			print("attempted level was in the level queue already")
 			print(LevelQueue.Queue.size())
 			await get_tree().process_frame
+	match act:
+		1:
+			LevelQueue.Queue.append("res://Scenes/Level Design/Playtest3LevelPack/Bosses/Level1BossRoom.tscn")
+		2:
+			LevelQueue.Queue.append("res://Scenes/Level Design/Playtest3LevelPack/Bosses/Level2BossRoom.tscn")
+		3:
+			LevelQueue.Queue.append("res://Scenes/Level Design/Playtest3LevelPack/Bosses/Level3BossRoom.tscn")
+	print("Level queue is... " + str(LevelQueue.Queue))
 	LevelQueue.load_level()
 		
 		
+
+
+func _on_practice_pressed():
+	LevelQueue.Queue.append("res://Scenes/Level Design/Playtest3LevelPack/Practice.tscn")
+	LevelQueue.load_level()

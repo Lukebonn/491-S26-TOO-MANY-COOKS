@@ -6,15 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://bgprqylqedkbv" path="res://UI/BattleHUD/Img/HpBarBack.png" id="2_7ubs7"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
 [ext_resource type="Script" uid="uid://bij8n2av2rrx1" path="res://UI/BattleHUD/mana_bar.gd" id="3_8ktjv"]
+[ext_resource type="Texture2D" uid="uid://cm42ky7i8w4je" path="res://Objects/Key/Sprites (temp)/BloodKey.png" id="3_uk6e0"]
+[ext_resource type="Texture2D" uid="uid://dfa65v8xucjww" path="res://Objects/Key/Sprites (temp)/GoldKey.png" id="4_idhk4"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="4_snacm"]
 [ext_resource type="Texture2D" uid="uid://cav7kjl11v50t" path="res://UI/BattleHUD/Img/HpBarBorder.png" id="5_8ktjv"]
+[ext_resource type="Texture2D" uid="uid://bl2n83mnd5s71" path="res://Objects/Key/Sprites (temp)/JadeKey.jpg" id="5_uk6e0"]
+[ext_resource type="Texture2D" uid="uid://cjgn7h7w0ofy7" path="res://Objects/Key/Sprites (temp)/CrystalKey.png" id="6_2jerp"]
 [ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="6_t31p1"]
 [ext_resource type="Texture2D" uid="uid://c2ohtwxdxq5a5" path="res://UI/BattleHUD/Img/MpBarBack.png" id="7_6q2ik"]
+[ext_resource type="Texture2D" uid="uid://bnwdbcqhgbrhq" path="res://Objects/Key/Sprites (temp)/IronKey.png" id="7_nxoi0"]
 [ext_resource type="Texture2D" uid="uid://brkecisggyy3v" path="res://UI/BattleHUD/Img/MpBarBorder.png" id="8_017wa"]
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 
@@ -25,6 +30,7 @@ anchors_preset = 0
 theme = ExtResource("1_tabjk")
 script = ExtResource("1_dvulo")
 settings = NodePath("PauseMenu2")
+key_sprites = Array[Texture2D]([ExtResource("3_uk6e0"), ExtResource("4_idhk4"), ExtResource("5_uk6e0"), ExtResource("6_2jerp"), ExtResource("7_nxoi0")])
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
 visible = false
@@ -158,6 +164,25 @@ label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 script = ExtResource("4_snacm")
 counter = "Orbs"
+
+[node name="KeysHeld" type="Node2D" parent="." unique_id=1153551317]
+position = Vector2(95, 222)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+
+[node name="Key1" type="Sprite2D" parent="KeysHeld" unique_id=598320438]
+
+[node name="Key2" type="Sprite2D" parent="KeysHeld" unique_id=328283699]
+position = Vector2(24.5, -1.070929e-06)
+
+[node name="Key3" type="Sprite2D" parent="KeysHeld" unique_id=1519055804]
+position = Vector2(54, -2.360415e-06)
+
+[node name="Key4" type="Sprite2D" parent="KeysHeld" unique_id=1151656226]
+position = Vector2(84, -3.6717565e-06)
+
+[node name="Key5" type="Sprite2D" parent="KeysHeld" unique_id=656470818]
+position = Vector2(110, -4.808253e-06)
 
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=1649117116]
 visible = false

@@ -24,9 +24,10 @@ func spawn_velocity():
 	var random_vector = Vector2(randf_range(-1,1),randi_range(-1,-3))
 	return random_vector
 
-func collect(_body):
-	print("Collected a " + Name)
-	queue_free()
+func collect(body):
+	if body.name == "Player":
+		print("Collected a " + Name)
+		queue_free()
 
 func nav_to_player(body):
 	if body.name == "Player":

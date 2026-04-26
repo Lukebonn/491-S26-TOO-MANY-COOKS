@@ -45,4 +45,6 @@ func _on_start_pressed():
 
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Test/PlayerEnemyTest/combat_test.tscn")
+	Global.First_Time_Tavern = true
+	Global.First_Time_Combat = false
+	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")

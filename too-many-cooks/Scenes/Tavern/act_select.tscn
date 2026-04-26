@@ -31,7 +31,7 @@ layout_mode = 0
 offset_left = -400.0
 offset_top = -250.0
 offset_right = 400.0
-offset_bottom = 250.0
+offset_bottom = 300.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oxpr4")
 
 [node name="Close" type="Button" parent="Panel" unique_id=2059311441]
@@ -40,20 +40,29 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -449.0
-offset_top = 76.0
-offset_right = -350.0
-offset_bottom = 122.0
+offset_left = -114.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 61.0
 grow_horizontal = 0
 theme = ExtResource("4_oxpr4")
 text = "Close"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
-layout_mode = 0
-offset_top = 19.0
-offset_right = 800.0
-offset_bottom = 500.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -240.0
+offset_right = 300.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/separation = 0
 
 [node name="Title" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1150372819]
 layout_mode = 2
@@ -100,7 +109,15 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 3"
 
+[node name="Practice" type="Button" parent="Panel/VBoxContainer" unique_id=1579989149]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
+text = "Practice"
+
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act1" to="." method="_on_act_1_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act2" to="." method="_on_act_2_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act3" to="." method="_on_act_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Practice" to="." method="_on_practice_pressed"]

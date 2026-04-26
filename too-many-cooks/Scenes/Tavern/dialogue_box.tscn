@@ -2,10 +2,25 @@
 
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="1_pecbt"]
 [ext_resource type="Script" uid="uid://b6g02boy87hiu" path="res://Scenes/Tavern/Scripts/dialogue_box.gd" id="2_frwkt"]
+[ext_resource type="Texture2D" uid="uid://mt6oy0n8d5ku" path="res://Scenes/Tavern/Art/Warrior/WarriorEmote0.png" id="3_0ohlx"]
 [ext_resource type="Script" uid="uid://5lu8qn2cgymi" path="res://Scenes/Tavern/Scripts/speakerboxtolength.gd" id="3_3p3df"]
 [ext_resource type="Texture2D" uid="uid://dirne86kb1of5" path="res://UI/AbbyP_Textbox_UI-V2.png" id="3_frwkt"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_3p3df"]
+[ext_resource type="Texture2D" uid="uid://dqmdofdis25ld" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/grinning.png" id="4_3piu5"]
+[ext_resource type="Texture2D" uid="uid://cm41fxj6l8cei" path="res://Scenes/Tavern/Art/Warrior/WarriorEmote1.png" id="4_uu58w"]
+[ext_resource type="Texture2D" uid="uid://csp322fud8o7h" path="res://Scenes/Tavern/Art/Warrior/WarriorEmote2.png" id="5_cll5l"]
+[ext_resource type="Texture2D" uid="uid://cb5fb1jeprmjd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cry.png" id="5_gn3e5"]
+[ext_resource type="Texture2D" uid="uid://by8schxoxexd5" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/rage.png" id="6_4f3m4"]
 [ext_resource type="Texture2D" uid="uid://cpckjjvf1m3x8" path="res://Scenes/Test/ProtoArt/owl.png" id="6_44sfb"]
+[ext_resource type="Texture2D" uid="uid://brh4p1w4417g0" path="res://Scenes/Tavern/Art/Warrior/WarriorEmote3.png" id="6_syq2u"]
+[ext_resource type="Texture2D" uid="uid://3b71e3mr4dj" path="res://Scenes/Tavern/Art/Warrior/WarriorEmote4.png" id="7_6gya7"]
+[ext_resource type="Texture2D" uid="uid://bpdtwfb3jh1ep" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk.png" id="7_uoild"]
+[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="13_ulsm0"]
+[ext_resource type="Texture2D" uid="uid://bh0bc2eq0lcxd" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/cat.png" id="14_63euo"]
+[ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="15_l21ky"]
+[ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="16_nc8fe"]
+[ext_resource type="Texture2D" uid="uid://bk8g3f1dd7b5w" path="res://Scenes/Test/ProtoArt/sheep.png" id="17_0o7cq"]
+[ext_resource type="Texture2D" uid="uid://bwp4rc8ki4io6" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/king_arthur.png" id="18_nefas"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3p3df"]
 texture = ExtResource("3_frwkt")
@@ -28,13 +43,16 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pecbt"]
 
-[node name="Dialogue Box" type="Control" unique_id=2003466752 node_paths=PackedStringArray("GrampsPortraits")]
+[node name="Dialogue Box" type="Control" unique_id=2003466752]
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_pecbt")
 script = ExtResource("2_frwkt")
-GrampsPortraits = [null, null, null, null, null]
+GrampsPortraits = Array[Texture]([ExtResource("6_44sfb"), ExtResource("4_3piu5"), ExtResource("5_gn3e5"), ExtResource("6_4f3m4"), ExtResource("7_uoild")])
+WarriorPortraits = Array[Texture]([ExtResource("3_0ohlx"), ExtResource("4_uu58w"), ExtResource("5_cll5l"), ExtResource("6_syq2u"), ExtResource("7_6gya7")])
+MagePortraits = Array[Texture]([ExtResource("13_ulsm0"), ExtResource("14_63euo"), ExtResource("15_l21ky"), ExtResource("6_4f3m4"), ExtResource("16_nc8fe")])
+RoguePortraits = Array[Texture]([ExtResource("17_0o7cq"), ExtResource("14_63euo"), ExtResource("5_gn3e5"), ExtResource("18_nefas"), ExtResource("7_uoild")])
 
 [node name="Container" type="Control" parent="." unique_id=629549548]
 layout_mode = 1
@@ -130,15 +148,13 @@ autowrap_trim_flags = 128
 vertical_alignment = 1
 
 [node name="SpeakerSprite" type="Sprite2D" parent="Container" unique_id=878769641]
-z_index = 1
-position = Vector2(-36, -365)
-scale = Vector2(0.5234375, 0.5234375)
-texture = ExtResource("6_44sfb")
+position = Vector2(0, -387)
+scale = Vector2(0.8476637, 0.84766376)
 
 [node name="MouseBlocker" type="Panel" parent="Container" unique_id=1929785020]
 layout_mode = 0
 offset_left = -576.0
-offset_top = -266.0
+offset_top = -524.0
 offset_right = 579.0
 offset_bottom = -27.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pecbt")

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_xx2eu"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_dgmkv"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="9_umfuv"]
+[ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="10_whjc4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -200,128 +201,129 @@ visible = false
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("9_dgmkv")]
 position = Vector2(682, -151)
 
-[node name="OrbPickup" parent="." unique_id=1955872402 instance=ExtResource("6_hdsb5")]
-position = Vector2(624, -96)
-
-[node name="OrbPickup2" parent="." unique_id=1876016118 instance=ExtResource("6_hdsb5")]
-position = Vector2(621, -214)
-
-[node name="OrbPickup3" parent="." unique_id=38725276 instance=ExtResource("6_hdsb5")]
-position = Vector2(96, -3)
-
-[node name="GoldPickup" parent="." unique_id=739019463 instance=ExtResource("7_xx2eu")]
-position = Vector2(368, -43)
-
-[node name="GoldPickup2" parent="." unique_id=820141488 instance=ExtResource("7_xx2eu")]
-position = Vector2(396, -36)
-
-[node name="GoldPickup3" parent="." unique_id=1276500753 instance=ExtResource("7_xx2eu")]
-position = Vector2(386, -52)
-
-[node name="GoldPickup4" parent="." unique_id=1006863036 instance=ExtResource("7_xx2eu")]
-position = Vector2(409, -52)
-
-[node name="GoldPickup5" parent="." unique_id=91904887 instance=ExtResource("7_xx2eu")]
-position = Vector2(85, 232)
-
-[node name="GoldPickup6" parent="." unique_id=1521915744 instance=ExtResource("7_xx2eu")]
-position = Vector2(28, 235)
-
-[node name="GoldPickup7" parent="." unique_id=333703505 instance=ExtResource("7_xx2eu")]
-position = Vector2(-9, 217)
-
-[node name="GoldPickup8" parent="." unique_id=722847257 instance=ExtResource("7_xx2eu")]
-position = Vector2(-60, 234)
-
-[node name="GoldPickup9" parent="." unique_id=1582464160 instance=ExtResource("7_xx2eu")]
-position = Vector2(-85, 228)
-
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2108959592]
 stream = ExtResource("9_umfuv")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
 
-[node name="RatEnemy" parent="." unique_id=1670622060 instance=ExtResource("8_xx2eu")]
+[node name="Enemies" type="Node2D" parent="." unique_id=1531149257]
+
+[node name="RatEnemy" parent="Enemies" unique_id=1670622060 instance=ExtResource("8_xx2eu")]
 position = Vector2(119, 11)
 
-[node name="RatEnemy2" parent="." unique_id=762446446 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy2" parent="Enemies" unique_id=762446446 instance=ExtResource("8_xx2eu")]
 position = Vector2(74, -15)
 
-[node name="RatEnemy3" parent="." unique_id=2001993308 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy3" parent="Enemies" unique_id=2001993308 instance=ExtResource("8_xx2eu")]
 position = Vector2(104, -49)
 
-[node name="RatEnemy4" parent="." unique_id=1896874471 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy4" parent="Enemies" unique_id=1896874471 instance=ExtResource("8_xx2eu")]
 position = Vector2(-155, -8)
 
-[node name="RatEnemy5" parent="." unique_id=1655852105 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy5" parent="Enemies" unique_id=1655852105 instance=ExtResource("8_xx2eu")]
 position = Vector2(-101, -73)
 
-[node name="RatEnemy6" parent="." unique_id=927661029 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy6" parent="Enemies" unique_id=927661029 instance=ExtResource("8_xx2eu")]
 position = Vector2(-98, 147)
 
-[node name="RatEnemy7" parent="." unique_id=251060323 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy7" parent="Enemies" unique_id=251060323 instance=ExtResource("8_xx2eu")]
 position = Vector2(-65, 172)
 
-[node name="RatEnemy8" parent="." unique_id=1885141508 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy8" parent="Enemies" unique_id=1885141508 instance=ExtResource("8_xx2eu")]
 position = Vector2(-12, 141)
 
-[node name="RatEnemy9" parent="." unique_id=488927875 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy9" parent="Enemies" unique_id=488927875 instance=ExtResource("8_xx2eu")]
 position = Vector2(44, 177)
 
-[node name="RatEnemy10" parent="." unique_id=1074628411 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy10" parent="Enemies" unique_id=1074628411 instance=ExtResource("8_xx2eu")]
 position = Vector2(96, 157)
 
-[node name="RatEnemy11" parent="." unique_id=1363709252 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy11" parent="Enemies" unique_id=1363709252 instance=ExtResource("8_xx2eu")]
 position = Vector2(-127, -185)
 
-[node name="RatEnemy12" parent="." unique_id=1079920347 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy12" parent="Enemies" unique_id=1079920347 instance=ExtResource("8_xx2eu")]
 position = Vector2(-55, -126)
 
-[node name="RatEnemy13" parent="." unique_id=207772059 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy13" parent="Enemies" unique_id=207772059 instance=ExtResource("8_xx2eu")]
 position = Vector2(28, -172)
 
-[node name="RatEnemy14" parent="." unique_id=89717229 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy14" parent="Enemies" unique_id=89717229 instance=ExtResource("8_xx2eu")]
 position = Vector2(81, -125)
 
-[node name="RatEnemy15" parent="." unique_id=792842379 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy15" parent="Enemies" unique_id=792842379 instance=ExtResource("8_xx2eu")]
 position = Vector2(240, -180)
 
-[node name="RatEnemy16" parent="." unique_id=919226249 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy16" parent="Enemies" unique_id=919226249 instance=ExtResource("8_xx2eu")]
 position = Vector2(264, -143)
 
-[node name="RatEnemy17" parent="." unique_id=798450016 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy17" parent="Enemies" unique_id=798450016 instance=ExtResource("8_xx2eu")]
 position = Vector2(246, -109)
 
-[node name="RatEnemy18" parent="." unique_id=1769971641 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy18" parent="Enemies" unique_id=1769971641 instance=ExtResource("8_xx2eu")]
 position = Vector2(339, -74)
 
-[node name="RatEnemy19" parent="." unique_id=2048182559 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy19" parent="Enemies" unique_id=2048182559 instance=ExtResource("8_xx2eu")]
 position = Vector2(323, -200)
 
-[node name="RatEnemy20" parent="." unique_id=1538838917 instance=ExtResource("8_xx2eu")]
-position = Vector2(448, -156)
+[node name="RatEnemy20" parent="Enemies" unique_id=1538838917 instance=ExtResource("8_xx2eu")]
+position = Vector2(398, -190)
 
-[node name="RatEnemy21" parent="." unique_id=1499599079 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy21" parent="Enemies" unique_id=1499599079 instance=ExtResource("8_xx2eu")]
 position = Vector2(414, -129)
 
-[node name="RatEnemy22" parent="." unique_id=1735136365 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy22" parent="Enemies" unique_id=1735136365 instance=ExtResource("8_xx2eu")]
 position = Vector2(571, -220)
 
-[node name="RatEnemy23" parent="." unique_id=1808724769 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy23" parent="Enemies" unique_id=1808724769 instance=ExtResource("8_xx2eu")]
 position = Vector2(620, -185)
 
-[node name="RatEnemy24" parent="." unique_id=2010576779 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy24" parent="Enemies" unique_id=2010576779 instance=ExtResource("8_xx2eu")]
 position = Vector2(673, -220)
 
-[node name="RatEnemy25" parent="." unique_id=1532346808 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy25" parent="Enemies" unique_id=1532346808 instance=ExtResource("8_xx2eu")]
 position = Vector2(575, -87)
 
-[node name="RatEnemy26" parent="." unique_id=917931578 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy26" parent="Enemies" unique_id=917931578 instance=ExtResource("8_xx2eu")]
 position = Vector2(625, -129)
 
-[node name="RatEnemy27" parent="." unique_id=806883242 instance=ExtResource("8_xx2eu")]
+[node name="RatEnemy27" parent="Enemies" unique_id=806883242 instance=ExtResource("8_xx2eu")]
 position = Vector2(675, -100)
+
+[node name="Pickups" type="Node2D" parent="." unique_id=1746118378]
+
+[node name="OrbPickup" parent="Pickups" unique_id=1955872402 instance=ExtResource("6_hdsb5")]
+position = Vector2(624, -96)
+
+[node name="GoldPickup" parent="Pickups" unique_id=739019463 instance=ExtResource("7_xx2eu")]
+position = Vector2(368, -43)
+
+[node name="GoldPickup2" parent="Pickups" unique_id=820141488 instance=ExtResource("7_xx2eu")]
+position = Vector2(396, -36)
+
+[node name="GoldPickup3" parent="Pickups" unique_id=1276500753 instance=ExtResource("7_xx2eu")]
+position = Vector2(386, -52)
+
+[node name="GoldPickup4" parent="Pickups" unique_id=1006863036 instance=ExtResource("7_xx2eu")]
+position = Vector2(409, -52)
+
+[node name="GoldPickup5" parent="Pickups" unique_id=91904887 instance=ExtResource("7_xx2eu")]
+position = Vector2(85, 232)
+
+[node name="GoldPickup6" parent="Pickups" unique_id=1521915744 instance=ExtResource("7_xx2eu")]
+position = Vector2(28, 235)
+
+[node name="GoldPickup7" parent="Pickups" unique_id=333703505 instance=ExtResource("7_xx2eu")]
+position = Vector2(-9, 217)
+
+[node name="GoldPickup8" parent="Pickups" unique_id=722847257 instance=ExtResource("7_xx2eu")]
+position = Vector2(-60, 234)
+
+[node name="GoldPickup9" parent="Pickups" unique_id=1582464160 instance=ExtResource("7_xx2eu")]
+position = Vector2(-85, 228)
+
+[node name="BigGoldPickup" parent="." unique_id=240953628 instance=ExtResource("10_whjc4")]
+position = Vector2(625, -219)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

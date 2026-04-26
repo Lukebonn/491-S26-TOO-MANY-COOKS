@@ -19,5 +19,6 @@ func _process(delta):
 	move_and_slide()
 
 func collect(body):
-	body.health += Value
-	queue_free()
+	if body.name == "Player":
+		body.health += Value
+		queue_free()

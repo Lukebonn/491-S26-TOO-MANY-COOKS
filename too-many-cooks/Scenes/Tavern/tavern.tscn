@@ -91,71 +91,6 @@ size = Vector2(128, 128)
 script = ExtResource("1_1uoo0")
 dialogue_ref = NodePath("Dialogue Box")
 
-[node name="DialogueOptions" type="Control" parent="." unique_id=1383414466 node_paths=PackedStringArray("dialogue_box_ref")]
-z_index = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = 127.0
-offset_top = -340.0
-offset_right = 167.0
-offset_bottom = -300.0
-theme = ExtResource("2_tqgpy")
-script = ExtResource("4_2xisf")
-dialogue_box_ref = NodePath("../Dialogue Box")
-
-[node name="PlayerChoiceA" type="Button" parent="DialogueOptions" unique_id=1365432212 node_paths=PackedStringArray("dialogue_ref", "hoverSound", "clickSound")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 273.0
-offset_top = -10.0
-offset_right = 765.0
-offset_bottom = 68.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Option 1"
-script = ExtResource("5_vrssr")
-dialogue_ref = NodePath("../../Dialogue Box")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="PlayerChoiceB" type="Button" parent="DialogueOptions" unique_id=811963169 node_paths=PackedStringArray("dialogue_ref")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 273.0
-offset_top = 76.0
-offset_right = 765.0
-offset_bottom = 154.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Option 2"
-script = ExtResource("5_vrssr")
-dialogue_ref = NodePath("../../Dialogue Box")
-
-[node name="PlayerChoiceC" type="Button" parent="DialogueOptions" unique_id=788143335 node_paths=PackedStringArray("dialogue_ref")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 273.0
-offset_top = 164.0
-offset_right = 765.0
-offset_bottom = 242.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Option 3"
-script = ExtResource("5_vrssr")
-dialogue_ref = NodePath("../../Dialogue Box")
-
 [node name="Tavern BG" type="Control" parent="." unique_id=2002706169 node_paths=PackedStringArray("dialogue_box_ref", "class_menu_ref", "act_select_ref", "class_select_ref")]
 layout_mode = 3
 anchors_preset = 0
@@ -172,10 +107,11 @@ class_select_ref = NodePath("../Class Select")
 
 [node name="Counter" type="Sprite2D" parent="Tavern BG" unique_id=1418745470]
 z_index = 1
-position = Vector2(1728, 326)
+position = Vector2(1640, 296)
 texture = ExtResource("6_gpyct")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
+position = Vector2(-88, -28)
 texture = ExtResource("5_msftv")
 centered = false
 
@@ -368,8 +304,10 @@ vertical_alignment = 1
 
 [node name="Class_NPCS" type="Control" parent="Tavern BG" unique_id=1807586656]
 anchors_preset = 0
-offset_left = 1239.0
-offset_right = 1239.0
+offset_left = 1151.0
+offset_top = -30.0
+offset_right = 1151.0
+offset_bottom = -30.0
 script = ExtResource("14_84rqq")
 
 [node name="Warrior_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1929041805 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
@@ -571,8 +509,10 @@ metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="NPCs" type="Control" parent="Tavern BG" unique_id=1772715436]
 anchors_preset = 0
-offset_left = 1239.0
-offset_right = 1239.0
+offset_left = 1151.0
+offset_top = -30.0
+offset_right = 1151.0
+offset_bottom = -30.0
 
 [node name="Gramps" type="TextureButton" parent="Tavern BG/NPCs" unique_id=952928426]
 layout_mode = 0
@@ -604,10 +544,10 @@ script = ExtResource("28_1gied")
 [node name="Exit" type="TextureButton" parent="Tavern BG" unique_id=1702364782]
 z_index = 1
 layout_mode = 0
-offset_left = 3130.0
-offset_top = 95.0
-offset_right = 3258.0
-offset_bottom = 223.0
+offset_left = 3042.0
+offset_top = 65.0
+offset_right = 3170.0
+offset_bottom = 193.0
 theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("31_kb1dg")
 stretch_mode = 0
@@ -637,10 +577,10 @@ vertical_alignment = 1
 z_index = 1
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 0
-offset_left = 1732.0
-offset_top = 540.0
-offset_right = 1852.0
-offset_bottom = 636.0
+offset_left = 1644.0
+offset_top = 510.0
+offset_right = 1764.0
+offset_bottom = 606.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a55l7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tavern BG/Journal" unique_id=1653704222]
@@ -668,6 +608,71 @@ offset_right = 616.0
 offset_bottom = 1045.0
 
 [node name="Dialogue Box" parent="." unique_id=2003466752 instance=ExtResource("2_djqff")]
+
+[node name="DialogueOptions" type="Control" parent="." unique_id=1383414466 node_paths=PackedStringArray("dialogue_box_ref")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 127.0
+offset_top = -340.0
+offset_right = 167.0
+offset_bottom = -300.0
+theme = ExtResource("2_tqgpy")
+script = ExtResource("4_2xisf")
+dialogue_box_ref = NodePath("../Dialogue Box")
+
+[node name="PlayerChoiceA" type="Button" parent="DialogueOptions" unique_id=1365432212 node_paths=PackedStringArray("dialogue_ref", "hoverSound", "clickSound")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.0
+offset_top = -10.0
+offset_right = 765.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 1"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
+
+[node name="PlayerChoiceB" type="Button" parent="DialogueOptions" unique_id=811963169 node_paths=PackedStringArray("dialogue_ref")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.0
+offset_top = 76.0
+offset_right = 765.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 2"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
+
+[node name="PlayerChoiceC" type="Button" parent="DialogueOptions" unique_id=788143335 node_paths=PackedStringArray("dialogue_ref")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.0
+offset_top = 164.0
+offset_right = 765.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Option 3"
+script = ExtResource("5_vrssr")
+dialogue_ref = NodePath("../../Dialogue Box")
 
 [node name="HeadsUpUI" type="Control" parent="." unique_id=407470600]
 layout_mode = 3
@@ -828,9 +833,6 @@ stream = ExtResource("47_3lod4")
 [node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=812580467]
 stream = ExtResource("48_jt0a5")
 
-[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceA" to="DialogueOptions/PlayerChoiceA" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceB" to="DialogueOptions/PlayerChoiceB" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceC" to="DialogueOptions/PlayerChoiceC" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" to="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" method="_on_mouse_entered"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
@@ -839,6 +841,9 @@ stream = ExtResource("48_jt0a5")
 [connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
 [connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
 [connection signal="show_question" from="Dialogue Box" to="DialogueOptions" method="_on_dialogue_box_show_question"]
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceA" to="DialogueOptions/PlayerChoiceA" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceB" to="DialogueOptions/PlayerChoiceB" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceC" to="DialogueOptions/PlayerChoiceC" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_on_left_panel_mouse_entered"]
 [connection signal="mouse_exited" from="HeadsUpUI/LeftPanel" to="Tavern BG" method="_either_panel_mouse_exited"]
 [connection signal="mouse_entered" from="HeadsUpUI/RightPanel" to="Tavern BG" method="_on_right_panel_mouse_entered"]

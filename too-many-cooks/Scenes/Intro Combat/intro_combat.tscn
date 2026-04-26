@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_sp0by"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="5_ltqhe"]
 [ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="7_sp0by"]
-[ext_resource type="Texture2D" uid="uid://c7m26e7qabsm6" path="res://Scenes/Test/ProtoArt/ControlsNoRanged.png" id="9_efvaj"]
-[ext_resource type="PackedScene" uid="uid://df5nnvgfc8kvw" path="res://Characters/Enemies/Rat/TutorialRatEnemy.tscn" id="10_glbk7"]
+[ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="9_glbk7"]
+[ext_resource type="PackedScene" uid="uid://df5nnvgfc8kvw" path="res://Characters/Enemies/rat/TutorialRatEnemy.tscn" id="10_glbk7"]
 [ext_resource type="PackedScene" uid="uid://dh2e5arjhgwwb" path="res://barrier.tscn" id="10_pa5cx"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="11_ajqdd"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="11_ajqdd"]
 [ext_resource type="AudioStream" uid="uid://buuva0b5o55he" path="res://Audio/Music/HallwayAmbience.ogg" id="11_f0ry7"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="11_nnhsf"]
 
@@ -65,7 +65,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802641571]
 position = Vector2(0, -15.999998)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("9_efvaj")
+texture = ExtResource("9_glbk7")
 
 [node name="Insta-KO Squad" type="Node" parent="." unique_id=2122833505]
 process_mode = 4

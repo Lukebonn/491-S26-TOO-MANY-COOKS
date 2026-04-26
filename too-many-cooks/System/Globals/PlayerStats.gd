@@ -5,8 +5,8 @@ extends Node
 #make sure they are typed variables too, most will be floats
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
-var Gold := 999
-var Orbs : int = 999
+var Gold := 0
+var Orbs : int = 0
 #Gold/Orbs when entering floor, reverted back to on Retry to avoid infinite farm.
 var temp_gold : int = 0
 var temp_orb : int = 0
@@ -14,6 +14,32 @@ var temp_orb : int = 0
 ##speed stats for the player
 #var Max_Speed = 200.0
 #var Speed_Slowdown = 150.0
+
+##inventory item cache
+#this is meant to only be a temporary storage area for these kind of level exclusive variables
+#these variables will be reset whenever the player switches to a new scene by default
+#just so that the complexity of this variable doesn't outweigh any existing persistence and for simplicity
+##types of keys the player can pick up in a level
+enum KeyType {
+	BLOOD,
+	GOLD,
+	JADE,
+	CRYSTAL,
+	IRON
+}
+
+##erased at the beginning of every scene IMPORTANT (for now)
+var keys: Array[KeyType] = []
+
+func add_key(key: KeyType) -> void:
+	if key not in keys:
+		keys.append(key)
+
+func has_key(key: KeyType) -> bool:
+	return key in keys
+
+func remove_key(key: KeyType) -> void:
+	keys.erase(key)
 
 ##health and mana, 
 #these are directly edited from tavern upgrades
