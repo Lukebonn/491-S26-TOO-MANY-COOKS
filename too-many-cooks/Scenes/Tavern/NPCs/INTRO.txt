@@ -1,6 +1,6 @@
 [0]No! I won’t let another one fall in this wretched place!
 [0]Hya! Take that!
-[0]*...panting…*
+[0]*...panting...*
 [0].... I’m getting too old for this. Hmm, still breathing there? Good, you owe me now.#
 #-------intro tavern speech below
 [5]You’re awake now, good. Take it slow getting up, you were in rough shape. I’m no doctor but I've patched you up the best I could.
