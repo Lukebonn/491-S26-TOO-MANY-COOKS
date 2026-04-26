@@ -277,8 +277,10 @@ position = Vector2(-82, -1422)
 
 [node name="locks" type="Node2D" parent="Keys" unique_id=242323807]
 
-[node name="ObjLock" parent="Keys/locks" unique_id=1768776111 instance=ExtResource("15_yh5gs")]
-position = Vector2(-30, -21)
+[node name="Node2D" parent="Keys/locks" unique_id=670847342 instance=ExtResource("4_1g3ks")]
+position = Vector2(82, 85)
+
+[node name="ObjLock" parent="Keys/locks/Node2D" unique_id=1768776111 instance=ExtResource("15_yh5gs")]
 keyType = 1
 displayName = "Gold Key"
 

@@ -8,6 +8,7 @@ signal on_unlock
 
 func _ready() -> void:
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
+	add_to_group("lock")
 
 func unlock() -> void:
 	if PlayerStats.has_key(keyType):
