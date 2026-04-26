@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7mtvcfyorufg"]
 
-[ext_resource type="Script" uid="uid://buqfaih5ljs05" path="res://Scenes/Intro Cutscene/intro_mgr.gd" id="1_6wkej"]
+[ext_resource type="Script" uid="uid://buqfaih5ljs05" path="res://Scenes/Intro Cutscene/intro_manager.gd" id="1_6wkej"]
 [ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="2_ct673"]
 [ext_resource type="Texture2D" uid="uid://usglfupm6fry" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P1.png" id="3_w8r81"]
 [ext_resource type="Texture2D" uid="uid://cjehyy065fx5x" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P2.png" id="4_04lgd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cylyuy2wv0pir" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P6.webp" id="9_lna37"]
 [ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline1.wav" id="10_j8cwx"]
 [ext_resource type="AudioStream" uid="uid://bo2t82rts7l8j" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline3.wav" id="11_6wkej"]
+[ext_resource type="AudioStream" uid="uid://b2qcphvbnrwxk" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline10.wav" id="11_py1tv"]
 [ext_resource type="Texture2D" uid="uid://b38m7550w21sa" path="res://UI/Img/Input/input_lmb.png" id="12_6wkej"]
 [ext_resource type="AudioStream" uid="uid://cwyd2wyshklu4" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline4.wav" id="12_11xfy"]
 [ext_resource type="AudioStream" uid="uid://nix28ggtl4hx" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline5.wav" id="13_py1tv"]
@@ -18,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://cl86fmkvr4k43" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline7.wav" id="16_r5ao7"]
 [ext_resource type="AudioStream" uid="uid://dkxq3qvdf675d" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline8.wav" id="17_efp4m"]
 [ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline9.wav" id="18_k2rm0"]
-[ext_resource type="AudioStream" uid="uid://bg6r2imvjm00r" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline10.wav" id="19_ssywp"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="20_6wkej"]
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_11xfy"]
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wkej")
 Subtitles = Array[String](["Let me spin you a yarn...", "In the town of Litshire, the people lived in an age of prosperity.", "Year after year, their crops were bountiful, and traders came far and wide to engage in commerce.", "Because of Litshire, the lands of Fuania began to prosper. There was peace.", "The Rat King...", "Like a plague, he and his marauder forces swept throughout the land. Plundering and crushing all in their way.", "Many heroes began to come together to fight back against the Rat King and his legion.", "But their efforts have been without advance. And they have all but been snuffed out.", "Tales of the Rat King's terror have spread throughout and to distant lands. And yet none have come to aid us.", "And thus, we are doomed."])
-Voice = Array[AudioStream]([ExtResource("10_j8cwx"), ExtResource("15_8og2a"), ExtResource("11_6wkej"), ExtResource("12_11xfy"), ExtResource("13_py1tv"), ExtResource("14_ejlr2"), ExtResource("16_r5ao7"), ExtResource("17_efp4m"), ExtResource("18_k2rm0"), ExtResource("19_ssywp")])
+Voice = Array[AudioStream]([ExtResource("10_j8cwx"), ExtResource("15_8og2a"), ExtResource("11_6wkej"), ExtResource("12_11xfy"), ExtResource("13_py1tv"), ExtResource("14_ejlr2"), ExtResource("16_r5ao7"), ExtResource("17_efp4m"), ExtResource("18_k2rm0"), ExtResource("11_py1tv")])
 NextPage = Array[bool]([false, true, false, true, true, false, true, true, true, false])
 
 [node name="PageArrow" type="Node2D" parent="." unique_id=506423588]
@@ -47,6 +47,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("12_6wkej")
 
 [node name="Label" type="Label" parent="PageArrow" unique_id=896389206]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -96,6 +97,7 @@ vertical_alignment = 2
 stream = ExtResource("10_j8cwx")
 
 [node name="Timer" type="Timer" parent="." unique_id=1927558707]
+wait_time = 0.4
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1494846053]

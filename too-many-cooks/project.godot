@@ -30,10 +30,6 @@ PlayerStatusEffects="*uid://b7iaibxa1wpy3"
 
 window/stretch/mode="canvas_items"
 
-[global_group]
-
-Player=""
-
 [input]
 
 move_up={

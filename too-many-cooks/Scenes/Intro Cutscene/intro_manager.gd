@@ -15,6 +15,7 @@ var page_index : int = -1
 var sub_ref : RichTextLabel
 var voice_ref : AudioStreamPlayer
 var wait_ref : Timer
+var music_reference: AudioStreamPlayer
 
 func _ready():
 	Global.First_Time_Combat = true
@@ -24,8 +25,8 @@ func _ready():
 	sub_ref = $Subtitle
 	voice_ref = $Voice
 	wait_ref = $Timer
+	music_reference = $Music
 	next_line(0)
-	$Music.play()
 
 func _process(_delta):
 	var input = Input.is_action_just_pressed("attack") or Input.is_action_just_pressed("dash")
@@ -38,6 +39,9 @@ func next_line(i: int):
 	if can_advance and index < Subtitles.size()-1:
 		index = i
 		can_advance = false
+		
+		if index >= 1:
+			if not music_reference.playing: music_reference.play()
 		
 		#Fade subtitle out, wait for fade to complete.
 		voice_ref.stop()
