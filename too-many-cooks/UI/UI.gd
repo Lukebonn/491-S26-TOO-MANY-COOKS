@@ -45,7 +45,7 @@ func _ready() -> void:
 		#catch case, we don't want "You Died!" screen in intro combat
 		if get_tree().current_scene.name != "IntroCombat":
 			player.connect("playerDeath", _on_player_death)
-		print("hi")
+		#print("hi")
 	show()
 
 
@@ -58,10 +58,8 @@ func _process(delta: float) -> void:
 		else:
 			settings.do_settings_action("show_menu")
 		get_tree().create_timer(1, true).timeout.connect(on_pause_cooldown_finished)
-	if settings.in_menu == true:
-		get_tree().paused = true
-	else:
-		get_tree().paused = false
+	if settings.in_menu == true: get_tree().paused = true
+	else: get_tree().paused = false
 	if player:
 		# ensures that the player's Health can only ever be between
 		# 0 and the player's Max Health.
@@ -108,13 +106,21 @@ func _on_player_death() -> void:
 	# wait 1 second, then display the death screen.
 
 func _on_retry_button_button_down() -> void:
-	PlayerStats.Gold = PlayerStats.temp_gold
-	PlayerStats.Orbs = PlayerStats.temp_orb
+	#PlayerStats.Gold = PlayerStats.temp_gold
+	#PlayerStats.Orbs = PlayerStats.temp_orb
+	PlayerStats.Gold -= PlayerStats.Floor_Gold
+	PlayerStats.Orbs -= PlayerStats.Floor_Orbs
+	PlayerStats.Floor_Gold = 0
+	PlayerStats.Floor_Orbs = 0
 	get_tree().reload_current_scene()
 	# restarts the combat scene
 
 
 func _on_return_button_button_down() -> void:
+	PlayerStats.Gold -= PlayerStats.Floor_Gold
+	PlayerStats.Orbs -= PlayerStats.Floor_Orbs
+	PlayerStats.Floor_Gold = 0
+	PlayerStats.Floor_Orbs = 0
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
 

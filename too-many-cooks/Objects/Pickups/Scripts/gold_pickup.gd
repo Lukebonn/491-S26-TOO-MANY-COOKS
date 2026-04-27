@@ -25,4 +25,5 @@ func _process(delta):
 func collect(body):
 	if body.name == "Player":
 		PlayerStats.Gold += Value
+		PlayerStats.Floor_Gold += Value
 		queue_free()

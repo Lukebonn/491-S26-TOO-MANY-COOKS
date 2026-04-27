@@ -5,8 +5,10 @@ var Queue : Array = []
 
 func load_level() -> void:
 	#Save current Gold to temporary value.
-	PlayerStats.temp_gold = PlayerStats.Gold
-	PlayerStats.temp_orb = PlayerStats.Orbs
+	#PlayerStats.temp_gold = PlayerStats.Gold
+	#PlayerStats.temp_orb = PlayerStats.Orbs
+	PlayerStats.Floor_Gold = 0
+	PlayerStats.Floor_Orbs = 0
 	if Queue.size() != 0:
 		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1).timeout

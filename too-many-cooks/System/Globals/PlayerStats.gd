@@ -8,8 +8,8 @@ extends Node
 var Gold := 0
 var Orbs : int = 0
 #Gold/Orbs when entering floor, reverted back to on Retry to avoid infinite farm.
-var temp_gold : int = 0
-var temp_orb : int = 0
+var Floor_Gold : int = 0 #prev temp_gold
+var Floor_Orbs : int = 0 #prev temp_orbs
 
 ##speed stats for the player
 #var Max_Speed = 200.0
@@ -26,7 +26,7 @@ enum KeyType {
 	JADE,
 	CRYSTAL,
 	IRON
-}
+} #son what is this
 
 ##erased at the beginning of every scene IMPORTANT (for now)
 var keys: Array[KeyType] = []
