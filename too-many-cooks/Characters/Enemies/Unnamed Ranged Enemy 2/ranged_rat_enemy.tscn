@@ -182,6 +182,7 @@ script = ExtResource("1_ca75f")
 shape = SubResource("CircleShape2D_bvqvk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1731014010]
+visibility_layer = 2
 position = Vector2(20, 26)
 scale = Vector2(0.66493094, 0.81007844)
 sprite_frames = SubResource("SpriteFrames_hk7jx")

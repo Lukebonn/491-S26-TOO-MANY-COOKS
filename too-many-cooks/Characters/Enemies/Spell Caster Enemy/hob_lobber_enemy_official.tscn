@@ -125,6 +125,7 @@ shape = SubResource("RectangleShape2D_bhto8")
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1721926211]
+visibility_layer = 2
 position = Vector2(36.258064, 31.000004)
 scale = Vector2(1.1612903, 1.0000001)
 sprite_frames = SubResource("SpriteFrames_44k4j")
