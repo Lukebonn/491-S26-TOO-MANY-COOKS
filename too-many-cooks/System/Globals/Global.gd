@@ -23,3 +23,7 @@ var Has_Rogue_NPC := false
 
 var Act_2_Unlocked := false
 var Act_3_Unlocked := false
+
+var Mage_Objective := false
+var Warrior_Objective := false
+var Rogue_Objective := false

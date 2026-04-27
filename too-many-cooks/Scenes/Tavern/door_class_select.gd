@@ -6,15 +6,18 @@ signal class_checked(name_of_class: String)
 
 func _on_warrior_pressed():
 	class_selected.emit("Warrior")
+	Global.Warrior_Objective = true
 	hide_menu_top()
 
 func _on_rogue_pressed():
 	class_selected.emit("Rogue")
+	Global.Rogue_Objective = true
 	hide_menu_top()
 
 
 func _on_magician_pressed():
 	class_selected.emit("Mage")
+	Global.Mage_Objective = true
 	hide_menu_top()
 
 
