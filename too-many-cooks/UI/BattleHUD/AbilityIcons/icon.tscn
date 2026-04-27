@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cp1dvpor1pvyf"]
+
+[ext_resource type="Texture2D" uid="uid://8s6is7kb5j5w" path="res://UI/BattleHUD/AbilityIcons/Sprites/Icon_Frame1.png" id="1_80drj"]
+[ext_resource type="Script" uid="uid://6ewggl7n6sxm" path="res://UI/BattleHUD/AbilityIcons/icon.gd" id="1_yoyv3"]
+
+[node name="AbilityIcon" type="Control" unique_id=1152288890]
+layout_mode = 3
+anchor_right = 0.035
+anchor_bottom = 0.09
+offset_right = -0.3199997
+offset_bottom = -0.3200035
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yoyv3")
+
+[node name="Frame" type="TextureRect" parent="." unique_id=341173742]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_80drj")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1632241512]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 37.0
+offset_bottom = 37.0
