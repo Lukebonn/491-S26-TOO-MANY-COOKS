@@ -1,33 +1,71 @@
 [gd_scene format=3 uid="uid://20xku3l2jijx"]
 
-[ext_resource type="Texture2D" uid="uid://8s6is7kb5j5w" path="res://UI/BattleHUD/AbilityIcons/Sprites/Icon_Frame1.png" id="1_a5fmf"]
+[ext_resource type="PackedScene" uid="uid://cp1dvpor1pvyf" path="res://UI/BattleHUD/AbilityIcons/icon.tscn" id="1_a5fmf"]
 
 [node name="AbilityIcons" type="Control" unique_id=164958451]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.089
+anchor_bottom = 0.057000004
+offset_right = -0.5279999
+offset_bottom = 0.063999176
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1984074386]
 layout_mode = 0
-offset_right = 104.0
-offset_bottom = 31.0
-theme_override_constants/separation = 8
+offset_right = 143.0
+offset_bottom = 56.0
+theme_override_constants/separation = 71
 alignment = 1
 
-[node name="AttackIcon" type="TextureRect" parent="HBoxContainer" unique_id=1091715925]
+[node name="AttackIcon" parent="HBoxContainer" unique_id=1152288890 instance=ExtResource("1_a5fmf")]
 layout_mode = 2
-texture = ExtResource("1_a5fmf")
-stretch_mode = 4
 
-[node name="DashIcon" type="TextureRect" parent="HBoxContainer" unique_id=326386931]
-layout_mode = 2
-texture = ExtResource("1_a5fmf")
-stretch_mode = 4
+[node name="ButtonSymbol" type="TextureRect" parent="HBoxContainer/AttackIcon" unique_id=373366553]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 66.0
 
-[node name="MagicIcon" type="TextureRect" parent="HBoxContainer" unique_id=1420745447]
+[node name="DashIcon" parent="HBoxContainer" unique_id=203168190 instance=ExtResource("1_a5fmf")]
 layout_mode = 2
-texture = ExtResource("1_a5fmf")
-stretch_mode = 4
+
+[node name="ButtonSymbol" type="TextureRect" parent="HBoxContainer/DashIcon" unique_id=958377308]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 66.0
+
+[node name="MagicIcons" type="Control" parent="HBoxContainer" unique_id=743762384]
+layout_mode = 2
+
+[node name="Current" parent="HBoxContainer/MagicIcons" unique_id=283412923 instance=ExtResource("1_a5fmf")]
+z_index = 1
+layout_mode = 1
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -0.15999985
+offset_right = 39.000004
+offset_bottom = 12.0
+
+[node name="ButtonSymbol" type="TextureRect" parent="HBoxContainer/MagicIcons/Current" unique_id=2000152085]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 66.0
+
+[node name="Next" parent="HBoxContainer/MagicIcons" unique_id=1575525594 instance=ExtResource("1_a5fmf")]
+layout_mode = 1
+offset_left = -23.999996
+offset_top = 7.0
+offset_right = -23.999996
+offset_bottom = 6.6799965
+
+[node name="Last" parent="HBoxContainer/MagicIcons" unique_id=1326684781 instance=ExtResource("1_a5fmf")]
+layout_mode = 1
+anchor_right = 0.0
+anchor_bottom = 0.70000005
+offset_left = 23.000004
+offset_top = 7.0
+offset_right = 23.000004
+offset_bottom = -27.480007
