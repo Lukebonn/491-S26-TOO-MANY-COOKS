@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="15_hmr1b"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="16_fe3yj"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="17_anv7p"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="18_0x0kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(35, 20)
@@ -165,6 +166,7 @@ Drop = ExtResource("17_anv7p")
 Drop_Amount = 3
 Drop_Amount_Max = 5
 Death_Sound = NodePath("../Die")
+dust_effect = ExtResource("18_0x0kf")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

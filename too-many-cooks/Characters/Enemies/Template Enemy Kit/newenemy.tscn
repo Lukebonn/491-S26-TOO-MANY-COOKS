@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="7_pjequ"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="8_hskka"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="9_iy4yc"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="10_2x5xl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
@@ -90,7 +91,6 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("5_ij8oh")
-Chase_Speed = 50
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -110,6 +110,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 script = ExtResource("8_hskka")
 Drop = ExtResource("9_iy4yc")
 Drop_Amount = 10
+dust_effect = ExtResource("10_2x5xl")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

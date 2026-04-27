@@ -14,6 +14,8 @@ extends EnemyState
 # the enemy can die twice sometimes so for now im doing this
 var has_died = false
 
+@export var dust_effect: PackedScene
+
 func enter_state(enemy_node):
 	if !has_died:
 		has_died = true
@@ -25,6 +27,17 @@ func enter_state(enemy_node):
 			get_parent().onEnemyDeath.emit()
 		if animation_name != "NONE":
 			await $"../AnimatedSprite2D".animation_finished
+		
+		# Spawn dust particles at enemy position
+		if dust_effect:
+			print("SPAWNING DUST at: ", enemy_ref.global_position)
+			var dust = dust_effect.instantiate()
+			dust.global_position = enemy_ref.global_position
+			get_parent().add_sibling(dust)
+			print("DUST SPAWNED: ", dust)
+		else:
+			print("DUST EFFECT IS NULL")
+		
 		get_parent().call_deferred("queue_free")
 		PlayerStats.KillCount += 1
 		if EnemyStats.enemies_in_room > 0:

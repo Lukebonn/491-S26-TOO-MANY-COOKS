@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8osew8i4x2lu"]
 
-[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_rl6xh"]
+[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/rat/rat_enemy.gd" id="1_rl6xh"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_cex3y"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_7iyv3"]
 [ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="3_pa5n2"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="12_egmnq"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="15_xry7b"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="16_u2p1p"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="18_u2p1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(18, 9)
@@ -164,6 +165,7 @@ Drop = ExtResource("12_egmnq")
 Drop_Amount = 1
 Drop_Amount_Max = 2
 Death_Sound = NodePath("../Die")
+dust_effect = ExtResource("18_u2p1p")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

@@ -10,11 +10,12 @@
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="7_bhto8"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_w75sg"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="8_que0b"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_uc1wa"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_uc1wa"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_1p4wm"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="12_nuatx"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="13_y0em6"]
 [ext_resource type="Resource" uid="uid://vpcrbq6lii5t" path="res://Objects/Pickups/PickupData/PickupHp.tres" id="14_y0em6"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="16_x7ti6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
@@ -96,7 +97,6 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("4_31dny")
-Chase_Speed = 50
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -137,6 +137,7 @@ Drops = Array[ExtResource("12_1p4wm")]([ExtResource("13_y0em6"), ExtResource("14
 Drop = ExtResource("12_nuatx")
 Drop_Amount = 1
 Drop_Amount_Max = 10
+dust_effect = ExtResource("16_x7ti6")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

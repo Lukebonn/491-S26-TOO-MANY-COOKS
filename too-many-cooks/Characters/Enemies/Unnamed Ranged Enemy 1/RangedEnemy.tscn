@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="13_ljnpv"]
 [ext_resource type="Resource" uid="uid://vpcrbq6lii5t" path="res://Objects/Pickups/PickupData/PickupHp.tres" id="14_pk40h"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_d85uk"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="19_23msy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(31, 11)
@@ -172,6 +173,7 @@ Drops = Array[ExtResource("12_p24jc")]([ExtResource("13_ljnpv"), ExtResource("14
 Drop = ExtResource("15_d85uk")
 Drop_Amount = 1
 Drop_Amount_Max = 10
+dust_effect = ExtResource("19_23msy")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

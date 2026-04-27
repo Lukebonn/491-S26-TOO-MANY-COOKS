@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://qqer1sck7tqn" path="res://Characters/Enemies/mice/black/2.png" id="14_g1fmx"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="14_nmjh8"]
 [ext_resource type="Texture2D" uid="uid://blf2g0ay12jtq" path="res://Characters/Enemies/mice/black/3.png" id="15_bs8a6"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="15_ocypi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 
@@ -108,7 +109,6 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("5_mxcca")
-Chase_Speed = 50
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -151,6 +151,7 @@ Drops = Array[ExtResource("12_bs8a6")]([ExtResource("13_ocypi")])
 Drop = ExtResource("14_nmjh8")
 Drop_Amount = 1
 Drop_Amount_Max = 1
+dust_effect = ExtResource("15_ocypi")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
