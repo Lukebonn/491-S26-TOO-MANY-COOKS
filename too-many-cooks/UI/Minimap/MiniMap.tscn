@@ -20,6 +20,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="MiniMap/SubViewportContainer" unique_id=242619080]
 handle_input_locally = false
+canvas_cull_mask = 4294967293
 size = Vector2i(258, 258)
 render_target_update_mode = 4
 script = ExtResource("1_bhlx6")

@@ -107,6 +107,7 @@ stream = ExtResource("2_0x0kf")
 stream = ExtResource("2_0x0kf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
+visibility_layer = 2
 position = Vector2(0.25, -2.75)
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_wcvgi")

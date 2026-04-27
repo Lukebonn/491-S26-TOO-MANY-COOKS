@@ -449,6 +449,7 @@ position = Vector2(326, 165)
 script = ExtResource("1_e4o8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1207490985]
+visibility_layer = 2
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mj271")

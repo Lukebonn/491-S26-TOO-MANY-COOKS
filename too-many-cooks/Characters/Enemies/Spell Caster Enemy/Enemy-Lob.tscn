@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ig2vcmpn3mgq"]
 
 [ext_resource type="Texture2D" uid="uid://cqnvnmqxn71vy" path="res://Scenes/Test/ProtoArt/Enemy/Icon7.png" id="1_cst3d"]
-[ext_resource type="Script" uid="uid://kjm2vndsic12" path="res://Characters/Enemies/Hob_Lobber_Enemy/EnemyLobProjectile.gd" id="1_r24qm"]
+[ext_resource type="Script" uid="uid://kjm2vndsic12" path="res://Characters/Enemies/Spell Caster Enemy/EnemyLobProjectile.gd" id="1_r24qm"]
 [ext_resource type="Texture2D" uid="uid://xl83vhjvalyo" path="res://Scenes/Test/ProtoArt/Enemy/poison AoE animation.png" id="2_6uor8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lb7c"]
@@ -143,6 +143,7 @@ animations = [{
 radius = 268.01678
 
 [node name="Area2D" type="Area2D" unique_id=724398940]
+visibility_layer = 2
 script = ExtResource("1_r24qm")
 projectile_gravity = 100.0
 launch_speed = 3.0
