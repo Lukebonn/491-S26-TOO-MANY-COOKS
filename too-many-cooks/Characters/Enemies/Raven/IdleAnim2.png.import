@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmm0mhgp0p5q0"
-path="res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"
+uid="uid://buy36y0hwsows"
+path="res://.godot/imported/IdleAnim2.png-00374d72066563d3355b0aad9e7ad21b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mice/brown/1.png"
-dest_files=["res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"]
+source_file="res://Characters/Enemies/Raven/IdleAnim2.png"
+dest_files=["res://.godot/imported/IdleAnim2.png-00374d72066563d3355b0aad9e7ad21b.ctex"]
 
 [params]
 

@@ -7,6 +7,7 @@ var player: Node # stores a reference to the player node in the Combat Scene.
 @export var key_sprites: Array[Texture2D]
 var pauseDisabled = false
 var level_complete = false
+var player_dead = false
 var objective = 0
 var warrior_objective = 0
 var rogue_objective = 0
@@ -56,7 +57,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and (not settings.in_settings_menu) and (not tavern_warning.warning_prompted) and (not pauseDisabled):
+	if Input.is_action_just_pressed("pause") and (not player_dead) and (not settings.in_settings_menu) and (not tavern_warning.warning_prompted) and (not pauseDisabled):
 		pauseDisabled = true
 		if settings.in_menu == true:
 			settings.do_settings_action("hide_menu")
@@ -105,8 +106,44 @@ func _on_player_not_enough_mana() -> void:
 # another signal, but I couldn't think of another way to do this.
 
 func _on_player_death() -> void:
-	await get_tree().create_timer(1.0).timeout
+	player_dead = true
 	$DeathScreen.visible = true
+	var tween = $DeathScreen.create_tween()
+	tween.tween_property(
+		$DeathScreen, 
+		"color",
+		Color(0.10, 0.1, 0.1, 0.58),
+		1).set_trans(Tween.TRANS_LINEAR)
+	#await get_tree().create_timer(1.0).timeout
+	await tween.finished
+	var tween2 = $DeathScreen.create_tween()
+	var text_tween = $DeathScreen/DeathText.create_tween()
+	var retry_tween = $DeathScreen/RetryButton.create_tween()
+	tween2.tween_property(
+		$DeathScreen, 
+		"color",
+		Color(0.6, 0.0, 0.0, 0.5),
+		3).set_trans(Tween.TRANS_LINEAR)
+		# color (0.10, 0.10, 0.10, 0.58)
+	
+	text_tween.tween_property(
+		$DeathScreen/DeathText, 
+		"position",
+		Vector2($DeathScreen/DeathText.position.x, 100),
+		1).set_trans(Tween.TRANS_EXPO)
+	
+	retry_tween.tween_property(
+		$DeathScreen/RetryButton, 
+		"position",
+		Vector2($DeathScreen/RetryButton.position.x, 256.0),
+		1).set_trans(Tween.TRANS_EXPO)
+	await get_tree().create_timer(0.1).timeout
+	var return_tween = $DeathScreen/ReturnButton.create_tween()
+	return_tween.tween_property(
+		$DeathScreen/ReturnButton, 
+		"position",
+		Vector2($DeathScreen/ReturnButton.position.x, 360.0),
+		1).set_trans(Tween.TRANS_EXPO)
 	# When the player unfortunately passes away, 
 	# wait 1 second, then display the death screen.
 
@@ -148,17 +185,6 @@ func quest_received():
 			$Quest2.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
 			if PlayerStats.Quest1Orbs >= 1:
 				$Quest2.set_text("Quest complete! Talk to Mage!")
-
-func _on_pause_retry_button_down() -> void:
-	get_tree().paused = false
-	PlayerStats.Gold = PlayerStats.temp_gold
-	PlayerStats.Orbs = PlayerStats.temp_orb
-	get_tree().reload_current_scene()
-
-
-func _on_retry_return_button_down() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 
 func on_pause_cooldown_finished() -> void:
 	pauseDisabled = false
@@ -203,3 +229,6 @@ func _on_level_complete() -> void:
 func _on_advance_button_pressed() -> void:
 	level_complete = false
 	LevelQueue.load_level()
+
+func _on_return_button_pressed() -> void:
+	settings.show_warning_menu.emit()

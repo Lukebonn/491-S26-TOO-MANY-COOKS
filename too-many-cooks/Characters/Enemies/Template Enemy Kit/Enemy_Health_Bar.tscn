@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qqly"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmkgu"]
-bg_color = Color(1, 0.06999999, 0.08549976, 1)
+bg_color = Color(0.91764706, 0.16470589, 0.3254902, 1)
 
 [node name="EnemyHealthBar" type="ProgressBar" unique_id=1226760327]
 visibility_layer = 2
