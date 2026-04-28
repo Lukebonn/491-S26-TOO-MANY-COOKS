@@ -1,71 +1,71 @@
 [gd_scene format=3 uid="uid://ig2vcmpn3mgq"]
 
-[ext_resource type="Texture2D" uid="uid://cqnvnmqxn71vy" path="res://Scenes/Test/ProtoArt/Enemy/Icon7.png" id="1_cst3d"]
-[ext_resource type="Script" uid="uid://kjm2vndsic12" path="res://Characters/Enemies/Spell Caster Enemy/EnemyLobProjectile.gd" id="1_r24qm"]
-[ext_resource type="Texture2D" uid="uid://xl83vhjvalyo" path="res://Scenes/Test/ProtoArt/Enemy/poison AoE animation.png" id="2_6uor8"]
+[ext_resource type="Script" uid="uid://kjm2vndsic12" path="res://Characters/Enemies/HobLobber/EnemyLobProjectile.gd" id="1_ppphb"]
+[ext_resource type="Texture2D" uid="uid://xl83vhjvalyo" path="res://Scenes/Test/ProtoArt/Enemy/poison AoE animation.png" id="2_xlshl"]
+[ext_resource type="Texture2D" uid="uid://cqnvnmqxn71vy" path="res://Scenes/Test/ProtoArt/Enemy/Icon7.png" id="3_y7s8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lb7c"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(224, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77khf"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(240, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xw3x"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(256, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k22w8"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(272, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7ex8"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(304, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4sdk5"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(320, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qou4k"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(336, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65oef"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(352, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjdc5"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(224, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uq6ew"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(240, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh77r"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(256, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ad0ye"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(272, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x4xso"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(224, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vpc0"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(240, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuilo"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(256, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kt8dt"]
-atlas = ExtResource("2_6uor8")
+atlas = ExtResource("2_xlshl")
 region = Rect2(272, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36sb7"]
@@ -144,7 +144,7 @@ radius = 268.01678
 
 [node name="Area2D" type="Area2D" unique_id=724398940]
 visibility_layer = 2
-script = ExtResource("1_r24qm")
+script = ExtResource("1_ppphb")
 projectile_gravity = 100.0
 launch_speed = 3.0
 
@@ -155,7 +155,7 @@ sprite_frames = SubResource("SpriteFrames_36sb7")
 animation = &"sphere"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=832595165]
-texture = ExtResource("1_cst3d")
+texture = ExtResource("3_y7s8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832189125]
 shape = SubResource("CircleShape2D_cst3d")
