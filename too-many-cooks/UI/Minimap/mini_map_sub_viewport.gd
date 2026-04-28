@@ -2,7 +2,7 @@
 
 extends SubViewport
 
-@onready var player: CharacterBody2D = $"../../../Player" #not sure if we have a player alredy
+@onready var player: CharacterBody2D = $"../../../../Player" #not sure if we have a player alredy
 
 @onready var camera_2d: = $Camera2D
 
