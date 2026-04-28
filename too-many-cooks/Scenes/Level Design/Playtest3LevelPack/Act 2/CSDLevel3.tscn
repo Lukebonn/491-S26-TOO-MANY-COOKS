@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="8_hjqy5"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="9_ejkah"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="10_ejkah"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="10_hjqy5"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="10_hjqy5"]
 [ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="11_q63rm"]
-[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_q63rm"]
+[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_q63rm"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_4rq8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
@@ -114,3 +114,7 @@ position = Vector2(-161, -151)
 
 [node name="BigGoldPickup" parent="." unique_id=739019463 instance=ExtResource("13_4rq8p")]
 position = Vector2(206, 6)
+
+[connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
+[connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

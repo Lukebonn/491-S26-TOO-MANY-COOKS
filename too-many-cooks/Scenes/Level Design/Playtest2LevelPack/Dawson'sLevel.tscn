@@ -703,3 +703,4 @@ position = Vector2(168, -456)
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

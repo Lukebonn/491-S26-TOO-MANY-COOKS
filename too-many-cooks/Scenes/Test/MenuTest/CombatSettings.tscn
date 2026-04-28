@@ -42,6 +42,7 @@ position = Vector2(848, 0)
 position = Vector2(1152, 0)
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=181482053]
+z_index = 1
 offset_left = 1213.0
 offset_right = 1416.0
 offset_bottom = 649.0
@@ -459,6 +460,7 @@ bus = &"Music"
 [connection signal="pressed" from="buttons/NothingButton" to="." method="_on_button_5_pressed"]
 [connection signal="button_down" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/TavernButton" to="." method="_on_tavern_button_pressed"]
 [connection signal="pressed" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_pressed"]
 [connection signal="button_down" from="buttons/NothingButton2" to="buttons/NothingButton2" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/NothingButton2" to="buttons/NothingButton2" method="_on_mouse_entered"]

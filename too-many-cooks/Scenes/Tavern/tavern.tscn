@@ -107,11 +107,10 @@ class_select_ref = NodePath("../Class Select")
 
 [node name="Counter" type="Sprite2D" parent="Tavern BG" unique_id=1418745470]
 z_index = 1
-position = Vector2(1640, 296)
+position = Vector2(1728, 324)
 texture = ExtResource("6_gpyct")
 
 [node name="TavernBackgroundLong" type="Sprite2D" parent="Tavern BG" unique_id=853852177]
-position = Vector2(-88, -28)
 texture = ExtResource("5_msftv")
 centered = false
 

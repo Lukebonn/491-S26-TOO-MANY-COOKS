@@ -2,6 +2,7 @@ extends Node2D
 var in_menu = false
 var in_settings_menu = false
 signal menu_animations_complete
+signal show_warning_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -85,3 +86,18 @@ func _on_pause_ui_opened_menu() -> void:
 
 func _on_journal_pressed():
 	do_settings_action("show_menu")
+
+
+func _on_tavern_button_pressed() -> void:
+	show_warning_menu.emit()
+	#for i in range($buttons.get_child_count()):
+		#if $buttons.get_child(i).visible == true:
+			#$buttons.get_child(i).set_disabled(true)
+
+
+func _on_exited_warning_menu() -> void:
+	pass
+	#print("hi")
+	#for i in range($buttons.get_child_count()):
+		#if $buttons.get_child(i).visible == true:
+			#$buttons.get_child(i).set_disabled(false)

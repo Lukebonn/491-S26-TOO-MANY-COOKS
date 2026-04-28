@@ -2,8 +2,11 @@ extends Control
 
 var player: Node # stores a reference to the player node in the Combat Scene.
 @export var settings: Node2D
+@export var tavern_warning: Node2D
+@export var level_review: Node2D
 @export var key_sprites: Array[Texture2D]
 var pauseDisabled = false
+var level_complete = false
 var objective = 0
 var warrior_objective = 0
 var rogue_objective = 0
@@ -34,6 +37,8 @@ var current_visible_keys: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#level_complete = false
+	#pauseDisabled = false
 	for key in key_slots:
 		key.hide()
 	settings.in_menu = false
@@ -51,14 +56,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause") and (not settings.in_settings_menu) and (not pauseDisabled):
+	if Input.is_action_just_pressed("pause") and (not settings.in_settings_menu) and (not tavern_warning.warning_prompted) and (not pauseDisabled):
 		pauseDisabled = true
 		if settings.in_menu == true:
 			settings.do_settings_action("hide_menu")
 		else:
 			settings.do_settings_action("show_menu")
 		get_tree().create_timer(1, true).timeout.connect(on_pause_cooldown_finished)
-	if settings.in_menu == true: get_tree().paused = true
+	if settings.in_menu or level_complete: get_tree().paused = true
 	else: get_tree().paused = false
 	if player:
 		# ensures that the player's Health can only ever be between
@@ -117,6 +122,7 @@ func _on_retry_button_button_down() -> void:
 
 
 func _on_return_button_button_down() -> void:
+	get_tree().paused = false
 	PlayerStats.Gold -= PlayerStats.Floor_Gold
 	PlayerStats.Orbs -= PlayerStats.Floor_Orbs
 	PlayerStats.Floor_Gold = 0
@@ -187,3 +193,13 @@ func _level_objective() -> void:
 		pass
 	elif objective == 6:
 		pass
+
+func _on_level_complete() -> void:
+	level_complete = true
+	pauseDisabled = true
+	level_review.reveal()
+
+
+func _on_advance_button_pressed() -> void:
+	level_complete = false
+	LevelQueue.load_level()

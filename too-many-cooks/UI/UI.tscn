@@ -23,16 +23,21 @@
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
+[ext_resource type="Script" uid="uid://t4srng7emg2d" path="res://UI/level_review.gd" id="23_wtdy7"]
 [ext_resource type="Script" uid="uid://dnhtryn07d03a" path="res://UI/levelCoinCount.gd" id="24_vh35o"]
 [ext_resource type="Texture2D" uid="uid://ctbfnwj1w3mf7" path="res://UI/Img/DPixelSkull.png" id="25_2jerp"]
+[ext_resource type="Script" uid="uid://i8ev7hiievp6" path="res://UI/tavern_warning_prompt.gd" id="26_jf3kf"]
+[ext_resource type="Texture2D" uid="uid://cai6aibrd4bh2" path="res://UI/Img/are you sure.png" id="26_nxoi0"]
 
-[node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings")]
+[node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_tabjk")
 script = ExtResource("1_dvulo")
 settings = NodePath("PauseMenu2")
+tavern_warning = NodePath("Tavern Warning")
+level_review = NodePath("LevelReportScreen")
 key_sprites = Array[Texture2D]([ExtResource("3_uk6e0"), ExtResource("4_idhk4"), ExtResource("5_uk6e0"), ExtResource("6_2jerp"), ExtResource("7_nxoi0")])
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
@@ -353,6 +358,8 @@ counter = "Enemies"
 z_index = 5
 
 [node name="LevelReportScreen" type="Node2D" parent="." unique_id=1309698208]
+position = Vector2(0, 520)
+script = ExtResource("23_wtdy7")
 
 [node name="Backdrop" type="Sprite2D" parent="LevelReportScreen" unique_id=345827305]
 z_index = 2
@@ -364,16 +371,16 @@ texture = ExtResource("23_idhk4")
 [node name="LevelComplete" type="Label" parent="LevelReportScreen" unique_id=879784998]
 z_index = 2
 offset_left = 232.0
-offset_top = 136.0
+offset_top = 280.0
 offset_right = 920.0
-offset_bottom = 224.0
+offset_bottom = 368.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 66
 text = "Level Complete"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Coins Collected" type="Label" parent="LevelReportScreen" unique_id=790719018]
+[node name="Gold Collected" type="Label" parent="LevelReportScreen" unique_id=790719018]
 z_index = 2
 offset_left = 296.0
 offset_top = 224.0
@@ -381,10 +388,28 @@ offset_right = 532.0
 offset_bottom = 265.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Coins Collected"
+text = "Gold Collected"
 vertical_alignment = 1
 
-[node name="Coins Collected2" type="Label" parent="LevelReportScreen" unique_id=384736136]
+[node name="Gold Icon" type="Sprite2D" parent="LevelReportScreen/Gold Collected" unique_id=1713271867]
+z_index = 2
+position = Vector2(-16.5, 16)
+texture = ExtResource("8_vx7wu")
+
+[node name="GoldCount" type="Label" parent="LevelReportScreen/Gold Collected" unique_id=2012287600]
+z_index = 2
+layout_mode = 0
+offset_left = 225.0
+offset_right = 313.0
+offset_bottom = 32.0
+theme = ExtResource("1_tabjk")
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 1
+script = ExtResource("24_vh35o")
+counter = "Gold"
+
+[node name="Other Stuff" type="Label" parent="LevelReportScreen" unique_id=384736136]
 z_index = 2
 offset_left = 632.0
 offset_top = 224.0
@@ -409,6 +434,25 @@ theme_override_font_sizes/font_size = 40
 text = "Orbs Collected"
 vertical_alignment = 1
 
+[node name="Orb Icon" type="Sprite2D" parent="LevelReportScreen/Orbs Collected" unique_id=911466273]
+z_index = 2
+position = Vector2(-16.5, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_r2vy3")
+
+[node name="OrbCount" type="Label" parent="LevelReportScreen/Orbs Collected" unique_id=736451239]
+z_index = 2
+layout_mode = 0
+offset_left = 232.0
+offset_right = 320.0
+offset_bottom = 32.0
+theme = ExtResource("1_tabjk")
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 1
+script = ExtResource("24_vh35o")
+counter = "Orbs"
+
 [node name="Enemies Killed" type="Label" parent="LevelReportScreen" unique_id=1116529200]
 z_index = 2
 offset_left = 296.0
@@ -419,6 +463,25 @@ theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
 text = "Enemies Killed"
 vertical_alignment = 1
+
+[node name="Enemy Icon" type="Sprite2D" parent="LevelReportScreen/Enemies Killed" unique_id=1757384211]
+z_index = 2
+position = Vector2(-16, 16)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("25_2jerp")
+
+[node name="Kill Count" type="Label" parent="LevelReportScreen/Enemies Killed" unique_id=1318273897]
+z_index = 2
+layout_mode = 0
+offset_left = 227.0
+offset_right = 315.0
+offset_bottom = 32.0
+theme = ExtResource("1_tabjk")
+text = "000"
+label_settings = ExtResource("6_t31p1")
+vertical_alignment = 1
+script = ExtResource("24_vh35o")
+counter = "Orbs"
 
 [node name="le objectives" type="Label" parent="LevelReportScreen" unique_id=1370352900]
 z_index = 2
@@ -435,7 +498,7 @@ vertical_alignment = 1
 
 [node name="AdvanceButton" type="Button" parent="LevelReportScreen" unique_id=6245996]
 z_index = 2
-offset_left = 744.0
+offset_left = 704.0
 offset_top = 416.0
 offset_right = 896.0
 offset_bottom = 488.0
@@ -444,61 +507,71 @@ theme_override_font_sizes/font_size = 25
 text = "Next Level
 Back to Tavern"
 
-[node name="Gold Icon" type="Sprite2D" parent="LevelReportScreen" unique_id=1713271867]
-z_index = 2
-position = Vector2(279.5, 240)
-texture = ExtResource("8_vx7wu")
+[node name="Tavern Warning" type="Node2D" parent="." unique_id=1215423038]
+visible = false
+z_index = 10
+position = Vector2(0, 520)
+script = ExtResource("26_jf3kf")
 
-[node name="GoldCount2" type="Label" parent="LevelReportScreen" unique_id=2012287600]
+[node name="Backdrop" type="Sprite2D" parent="Tavern Warning" unique_id=683079739]
 z_index = 2
-offset_left = 541.0
-offset_top = 224.0
-offset_right = 629.0
-offset_bottom = 256.0
-theme = ExtResource("1_tabjk")
-text = "000"
-label_settings = ExtResource("6_t31p1")
+position = Vector2(576, 320)
+rotation = 3.1415925
+scale = Vector2(0.5546037, 0.52380365)
+texture = ExtResource("23_idhk4")
+
+[node name="AreYouSure" type="Sprite2D" parent="Tavern Warning" unique_id=1743959849]
+visible = false
+z_index = 3
+position = Vector2(576, 276)
+scale = Vector2(1, 0.51977396)
+texture = ExtResource("26_nxoi0")
+
+[node name="YesButton" type="Button" parent="Tavern Warning" unique_id=1329267103]
+z_index = 2
+offset_left = 392.0
+offset_top = 376.0
+offset_right = 544.0
+offset_bottom = 448.0
+theme = ExtResource("16_kncd2")
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="Tavern Warning" unique_id=2065293517]
+z_index = 2
+offset_left = 608.0
+offset_top = 376.0
+offset_right = 760.0
+offset_bottom = 448.0
+theme = ExtResource("16_kncd2")
+theme_override_font_sizes/font_size = 50
+text = "No"
+
+[node name="AreYouSure2" type="Label" parent="Tavern Warning" unique_id=514104715]
+z_index = 2
+offset_left = 376.0
+offset_top = 184.0
+offset_right = 770.0
+offset_bottom = 269.0
+theme = ExtResource("16_kncd2")
+theme_override_font_sizes/font_size = 40
+text = "Are you Sure you Want
+to Return to the Tavern?"
+horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("24_vh35o")
-counter = "Gold"
 
-[node name="Orb Icon" type="Sprite2D" parent="LevelReportScreen" unique_id=911466273]
+[node name="AreYouSure3" type="Label" parent="Tavern Warning" unique_id=1972889536]
 z_index = 2
-position = Vector2(279.5, 280)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_r2vy3")
-
-[node name="OrbCount2" type="Label" parent="LevelReportScreen" unique_id=736451239]
-z_index = 2
-offset_left = 528.0
-offset_top = 264.0
-offset_right = 616.0
-offset_bottom = 296.0
-theme = ExtResource("1_tabjk")
-text = "000"
-label_settings = ExtResource("6_t31p1")
+offset_left = 376.0
+offset_top = 272.0
+offset_right = 770.0
+offset_bottom = 357.0
+theme = ExtResource("16_kncd2")
+theme_override_font_sizes/font_size = 30
+text = "You will not keep the loot
+you collected in this level."
+horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("24_vh35o")
-counter = "Orbs"
-
-[node name="OrbCount3" type="Label" parent="LevelReportScreen" unique_id=1318273897]
-z_index = 2
-offset_left = 523.0
-offset_top = 304.0
-offset_right = 611.0
-offset_bottom = 336.0
-theme = ExtResource("1_tabjk")
-text = "000"
-label_settings = ExtResource("6_t31p1")
-vertical_alignment = 1
-script = ExtResource("24_vh35o")
-counter = "Orbs"
-
-[node name="Enemy Icon" type="Sprite2D" parent="LevelReportScreen" unique_id=1757384211]
-z_index = 2
-position = Vector2(280, 320)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("25_2jerp")
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="update_health_bar" from="." to="HealthBar" method="_on_ui_update_health_bar"]
@@ -511,3 +584,8 @@ texture = ExtResource("25_2jerp")
 [connection signal="button_down" from="DeathScreen/ReturnButton" to="." method="_on_return_button_button_down"]
 [connection signal="button_down" from="PauseMenu/RetryButton" to="." method="_on_pause_retry_button_down"]
 [connection signal="button_down" from="PauseMenu/ReturnButton" to="." method="_on_retry_return_button_down"]
+[connection signal="show_warning_menu" from="PauseMenu2" to="Tavern Warning" method="_on_show_warning_menu"]
+[connection signal="pressed" from="LevelReportScreen/AdvanceButton" to="." method="_on_advance_button_pressed"]
+[connection signal="exited_warning_menu" from="Tavern Warning" to="PauseMenu2" method="_on_exited_warning_menu"]
+[connection signal="pressed" from="Tavern Warning/YesButton" to="." method="_on_return_button_button_down"]
+[connection signal="pressed" from="Tavern Warning/NoButton" to="Tavern Warning" method="_on_no_button_pressed"]
