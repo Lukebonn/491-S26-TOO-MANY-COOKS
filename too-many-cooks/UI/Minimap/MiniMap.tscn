@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="1_bhlx6"]
 [ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="2_bbufj"]
+[ext_resource type="Shader" uid="uid://bsn5kuo8adaag" path="res://UI/Minimap/FogOfWar.gdshader" id="3_bbufj"]
+[ext_resource type="Script" uid="uid://duyh8r81ovioi" path="res://UI/Minimap/FogOfWar.gd" id="4_mqrhf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqrhf"]
+shader = ExtResource("3_bbufj")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mqrhf"]
 
 [node name="MiniMap" type="Node2D" unique_id=2081874814]
 
@@ -27,7 +34,7 @@ script = ExtResource("1_bhlx6")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" unique_id=2073602779]
 position = Vector2(-8, 24)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.4, 0.4)
 
 [node name="Line2D" type="Line2D" parent="MiniMap/SubViewportContainer" unique_id=183169978]
 position = Vector2(3.9280577, -7.956522)
@@ -39,3 +46,9 @@ closed = true
 position = Vector2(130, 128)
 scale = Vector2(0.045410108, 0.04931638)
 texture = ExtResource("2_bbufj")
+
+[node name="TextureRect" type="TextureRect" parent="MiniMap/SubViewportContainer" unique_id=691507231]
+material = SubResource("ShaderMaterial_mqrhf")
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_mqrhf")
+script = ExtResource("4_mqrhf")
