@@ -140,24 +140,27 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cst3d"]
-radius = 268.01678
+radius = 21.954498
 
 [node name="Area2D" type="Area2D" unique_id=724398940]
 visibility_layer = 2
+collision_mask = 2
 script = ExtResource("1_ppphb")
 projectile_gravity = 100.0
 launch_speed = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=481920401]
 position = Vector2(-1.0000005, 0)
-scale = Vector2(5, 5)
+scale = Vector2(3.436973, 3.3091059)
 sprite_frames = SubResource("SpriteFrames_36sb7")
 animation = &"sphere"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=832595165]
+position = Vector2(-9.536743e-07, 9.536743e-07)
+scale = Vector2(0.4375, 0.40625)
 texture = ExtResource("3_y7s8b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832189125]
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1832189125]
 shape = SubResource("CircleShape2D_cst3d")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

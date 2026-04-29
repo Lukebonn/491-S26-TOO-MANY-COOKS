@@ -52,6 +52,17 @@ func _ready() -> void:
 		if get_tree().current_scene.name != "IntroCombat":
 			player.connect("playerDeath", _on_player_death)
 		#print("hi")
+	
+	#loads the correct ability bar UI
+	var ability_bar : Node
+	
+	match PlayerStats.current_class:
+		PlayerStats.classes.none:
+			ability_bar = load("res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_ability_icons.tscn").instantiate()
+	
+	add_child(ability_bar)
+	ability_bar.position = $AbilityBarPosition.position
+	
 	show()
 
 
