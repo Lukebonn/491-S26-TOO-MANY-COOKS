@@ -50,14 +50,14 @@ var MaxMana := 100.0
 
 ##base player stats without any items for class modifiers
 var base_str : int = 10
-var base_def : int = 10
+#var base_def : int = 10
 var base_spd : int = 10
 var base_mag : int = 10
 
 ##passive player stats that have been upgraded
 #set from tavern either upgrading a class or fixing a tavernpiece
 var passive_str : int = 0
-var passive_def : int = 0
+#var passive_def : int = 0
 var passive_spd : int = 0
 var passive_mana : int = 0
 var passive_hp : int = 0

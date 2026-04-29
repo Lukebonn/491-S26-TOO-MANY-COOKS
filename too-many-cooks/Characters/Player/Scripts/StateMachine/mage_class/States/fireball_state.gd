@@ -12,6 +12,8 @@ func enter_state(player_node):
 	player.add_child(this_blast)
 	this_blast.position = Vector2.ZERO
 	
+	player.mana -= 15
+	
 	player.set_damage(2.5)
 	
 	#print_debug("fire state entered")
