@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"
+uid="uid://chqxmw0n8djw6"
+path="res://.godot/imported/gramps-standing-sprite.png-aa91cf1ec71ee7db3a9f8675ca4d0834.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-2e556c7c86c3ec4bcee4ed87bcc00766.ctex"]
+source_file="res://Scenes/Tavern/Art/gramps-standing-sprite.png"
+dest_files=["res://.godot/imported/gramps-standing-sprite.png-aa91cf1ec71ee7db3a9f8675ca4d0834.ctex"]
 
 [params]
 

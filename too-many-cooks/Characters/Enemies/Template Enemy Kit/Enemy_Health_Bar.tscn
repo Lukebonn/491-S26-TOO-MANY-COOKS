@@ -3,9 +3,19 @@
 [ext_resource type="Script" uid="uid://dkbxy8ho6ijb0" path="res://Characters/Enemies/Template Enemy Kit/enemy_health_bar.gd" id="1_mvj8e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qqly"]
+bg_color = Color(0.29803923, 0.078431375, 0.15686275, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6666667, 0.8156863, 0.93333334, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmkgu"]
 bg_color = Color(0.91764706, 0.16470589, 0.3254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.6666667, 0.8156863, 0.93333334, 1)
 
 [node name="EnemyHealthBar" type="ProgressBar" unique_id=1226760327]
 visibility_layer = 2
@@ -13,6 +23,7 @@ offset_left = -14.75
 offset_top = -12.5
 offset_right = 15.75
 offset_bottom = -8.5
+theme_override_constants/outline_size = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_3qqly")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nmkgu")
 value = 50.0
