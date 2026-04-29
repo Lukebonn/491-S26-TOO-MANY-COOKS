@@ -11,6 +11,30 @@
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="9_hbjbe"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_hbjbe"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_jsha0"]
+[ext_resource type="Texture2D" uid="uid://cva76b765p24f" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-1.png.png" id="12_xi66s"]
+[ext_resource type="Texture2D" uid="uid://4hqhsu0s8cw1" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-2.png.png" id="13_lyd5x"]
+[ext_resource type="Texture2D" uid="uid://bu2pxu6gofqkk" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-3.png.png" id="14_kuruh"]
+[ext_resource type="Texture2D" uid="uid://ckh0ypn5qfjdr" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-4.png.png" id="15_lg337"]
+[ext_resource type="Texture2D" uid="uid://b7dahqqjp5in3" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-5.png.png" id="16_j1onx"]
+[ext_resource type="Texture2D" uid="uid://b1ytb7jfd8gwh" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-6.png.png" id="17_dbpk3"]
+[ext_resource type="Texture2D" uid="uid://qscn10u2ajx" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-7.png.png" id="18_fd3k3"]
+[ext_resource type="Texture2D" uid="uid://b0u62nqramlwl" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-8.png.png" id="19_ipnbu"]
+[ext_resource type="Texture2D" uid="uid://cxivwlfvvukb4" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-1.png.png" id="20_djipe"]
+[ext_resource type="Texture2D" uid="uid://3bl8eli4pknc" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-2.png.png" id="21_1m5x4"]
+[ext_resource type="Texture2D" uid="uid://ctmpixcynk3mr" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-3.png.png" id="22_noq1j"]
+[ext_resource type="Texture2D" uid="uid://dwwmfq2yqsvqd" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-4.png.png" id="23_oufhv"]
+[ext_resource type="Texture2D" uid="uid://dwfpto2u8pt8q" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-5.png.png" id="24_eykjj"]
+[ext_resource type="Texture2D" uid="uid://bong0ycu7e03v" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-6.png.png" id="25_l0qoi"]
+[ext_resource type="Texture2D" uid="uid://cpbman1u47q40" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-7.png.png" id="26_rrhdf"]
+[ext_resource type="Texture2D" uid="uid://ch74wg6aef1by" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-8.png.png" id="27_3pw6x"]
+[ext_resource type="Texture2D" uid="uid://ba3135f6jts3n" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-9.png.png" id="28_eqlxg"]
+[ext_resource type="Texture2D" uid="uid://dqujh3fb7wpil" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-10.png.png" id="29_wieo4"]
+[ext_resource type="Texture2D" uid="uid://b6u3jl2pvcis1" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-11.png.png" id="30_0s7jt"]
+[ext_resource type="Texture2D" uid="uid://dajpr70b03763" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-12.png.png" id="31_gevog"]
+[ext_resource type="Texture2D" uid="uid://bagsayuryu0ba" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-13.png.png" id="32_r8v4e"]
+[ext_resource type="Texture2D" uid="uid://bqr11pl76d3ve" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-14.png.png" id="33_10eb1"]
+[ext_resource type="Texture2D" uid="uid://cogmlsqg6gnd8" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-15.png.png" id="34_ycyyp"]
+[ext_resource type="Texture2D" uid="uid://dxcm1s5re74cn" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-16.png.png" id="35_qunsk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -185,6 +209,91 @@ pattern_5 = SubResource("TileMapPattern_6q0lf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjbe"]
 size = Vector2(124, 53)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja1ic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_xi66s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lyd5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kuruh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lg337")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j1onx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dbpk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fd3k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ipnbu")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_djipe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1m5x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_noq1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_oufhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_eykjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l0qoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rrhdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3pw6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_eqlxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wieo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_0s7jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gevog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r8v4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_10eb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ycyyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qunsk")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 10.0
+}]
+
 [node name="LevelJamTemplate2" type="Node2D" unique_id=1329965379]
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1746741095]
@@ -234,10 +343,19 @@ position = Vector2(0, 92)
 shape = SubResource("RectangleShape2D_hbjbe")
 
 [node name="ObjBarrier" parent="." unique_id=273527535 instance=ExtResource("11_jsha0")]
-position = Vector2(1, -186)
+visible = false
+position = Vector2(0, -184)
+scale = Vector2(2.000002, 1)
 
 [node name="ObjBarrier2" parent="." unique_id=1473828029 instance=ExtResource("11_jsha0")]
 position = Vector2(0, -451)
+
+[node name="Barrier" type="AnimatedSprite2D" parent="." unique_id=1089779419]
+position = Vector2(0, -192)
+sprite_frames = SubResource("SpriteFrames_ja1ic")
+animation = &"Open"
+frame = 15
+frame_progress = 1.0
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
