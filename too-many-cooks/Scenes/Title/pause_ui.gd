@@ -1,7 +1,8 @@
 extends Control
 signal closed_menu
 signal opened_menu
-
+@export var clickSound : AudioStreamPlayer
+@export var hoverSound : AudioStreamPlayer
 func show_menu():
 	$"PauseStuff/TooltipReader".text = "Hello!"
 	var tween = self.create_tween()
@@ -15,6 +16,7 @@ func hide_menu():
 	closed_menu.emit()
 func _on_back_pressed():
 	hide_menu()
+	clickSound.play()
 
 func _on_master_slider_value_changed(value):
 	#dude this reference is so long its actually killing me :sob:
@@ -41,5 +43,15 @@ func _on_sfx_slider_value_changed(value):
 func _on_fullscreentoggle_toggled(toggled_on):
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		clickSound.play()
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		clickSound.play()
+
+
+func _on_music_slider_drag_started() -> void:
+	clickSound.play()
+
+
+func _on_sfx_slider_drag_started() -> void:
+	clickSound.play()

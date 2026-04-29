@@ -8,8 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="6_0758p"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="7_2bhlx"]
 
-[node name="Pause UI" type="Control" unique_id=95086748]
+[node name="Pause UI" type="Control" unique_id=95086748 node_paths=PackedStringArray("clickSound", "hoverSound")]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -23,6 +24,8 @@ grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("1_0758p")
 script = ExtResource("2_k4shc")
+clickSound = NodePath("ButtonClickSound")
+hoverSound = NodePath("ButtonHoverSound")
 
 [node name="PauseStuff" type="HBoxContainer" parent="." unique_id=1954907877]
 layout_mode = 1
@@ -304,7 +307,7 @@ layout_mode = 2
 theme = ExtResource("1_0758p")
 expand_icon = true
 
-[node name="TooltipReader" type="RichTextLabel" parent="PauseStuff" unique_id=225402278]
+[node name="TooltipReader" type="RichTextLabel" parent="PauseStuff" unique_id=225402278 node_paths=PackedStringArray("clickSound", "hoverSound")]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme = ExtResource("1_0758p")
@@ -315,6 +318,8 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_k4shc")
+clickSound = NodePath("../../ButtonClickSound")
+hoverSound = NodePath("../../ButtonHoverSound")
 
 [node name="Back" type="Button" parent="." unique_id=1178690095 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 0
@@ -346,10 +351,12 @@ bus = &"Music"
 [connection signal="value_changed" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio" to="PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/Music" to="PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
+[connection signal="drag_started" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider" to="." method="_on_music_slider_drag_started"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider" to="PauseStuff/TooltipReader" method="_on_music_audio_mouse_entered"]
 [connection signal="value_changed" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer2/Music Audio/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio" to="PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFX" to="PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
+[connection signal="drag_started" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider" to="PauseStuff/TooltipReader" method="_on_sfx_audio_mouse_entered"]
 [connection signal="value_changed" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer3/SFX Audio/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreen" to="PauseStuff/TooltipReader" method="_on_fullscreen_mouse_entered"]
