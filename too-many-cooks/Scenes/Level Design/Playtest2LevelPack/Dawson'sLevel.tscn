@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="12_4g78r"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="13_b5ldo"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_lqe51"]
+[ext_resource type="PackedScene" uid="uid://b3bsmqowy1nm" path="res://Characters/Enemies/Rat King/RatKing.tscn" id="15_1ekbf"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -697,7 +698,10 @@ visible = false
 position = Vector2(369, 268)
 
 [node name="HawkEnemy" parent="." unique_id=346107231 instance=ExtResource("14_lqe51")]
-position = Vector2(168, -456)
+position = Vector2(232, -408)
+
+[node name="RatKing" parent="." unique_id=1545687342 instance=ExtResource("15_1ekbf")]
+position = Vector2(-40, 232)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
