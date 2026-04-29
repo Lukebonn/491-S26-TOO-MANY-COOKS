@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bnvne1jfbybib"
+path="res://.godot/imported/mouse_right_icon1.png-55780a3e2b8d8f04e4227234937fa679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/BattleHUD/AbilityIcons/Sprites/mouse_right_icon1.png"
+dest_files=["res://.godot/imported/mouse_right_icon1.png-55780a3e2b8d8f04e4227234937fa679.ctex"]
 
 [params]
 
