@@ -7,10 +7,10 @@
 
 [node name="AbilityIcons" type="Control" unique_id=164958451]
 layout_mode = 3
-anchor_right = 0.178
-anchor_bottom = 0.10300001
-offset_right = -0.055999756
-offset_bottom = 0.2559967
+anchor_right = 0.32000002
+anchor_bottom = 0.185
+offset_right = 0.35998535
+offset_bottom = 0.11999512
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -18,6 +18,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 143.0
 offset_bottom = 56.0
+scale = Vector2(1.8, 1.8)
 theme_override_constants/separation = 71
 alignment = 1
 
@@ -66,7 +67,7 @@ offset_bottom = 66.0
 texture = ExtResource("3_i174q")
 stretch_mode = 4
 
-[node name="Next" parent="HBoxContainer/MagicIcons" unique_id=1575525594 instance=ExtResource("1_a5fmf")]
+[node name="Left" parent="HBoxContainer/MagicIcons" unique_id=1575525594 instance=ExtResource("1_a5fmf")]
 modulate = Color(1, 1, 1, 0.50980395)
 layout_mode = 1
 offset_left = -23.999996
@@ -74,7 +75,7 @@ offset_top = 7.0
 offset_right = -23.999996
 offset_bottom = 6.6799965
 
-[node name="Last" parent="HBoxContainer/MagicIcons" unique_id=1326684781 instance=ExtResource("1_a5fmf")]
+[node name="Right" parent="HBoxContainer/MagicIcons" unique_id=1326684781 instance=ExtResource("1_a5fmf")]
 modulate = Color(1, 1, 1, 0.50980395)
 layout_mode = 1
 anchor_right = 0.0
@@ -87,5 +88,5 @@ offset_bottom = -27.480007
 [editable path="HBoxContainer/AttackIcon"]
 [editable path="HBoxContainer/DashIcon"]
 [editable path="HBoxContainer/MagicIcons/Current"]
-[editable path="HBoxContainer/MagicIcons/Next"]
-[editable path="HBoxContainer/MagicIcons/Last"]
+[editable path="HBoxContainer/MagicIcons/Left"]
+[editable path="HBoxContainer/MagicIcons/Right"]

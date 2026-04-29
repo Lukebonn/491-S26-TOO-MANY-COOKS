@@ -570,6 +570,9 @@ you collected in this level."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AbilityBarPosition" type="Node2D" parent="." unique_id=1885265473]
+position = Vector2(19, 502)
+
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="update_health_bar" from="." to="HealthBar" method="_on_ui_update_health_bar"]
 [connection signal="update_mana_bar" from="." to="ManaBar" method="_on_ui_update_mana_bar"]
