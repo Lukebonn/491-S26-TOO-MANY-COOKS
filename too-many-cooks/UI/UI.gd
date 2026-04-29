@@ -59,6 +59,8 @@ func _ready() -> void:
 	match PlayerStats.current_class:
 		PlayerStats.classes.none:
 			ability_bar = load("res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_ability_icons.tscn").instantiate()
+		_:
+			ability_bar = load("res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_ability_icons.tscn").instantiate()
 	
 	add_child(ability_bar)
 	ability_bar.position = $AbilityBarPosition.position
