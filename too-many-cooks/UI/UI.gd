@@ -4,6 +4,10 @@ var player: Node # stores a reference to the player node in the Combat Scene.
 @export var settings: Node2D
 @export var key_sprites: Array[Texture2D]
 var pauseDisabled = false
+var objective = 0
+var warrior_objective = 0
+var rogue_objective = 0
+var mage_objective = 0
 
 signal flashManaBar()
 
@@ -154,3 +158,26 @@ func _on_exit_current_health() -> void:
 
 func _on_exit_current_mana() -> void:
 	update_mana_bar.emit()
+
+func _level_objective() -> void:
+	objective = randi() % 7
+	if Global.Warrior_Objective == true:
+		warrior_objective = randi() % 7
+	if Global.Rogue_Objective == true:
+		rogue_objective = randi() % 7
+	if Global.Mage_Objective == true:
+		mage_objective = randi() % 7
+	if objective == 0:
+		pass
+	elif objective == 1:
+		pass
+	elif objective == 2:
+		pass
+	elif objective == 3:
+		pass
+	elif objective == 4:
+		pass
+	elif objective == 5:
+		pass
+	elif objective == 6:
+		pass
