@@ -698,7 +698,7 @@ visible = false
 position = Vector2(369, 268)
 
 [node name="HawkEnemy" parent="." unique_id=346107231 instance=ExtResource("14_lqe51")]
-position = Vector2(232, -408)
+position = Vector2(232, -440)
 
 [node name="RatKing" parent="." unique_id=1545687342 instance=ExtResource("15_1ekbf")]
 position = Vector2(-128, 136)

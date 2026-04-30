@@ -104,7 +104,7 @@ func dash(direction: String):
 	match direction:
 		"Right":
 			$"../DashLine".target_position = Vector2(xDifference - 35, 0)
-			if $"../DashLine".is_colliding(): additional_distance = 0
+			if $"../DashLine".is_colliding(): additional_distance = -10
 			tween.tween_property(
 				enemy_ref, 
 				"position", 
@@ -113,7 +113,7 @@ func dash(direction: String):
 			enemy_ref.get_node("AnimatedSprite2D").flip_h = false
 		"Left":
 			$"../DashLine".target_position = Vector2(xDifference + 35, 0)
-			if $"../DashLine".is_colliding(): additional_distance = 0
+			if $"../DashLine".is_colliding(): additional_distance = -10
 			tween.tween_property(
 				enemy_ref, 
 				"position", 

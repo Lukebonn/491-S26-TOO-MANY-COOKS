@@ -9,10 +9,12 @@ extends EnemyState
 @export var state_to_enter: Node
 # what state should the enemy enter when they are close enough
 # to the player?
+@export var has_walk_sprites = false
 
 func enter_state(enemy_node):
 	super(enemy_node)
-	enemy_node.get_node("AnimatedSprite2D").play("chase")
+	if has_walk_sprites: enemy_node.get_node("AnimatedSprite2D").play("chaseFront")
+	else: enemy_node.get_node("AnimatedSprite2D").play("chase")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func process(_delta):
@@ -27,6 +29,11 @@ func process(_delta):
 				enemy_ref.get_node("AnimatedSprite2D").flip_h = false
 			if(direction.x > 0):
 				enemy_ref.get_node("AnimatedSprite2D").flip_h = true
+			if has_walk_sprites:
+				if(direction.y < 0):
+					enemy_ref.get_node("AnimatedSprite2D").play("chaseBack")
+				if(direction.y > 0):
+					enemy_ref.get_node("AnimatedSprite2D").play("chaseFront")
 			enemy_ref.move_and_slide()
 		else:
 			enemy_ref.change_state(str(enemy_ref.starting_state))

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmm0mhgp0p5q0"
-path="res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"
+uid="uid://ktpxfogsecug"
+path="res://.godot/imported/FoxSlash4.png-ca1d7da892bed86e81995cf775ab4c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mice/brown/1.png"
-dest_files=["res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"]
+source_file="res://Characters/Enemies/Fox/Slash Sprites/FoxSlash4.png"
+dest_files=["res://.godot/imported/FoxSlash4.png-ca1d7da892bed86e81995cf775ab4c45.ctex"]
 
 [params]
 
