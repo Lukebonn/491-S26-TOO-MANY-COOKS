@@ -35,7 +35,7 @@
 size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
-radius = 81.68537
+radius = 320.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
 size = Vector2(16, 16)
@@ -142,7 +142,7 @@ collision_mask = 64
 script = ExtResource("1_qilw0")
 health = 100
 damage = 10
-sight_state = NodePath("AoEState")
+sight_state = NodePath("MultiProjectileState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -188,7 +188,7 @@ shape = SubResource("RectangleShape2D_bhto8")
 [node name="RegularProjectileLines" type="Node2D" parent="." unique_id=655689982]
 
 [node name="Projectile Line1" type="RayCast2D" parent="RegularProjectileLines" unique_id=2077328044]
-target_position = Vector2(88, -80)
+target_position = Vector2(88, -56)
 collision_mask = 64
 collide_with_areas = true
 
@@ -198,7 +198,7 @@ collision_mask = 64
 collide_with_areas = true
 
 [node name="Projectile Line3" type="RayCast2D" parent="RegularProjectileLines" unique_id=1972545564]
-target_position = Vector2(88, 80)
+target_position = Vector2(88, 56)
 collision_mask = 64
 collide_with_areas = true
 
@@ -206,22 +206,22 @@ collide_with_areas = true
 visible = false
 
 [node name="Projectile Line1" type="RayCast2D" parent="EnragedProjectileLines" unique_id=445987809]
-target_position = Vector2(88, -80)
+target_position = Vector2(88, -48)
 collision_mask = 64
 collide_with_areas = true
 
 [node name="Projectile Line2" type="RayCast2D" parent="EnragedProjectileLines" unique_id=385080651]
-target_position = Vector2(88, -40)
+target_position = Vector2(88, -16)
 collision_mask = 64
 collide_with_areas = true
 
-[node name="Projectile Line3" type="RayCast2D" parent="EnragedProjectileLines" unique_id=144603376]
-target_position = Vector2(88, 80)
+[node name="Projectile Line3" type="RayCast2D" parent="EnragedProjectileLines" unique_id=874828169]
+target_position = Vector2(88, 16)
 collision_mask = 64
 collide_with_areas = true
 
-[node name="Projectile Line4" type="RayCast2D" parent="EnragedProjectileLines" unique_id=874828169]
-target_position = Vector2(88, 40)
+[node name="Projectile Line4" type="RayCast2D" parent="EnragedProjectileLines" unique_id=144603376]
+target_position = Vector2(88, 48)
 collision_mask = 64
 collide_with_areas = true
 
@@ -319,6 +319,7 @@ animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=377356932]
+position = Vector2(-32, 0)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("30_1tb61")
@@ -334,4 +335,3 @@ shape = SubResource("CircleShape2D_ue585")
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
 [connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
-[connection signal="create_damage_area" from="AoEState" to="DamageArea" method="_on_create_damage_area"]
