@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://boy7iffle7uhh"]
 
-[ext_resource type="Texture2D" uid="uid://b046jw0c178jd" path="res://Characters/Enemies/mice/wizard/5 (1).png" id="1_er6ej"]
+[ext_resource type="Texture2D" uid="uid://b046jw0c178jd" path="res://Characters/Enemies/WizardMouse/wizard/5 (1).png" id="1_er6ej"]
 [ext_resource type="Script" uid="uid://bawhtnehgi4y7" path="res://wizard_mouse.gd" id="1_n1o01"]
-[ext_resource type="Texture2D" uid="uid://bo87e6in8k5o8" path="res://Characters/Enemies/mice/wizard/1.png" id="2_3nqw6"]
-[ext_resource type="Texture2D" uid="uid://1fckt4yw5nef" path="res://Characters/Enemies/mice/wizard/2.png" id="3_n1o01"]
-[ext_resource type="Texture2D" uid="uid://w4br41rxlo4t" path="res://Characters/Enemies/mice/wizard/3.png" id="4_jawtd"]
-[ext_resource type="Texture2D" uid="uid://i78x7chj6h0v" path="res://Characters/Enemies/mice/wizard/4 (1).png" id="5_ao740"]
+[ext_resource type="Texture2D" uid="uid://bo87e6in8k5o8" path="res://Characters/Enemies/WizardMouse/wizard/1.png" id="2_3nqw6"]
+[ext_resource type="Texture2D" uid="uid://1fckt4yw5nef" path="res://Characters/Enemies/WizardMouse/wizard/2.png" id="3_n1o01"]
+[ext_resource type="Texture2D" uid="uid://w4br41rxlo4t" path="res://Characters/Enemies/WizardMouse/wizard/3.png" id="4_jawtd"]
+[ext_resource type="Texture2D" uid="uid://i78x7chj6h0v" path="res://Characters/Enemies/WizardMouse/wizard/4 (1).png" id="5_ao740"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="7_n1o01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2arf8"]

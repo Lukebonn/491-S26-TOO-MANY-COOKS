@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i78x7chj6h0v"
-path="res://.godot/imported/4 (1).png-77c0e6b13d27d998a4c5560673d7ee05.ctex"
+uid="uid://b046jw0c178jd"
+path="res://.godot/imported/5 (1).png-88dcc46d3aae401c27e2c58c8c3bee76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mice/wizard/4 (1).png"
-dest_files=["res://.godot/imported/4 (1).png-77c0e6b13d27d998a4c5560673d7ee05.ctex"]
+source_file="res://Characters/Enemies/WizardMouse/wizard/5 (1).png"
+dest_files=["res://.godot/imported/5 (1).png-88dcc46d3aae401c27e2c58c8c3bee76.ctex"]
 
 [params]
 

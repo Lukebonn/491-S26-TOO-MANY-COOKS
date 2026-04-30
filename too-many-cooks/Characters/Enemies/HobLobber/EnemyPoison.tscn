@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dffgo0cvdvhwx"]
+
+[ext_resource type="Script" uid="uid://2gxlgjau2a6o" path="res://Characters/Enemies/HobLobber/enemy_poison.gd" id="1_a8uft"]
+
+[node name="EnemyPoison" type="Node" unique_id=700574086]
+script = ExtResource("1_a8uft")
+
+[node name="Timer" type="Timer" parent="." unique_id=189931514]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

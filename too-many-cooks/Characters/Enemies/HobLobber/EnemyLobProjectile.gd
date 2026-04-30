@@ -12,6 +12,7 @@ var playerLocation: Vector2
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var poison_scene = preload("res://Characters/Enemies/HobLobber/EnemyPoison.tscn")
 
 var velocity: Vector2
 var landed: bool = false
@@ -50,6 +51,9 @@ func _land() -> void:
 #and used to tell the player it's been hit
 func _on_area_entered(area: Area2D) -> void:
 	if(area.name == "Hurtbox"):
+		var player = area.get_parent() 
 		print("Player Poisoned From Hob Lobber's AoE!")
+		var poison_instance = poison_scene.instantiate()
+		player.add_child(poison_instance)
 		
 		
