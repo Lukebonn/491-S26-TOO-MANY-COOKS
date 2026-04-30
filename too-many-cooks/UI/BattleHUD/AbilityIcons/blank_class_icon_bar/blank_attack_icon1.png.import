@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"
+uid="uid://ccnytb4icaxvm"
+path="res://.godot/imported/blank_attack_icon1.png-dc3553d9a7516b92b52d031b8fcbc6b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"]
+source_file="res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_attack_icon1.png"
+dest_files=["res://.godot/imported/blank_attack_icon1.png-dc3553d9a7516b92b52d031b8fcbc6b5.ctex"]
 
 [params]
 

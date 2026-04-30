@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0d4eld4r3dle"
-path="res://.godot/imported/blank_magic_icon1.png-2ad597ac8e23ceb423d082287d491f52.ctex"
+uid="uid://dlxnyidd7atcr"
+path="res://.godot/imported/blank_dash_icon1.png-b5d47f877fc05b63687716f12e3b32da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/BattleHUD/AbilityIcons/Sprites/blank/blank_magic_icon1.png"
-dest_files=["res://.godot/imported/blank_magic_icon1.png-2ad597ac8e23ceb423d082287d491f52.ctex"]
+source_file="res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_dash_icon1.png"
+dest_files=["res://.godot/imported/blank_dash_icon1.png-b5d47f877fc05b63687716f12e3b32da.ctex"]
 
 [params]
 

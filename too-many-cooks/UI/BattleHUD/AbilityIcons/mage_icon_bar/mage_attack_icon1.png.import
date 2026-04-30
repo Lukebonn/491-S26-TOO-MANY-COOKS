@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccnytb4icaxvm"
-path="res://.godot/imported/blank_attack_icon1.png-0e9b42453e565dd175376bfd5838abd4.ctex"
+uid="uid://doohamv7fb3xp"
+path="res://.godot/imported/mage_attack_icon1.png-1eade3e45b1cb3a8e495a1562d73265b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/BattleHUD/AbilityIcons/Sprites/blank/blank_attack_icon1.png"
-dest_files=["res://.godot/imported/blank_attack_icon1.png-0e9b42453e565dd175376bfd5838abd4.ctex"]
+source_file="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_attack_icon1.png"
+dest_files=["res://.godot/imported/mage_attack_icon1.png-1eade3e45b1cb3a8e495a1562d73265b.ctex"]
 
 [params]
 
