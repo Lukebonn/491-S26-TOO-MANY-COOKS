@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cwkj7llpeabn1"]
+
+[ext_resource type="Script" uid="uid://t3l8gv55ffgt" path="res://Characters/Enemies/Rat King/rk_basic_projectile.gd" id="1_ysjor"]
+[ext_resource type="Texture2D" uid="uid://ci160oexc3cew" path="res://Characters/Enemies/Rat/cheese.png" id="2_ysjor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
+radius = 8.0
+
+[node name="ProjectileArea" type="Area2D" unique_id=1003819008]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_ysjor")
+
+[node name="CollisionZone" type="CollisionShape2D" parent="." unique_id=869777355]
+shape = SubResource("CircleShape2D_ue585")
+
+[node name="Cheese" type="Sprite2D" parent="." unique_id=361062122]
+rotation = 1.5707964
+texture = ExtResource("2_ysjor")
