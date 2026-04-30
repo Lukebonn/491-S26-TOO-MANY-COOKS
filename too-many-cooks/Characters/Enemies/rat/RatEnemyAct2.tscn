@@ -24,16 +24,16 @@
 [ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="18_0x0kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
-size = Vector2(29, 23)
+size = Vector2(16, 13)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
 radius = 119.03781
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
-size = Vector2(29, 23)
+size = Vector2(16, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
-size = Vector2(29, 23)
+size = Vector2(16, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7d88"]
 animations = [{
@@ -89,7 +89,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
-position = Vector2(0.5, -3.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_jonyw")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1355964886]
@@ -105,11 +105,11 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
-position = Vector2(0.5, -3.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_f5e7n")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
-position = Vector2(0.5, -3.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
@@ -121,7 +121,6 @@ stream = ExtResource("2_0x0kf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 visibility_layer = 2
 position = Vector2(0.25, -2.75)
-scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_g7d88")
 animation = &"chase"
 

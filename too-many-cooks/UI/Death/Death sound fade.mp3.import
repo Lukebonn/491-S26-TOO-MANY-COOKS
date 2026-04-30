@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctpkskcqvc8gf"
+path="res://.godot/imported/Death sound fade.mp3-e39ef0704c27613f2d87a4cb385c10a6.mp3str"
+
+[deps]
+
+source_file="res://UI/Death/Death sound fade.mp3"
+dest_files=["res://.godot/imported/Death sound fade.mp3-e39ef0704c27613f2d87a4cb385c10a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

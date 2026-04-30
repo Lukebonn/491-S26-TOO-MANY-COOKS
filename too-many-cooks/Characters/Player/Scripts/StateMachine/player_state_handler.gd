@@ -99,7 +99,7 @@ func change_state(new_state : String):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #calls the input_handler function of current_state every frame
 func _physics_process(delta: float) -> void:
-	
+	#print(position)
 	local_mouse_pos = get_local_mouse_position()
 	global_mouse_pos = get_global_mouse_position()
 	

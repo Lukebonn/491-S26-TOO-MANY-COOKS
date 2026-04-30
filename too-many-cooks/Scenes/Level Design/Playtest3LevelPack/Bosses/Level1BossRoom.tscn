@@ -372,7 +372,7 @@ frame_progress = 1.0
 script = ExtResource("36_lyd5x")
 
 [node name="Fox" parent="." unique_id=1670622060 instance=ExtResource("37_kuruh")]
-position = Vector2(360, -248)
+position = Vector2(432, -240)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
