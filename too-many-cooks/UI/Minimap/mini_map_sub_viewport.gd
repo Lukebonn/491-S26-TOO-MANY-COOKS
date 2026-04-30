@@ -1,4 +1,4 @@
-'''extends SubViewport
+extends SubViewport
 
 @onready var player: CharacterBody2D = $"../../../../Player"
 @onready var camera_2d := $Camera2D
@@ -22,4 +22,4 @@ func _ready() -> void:
 	canvas_cull_mask = canvas_cull_mask & ~(1 << 1)
 
 func _physics_process(delta: float) -> void:
-	pass #'''
+	pass '''

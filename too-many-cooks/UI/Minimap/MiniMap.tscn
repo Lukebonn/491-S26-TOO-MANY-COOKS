@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://datwflplfxsxh"]
 
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="1_bhlx6"]
-[ext_resource type="Texture2D" uid="uid://dr6ehcecdwbir" path="res://Scenes/Test/ProtoArt/cat.png" id="2_bbufj"]
+[ext_resource type="Texture2D" uid="uid://dgf517ljfg2j4" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/smirk_cat.png" id="2_bbufj"]
 [ext_resource type="Shader" uid="uid://bsn5kuo8adaag" path="res://UI/Minimap/FogOfWar.gdshader" id="3_bbufj"]
-[ext_resource type="Script" uid="uid://duyh8r81ovioi" path="res://UI/Minimap/FogOfWar.gd" id="4_mqrhf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mqrhf"]
 shader = ExtResource("3_bbufj")
@@ -18,11 +17,12 @@ shader = ExtResource("3_bbufj")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -266.0
-offset_top = 24.0
-offset_right = -8.0
-offset_bottom = 282.0
+offset_left = -214.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 262.0
 grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
 metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="MiniMap/SubViewportContainer" unique_id=242619080]
@@ -38,17 +38,17 @@ zoom = Vector2(0.4, 0.4)
 
 [node name="Line2D" type="Line2D" parent="MiniMap/SubViewportContainer" unique_id=183169978]
 position = Vector2(3.9280577, -7.956522)
-scale = Vector2(0.9928058, 1.0217391)
+scale = Vector2(1, 1.029)
 points = PackedVector2Array(-1.9420166, 7.7872343, -1.9420166, 258.34042, 255.91302, 258.34042, 255.91302, 7.787234)
 closed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MiniMap/SubViewportContainer" unique_id=990057017]
 position = Vector2(130, 128)
-scale = Vector2(0.045410108, 0.04931638)
+scale = Vector2(0.3, 0.327)
 texture = ExtResource("2_bbufj")
 
 [node name="TextureRect" type="TextureRect" parent="MiniMap/SubViewportContainer" unique_id=691507231]
+visible = false
 material = SubResource("ShaderMaterial_mqrhf")
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_mqrhf")
-script = ExtResource("4_mqrhf")
