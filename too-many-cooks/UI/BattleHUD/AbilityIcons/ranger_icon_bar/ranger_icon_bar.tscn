@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://46ppbjqjltdu"]
+
+[ext_resource type="PackedScene" uid="uid://20xku3l2jijx" path="res://UI/BattleHUD/AbilityIcons/ability_icons.tscn" id="1_3y2tq"]
+[ext_resource type="Script" uid="uid://bxcip1olday53" path="res://UI/BattleHUD/AbilityIcons/cycle_icon_bar.gd" id="2_bsay0"]
+
+[node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_3y2tq")]
+
+[node name="MagicIcons" parent="HBoxContainer" parent_id_path=PackedInt32Array(1984074386) index="2" unique_id=743762384]
+script = ExtResource("2_bsay0")
+
+[editable path="HBoxContainer/AttackIcon"]
+[editable path="HBoxContainer/DashIcon"]
+[editable path="HBoxContainer/MagicIcons/Current"]
+[editable path="HBoxContainer/MagicIcons/Left"]
+[editable path="HBoxContainer/MagicIcons/Right"]

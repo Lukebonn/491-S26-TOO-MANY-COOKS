@@ -8,12 +8,13 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_4h827"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_pfrqb"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="8_uxbry"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_0x0i3"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_0x0i3"]
 [ext_resource type="PackedScene" uid="uid://u1exbn0iintr" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/ranged_rat_enemy.tscn" id="10_chfxb"]
 [ext_resource type="PackedScene" uid="uid://7ojnl1ctlwar" path="res://Characters/Enemies/Spell Caster Enemy/hob_lobber_enemy_official.tscn" id="11_5n6rv"]
 [ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="12_4g78r"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="13_b5ldo"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_lqe51"]
+[ext_resource type="PackedScene" uid="uid://b3bsmqowy1nm" path="res://Characters/Enemies/Rat King/RatKing.tscn" id="15_1ekbf"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -334,115 +335,254 @@ bus = &"Music"
 [node name="Pickups" type="Node" parent="." unique_id=715601378]
 
 [node name="OrbPickup" parent="Pickups" unique_id=1955872402 instance=ExtResource("7_pfrqb")]
-position = Vector2(-256, -276)
+position = Vector2(-880, -136)
 
 [node name="OrbPickup5" parent="Pickups" unique_id=933299269 instance=ExtResource("7_pfrqb")]
-position = Vector2(-504, -128)
+position = Vector2(-880, -96)
 
 [node name="OrbPickup6" parent="Pickups" unique_id=1882005924 instance=ExtResource("7_pfrqb")]
-position = Vector2(-592, 152)
+position = Vector2(-912, -112)
 
 [node name="OrbPickup2" parent="Pickups" unique_id=890064289 instance=ExtResource("7_pfrqb")]
-position = Vector2(424, -272)
+position = Vector2(-856, -112)
 
 [node name="OrbPickup3" parent="Pickups" unique_id=1788858689 instance=ExtResource("7_pfrqb")]
-position = Vector2(792, -176)
+position = Vector2(-920, -152)
 
 [node name="OrbPickup4" parent="Pickups" unique_id=1915472517 instance=ExtResource("7_pfrqb")]
-position = Vector2(776, 160)
+position = Vector2(-904, -64)
 
 [node name="GoldPickup4" parent="Pickups" unique_id=739019463 instance=ExtResource("8_uxbry")]
 position = Vector2(232, -120)
+Flip_Out = false
 
 [node name="GoldPickup5" parent="Pickups" unique_id=1958946212 instance=ExtResource("8_uxbry")]
 position = Vector2(248, -120)
+Flip_Out = false
+
+[node name="GoldPickup35" parent="Pickups" unique_id=434535577 instance=ExtResource("8_uxbry")]
+position = Vector2(424, -280)
+Flip_Out = false
+
+[node name="GoldPickup36" parent="Pickups" unique_id=750823198 instance=ExtResource("8_uxbry")]
+position = Vector2(432, -264)
+Flip_Out = false
+
+[node name="GoldPickup37" parent="Pickups" unique_id=445725653 instance=ExtResource("8_uxbry")]
+position = Vector2(416, -256)
+Flip_Out = false
+
+[node name="GoldPickup38" parent="Pickups" unique_id=2113468968 instance=ExtResource("8_uxbry")]
+position = Vector2(419, -268)
+Flip_Out = false
+
+[node name="GoldPickup39" parent="Pickups" unique_id=381260426 instance=ExtResource("8_uxbry")]
+position = Vector2(408, -280)
+Flip_Out = false
+
+[node name="GoldPickup40" parent="Pickups" unique_id=1883894485 instance=ExtResource("8_uxbry")]
+position = Vector2(408, -264)
+Flip_Out = false
+
+[node name="GoldPickup41" parent="Pickups" unique_id=1905664759 instance=ExtResource("8_uxbry")]
+position = Vector2(400, -256)
+Flip_Out = false
+
+[node name="GoldPickup42" parent="Pickups" unique_id=119790513 instance=ExtResource("8_uxbry")]
+position = Vector2(-270, -285)
+Flip_Out = false
+
+[node name="GoldPickup43" parent="Pickups" unique_id=556830777 instance=ExtResource("8_uxbry")]
+position = Vector2(-266, -272)
+Flip_Out = false
+
+[node name="GoldPickup44" parent="Pickups" unique_id=1996833583 instance=ExtResource("8_uxbry")]
+position = Vector2(-252, -276)
+Flip_Out = false
+
+[node name="GoldPickup45" parent="Pickups" unique_id=657473760 instance=ExtResource("8_uxbry")]
+position = Vector2(-240, -272)
+Flip_Out = false
+
+[node name="GoldPickup46" parent="Pickups" unique_id=65526728 instance=ExtResource("8_uxbry")]
+position = Vector2(-236, -283)
+Flip_Out = false
+
+[node name="GoldPickup47" parent="Pickups" unique_id=2071066846 instance=ExtResource("8_uxbry")]
+position = Vector2(-608, 161)
+Flip_Out = false
+
+[node name="GoldPickup48" parent="Pickups" unique_id=1635204954 instance=ExtResource("8_uxbry")]
+position = Vector2(-576, 161)
+Flip_Out = false
+
+[node name="GoldPickup49" parent="Pickups" unique_id=1890626386 instance=ExtResource("8_uxbry")]
+position = Vector2(-592, 146)
+Flip_Out = false
 
 [node name="GoldPickup28" parent="Pickups" unique_id=1436907906 instance=ExtResource("8_uxbry")]
 position = Vector2(88, -264)
+Flip_Out = false
 
 [node name="GoldPickup29" parent="Pickups" unique_id=1528711566 instance=ExtResource("8_uxbry")]
 position = Vector2(88, -240)
+Flip_Out = false
 
 [node name="GoldPickup30" parent="Pickups" unique_id=1740622518 instance=ExtResource("8_uxbry")]
 position = Vector2(48, -312)
+Flip_Out = false
 
 [node name="GoldPickup31" parent="Pickups" unique_id=1587329751 instance=ExtResource("8_uxbry")]
 position = Vector2(16, -312)
+Flip_Out = false
 
 [node name="GoldPickup11" parent="Pickups" unique_id=1349094450 instance=ExtResource("8_uxbry")]
 position = Vector2(768, -208)
+Flip_Out = false
 
 [node name="GoldPickup12" parent="Pickups" unique_id=2026845556 instance=ExtResource("8_uxbry")]
 position = Vector2(784, -144)
+Flip_Out = false
 
 [node name="GoldPickup6" parent="Pickups" unique_id=1728279616 instance=ExtResource("8_uxbry")]
 position = Vector2(408, 120)
+Flip_Out = false
 
 [node name="GoldPickup7" parent="Pickups" unique_id=1565790490 instance=ExtResource("8_uxbry")]
 position = Vector2(408, 144)
+Flip_Out = false
 
 [node name="GoldPickup16" parent="Pickups" unique_id=2134409938 instance=ExtResource("8_uxbry")]
 position = Vector2(-424, -344)
+Flip_Out = false
 
 [node name="GoldPickup17" parent="Pickups" unique_id=428876777 instance=ExtResource("8_uxbry")]
 position = Vector2(-408, -344)
+Flip_Out = false
 
 [node name="GoldPickup18" parent="Pickups" unique_id=834230743 instance=ExtResource("8_uxbry")]
 position = Vector2(-504, -344)
+Flip_Out = false
 
 [node name="GoldPickup19" parent="Pickups" unique_id=1570162292 instance=ExtResource("8_uxbry")]
 position = Vector2(-488, -344)
+Flip_Out = false
 
 [node name="GoldPickup20" parent="Pickups" unique_id=1126997476 instance=ExtResource("8_uxbry")]
 position = Vector2(-584, -344)
+Flip_Out = false
 
 [node name="GoldPickup22" parent="Pickups" unique_id=1529928898 instance=ExtResource("8_uxbry")]
 position = Vector2(-632, -280)
+Flip_Out = false
 
 [node name="GoldPickup23" parent="Pickups" unique_id=33604092 instance=ExtResource("8_uxbry")]
 position = Vector2(-632, -264)
+Flip_Out = false
 
 [node name="GoldPickup24" parent="Pickups" unique_id=1235737832 instance=ExtResource("8_uxbry")]
 position = Vector2(-624, 120)
+Flip_Out = false
 
 [node name="GoldPickup25" parent="Pickups" unique_id=77471292 instance=ExtResource("8_uxbry")]
 position = Vector2(-624, 144)
+Flip_Out = false
 
 [node name="GoldPickup26" parent="Pickups" unique_id=1966494496 instance=ExtResource("8_uxbry")]
 position = Vector2(-560, 144)
+Flip_Out = false
+
+[node name="GoldPickup50" parent="Pickups" unique_id=1509894243 instance=ExtResource("8_uxbry")]
+position = Vector2(766, 151)
+Flip_Out = false
+
+[node name="GoldPickup51" parent="Pickups" unique_id=1581368757 instance=ExtResource("8_uxbry")]
+position = Vector2(783, 155)
+Flip_Out = false
+
+[node name="GoldPickup52" parent="Pickups" unique_id=1424261786 instance=ExtResource("8_uxbry")]
+position = Vector2(773, 168)
+Flip_Out = false
+
+[node name="GoldPickup53" parent="Pickups" unique_id=1405389779 instance=ExtResource("8_uxbry")]
+position = Vector2(784, 178)
+Flip_Out = false
+
+[node name="GoldPickup54" parent="Pickups" unique_id=308382921 instance=ExtResource("8_uxbry")]
+position = Vector2(762, 180)
+Flip_Out = false
+
+[node name="GoldPickup55" parent="Pickups" unique_id=1358576535 instance=ExtResource("8_uxbry")]
+position = Vector2(758, 167)
+Flip_Out = false
+
+[node name="GoldPickup56" parent="Pickups" unique_id=1607874439 instance=ExtResource("8_uxbry")]
+position = Vector2(769, 231)
+Flip_Out = false
+
+[node name="GoldPickup57" parent="Pickups" unique_id=959860730 instance=ExtResource("8_uxbry")]
+position = Vector2(765, 258)
+Flip_Out = false
 
 [node name="GoldPickup27" parent="Pickups" unique_id=119087621 instance=ExtResource("8_uxbry")]
 position = Vector2(-560, 120)
+Flip_Out = false
+
+[node name="GoldPickup58" parent="Pickups" unique_id=1705671885 instance=ExtResource("8_uxbry")]
+position = Vector2(-510, -140)
+Flip_Out = false
+
+[node name="GoldPickup59" parent="Pickups" unique_id=194532249 instance=ExtResource("8_uxbry")]
+position = Vector2(-496, -134)
+Flip_Out = false
+
+[node name="GoldPickup60" parent="Pickups" unique_id=1699803073 instance=ExtResource("8_uxbry")]
+position = Vector2(-504, -124)
+Flip_Out = false
+
+[node name="GoldPickup61" parent="Pickups" unique_id=331866163 instance=ExtResource("8_uxbry")]
+position = Vector2(-496, -109)
+Flip_Out = false
 
 [node name="GoldPickup32" parent="Pickups" unique_id=1346367561 instance=ExtResource("8_uxbry")]
 position = Vector2(-368, 32)
+Flip_Out = false
 
 [node name="GoldPickup33" parent="Pickups" unique_id=837119379 instance=ExtResource("8_uxbry")]
 position = Vector2(-336, 32)
+Flip_Out = false
 
 [node name="GoldPickup34" parent="Pickups" unique_id=1622923204 instance=ExtResource("8_uxbry")]
 position = Vector2(-352, 16)
+Flip_Out = false
 
 [node name="GoldPickup21" parent="Pickups" unique_id=175770154 instance=ExtResource("8_uxbry")]
 position = Vector2(-568, -344)
+Flip_Out = false
 
 [node name="GoldPickup13" parent="Pickups" unique_id=2095173704 instance=ExtResource("8_uxbry")]
 position = Vector2(648, 8)
+Flip_Out = false
 
 [node name="GoldPickup15" parent="Pickups" unique_id=3068880 instance=ExtResource("8_uxbry")]
 position = Vector2(648, 32)
+Flip_Out = false
 
 [node name="GoldPickup14" parent="Pickups" unique_id=1712433388 instance=ExtResource("8_uxbry")]
 position = Vector2(648, 56)
+Flip_Out = false
 
 [node name="GoldPickup10" parent="Pickups" unique_id=1153538568 instance=ExtResource("8_uxbry")]
 position = Vector2(368, 160)
+Flip_Out = false
 
 [node name="GoldPickup8" parent="Pickups" unique_id=413664090 instance=ExtResource("8_uxbry")]
 position = Vector2(328, 144)
+Flip_Out = false
 
 [node name="GoldPickup9" parent="Pickups" unique_id=790856631 instance=ExtResource("8_uxbry")]
 position = Vector2(328, 120)
+Flip_Out = false
 
 [node name="Enemies" type="Node" parent="." unique_id=1984233044]
 
@@ -501,7 +641,34 @@ position = Vector2(-352, -8)
 position = Vector2(-408, -48)
 
 [node name="SuperStrongRat" parent="Enemies" unique_id=1845722072 instance=ExtResource("9_0x0i3")]
-position = Vector2(232, -248)
+position = Vector2(16, -280)
+
+[node name="SuperStrongRat2" parent="Enemies" unique_id=1670622060 instance=ExtResource("9_0x0i3")]
+position = Vector2(48, -280)
+
+[node name="SuperStrongRat3" parent="Enemies" unique_id=255640523 instance=ExtResource("9_0x0i3")]
+position = Vector2(64, -264)
+
+[node name="SuperStrongRat4" parent="Enemies" unique_id=829905573 instance=ExtResource("9_0x0i3")]
+position = Vector2(64, -240)
+
+[node name="SuperStrongRat5" parent="Enemies" unique_id=588718637 instance=ExtResource("9_0x0i3")]
+position = Vector2(568, 144)
+
+[node name="SuperStrongRat6" parent="Enemies" unique_id=117659046 instance=ExtResource("9_0x0i3")]
+position = Vector2(624, 144)
+
+[node name="SuperStrongRat7" parent="Enemies" unique_id=1506221838 instance=ExtResource("9_0x0i3")]
+position = Vector2(704, 152)
+
+[node name="SuperStrongRat8" parent="Enemies" unique_id=2004275977 instance=ExtResource("9_0x0i3")]
+position = Vector2(744, 240)
+
+[node name="SuperStrongRat9" parent="Enemies" unique_id=575037110 instance=ExtResource("9_0x0i3")]
+position = Vector2(744, 264)
+
+[node name="SuperStrongRat10" parent="Enemies" unique_id=245736216 instance=ExtResource("9_0x0i3")]
+position = Vector2(592, 256)
 
 [node name="Unused Enemies" type="Node" parent="." unique_id=2035942046]
 
@@ -509,7 +676,7 @@ position = Vector2(232, -248)
 visible = false
 position = Vector2(-108, 301)
 
-[node name="HobLobber" parent="Unused Enemies" unique_id=1670622060 instance=ExtResource("11_5n6rv")]
+[node name="HobLobber" parent="Unused Enemies" unique_id=284459774 instance=ExtResource("11_5n6rv")]
 visible = false
 position = Vector2(-264, 184)
 
@@ -531,9 +698,13 @@ visible = false
 position = Vector2(369, 268)
 
 [node name="HawkEnemy" parent="." unique_id=346107231 instance=ExtResource("14_lqe51")]
-position = Vector2(-72, -232)
+position = Vector2(232, -408)
+
+[node name="RatKing" parent="." unique_id=1545687342 instance=ExtResource("15_1ekbf")]
+position = Vector2(-40, 232)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

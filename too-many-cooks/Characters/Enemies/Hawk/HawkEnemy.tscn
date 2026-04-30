@@ -8,14 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_3j15n"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="6_dedhg"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="7_2v1gg"]
+[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_28cnu"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="8_gyy8f"]
+[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_i4era"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="9_7ye8k"]
+[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_xwg5o"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_6u5ja"]
 [ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="10_sqkpv"]
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]
@@ -76,6 +79,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_28cnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i4era")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwg5o")
+}],
+"loop": true,
+"name": &"swing",
 "speed": 5.0
 }]
 
@@ -192,7 +209,7 @@ visibility_layer = 2
 position = Vector2(-2.375, 1.375)
 scale = Vector2(0.78125, 0.6944444)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
-animation = &"hit"
+animation = &"swing"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_dedhg")]
 offset_top = -16.5

@@ -11,8 +11,8 @@ var displayMana : int = int(mana)
 ##current stats including modifiers
 #currently unused except for speed
 var strength : int = PlayerStats.base_str + PlayerStats.passive_str
-var defense : int = PlayerStats.base_def + PlayerStats.passive_def
-var magic : int = PlayerStats.base_mag + PlayerStats.passive_mana
+#var defense : int = PlayerStats.base_def + PlayerStats.passive_def
+#var magic : int = PlayerStats.base_mag + PlayerStats.passive_mana
 var speed : int = 12
 var speed_mult : int = PlayerStats.base_spd + PlayerStats.passive_spd
 
@@ -79,9 +79,9 @@ func set_class(new_class : PlayerClass):
 	$attack_state.set_script(new_class.attack)
 	$magic_state.set_script(new_class.magic)
 	
-	strength *= new_class.str_mod
-	defense *= new_class.def_mod
-	magic *= new_class.mag_mod
+	#strength *= new_class.str_mod
+	#defense *= new_class.def_mod
+	#magic *= new_class.mag_mod
 	
 	$Weapon/Sprite2D.texture = new_class.weapon_sprite
 

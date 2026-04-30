@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://b3bsmqowy1nm"]
+
+[ext_resource type="Script" uid="uid://c4cpnpe7akucx" path="res://Characters/Enemies/Rat King/rat_king.gd" id="1_qilw0"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_eliu1"]
+[ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_b0bd7"]
+[ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_4u66m"]
+[ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_jn6tf"]
+[ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_wennr"]
+[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_w5jkc"]
+[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_ei4u7"]
+[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_mahoe"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="10_b3l8j"]
+[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="11_hw1kh"]
+[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="12_tchgu"]
+[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="13_1vrnj"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="14_f3eq6"]
+[ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="15_8gs0y"]
+[ext_resource type="Script" uid="uid://impha2odfxp7" path="res://Characters/Enemies/Rat King/multi_projectile_state.gd" id="15_nqo7f"]
+[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="16_6cocn"]
+[ext_resource type="Script" uid="uid://s35p5ffhlejl" path="res://Characters/Enemies/Rat King/aoe_state.gd" id="16_ue585"]
+[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_rldik"]
+[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_fuqu5"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
+[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_c073d"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_bjov1"]
+[ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_chgiv"]
+[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="23_tjxfb"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="24_g3bjd"]
+[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="25_0lxfw"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="26_3ttlr"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="27_tp4v8"]
+[ext_resource type="Script" uid="uid://0d7u2tbx5ywu" path="res://Characters/Enemies/Rat King/damage_area.gd" id="30_1tb61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
+radius = 81.68537
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b0bd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4u66m")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jn6tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wennr")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b0bd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4u66m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_w5jkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ei4u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mahoe")
+}],
+"loop": true,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcjsq"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aqng"]
+radius = 5.0
+
+[sub_resource type="Curve" id="Curve_rqdct"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.8980377, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7gtmk"]
+offsets = PackedFloat32Array(0, 0.36477986, 0.7201258, 1)
+colors = PackedColorArray(1, 0.5562859, 0.49291265, 1, 1.6508848e-05, 0.88766235, 2.3102762e-06, 1, 0.4312825, 0.6115833, 1, 1, 1, 0.5710682, 0.50889343, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_i4era"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("OrbPickup", "CharacterBody2D", "collision_layer", "collision_mask", "script", "Name", "Value", "metadata/_custom_type_script", "Area2D", "Area2D", "collision_layer", "CollisionShape2D", "CollisionShape2D", "shape", "Sprite2D", "Sprite2D", "z_index", "texture", "sight", "Area2D", "collision_layer", "CollisionShape2D", "CollisionShape2D", "z_index", "shape", "debug_color", "CollisionShape2D", "CollisionShape2D", "shape", "CPUParticles2D", "CPUParticles2D", "texture", "emission_shape", "emission_sphere_radius", "spread", "gravity", "initial_velocity_min", "initial_velocity_max", "scale_amount_min", "scale_amount_curve", "color_ramp", "hue_variation_max"),
+"node_count": 8,
+"node_ids": PackedInt32Array(1955872402, 1657457641, 998753768, 861499226, 408621695, 1691155092, 181732196, 1731360392),
+"node_paths": [NodePath("."), NodePath("./Area2D"), NodePath("."), NodePath("."), NodePath("./sight"), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741824, 0, 9, 8, -1, 1, 10, 6, 0, 1073741825, 0, 12, 11, -1, 1, 13, 7, 0, 1073741826, 0, 15, 14, -1, 2, 16, 8, 17, 9, 0, 1073741827, 0, 19, 18, -1, 1, 20, 10, 0, 1073741828, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741829, 0, 27, 26, -1, 1, 28, 14, 0, 1073741830, 0, 30, 29, -1, 11, 31, 15, 32, 16, 33, 17, 34, 18, 35, 19, 36, 20, 37, 21, 38, 22, 39, 23, 40, 24, 41, 25, 0),
+"variants": [0, 64, ExtResource("23_tjxfb"), "Orb", 1, "uid://tgpwx3tswq0", 0, SubResource("CircleShape2D_e8js4"), 1, ExtResource("24_g3bjd"), 0, 1, SubResource("CircleShape2D_lcjsq"), Color(0.99564105, 0.940498, 0.97477525, 0.08627451), SubResource("CircleShape2D_3aqng"), ExtResource("25_0lxfw"), 1, 8.0, 180.0, Vector2(0, 0), 10.0, 10.0, 0.5, SubResource("Curve_rqdct"), SubResource("Gradient_7gtmk"), 1.0],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_xwg5o"]
+script = ExtResource("21_bjov1")
+SceneToSpawn = SubResource("PackedScene_i4era")
+DropCountRange = Vector2(1, 1)
+DropChance = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
+radius = 16.0
+
+[node name="RatKing" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
+collision_layer = 8
+collision_mask = 64
+script = ExtResource("1_qilw0")
+health = 100
+damage = 10
+sight_state = NodePath("AoEState")
+starting_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
+shape = SubResource("RectangleShape2D_jonyw")
+debug_color = Color(0.7, 0, 0, 0.41960785)
+
+[node name="Sight" type="Area2D" parent="." unique_id=1355964886]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1657238234]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_1oxet")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=646997873]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
+shape = SubResource("RectangleShape2D_f5e7n")
+debug_color = Color(0.10499998, 0.7, 0, 0.41960785)
+
+[node name="Near Zone" type="Area2D" parent="." unique_id=2057668559]
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Near Zone" unique_id=832811309]
+shape = SubResource("CircleShape2D_sqkpv")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
+visible = false
+shape = SubResource("RectangleShape2D_bhto8")
+
+[node name="RegularProjectileLines" type="Node2D" parent="." unique_id=655689982]
+
+[node name="Projectile Line1" type="RayCast2D" parent="RegularProjectileLines" unique_id=2077328044]
+target_position = Vector2(88, -80)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="Projectile Line2" type="RayCast2D" parent="RegularProjectileLines" unique_id=303834449]
+target_position = Vector2(88, 0)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="Projectile Line3" type="RayCast2D" parent="RegularProjectileLines" unique_id=1972545564]
+target_position = Vector2(88, 80)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="EnragedProjectileLines" type="Node2D" parent="." unique_id=1955868048]
+visible = false
+
+[node name="Projectile Line1" type="RayCast2D" parent="EnragedProjectileLines" unique_id=445987809]
+target_position = Vector2(88, -80)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="Projectile Line2" type="RayCast2D" parent="EnragedProjectileLines" unique_id=385080651]
+target_position = Vector2(88, -40)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="Projectile Line3" type="RayCast2D" parent="EnragedProjectileLines" unique_id=144603376]
+target_position = Vector2(88, 80)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="Projectile Line4" type="RayCast2D" parent="EnragedProjectileLines" unique_id=874828169]
+target_position = Vector2(88, 40)
+collision_mask = 64
+collide_with_areas = true
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_eliu1")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
+stream = ExtResource("2_eliu1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
+visible = false
+visibility_layer = 2
+position = Vector2(-2.375, 1.375)
+scale = Vector2(0.78125, 0.6944444)
+sprite_frames = SubResource("SpriteFrames_wcvgi")
+animation = &"swing"
+
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("10_b3l8j")]
+visible = false
+offset_top = -16.5
+offset_bottom = -12.5
+
+[node name="IdleState" type="Node" parent="." unique_id=216113114]
+script = ExtResource("11_hw1kh")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ChaseState" type="Node" parent="." unique_id=284789326]
+script = ExtResource("12_tchgu")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DashState" type="Node" parent="." unique_id=1342912869 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("13_1vrnj")
+speed = 0.5
+state_to_enter = NodePath("../JunctionState")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="SlashState" type="Node" parent="." unique_id=1572581232 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("14_f3eq6")
+state_to_enter = NodePath("../JunctionState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="MultiProjectileState" type="Node" parent="." unique_id=875655972]
+script = ExtResource("15_nqo7f")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="AoEState" type="Node" parent="." unique_id=675504382]
+script = ExtResource("16_ue585")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ApproachState" type="Node" parent="." unique_id=1069220951 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("15_8gs0y")
+state_to_enter = NodePath("../SlashState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ProjectileState" type="Node" parent="." unique_id=742252322]
+script = ExtResource("16_6cocn")
+Projectile = ExtResource("17_rldik")
+Projectile_Speed = 2
+Idle_Time = 1.0
+Flee_While_Firing = true
+Flee_Speed = 5.0
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
+script = ExtResource("18_fuqu5")
+Knockback_Strength = 50
+Hit_Stun = 0.3
+Hit_Sound = NodePath("../TakeDamage")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="Timer" type="Timer" parent="HitState" unique_id=1954240173]
+wait_time = 0.3
+one_shot = true
+
+[node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
+script = ExtResource("19_bi8cu")
+Possibilities = [NodePath("../SlashState")]
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DeathState" type="Node" parent="." unique_id=297472194 node_paths=PackedStringArray("Death_Sound")]
+script = ExtResource("20_c073d")
+Drops = Array[ExtResource("21_bjov1")]([ExtResource("22_chgiv"), SubResource("Resource_xwg5o")])
+Drop = ExtResource("26_3ttlr")
+Drop_Amount = 1
+Drop_Amount_Max = 2
+Death_Sound = NodePath("../Die")
+dust_effect = ExtResource("27_tp4v8")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=377356932]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("30_1tb61")
+
+[node name="CollisionZone" type="CollisionShape2D" parent="DamageArea" unique_id=457180453]
+shape = SubResource("CircleShape2D_ue585")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
+[connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
+[connection signal="create_damage_area" from="AoEState" to="DamageArea" method="_on_create_damage_area"]

@@ -11,6 +11,6 @@ func _on_button_down() -> void:
 	if clickSound:
 		clickSound.play()
 
-func _on_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+#func _on_pressed() -> void:
+	#get_tree().paused = false
+	#get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")

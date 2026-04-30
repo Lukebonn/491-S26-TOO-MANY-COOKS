@@ -7,9 +7,9 @@ class_name PlayerClass
 @export var magic : Script
 
 ##stat modifiers for the class
-@export var str_mod : float
-@export var def_mod : float
-@export var spd_mod : float
-@export var mag_mod : float
+#@export var str_mod : float
+#@export var def_mod : float
+#@export var spd_mod : float
+#@export var mag_mod : float
 
 @export var weapon_sprite : Texture

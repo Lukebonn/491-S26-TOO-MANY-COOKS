@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_ev1q8"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="13_grght"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i5n2a"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="17_ev1q8"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -539,7 +540,10 @@ position = Vector2(776, 167)
 [node name="BigGoldPickup3" parent="." unique_id=2114123335 instance=ExtResource("9_inikf")]
 position = Vector2(793, -175)
 
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("17_ev1q8")]
+
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
