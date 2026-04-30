@@ -8,6 +8,9 @@ var touched = false
 var count = 0
 var active = true
 
+signal close_barriers
+signal open_barriers
+
 func _ready() -> void:
 	for s in Spawners:
 		s.connect("on_all_dead", add_count)
@@ -26,12 +29,14 @@ func _on_body_entered(body: Node2D) -> void:
 
 func start_room() -> void:
 	#Start room sequence.
+	close_barriers.emit()
 	for s in Spawners:
 		s.try_spawn_enemies()
 	for b in Barriers:
 		b.call_deferred("make_visible")
 
 func stop_room() -> void:
+	open_barriers.emit()
 	active = false
 	for b in Barriers:
 		b.call_deferred("destroy_barrier")
