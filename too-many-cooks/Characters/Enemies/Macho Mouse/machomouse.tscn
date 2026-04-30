@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cn040ujaxitbj"]
 
-[ext_resource type="Script" uid="uid://d3q6aiklmd5m5" path="res://Characters/Enemies/Template Enemy Kit/Enemy Classes/EnemyClass.gd" id="1_b7gmt"]
+[ext_resource type="Script" uid="uid://craq1coyrr5wk" path="res://Characters/Enemies/Macho Mouse/machomouse.gd" id="1_opqhs"]
 [ext_resource type="Texture2D" uid="uid://2mur3xggtd32" path="res://Characters/Enemies/Macho Mouse/walk/walk 1.png" id="2_1j8ml"]
-[ext_resource type="Texture2D" uid="uid://c5lyanbcr1ob8" path="res://Scenes/Test/ProtoArt/icon.svg" id="2_c6k4b"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_agy67"]
 [ext_resource type="Texture2D" uid="uid://b48opb1pnl2di" path="res://Characters/Enemies/Macho Mouse/walk/walk 2.png" id="3_mvhqh"]
 [ext_resource type="Texture2D" uid="uid://dddmq4coquv1" path="res://Characters/Enemies/Macho Mouse/idle/idle.png" id="4_trp88"]
@@ -45,7 +44,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"chase",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -56,7 +55,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -70,16 +69,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"smash",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[node name="TemplateEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
+[node name="Macho Mouse" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
 collision_layer = 8
 collision_mask = 64
-script = ExtResource("1_b7gmt")
-health = 100
-damage = 10
-sight_state = NodePath("JunctionState")
+script = ExtResource("1_opqhs")
+sight_state = NodePath("ChaseState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -113,15 +110,11 @@ shape = SubResource("RectangleShape2D_bhto8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
-animation = &"idle"
-
-[node name="template sprite" type="Sprite2D" parent="." unique_id=1448242322]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_c6k4b")
+animation = &"smash"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("3_agy67")]
-offset_top = -16.5
-offset_bottom = -12.5
+offset_top = -20.5
+offset_bottom = -16.5
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
 script = ExtResource("4_y8bo7")

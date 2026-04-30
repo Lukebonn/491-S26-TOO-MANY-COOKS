@@ -2,7 +2,7 @@ extends EnemyState
 #chase state simply follows the player
 #similar to how slime_enemy does
 
-@export var Chase_Speed : int = 50
+@export var Chase_Speed : int = 26
 
 func enter_state(enemy_node):
 	super(enemy_node)
