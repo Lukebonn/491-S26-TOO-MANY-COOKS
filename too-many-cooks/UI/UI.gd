@@ -15,9 +15,6 @@ var mage_objective = 0
 
 signal flashManaBar()
 
-var warrior_quest_1 = "Quest: Kill 10 enemies"
-
-var mage_quest_1 = "Quest: Get an orb"
 signal update_health_bar
 signal update_mana_bar
 
@@ -98,7 +95,6 @@ func _process(delta: float) -> void:
 		player.displayMana = int(player.mana)
 		# updates the values for displayHealth & displayMana 
 		# to display as integers.
-		quest_received()
 	##will check every frame whether or not there is a chnage in the key array, if there is it will remove a sprite from the listing
 	current_visible_keys = 0
 	for i in range(PlayerStats.keys.size()):
@@ -188,25 +184,6 @@ func _on_return_button_button_down() -> void:
 	PlayerStats.Floor_Orbs = 0
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
-
-func quest_received():
-	if Global.Has_Warrior_Quest_1:
-		$Quest.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs])
-		if PlayerStats.Quest1EnemiesKOs >= 10:
-			$Quest.set_text("Quest complete! Talk to Warrior!")
-	if Global.Has_Mage_Quest_1:
-		$Quest.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
-		if PlayerStats.Quest1Orbs >= 1:
-			$Quest.set_text("Quest complete! Talk to Mage!")
-	if PlayerStats.quests > 1:
-		if $Quest.text == (mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs]):
-			$Quest2.set_text(warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs])
-			if PlayerStats.Quest1EnemiesKOs >= 10:
-				$Quest2.set_text("Quest complete! Talk to Warrior!")
-		elif $Quest.text == (warrior_quest_1 + " %d / 10" % [PlayerStats.Quest1EnemiesKOs]):
-			$Quest2.set_text(mage_quest_1 + " %d / 1" % [PlayerStats.Quest1Orbs])
-			if PlayerStats.Quest1Orbs >= 1:
-				$Quest2.set_text("Quest complete! Talk to Mage!")
 
 func on_pause_cooldown_finished() -> void:
 	pauseDisabled = false

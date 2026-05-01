@@ -322,7 +322,6 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Warrior"
 Class_Level = 1
-Class_Ability_Level = 1
 Class_Attack = ExtResource("14_p826n")
 Class_Dash = ExtResource("15_1gied")
 Class_Magic = ExtResource("16_tvort")
@@ -373,7 +372,7 @@ mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Warrior"
 Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q"), SubResource("PlaceholderTexture2D_2xisf"), SubResource("PlaceholderTexture2D_b3jjp")])
-Conversations = Array[String](["0,1,2,3,4,5", "79,80", "82,83,84"])
+Conversations = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
@@ -390,7 +389,6 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Rogue"
 Class_Level = 1
-Class_Ability_Level = 1
 Class_Attack_Desc = "ranged attack!"
 Class_Dash_Desc = "something!"
 Class_Magic_Desc = "something!"
@@ -438,7 +436,7 @@ mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Rogue"
 Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q"), SubResource("PlaceholderTexture2D_vrssr"), SubResource("PlaceholderTexture2D_w0ln7")])
-Conversations = Array[String](["0", "10"])
+Conversations = Array[String](["1,2,3,4", "7,8,9,10", "13,14,15,16", "19,20,21", "24,25,26,27,28", "31,32,33,34", "37", "38", "39", "40", "41", "44", "45", "46", "47", "48", "51", "52", "53", "54", "55", "58", "59", "60", "61", "62"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Mage_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1953501329 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
@@ -456,7 +454,6 @@ script = ExtResource("23_djqff")
 Class_Menu_Ref = NodePath("../../../Class_Menu")
 Class_Name = "Mage"
 Class_Level = 1
-Class_Ability_Level = 1
 Class_Attack_Desc = "staff!"
 Class_Dash_Desc = "teleport!"
 Class_Magic_Desc = "various spells!"
@@ -503,7 +500,7 @@ mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Mage"
 Expressions = Array[Texture]([ExtResource("7_a44po"), SubResource("PlaceholderTexture2D_1gied"), SubResource("PlaceholderTexture2D_tvort"), SubResource("PlaceholderTexture2D_0id2w"), SubResource("PlaceholderTexture2D_ulbsv"), SubResource("PlaceholderTexture2D_gevxm")])
-Conversations = Array[String](["0,1,2,3,4,5", "7,8", "10,11,12,13,14,15"])
+Conversations = Array[String](["1,2,3,4", "7,8,9,10", "13,14,15,16", "19,20,21", "24,25,26", "29,30,31,32,33", "36", "37", "38", "39", "39", "42", "43", "43", "43", "43", "46", "46", "46", "46", "46", "49", "50", "51", "52", "52"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="NPCs" type="Control" parent="Tavern BG" unique_id=1772715436]
@@ -526,7 +523,7 @@ texture_pressed = ExtResource("24_gpyct")
 script = ExtResource("6_41fud")
 Name = "Gramps"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
-Conversations = Array[String](["19", "20"])
+Conversations = Array[String](["5,6,7,8,9", "11,12,13,14", "16,17,18,19", "0", "0", "0", "21", "22", "23", "24", "25", "27", "28", "29", "30", "31", "33", "34", "35", "36", "37"])
 
 [node name="DebugKOButton" type="Button" parent="Tavern BG" unique_id=1500362303]
 visible = false

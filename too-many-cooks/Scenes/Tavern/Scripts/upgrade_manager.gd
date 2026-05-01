@@ -26,6 +26,7 @@ func _on_upgrade_complicated(variant):
 		"MagicWorkshop0":
 			Global.Has_Mage_NPC = true
 			PlayerStats.MageClassLevel = 1
+			
 			$"../Class_NPCS/Mage_CLASS_NPC".show()
 			$"../TavernBackgroundLong".hide()
 			$"../TavernBackgroundLong2".show()

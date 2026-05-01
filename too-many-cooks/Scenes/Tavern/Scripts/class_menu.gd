@@ -71,11 +71,15 @@ func _check_upgrade_avaliability():
 	else:
 		return false
 func _check_ability_avaliability():
-	orb_upgrade_price = floor((2 * current_ability_level)**1.3)
-	ability_label_ref.text = "Costs " + str(orb_upgrade_price) + " Orbs"
-	if PlayerStats.Orbs >= orb_upgrade_price:
-		return true
+	if current_ability_level <5:
+		orb_upgrade_price = floor((2 * current_ability_level)**1.3)
+		ability_label_ref.text = "Costs " + str(orb_upgrade_price) + " Orbs"
+		if PlayerStats.Orbs >= orb_upgrade_price:
+			return true
+		else:
+			return false
 	else:
+		$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Label.text = "Maxxed!"
 		return false
 func _on_talk_pressed():
 	hide_menu_top()
@@ -112,13 +116,71 @@ func _on_upgrade_ability_pressed():
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level += 1
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
+			match $"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level:
+				1:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 3
+					$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				3:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 4
+					$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				5:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Warrior_NPC".selected = 5
+					$"../Tavern BG/Class_NPCS/Warrior_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level += 1
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
+			match $"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level:
+				1:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 3
+					$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				3:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 4
+					$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				5:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Rogue_NPC".selected = 5
+					$"../Tavern BG/Class_NPCS/Rogue_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level += 1
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
+			match $"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level:
+				1:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 3
+					$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				3:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 4
+					$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
+				5:
+					hide_menu_top()
+					$"../Tavern BG/Class_NPCS/Mage_NPC".selected = 5
+					$"../Tavern BG/Class_NPCS/Mage_NPC"._send_conversation()
+					await dialogue_ref.message_complete
+					show_menu()
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Upgrade.disabled = !_check_ability_avaliability()
+	
 func _on_back_pressed():
 	back_pressed.emit()
 	hide_menu()

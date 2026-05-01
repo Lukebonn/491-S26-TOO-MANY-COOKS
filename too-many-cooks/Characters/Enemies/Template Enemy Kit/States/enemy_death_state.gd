@@ -43,8 +43,6 @@ func enter_state(enemy_node):
 		PlayerStats.KillCount += 1
 		if EnemyStats.enemies_in_room > 0:
 			EnemyStats.enemies_in_room -= 1
-		if Global.Has_Warrior_Quest_1:
-			PlayerStats.Quest1EnemiesKOs += 1
 
 func drop_drops():
 	#for i in amount:

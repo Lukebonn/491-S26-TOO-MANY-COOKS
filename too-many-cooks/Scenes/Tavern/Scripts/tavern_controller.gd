@@ -3,7 +3,7 @@ extends Node2D
 func _ready():
 	FadeInFadeOut.fade_in()
 	if Global.First_Time_Tavern:
-		dialogue_ref.show_dialogue("Gramps","5,6,7,8,9,10,12,13,14,15,16,17","0,0")
+		dialogue_ref.show_dialogue("Gramps","5,6,7,8,9","0,0")
 		await dialogue_ref.message_complete
 		$FirstTimeUI.show()
 

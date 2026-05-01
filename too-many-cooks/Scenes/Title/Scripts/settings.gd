@@ -11,7 +11,6 @@ func _ready():
 func do_settings_action(action: String):
 	match action:
 		"show_menu":
-			
 			in_menu = true
 			var tween = self.create_tween()
 			tween.tween_property($cover,"position",Vector2(0,0),0.1).set_trans(Tween.TRANS_EXPO)

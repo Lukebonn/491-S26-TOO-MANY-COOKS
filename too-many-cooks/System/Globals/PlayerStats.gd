@@ -5,8 +5,8 @@ extends Node
 #make sure they are typed variables too, most will be floats
 
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
-var Gold := 0
-var Orbs : int = 0
+var Gold := 999
+var Orbs : int = 999
 #Gold/Orbs when entering floor, reverted back to on Retry to avoid infinite farm.
 var Floor_Gold : int = 0 #prev temp_gold
 var Floor_Orbs : int = 0 #prev temp_orbs
@@ -90,18 +90,28 @@ var icon_bar
 ##"achievement" stats that go up and determine class avaliablity... among other things?
 var KillCount : int = 0
 
-#variables to track how many enemies are killed during quests
-var Quest1EnemiesKOs : int = 0
-var Quest1Orbs : int = 0
-
-#variable to track how many quests we have
-var quests : int = 0
+var level_kill_count : int
+var has_not_dashed : bool
+var no_damage : bool
+var coins_collected : int
+var speedrun_under_60 : bool
+var speedrun_under_90 : bool
+var speedrun_under_120 : bool
 
 #vars to track NPC class levels, read by the class NPCs on tavern load
 var MeleeClassLevel : int = 1
 var MageClassLevel : int = 1
 var RogueClassLevel : int = 1
 #same but for abilities
-var MeleeClassAbilityLevel : int = 1
-var MageClassAbilityLevel : int = 1
-var RogueClassAbilityLevel : int = 1
+var MeleeClassAbilityLevel : int = 0
+var MageClassAbilityLevel : int = 0
+var RogueClassAbilityLevel : int = 0
+
+func reset_objective_stats():
+	level_kill_count = 0
+	coins_collected = 0
+	has_not_dashed = true
+	no_damage = true
+	speedrun_under_60 = true
+	speedrun_under_90 = true
+	speedrun_under_120 = true

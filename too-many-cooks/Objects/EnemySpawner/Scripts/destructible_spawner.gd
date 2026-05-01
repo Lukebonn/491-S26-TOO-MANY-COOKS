@@ -79,6 +79,8 @@ var cur_step : int = 0
 var cur_point : int = 0
 
 func destroy_spawner() -> void:
+	$orb.hide()
+	$orbparticlesaggroed.hide()
 	for drop in Drops:
 		var c = randf_range(0.0, 1.0)
 		if drop.DropChance >= c:
@@ -108,6 +110,9 @@ func try_spawn_enemies() -> void:
 	if canSpawn && not enemy_count >= SpawnLimit:
 		#Disable future spawning, spawn enemies next physics frame.
 		canSpawn = false
+		#toggle the aggro particles on
+		$orbparticlesaggroed.show()
+		$orbparticles.hide()
 		#Use call deferred, have to wait until physics frame is done.
 		call_deferred("spawn_enemies")
 		on_spawn.emit()

@@ -41,7 +41,6 @@ func show_dialogue(character: String, index, emotions):
 	var tween = get_tree().create_tween()
 	#var portrait_tween = get_tree().create_tween()
 	tween.tween_property($Container,"position",Vector2($Container.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
-	print($Portr)
 	#portrait_tween.tween_property($Container/SpeakerSprite,"position",Vector2($Container/SpeakerSprite.position.x,700),.5).set_trans(Tween.TRANS_CUBIC)
 	#print($Container.global_position)
 	#print($Container/SpeakerSprite.global_position)

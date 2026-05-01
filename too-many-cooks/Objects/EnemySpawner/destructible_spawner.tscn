@@ -5,9 +5,7 @@
 [ext_resource type="Script" uid="uid://jds2e01uhgmt" path="res://Objects/EnemySpawner/Scripts/desCol.gd" id="2_3mj1u"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="3_utcjh"]
 [ext_resource type="Resource" uid="uid://djqffdti4cmy8" path="res://Objects/Pickups/PickupData/PickupOrb.tres" id="4_oquvc"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mj1u"]
-load_path = "res://.godot/imported/tile_spawner.png-7dedee25e211ebeb930e97f86b11be31.ctex"
+[ext_resource type="Texture2D" uid="uid://7vcdu2q3o57r" path="res://Objects/EnemySpawner/Sprites/short_column_gray.png" id="7_7whxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gd6u"]
 
@@ -25,7 +23,7 @@ HP = 20
 Drops = Array[ExtResource("3_utcjh")]([ExtResource("4_oquvc")])
 
 [node name="Sprite2" type="Sprite2D" parent="." index="1" unique_id=1945316062]
-texture = SubResource("CompressedTexture2D_3mj1u")
+texture = ExtResource("7_7whxd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="4" unique_id=1306898467]
 

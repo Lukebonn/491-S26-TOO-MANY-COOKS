@@ -138,8 +138,6 @@ func _die() -> void:
 	hide()
 	#Add the enemy to the player's kill count
 	PlayerStats.KillCount += 1
-	if Global.Has_Warrior_Quest_1:
-		PlayerStats.Quest1EnemiesKOs += 1
 
 #The function that gives the damage to the player
 func get_damage():

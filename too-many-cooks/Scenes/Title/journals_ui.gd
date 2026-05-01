@@ -5,7 +5,9 @@ signal closed_menu
 
 func show_menu():
 	var tween = get_tree().create_tween()
+	check_all_entries()
 	tween.parallel().tween_property(self,"position",Vector2(0,0),.5).set_trans(Tween.TRANS_EXPO)
+
 
 func hide_menu():
 	var tween = get_tree().create_tween()
@@ -19,3 +21,12 @@ func _on_exit_journals_pressed():
 
 func _on_exit_journals_mouse_entered():
 	hoverSound.play()
+
+func check_all_entries():
+	for entry in $TabContainer/Warrior/Entries.get_children():
+		entry.check_avaliablilty()
+	for entry in $TabContainer/Rogue/Entries.get_children():
+		entry.check_avaliablilty()
+	for entry in $TabContainer/Rogue/Entries.get_children():
+		entry.check_avaliablilty()
+	

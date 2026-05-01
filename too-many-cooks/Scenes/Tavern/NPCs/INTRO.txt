@@ -3,21 +3,36 @@
 [0]*...panting...*
 [0].... I’m getting too old for this. Hmm, still breathing there? Good, you owe me now.#
 #-------intro tavern speech below
-[5]You’re awake now, good. Take it slow getting up, you were in rough shape. I’m no doctor but I've patched you up the best I could.
-[3]Now that I know you’re not dead, what in hells were you thinking going into the Tower like that? 
-[5]I don’t recognize you so you must be new to these lands. And you charged into the Tower as soon as you got here? Kids these days…
-[3]Listen, you want to go and clear out the scum in there? Fine by me, but if you leave as you are now you’ll get eaten alive. 
-[3]And besides, I risked my tailfeathers going in there and saving you. So in return, you’re going to help me out.
-[5]Don’t make that face, it’s nothing horrible. You’ll be helping me run this tavern.  Well I’ll be serving, and you will be fixing it up.
-[2]In return, I’m sure there will be some folks who might help you out as thanks. That's the power of community.
-[5]To start you off here’s some gold I picked up off the rats I beat off of you. That’s the one good thing about that cursed Tower, defeat anything in there and you get the gold they were carrying.
-[5]Take the gold over to something that’s broken down and use it to fix it up right. If we get this place back into shape, we’ll get more customers. At least some of them should be of use to you.
-[1]Oh, and take the time to talk to the people here. Like that fierce lion lady over there, she’s one of my last regulars. She’s been really busy lately, dealing with the overflow from the Tower.
-[5]Go ahead and ask her what you can do for her and if you prove yourself she can teach you some skills in return.
-[5]When you’re ready, make your way over to the exit on the right to head back to the Tower.
-[2]And remember kid, don’t die on me.#
-#-------- general talk act 1
-[5]What’re you still lingering around here for? Either grab a rag and clean something, talk to a patron to make them feel welcome, or get out of here and start working on clearing that Tower.#
-[4]Booze? Ran out of the good stuff months ago. Best I have is some ale that's so heavily watered down you could serve it to children. What? No, I don’t actually serve it to children. Did you really think I did?#
-#-------- question below for testing
-[0]This is a question/Text1,Text2,Text3
+[3]You’re awake now, good. Now that I know you’re not dead, what were you thinking going into the Tower like that? You charged in as soon as you got here? Kids these days… 
+[3]Listen, you want to go and clear out the scum in there? Fine by me, but if you leave as you are now you’ll get eaten alive. And besides, I risked my tailfeathers going in there and saving you. So in return, you’re going to help me out. 
+[5]Don’t make that face, it’s nothing horrible. You’ll be helping me run this tavern.  Well I’ll be serving, and you will be fixing it up. In return, I’m sure there will be some folks who might help you out as thanks. That's the power of community.
+[5]Take a minute to get your bearings and look around. When you’re ready to leave, make your way over to the exit on the right to head back to the Tower. 
+[2]And remember kid, don’t die on me. I’ve seen the Rat King take many lives. Don’t want you to be another one.#
+Act 2: First talk after defeating Act 1 boss
+[5]Look at you, acting all confident now that you beat one of the blockheads guarding the way higher up in the tower. 
+[5]Listen here, a word of advice for you. Don’t get too cocky now, you’ve a long way to go before taking down the Rat King. 
+[3]And if you think this means you can start slacking in your duties, you’ve got another thing coming! 
+[5]Now get back to it. Make sure to keep talking with the others and head on back to the Tower, it’ll only get tougher from here on out.# 
+Act 3: First talk after defeating Act 2 boss
+[3]Another one bites the dust. Don’t feel sorry for them, they made their choice by throwing in with the Rat King. 
+[5]Make sure you keep talking with the others, they’re the ones who will teach you how to be stronger. 
+[5]Don’t forget about the training room either, you can brush up on any of the fighting styles you haven’t tried in a while. 
+[3]And keep on heading back to the Tower! You’re close now, no giving up now!
+Act 1: General Talk 
+[5]What’re you still lingering around here for? Either grab a rag and clean something, talk to a patron to make them feel welcome, or get out of here and start working on clearing that Tower.# 
+[4]Booze? Ran out of the good stuff months ago. Best I have is some ale that's so heavily watered down you could serve it to children. What? No, I don’t actually serve it to children. Did you really think I did?# 
+[5]How are you doing on gold? If you’re running low head back to the Tower. That’s the one good thing about that wretched place, defeat anything in there and you get the gold they were carrying.#
+[5]You’re not from around here huh? You're either full of yourself or a fool for thinking you could come here and clean everything up in a day. Take it slow, we’ll take down that so-called king eventually.# 
+[3]What?# 
+Act 2: General Talk 
+[2]You’ve gotten really good at getting yourself out of sticky situations in the tower. Can’t say the same for everyone else that’s gone through there before. Stay safe now.#
+[5]You say it looks nicer in the tower the higher up you go? Huh, guess that must be where all the gold is going too. That means it must be even more grand at the top. What a pity, if only everyone could get to experience that level of luxury.#
+[3]I’ve had enough of that stinking racoon! He can make all the snide comments he likes, but no one insults my cooking!#
+[5]You want to learn how to cook and make drinks like I do? Listen, I’m flattered, really. But right now you have your part to do and I have mine. So keep clearing out that Tower and I’ll take care of everyone here. We’re a team now.# 
+[1]I was able to use some of the gold you brought back to buy a rare vintage wine off of a traveling merchant, some real good stuff. I’ll save this for a special occasion. Maybe for when we take down the Rat King.#
+Act 3: General Talk 
+[1]I’ve started to see a lot more smiles around lately. What’s that? You think I’m smiling more too? Well then, guess I’ve got you to thank for that. Keep it up.# 
+[2]Yes I am actually a grandfather, or I at least used to be. Not anymore, not after the Rat King showed up and devastated these lands. But that’s why we’re here right now, to make sure no one else loses anybody.#
+[5]You’re getting close to the end, I can feel it in the tips of my feathers. Make sure you prepare thoroughly before your next run, it may be the last push. Then I can finally take a load off and start relaxing.# 
+[4]I was just thinking about something. You’ve come a long way since I dragged you in here. At this point it's more likely that I’ll need your help if we get into a scrap. Don’t count me out completely though, these old talons are still sharp.# 
+[1]The others told me they’ve been thinking about sticking around, even after you take out the Rat King. I know you’ve talked about leaving afterwards, but if you ever need a place to stay, you’ll always have a home here.# 

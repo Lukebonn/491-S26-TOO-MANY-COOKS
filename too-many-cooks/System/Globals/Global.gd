@@ -15,14 +15,11 @@ var First_Time_Combat := true
 var Paused_In_Tavern := false
 var Paused_In_Combat := false
 
-var Has_Warrior_Quest_1 := false
-var Has_Mage_Quest_1 := false
-
 var Has_Mage_NPC := false
 var Has_Rogue_NPC := false
 
 var Act_2_Unlocked := false
-var Act_3_Unlocked := false
+var Act_3_Unlocked := true
 
 var Mage_Objective := false
 var Warrior_Objective := false

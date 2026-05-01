@@ -1,16 +1,53 @@
-[5]Oh how curious, a capricious cat approaches. Aren’t you an interesting littlest thing, repairing this run down tavern in hopes of attracting armed and able adventurers. 
-[1]Well then, in a turn of good fortune your little plan has panned out. I am Walter, a travelling archmage partaking in the never-ending quest for knowledge of the arcane. 
-[5]And my journeys have brought me here, for that atypical Tower has done something strange to the magics surrounding the area. 
-[5]I would investigate and study this phenomena, if it weren’t for the terribly unwelcoming denizens of the Tower.
-[5]That is where you come in my feline friend... 
-[1]Aid me in my research and I’ll impart upon you the wonders of magic. And for you especially I’ll ensure it is of the practical kind that will aid you in your climb of the Tower.#
-#- random line
-[2]What is that? Apologies, I was examining the latest results of some experiments I was running. 
-[1]What a joyous occasion it is to be confronted with a great mystery. Were it not for the havoc the Tower is wreaking on the locale.#
-#- quest1
-[5]For your first task, I entreat upon you to bring back samples of concentrated essence consisting of the creatures residing in the Tower. 
-[5]There are a few areas on each floor where the miscreants gather together, when you approach it will be as if a never ending flood of foes wash over you.
-[5]Take out their point of entry and you will be able to gather the very essence that I seek, so concentrated that even a novice mage such as yourself should be able to visualize it as small floating orbs. 
-[5]Do as I ask and I will teach you one of my most basic but essential spells, the fireball. 
-[5]I remember when my father first taught me that spell. Why I was still a boy of only a decade and a half, I hadn’t even earned my staff yet.
-[1]Instead I had to cast directly from my body, which is possible but lacking a focus the magic was often, well, unfocused. This in turn would cause the spells to react wildly, arcing in strange directions or…#
+#Introduction (First meeting):
+[5] Oh how curious, a capricious cat approaches. Aren’t you an *ribbit* interesting littlest thing, repairing this run down tavern in hopes of attracting armed and able adventurers. 
+[1] Well then, in a turn of good fortune your little plan has panned out. I am Walter, a travelling archmage partaking in the never-ending quest for knowledge of the arcane. 
+[5] And my journeys have brought me here, for that atypical Tower has done something strange to the magics surrounding the area. I would investigate and study this phenomena, if it weren’t for the terribly *ribbit* unwelcoming denizens of the Tower.
+[5] That is where you come in my feline friend, aid me in my research and I’ll impart upon you the wonders of magic. And for you especially I’ll ensure it is of the practical kind that will aid you in your climb of the Tower.#
+#
+#First talk after beating first boss/Start of Act 2:
+[1] Oh my, you made it past the brutish bully guarding the first floor. Please accept my *ribbit* copacetic congratulations.
+[5] Henceforth begins the true challenge. Each higher floor will be more difficult than the last. Of course, it will be but a small hurdle for you my capable comrade.
+[1] And please do take note of any anomalies you encounter on the way up. That twisted tower is full of otherworldly oddities that I am just *ribbit* croaking to study. 
+[1] Why just the other day I ran an experiment on a sample from the Tower. It was a piece of a crumbling wall, and yet when I studied its arcane properties I was surprised to find the..........#
+#
+First talk after beating second boss/Start of Act 3: 
+[1] *ribbit* It is absolutely amazing, getting that far in the Tower is truly spectacular. Kudos unto you for making it to the top level. 
+[2] Soon you will be facing the terrible tyrant, the Rat King. Take plenty of precautions in doing so. He is a wretch, but a *ribbit* powerful one at that. 
+[5] Were it not for his abhorrent actions, I would ask to study under him. His accomplishments in the arcane is something that will be taught for generations to come.
+[1] Fret not my fantastic fellow practitioner of the magical arts. With my guidance and the others, you will have little difficulty in ending the wretched reign of the Rat King.#
+#
+Orb Upgrade 1/Bond Rank 0 -> 1
+[1] Congratulations my cat companion, with these concentrated orbs of *ribbit* essence I will be able to make plentiful progress in studying the magic of the Tower. 
+[4] Hmm, fascinating. As I suspected, the magic is acting spectacularly strangely, as if the Tower itself is influencing the latent quintessence of the area.
+[5] I will need to do more research into this, in the meantime let me pay you back by teaching you how to *ribbit*  upgrade your splendid skills.#
+#
+Orb Upgrade 2/Bond Rank 2 -> 3
+[1] Curious creatures such as *ribbit* yourself never cease to amaze me!
+[5] Originally I intended to only instruct you in the most basics of spellcasting. And yet you have proven quite capable, a perplexing but pleasant surprise. 
+[1] You were so proficient with what I *ribbit* taught you so far.  I think you can handle something a little more powerful. Let me impart upon you the importance of the arcane.#
+#
+#Orb Upgrade 3/Bond Rank 4 -> 5
+[1] I never knew there was such potential in you. Time and time again you surpass my expectations.  Perhaps you are ready for a little more *ribbit* perilous power.
+[2] A word of warning my flourishing friend, these powers I am teaching you are quite powerful indeed. Take great care not to fall to greed and use said abilities for nefarious purposes. 
+[3] If you were to do so, I would be obligated to unleash my full might upon you. Decades of research would not go to waste. 
+[1] Of course, I do not believe such a *ribbit* fearful future is not in store. Not with how selfless you have been. 
+[1] Now get going my close companion. Take down that dastardly dictator, the fool who calls himself the Rat King!#
+#
+#General Talk - Bond Rank 0 
+[5] What was that my auspicious ally? You wish to look over my notes? My apologies, but I do not believe you *ribbit* have the mental capacity to understand my educated examinations.#  
+[3] That barbarian! How dare she insult the importance of a proper incantation. Does she not realize that without an exact verbal replica of the runes, the entire spell could go haywire?#
+[5] That old owl, Gramps was it? Do you know exactly how *ribbit* old he is? By my astute approximations he should not be more than five decades old, and yet he walks as if he’s lived centuries. Quite a conundrum.#
+[2] The raucous Renly had much to say about my splendid spells. He claimed that magic is better used in carrying out menial tasks such as cleaning. Rather than investigating the underlying fundamental properties of the world. A narrow view.# 
+#
+#General Talk - Bond Rank 1-2
+[2] What is that? Apologies, I was examining the latest results of some experiments I was running. What a joyous occasion it is to be confronted with a great mystery. Were it not for the havoc the Tower is wreaking on the *ribbit* lovely locale.#
+[1] I see, if I apply the formulas in reverse order, then the crystalline structure of the orb destabilizes enough for me to observe the intricate workings of the runes inscribed. How fantabulous!# 
+
+#General Talk - Bond Rank 3-4
+[5] You have taken to magic like a moth to a flame. Happy to see such a *ribbit* curator of curiosity. Perhaps one day you may continue your erudite education at a magical university? I would be willing to put in a word for you if you wish.# 
+
+#General Talk - Bond Rank 5 (max)
+[1] Have you heard? The others have finally stood down from their previous stance that magic is better used than studied! What a joyous occasion that others have become enlightened to the wonders of magic! 
+[5] After reviewing my notes I do believe that this place could prove to be an alluring area of further research. Both to look at the long term effects of the Tower, as well as other anomalies that are sure to abound in the aftermath.# 
+[2] And so you have reached the pinnacle of what I can teach you. I am happy for you and yet I feel a deep sadness for being unable to instruct you further. My reprehensible reservations aside, I will be around if you wish to speak with a friend.#. 
+[4] In such a short amount of time you have advanced quite quickly. If I had not known better I would have presumed you a prodigy. Either way, you have my full support in your engaging endeavors.#

@@ -72,7 +72,6 @@ func _ready() -> void:
 	array_length = Enemies.size()
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
 	interval = $Interval
-	$Sprite.hide()
 	if SpawnPath:
 		path_length = SpawnPath.curve.get_baked_length()
 
@@ -80,6 +79,9 @@ func try_spawn_enemies() -> void:
 	if canSpawn && not enemy_count >= SpawnLimit:
 		#Disable future spawning, spawn enemies next physics frame.
 		canSpawn = false
+		#toggle the aggro particles on
+		$orbparticlesaggroed.show()
+		$orbparticles.hide()
 		#Use call deferred, have to wait until physics frame is done.
 		call_deferred("spawn_enemies")
 		on_spawn.emit()
