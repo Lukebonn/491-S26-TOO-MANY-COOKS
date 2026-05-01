@@ -63,6 +63,8 @@ var interval : Timer
 var path_length : float = 0.0
 #Current step in Enemies, for Constant spawn method.
 var cur_step : int = 0
+#Current step in SpawnPoints, for SetPoints location method.
+var cur_point : int = 0
 
 func _ready() -> void:
 	#Calculate rotation incriment for later.
@@ -138,7 +140,14 @@ func calc_spawn_pos(i: int):
 			#Return rotated Vec2 in min-max range based on incriment * index.
 			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
 	if LocationType == LocType.SetPoints:
-		return position + Vector2(SpawnPoints[i].position)
+		if RandomLocation:
+			return Vector2(SpawnPoints[randi_range(0, SpawnPoints.size() - 1)].global_position)
+		else:
+			if cur_point >= SpawnPoints.size():
+				cur_point = 0
+			var rp = Vector2(SpawnPoints[cur_point].global_position)
+			cur_point += 1
+			return rp
 
 func on_enemy_dead() -> void:
 	enemies_defeated += 1
