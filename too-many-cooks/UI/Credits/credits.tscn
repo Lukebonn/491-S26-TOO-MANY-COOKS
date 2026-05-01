@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://1x46iyceb3fq"]
+
+[ext_resource type="Texture2D" uid="uid://d11fk85gj3btm" path="res://Scenes/Title/Art/TotT-Logo.png" id="1_4iuj4"]
+[ext_resource type="Script" uid="uid://copexngeigfuh" path="res://UI/Credits/Scripts/credits.gd" id="1_vcckd"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_gjm8c"]
+[ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="3_gjm8c"]
+
+[node name="Credits" type="Control" unique_id=1758667731]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1946994920]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 768.0
+offset_bottom = 2180.0
+grow_horizontal = 2
+script = ExtResource("1_vcckd")
+TweenTarget = -2000.0
+TweenTime = 20.0
+
+[node name="Sprite2D" type="TextureRect" parent="VBoxContainer" unique_id=598003022]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_4iuj4")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=45838771]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=964584771]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+PRODUCERS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=534914963]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="UserCredit3" parent="VBoxContainer/VBoxContainer" unique_id=1302544757 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Lochan Belford"
+Title = "PROFESSOR"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1149690879]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="UserCredit" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=993937686 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Ariel Goldring"
+Title = "PRODUCER"
+
+[node name="UserCredit2" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1821230972 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Alanna Socha"
+Title = "PRODUCER"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1597305712]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+PROGRAMMERS"
+
+[node name="UserCredit" parent="VBoxContainer" unique_id=94375788 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=1063558316]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+DESIGNERS"
+
+[node name="UserCredit2" parent="VBoxContainer" unique_id=1558525630 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Title = "LEAD DESIGNER"
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=133866385]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+ARTISTS"
+
+[node name="UserCredit3" parent="VBoxContainer" unique_id=1792312091 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Title = "LEAD ARTIST"
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=274455689]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+WRITERS"
+
+[node name="UserCredit4" parent="VBoxContainer" unique_id=2113205580 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Title = "LEAD WRITER"
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=1233573311]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+AUDIO"
+
+[node name="UserCredit5" parent="VBoxContainer" unique_id=491418339 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Title = "LEAD AUDIO"
