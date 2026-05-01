@@ -52,5 +52,6 @@ func stop_room() -> void:
 	open_barriers.emit()
 	on_room_end.emit()
 	active = false
-	for b in Barriers:
-		b.call_deferred("destroy_barrier")
+	if Barriers.size() > 0:
+		for b in Barriers:
+			b.call_deferred("destroy_barrier")
