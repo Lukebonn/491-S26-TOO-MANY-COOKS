@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://bpbmu0my54jgq"
+path="res://.godot/imported/warrior_attack_icon1.png-4cbae5fabe75d45f5be7f234e49e5043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_attack_icon1.png"
+dest_files=["res://.godot/imported/warrior_attack_icon1.png-4cbae5fabe75d45f5be7f234e49e5043.ctex"]
 
 [params]
 

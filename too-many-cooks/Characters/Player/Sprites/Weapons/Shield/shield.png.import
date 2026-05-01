@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://b1ewnahws8vgt"
+path="res://.godot/imported/shield.png-efed8712fb9707f0daa90bb846cf4329.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Player/Sprites/Weapons/Shield/shield.png"
+dest_files=["res://.godot/imported/shield.png-efed8712fb9707f0daa90bb846cf4329.ctex"]
 
 [params]
 
