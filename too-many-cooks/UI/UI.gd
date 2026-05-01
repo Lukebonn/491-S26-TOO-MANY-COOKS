@@ -38,6 +38,9 @@ var current_visible_keys: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerStats.Player_Damage_Dealt = 0
+	PlayerStats.Enemy_Damage_Dealt = 0
+	PlayerStats.Enemies_Defeated = 0
 	#level_complete = false
 	#pauseDisabled = false
 	for key in key_slots:

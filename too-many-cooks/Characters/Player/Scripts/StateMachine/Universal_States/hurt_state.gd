@@ -20,6 +20,7 @@ func enter_state(player_node):
 		dmg = damage_hitbox.get_parent().get("damage")
 	if dmg != null:
 		player.health -= dmg
+		PlayerStats.Enemy_Damage_Dealt += dmg
 	
 	
 	#player receives knockback on hit

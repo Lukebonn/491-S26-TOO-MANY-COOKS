@@ -20,6 +20,7 @@ func enter_state(enemy_node):
 	if !has_died:
 		has_died = true
 		super(enemy_node)
+		PlayerStats.Enemies_Defeated += 1
 		if Death_Sound:
 			Death_Sound.play()
 		call_deferred("drop_drops")

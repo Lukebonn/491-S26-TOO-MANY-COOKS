@@ -43,6 +43,7 @@ func get_player_vector():
 
 func take_damage(inc_damage: int):
 	current_health = current_health - inc_damage
+	PlayerStats.Player_Damage_Dealt += inc_damage
 	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
 	damage_number.Number = inc_damage
 	add_child(damage_number)

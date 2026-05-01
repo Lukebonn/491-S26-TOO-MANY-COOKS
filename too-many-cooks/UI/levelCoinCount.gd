@@ -9,4 +9,4 @@ func _process(_delta: float) -> void:
 		"Orbs":
 			text = str(PlayerStats.Floor_Orbs)
 		"Enemies":
-			text = str(EnemyStats.enemies_in_room)
+			text = str(PlayerStats.Enemies_Defeated)
