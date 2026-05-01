@@ -4,7 +4,9 @@ func _ready() -> void:
 	$"Gold Collected".hide()
 	$"Orbs Collected".hide()
 	$"Enemies Killed".hide()
-	$"Other Stuff".hide()
+	$"Level Time".hide()
+	$"Damage Taken".hide()
+	$"Damage Dealt".hide()
 	$"le objectives".hide()
 	$AdvanceButton.hide()
 	
@@ -26,12 +28,14 @@ func reveal():
 		0.5).set_trans(Tween.TRANS_EXPO)
 	await get_tree().create_timer(0.25).timeout
 	$"Gold Collected".show()
+	$"Level Time".show()
 	await get_tree().create_timer(0.5).timeout
 	$"Orbs Collected".show()
+	$"Damage Taken".show()
 	await get_tree().create_timer(0.5).timeout
 	$"Enemies Killed".show()
+	$"Damage Dealt".show()
 	await get_tree().create_timer(0.5).timeout
-	$"Other Stuff".show()
 	$"le objectives".show()
 	await get_tree().create_timer(0.5).timeout
 	if (LevelQueue.Queue.size() == 0):
