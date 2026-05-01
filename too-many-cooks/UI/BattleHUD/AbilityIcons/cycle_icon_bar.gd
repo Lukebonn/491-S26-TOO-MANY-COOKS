@@ -10,7 +10,7 @@ func _ready():
 	right = $Right/Icon.texture
 
 func _input(_event):
-	if(Input.is_action_just_pressed("scroll_up")):
+	if(Input.is_action_just_pressed("scroll_down")):
 		#cycles the textures to the left
 		$Current/Icon.texture = left
 		$Right/Icon.texture = current
@@ -20,11 +20,11 @@ func _input(_event):
 		var temp = current
 		
 		current = left
-		right = temp
 		left = right
+		right = temp
 		
 		
-	elif(Input.is_action_just_pressed("scroll_down")):
+	elif(Input.is_action_just_pressed("scroll_up")):
 		#cycles the textures to the right
 		$Current/Icon.texture = right
 		$Right/Icon.texture = left

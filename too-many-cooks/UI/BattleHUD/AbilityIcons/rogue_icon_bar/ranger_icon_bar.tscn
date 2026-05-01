@@ -1,12 +1,32 @@
 [gd_scene format=3 uid="uid://46ppbjqjltdu"]
 
 [ext_resource type="PackedScene" uid="uid://20xku3l2jijx" path="res://UI/BattleHUD/AbilityIcons/ability_icons.tscn" id="1_3y2tq"]
+[ext_resource type="Texture2D" uid="uid://o4uef2rfmmn8" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_attack_icon1.png" id="2_am18w"]
 [ext_resource type="Script" uid="uid://bxcip1olday53" path="res://UI/BattleHUD/AbilityIcons/cycle_icon_bar.gd" id="2_bsay0"]
+[ext_resource type="Texture2D" uid="uid://c8wqee0b2ses3" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_dash_icon1.png" id="3_6ord2"]
+[ext_resource type="Texture2D" uid="uid://llp51gt7celo" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_poison_icon1.png" id="5_jyvip"]
+[ext_resource type="Texture2D" uid="uid://dnacr5ecdm4eb" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_slow_icon1.png" id="6_hkauw"]
+[ext_resource type="Texture2D" uid="uid://b6uw8krd0dhom" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_weaken_icon1.png" id="7_4bwc2"]
 
 [node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_3y2tq")]
 
+[node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
+texture = ExtResource("2_am18w")
+
+[node name="Icon" parent="HBoxContainer/DashIcon" parent_id_path=PackedInt32Array(203168190) index="1" unique_id=1632241512]
+texture = ExtResource("3_6ord2")
+
 [node name="MagicIcons" parent="HBoxContainer" parent_id_path=PackedInt32Array(1984074386) index="2" unique_id=743762384]
 script = ExtResource("2_bsay0")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Current" parent_id_path=PackedInt32Array(283412923) index="1" unique_id=1632241512]
+texture = ExtResource("5_jyvip")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Left" parent_id_path=PackedInt32Array(1575525594) index="1" unique_id=1632241512]
+texture = ExtResource("6_hkauw")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Right" parent_id_path=PackedInt32Array(1326684781) index="1" unique_id=1632241512]
+texture = ExtResource("7_4bwc2")
 
 [editable path="HBoxContainer/AttackIcon"]
 [editable path="HBoxContainer/DashIcon"]

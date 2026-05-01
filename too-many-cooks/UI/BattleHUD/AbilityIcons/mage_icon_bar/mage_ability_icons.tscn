@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ctnnpcpuur64w"]
+
+[ext_resource type="PackedScene" uid="uid://20xku3l2jijx" path="res://UI/BattleHUD/AbilityIcons/ability_icons.tscn" id="1_14ivw"]
+[ext_resource type="Texture2D" uid="uid://doohamv7fb3xp" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_attack_icon1.png" id="2_iavm6"]
+[ext_resource type="Texture2D" uid="uid://88ejjeawn2g7" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_dash_icon1.png" id="3_omrie"]
+[ext_resource type="Texture2D" uid="uid://contc5ksb0p6t" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_icicle_icon1.png" id="4_8mrh0"]
+[ext_resource type="Script" uid="uid://bxcip1olday53" path="res://UI/BattleHUD/AbilityIcons/cycle_icon_bar.gd" id="4_iavm6"]
+[ext_resource type="Texture2D" uid="uid://bwy3v8sspcaie" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_vortex_icon1.png" id="5_k65dm"]
+[ext_resource type="Texture2D" uid="uid://dbwiclkkiu8r3" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_fire_icon1.png" id="6_naakd"]
+
+[node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_14ivw")]
+
+[node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
+texture = ExtResource("2_iavm6")
+
+[node name="Icon" parent="HBoxContainer/DashIcon" parent_id_path=PackedInt32Array(203168190) index="1" unique_id=1632241512]
+texture = ExtResource("3_omrie")
+
+[node name="MagicIcons" parent="HBoxContainer" parent_id_path=PackedInt32Array(1984074386) index="2" unique_id=743762384]
+script = ExtResource("4_iavm6")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Current" parent_id_path=PackedInt32Array(283412923) index="1" unique_id=1632241512]
+texture = ExtResource("4_8mrh0")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Left" parent_id_path=PackedInt32Array(1575525594) index="1" unique_id=1632241512]
+texture = ExtResource("5_k65dm")
+
+[node name="Icon" parent="HBoxContainer/MagicIcons/Right" parent_id_path=PackedInt32Array(1326684781) index="1" unique_id=1632241512]
+texture = ExtResource("6_naakd")
+
+[editable path="HBoxContainer/AttackIcon"]
+[editable path="HBoxContainer/DashIcon"]
+[editable path="HBoxContainer/MagicIcons/Current"]
+[editable path="HBoxContainer/MagicIcons/Left"]
+[editable path="HBoxContainer/MagicIcons/Right"]
