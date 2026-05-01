@@ -27,3 +27,5 @@ func hit_response(source):
 
 func exit_state():
 	enemy_ref.change_state("IdleState")
+
+#hawk

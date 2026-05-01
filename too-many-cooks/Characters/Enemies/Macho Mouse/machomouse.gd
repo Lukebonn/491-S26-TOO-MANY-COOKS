@@ -1,46 +1,47 @@
-#extends Enemy
-#
-#signal onEnemyDeath()
-#
-#var playerNear = false
-#
-#func _on_near_zone_area_entered(area: Area2D) -> void:
-	#playerNear = true
-#
-#func _on_near_zone_area_exited(area: Area2D) -> void:
-	#playerNear = false
-
 extends Enemy
 
-signal onEnemyDeath()
+@export var smash_range: float = 28.0 #was 28
+@export var smash_cooldown: float = 1.5
 
-@export var smash_range := 32.0
-@export var smash_state_name := "HitState"
+var can_smash := true
+var is_smashing := false
 
-var playerNear = false
+func _ready():
+	super()
+	set_hitbox_active(false)
+	hide_attack_warning()
 
-func _physics_process(delta: float) -> void:
-	if not playerNear:
-		return
+func player_in_smash_range() -> bool:
+	if not player_ref:
+		return false
+	
+	return global_position.distance_to(player_ref.global_position) <= smash_range
 
-	if player_ref == null:
-		return
+func reset_smash():
+	await get_tree().create_timer(smash_cooldown).timeout
+	can_smash = true
 
-	var distance_to_player := global_position.distance_to(player_ref.global_position)
+func set_hitbox_active(active: bool):
+	$Hitbox.monitoring = active
+	$Hitbox.monitorable = active
 
-	if distance_to_player <= smash_range:
-		velocity = Vector2.ZERO
-		change_state(smash_state_name)
+func show_attack_warning():
+	$AttackWarning.show_warning()
 
-func _on_near_zone_area_entered(area: Area2D) -> void:
-	playerNear = true
+func hide_attack_warning():
+	$AttackWarning.hide_warning()
 
-	var possible_player := area.get_parent()
-	if possible_player and possible_player.is_in_group("Player"):
-		player_ref = possible_player
+func _on_hurtbox_body_entered(_body):
+	pass
 
-func _on_near_zone_area_exited(area: Area2D) -> void:
-	var possible_player := area.get_parent()
-	if possible_player == player_ref:
-		playerNear = false
-		player_ref = null
+func _on_hurtbox_area_entered(area):
+	var source = area.get_parent()
+	
+	if source and "damage" in source:
+		take_damage(source.damage)
+
+func _on_hitbox_body_entered(_body):
+	pass
+
+func _on_hitbox_area_entered(_area):
+	pass
