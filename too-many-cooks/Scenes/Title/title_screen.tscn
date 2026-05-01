@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://d11fk85gj3btm" path="res://Scenes/Title/Art/TotT-Logo.png" id="9_rv8x5"]
 [ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="11_fbuyo"]
 [ext_resource type="PackedScene" uid="uid://22b0j7kjctua" path="res://Scenes/Title/pause_ui.tscn" id="12_rv8x5"]
-[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="12_xruoh"]
-[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="13_72lsw"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="12_xruoh"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="13_72lsw"]
 [ext_resource type="AudioStream" uid="uid://bdqq53n0efejs" path="res://Audio/Music/TitleScreenMusic.ogg" id="15_fbuyo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12m1t"]
@@ -416,6 +416,7 @@ autoplay = true
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Settings" to="Menu UI" method="_on_settings_pressed"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_button_down"]
 [connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_mouse_entered"]
+[connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Credits" to="Title UI" method="_on_credits_pressed"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_button_down"]
 [connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_mouse_entered"]

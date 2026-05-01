@@ -51,8 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://djvq1j7rv6neh" path="res://Scenes/Tavern/PanBar/PanBar.png" id="44_jt0a5"]
 [ext_resource type="Texture2D" uid="uid://d2yiutufm5psb" path="res://Scenes/Tavern/PanBar/PanTab.png" id="45_ls4nc"]
 [ext_resource type="Script" uid="uid://cb1l67coxklor" path="res://Scenes/Tavern/PanBar/pan_bar.gd" id="46_pcv2t"]
-[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="47_3lod4"]
-[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="48_jt0a5"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="47_3lod4"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="48_jt0a5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pv64h"]
 size = Vector2(128, 128)

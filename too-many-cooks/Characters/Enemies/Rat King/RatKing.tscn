@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3bsmqowy1nm"]
 
 [ext_resource type="Script" uid="uid://c4cpnpe7akucx" path="res://Characters/Enemies/Rat King/rat_king.gd" id="1_qilw0"]
-[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_eliu1"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_eliu1"]
 [ext_resource type="PackedScene" uid="uid://cwkj7llpeabn1" path="res://Characters/Enemies/Rat King/RKBasicProjectile.tscn" id="2_v8iup"]
 [ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_b0bd7"]
 [ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_4u66m"]
@@ -21,7 +21,7 @@
 [ext_resource type="Script" uid="uid://s35p5ffhlejl" path="res://Characters/Enemies/Rat King/aoe_state.gd" id="16_ue585"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_rldik"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_fuqu5"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_c073d"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_bjov1"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_chgiv"]

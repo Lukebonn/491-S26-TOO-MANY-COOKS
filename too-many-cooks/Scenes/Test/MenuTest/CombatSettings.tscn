@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://ego2ey2td6r0" path="res://Scenes/Tavern/journals_panel.gd" id="6_qsi5f"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="7_qla4a"]
 [ext_resource type="PackedScene" uid="uid://22b0j7kjctua" path="res://Scenes/Title/pause_ui.tscn" id="8_4ljs5"]
-[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/buttonClick.mp3" id="9_vfvui"]
-[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/buttonHover.mp3" id="10_1631t"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="9_vfvui"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="10_1631t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mm4c"]
 

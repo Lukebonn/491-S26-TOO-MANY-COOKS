@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbicb0gxx7kju"]
 
 [ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_t4f6o"]
-[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_4ss3i"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_4ss3i"]
 [ext_resource type="Texture2D" uid="uid://but46j8h1oth1" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalkUp1.png" id="3_5rwop"]
 [ext_resource type="Texture2D" uid="uid://dvut2k2iwshk0" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalk1.png" id="3_um3gg"]
 [ext_resource type="Texture2D" uid="uid://ywxwlijnrcat" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalkUp2.png" id="4_um3gg"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="16_8iihu"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_8kudc"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_mfni4"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_o8qtm"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_o8qtm"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_2peoe"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_gwekc"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_ql3p0"]

@@ -6,5 +6,6 @@ extends VBoxContainer
 @export var TweenTime : float = 10.0
 
 func _ready() -> void:
+	FadeInFadeOut.fade_in()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(0,TweenTarget),TweenTime).set_trans(Tween.TRANS_LINEAR)

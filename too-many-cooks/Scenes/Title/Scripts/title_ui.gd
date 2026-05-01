@@ -48,3 +48,8 @@ func _on_continue_pressed():
 	Global.First_Time_Tavern = true
 	Global.First_Time_Combat = false
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+
+
+func _on_credits_pressed() -> void:
+	FadeInFadeOut.fade_out()
+	get_tree().change_scene_to_file("res://UI/Credits/credits.tscn")
