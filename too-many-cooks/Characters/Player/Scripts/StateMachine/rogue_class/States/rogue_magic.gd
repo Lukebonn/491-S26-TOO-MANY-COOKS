@@ -6,7 +6,10 @@ func enter_state(player_node):
 	
 	#won't change the status or deplete mana if the player already has their equipped status active
 	if(player.get_node("attack_state").equipped_status != player.get_node("attack_state").active_status):
+		
 		player.get_node("attack_state").active_status = player.get_node("attack_state").equipped_status
+		
+		PlayerStats.icon_bar.set_frame(player.get_node("attack_state").active_status)
 		
 		player.mana -= 35
 	

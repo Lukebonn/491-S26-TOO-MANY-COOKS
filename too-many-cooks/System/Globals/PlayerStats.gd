@@ -75,7 +75,7 @@ var passive_hp : int = 0
 var Magic := "None"
 
 ##classes enum for all possible classes and current_class for the player's equipped class
-var current_class = classes.rogue
+var current_class = classes.warrior
 
 enum classes{
 	none,
@@ -83,6 +83,9 @@ enum classes{
 	rogue,
 	mage
 }
+
+##refrence to the ability icon bar in the UI
+var icon_bar
 
 ##"achievement" stats that go up and determine class avaliablity... among other things?
 var KillCount : int = 0

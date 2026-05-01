@@ -2,11 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://20xku3l2jijx" path="res://UI/BattleHUD/AbilityIcons/ability_icons.tscn" id="1_6sags"]
 [ext_resource type="Texture2D" uid="uid://bpbmu0my54jgq" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_attack_icon1.png" id="2_71oqw"]
+[ext_resource type="Script" uid="uid://dnuxqhm7ugmxr" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_ability_icons.gd" id="2_lbqgd"]
 [ext_resource type="Texture2D" uid="uid://bhro676nml1g7" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_dash_icon1.png" id="3_lbqgd"]
 [ext_resource type="Texture2D" uid="uid://dsp7x41sphwxh" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_parry_icon1.png" id="4_f4cky"]
+[ext_resource type="Texture2D" uid="uid://c8fsf4h5iuitn" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_spin_icon1.png" id="5_f4cky"]
 [ext_resource type="Texture2D" uid="uid://c8xfn6bmcd5lk" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_throw_icon1.png" id="5_t2v6u"]
 
 [node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_6sags")]
+script = ExtResource("2_lbqgd")
+parry_icon = ExtResource("4_f4cky")
+throw_icon = ExtResource("5_t2v6u")
+spin_icon = ExtResource("5_f4cky")
 
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_71oqw")

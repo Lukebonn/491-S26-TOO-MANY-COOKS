@@ -43,6 +43,8 @@ func enter_state(player_node):
 
 ##shoots 5 icicles in the direction the player is aiming
 func ice_spears():
+	player.mana -= 20
+	
 	for i in 5:
 		var icicle = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/icicle.tscn").instantiate()
 		get_tree().get_root().add_child(icicle)
@@ -53,7 +55,6 @@ func ice_spears():
 		
 		await get_tree().create_timer(0.1).timeout
 	
-	player.mana -= 20
 
 
 ##spawns a vortex at the mouse position

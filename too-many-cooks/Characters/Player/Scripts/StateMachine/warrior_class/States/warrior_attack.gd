@@ -59,6 +59,8 @@ func enter_state(player_node):
 				
 		#print_debug("Combo" + str(combo_counter))
 		
+		PlayerStats.icon_bar.set_icons(combo_counter)
+		
 		combo_timer.start(0.5)
 		start_cooldown()
 	
@@ -109,6 +111,7 @@ func start_cooldown():
 ##resets the combo counter to 0
 func reset_combo():
 	combo_counter = 0
+	PlayerStats.icon_bar.set_icons(combo_counter)
 
 
 ##player regains mana when attacking enemies

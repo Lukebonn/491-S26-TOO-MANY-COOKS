@@ -54,7 +54,7 @@ func _ready() -> void:
 			equipped_class = load("res://System/Classes/warrior.tres")
 		PlayerStats.classes.mage:
 			equipped_class = load("res://System/Classes/mage.tres")
-			add_child(load("res://Characters/Player/Scripts/StateMachine/mage_class/SpecialUI/spell_indicator.tscn").instantiate())
+			#add_child(load("res://Characters/Player/Scripts/StateMachine/mage_class/SpecialUI/spell_indicator.tscn").instantiate())
 			
 			##adds a new state node to the player that is used for the mage's fire blast spell
 			var fire_state = Node.new()
@@ -124,7 +124,7 @@ func _physics_process(delta: float) -> void:
 		current_state.input_handler(delta)
 	
 	#when using the rogue or mage classes, player can use the mouse wheel to switch their equipped status effect or spell
-	if((PlayerStats.current_class == PlayerStats.classes.rogue) and 
+	if((PlayerStats.current_class == PlayerStats.classes.rogue or PlayerStats.current_class == PlayerStats.classes.mage) and 
 	(Input.is_action_just_pressed("scroll_up") or Input.is_action_just_pressed("scroll_down"))):
 		$attack_state.switch_equipped()
 	

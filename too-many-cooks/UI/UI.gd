@@ -62,6 +62,12 @@ func _ready() -> void:
 	match PlayerStats.current_class:
 		PlayerStats.classes.none:
 			ability_bar = load("res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_ability_icons.tscn").instantiate()
+		PlayerStats.classes.warrior:
+			ability_bar = load("res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_ability_icons.tscn").instantiate()
+		PlayerStats.classes.mage:
+			ability_bar = load("res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_ability_icons.tscn").instantiate()
+		PlayerStats.classes.rogue:
+			ability_bar = load("res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/ranger_icon_bar.tscn").instantiate()
 		_:
 			ability_bar = load("res://UI/BattleHUD/AbilityIcons/blank_class_icon_bar/blank_ability_icons.tscn").instantiate()
 	

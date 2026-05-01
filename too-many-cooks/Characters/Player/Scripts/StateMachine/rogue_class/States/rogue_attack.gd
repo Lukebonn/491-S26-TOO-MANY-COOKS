@@ -42,26 +42,27 @@ func input_handler(delta : float) -> void:
 #scrolling up: poison -> slow -> weaken -> poison
 #scrolling down: poison -> weaken -> slow -> poison
 func switch_equipped():
-	if(Input.is_action_just_pressed("scroll_up")):
-		#print_debug("scrolled up")
+	if(Input.is_action_just_pressed("scroll_down")):
+		PlayerStats.icon_bar.cycle_right()
 		match equipped_status:
 			"poison":
-				equipped_status = "slow"
-			"slow":
 				equipped_status = "weaken"
 			"weaken":
+				equipped_status = "slow"
+			"slow":
 				equipped_status = "poison"
 			_:
 				equipped_status = "poison"
 	
-	if(Input.is_action_just_pressed("scroll_down")):
-		#print_debug("scrolled down")
+	
+	if(Input.is_action_just_pressed("scroll_up")):
+		PlayerStats.icon_bar.cycle_left()
 		match equipped_status:
 			"poison":
-				equipped_status = "weaken"
-			"weaken":
 				equipped_status = "slow"
 			"slow":
+				equipped_status = "weaken"
+			"weaken":
 				equipped_status = "poison"
 			_:
 				equipped_status = "poison"

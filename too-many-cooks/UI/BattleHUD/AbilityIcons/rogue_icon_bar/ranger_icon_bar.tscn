@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://46ppbjqjltdu"]
 
 [ext_resource type="PackedScene" uid="uid://20xku3l2jijx" path="res://UI/BattleHUD/AbilityIcons/ability_icons.tscn" id="1_3y2tq"]
+[ext_resource type="Script" uid="uid://dw7vuyowk7bxa" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/ranger_icon_bar.gd" id="2_6ord2"]
 [ext_resource type="Texture2D" uid="uid://o4uef2rfmmn8" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_attack_icon1.png" id="2_am18w"]
-[ext_resource type="Script" uid="uid://bxcip1olday53" path="res://UI/BattleHUD/AbilityIcons/cycle_icon_bar.gd" id="2_bsay0"]
 [ext_resource type="Texture2D" uid="uid://c8wqee0b2ses3" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_dash_icon1.png" id="3_6ord2"]
+[ext_resource type="Texture2D" uid="uid://0iaf1h7kl2ve" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/Poison_Frame1.png" id="3_hkauw"]
+[ext_resource type="Texture2D" uid="uid://n6meqetwgbe0" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/Slow_Frame1.png" id="4_4bwc2"]
+[ext_resource type="Texture2D" uid="uid://2id3uio6f7en" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/Weaken_Frame1.png" id="5_e0c77"]
 [ext_resource type="Texture2D" uid="uid://llp51gt7celo" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_poison_icon1.png" id="5_jyvip"]
 [ext_resource type="Texture2D" uid="uid://dnacr5ecdm4eb" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_slow_icon1.png" id="6_hkauw"]
 [ext_resource type="Texture2D" uid="uid://b6uw8krd0dhom" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_weaken_icon1.png" id="7_4bwc2"]
 
 [node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_3y2tq")]
+script = ExtResource("2_6ord2")
+poison_frame = ExtResource("3_hkauw")
+slow_frame = ExtResource("4_4bwc2")
+weaken_frame = ExtResource("5_e0c77")
 
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_am18w")
 
 [node name="Icon" parent="HBoxContainer/DashIcon" parent_id_path=PackedInt32Array(203168190) index="1" unique_id=1632241512]
 texture = ExtResource("3_6ord2")
-
-[node name="MagicIcons" parent="HBoxContainer" parent_id_path=PackedInt32Array(1984074386) index="2" unique_id=743762384]
-script = ExtResource("2_bsay0")
 
 [node name="Icon" parent="HBoxContainer/MagicIcons/Current" parent_id_path=PackedInt32Array(283412923) index="1" unique_id=1632241512]
 texture = ExtResource("5_jyvip")

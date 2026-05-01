@@ -61,41 +61,46 @@ func on_attack_hit(_body):
 #scroll up: ice spears -> fire blast -> vortex -> ice spears
 #scroll down: ice spears -> vortex -> fire blast -> ice spears
 func switch_equipped():
+	#await get_tree().process_frame
 	
-	player.get_node("SpellIndicator").cycle_up()
-	match current_spell:
-		"ice spears":
-			current_spell = "fire blast"
-		"fire blast":
-			current_spell = "vortex"
-		"vortex":
-			current_spell = "ice spears"
-		_:
-			current_spell = "ice spears"
+	#player.get_node("SpellIndicator").cycle_up()
+	#match current_spell:
+	#	"ice spears":
+	#		current_spell = "fire blast"
+	#	"fire blast":
+	#		current_spell = "vortex"
+	#	"vortex":
+	#		current_spell = "ice spears"
+	#	_:
+	#		current_spell = "ice spears"
 	
-	#if(Input.is_action_just_pressed("scroll_up")):
-	#	player.get_node("SpellIndicator").cycle_up()
-	#	match current_spell:
-	#		"ice spears":
-	#			current_spell = "fire blast"
-	#		"fire blast":
-	#			current_spell = "vortex"
-	#		"vortex":
-	#			current_spell = "ice spears"
-	#		_:
-	#			current_spell = "ice spears"
+	##cycles spell when mouse wheel scrolls up
+	#ice spears -> fire blast -> vortex -> ice spears
+	if(Input.is_action_just_pressed("scroll_up")):
+		PlayerStats.icon_bar.cycle_left()
+		match current_spell:
+			"ice spears":
+				current_spell = "fire blast"
+			"fire blast":
+				current_spell = "vortex"
+			"vortex":
+				current_spell = "ice spears"
+			_:
+				current_spell = "ice spears"
 	
-	#if(Input.is_action_just_pressed("scroll_down")):
-	#	player.get_node("SpellIndicator").cycle_down()
-	#	match current_spell:
-	#		"ice spears":
-	#			current_spell = "vortex"
-	#		"vortex":
-	#			current_spell = "fire blast"
-	#		"fire blast":
-	#			current_spell = "ice spears"
-	#		_:
-	#			current_spell = "ice spears"
+	##cycles spell when mouse wheel scrolls down
+	#ice spears -> vortex -> fire blast -> ice spears
+	if(Input.is_action_just_pressed("scroll_down")):
+		PlayerStats.icon_bar.cycle_right()
+		match current_spell:
+			"ice spears":
+				current_spell = "vortex"
+			"vortex":
+				current_spell = "fire blast"
+			"fire blast":
+				current_spell = "ice spears"
+			_:
+				current_spell = "ice spears"
 
 ##player should lose a certain amount of health
 func hit_response(source):
