@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://cai6aibrd4bh2" path="res://UI/Img/are you sure.png" id="26_nxoi0"]
 [ext_resource type="LabelSettings" uid="uid://bgqhacfrdeyky" path="res://UI/Themes/style_DmgNum.tres" id="27_gokaw"]
 [ext_resource type="Script" uid="uid://bsmsu72tp0eec" path="res://UI/time_machine.gd" id="29_rbg2s"]
+[ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
 
 [node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
@@ -640,6 +642,12 @@ wait_time = 0.1
 autostart = true
 script = ExtResource("29_rbg2s")
 timer_reference = NodePath("../LevelReportScreen/Level Time/Timer")
+
+[node name="Death Sound" type="AudioStreamPlayer" parent="." unique_id=1604178419]
+stream = ExtResource("31_v25sk")
+
+[node name="Death Song" type="AudioStreamPlayer" parent="." unique_id=649188314]
+stream = ExtResource("32_t0bwl")
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="update_health_bar" from="." to="HealthBar" method="_on_ui_update_health_bar"]

@@ -31,8 +31,9 @@ Player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
-[node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("4_eb488")]
+[node name="UI" parent="CanvasLayer" unique_id=1832120515 node_paths=PackedStringArray("combat_music") instance=ExtResource("4_eb488")]
 visible = false
+combat_music = NodePath("../../CombatMusic")
 
 [node name="Labels" type="Node" parent="." unique_id=1131383549]
 
@@ -670,30 +671,30 @@ position = Vector2(744, 264)
 [node name="SuperStrongRat10" parent="Enemies" unique_id=245736216 instance=ExtResource("9_0x0i3")]
 position = Vector2(592, 256)
 
-[node name="Unused Enemies" type="Node" parent="." unique_id=2035942046]
+[node name="Unused Enemies" type="Node" parent="Enemies" unique_id=2035942046]
 
-[node name="RangedSlimeEnemy" parent="Unused Enemies" unique_id=260407340 instance=ExtResource("10_chfxb")]
+[node name="RangedSlimeEnemy" parent="Enemies/Unused Enemies" unique_id=260407340 instance=ExtResource("10_chfxb")]
 visible = false
 position = Vector2(-108, 301)
 
-[node name="HobLobber" parent="Unused Enemies" unique_id=284459774 instance=ExtResource("11_5n6rv")]
+[node name="HobLobber" parent="Enemies/Unused Enemies" unique_id=284459774 instance=ExtResource("11_5n6rv")]
 visible = false
 position = Vector2(-264, 184)
 
-[node name="SlimeEnemy" parent="Unused Enemies" unique_id=1633737342 instance=ExtResource("12_4g78r")]
+[node name="SlimeEnemy" parent="Enemies/Unused Enemies" unique_id=1633737342 instance=ExtResource("12_4g78r")]
 visible = false
 position = Vector2(58, 362)
 
-[node name="SlimeEnemy2" parent="Unused Enemies" unique_id=636021781 instance=ExtResource("12_4g78r")]
+[node name="SlimeEnemy2" parent="Enemies/Unused Enemies" unique_id=636021781 instance=ExtResource("12_4g78r")]
 visible = false
 position = Vector2(208, 277)
 
-[node name="TemplateEnemy" parent="Unused Enemies" unique_id=979431414 instance=ExtResource("13_b5ldo")]
+[node name="TemplateEnemy" parent="Enemies/Unused Enemies" unique_id=979431414 instance=ExtResource("13_b5ldo")]
 visible = false
 position = Vector2(-371, 263)
 damage = 0
 
-[node name="SlimeEnemy3" parent="Unused Enemies" unique_id=432302108 instance=ExtResource("12_4g78r")]
+[node name="SlimeEnemy3" parent="Enemies/Unused Enemies" unique_id=432302108 instance=ExtResource("12_4g78r")]
 visible = false
 position = Vector2(369, 268)
 

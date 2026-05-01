@@ -5,6 +5,7 @@ var player: Node # stores a reference to the player node in the Combat Scene.
 @export var tavern_warning: Node2D
 @export var level_review: Node2D
 @export var key_sprites: Array[Texture2D]
+@export var combat_music: AudioStreamPlayer
 var pauseDisabled = false
 var level_complete = false
 var player_dead = false
@@ -119,6 +120,8 @@ func _on_player_not_enough_mana() -> void:
 # another signal, but I couldn't think of another way to do this.
 
 func _on_player_death() -> void:
+	combat_music.stop()
+	$"Death Sound".play()
 	player_dead = true
 	$DeathScreen.visible = true
 	var tween = $DeathScreen.create_tween()
@@ -129,6 +132,7 @@ func _on_player_death() -> void:
 		1).set_trans(Tween.TRANS_LINEAR)
 	#await get_tree().create_timer(1.0).timeout
 	await tween.finished
+	$"Death Song".play()
 	var tween2 = $DeathScreen.create_tween()
 	var text_tween = $DeathScreen/DeathText.create_tween()
 	var retry_tween = $DeathScreen/RetryButton.create_tween()
