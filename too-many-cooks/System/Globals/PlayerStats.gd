@@ -11,6 +11,10 @@ var Orbs : int = 0
 var Floor_Gold : int = 0 #prev temp_gold
 var Floor_Orbs : int = 0 #prev temp_orbs
 
+var Player_Damage_Dealt: int = 0 # Damage the player has dealt to enemies
+var Enemy_Damage_Dealt: int = 0 # Damage enemies have dealt to the player
+var Enemies_Defeated: int = 0 # Number of enemies defeated in level
+
 ##speed stats for the player
 #var Max_Speed = 200.0
 #var Speed_Slowdown = 150.0

@@ -9,7 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="8_32rtr"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="9_56k7t"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="10_bc0d1"]
+[ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="11_85iyi"]
+[ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="12_65xs6"]
+[ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="13_p8jfa"]
+[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="14_gm5sx"]
+[ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="15_gm5sx"]
 [ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="15_yh5gs"]
+[ext_resource type="PackedScene" uid="uid://cgtva4qcm50np" path="res://Characters/Enemies/HobLobber/HobLobberEnemy.tscn" id="16_rlu0w"]
+[ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="17_m1ucl"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="18_rlu0w"]
 
 [node name="LevelJamTemplate2" type="Node2D" unique_id=1329965379]
 
@@ -101,6 +109,309 @@ keyType = 3
 [node name="ObjKey5" parent="Keys" unique_id=2091960898 instance=ExtResource("6_2fucn")]
 position = Vector2(104, 352)
 keyType = 1
+
+[node name="Room1" type="Node" parent="." unique_id=2014848261]
+
+[node name="ObjRoomMgr" parent="Room1" unique_id=1778230442 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(511, -107)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room1/ObjRoomMgr" unique_id=30786491]
+position = Vector2(-240, 67)
+polygon = PackedVector2Array(-15, 12, -29, -2, 1, 6, -1, 65, -27, 75, -18, 58)
+
+[node name="ObjBarrier8" parent="Room1" unique_id=273527535 instance=ExtResource("12_65xs6")]
+position = Vector2(223, -8)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room1" unique_id=817439483 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(375, -3)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room1/ObjDestructibleSpawner" unique_id=264030625]
+position = Vector2(-171, -57)
+
+[node name="Marker2D2" type="Marker2D" parent="Room1/ObjDestructibleSpawner" unique_id=1703168899]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room1/ObjDestructibleSpawner" unique_id=1499418620]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room1/ObjDestructibleSpawner" unique_id=175823386]
+position = Vector2(120, 0)
+
+[node name="Room2" type="Node" parent="." unique_id=2109157341]
+
+[node name="ObjRoomMgr" parent="Room2" unique_id=1664179510 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(-620, -115)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room2/ObjRoomMgr" unique_id=1472199241]
+position = Vector2(-140, 103)
+polygon = PackedVector2Array(-26, 25, 10, 20, 24, 24, 15, 50, -5, 52, -30, 55)
+
+[node name="ObjBarrier8" parent="Room2" unique_id=1187837250 instance=ExtResource("12_65xs6")]
+position = Vector2(-544, -5)
+scale = Vector2(1, 2)
+
+[node name="ObjBarrier9" parent="Room2" unique_id=163535371 instance=ExtResource("12_65xs6")]
+position = Vector2(-785, 159)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room2" unique_id=927050255 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(-756, -11)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room2/ObjDestructibleSpawner" unique_id=1704312157]
+position = Vector2(-84, -102)
+
+[node name="Marker2D2" type="Marker2D" parent="Room2/ObjDestructibleSpawner" unique_id=943920479]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room2/ObjDestructibleSpawner" unique_id=212022462]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room2/ObjDestructibleSpawner" unique_id=1584038327]
+position = Vector2(-116, 61)
+
+[node name="Room3" type="Node" parent="." unique_id=1743960986]
+
+[node name="ObjRoomMgr" parent="Room3" unique_id=768737197 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(143, 215)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room3/ObjRoomMgr" unique_id=557283150]
+position = Vector2(-140, 103)
+polygon = PackedVector2Array(-26, 25, 10, 20, 24, 24, 15, 50, -5, 52, -30, 55)
+
+[node name="ObjBarrier8" parent="Room3" unique_id=344103064 instance=ExtResource("12_65xs6")]
+position = Vector2(-4, 415)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room3" unique_id=2141374504 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(7, 319)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room3/ObjDestructibleSpawner" unique_id=2061705476]
+position = Vector2(-171, -57)
+
+[node name="Marker2D2" type="Marker2D" parent="Room3/ObjDestructibleSpawner" unique_id=558643527]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room3/ObjDestructibleSpawner" unique_id=1892778063]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room3/ObjDestructibleSpawner" unique_id=1671295713]
+position = Vector2(120, 0)
+
+[node name="Room4" type="Node" parent="." unique_id=1617465268]
+
+[node name="ObjRoomMgr" parent="Room4" unique_id=265140651 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(-41, 579)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room4/ObjRoomMgr" unique_id=350409854]
+position = Vector2(-140, 103)
+polygon = PackedVector2Array(-26, 25, 10, 20, 24, 24, 15, 50, -5, 52, -30, 55)
+
+[node name="ObjBarrier8" parent="Room4" unique_id=1117396994 instance=ExtResource("12_65xs6")]
+position = Vector2(-188, 779)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room4" unique_id=912805546 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(-177, 683)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room4/ObjDestructibleSpawner" unique_id=428745004]
+position = Vector2(-171, -57)
+
+[node name="Marker2D2" type="Marker2D" parent="Room4/ObjDestructibleSpawner" unique_id=633697602]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room4/ObjDestructibleSpawner" unique_id=2042947758]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room4/ObjDestructibleSpawner" unique_id=1888036206]
+position = Vector2(120, 0)
+
+[node name="Room1" type="Node" parent="Room4" unique_id=232437860]
+
+[node name="ObjRoomMgr" parent="Room4/Room1" unique_id=54552514 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(147, -353)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room4/Room1/ObjRoomMgr" unique_id=772783526]
+position = Vector2(-140, 103)
+polygon = PackedVector2Array(-26, 25, 10, 20, 24, 24, 15, 50, -5, 52, -30, 55)
+
+[node name="ObjBarrier8" parent="Room4/Room1" unique_id=461465843 instance=ExtResource("12_65xs6")]
+position = Vector2(0, -153)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room4/Room1" unique_id=1162273031 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(11, -249)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room4/Room1/ObjDestructibleSpawner" unique_id=587233051]
+position = Vector2(-171, -57)
+
+[node name="Marker2D2" type="Marker2D" parent="Room4/Room1/ObjDestructibleSpawner" unique_id=2051216640]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room4/Room1/ObjDestructibleSpawner" unique_id=2055107524]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room4/Room1/ObjDestructibleSpawner" unique_id=1713933627]
+position = Vector2(120, 0)
+
+[node name="Room5" type="Node" parent="." unique_id=1073811655]
+
+[node name="ObjRoomMgr" parent="Room5" unique_id=942633817 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("11_85iyi")]
+position = Vector2(467, 589)
+Spawners = [NodePath("../ObjDestructibleSpawner")]
+Barriers = [NodePath("../ObjBarrier8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room5/ObjRoomMgr" unique_id=1041693372]
+position = Vector2(-140, 103)
+polygon = PackedVector2Array(-26, 25, 10, 20, 24, 24, 15, 50, -5, 52, -30, 55)
+
+[node name="ObjBarrier8" parent="Room5" unique_id=812556560 instance=ExtResource("12_65xs6")]
+position = Vector2(320, 789)
+scale = Vector2(1, 2)
+
+[node name="ObjDestructibleSpawner" parent="Room5" unique_id=989776055 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("13_p8jfa")]
+position = Vector2(331, 693)
+Enemies = Array[PackedScene]([ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("14_gm5sx"), ExtResource("15_gm5sx"), ExtResource("15_gm5sx"), ExtResource("16_rlu0w"), ExtResource("16_rlu0w"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl"), ExtResource("17_m1ucl")])
+LocationType = 3
+SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+SpawnMethod = 1
+SpawnInterval = 2.0
+SpawnLimit = 8
+DefeatCount = 32
+
+[node name="Marker2D" type="Marker2D" parent="Room5/ObjDestructibleSpawner" unique_id=1377552173]
+position = Vector2(-171, -57)
+
+[node name="Marker2D2" type="Marker2D" parent="Room5/ObjDestructibleSpawner" unique_id=1586787518]
+position = Vector2(60, -70)
+
+[node name="Marker2D3" type="Marker2D" parent="Room5/ObjDestructibleSpawner" unique_id=746769932]
+position = Vector2(-156, -3)
+
+[node name="Marker2D4" type="Marker2D" parent="Room5/ObjDestructibleSpawner" unique_id=136824730]
+position = Vector2(120, 0)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=234363336]
+
+[node name="GoldPickup3" parent="Node2D" unique_id=739019463 instance=ExtResource("18_rlu0w")]
+position = Vector2(-353, -65)
+
+[node name="GoldPickup4" parent="Node2D" unique_id=464636988 instance=ExtResource("18_rlu0w")]
+position = Vector2(-257, -67)
+
+[node name="GoldPickup5" parent="Node2D" unique_id=1514658609 instance=ExtResource("18_rlu0w")]
+position = Vector2(-363, 40)
+
+[node name="GoldPickup6" parent="Node2D" unique_id=1803340791 instance=ExtResource("18_rlu0w")]
+position = Vector2(-330, 67)
+
+[node name="GoldPickup7" parent="Node2D" unique_id=472535513 instance=ExtResource("18_rlu0w")]
+position = Vector2(-296, 35)
+
+[node name="GoldPickup8" parent="Node2D" unique_id=1675683014 instance=ExtResource("18_rlu0w")]
+position = Vector2(-269, 61)
+
+[node name="GoldPickup9" parent="Node2D" unique_id=316986150 instance=ExtResource("18_rlu0w")]
+position = Vector2(-242, 31)
+
+[node name="GoldPickup10" parent="Node2D" unique_id=147779557 instance=ExtResource("18_rlu0w")]
+position = Vector2(-321, -44)
+
+[node name="GoldPickup11" parent="Node2D" unique_id=1075945683 instance=ExtResource("18_rlu0w")]
+position = Vector2(-292, -68)
+
+[node name="GoldPickup12" parent="Node2D" unique_id=1583285852 instance=ExtResource("18_rlu0w")]
+position = Vector2(-650, 230)
+
+[node name="GoldPickup13" parent="Node2D" unique_id=1909513178 instance=ExtResource("18_rlu0w")]
+position = Vector2(-554, 228)
+
+[node name="GoldPickup14" parent="Node2D" unique_id=1713225010 instance=ExtResource("18_rlu0w")]
+position = Vector2(-660, 335)
+
+[node name="GoldPickup15" parent="Node2D" unique_id=133283586 instance=ExtResource("18_rlu0w")]
+position = Vector2(-627, 362)
+
+[node name="GoldPickup16" parent="Node2D" unique_id=1972329175 instance=ExtResource("18_rlu0w")]
+position = Vector2(-215, 830)
+
+[node name="GoldPickup17" parent="Node2D" unique_id=1525371936 instance=ExtResource("18_rlu0w")]
+position = Vector2(-119, 828)
+
+[node name="GoldPickup18" parent="Node2D" unique_id=296779464 instance=ExtResource("18_rlu0w")]
+position = Vector2(-225, 935)
+
+[node name="GoldPickup19" parent="Node2D" unique_id=1278802553 instance=ExtResource("18_rlu0w")]
+position = Vector2(-192, 962)
+
+[node name="GoldPickup20" parent="Node2D" unique_id=1086867108 instance=ExtResource("18_rlu0w")]
+position = Vector2(644, 421)
+
+[node name="GoldPickup21" parent="Node2D" unique_id=1027818143 instance=ExtResource("18_rlu0w")]
+position = Vector2(740, 419)
+
+[node name="GoldPickup22" parent="Node2D" unique_id=1022978783 instance=ExtResource("18_rlu0w")]
+position = Vector2(634, 526)
+
+[node name="GoldPickup23" parent="Node2D" unique_id=127650737 instance=ExtResource("18_rlu0w")]
+position = Vector2(667, 553)
+
+[node name="GoldPickup24" parent="Node2D" unique_id=952800891 instance=ExtResource("18_rlu0w")]
+position = Vector2(-21, -524)
+
+[node name="GoldPickup25" parent="Node2D" unique_id=1756702705 instance=ExtResource("18_rlu0w")]
+position = Vector2(75, -526)
+
+[node name="GoldPickup26" parent="Node2D" unique_id=1396199785 instance=ExtResource("18_rlu0w")]
+position = Vector2(-31, -419)
+
+[node name="GoldPickup27" parent="Node2D" unique_id=875501895 instance=ExtResource("18_rlu0w")]
+position = Vector2(2, -392)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

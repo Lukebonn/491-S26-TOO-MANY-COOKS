@@ -104,7 +104,7 @@ script = ExtResource("1_oijlg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2079195409]
 sprite_frames = SubResource("SpriteFrames_7vev3")
-animation = &"hurt"
+animation = &"move"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=550274425]

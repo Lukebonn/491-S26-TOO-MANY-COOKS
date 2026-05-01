@@ -30,7 +30,7 @@ size_flags_horizontal = 4
 texture = ExtResource("1_4iuj4")
 stretch_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=45838771]
+[node name="Credits" type="Label" parent="VBoxContainer" unique_id=45838771]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -43,7 +43,7 @@ theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 64
 text = "CREDITS"
 
-[node name="Label2" type="Label" parent="VBoxContainer" unique_id=964584771]
+[node name="Producers" type="Label" parent="VBoxContainer" unique_id=964584771]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -85,7 +85,7 @@ size_flags_horizontal = 4
 Name = "Alanna Socha"
 Title = "PRODUCER"
 
-[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1597305712]
+[node name="Programmers" type="Label" parent="VBoxContainer" unique_id=1597305712]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -100,11 +100,72 @@ text = "
 
 PROGRAMMERS"
 
-[node name="UserCredit" parent="VBoxContainer" unique_id=94375788 instance=ExtResource("3_gjm8c")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=509825668]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="UserCredit" parent="VBoxContainer/VBoxContainer2" unique_id=94375788 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label4" type="Label" parent="VBoxContainer" unique_id=1063558316]
+[node name="GridContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=565273933]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="UserCredit6" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=1290761535 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Benjamin Barnes"
+Title = "PROGRAMMER"
+
+[node name="UserCredit7" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=2003764466 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Axel Rodriguez-Leòn"
+Title = "PROGRAMMER"
+
+[node name="GridContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=498101422]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="UserCredit6" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=845239611 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Shaina Zaccagnino"
+Title = "PROGRAMMER"
+
+[node name="UserCredit7" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1437229437 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Owen Magee"
+Title = "PROGRAMMER"
+
+[node name="GridContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=418734572]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="UserCredit6" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=1163134786 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Dawson Brown"
+Title = "PROGRAMMER"
+
+[node name="UserCredit7" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=1417202682 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Michael Cheng"
+Title = "PROGRAMMER"
+
+[node name="UserCredit8" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=1784482562 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Tyler Neri"
+Title = "PROGRAMMER"
+
+[node name="Designers" type="Label" parent="VBoxContainer" unique_id=1063558316]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -124,7 +185,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 Title = "LEAD DESIGNER"
 
-[node name="Label5" type="Label" parent="VBoxContainer" unique_id=133866385]
+[node name="Artists" type="Label" parent="VBoxContainer" unique_id=133866385]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -144,7 +205,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 Title = "LEAD ARTIST"
 
-[node name="Label6" type="Label" parent="VBoxContainer" unique_id=274455689]
+[node name="Writers" type="Label" parent="VBoxContainer" unique_id=274455689]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
@@ -164,7 +225,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 Title = "LEAD WRITER"
 
-[node name="Label7" type="Label" parent="VBoxContainer" unique_id=1233573311]
+[node name="Audio" type="Label" parent="VBoxContainer" unique_id=1233573311]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_gjm8c")
