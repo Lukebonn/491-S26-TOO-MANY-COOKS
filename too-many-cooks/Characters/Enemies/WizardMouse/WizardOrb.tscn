@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://4wurpdaic22o"]
+
+[ext_resource type="Script" uid="uid://baom06ojl8ofv" path="res://Characters/Enemies/Scripts/enemy_arrow.gd" id="1_x4yca"]
+[ext_resource type="Texture2D" uid="uid://c1bfqhkncifk1" path="res://Characters/Player/Sprites/Spells/magic_default1.png" id="2_kf72w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fehqi"]
+size = Vector2(131.66666, 99.999985)
+
+[node name="EnemyProjectile" type="Area2D" unique_id=448116752]
+scale = Vector2(0.09, 0.09)
+collision_layer = 32
+collision_mask = 66
+script = ExtResource("1_x4yca")
+speed = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060063044]
+position = Vector2(-9.536743e-07, 1.3888891)
+rotation = 3.135788
+scale = Vector2(13.492064, 11.458333)
+texture = ExtResource("2_kf72w")
+
+[node name="ProjectileHitbox" type="CollisionShape2D" parent="." unique_id=1916954239]
+position = Vector2(0.8333286, 5.555556)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_fehqi")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1630775555]
+position = Vector2(-11.111111, 11.111111)
+rect = Rect2(-44.444447, -55.555557, 111.111115, 100)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

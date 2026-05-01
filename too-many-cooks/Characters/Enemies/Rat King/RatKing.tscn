@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4cpnpe7akucx" path="res://Characters/Enemies/Rat King/rat_king.gd" id="1_qilw0"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/RatDeathSound.mp3" id="2_eliu1"]
+[ext_resource type="PackedScene" uid="uid://cwkj7llpeabn1" path="res://Characters/Enemies/Rat King/RKBasicProjectile.tscn" id="2_v8iup"]
 [ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_b0bd7"]
 [ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_4u66m"]
 [ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_jn6tf"]
@@ -29,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="25_0lxfw"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="26_3ttlr"]
 [ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="27_tp4v8"]
-[ext_resource type="Script" uid="uid://0d7u2tbx5ywu" path="res://Characters/Enemies/Rat King/damage_area.gd" id="30_1tb61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(16, 16)
@@ -45,6 +45,24 @@ radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 size = Vector2(16, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_1tb61"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, -56)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_ktom1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_a310g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 56)
+}
+point_count = 2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
@@ -133,16 +151,13 @@ SceneToSpawn = SubResource("PackedScene_i4era")
 DropCountRange = Vector2(1, 1)
 DropChance = 0.3
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
-radius = 16.0
-
 [node name="RatKing" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
 collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_qilw0")
 health = 100
 damage = 10
-sight_state = NodePath("MultiProjectileState")
+sight_state = NodePath("AoEState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -188,19 +203,54 @@ shape = SubResource("RectangleShape2D_bhto8")
 [node name="RegularProjectileLines" type="Node2D" parent="." unique_id=655689982]
 
 [node name="Projectile Line1" type="RayCast2D" parent="RegularProjectileLines" unique_id=2077328044]
+visible = false
 target_position = Vector2(88, -56)
 collision_mask = 64
 collide_with_areas = true
 
 [node name="Projectile Line2" type="RayCast2D" parent="RegularProjectileLines" unique_id=303834449]
+visible = false
 target_position = Vector2(88, 0)
 collision_mask = 64
 collide_with_areas = true
 
 [node name="Projectile Line3" type="RayCast2D" parent="RegularProjectileLines" unique_id=1972545564]
+visible = false
 target_position = Vector2(88, 56)
 collision_mask = 64
 collide_with_areas = true
+
+[node name="Path2D" type="Path2D" parent="RegularProjectileLines" unique_id=1835514882]
+curve = SubResource("Curve2D_1tb61")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D" unique_id=1751910077]
+rotation = -0.5667292
+loop = false
+
+[node name="ProjectileArea" parent="RegularProjectileLines/Path2D/PathFollow2D" unique_id=1003819008 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
+state_ref = NodePath("../../../../MultiProjectileState")
+damage = 10
+
+[node name="Path2D2" type="Path2D" parent="RegularProjectileLines" unique_id=620982154]
+curve = SubResource("Curve2D_ktom1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D2" unique_id=721040115]
+loop = false
+
+[node name="ProjectileArea" parent="RegularProjectileLines/Path2D2/PathFollow2D" unique_id=2094406433 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
+state_ref = NodePath("../../../../MultiProjectileState")
+damage = 10
+
+[node name="Path2D3" type="Path2D" parent="RegularProjectileLines" unique_id=469946755]
+curve = SubResource("Curve2D_a310g")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D3" unique_id=21773172]
+rotation = 0.5667292
+loop = false
+
+[node name="ProjectileArea" parent="RegularProjectileLines/Path2D3/PathFollow2D" unique_id=587209932 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
+state_ref = NodePath("../../../../MultiProjectileState")
+damage = 10
 
 [node name="EnragedProjectileLines" type="Node2D" parent="." unique_id=1955868048]
 visible = false
@@ -318,15 +368,6 @@ dust_effect = ExtResource("27_tp4v8")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
-[node name="DamageArea" type="Area2D" parent="." unique_id=377356932]
-position = Vector2(-32, 0)
-collision_layer = 32
-collision_mask = 2
-script = ExtResource("30_1tb61")
-
-[node name="CollisionZone" type="CollisionShape2D" parent="DamageArea" unique_id=457180453]
-shape = SubResource("CircleShape2D_ue585")
-
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
@@ -335,3 +376,4 @@ shape = SubResource("CircleShape2D_ue585")
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
 [connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
+[connection signal="fire_projectiles" from="MultiProjectileState" to="RegularProjectileLines/Path2D/PathFollow2D/ProjectileArea" method="_on_fire_projectiles"]

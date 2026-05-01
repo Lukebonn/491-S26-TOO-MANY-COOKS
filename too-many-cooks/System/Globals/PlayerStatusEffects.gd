@@ -1,4 +1,5 @@
 extends Node
+# this doesnt work anymore :sob:
 
 var player
 

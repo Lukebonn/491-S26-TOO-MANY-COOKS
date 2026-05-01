@@ -236,6 +236,7 @@ func _level_objective() -> void:
 func _on_level_complete() -> void:
 	level_complete = true
 	pauseDisabled = true
+	$TimeMachine.stop()
 	level_review.reveal()
 
 

@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://cogmlsqg6gnd8" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-15.png.png" id="34_ycyyp"]
 [ext_resource type="Texture2D" uid="uid://dxcm1s5re74cn" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-16.png.png" id="35_qunsk"]
 [ext_resource type="Script" uid="uid://3gkucb1alglc" path="res://Objects/Barrier/barrier.gd" id="36_lyd5x"]
+[ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="37_kuruh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -331,7 +332,7 @@ position = Vector2(-50, -557)
 position = Vector2(52, -557)
 
 [node name="ObjEnemySpawner" parent="." unique_id=817439483 instance=ExtResource("8_13628")]
-position = Vector2(1, -325)
+position = Vector2(0, -328)
 Enemies = Array[PackedScene]([ExtResource("9_hbjbe")])
 SpawnLimit = 1
 DefeatCount = 1
@@ -369,6 +370,9 @@ animation = &"Open"
 frame = 15
 frame_progress = 1.0
 script = ExtResource("36_lyd5x")
+
+[node name="Fox" parent="." unique_id=1670622060 instance=ExtResource("37_kuruh")]
+position = Vector2(432, -240)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var arrow_start_marker: Marker2D = $rotationNode/arrowStartMarker
 @onready var temp_health_bar: ProgressBar = $EnemyHealthBar
 
-const ARROW = preload("res://Objects/Projectiles/magic_default.tscn")
+const ARROW = preload("res://Characters/Enemies/HobLobber/EnemyPoison.tscn")
 
 const SPEED = 1.0
 const JUMP_VELOCITY = -400.0
