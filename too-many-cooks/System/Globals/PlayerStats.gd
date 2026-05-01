@@ -75,7 +75,7 @@ var passive_hp : int = 0
 var Magic := "None"
 
 ##classes enum for all possible classes and current_class for the player's equipped class
-var current_class = classes.warrior
+var current_class = classes.rogue
 
 enum classes{
 	none,

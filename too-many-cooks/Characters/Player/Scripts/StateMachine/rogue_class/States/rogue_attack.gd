@@ -67,7 +67,7 @@ func switch_equipped():
 			_:
 				equipped_status = "poison"
 	
-	print_debug("equipped " + equipped_status)
+	#print_debug("equipped " + equipped_status)
 
 ##player is unable to attack until cooldown timer expires
 func start_cooldown():
