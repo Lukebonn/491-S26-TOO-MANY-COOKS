@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_oenbj")
 Portrait = ExtResource("1_l6pv5")
 Name = "Carson Dunn"
-Title = "LEAD PROGRAMMER"
+Title = "Lead Programmer"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1024369022]
 layout_mode = 2
@@ -33,7 +33,7 @@ theme = ExtResource("1_ogh2n")
 theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 26
-text = "LEAD PROGRAMMER"
+text = "Lead Programmer"
 
 [node name="Name" type="Label" parent="VBoxContainer" unique_id=568475107]
 layout_mode = 2
