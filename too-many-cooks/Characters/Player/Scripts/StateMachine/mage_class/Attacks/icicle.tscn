@@ -17,8 +17,11 @@ polygon = PackedVector2Array(-8, 0, -8, -3, 9, 0, -8, 3)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1267991083]
 position = Vector2(-9.585705e-07, 0.11201295)
 rotation = 1.5707964
+scale = Vector2(0.374, 0.5)
+texture = ExtResource("2_56juu")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=638128355]
+visible = false
 color = Color(0.38431373, 1, 1, 1)
 polygon = PackedVector2Array(-10, 0, 0, -2, 10, 0, 0, 2)
 
