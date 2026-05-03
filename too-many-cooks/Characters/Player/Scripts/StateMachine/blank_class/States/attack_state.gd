@@ -28,7 +28,7 @@ func enter_state(player_node):
 		
 		await get_tree().create_timer(0.1).timeout
 		
-		$SlashSound.play()
+		#$SlashSound.play()
 		#player has their hitbox disabled
 		
 		hitbox.queue_free()

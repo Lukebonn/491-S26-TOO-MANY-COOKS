@@ -12,8 +12,10 @@ func _ready() -> void:
 		state_ref.connect("fire_projectiles", _on_fire_projectiles)
 
 func _process(delta: float) -> void:
-	if get_parent().progress_ratio >= 1: queue_free()
-	if follow_path: get_parent().progress_ratio += 1.0 * delta
+	if get_parent().progress_ratio >= 1: 
+		get_parent().progress_ratio = 0
+		queue_free()
+	if follow_path: get_parent().progress_ratio += 0.5 * delta
 	
 
 func _on_fire_projectiles() -> void:

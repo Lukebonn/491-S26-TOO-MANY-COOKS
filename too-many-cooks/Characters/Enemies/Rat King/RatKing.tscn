@@ -2,14 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c4cpnpe7akucx" path="res://Characters/Enemies/Rat King/rat_king.gd" id="1_qilw0"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_eliu1"]
-[ext_resource type="PackedScene" uid="uid://cwkj7llpeabn1" path="res://Characters/Enemies/Rat King/RKBasicProjectile.tscn" id="2_v8iup"]
-[ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_b0bd7"]
-[ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_4u66m"]
-[ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_jn6tf"]
-[ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_wennr"]
-[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_w5jkc"]
-[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_ei4u7"]
-[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_mahoe"]
+[ext_resource type="Texture2D" uid="uid://c6bv1ipibbi7n" path="res://Characters/Enemies/Rat King/Sprites/rk1.png" id="3_3pwg4"]
+[ext_resource type="Texture2D" uid="uid://dm7lhlh5yamgm" path="res://Characters/Enemies/Rat King/Sprites/rk2.png" id="4_qilw0"]
+[ext_resource type="Texture2D" uid="uid://bb3rpapxtg1dr" path="res://Characters/Enemies/Rat King/Sprites/rk3.png" id="5_nqo7f"]
+[ext_resource type="Texture2D" uid="uid://bdgst806axdrm" path="res://Characters/Enemies/Rat King/Sprites/rk4.png" id="6_ue585"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="10_b3l8j"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="11_hw1kh"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="12_tchgu"]
@@ -21,7 +17,7 @@
 [ext_resource type="Script" uid="uid://s35p5ffhlejl" path="res://Characters/Enemies/Rat King/aoe_state.gd" id="16_ue585"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_rldik"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_fuqu5"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_c073d"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_bjov1"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_chgiv"]
@@ -32,35 +28,35 @@
 [ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="27_tp4v8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
-size = Vector2(16, 16)
+size = Vector2(25, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
 radius = 320.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
-size = Vector2(16, 16)
+size = Vector2(25, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
 radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
-size = Vector2(16, 16)
+size = Vector2(25, 42)
 
 [sub_resource type="Curve2D" id="Curve2D_1tb61"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, -56)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 184, -152)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_ktom1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 184, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_a310g"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88, 56)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 184, 152)
 }
 point_count = 2
 
@@ -68,49 +64,44 @@ point_count = 2
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_b0bd7")
+"texture": ExtResource("6_ue585")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_4u66m")
+"texture": ExtResource("5_nqo7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qilw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3pwg4")
 }],
-"loop": true,
-"name": &"chase",
+"loop": false,
+"name": &"casting",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3pwg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qilw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqo7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ue585")
+}],
+"loop": false,
+"name": &"conjuring",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_jn6tf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_wennr")
-}],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_b0bd7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_4u66m")
+"texture": ExtResource("3_3pwg4")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_w5jkc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_ei4u7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_mahoe")
-}],
-"loop": true,
-"name": &"swing",
 "speed": 5.0
 }]
 
@@ -157,7 +148,7 @@ collision_mask = 64
 script = ExtResource("1_qilw0")
 health = 100
 damage = 10
-sight_state = NodePath("AoEState")
+sight_state = NodePath("MultiProjectileState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -166,6 +157,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
+position = Vector2(-0.5, -12)
 shape = SubResource("RectangleShape2D_jonyw")
 debug_color = Color(0.7, 0, 0, 0.41960785)
 
@@ -183,6 +175,7 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
+position = Vector2(-0.5, -12)
 shape = SubResource("RectangleShape2D_f5e7n")
 debug_color = Color(0.10499998, 0.7, 0, 0.41960785)
 
@@ -197,60 +190,56 @@ shape = SubResource("CircleShape2D_sqkpv")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
-visible = false
+position = Vector2(-0.5, -12)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="RegularProjectileLines" type="Node2D" parent="." unique_id=655689982]
 
-[node name="Projectile Line1" type="RayCast2D" parent="RegularProjectileLines" unique_id=2077328044]
-visible = false
-target_position = Vector2(88, -56)
-collision_mask = 64
-collide_with_areas = true
-
-[node name="Projectile Line2" type="RayCast2D" parent="RegularProjectileLines" unique_id=303834449]
-visible = false
-target_position = Vector2(88, 0)
-collision_mask = 64
-collide_with_areas = true
-
-[node name="Projectile Line3" type="RayCast2D" parent="RegularProjectileLines" unique_id=1972545564]
-visible = false
-target_position = Vector2(88, 56)
-collision_mask = 64
-collide_with_areas = true
-
 [node name="Path2D" type="Path2D" parent="RegularProjectileLines" unique_id=1835514882]
 curve = SubResource("Curve2D_1tb61")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D" unique_id=1751910077]
-rotation = -0.5667292
+[node name="Line1" type="PathFollow2D" parent="RegularProjectileLines/Path2D" unique_id=1751910077]
+rotation = -0.6904465
 loop = false
-
-[node name="ProjectileArea" parent="RegularProjectileLines/Path2D/PathFollow2D" unique_id=1003819008 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
-state_ref = NodePath("../../../../MultiProjectileState")
-damage = 10
 
 [node name="Path2D2" type="Path2D" parent="RegularProjectileLines" unique_id=620982154]
 curve = SubResource("Curve2D_ktom1")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D2" unique_id=721040115]
+[node name="Line2" type="PathFollow2D" parent="RegularProjectileLines/Path2D2" unique_id=721040115]
 loop = false
-
-[node name="ProjectileArea" parent="RegularProjectileLines/Path2D2/PathFollow2D" unique_id=2094406433 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
-state_ref = NodePath("../../../../MultiProjectileState")
-damage = 10
 
 [node name="Path2D3" type="Path2D" parent="RegularProjectileLines" unique_id=469946755]
 curve = SubResource("Curve2D_a310g")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="RegularProjectileLines/Path2D3" unique_id=21773172]
-rotation = 0.5667292
+[node name="Line3" type="PathFollow2D" parent="RegularProjectileLines/Path2D3" unique_id=21773172]
+rotation = 0.6904465
 loop = false
 
-[node name="ProjectileArea" parent="RegularProjectileLines/Path2D3/PathFollow2D" unique_id=587209932 node_paths=PackedStringArray("state_ref") instance=ExtResource("2_v8iup")]
-state_ref = NodePath("../../../../MultiProjectileState")
-damage = 10
+[node name="TempIndicators" type="ColorRect" parent="RegularProjectileLines" unique_id=557438723]
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 51.0
+offset_bottom = 12.0
+rotation = 0.6846276
+color = Color(1, 0, 0, 0.4509804)
+
+[node name="TempIndicator3" type="ColorRect" parent="RegularProjectileLines/TempIndicators" unique_id=509034408]
+layout_mode = 0
+offset_left = -5.0590763
+offset_top = -6.197237
+offset_right = 34.940926
+offset_bottom = 1.802763
+rotation = -0.68451977
+color = Color(1, 0, 0, 0.4509804)
+
+[node name="TempIndicator2" type="ColorRect" parent="RegularProjectileLines/TempIndicators" unique_id=557628240]
+layout_mode = 0
+offset_left = -12.726657
+offset_top = -7.683243
+offset_right = 27.273342
+offset_bottom = 0.3167572
+rotation = -1.4028366
+color = Color(1, 0, 0, 0.4509804)
 
 [node name="EnragedProjectileLines" type="Node2D" parent="." unique_id=1955868048]
 visible = false
@@ -282,12 +271,11 @@ stream = ExtResource("2_eliu1")
 stream = ExtResource("2_eliu1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
-visible = false
 visibility_layer = 2
-position = Vector2(-2.375, 1.375)
-scale = Vector2(0.78125, 0.6944444)
+position = Vector2(-0.50000095, -12.256945)
+scale = Vector2(0.7142857, 0.7031544)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
-animation = &"swing"
+animation = &"idle"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("10_b3l8j")]
 visible = false
@@ -316,12 +304,20 @@ script = ExtResource("14_f3eq6")
 state_to_enter = NodePath("../JunctionState")
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
-[node name="MultiProjectileState" type="Node" parent="." unique_id=875655972]
+[node name="MultiProjectileState" type="Node" parent="." unique_id=875655972 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("15_nqo7f")
+state_to_enter = NodePath("../JunctionState")
+projectile_damage = 50
+casting_time = 3.0
+cooldown_time = 3.0
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
-[node name="AoEState" type="Node" parent="." unique_id=675504382]
+[node name="AoEState" type="Node" parent="." unique_id=675504382 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("16_ue585")
+state_to_enter = NodePath("../JunctionState")
+area_damage = 25
+casting_time = 1.0
+cooldown_time = 2.0
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ApproachState" type="Node" parent="." unique_id=1069220951 node_paths=PackedStringArray("state_to_enter")]
@@ -353,7 +349,7 @@ one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
 script = ExtResource("19_bi8cu")
-Possibilities = [NodePath("../SlashState")]
+Possibilities = [NodePath("../MultiProjectileState")]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -376,4 +372,3 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
 [connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
-[connection signal="fire_projectiles" from="MultiProjectileState" to="RegularProjectileLines/Path2D/PathFollow2D/ProjectileArea" method="_on_fire_projectiles"]

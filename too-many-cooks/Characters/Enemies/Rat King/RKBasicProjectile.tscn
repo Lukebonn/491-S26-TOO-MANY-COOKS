@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ci160oexc3cew" path="res://Characters/Enemies/Rat/cheese.png" id="2_ysjor"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
-radius = 8.0
+radius = 5.0
 
 [node name="ProjectileArea" type="Area2D" unique_id=1003819008]
 collision_layer = 32

@@ -5,6 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
 radius = 16.0
 
+[sub_resource type="SphereMesh" id="SphereMesh_4rug4"]
+
 [node name="DamageArea" type="Area2D" unique_id=1003819008]
 collision_layer = 32
 collision_mask = 2
@@ -12,3 +14,9 @@ script = ExtResource("1_xfnkd")
 
 [node name="CollisionZone" type="CollisionShape2D" parent="." unique_id=869777355]
 shape = SubResource("CircleShape2D_ue585")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=741588676]
+modulate = Color(1, 0, 0, 0.54901963)
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(32.036285, 32.03629)
+mesh = SubResource("SphereMesh_4rug4")

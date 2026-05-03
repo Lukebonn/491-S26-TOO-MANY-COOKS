@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ds5nw70mq58tu"]
 
 [ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_7syrx"]
-[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_80611"]
 [ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_8226d"]
 [ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_sqkpv"]
 [ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_fs6er"]
@@ -18,7 +17,7 @@
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]
@@ -29,22 +28,22 @@
 [ext_resource type="PackedScene" uid="uid://b6t8as10flpya" path="res://Characters/Enemies/Particles/FeatherParticles.tscn" id="27_28cnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
-size = Vector2(20, 18)
+size = Vector2(26, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
-radius = 81.68537
+radius = 323.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
-size = Vector2(19, 17.25)
+size = Vector2(26, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqkpv"]
-size = Vector2(20, 48)
+size = Vector2(26, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
 radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
-size = Vector2(19, 18)
+size = Vector2(26, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
@@ -148,7 +147,6 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
-position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_jonyw")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1355964886]
@@ -164,7 +162,6 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
-position = Vector2(-2.5, 2.375)
 shape = SubResource("RectangleShape2D_f5e7n")
 
 [node name="Slash Hitbox" type="Area2D" parent="." unique_id=599952008]
@@ -174,12 +171,11 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slash Hitbox" unique_id=999639537]
-position = Vector2(22, 0)
+position = Vector2(25, 0)
 shape = SubResource("RectangleShape2D_sqkpv")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="Near Zone" type="Area2D" parent="." unique_id=2057668559]
-visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -189,25 +185,22 @@ shape = SubResource("CircleShape2D_sqkpv")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
-position = Vector2(-2.5, 2)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="DashLine" type="RayCast2D" parent="." unique_id=2077328044]
-scale = Vector2(1, 3)
+scale = Vector2(1, 2)
 target_position = Vector2(80, 0)
 collision_mask = 64
 collide_with_areas = true
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
-stream = ExtResource("2_80611")
 
 [node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
-stream = ExtResource("2_80611")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 visibility_layer = 2
-position = Vector2(-2.375, 1.375)
-scale = Vector2(0.78125, 0.6944444)
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(1.0833335, 1.0391688)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"swing"
 

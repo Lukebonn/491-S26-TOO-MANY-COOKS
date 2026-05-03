@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmm0mhgp0p5q0"
-path="res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"
+uid="uid://c6bv1ipibbi7n"
+path="res://.godot/imported/rk1.png-9ed4bc55d57891658998f3e216a1464f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/Mice/brown/1.png"
-dest_files=["res://.godot/imported/1.png-0e6bff7bd637277cfa55e32f053cc6d2.ctex"]
+source_file="res://Characters/Enemies/Rat King/Sprites/rk1.png"
+dest_files=["res://.godot/imported/rk1.png-9ed4bc55d57891658998f3e216a1464f.ctex"]
 
 [params]
 

@@ -31,9 +31,8 @@ Player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
-[node name="UI" parent="CanvasLayer" unique_id=1832120515 node_paths=PackedStringArray("combat_music") instance=ExtResource("4_eb488")]
+[node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("4_eb488")]
 visible = false
-combat_music = NodePath("../../CombatMusic")
 
 [node name="Labels" type="Node" parent="." unique_id=1131383549]
 
@@ -703,6 +702,8 @@ position = Vector2(232, -440)
 
 [node name="RatKing" parent="." unique_id=1545687342 instance=ExtResource("15_1ekbf")]
 position = Vector2(0, -32)
+health = 1
+damage = 100
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]
