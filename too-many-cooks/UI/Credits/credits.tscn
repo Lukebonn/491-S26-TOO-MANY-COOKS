@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_4i5kg"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="7_30bwe"]
+[ext_resource type="Texture2D" uid="uid://cciqv1yk8koyi" path="res://UI/Credits/Img/AtaKitapci.png" id="8_30bwe"]
 
 [node name="Credits" type="Control" unique_id=1758667731]
 layout_mode = 3
@@ -24,8 +25,8 @@ offset_top = 768.0
 offset_bottom = 2180.0
 grow_horizontal = 2
 script = ExtResource("1_vcckd")
-TweenTarget = -2000.0
-TweenTime = 20.0
+TweenTarget = -3000.0
+TweenTime = 30.0
 
 [node name="Sprite2D" type="TextureRect" parent="VBoxContainer" unique_id=598003022]
 layout_mode = 2
@@ -201,13 +202,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 64
 
-[node name="UserCredit3" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1092889361 instance=ExtResource("3_gjm8c")]
+[node name="Benjamin2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1092889361 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Benjamin Barnes"
-Title = "Level Designer"
+Title = "UI & Level Designer"
 
-[node name="UserCredit4" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1027214142 instance=ExtResource("3_gjm8c")]
+[node name="Luke2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1027214142 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Luke !!!!!"
@@ -218,13 +219,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 64
 
-[node name="UserCredit3" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=1326258815 instance=ExtResource("3_gjm8c")]
+[node name="Dawson2" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=1326258815 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Dawson Brown"
 Title = "Enemy & UI Designer"
 
-[node name="UserCredit4" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=103258314 instance=ExtResource("3_gjm8c")]
+[node name="Owen2" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=103258314 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Owen Magee"
@@ -249,17 +250,56 @@ ARTISTS"
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="UserCredit3" parent="VBoxContainer/VBoxContainer4" unique_id=1792312091 instance=ExtResource("3_gjm8c")]
+[node name="AbiW1" parent="VBoxContainer/VBoxContainer4" unique_id=1792312091 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Abi Wilcock"
 Title = "Lead Artist"
 
-[node name="UserCredit6" parent="VBoxContainer/VBoxContainer4" unique_id=78673757 instance=ExtResource("3_gjm8c")]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer4" unique_id=801621923]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="AbiP1" parent="VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=78673757 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Abigail Parisan"
 Title = "Environment Artist"
+
+[node name="Jada1" parent="VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=961247338 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Jada Holmes"
+Title = "Environment Artist"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer4" unique_id=972972965]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="Louie1" parent="VBoxContainer/VBoxContainer4/HBoxContainer2" unique_id=1552400064 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Louis Rizzo"
+Title = "Character Artist"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer4" unique_id=522224445]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="Finn1" parent="VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=1955755897 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Finn Smith"
+Title = "Artist"
+
+[node name="Michelle1" parent="VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=1337613264 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Michelle Bartolotta"
+Title = "Artist"
 
 [node name="Writers" type="Label" parent="VBoxContainer" unique_id=274455689]
 layout_mode = 2
@@ -280,15 +320,39 @@ WRITERS"
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="UserCredit4" parent="VBoxContainer/VBoxContainer5" unique_id=2113205580 instance=ExtResource("3_gjm8c")]
+[node name="UserCredit" parent="VBoxContainer/VBoxContainer5" unique_id=2113205580 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Name = "Jonathan Munro"
 Title = "Lead Writer"
 
-[node name="UserCredit7" parent="VBoxContainer/VBoxContainer5" unique_id=279976128 instance=ExtResource("3_gjm8c")]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer5" unique_id=829269549]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="David1" parent="VBoxContainer/VBoxContainer5/HBoxContainer" unique_id=279976128 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "David Humphrey"
+Title = "Writer"
+
+[node name="Ata1" parent="VBoxContainer/VBoxContainer5/HBoxContainer" unique_id=79677959 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Portrait = ExtResource("8_30bwe")
+Name = "Ata Kitapci"
+Title = "Writer"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer5" unique_id=735293563]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="Ian1" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=649560253 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Ian Baynard"
 Title = "Writer"
 
 [node name="Audio" type="Label" parent="VBoxContainer" unique_id=1233573311]
@@ -310,11 +374,17 @@ AUDIO"
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="UserCredit5" parent="VBoxContainer/VBoxContainer6" unique_id=491418339 instance=ExtResource("3_gjm8c")]
+[node name="Eli1" parent="VBoxContainer/VBoxContainer6" unique_id=491418339 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Eli Johnson"
 Title = "Audio Lead"
+
+[node name="Jaime1" parent="VBoxContainer/VBoxContainer6" unique_id=1179797579 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Jaime Rosario"
+Title = "Musician"
 
 [node name="Patrick2" parent="VBoxContainer/VBoxContainer6" unique_id=553686352 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
@@ -322,3 +392,43 @@ size_flags_horizontal = 4
 Portrait = ExtResource("7_30bwe")
 Name = "Patrick Ellis"
 Title = "Voice Actor"
+
+[node name="Audio2" type="Label" parent="VBoxContainer" unique_id=159888487]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_gjm8c")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "
+
+
+
+
+
+
+
+Thank you for playing!"
+
+[node name="Label" type="Label" parent="." unique_id=1296739388]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -24.0
+offset_right = -3.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_gjm8c")
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_font_sizes/font_size = 24
+text = "Press Anything to Skip"
