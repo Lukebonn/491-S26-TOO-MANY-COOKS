@@ -25,6 +25,8 @@ enum SpawnType {
 @export var LocationType : LocType
 ##The radius at which enemies will be spawned at, if LocationType is FixedRadius.
 @export var SpawnRadius : float = 32.0
+##An offset (in degrees) added to the current rotation incriment, if LocationType is RadiusRange. Ignored by RandomLocation.
+@export var SpawnRadiusOffset : float = 0.0
 ##The minimum range at which enemies will be spawned at, if LocationType is RadiusRange.
 @export var RadiusRangeMin : float = 32.0
 ##The maximum range at which enemies will be spawned at, if LocationType is RadiusRange.
@@ -70,6 +72,7 @@ func _ready() -> void:
 	#Calculate rotation incriment for later.
 	rotInc = 360 * 1/float(Enemies.size())
 	array_length = Enemies.size()
+	$Sprite.hide()
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
 	interval = $Interval
 	if SpawnPath:
@@ -79,9 +82,6 @@ func try_spawn_enemies() -> void:
 	if canSpawn && not enemy_count >= SpawnLimit:
 		#Disable future spawning, spawn enemies next physics frame.
 		canSpawn = false
-		#toggle the aggro particles on
-		$orbparticlesaggroed.show()
-		$orbparticles.hide()
 		#Use call deferred, have to wait until physics frame is done.
 		call_deferred("spawn_enemies")
 		on_spawn.emit()
@@ -118,8 +118,8 @@ func calc_spawn_pos(i: int):
 			#Return rotated Vec2 based on random float in range.
 			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(randf_range(0, 360)))
 		else:
-			#Return rotated Vec2 based on incriment * index.
-			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
+			#Return rotated Vec2 based on incriment * index + offset.
+			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad((rotInc * i) + SpawnRadiusOffset))
 	if LocationType == LocType.AlongPath:
 		#Check that SpawnPath is actually valid (assigned).
 		if SpawnPath:

@@ -31,6 +31,8 @@ enum SpawnType {
 @export var LocationType : LocType
 ##The radius at which enemies will be spawned at, if LocationType is FixedRadius.
 @export var SpawnRadius : float = 32.0
+##An offset (in degrees) added to the current rotation incriment, if LocationType is RadiusRange. Ignored by RandomLocation.
+@export var SpawnRadiusOffset : float = 0.0
 ##The minimum range at which enemies will be spawned at, if LocationType is RadiusRange.
 @export var RadiusRangeMin : float = 32.0
 ##The maximum range at which enemies will be spawned at, if LocationType is RadiusRange.
@@ -99,10 +101,9 @@ func _ready() -> void:
 	array_length = Enemies.size()
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
 	interval = $Interval
-	$Sprite.hide()
 	$Area2D.current_health = HP
-	$Area2D/HealthBar.value = HP
 	$Area2D/HealthBar.max_value = HP
+	$Area2D/HealthBar.value = HP
 	if SpawnPath:
 		path_length = SpawnPath.curve.get_baked_length()
 
@@ -149,8 +150,8 @@ func calc_spawn_pos(i: int):
 			#Return rotated Vec2 based on random float in range.
 			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(randf_range(0, 360)))
 		else:
-			#Return rotated Vec2 based on incriment * index.
-			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad(rotInc * i))
+			#Return rotated Vec2 based on incriment * index + offset.
+			return position + Vector2(SpawnRadius,0).rotated(deg_to_rad((rotInc * i) + SpawnRadiusOffset))
 	if LocationType == LocType.AlongPath:
 		#Check that SpawnPath is actually valid (assigned).
 		if SpawnPath:

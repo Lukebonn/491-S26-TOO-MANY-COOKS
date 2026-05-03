@@ -1,9 +1,118 @@
 [gd_scene format=3 uid="uid://d3kyhoaa2p1tq"]
 
 [ext_resource type="Script" uid="uid://dh4nnx4sl7bt4" path="res://Objects/Barrier/obj_barrier.gd" id="1_yktmm"]
+[ext_resource type="Texture2D" uid="uid://cva76b765p24f" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-1.png.png" id="2_pwvlt"]
+[ext_resource type="Texture2D" uid="uid://4hqhsu0s8cw1" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-2.png.png" id="3_g0iyf"]
+[ext_resource type="Texture2D" uid="uid://bu2pxu6gofqkk" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-3.png.png" id="4_mc04e"]
+[ext_resource type="Texture2D" uid="uid://ckh0ypn5qfjdr" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-4.png.png" id="5_oqmik"]
+[ext_resource type="Texture2D" uid="uid://b7dahqqjp5in3" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-5.png.png" id="6_gmvgb"]
+[ext_resource type="Texture2D" uid="uid://b1ytb7jfd8gwh" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-6.png.png" id="7_gywf2"]
+[ext_resource type="Texture2D" uid="uid://qscn10u2ajx" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-7.png.png" id="8_m54tf"]
+[ext_resource type="Texture2D" uid="uid://b0u62nqramlwl" path="res://Objects/Barrier/Barrier Sprites/Close Frames/Barrier Close Frames-8.png.png" id="9_ob663"]
+[ext_resource type="Texture2D" uid="uid://cxivwlfvvukb4" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-1.png.png" id="10_jqyxn"]
+[ext_resource type="Texture2D" uid="uid://3bl8eli4pknc" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-2.png.png" id="11_dmg6o"]
+[ext_resource type="Texture2D" uid="uid://ctmpixcynk3mr" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-3.png.png" id="12_3fy8m"]
+[ext_resource type="Texture2D" uid="uid://dwwmfq2yqsvqd" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-4.png.png" id="13_74cmv"]
+[ext_resource type="Texture2D" uid="uid://dwfpto2u8pt8q" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-5.png.png" id="14_f522w"]
+[ext_resource type="Texture2D" uid="uid://bong0ycu7e03v" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-6.png.png" id="15_6c5lo"]
+[ext_resource type="Texture2D" uid="uid://cpbman1u47q40" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-7.png.png" id="16_lgaov"]
+[ext_resource type="Texture2D" uid="uid://ch74wg6aef1by" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-8.png.png" id="17_5n5vo"]
+[ext_resource type="Texture2D" uid="uid://ba3135f6jts3n" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-9.png.png" id="18_j7qjm"]
+[ext_resource type="Texture2D" uid="uid://dqujh3fb7wpil" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-10.png.png" id="19_jmu45"]
+[ext_resource type="Texture2D" uid="uid://b6u3jl2pvcis1" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-11.png.png" id="20_cncrj"]
+[ext_resource type="Texture2D" uid="uid://dajpr70b03763" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-12.png.png" id="21_vaf25"]
+[ext_resource type="Texture2D" uid="uid://bagsayuryu0ba" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-13.png.png" id="22_c6u3v"]
+[ext_resource type="Texture2D" uid="uid://bqr11pl76d3ve" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-14.png.png" id="23_2bch4"]
+[ext_resource type="Texture2D" uid="uid://cogmlsqg6gnd8" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-15.png.png" id="24_scq34"]
+[ext_resource type="Texture2D" uid="uid://dxcm1s5re74cn" path="res://Objects/Barrier/Barrier Sprites/Open Frames/Barrier Open Frames-16.png.png" id="25_8vbbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1nit"]
-size = Vector2(32, 32)
+size = Vector2(32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eg03c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pwvlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g0iyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mc04e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oqmik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gmvgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gywf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m54tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ob663")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jqyxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dmg6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3fy8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_74cmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f522w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6c5lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lgaov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5n5vo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_j7qjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jmu45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cncrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vaf25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_c6u3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2bch4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_scq34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8vbbe")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 10.0
+}]
 
 [node name="ObjBarrier" type="StaticBody2D" unique_id=273527535]
 collision_layer = 64
@@ -11,6 +120,7 @@ collision_mask = 13
 script = ExtResource("1_yktmm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1032617379]
+visible = false
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
@@ -18,3 +128,9 @@ offset_bottom = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778641944]
 shape = SubResource("RectangleShape2D_e1nit")
+
+[node name="Barrier" type="AnimatedSprite2D" parent="." unique_id=2088768812]
+sprite_frames = SubResource("SpriteFrames_eg03c")
+animation = &"Open"
+frame = 15
+frame_progress = 1.0

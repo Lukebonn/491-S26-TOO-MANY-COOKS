@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="3_utcjh"]
 [ext_resource type="Resource" uid="uid://djqffdti4cmy8" path="res://Objects/Pickups/PickupData/PickupOrb.tres" id="4_oquvc"]
 [ext_resource type="Texture2D" uid="uid://7vcdu2q3o57r" path="res://Objects/EnemySpawner/Sprites/short_column_gray.png" id="7_7whxd"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="7_hr30r"]
+[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="8_w4bx0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gd6u"]
 
@@ -13,24 +15,46 @@
 radius = 16.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qqly"]
+bg_color = Color(0.29803923, 0.078431375, 0.15686275, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6666667, 0.8156863, 0.93333334, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmkgu"]
-bg_color = Color(1, 0.06999999, 0.08549976, 1)
+bg_color = Color(0.91764706, 0.16470589, 0.3254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.6666667, 0.8156863, 0.93333334, 1)
+
+[sub_resource type="Curve" id="Curve_7whxd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.8980377, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ieyy8"]
+offsets = PackedFloat32Array(0.01724138, 0.3137931, 0.5862069, 0.82758623, 0.99655175)
+colors = PackedColorArray(1, 0.5562859, 0.49291265, 1, 0.7164358, 0.09452108, 0.75242627, 1, 7.315874e-06, 0.7746416, 0.9537807, 1, 0.36320406, 0.82402974, 0, 1, 1, 0.5651481, 0.41945553, 1)
+
+[sub_resource type="Gradient" id="Gradient_kieiq"]
+offsets = PackedFloat32Array(0, 0.45172414, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.49411765, 0, 0, 1, 1, 0, 0, 1)
 
 [node name="ObjDestructibleSpawner" unique_id=817439483 instance=ExtResource("1_0gd6u")]
 script = ExtResource("2_3hgi4")
 HP = 20
 Drops = Array[ExtResource("3_utcjh")]([ExtResource("4_oquvc")])
 
-[node name="Sprite2" type="Sprite2D" parent="." index="1" unique_id=1945316062]
+[node name="Sprite" parent="." index="0" unique_id=1707547804]
 texture = ExtResource("7_7whxd")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="4" unique_id=1306898467]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=1306898467]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=949110196]
 shape = SubResource("CircleShape2D_0gd6u")
 
-[node name="Area2D" type="Area2D" parent="." index="5" unique_id=1871625094]
+[node name="Area2D" type="Area2D" parent="." index="4" unique_id=1871625094]
 collision_layer = 16
 collision_mask = 68
 script = ExtResource("2_3mj1u")
@@ -40,12 +64,48 @@ shape = SubResource("CircleShape2D_3mj1u")
 
 [node name="HealthBar" type="ProgressBar" parent="Area2D" index="1" unique_id=1352274992]
 offset_left = -15.0
-offset_top = -16.0
+offset_top = 10.0
 offset_right = 15.5
-offset_bottom = -12.0
+offset_bottom = 14.0
 theme_override_styles/background = SubResource("StyleBoxFlat_3qqly")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nmkgu")
-value = 50.0
 show_percentage = false
+
+[node name="orb" type="Sprite2D" parent="." index="5" unique_id=366029593]
+z_index = 1
+position = Vector2(0, -15)
+texture = ExtResource("7_hr30r")
+
+[node name="orbparticles" type="CPUParticles2D" parent="." index="6" unique_id=1807341422]
+position = Vector2(0, -15)
+texture = ExtResource("8_w4bx0")
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_7whxd")
+color_ramp = SubResource("Gradient_ieyy8")
+hue_variation_max = 1.0
+
+[node name="orbparticlesaggroed" type="CPUParticles2D" parent="." index="7" unique_id=1724591868]
+visible = false
+position = Vector2(0, -15)
+amount = 16
+texture = ExtResource("8_w4bx0")
+emission_shape = 1
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+radial_accel_min = 7.5
+radial_accel_max = 7.5
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_7whxd")
+color_ramp = SubResource("Gradient_kieiq")
+hue_variation_max = 1.0
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
