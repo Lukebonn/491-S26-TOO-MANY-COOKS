@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="8_0baqv"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_easig"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="9_gamat"]
+[ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="9_ry3e8"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="10_7crwr"]
-[ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="10_ry3e8"]
 [ext_resource type="Texture2D" uid="uid://ixm31pmapd8g" path="res://Scenes/Level Design/Props/functional/crate.png" id="10_v2yju"]
+[ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="10_ve6l4"]
 [ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="11_bkfm7"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_d48en"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="13_gamat"]
@@ -55,7 +56,7 @@ polygon = PackedVector2Array(-32, -24, -32, 0, 32, 0, 32, -24, 48, -24, 48, 16, 
 
 [node name="ObjEnemySpawner" parent="Objects/Room1" unique_id=817439483 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("7_2ind5")]
 position = Vector2(0, 336)
-Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("10_ry3e8")])
+Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("10_ve6l4"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("9_ry3e8")])
 LocationType = 3
 SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D4"), NodePath("Marker2D5"), NodePath("Marker2D3"), NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D8")]
 
@@ -153,7 +154,7 @@ rotation = 1.5707964
 
 [node name="ObjEnemySpawner" parent="Objects/Room2" unique_id=1510580466 instance=ExtResource("7_2ind5")]
 position = Vector2(424, 184)
-Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("13_gamat")])
+Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("13_gamat")])
 SpawnRadius = 64.0
 
 [node name="Room3" type="Node" parent="Objects" unique_id=2132239857]
@@ -161,7 +162,7 @@ SpawnRadius = 64.0
 [node name="ObjEnemySpawner" parent="Objects/Room3" unique_id=1649908575 instance=ExtResource("7_2ind5")]
 position = Vector2(832, 96)
 RandomLocation = true
-Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("13_ve6l4")])
+Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("13_ve6l4")])
 CollisionRadius = 128.0
 LocationType = 2
 RadiusRangeMax = 96.0
@@ -189,7 +190,7 @@ rotation = 1.5707964
 
 [node name="ObjDestructibleSpawner" parent="Objects/Room4" unique_id=1625358078 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("10_7crwr")]
 position = Vector2(528, 624)
-Enemies = Array[PackedScene]([ExtResource("16_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("16_ry3e8")])
+Enemies = Array[PackedScene]([ExtResource("16_ry3e8"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("16_ry3e8")])
 LocationType = 3
 SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
 SpawnMethod = 1

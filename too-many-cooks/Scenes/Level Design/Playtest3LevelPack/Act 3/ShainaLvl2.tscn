@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_b3idh"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i028f"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="15_gppm1"]
+[ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="15_vsw4c"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -185,5 +186,44 @@ position = Vector2(135, -3)
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_v56i3")]
 position = Vector2(276, -87)
+
+[node name="FoxAct3" parent="." unique_id=1034226883 instance=ExtResource("15_vsw4c")]
+position = Vector2(105, -51)
+
+[node name="FoxAct4" parent="." unique_id=1528672855 instance=ExtResource("15_vsw4c")]
+position = Vector2(105, 52)
+
+[node name="FoxAct5" parent="." unique_id=412575121 instance=ExtResource("15_vsw4c")]
+position = Vector2(321, -341)
+
+[node name="FoxAct6" parent="." unique_id=1440222795 instance=ExtResource("15_vsw4c")]
+position = Vector2(624, -269)
+
+[node name="FoxAct7" parent="." unique_id=1178408778 instance=ExtResource("15_vsw4c")]
+position = Vector2(263, 268)
+
+[node name="FoxAct8" parent="." unique_id=1806842143 instance=ExtResource("15_vsw4c")]
+position = Vector2(358, 140)
+
+[node name="FoxAct9" parent="." unique_id=1617434536 instance=ExtResource("15_vsw4c")]
+position = Vector2(402, 267)
+
+[node name="FoxAct10" parent="." unique_id=1636625091 instance=ExtResource("15_vsw4c")]
+position = Vector2(614, 204)
+
+[node name="FoxAct11" parent="." unique_id=67866381 instance=ExtResource("15_vsw4c")]
+position = Vector2(568, 273)
+
+[node name="FoxAct12" parent="." unique_id=1673215127 instance=ExtResource("15_vsw4c")]
+position = Vector2(792, -56)
+
+[node name="FoxAct13" parent="." unique_id=1150685463 instance=ExtResource("15_vsw4c")]
+position = Vector2(862, -134)
+
+[node name="FoxAct14" parent="." unique_id=1597645813 instance=ExtResource("15_vsw4c")]
+position = Vector2(819, -355)
+
+[node name="FoxAct15" parent="." unique_id=1163114955 instance=ExtResource("15_vsw4c")]
+position = Vector2(839, -354)
 
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
