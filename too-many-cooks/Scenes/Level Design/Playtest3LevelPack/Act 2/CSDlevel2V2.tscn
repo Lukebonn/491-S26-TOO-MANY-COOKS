@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_lt51b"]
 [ext_resource type="PackedScene" uid="uid://dfsyceucp33qb" path="res://Objects/Door + room(door parent)/room.tscn" id="10_d5utk"]
 [ext_resource type="PackedScene" uid="uid://bjmw5jy4mmifb" path="res://Objects/Door + room(door parent)/obj_door.tscn" id="11_qk2er"]
+[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="13_sse3v"]
+[ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="14_kelc3"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -203,7 +205,7 @@ tile_set = ExtResource("2_o7fv7")
 position = Vector2(-10, 187)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_o7fv7")]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 
@@ -393,58 +395,32 @@ position = Vector2(-15.106007, -49.364414)
 rotation = 1.5707964
 scale = Vector2(0.105932206, 0.08833922)
 
-[node name="Room 2" parent="." unique_id=38963876 instance=ExtResource("10_d5utk")]
-position = Vector2(-255, -206)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 5
+[node name="BigRatEnemy" parent="." unique_id=1718563433 instance=ExtResource("13_sse3v")]
+position = Vector2(-427, -199)
 
-[node name="CollisionPolygon2D" parent="Room 2" index="0" unique_id=1581978368]
-position = Vector2(-0.9717314, -9.851695)
-polygon = PackedVector2Array(-0.7950516, -4.7669487, 0.88339233, -6.1440697, -1.8551235, -6.355934, -2.0318012, 1.3771172, 0.88339233, 1.8008461, -1.06007, -0.3177967)
+[node name="BigRatEnemy2" parent="." unique_id=1003142386 instance=ExtResource("13_sse3v")]
+position = Vector2(-416, -368)
 
-[node name="ObjDoor3" parent="Room 2" unique_id=648852384 instance=ExtResource("11_qk2er")]
-position = Vector2(0.7067141, -10.381359)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
+[node name="BigRatEnemy3" parent="." unique_id=1489738836 instance=ExtResource("13_sse3v")]
+position = Vector2(-329, -193)
 
-[node name="ObjDoor5" parent="Room 2" unique_id=1972010882 instance=ExtResource("11_qk2er")]
-position = Vector2(0.7067141, -13.771189)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
+[node name="BigRatEnemy4" parent="." unique_id=1612235619 instance=ExtResource("13_sse3v")]
+position = Vector2(-311, -366)
 
-[node name="ObjDoor6" parent="Room 2" unique_id=1497816576 instance=ExtResource("11_qk2er")]
-position = Vector2(-20.583036, -12.076273)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
+[node name="BigRatEnemy5" parent="." unique_id=1563770396 instance=ExtResource("13_sse3v")]
+position = Vector2(-410, -309)
 
-[node name="ObjDoor7" parent="Room 2" unique_id=1207563895 instance=ExtResource("11_qk2er")]
-position = Vector2(-20.583036, -8.686445)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
+[node name="BigRatEnemy6" parent="." unique_id=1392313571 instance=ExtResource("13_sse3v")]
+position = Vector2(318, -216)
 
-[node name="Room 3" parent="." unique_id=1103561097 instance=ExtResource("10_d5utk")]
-position = Vector2(408, -57)
-scale = Vector2(11.320001, 9.44)
-number_of_enemies = 5
+[node name="BigRatEnemy7" parent="." unique_id=908017524 instance=ExtResource("13_sse3v")]
+position = Vector2(319, -49)
 
-[node name="CollisionPolygon2D" parent="Room 3" index="0" unique_id=1581978368]
-position = Vector2(-14.66431, -6.5677967)
-polygon = PackedVector2Array(-1.590105, -4.7669506, -3.0918732, -7.627119, -0.26501656, -6.5677967, -0.530035, 0.95338917, -2.7385159, 2.4364405, -1.8551235, -0.3177967)
-
-[node name="ObjDoor6" parent="Room 3" unique_id=783767688 instance=ExtResource("11_qk2er")]
-position = Vector2(-18.462896, -10.911018)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
-
-[node name="ObjDoor7" parent="Room 3" unique_id=43892364 instance=ExtResource("11_qk2er")]
-position = Vector2(-18.462896, -7.5211906)
-rotation = 1.5707964
-scale = Vector2(0.105932206, 0.08833922)
+[node name="RangedEnemy" parent="." unique_id=212154628 instance=ExtResource("14_kelc3")]
+position = Vector2(323, -136)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
 
 [editable path="Room 1"]
-[editable path="Room 2"]
-[editable path="Room 3"]

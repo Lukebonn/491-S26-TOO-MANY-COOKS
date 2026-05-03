@@ -37,7 +37,7 @@ func _on_act_1_pressed():
 func _on_act_2_pressed():
 	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 2",4, 2)
 func _on_act_3_pressed():
-	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 1",5, 3)
+	make_level_queue("res://Scenes/Level Design/Playtest3LevelPack/Act 3",5, 3)
 
 func make_level_queue(dir: String, amount : int, act: int):
 	if allow_input:

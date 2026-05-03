@@ -20,7 +20,8 @@ func enter_state(enemy_node):
 	fired = true
 	super(enemy_node)
 	enemy_node.get_node("AnimatedSprite2D").play("fire")
-	await get_tree().create_timer(Idle_Time/2).timeout
+	if is_inside_tree():
+		await get_tree().create_timer(Idle_Time/2).timeout
 	fired = false
 
 func process(_delta):

@@ -230,7 +230,6 @@ shape = SubResource("RectangleShape2D_5flpn")
 [node name="ObjEnemySpawner" parent="Objects/Room1" unique_id=817439483 node_paths=PackedStringArray("SpawnPath") instance=ExtResource("7_spux7")]
 position = Vector2(0, -384)
 Enemies = Array[PackedScene]([ExtResource("8_6jkhw"), ExtResource("8_6jkhw"), ExtResource("8_6jkhw"), ExtResource("8_6jkhw")])
-LocationType = 1
 SpawnPath = NodePath("../Path2D")
 
 [node name="ObjBarrier" parent="Objects/Room1" unique_id=273527535 instance=ExtResource("9_h11h6")]

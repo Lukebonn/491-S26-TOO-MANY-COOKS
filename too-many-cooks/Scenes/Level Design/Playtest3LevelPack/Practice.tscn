@@ -212,6 +212,7 @@ visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("6_tilgl")]
 position = Vector2(0, -237)
+Unlock_Act = "practice"
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1264768103]
 stream = ExtResource("7_ifveq")
@@ -245,5 +246,3 @@ position = Vector2(93, -132)
 position = Vector2(0, 42)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_asund")
-
-[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

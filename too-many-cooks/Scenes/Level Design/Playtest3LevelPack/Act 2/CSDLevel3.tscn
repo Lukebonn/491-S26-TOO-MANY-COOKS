@@ -28,7 +28,7 @@ tile_set = ExtResource("1_87tbe")
 position = Vector2(-279, 76)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_byj2w")]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 

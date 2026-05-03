@@ -14,7 +14,8 @@ func _on_body_entered(body):
 					Global.Act_2_Unlocked = true
 				"act3":
 					Global.Act_3_Unlocked = true
-		#LevelQueue.load_level()
+				"practice":
+					LevelQueue.load_level()
 		level_complete.emit()
 		current_health.emit()
 		current_mana.emit()

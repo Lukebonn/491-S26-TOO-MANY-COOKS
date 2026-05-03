@@ -125,6 +125,7 @@ func _on_interval_timeout() -> void:
 	try_spawn_enemies()
 
 func spawn_enemies() -> void:
+	$Area2D.intangible = false
 	if SpawnMethod == SpawnType.Burst:
 		#Iterate and spawn all enemies at once.
 		for i in Enemies.size():
