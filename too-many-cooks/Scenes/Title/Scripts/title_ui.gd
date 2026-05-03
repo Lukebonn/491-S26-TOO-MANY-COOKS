@@ -2,6 +2,7 @@ extends Control
 # Carson made this so yell at her if you want something different
 
 var can_start_game = false
+var selected = false
 
 signal stop_spinning_enivonment
 
@@ -9,18 +10,12 @@ signal stop_spinning_enivonment
 func _ready():
 	title_cinematics_gogogo()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func _input(event):
+func _input(_event):
 	if Input.is_anything_pressed() and can_start_game:
 		can_start_game = false
 		cast_aside_title_and_get_to_menu()
 		stop_spinning_enivonment.emit()
-		
-		
+
 func title_cinematics_gogogo():
 	var tween = get_tree().create_tween()
 	tween.tween_property($titletop/MarginContainer,"theme_override_constants/margin_top",40,1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
@@ -35,21 +30,30 @@ func cast_aside_title_and_get_to_menu():
 
 
 func _on_quit_button_down():
-	get_tree().quit()
+	if not selected:
+		selected = true
+		get_tree().quit()
 
 
 func _on_start_pressed():
-	FadeInFadeOut.fade_out()
-	await get_tree().create_timer(1.2).timeout
-	get_tree().change_scene_to_file("res://Scenes/Intro Cutscene/intro_cutscene.tscn")
+	if not selected:
+		selected = true
+		FadeInFadeOut.fade_out()
+		await get_tree().create_timer(1.2).timeout
+		get_tree().change_scene_to_file("res://Scenes/Intro Cutscene/intro_cutscene.tscn")
 
 
 func _on_continue_pressed():
-	Global.First_Time_Tavern = true
-	Global.First_Time_Combat = false
-	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+	if not selected:
+		selected = true
+		Global.First_Time_Tavern = true
+		Global.First_Time_Combat = false
+		get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 
 
 func _on_credits_pressed() -> void:
-	FadeInFadeOut.fade_out()
-	get_tree().change_scene_to_file("res://UI/Credits/credits.tscn")
+	if not selected:
+		selected = true
+		FadeInFadeOut.fade_out()
+		await get_tree().create_timer(1.2).timeout
+		get_tree().change_scene_to_file("res://UI/Credits/credits.tscn")

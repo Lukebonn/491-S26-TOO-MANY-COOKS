@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="7_30bwe"]
 [ext_resource type="Texture2D" uid="uid://cciqv1yk8koyi" path="res://UI/Credits/Img/AtaKitapci.png" id="8_30bwe"]
+[ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="8_jjdaq"]
 
 [node name="Credits" type="Control" unique_id=1758667731]
 layout_mode = 3
@@ -26,7 +27,7 @@ offset_bottom = 2180.0
 grow_horizontal = 2
 script = ExtResource("1_vcckd")
 TweenTarget = -3000.0
-TweenTime = 30.0
+TweenTime = 35.0
 
 [node name="Sprite2D" type="TextureRect" parent="VBoxContainer" unique_id=598003022]
 layout_mode = 2
@@ -240,6 +241,7 @@ Title = "Combat Designer"
 [node name="Eli3" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=1037932165 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("8_jjdaq")
 Name = "Eli Johnson"
 Title = "Designer"
 
@@ -377,6 +379,7 @@ Title = "Writer"
 [node name="Eli2" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=132098264 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("8_jjdaq")
 Name = "Eli Johnson"
 Title = "Writer"
 
@@ -402,6 +405,7 @@ theme_override_constants/separation = 32
 [node name="Eli1" parent="VBoxContainer/VBoxContainer6" unique_id=491418339 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("8_jjdaq")
 Name = "Eli Johnson"
 Title = "Audio Lead"
 
@@ -440,7 +444,6 @@ text = "
 Thank you for playing!"
 
 [node name="Label" type="Label" parent="." unique_id=1296739388]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
