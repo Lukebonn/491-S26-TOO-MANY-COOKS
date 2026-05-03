@@ -36,3 +36,7 @@ Act 3: General Talk
 [5]You’re getting close to the end, I can feel it in the tips of my feathers. Make sure you prepare thoroughly before your next run, it may be the last push. Then I can finally take a load off and start relaxing.# 
 [4]I was just thinking about something. You’ve come a long way since I dragged you in here. At this point it's more likely that I’ll need your help if we get into a scrap. Don’t count me out completely though, these old talons are still sharp.# 
 [1]The others told me they’ve been thinking about sticking around, even after you take out the Rat King. I know you’ve talked about leaving afterwards, but if you ever need a place to stay, you’ll always have a home here.# 
+act 1: first talk after first run
+[3]You’re back, surprised you didn’t tuck tail and run away. But you’re here, so that’s good. 
+[5]Before you head back out take another look around the place. Make sure nothing still needs fixing. And if everything is okay, then talk to everyone here again, they may be able to help you upgrade your abilities. 
+[3]And don't get a big head! This is a team effort, make sure you remember that!#

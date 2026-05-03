@@ -372,7 +372,7 @@ mouse_filter = 1
 script = ExtResource("6_41fud")
 Name = "Warrior"
 Expressions = Array[Texture]([ExtResource("15_mpp4l"), SubResource("PlaceholderTexture2D_y33xb"), SubResource("PlaceholderTexture2D_hac1d"), SubResource("PlaceholderTexture2D_mmv1q"), SubResource("PlaceholderTexture2D_2xisf"), SubResource("PlaceholderTexture2D_b3jjp")])
-Conversations = Array[String](["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
+Conversations = Array[String](["1,2,3", "5,6,7", "9,10,11", "13,14", "16,17", "19,20", "22,23", "24,25", "26,27", "28,29", "30,31", "33,34", "35,36", "37,38", "39,40", "41,42", "44,45", "46,47", "48,49", "50,51", "52,53", "55,56", "57,58", "59,60", "61,62", "63,64"])
 metadata/_custom_type_script = "uid://jbdgoly6qy0n"
 
 [node name="Rogue_CLASS_NPC" type="TextureButton" parent="Tavern BG/Class_NPCS" unique_id=1312266094 node_paths=PackedStringArray("Class_Menu_Ref", "clickSound", "hoverSound")]
@@ -523,7 +523,8 @@ texture_pressed = ExtResource("24_gpyct")
 script = ExtResource("6_41fud")
 Name = "Gramps"
 Expressions = Array[Texture]([ExtResource("7_535h7"), ExtResource("5_vqw7w"), ExtResource("7_a44po"), ExtResource("9_rulk3")])
-Conversations = Array[String](["5,6,7,8,9", "11,12,13,14", "16,17,18,19", "0", "0", "0", "21", "22", "23", "24", "25", "27", "28", "29", "30", "31", "33", "34", "35", "36", "37"])
+Conversations = Array[String](["39,40,41", "11,12,13,14", "16,17,18,19", "0", "0", "0", "21", "22", "23", "24", "25", "27", "28", "29", "30", "31", "33", "34", "35", "36", "37"])
+metadata/_edit_use_anchors_ = true
 
 [node name="DebugKOButton" type="Button" parent="Tavern BG" unique_id=1500362303]
 visible = false

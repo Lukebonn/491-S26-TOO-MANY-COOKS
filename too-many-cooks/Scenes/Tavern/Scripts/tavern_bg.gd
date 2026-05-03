@@ -48,6 +48,8 @@ func set_up_tavern():
 	if Global.Has_Rogue_NPC:
 		$Class_NPCS/Rogue_CLASS_NPC.show()
 		$"Upgrade Man/RogueWorkshop0".hide()
+	if Global.Act_3_Unlocked:
+		$TavernBackgroundLong3.show()
 
 func _on_door_andy_pressed():
 	class_select_ref.show_menu()

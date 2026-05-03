@@ -1,5 +1,5 @@
 extends Node2D
-
+signal show_result
 func _ready() -> void:
 	$"Gold Collected".hide()
 	$"Orbs Collected".hide()
@@ -7,7 +7,7 @@ func _ready() -> void:
 	$"Level Time".hide()
 	$"Damage Taken".hide()
 	$"Damage Dealt".hide()
-	$"le objectives".hide()
+	$"Objective Title".hide()
 	$AdvanceButton.hide()
 	
 func reveal():
@@ -36,10 +36,24 @@ func reveal():
 	$"Enemies Killed".show()
 	$"Damage Dealt".show()
 	await get_tree().create_timer(0.5).timeout
-	$"le objectives".show()
+	$"Objective Title".show()
+	show_result.emit()
 	await get_tree().create_timer(0.5).timeout
 	if (LevelQueue.Queue.size() == 0):
 		$AdvanceButton.text = "Back to Tavern"
 	else:
 		$AdvanceButton.text = "Next Level"
 	$AdvanceButton.show()
+
+
+func _on_objective_manager_give_report_data(obj_title, result):
+	$"Objective Title".text = obj_title
+	await show_result
+	if result == true:
+		$"Objective Title/Objective Check".show()
+		var new_reward = preload("res://UI/objective_reward_fx.tscn").instantiate()
+		new_reward.global_position = $"Objective Title/Objective Frame".global_position
+		add_child(new_reward)
+	else:
+		$"Objective Title/Objective Cross".show()
+		

@@ -1,85 +1,65 @@
-[4]Easy there. You’re standing, so that’s already a win in my book.#
-[1]Old Simon pulled you out of the Tower, right? Then you’re tougher than you look.
-[5]Name’s Akari. This is where I train… and where people put themselves back together.
-[1]You don’t have to prove anything right now. Breathing’s enough.
-[5]When you’re ready, though… this is where that changes.
-[1]So, how bad did it get up there? /"I lost. Badly.","I almost had it.","I don’t want to go back."
--# responses below, ABC
-[5]Good. Means you’re still here to learn from it.
-[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
---
-[1]Almost counts for more than people think. You’ll get another shot.
-[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
---
-[5]You don’t have to. But running and choosing are two different things.
-[5]I took this space because it’s quiet. No crowds, no cheering, just the sound of steel and breath.
--# branches converge here
-[5]Though lately… quiet hasn’t meant safe.
-[3]There’s this group; they call themselves collectors, but they’re just scavengers with blades. They’ve been circling this place, testing me.
-[5]They are not strong on their own, but they keep coming back. Like they’re waiting for something.
-[5]If you’re looking to get back on your feet… taking down ten of them would help. Thin them out. Make them think twice.
-[1]You ever swing a greatsword? It’s like arguing with gravity. You don’t win, you just learn how to move with it.
-[5]Those dents in the wall? Not accidents. I hit until something gives. Usually the wall. 
-[5]I was a mercenary before coin got tight and jobs got tighter.
-[5]Towns around here used to pay fair. Now the Rat King’s lot takes everything worth a damn./"I’ll help the tavern.","What’s happening at the tavern?","Does it really matter?"
--# ABC choices
-[5]Then start with the ones causing trouble outside. Those collectors.
-[1]Clear ten of them out, and people might start coming back through those doors again.
--#
-[5]Less coin, more tension. People don’t stay long when they feel threatened.
-[5]Deal with the ones lurking around, and it changes things.
--#
-[5]It does. Places like this survive on people feeling safe enough to stay.
-[3]And right now, those scavengers are taking that away
--# branches converge here
-[5]I stay sharp here. If work comes back, I’ll be ready. If it doesn’t… I’ll still be ready.
-[5]Anyone can be a warrior, you know. Not born, made. One bruise at a time./"I don’t feel like a warrior.","I want to get stronger.","I’m not sure I can do this again."
--# ABC choices
-[5]You don’t have to feel like one. You just have to keep getting up.
-[4]Hm? The ear? Yeah… lost the top half a long time ago.
--#
-[5]Then you’re in the right place. We’ll make sure next time goes different.
-[4]Hm? The ear? Yeah… lost the top half a long time ago.
--#
-[5]That doubt? Keep it. Just don’t let it stop you.
-[4]Hm? The ear? Yeah… lost the top half a long time ago.
--# branches converge here
-[1]Scars tell better stories than trophies. Trophies just sit there looking pretty.
-[5]That dummy? Patch it up when you can. I break it faster than I’d like to admit.
-[1]Weapon rack wouldn’t hurt either. A blade deserves respect, even the chipped ones.
-[5]Armor stand too. This breastplate’s taken a beating… deserves a place to rest between fights.
-[1]A grinding stone? Now you’re speaking my language. Nothing like the sound of steel getting its bite back./"I’ll help fix this place.","This place suits you.","You live down here?"
--#ABC choices
-[5]Then we’ll build something solid. You and me both.
--#
-[1]Simple, solid, honest. Yeah… I’ll take that.
--#
-[5]Live, train, think. It’s enough. More than I had before.
--#branches converge here
-[5]If you’re serious about staying, you’ll want more than just a weapon
-[5]You’ll see marks everywhere down here. Cuts in the wood, dents in the beams… proof I’m still standing.
-[5]There’s… something else. Bit strange.
-[5]A Toad Mage. Yeah, I know how that sounds.
-[5]Smart. Reclusive. Kept talking about “anchoring knowledge to place.”
-[5]If you fix up that broken bookshelf over there… he might come back. Or something like him.
-[5]And if he does, he can teach you things I can’t. Real strange stuff. Definitely worth your while.
-[2]Haven’t been home in years. The calm life wasn’t for me… but I still write./"Why keep writing?","What do you tell them?","You should go back someday."
--#ABC choices
-[2]Because it reminds me who I was… and why I left.
--#
-[1]That I’m doing well. Staying strong. Keeps them from worrying.
--#
-[5]Maybe. When I’ve got something worth bringing with me.
--#branches converge here
-[4]Didn’t expect that, huh? Warrior with a pen.
-[1]I tell them I’m doing well. Strong. Respected. It’s not a lie… just not the whole truth.
-[5]Reputation matters. It’s the difference between being hired… and being forgotten.
-[3]And I don’t plan on being forgotten.
-[1]Stick around. Train with me sometime. I won’t go easy, but I won’t let you fall either.#
--# random act 1 dialogue
-[5]You don't have to listen to me more than once, but look, here's some dialogue anyway.
-[5]But this isn't by the writers, so it ends here.#
--# quest 1 dialogue
-[5]My aims are simple, all I request is that you vaniqush the monsters in the tower.
-[1]I can see you are apprehensive about this, Haha!
-[5]That's okay. For now, I only need you to defeat ten monsters. It should be light work with my power!#
+Akari – 1st Time Speaking Act 1
+[5]Easy there. If you’re standing, you’re doing better than most who come out of that Tower. Take a breath and steady yourself.
+[5]Name’s Akari. I train down here and help people get back on their feet after a fall. I’ve been up that Tower too, and it put me down fast.
+[5]That sword looks heavier than you’re ready for, but that can change. There’s a full training area here when you want to start. #
+Akari – 1st Time Speaking Act 2
+[1]You made it past the first real wall up there. That is more than most manage on their first climb.
+[5]You are still letting the blade lead you instead of the other way around. If you keep that up, the Tower will punish you for it.
+[5]From here on it is discipline and control. Use this place and you will last longer next time.#
+Akari – 1st Time Speaking Act 3
+[1]You made it further than I ever did. That is worth something whether you believe it or not.  
+[5]Your swings have purpose now, but you still leave openings when you rush. The higher floors will notice that.
+[5]What waits ahead is not forgiving. Stay focused and do not waste what you have built.#
+Orb Upgrade 1
+[1]That is your first real step forward. You are starting to move with intent instead of panic.
+[5]The sword is not pulling you off balance as much now. Keep working and you will start controlling the fight instead of reacting.#
+Orb Upgrade 2
+[1]You have improved more than I expected. Your strikes carry weight and your footing holds under pressure.
+[5]hat kind of progress comes from repetition, not from luck. Do not slow down now or you will lose that edge.#
+Orb Upgrade 3
+[4]That was clean. You are finally fighting like the weapon belongs to you. 
+[5]You are dangerous now, not just stubborn. Keep that control, or the Tower will take it from you again.#
+General Talk – Rank 0
+[5]That sword is bigger than your confidence right now. You need to fix that before anything else.
+[5]Slow down and learn the weight before you try to overpower it.#
+[5]You are gripping too tight and it shows in every swing. The blade should move with you, not against you.
+[5]Relax your hands or you will tire out before the fight even starts.#
+[5]You swing hard but without direction. That is how people lose to their own weapon.
+[5]Take a breath and focus on control first.#
+[5]Your stance is stiff and easy to break. One good hit and you will lose your footing.
+[5]Fix your balance before you chase strength.#
+[5]You keep coming back down here, so at least you are trying. That matters more than you think.
+[5]Now make the effort count.#
+General Talk – Rank 1 to 2
+[5]You are starting to move with the blade instead of against it. It is not perfect, but it is better.
+[5]Keep training and it will start to feel natural.#
+[1]You are not tripping over your own swings anymore. That alone puts you ahead of where you were.
+[5]Now clean up the rest.#
+[5]Your recovery is still slow after a miss. That leaves you open longer than it should.
+[5]Tighten that up before it costs you.#
+[5]The strength is there now, but your control still lags behind. You need both if you want to climb.
+[5]Do not ignore that.#
+[1]I have seen worse progress from better fighters. You are doing fine if you keep at it. 
+[5] Just do not get comfortable.#
+General Talk – Rank 3 to 4
+[1]That last swing had real weight behind it. Someone would think twice before stepping in.
+[5]Keep refining it and it will become reliable.#
+[5]You are no longer fighting the blade. Now you need to learn when not to swing.
+[5]Control is more than just movement.#
+[5]Do not let progress make you careless. One mistake is still enough to bring you down.
+[5]Stay focused.#
+[1]You are starting to look like a real warrior now. It shows in how you carry yourself.
+[5]Keep building on that.#
+[5]Your form is close to where it needs to be. A few more adjustments and it will hold under pressure.
+[5]Do not stop now.#
+General Talk – Rank 5
+[1]That stance suits you now. You finally look like you belong with that weapon.
+[5]Took time, but you earned it.#
+[5]You carry the blade with control and purpose. That is not something most people reach.
+[5]Do not lose that.#
+[1]I would trust you in a fight now. That is not something I say lightly.
+[5]Make sure it stays true.#
+[3]You have gone further than I did when I climbed the Tower. That still sits with me.
+[5]But it means you are ready.#
+[5]Keep your edge sharp and your focus sharper. That is what will keep you standing.
+[5]Do not forget what it took to get here.#

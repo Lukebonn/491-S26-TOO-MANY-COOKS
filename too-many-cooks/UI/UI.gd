@@ -18,6 +18,8 @@ signal flashManaBar()
 signal update_health_bar
 signal update_mana_bar
 
+signal level_is_complete
+
 #allows the ability to toggle visibility of the key depending on how many and which keys are in inventory
 var current_visible_keys: int = 0
 @onready var key_1: Sprite2D = $KeysHeld/Key1
@@ -196,30 +198,8 @@ func _on_exit_current_health() -> void:
 func _on_exit_current_mana() -> void:
 	update_mana_bar.emit()
 
-func _level_objective() -> void:
-	objective = randi() % 7
-	if Global.Warrior_Objective == true:
-		warrior_objective = randi() % 7
-	if Global.Rogue_Objective == true:
-		rogue_objective = randi() % 7
-	if Global.Mage_Objective == true:
-		mage_objective = randi() % 7
-	if objective == 0:
-		pass
-	elif objective == 1:
-		pass
-	elif objective == 2:
-		pass
-	elif objective == 3:
-		pass
-	elif objective == 4:
-		pass
-	elif objective == 5:
-		pass
-	elif objective == 6:
-		pass
-
 func _on_level_complete() -> void:
+	level_is_complete.emit()
 	level_complete = true
 	pauseDisabled = true
 	$TimeMachine.stop()

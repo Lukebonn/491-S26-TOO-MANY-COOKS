@@ -14,7 +14,7 @@ func _ready():
 	self.connect("pressed",_send_conversation,0)
 	self.connect("mouse_entered",_on_mouse_entered)
 	self.connect("mouse_exited",_on_mouse_exited)
-	self.modulate = Color(.5,.5,.5)
+	self.modulate = Color(.8,.8,.8)
 	reset_bond_rank()
 func _send_conversation():
 	reset_bond_rank()
@@ -71,7 +71,7 @@ func _on_mouse_entered():
 	self.modulate = Color(1,1,1)
 	#hoverSound.play()
 func _on_mouse_exited():
-	self.modulate = Color(.5,.5,.5)
+	self.modulate = Color(.8,.8,.8)
 	
 func reset_bond_rank():
 	match Name:

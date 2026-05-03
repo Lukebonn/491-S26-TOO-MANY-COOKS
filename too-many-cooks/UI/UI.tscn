@@ -15,11 +15,12 @@
 [ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="6_t31p1"]
 [ext_resource type="Texture2D" uid="uid://c2ohtwxdxq5a5" path="res://UI/BattleHUD/Img/MpBarBack.png" id="7_6q2ik"]
 [ext_resource type="Texture2D" uid="uid://bnwdbcqhgbrhq" path="res://Objects/Key/Sprites (temp)/IronKey.png" id="7_nxoi0"]
+[ext_resource type="Script" uid="uid://brxjhl4pidsod" path="res://UI/objective_manager.gd" id="8_8saf6"]
 [ext_resource type="Texture2D" uid="uid://brkecisggyy3v" path="res://UI/BattleHUD/Img/MpBarBorder.png" id="8_017wa"]
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
@@ -31,8 +32,11 @@
 [ext_resource type="LabelSettings" uid="uid://bgqhacfrdeyky" path="res://UI/Themes/style_DmgNum.tres" id="27_gokaw"]
 [ext_resource type="Script" uid="uid://cojg5pf8ewqcj" path="res://UI/damage_values.gd" id="27_t0bwl"]
 [ext_resource type="Script" uid="uid://bsmsu72tp0eec" path="res://UI/time_machine.gd" id="29_rbg2s"]
+[ext_resource type="Texture2D" uid="uid://bdvnl6mbuu542" path="res://UI/Img/objective_frame.png" id="30_tvo8u"]
+[ext_resource type="Texture2D" uid="uid://k2e2d70nxoob" path="res://UI/Img/objective_check.png" id="31_bbpqy"]
 [ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
+[ext_resource type="Texture2D" uid="uid://ydgh8qblwa1u" path="res://UI/Img/objective_cross.png" id="32_vntq0"]
 
 [node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
@@ -44,6 +48,10 @@ settings = NodePath("PauseMenu2")
 tavern_warning = NodePath("Tavern Warning")
 level_review = NodePath("LevelReportScreen")
 key_sprites = Array[Texture2D]([ExtResource("3_uk6e0"), ExtResource("4_idhk4"), ExtResource("5_uk6e0"), ExtResource("6_2jerp"), ExtResource("7_nxoi0")])
+
+[node name="ObjectiveManager" type="Node" parent="." unique_id=256422148 node_paths=PackedStringArray("time_machine_ref")]
+script = ExtResource("8_8saf6")
+time_machine_ref = NodePath("../TimeMachine")
 
 [node name="PoisonButton" type="Button" parent="." unique_id=716824082]
 visible = false
@@ -549,18 +557,34 @@ vertical_alignment = 1
 script = ExtResource("24_vh35o")
 counter = "Enemies"
 
-[node name="le objectives" type="Label" parent="LevelReportScreen" unique_id=1370352900]
+[node name="Objective Title" type="Label" parent="LevelReportScreen" unique_id=1370352900]
 z_index = 2
-offset_left = 264.0
+offset_left = 352.0
 offset_top = 360.0
-offset_right = 517.0
-offset_bottom = 489.0
+offset_right = 612.0
+offset_bottom = 490.0
 theme = ExtResource("16_kncd2")
-theme_override_font_sizes/font_size = 40
-text = "Something about
-objectives here
-i guess"
+theme_override_font_sizes/font_size = 32
+text = "Something about objectives here i guess"
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Objective Frame" type="Sprite2D" parent="LevelReportScreen/Objective Title" unique_id=1107501439]
+position = Vector2(-45.999996, 60.999996)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("30_tvo8u")
+
+[node name="Objective Check" type="Sprite2D" parent="LevelReportScreen/Objective Title" unique_id=1555943379]
+visible = false
+position = Vector2(-46, 61)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("31_bbpqy")
+
+[node name="Objective Cross" type="Sprite2D" parent="LevelReportScreen/Objective Title" unique_id=1851940909]
+visible = false
+position = Vector2(-46, 61)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("32_vntq0")
 
 [node name="AdvanceButton" type="Button" parent="LevelReportScreen" unique_id=6245996]
 z_index = 2
@@ -655,8 +679,10 @@ stream = ExtResource("31_v25sk")
 stream = ExtResource("32_t0bwl")
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
+[connection signal="level_is_complete" from="." to="ObjectiveManager" method="_on_ui_level_is_complete"]
 [connection signal="update_health_bar" from="." to="HealthBar" method="_on_ui_update_health_bar"]
 [connection signal="update_mana_bar" from="." to="ManaBar" method="_on_ui_update_mana_bar"]
+[connection signal="give_report_data" from="ObjectiveManager" to="LevelReportScreen" method="_on_objective_manager_give_report_data"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
