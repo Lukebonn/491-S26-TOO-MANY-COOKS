@@ -10,14 +10,14 @@
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="11_hw1kh"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="12_tchgu"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="13_1vrnj"]
-[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="14_f3eq6"]
+[ext_resource type="Script" path="res://Characters/Enemies/Hawk/slash_state.gd" id="14_f3eq6"]
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="15_8gs0y"]
 [ext_resource type="Script" uid="uid://impha2odfxp7" path="res://Characters/Enemies/Rat King/multi_projectile_state.gd" id="15_nqo7f"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="16_6cocn"]
 [ext_resource type="Script" uid="uid://s35p5ffhlejl" path="res://Characters/Enemies/Rat King/aoe_state.gd" id="16_ue585"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_rldik"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_fuqu5"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_bi8cu"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_c073d"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_bjov1"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_chgiv"]
@@ -146,8 +146,8 @@ DropChance = 0.3
 collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_qilw0")
-health = 100
-damage = 10
+health = 1000
+damage = 35
 sight_state = NodePath("MultiProjectileState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
@@ -199,7 +199,7 @@ shape = SubResource("RectangleShape2D_bhto8")
 curve = SubResource("Curve2D_1tb61")
 
 [node name="Line1" type="PathFollow2D" parent="RegularProjectileLines/Path2D" unique_id=1751910077]
-rotation = -0.6904465
+rotation = -0.69044644
 loop = false
 
 [node name="Path2D2" type="Path2D" parent="RegularProjectileLines" unique_id=620982154]
@@ -212,7 +212,7 @@ loop = false
 curve = SubResource("Curve2D_a310g")
 
 [node name="Line3" type="PathFollow2D" parent="RegularProjectileLines/Path2D3" unique_id=21773172]
-rotation = 0.6904465
+rotation = 0.69044644
 loop = false
 
 [node name="TempIndicators" type="ColorRect" parent="RegularProjectileLines" unique_id=557438723]

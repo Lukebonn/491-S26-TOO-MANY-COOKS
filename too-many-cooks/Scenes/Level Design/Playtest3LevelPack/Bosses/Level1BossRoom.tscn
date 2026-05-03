@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_ykscn"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_13628"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="8_t77vx"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="9_hbjbe"]
+[ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="9_jsha0"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_hbjbe"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_jsha0"]
 [ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="37_kuruh"]
@@ -223,7 +223,7 @@ position = Vector2(52, -557)
 
 [node name="ObjEnemySpawner" parent="." unique_id=817439483 instance=ExtResource("8_13628")]
 position = Vector2(0, -328)
-Enemies = Array[PackedScene]([ExtResource("9_hbjbe")])
+Enemies = Array[PackedScene]([ExtResource("9_jsha0")])
 SpawnLimit = 1
 DefeatCount = 1
 

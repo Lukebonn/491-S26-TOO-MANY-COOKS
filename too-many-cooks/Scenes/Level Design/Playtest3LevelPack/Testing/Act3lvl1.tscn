@@ -35,7 +35,6 @@ position = Vector2(-18, -5)
 zoom = Vector2(4, 4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
-visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("7_egh8l")]
 

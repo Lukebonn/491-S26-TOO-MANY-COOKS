@@ -37,6 +37,7 @@ var current_visible_keys: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerStats.reset_objective_stats()
 	PlayerStats.Player_Damage_Dealt = 0
 	PlayerStats.Enemy_Damage_Dealt = 0
 	PlayerStats.Enemies_Defeated = 0
@@ -184,6 +185,7 @@ func _on_return_button_button_down() -> void:
 	PlayerStats.Orbs -= PlayerStats.Floor_Orbs
 	PlayerStats.Floor_Gold = 0
 	PlayerStats.Floor_Orbs = 0
+	LevelQueue.Queue.clear()
 	get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 	# takes the player back to the tavern
 

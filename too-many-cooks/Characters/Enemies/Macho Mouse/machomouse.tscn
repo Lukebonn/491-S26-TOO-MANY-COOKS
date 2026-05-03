@@ -31,6 +31,9 @@ radius = 109.47
 [sub_resource type="CircleShape2D" id="CircleShape2D_mvhqh"]
 radius = 32.42
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opqhs"]
+size = Vector2(12.505396, 14.321125)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
@@ -77,12 +80,13 @@ collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_opqhs")
 health = 500
-damage = 15
+damage = 30
 sight_state = NodePath("ChaseState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
+scale = Vector2(0.6799977, 1)
 collision_layer = 16
 collision_mask = 68
 
@@ -90,6 +94,7 @@ collision_mask = 68
 shape = SubResource("RectangleShape2D_jonyw")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1355964886]
+scale = Vector2(1.6065018, 1.6065018)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1657238234]
@@ -98,12 +103,22 @@ visibility_layer = 2
 shape = SubResource("CircleShape2D_1oxet")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=646997873]
+scale = Vector2(1.7592406, 1.7592406)
 collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
 position = Vector2(-0.5, -2.5)
 shape = SubResource("CircleShape2D_mvhqh")
+
+[node name="ContactDamage" type="Area2D" parent="." unique_id=644303446]
+scale = Vector2(1.7592406, 1.7592406)
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage" unique_id=101597319]
+position = Vector2(0, -0.22898978)
+shape = SubResource("RectangleShape2D_opqhs")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
 shape = SubResource("RectangleShape2D_bhto8")
@@ -131,8 +146,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="HitState" type="Node" parent="." unique_id=2073522825]
 script = ExtResource("9_d7iom")
-Knockback_Strength = 50
-Hit_Stun = 1.2
+Knockback_Strength = 5
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -141,7 +155,7 @@ one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
 script = ExtResource("10_7o77w")
-Possibilities = [NodePath("../ChaseState"), NodePath(""), NodePath("")]
+Possibilities = [NodePath("../ChaseState"), null, null]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -157,13 +171,14 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="SmashState" type="Node" parent="." unique_id=1001357903]
 script = ExtResource("20_cf11o")
+windup_time = 0.4
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="AttackWarning" type="Sprite2D" parent="." unique_id=1230588944]
 modulate = Color(0.827451, 0.105882354, 0.12156863, 1)
 z_index = -1
 position = Vector2(-0.50000167, -1.9999998)
-scale = Vector2(1.101695, 1.1034484)
+scale = Vector2(1.9381465, 1.9412313)
 texture = ExtResource("2_opqhs")
 script = ExtResource("3_1j8ml")
 
@@ -173,3 +188,5 @@ script = ExtResource("3_1j8ml")
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="ContactDamage" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="ContactDamage" to="." method="_on_hitbox_body_entered"]

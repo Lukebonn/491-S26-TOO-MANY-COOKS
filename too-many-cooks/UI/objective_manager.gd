@@ -15,7 +15,7 @@ var objective_task_key : String
 var objective_title : String
 var objective_result : bool 
 func pick_an_objective():
-	match randi_range(1,5):
+	match randi_range(2,5):
 		1:
 			print("Defeat enemies")
 			objective_title = "Defeat 15 enemies"
@@ -52,7 +52,7 @@ func evaluate_objective():
 			if PlayerStats.has_not_dashed == true:
 				objective_result = true
 		"nohit":
-			if PlayerStats.no_damage == true:
+			if PlayerStats.Enemy_Damage_Dealt <= 0:
 				objective_result = true
 
 func _on_ui_level_is_complete():

@@ -11,6 +11,8 @@ var teleport_vector : Vector2
 func enter_state(player_node):
 	super(player_node)
 	
+	PlayerStats.has_not_dashed = false
+	
 	if(player.mana >= mana_cost):
 		
 		player.play_sound(load("res://Audio/Sounds/Player/BlankClass/dash.mp3"))

@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_j1xip"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_f77y3"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_ylt37"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="9_8im61"]
+[ext_resource type="PackedScene" uid="uid://nfywsv4v04pd" path="res://Characters/Enemies/Hawk/HawkEnemyAct2Boss.tscn" id="9_68oev"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_dc86p"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_1secu"]
 
@@ -52,7 +52,7 @@ position = Vector2(52, -557)
 
 [node name="ObjEnemySpawner" parent="." unique_id=817439483 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("8_ylt37")]
 position = Vector2(1, -325)
-Enemies = Array[PackedScene]([ExtResource("9_8im61"), ExtResource("9_8im61"), ExtResource("9_8im61")])
+Enemies = Array[PackedScene]([ExtResource("9_68oev"), ExtResource("9_68oev"), ExtResource("9_68oev")])
 SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
 SpawnLimit = 3
 DefeatCount = 3
@@ -83,3 +83,4 @@ position = Vector2(0, -464)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://binvofbiywmft"]
+
+[ext_resource type="Script" uid="uid://bokmbxyoyft1l" path="res://Scenes/Intro Cutscene/outro_cutscene.gd" id="1_v8s24"]
+[ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline1.wav" id="2_2gcgs"]
+[ext_resource type="AudioStream" uid="uid://cwukd5nohse2v" path="res://Audio/Sounds/Player/Warrior/Parry noise.mp3" id="2_8xhkk"]
+[ext_resource type="AudioStream" uid="uid://6ddofhvgvgrk" path="res://Audio/Sounds/Player/Slash.mp3" id="3_cotfy"]
+[ext_resource type="Texture2D" uid="uid://b38m7550w21sa" path="res://UI/Img/Input/input_lmb.png" id="12_kdpsf"]
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="13_6n4gi"]
+[ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="14_kh2pc"]
+[ext_resource type="Texture2D" uid="uid://c7aod2u7nw32o" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P1.png" id="15_2gcgs"]
+[ext_resource type="Texture2D" uid="uid://bpmlwib5cdu6a" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P2.png" id="16_gmt0b"]
+[ext_resource type="Texture2D" uid="uid://dlo2xtpcgmecx" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P3.png" id="17_f6ejm"]
+[ext_resource type="Texture2D" uid="uid://oob1cqkvyl7h" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P4.png" id="18_j77xc"]
+[ext_resource type="Texture2D" uid="uid://ivvkfbd2y4jg" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P5.png" id="19_up7qs"]
+[ext_resource type="Texture2D" uid="uid://ym3btimrw31h" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P6.png" id="20_g8cdt"]
+[ext_resource type="Texture2D" uid="uid://bqme63d4luv58" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P7.png" id="21_euqdl"]
+[ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="21_pk06d"]
+[ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_dw1wy"]
+[ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_tss7e"]
+
+[node name="OutroCutscene" type="Control" unique_id=5151694]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v8s24")
+Subtitles = Array[String](["And so, at last, the Rat King's reign of terror has ended. ", "Reclaiming the vault worth of supplies, our hero gave back to the people of Faunia what was rightfully theirs. ", "The people celebrated the Rat King's defeat by having a celebration in the hero's honor.", "And of course, what is a celebration without a drink? ", "They sang and danced with a joy thought extinct, all throughout the night.", "But the closest allies to the hero have the largest surprise for them.", "The next morning, the hero was given a cloak that once belonged to a now retired adventurer. ", "A dagger once used by a great rogue.", "A piece of armor handed down from a warrior.", "And the rat kings staff, a gift from a mage who tamed its power to be used for good.", "Though the people were sad to see them go, the Hero knew their path was beyond the lands of Faunia. ", "Armed with the skills inherited by their comrades, the Hero set off to explore the world and see what other adventures await them.", "Thus concluding The Tale of the Tower,", "But not The Tale of our Hero."])
+Voice = Array[AudioStream]([ExtResource("2_8xhkk"), ExtResource("3_cotfy"), null, null, null, null, null, null, null, null, null, null, null, null])
+NextPage = Array[bool]([true, true, false, true, true, true, false, false, false, false, true, true, false, false])
+
+[node name="PageArrow" type="Node2D" parent="." unique_id=506423588]
+z_index = 6
+position = Vector2(1088, 680)
+
+[node name="Sprite2D" type="Sprite2D" parent="PageArrow" unique_id=1289254406]
+position = Vector2(32, 16)
+scale = Vector2(4, 4)
+texture = ExtResource("12_kdpsf")
+
+[node name="Label" type="Label" parent="PageArrow" unique_id=896389206]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.499878
+offset_top = 29.999939
+offset_right = 60.499878
+offset_bottom = 61.99994
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_6n4gi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 32
+text = "Next"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1854946087]
+stream = ExtResource("14_kh2pc")
+volume_db = -8.0
+
+[node name="Subtitle" type="RichTextLabel" parent="." unique_id=630954766]
+z_index = 10
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 52.0
+offset_right = 500.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("13_6n4gi")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 32
+text = "Let me spin you a yarn..."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1181947421]
+stream = ExtResource("2_2gcgs")
+
+[node name="Timer" type="Timer" parent="." unique_id=1927558707]
+wait_time = 0.4
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1494846053]
+wait_time = 2.0
+one_shot = true
+
+[node name="Pages" type="Node" parent="." unique_id=953281000]
+
+[node name="0" type="Sprite2D" parent="Pages" unique_id=1901779680]
+z_index = 1
+position = Vector2(1728, 320)
+texture = ExtResource("15_2gcgs")
+
+[node name="1" type="Sprite2D" parent="Pages" unique_id=85573923]
+z_index = 2
+position = Vector2(1728, 320)
+texture = ExtResource("16_gmt0b")
+
+[node name="2" type="Sprite2D" parent="Pages" unique_id=1312472469]
+z_index = 3
+position = Vector2(1728, 320)
+texture = ExtResource("17_f6ejm")
+
+[node name="3" type="Sprite2D" parent="Pages" unique_id=391738852]
+z_index = 4
+position = Vector2(1728, 320)
+texture = ExtResource("18_j77xc")
+
+[node name="4" type="Sprite2D" parent="Pages" unique_id=108855139]
+z_index = 5
+position = Vector2(1726, 320)
+texture = ExtResource("19_up7qs")
+
+[node name="5" type="Sprite2D" parent="Pages" unique_id=400003766]
+z_index = 6
+position = Vector2(1728, 319)
+texture = ExtResource("20_g8cdt")
+
+[node name="6" type="Sprite2D" parent="Pages" unique_id=1505963706]
+z_index = 7
+position = Vector2(1728, 319)
+texture = ExtResource("21_euqdl")
+
+[node name="FadeInFadeOut" parent="." unique_id=1881155850 instance=ExtResource("21_pk06d")]
+z_index = 10
+layout_mode = 1
+start_faded = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=849272771]
+modulate = Color(0.6, 0.36, 0.36, 1)
+z_index = -5
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_dw1wy")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=595850202]
+modulate = Color(0.6, 0.36, 0.36, 1)
+z_index = 5
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("23_tss7e")

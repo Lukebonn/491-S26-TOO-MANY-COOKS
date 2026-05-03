@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bq6fkd4seiuo0"]
 
+[ext_resource type="Script" uid="uid://bbxi4ix85ffst" path="res://Scenes/Level Design/Playtest3LevelPack/Bosses/final_boss_room.gd" id="1_oixpj"]
 [ext_resource type="TileSet" uid="uid://dwtsix1jpmf65" path="res://Objects/Tilesets/FloorThreeSet.tres" id="1_plm7v"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_h80x0"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_k7r22"]
@@ -17,6 +18,7 @@
 size = Vector2(124, 53)
 
 [node name="LevelJamTemplate2" type="Node2D" unique_id=1329965379]
+script = ExtResource("1_oixpj")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1746741095]
 z_index = -1
@@ -80,3 +82,4 @@ position = Vector2(0, -168)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="on_all_dead" from="ObjEnemySpawner" to="." method="_on_obj_enemy_spawner_on_all_dead"]

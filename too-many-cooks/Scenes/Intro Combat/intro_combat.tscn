@@ -124,6 +124,7 @@ position = Vector2(352, -224)
 
 [node name="RatEnemy" parent="." unique_id=1169452193 instance=ExtResource("11_ajqdd")]
 position = Vector2(0, -280)
+health = 50
 
 [node name="AmbientMusic" type="AudioStreamPlayer" parent="." unique_id=284044822]
 stream = ExtResource("11_f0ry7")

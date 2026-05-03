@@ -25,6 +25,13 @@ grow_vertical = 2
 theme = ExtResource("1_37k14")
 script = ExtResource("2_37k14")
 
+[node name="Container" type="Container" parent="." unique_id=217598881]
+layout_mode = 0
+offset_left = -576.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 331.0
+
 [node name="Panel" type="Panel" parent="." unique_id=1351599176]
 custom_minimum_size = Vector2(800, 500)
 layout_mode = 0

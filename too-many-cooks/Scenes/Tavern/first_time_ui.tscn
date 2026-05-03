@@ -5,11 +5,18 @@
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="3_yecbg"]
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="4_j5ms4"]
 
-[node name="FirstTimeUI" type="Control" unique_id=1697375891]
+[node name="FirstTimeUI" type="Control" unique_id=1697375891 node_paths=PackedStringArray("clickSound", "hoverSound")]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_owxew")
 script = ExtResource("1_j5ms4")
+clickSound = NodePath("ButtonClickSound")
+hoverSound = NodePath("ButtonHoverSound")
+
+[node name="Container" type="Container" parent="." unique_id=1468876344]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 651.0
 
 [node name="FirstPanel" type="Panel" parent="." unique_id=323025489]
 layout_mode = 1

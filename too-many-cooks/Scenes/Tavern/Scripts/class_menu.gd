@@ -12,6 +12,7 @@ signal back_pressed
 
 func show_menu():
 	is_showing = true
+	$Container.show()
 	$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade.disabled = !_check_upgrade_avaliability()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,320),.5).set_trans(Tween.TRANS_CUBIC)
@@ -22,6 +23,7 @@ func hide_menu():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
+	$Container.hide()
 	current_class = ""
 	is_showing = false
 

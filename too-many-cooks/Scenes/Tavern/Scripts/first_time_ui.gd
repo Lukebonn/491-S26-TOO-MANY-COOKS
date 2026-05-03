@@ -34,6 +34,7 @@ func _on_button_four_pressed():
 	clickSound.play()
 	$FourthPanel.hide()
 	Global.First_Time_Tavern = false
+	$Container.hide()
 
 
 func _on_button_mouse_entered() -> void:

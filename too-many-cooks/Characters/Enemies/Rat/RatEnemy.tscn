@@ -123,6 +123,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("5_wucg0")
+Chase_Speed = 52
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_xd44r"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="6_bfno4"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="7_2ind5"]
-[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="8_qxfd3"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_easig"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_ptg6e"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="10_7crwr"]
 [ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="11_bkfm7"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_d48en"]
@@ -228,7 +228,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="ObjEnemySpawner" parent="Objects/Room1" unique_id=817439483 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("7_2ind5")]
 position = Vector2(424, -96)
-Enemies = Array[PackedScene]([ExtResource("8_qxfd3"), ExtResource("8_qxfd3"), ExtResource("8_qxfd3")])
+Enemies = Array[PackedScene]([ExtResource("9_ptg6e"), ExtResource("9_ptg6e"), ExtResource("9_ptg6e")])
 LocationType = 3
 SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
 
@@ -267,6 +267,7 @@ scale = Vector2(1.5, 1.5)
 [node name="ObjDestructibleSpawner" parent="Objects/Room2" unique_id=269469669 instance=ExtResource("10_7crwr")]
 position = Vector2(384, 392)
 RandomLocation = true
+Enemies = Array[PackedScene]([ExtResource("9_ptg6e")])
 LocationType = 2
 RadiusRangeMax = 96.0
 SpawnMethod = 1
@@ -301,7 +302,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="ObjEnemySpawner" parent="Objects/Room3" unique_id=1510121706 instance=ExtResource("7_2ind5")]
 position = Vector2(800, 416)
-Enemies = Array[PackedScene]([ExtResource("8_qxfd3"), ExtResource("8_qxfd3"), ExtResource("8_qxfd3"), ExtResource("8_qxfd3")])
+Enemies = Array[PackedScene]([ExtResource("9_ptg6e"), ExtResource("9_ptg6e"), ExtResource("9_ptg6e"), ExtResource("9_ptg6e")])
 SpawnRadius = 64.0
 SpawnRadiusOffset = 45.0
 
@@ -322,3 +323,5 @@ stream = ExtResource("14_s6ygs")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

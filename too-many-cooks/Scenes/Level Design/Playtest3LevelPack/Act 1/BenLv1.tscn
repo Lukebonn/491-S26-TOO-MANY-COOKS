@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_t2ho7"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="6_g0p2q"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="7_spux7"]
-[ext_resource type="PackedScene" uid="uid://dfkx7up3pl55j" path="res://Characters/Enemies/Scenes/mice_enemy.tscn" id="8_vfmkl"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_6jkhw"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_h11h6"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="10_4h2ug"]
 [ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="11_3micv"]
@@ -229,7 +229,7 @@ shape = SubResource("RectangleShape2D_5flpn")
 
 [node name="ObjEnemySpawner" parent="Objects/Room1" unique_id=817439483 node_paths=PackedStringArray("SpawnPath") instance=ExtResource("7_spux7")]
 position = Vector2(0, -384)
-Enemies = Array[PackedScene]([ExtResource("8_vfmkl"), ExtResource("8_vfmkl"), ExtResource("8_vfmkl"), ExtResource("8_vfmkl")])
+Enemies = Array[PackedScene]([ExtResource("8_6jkhw"), ExtResource("8_6jkhw"), ExtResource("8_6jkhw"), ExtResource("8_6jkhw")])
 LocationType = 1
 SpawnPath = NodePath("../Path2D")
 
@@ -292,3 +292,5 @@ stream = ExtResource("14_egdkp")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

@@ -14,12 +14,14 @@ func _on_close_pressed():
 
 func show_menu():
 	is_showing = true
+	$Container.show()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,320),.5).set_trans(Tween.TRANS_CUBIC)
 	is_showing = true
 
 func hide_menu():
 	var tween = get_tree().create_tween()
+	$Container.hide()
 	tween.tween_property(self,"position",Vector2(self.position.x,1000),.5).set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	is_showing = false
