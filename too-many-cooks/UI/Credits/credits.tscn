@@ -147,6 +147,12 @@ size_flags_horizontal = 4
 Name = "Owen Magee"
 Title = "Combat Programmer"
 
+[node name="Owen2" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Luke Bonniwell"
+Title = "Programmer"
+
 [node name="GridContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=418734572]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -211,7 +217,7 @@ Title = "UI & Level Designer"
 [node name="Luke2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1027214142 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
-Name = "Luke !!!!!"
+Name = "Luke Bonniwell"
 Title = "Level Designer"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=1733304037]
