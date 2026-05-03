@@ -1,7 +1,7 @@
 Akari – 1st Time Speaking Act 1
-[5]Easy there. If you’re standing, you’re doing better than most who come out of that Tower. Take a breath and steady yourself.
-[5]Name’s Akari. I train down here and help people get back on their feet after a fall. I’ve been up that Tower too, and it put me down fast.
-[5]That sword looks heavier than you’re ready for, but that can change. There’s a full training area here when you want to start. #
+[5]Easy there. If you're standing, you're doing better than most who come out of that Tower. Take a breath and steady yourself.
+[5]Name's Akari. I train down here and help people get back on their feet after a fall. I've been up that Tower too, and it put me down fast.
+[5]That sword looks heavier than you're ready for, but that can change. There's a full training area here when you want to start. #
 Akari – 1st Time Speaking Act 2
 [1]You made it past the first real wall up there. That is more than most manage on their first climb.
 [5]You are still letting the blade lead you instead of the other way around. If you keep that up, the Tower will punish you for it.

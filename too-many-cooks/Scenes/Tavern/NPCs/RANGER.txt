@@ -1,63 +1,63 @@
 #Introduction (First meeting):
-[1]Hey there, you’re that cool cat that everyone has been blabbing on and on about. I’m Renly, you’re new best friend!
-[5]I came by because I've heard about this Rat King. Horrible stuff he’s done, really.
-[5]It’s a great shame how all that treasure has been holed up in the Tower. Could really use someone to get in there and “liberate” the townsfolk’s valuables. 
-[1]That’s where you come in kid. I’ll show you some neat tricks, and you go clear out that Tower for me. We have a deal?# 
+[1]Hey there, you're that cool cat that everyone has been blabbing on and on about. I'm Renly, you're new best friend!
+[5]I came by because I've heard about this Rat King. Horrible stuff he's done, really.
+[5]It's a great shame how all that treasure has been holed up in the Tower. Could really use someone to get in there and “liberate” the townsfolk's valuables. 
+[1]That's where you come in kid. I'll show you some neat tricks, and you go clear out that Tower for me. We have a deal?# 
 #
 #First talk after beating first boss/Act 1:
 [1]The triumphant hero returns! Three cheers for our savior! 
 [5]Really kid, you did a good job taking care of that tough guy blocking the way up. 
 [5]Of course you know what that means. Now that the way up is cleared...
-[1]That means there’s more treasure for the taking! Now finish up celebrating and get back in there!# 
+[1]That means there's more treasure for the taking! Now finish up celebrating and get back in there!# 
 #
 #First talk after beating second boss/Act 2: 
 [5]There was even more huh? Who would have thought there would be this many levels to the Tower...
 [3]That Rat King sure stole from a lot of people huh? That dirty, stinking, no-morals-having good-for-nothing rat! 
-[1]Of course, you’re righting all his wrongs and getting all that treasure out of the Tower. 
-[1]Keep it up kid, you’ll become a hero soon. And if I happen to get rich in the process, it’s a win-win huh?#  
+[1]Of course, you're righting all his wrongs and getting all that treasure out of the Tower. 
+[1]Keep it up kid, you'll become a hero soon. And if I happen to get rich in the process, it's a win-win huh?#  
 #
 #Orb Upgrade 1/Bond Rank 0 -> 1
-[1]Well well well, look who’s starting to take after the great Renly. 
-[5]If you want to keep it up you’ll need to pick up some new tricks. 
-[1]Here, I’ll show you another one of mine. On the house of course. As long as you keep going in that Tower and clearing it out for me, yeah?# 
+[1]Well well well, look who's starting to take after the great Renly. 
+[5]If you want to keep it up you'll need to pick up some new tricks. 
+[1]Here, I'll show you another one of mine. On the house of course. As long as you keep going in that Tower and clearing it out for me, yeah?# 
 #
 #Orb Upgrade 2/Bond Rank 2 -> 3:
-[4]Wow kid, you’re really taking this whole hero thing seriously huh?
+[4]Wow kid, you're really taking this whole hero thing seriously huh?
 [2]That kind of determination is stirring up something in me. Are you trying to get me all emotional?
-[5]Welp, I can’t argue with your results. And this was part of the deal we made. 
+[5]Welp, I can't argue with your results. And this was part of the deal we made. 
 [1]Let ol Renly here teach you how to be a better rogue. 
-[5]And hey, don’t go using these skills on civilians. No need to add onto their misery, they’ve got it rough as is.#
+[5]And hey, don't go using these skills on civilians. No need to add onto their misery, they've got it rough as is.#
 #
 #Orb Upgrade 3/Bond Rank 4 -> 5
 [4]..... 
-[5]Sorry kid, I’m just really sad. You’ve come a long way. 
+[5]Sorry kid, I'm just really sad. You've come a long way. 
 [1]Guess that means all my advice has been actually helpful huh?
-[1]Don’t worry, there’s plenty more to come. Just keep the treasure flowing my friend.# 
+[1]Don't worry, there's plenty more to come. Just keep the treasure flowing my friend.# 
 #
 #General Talk - Bond Rank 0 
-[5]Come on, a free drink for your pal? I’ll make sure to spread the good word about this place. Sure could use a few more customers here.# 
-[5]...that old owl doesn’t ever sleep does he? It’d be real difficult to get behind that bar..#
-[1]You’re doing a great job kid, keep it up! One day we’ll be able to retire off of all that gold you’re hauling out of the Tower.# 
+[5]Come on, a free drink for your pal? I'll make sure to spread the good word about this place. Sure could use a few more customers here.# 
+[5]...that old owl doesn't ever sleep does he? It'd be real difficult to get behind that bar..#
+[1]You're doing a great job kid, keep it up! One day we'll be able to retire off of all that gold you're hauling out of the Tower.# 
 [1]Roof over my head, warm food, a cold drink, what more could I ask for in life?# 
 [5]Hmm, that magic stuff seems real useful huh? Just think of all the kinds of treasure you could swipe with it...#
 #
 #General Talk - Bond Rank 1-2
-[5]What did I do before all this? Let’s just say I didn’t exactly retire, and that I can’t exactly go back either. It’s better for both of us if you stop asking questions, kid.# 
+[5]What did I do before all this? Let's just say I didn't exactly retire, and that I can't exactly go back either. It's better for both of us if you stop asking questions, kid.# 
 [5]Where did you say you came from again? Huh, never heard of it. You must be a long way from home. Guess that makes two of us.# 
-[1]Knives are just great. You can throw em, poison em, imbue em with magic, and they’re even great for drinking games! Just try and find a more versatile weapon.#
-[5]That last haul you brought in was pretty nice. You even got some coins I haven’t seen before. Must be some local mint from a nearby village. Hmm, wonder if they’ll have more laying around...#
-[1]Hey kid, just wanted to say I think you’re really catching on with all my lessons. It’s odd to see my talents applied to all that fighting, but I can’t say I'm not impressed with the results. Just keep it to those that deserve it yeah?# 
+[1]Knives are just great. You can throw em, poison em, imbue em with magic, and they're even great for drinking games! Just try and find a more versatile weapon.#
+[5]That last haul you brought in was pretty nice. You even got some coins I haven't seen before. Must be some local mint from a nearby village. Hmm, wonder if they'll have more laying around...#
+[1]Hey kid, just wanted to say I think you're really catching on with all my lessons. It's odd to see my talents applied to all that fighting, but I can't say I'm not impressed with the results. Just keep it to those that deserve it yeah?# 
 #
 #General Talk - Bond Rank 3-4
-[1]Gramps finally agreed to take some of my advice about the tavern’s security. Just cause I’m here doesn’t mean I’ll be able to keep an eye out for lowlifes all the time.# 
-[1]You know, that Walter ain’t all bad. Sure he talks a lot and it sometimes gives me a headache, but he’s got some good advice buried beneath all of that versatile vocabulary. Ah, I’m beginning to sound like him huh?# 
-[4]You just missed it kid, Akari complimented me. Like actually compliment me. Of course it was about how I was faster than her and lacking in every other way. But hey, I’ll take what I can get!# 
-[5]What do you think of all those meatheads in the Tower? Think we can convince any of them to back down and not fight to the end? Ah what am I saying, if they’re in the Tower then it’s already too late for them.# 
-[5]What are your plans for after all of this? More adventuring? Me? I’m thinking about retiring soon. A choice not many in my profession get to take. But with all this gold you’re bringing out, I’m getting close. And it’s all thanks to you kid.#   
+[1]Gramps finally agreed to take some of my advice about the tavern's security. Just cause I'm here doesn't mean I'll be able to keep an eye out for lowlifes all the time.# 
+[1]You know, that Walter ain't all bad. Sure he talks a lot and it sometimes gives me a headache, but he's got some good advice buried beneath all of that versatile vocabulary. Ah, I'm beginning to sound like him huh?# 
+[4]You just missed it kid, Akari complimented me. Like actually compliment me. Of course it was about how I was faster than her and lacking in every other way. But hey, I'll take what I can get!# 
+[5]What do you think of all those meatheads in the Tower? Think we can convince any of them to back down and not fight to the end? Ah what am I saying, if they're in the Tower then it's already too late for them.# 
+[5]What are your plans for after all of this? More adventuring? Me? I'm thinking about retiring soon. A choice not many in my profession get to take. But with all this gold you're bringing out, I'm getting close. And it's all thanks to you kid.#   
 #
 #General Talk - Bond Rank 5 (max)
-[2]You’re getting close to the top of the Tower, huh? Wonder what's going to happen to this tavern when the Rat King gets taken out...#
-[2]You look real rough there kid, take it easy. It’s only gonna get tougher from here. I want to see you again, okay?#
-[3]That vile Rat King. Makes my blood boil just seeing all that gold laying around. There’s way too much of it, he must have taken all the valuables in at least a dozen villages. Even I wouldn’t go that far!# 
-[5]Kid, I don’t think there’s much more I can teach you. The student has surpassed the master, at least in terms of combat. But try and out thief me and you’ll be sorry. And no, I won’t be teaching you any of that, you’re too good for it.#
-[1]It’s been a rocky road but I’m glad I could be there to help you along. Even the others in here have been alright. Maybe it’s time I start thinking about settling down...#
+[2]You're getting close to the top of the Tower, huh? Wonder what's going to happen to this tavern when the Rat King gets taken out...#
+[2]You look real rough there kid, take it easy. It's only gonna get tougher from here. I want to see you again, okay?#
+[3]That vile Rat King. Makes my blood boil just seeing all that gold laying around. There's way too much of it, he must have taken all the valuables in at least a dozen villages. Even I wouldn't go that far!# 
+[5]Kid, I don't think there's much more I can teach you. The student has surpassed the master, at least in terms of combat. But try and out thief me and you'll be sorry. And no, I won't be teaching you any of that, you're too good for it.#
+[1]It's been a rocky road but I'm glad I could be there to help you along. Even the others in here have been alright. Maybe it's time I start thinking about settling down...#
