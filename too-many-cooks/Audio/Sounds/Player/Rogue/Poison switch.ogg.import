@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ct72c55bpg8ol"
+path="res://.godot/imported/Poison switch.ogg-8e0f9bfda317e0cf6fa39c4724f8aa16.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Sounds/Player/Rogue/Poison switch.ogg"
+dest_files=["res://.godot/imported/Poison switch.ogg-8e0f9bfda317e0cf6fa39c4724f8aa16.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

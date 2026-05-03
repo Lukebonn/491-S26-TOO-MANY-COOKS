@@ -13,6 +13,8 @@ func enter_state(player_node):
 	
 	if(!on_cooldown):
 		
+		player.play_sound(load("res://Audio/Sounds/Player/Rogue/knife_throw.wav"))
+		
 		var attack = load("res://Characters/Player/Scripts/StateMachine/rogue_class/Attacks/throwing_knife.tscn").instantiate()
 		
 		#makes projectile a sibling of the player
