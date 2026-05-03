@@ -2,13 +2,19 @@
 
 [ext_resource type="Script" uid="uid://b1b1pf52ckfds" path="res://Objects/Lock/Scripts/obj_lock.gd" id="1_gml1x"]
 [ext_resource type="Texture2D" uid="uid://bli2douqkygkw" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdLock.png" id="1_qrrbs"]
+[ext_resource type="Texture2D" uid="uid://cd6uuobqsqgnr" path="res://Objects/Lock/Lock Sprites (Prototype)/BloodLock.png" id="2_khtpd"]
+[ext_resource type="Texture2D" uid="uid://6mwf7qnkimhe" path="res://Objects/Lock/Lock Sprites (Prototype)/CrystalLock.png" id="3_4ur25"]
 [ext_resource type="PackedScene" uid="uid://dvob2rhx8ffg7" path="res://Objects/Lock/obj_lock_col.tscn" id="3_n3yp5"]
+[ext_resource type="Texture2D" uid="uid://coukueol8a86e" path="res://Objects/Lock/Lock Sprites (Prototype)/GoldLock.png" id="4_ulu4y"]
+[ext_resource type="Texture2D" uid="uid://dj8hs2c6pimok" path="res://Objects/Lock/Lock Sprites (Prototype)/IronLock.png" id="5_2vecu"]
+[ext_resource type="Texture2D" uid="uid://cclelvp62wwg4" path="res://Objects/Lock/Lock Sprites (Prototype)/JadeLock.png" id="6_qvgar"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kn637"]
 
 [node name="ObjLock" type="Node2D" unique_id=269246272]
 script = ExtResource("1_gml1x")
 CollisionRadius = 32.0
+key_sprites = Array[Texture2D]([ExtResource("2_khtpd"), ExtResource("3_4ur25"), ExtResource("4_ulu4y"), ExtResource("5_2vecu"), ExtResource("6_qvgar")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056122697]
 texture = ExtResource("1_qrrbs")

@@ -5,9 +5,12 @@ signal on_unlock
 @export var CollisionRadius = 16.0
 @export var keyType: PlayerStats.KeyType
 @export var displayName: String = "_Untitled_ Key"
+@export var key_sprites: Array[Texture2D]
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	$BaseColObj/BaseCol.shape.radius = CollisionRadius
+	sprite.texture = key_sprites[keyType]
 	add_to_group("lock")
 
 func unlock() -> void:
