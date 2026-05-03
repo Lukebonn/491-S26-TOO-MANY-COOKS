@@ -69,7 +69,7 @@ theme_override_constants/separation = 32
 [node name="Belford1" parent="VBoxContainer/VBoxContainer" unique_id=1302544757 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
-Name = "Lochan Belford"
+Name = "Lochlan Belford"
 Title = "Professor"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=1149690879]
