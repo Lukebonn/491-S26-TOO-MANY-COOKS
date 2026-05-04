@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://binvofbiywmft"]
 
 [ext_resource type="Script" uid="uid://bokmbxyoyft1l" path="res://Scenes/Intro Cutscene/outro_cutscene.gd" id="1_v8s24"]
-[ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline1.wav" id="2_2gcgs"]
-[ext_resource type="AudioStream" uid="uid://cwukd5nohse2v" path="res://Audio/Sounds/Player/Warrior/Parry noise.mp3" id="2_8xhkk"]
-[ext_resource type="AudioStream" uid="uid://6ddofhvgvgrk" path="res://Audio/Sounds/Player/Slash.mp3" id="3_cotfy"]
+[ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline1.wav" id="2_2gcgs"]
+[ext_resource type="AudioStream" uid="uid://n4gofn1jbyr7" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline1.wav" id="2_g8cdt"]
+[ext_resource type="AudioStream" uid="uid://ticcq6sdtpqh" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline2.wav" id="3_euqdl"]
+[ext_resource type="AudioStream" uid="uid://bpwm56y8260k7" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline3.wav" id="4_c4wx0"]
+[ext_resource type="AudioStream" uid="uid://c6yf21bpkuaqq" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline4.wav" id="5_i1clk"]
+[ext_resource type="AudioStream" uid="uid://c7o6y157ragwi" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline5.wav" id="6_ehwip"]
+[ext_resource type="AudioStream" uid="uid://d4h8ea888gnxy" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline6.wav" id="7_kdpsf"]
+[ext_resource type="AudioStream" uid="uid://dd4e66efrkf2g" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline7.wav" id="8_6n4gi"]
+[ext_resource type="AudioStream" uid="uid://dmrqt8wvekpwn" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline8.wav" id="9_kh2pc"]
+[ext_resource type="AudioStream" uid="uid://bys6hbtibhnu3" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline9.wav" id="10_g15l1"]
+[ext_resource type="AudioStream" uid="uid://2c8oq4voieso" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline10.wav" id="11_wowq7"]
 [ext_resource type="Texture2D" uid="uid://b38m7550w21sa" path="res://UI/Img/Input/input_lmb.png" id="12_kdpsf"]
+[ext_resource type="AudioStream" uid="uid://dbjqvf4k0bsqs" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline11.wav" id="12_s4nyv"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="13_6n4gi"]
+[ext_resource type="AudioStream" uid="uid://cvmwwmm5h2dh6" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline12.wav" id="13_m6foe"]
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="14_kh2pc"]
+[ext_resource type="AudioStream" uid="uid://bej10tbpeq7cc" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline13.wav" id="14_m0fwq"]
 [ext_resource type="Texture2D" uid="uid://c7aod2u7nw32o" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P1.png" id="15_2gcgs"]
+[ext_resource type="AudioStream" uid="uid://bdp6116pyyg53" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline14.wav" id="15_l56t5"]
 [ext_resource type="Texture2D" uid="uid://bpmlwib5cdu6a" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P2.png" id="16_gmt0b"]
 [ext_resource type="Texture2D" uid="uid://dlo2xtpcgmecx" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P3.png" id="17_f6ejm"]
 [ext_resource type="Texture2D" uid="uid://oob1cqkvyl7h" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P4.png" id="18_j77xc"]
@@ -27,8 +39,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v8s24")
-Subtitles = Array[String](["And so, at last, the Rat King's reign of terror has ended. ", "Reclaiming the vault worth of supplies, our hero gave back to the people of Faunia what was rightfully theirs. ", "The people celebrated the Rat King's defeat by having a celebration in the hero's honor.", "And of course, what is a celebration without a drink? ", "They sang and danced with a joy thought extinct, all throughout the night.", "But the closest allies to the hero have the largest surprise for them.", "The next morning, the hero was given a cloak that once belonged to a now retired adventurer. ", "A dagger once used by a great rogue.", "A piece of armor handed down from a warrior.", "And the rat kings staff, a gift from a mage who tamed its power to be used for good.", "Though the people were sad to see them go, the Hero knew their path was beyond the lands of Faunia. ", "Armed with the skills inherited by their comrades, the Hero set off to explore the world and see what other adventures await them.", "Thus concluding The Tale of the Tower,", "But not The Tale of our Hero."])
-Voice = Array[AudioStream]([ExtResource("2_8xhkk"), ExtResource("3_cotfy"), null, null, null, null, null, null, null, null, null, null, null, null])
+Subtitles = Array[String](["And so, at last, the Rat King's reign of terror has ended. ", "Reclaiming the vault worth of supplies, our hero gave back to the people of Faunia what was rightfully theirs. ", "The people celebrated the Rat King's defeat by having a celebration in the hero's honor.", "And of course, what is a celebration without a drink? ", "They sang and danced with a joy thought extinct, all throughout the night.", "But, the closest allies to the hero have the largest surprise for them.", "The next morning, the hero was given a cloak that once belonged to a now retired adventurer. ", "A dagger, once used by a great rogue.", "A piece of armor, handed down from a warrior.", "And the rat kings staff, a gift from a mage who tamed the staff's power so it could be used for good.", "Though the people were sad to see them go, the Hero knew their path was beyond the lands of Faunia. ", "Armed with the skills inherited by their comrades, the Hero set off to explore the world and see what other adventures await them.", "Thus concluding The Tale of the Tower,", "but, not The Tale of our Hero..."])
+Voice = Array[AudioStream]([ExtResource("2_g8cdt"), ExtResource("3_euqdl"), ExtResource("4_c4wx0"), ExtResource("5_i1clk"), ExtResource("6_ehwip"), ExtResource("7_kdpsf"), ExtResource("8_6n4gi"), ExtResource("9_kh2pc"), ExtResource("10_g15l1"), ExtResource("11_wowq7"), ExtResource("12_s4nyv"), ExtResource("13_m6foe"), ExtResource("14_m0fwq"), ExtResource("15_l56t5")])
 NextPage = Array[bool]([true, true, false, true, true, true, false, false, false, false, true, true, false, false])
 
 [node name="PageArrow" type="Node2D" parent="." unique_id=506423588]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://nix28ggtl4hx"
-path="res://.godot/imported/SubtitleVoiceline5.wav-4bf64f5488e3a3bcf4342b29d1444709.sample"
+path="res://.godot/imported/SubtitleVoiceline5.wav-9de9c336dda93193103b8f7a1aa56e0f.sample"
 
 [deps]
 
-source_file="res://Scenes/Intro Cutscene/Audio/SubtitleVoiceline5.wav"
-dest_files=["res://.godot/imported/SubtitleVoiceline5.wav-4bf64f5488e3a3bcf4342b29d1444709.sample"]
+source_file="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline5.wav"
+dest_files=["res://.godot/imported/SubtitleVoiceline5.wav-9de9c336dda93193103b8f7a1aa56e0f.sample"]
 
 [params]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n4gofn1jbyr7"
+path="res://.godot/imported/EndVoiceline1.wav-c7941c60afd5b72382f4111930c2709a.sample"
+
+[deps]
+
+source_file="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline1.wav"
+dest_files=["res://.godot/imported/EndVoiceline1.wav-c7941c60afd5b72382f4111930c2709a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
