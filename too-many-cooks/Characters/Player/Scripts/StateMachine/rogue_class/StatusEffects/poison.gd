@@ -2,7 +2,7 @@ extends Node
 
 var target
 
-var potency : int = 10
+var potency : int = int((PlayerStats.base_str + PlayerStats.passive_str)/2)
 
 var duration : float = 10.0
 
