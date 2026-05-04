@@ -231,6 +231,7 @@ theme_override_constants/separation = 64
 [node name="Dawson2" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=1326258815 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("6_ailny")
 Name = "Dawson Brown"
 Title = "Enemy & UI Designer"
 
