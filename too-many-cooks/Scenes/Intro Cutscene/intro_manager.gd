@@ -64,6 +64,7 @@ func next_line(i: int):
 		await tween.finished
 		can_advance = true
 	elif can_advance and index >= Subtitles.size()-1:
+		can_advance = false
 		go_to_game()
 
 #Update subtitle text and audio player sound.

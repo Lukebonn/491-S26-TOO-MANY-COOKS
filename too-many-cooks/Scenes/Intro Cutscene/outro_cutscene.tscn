@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://dmrqt8wvekpwn" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline8.wav" id="9_kh2pc"]
 [ext_resource type="AudioStream" uid="uid://bys6hbtibhnu3" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline9.wav" id="10_g15l1"]
 [ext_resource type="AudioStream" uid="uid://2c8oq4voieso" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline10.wav" id="11_wowq7"]
-[ext_resource type="Texture2D" uid="uid://b38m7550w21sa" path="res://UI/Img/Input/input_lmb.png" id="12_kdpsf"]
 [ext_resource type="AudioStream" uid="uid://dbjqvf4k0bsqs" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline11.wav" id="12_s4nyv"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="13_6n4gi"]
 [ext_resource type="AudioStream" uid="uid://cvmwwmm5h2dh6" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline12.wav" id="13_m6foe"]
@@ -20,8 +19,11 @@
 [ext_resource type="AudioStream" uid="uid://bej10tbpeq7cc" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline13.wav" id="14_m0fwq"]
 [ext_resource type="Texture2D" uid="uid://c7aod2u7nw32o" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P1.png" id="15_2gcgs"]
 [ext_resource type="AudioStream" uid="uid://bdp6116pyyg53" path="res://Scenes/Intro Cutscene/Audio/Outro/EndVoiceline14.wav" id="15_l56t5"]
+[ext_resource type="Texture2D" uid="uid://bqfrmq0gqm85i" path="res://UI/Img/Input/LMouseClick1.png" id="16_c4wx0"]
 [ext_resource type="Texture2D" uid="uid://bpmlwib5cdu6a" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P2.png" id="16_gmt0b"]
 [ext_resource type="Texture2D" uid="uid://dlo2xtpcgmecx" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P3.png" id="17_f6ejm"]
+[ext_resource type="Texture2D" uid="uid://c7yyvn2ioff3u" path="res://UI/Img/Input/LMouseClick2.png" id="17_i1clk"]
+[ext_resource type="Script" uid="uid://chtxodvlvyi0e" path="res://Scenes/Intro Cutscene/mouse_indicator.gd" id="18_ehwip"]
 [ext_resource type="Texture2D" uid="uid://oob1cqkvyl7h" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P4.png" id="18_j77xc"]
 [ext_resource type="Texture2D" uid="uid://ivvkfbd2y4jg" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P5.png" id="19_up7qs"]
 [ext_resource type="Texture2D" uid="uid://ym3btimrw31h" path="res://Scenes/Intro Cutscene/OutroImg/FINALCUT-P6.png" id="20_g8cdt"]
@@ -29,6 +31,36 @@
 [ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="21_pk06d"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_dw1wy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_tss7e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdpsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_c4wx0")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_c4wx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i1clk")
+}],
+"loop": true,
+"name": &"ClickIndicator",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_i1clk")
+}],
+"loop": true,
+"name": &"NoClick",
+"speed": 5.0
+}]
 
 [node name="OutroCutscene" type="Control" unique_id=5151694]
 z_index = 10
@@ -47,10 +79,12 @@ NextPage = Array[bool]([true, true, false, true, true, true, false, false, false
 z_index = 6
 position = Vector2(1088, 680)
 
-[node name="Sprite2D" type="Sprite2D" parent="PageArrow" unique_id=1289254406]
+[node name="MouseIndicator" type="AnimatedSprite2D" parent="PageArrow" unique_id=1443012456]
 position = Vector2(32, 16)
 scale = Vector2(4, 4)
-texture = ExtResource("12_kdpsf")
+sprite_frames = SubResource("SpriteFrames_kdpsf")
+animation = &"NoClick"
+script = ExtResource("18_ehwip")
 
 [node name="Label" type="Label" parent="PageArrow" unique_id=896389206]
 visible = false

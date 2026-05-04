@@ -11,9 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline1.wav" id="10_j8cwx"]
 [ext_resource type="AudioStream" uid="uid://bo2t82rts7l8j" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline3.wav" id="11_6wkej"]
 [ext_resource type="AudioStream" uid="uid://b2qcphvbnrwxk" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline10.wav" id="11_py1tv"]
-[ext_resource type="Texture2D" uid="uid://b38m7550w21sa" path="res://UI/Img/Input/input_lmb.png" id="12_6wkej"]
 [ext_resource type="AudioStream" uid="uid://cwyd2wyshklu4" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline4.wav" id="12_11xfy"]
+[ext_resource type="Texture2D" uid="uid://bqfrmq0gqm85i" path="res://UI/Img/Input/LMouseClick1.png" id="12_ejlr2"]
+[ext_resource type="Texture2D" uid="uid://c7yyvn2ioff3u" path="res://UI/Img/Input/LMouseClick2.png" id="13_8og2a"]
 [ext_resource type="AudioStream" uid="uid://nix28ggtl4hx" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline5.wav" id="13_py1tv"]
+[ext_resource type="Script" uid="uid://chtxodvlvyi0e" path="res://Scenes/Intro Cutscene/mouse_indicator.gd" id="14_8og2a"]
 [ext_resource type="AudioStream" uid="uid://b0qrwavdq8dq3" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline6.wav" id="14_ejlr2"]
 [ext_resource type="AudioStream" uid="uid://bklchj5w1pigv" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline2.wav" id="15_8og2a"]
 [ext_resource type="AudioStream" uid="uid://cl86fmkvr4k43" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline7.wav" id="16_r5ao7"]
@@ -23,6 +25,36 @@
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_11xfy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_py1tv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5ao7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ejlr2")
+}],
+"loop": true,
+"name": &"Click",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ejlr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8og2a")
+}],
+"loop": true,
+"name": &"ClickIndicator",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_8og2a")
+}],
+"loop": true,
+"name": &"NoClick",
+"speed": 5.0
+}]
 
 [node name="IntroCutscene" type="Control" unique_id=5151694]
 z_index = 10
@@ -41,10 +73,12 @@ NextPage = Array[bool]([false, true, false, true, true, false, true, true, true,
 z_index = 6
 position = Vector2(1088, 680)
 
-[node name="Sprite2D" type="Sprite2D" parent="PageArrow" unique_id=1289254406]
+[node name="MouseIndicator" type="AnimatedSprite2D" parent="PageArrow" unique_id=2084396137]
 position = Vector2(32, 16)
 scale = Vector2(4, 4)
-texture = ExtResource("12_6wkej")
+sprite_frames = SubResource("SpriteFrames_r5ao7")
+animation = &"ClickIndicator"
+script = ExtResource("14_8og2a")
 
 [node name="Label" type="Label" parent="PageArrow" unique_id=896389206]
 visible = false
