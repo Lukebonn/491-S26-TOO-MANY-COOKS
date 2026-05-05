@@ -12,7 +12,7 @@ collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_xfnkd")
 
-[node name="CollisionZone" type="CollisionShape2D" parent="." unique_id=869777355]
+[node name="DamageZone" type="CollisionShape2D" parent="." unique_id=869777355]
 shape = SubResource("CircleShape2D_ue585")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=741588676]

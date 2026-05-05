@@ -2,7 +2,7 @@ extends Enemy
 
 signal onEnemyDeath()
 var playerNear = false
-var enraged = false
+@export var enraged = false
 
 func _on_near_zone_area_entered(area: Area2D) -> void:
 	playerNear = true
