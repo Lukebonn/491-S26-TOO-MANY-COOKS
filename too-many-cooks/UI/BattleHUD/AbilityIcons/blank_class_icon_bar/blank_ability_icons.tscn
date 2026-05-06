@@ -7,6 +7,9 @@
 
 [node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_gesma")]
 
+[node name="Label" parent="." index="0" unique_id=1391810775]
+text = "30mp"
+
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_13hla")
 
@@ -16,14 +19,14 @@ texture = ExtResource("3_hyebh")
 [node name="Icon" parent="HBoxContainer/MagicIcons/Current" parent_id_path=PackedInt32Array(283412923) index="1" unique_id=1632241512]
 texture = ExtResource("4_57120")
 
-[node name="Next" parent="HBoxContainer/MagicIcons" parent_id_path=PackedInt32Array(743762384) index="1" unique_id=1575525594]
+[node name="Left" parent="HBoxContainer/MagicIcons" parent_id_path=PackedInt32Array(743762384) index="1" unique_id=1575525594]
 visible = false
 
-[node name="Last" parent="HBoxContainer/MagicIcons" parent_id_path=PackedInt32Array(743762384) index="2" unique_id=1326684781]
+[node name="Right" parent="HBoxContainer/MagicIcons" parent_id_path=PackedInt32Array(743762384) index="2" unique_id=1326684781]
 visible = false
 
 [editable path="HBoxContainer/AttackIcon"]
 [editable path="HBoxContainer/DashIcon"]
 [editable path="HBoxContainer/MagicIcons/Current"]
-[editable path="HBoxContainer/MagicIcons/Next"]
-[editable path="HBoxContainer/MagicIcons/Last"]
+[editable path="HBoxContainer/MagicIcons/Left"]
+[editable path="HBoxContainer/MagicIcons/Right"]
