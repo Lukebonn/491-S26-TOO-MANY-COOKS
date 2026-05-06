@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_4i5kg"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="6_ailny"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
+[ext_resource type="Texture2D" uid="uid://k8pxgiaqu2pe" path="res://UI/Credits/Img/ShainaZ.png" id="6_uplb4"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="7_30bwe"]
 [ext_resource type="Texture2D" uid="uid://cciqv1yk8koyi" path="res://UI/Credits/Img/AtaKitapci.png" id="8_30bwe"]
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="8_jjdaq"]
+[ext_resource type="Texture2D" uid="uid://bs8xyx21s4vps" path="res://UI/Credits/Img/JonathanM.png" id="11_3x4qe"]
 
 [node name="Credits" type="Control" unique_id=1758667731]
 layout_mode = 3
@@ -140,8 +142,9 @@ theme_override_constants/separation = 64
 [node name="Shaina1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=845239611 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("6_uplb4")
 Name = "Shaina Zaccagnino"
-Title = "Programmer"
+Title = "Enemy Programmer"
 
 [node name="Owen1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1437229437 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
@@ -149,7 +152,7 @@ size_flags_horizontal = 4
 Name = "Owen Magee"
 Title = "Combat Programmer"
 
-[node name="Owen2" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("3_gjm8c")]
+[node name="Luke1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Luke Bonniwell"
@@ -221,6 +224,24 @@ Title = "UI & Level Designer"
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Luke Bonniwell"
+Title = "Level Designer"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=897514686]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="Shaina2" parent="VBoxContainer/VBoxContainer3/HBoxContainer3" unique_id=589183357 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Portrait = ExtResource("6_uplb4")
+Name = "Shaina Zaccagnino"
+Title = "Level Designer"
+
+[node name="Carson2" parent="VBoxContainer/VBoxContainer3/HBoxContainer3" unique_id=1974918583 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Portrait = ExtResource("5_4i5kg")
 Title = "Level Designer"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=1733304037]
@@ -337,9 +358,10 @@ WRITERS"
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="UserCredit" parent="VBoxContainer/VBoxContainer5" unique_id=2113205580 instance=ExtResource("3_gjm8c")]
+[node name="Jonathan1" parent="VBoxContainer/VBoxContainer5" unique_id=2113205580 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("11_3x4qe")
 Name = "Jonathan Munro"
 Title = "Lead Writer"
 

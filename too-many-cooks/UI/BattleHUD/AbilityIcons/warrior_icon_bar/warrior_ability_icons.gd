@@ -3,6 +3,7 @@ extends Control
 @export var parry_icon : Texture
 @export var throw_icon : Texture
 @export var spin_icon : Texture
+@export var mpCost : Array[int]
 
 ##sets global variable to self
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 
 ##sets the current and right ability icons according to the player's current combo counter
 func set_icons(counter : int):
+	$Label.text = str(mpCost[counter]) + "mp"
 	match counter:
 		0:
 			$HBoxContainer/MagicIcons/Current/Icon.texture = parry_icon

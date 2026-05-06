@@ -7,6 +7,7 @@ var right : Texture
 @export var poison_frame : Texture
 @export var slow_frame : Texture
 @export var weaken_frame : Texture
+@export var mpCost : Array[int]
 
 func _ready():
 	PlayerStats.icon_bar = self

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci160oexc3cew"
-path="res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"
+uid="uid://k8pxgiaqu2pe"
+path="res://.godot/imported/ShainaZ.png-b3cafcfe87a6d56d37306db4aa627b90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/rat/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-4b255b6a2f567e93439d3850c9755612.ctex"]
+source_file="res://UI/Credits/Img/ShainaZ.png"
+dest_files=["res://.godot/imported/ShainaZ.png-b3cafcfe87a6d56d37306db4aa627b90.ctex"]
 
 [params]
 

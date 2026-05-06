@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ee3tvehkjupy" path="res://Scenes/Tavern/dialogue_box.tscn" id="2_djqff"]
 [ext_resource type="Theme" uid="uid://dokv5e7eu3vve" path="res://UI/Themes/TavernTheme.tres" id="2_tqgpy"]
 [ext_resource type="Script" uid="uid://cgpms88rse7y7" path="res://Scenes/Tavern/dialogue_options.gd" id="4_2xisf"]
+[ext_resource type="Script" uid="uid://c5rxwikx4twcw" path="res://Scenes/Tavern/bg_dim.gd" id="4_y7eab"]
 [ext_resource type="Texture2D" uid="uid://b8jwhwul72g1e" path="res://Scenes/Tavern/Art/TavernBackgroundDamaged.png" id="5_msftv"]
 [ext_resource type="Texture2D" uid="uid://bletwolqeoql3" path="res://Scenes/Test/ProtoArt/npcs/tavern npcs/crying_cat_face.png" id="5_vqw7w"]
 [ext_resource type="Script" uid="uid://ddbwew0tmr1dg" path="res://Scenes/Tavern/Scripts/question.gd" id="5_vrssr"]
@@ -42,7 +43,6 @@
 [ext_resource type="Texture2D" uid="uid://du40u5c3f4oix" path="res://UI/Img/IconArrowL.png" id="35_01gve"]
 [ext_resource type="Texture2D" uid="uid://cy28flxqvqj6r" path="res://UI/Img/IconArrowR.png" id="36_01gve"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="38_gevxm"]
-[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="39_01gve"]
 [ext_resource type="AudioStream" uid="uid://dmmdy18285yi2" path="res://Audio/Music/NewTavernMusic.ogg" id="39_ulbsv"]
 [ext_resource type="Script" uid="uid://cu52w2hpr1l1f" path="res://UI/BattleHUD/coin_count.gd" id="40_2wstm"]
 [ext_resource type="LabelSettings" uid="uid://c1lslw58iyn5a" path="res://UI/Themes/style_HudNum.tres" id="40_kb1dg"]
@@ -104,6 +104,14 @@ dialogue_box_ref = NodePath("../Dialogue Box")
 class_menu_ref = NodePath("../Class_Menu")
 act_select_ref = NodePath("../Act Select")
 class_select_ref = NodePath("../Class Select")
+
+[node name="ColorRect" type="ColorRect" parent="Tavern BG" unique_id=9909913]
+z_index = 3
+layout_mode = 0
+offset_right = 3460.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("4_y7eab")
 
 [node name="Counter" type="Sprite2D" parent="Tavern BG" unique_id=1418745470]
 z_index = 1
@@ -604,9 +612,10 @@ offset_right = 616.0
 offset_bottom = 1045.0
 
 [node name="Dialogue Box" parent="." unique_id=2003466752 instance=ExtResource("2_djqff")]
+z_index = 3
 
 [node name="DialogueOptions" type="Control" parent="." unique_id=1383414466 node_paths=PackedStringArray("dialogue_box_ref")]
-z_index = 2
+z_index = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = 127.0
@@ -759,16 +768,19 @@ text = "Pause"
 script = ExtResource("26_djqff")
 
 [node name="IconGold" type="Sprite2D" parent="HeadsUpUI" unique_id=653634680]
+z_index = 5
 position = Vector2(111.5, 48)
 texture = ExtResource("38_gevxm")
 
 [node name="GoldCount" type="Label" parent="HeadsUpUI" unique_id=163409653]
+z_index = 5
 layout_mode = 0
 offset_left = 135.5
 offset_top = 32.0
 offset_right = 223.5
 offset_bottom = 64.0
-theme = ExtResource("39_01gve")
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
 text = "000"
 label_settings = ExtResource("40_kb1dg")
 vertical_alignment = 1
@@ -776,17 +788,20 @@ script = ExtResource("40_2wstm")
 counter = "Gold"
 
 [node name="IconOrb" type="Sprite2D" parent="HeadsUpUI" unique_id=979618541]
+z_index = 5
 position = Vector2(111.5, 88)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("42_2wstm")
 
 [node name="OrbCount" type="Label" parent="HeadsUpUI" unique_id=553800704]
+z_index = 5
 layout_mode = 0
 offset_left = 135.5
 offset_top = 72.0
 offset_right = 223.5
 offset_bottom = 104.0
-theme = ExtResource("39_01gve")
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
 text = "000"
 label_settings = ExtResource("40_kb1dg")
 vertical_alignment = 1
@@ -833,12 +848,19 @@ stream = ExtResource("47_3lod4")
 stream = ExtResource("48_jt0a5")
 
 [connection signal="mouse_entered" from="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" to="Tavern BG/Class_NPCS/Warrior_CLASS_NPC" method="_on_mouse_entered"]
+[connection signal="button_down" from="Tavern BG/NPCs/Gramps" to="Tavern BG/ColorRect" method="_on_gramps_button_down"]
 [connection signal="pressed" from="Tavern BG/DebugKOButton" to="Tavern BG/DebugKOButton" method="_on_pressed"]
 [connection signal="pressed" from="Tavern BG/Exit" to="Tavern BG" method="_on_door_andy_pressed"]
 [connection signal="pressed" from="Tavern BG/Journal" to="CanvasLayer/settings" method="_on_journal_pressed"]
 [connection signal="back_pressed" from="Class_Menu" to="Tavern BG" method="_on_class_menu_back_pressed"]
+[connection signal="on_menu_left" from="Class_Menu" to="Tavern BG/ColorRect" method="_on_class_menu_on_menu_left"]
+[connection signal="on_menu_shown" from="Class_Menu" to="Tavern BG/ColorRect" method="_on_class_menu_on_menu_shown"]
 [connection signal="class_checked" from="Class Select" to="Tavern BG" method="_on_class_select_class_checked"]
 [connection signal="class_selected" from="Class Select" to="Tavern BG" method="_on_class_select_class_selected"]
+[connection signal="on_menu_left" from="Class Select" to="Tavern BG/ColorRect" method="_on_class_select_on_menu_left"]
+[connection signal="on_menu_show" from="Class Select" to="Tavern BG/ColorRect" method="_on_class_select_on_menu_show"]
+[connection signal="on_menu_left" from="Act Select" to="Tavern BG/ColorRect" method="_on_act_select_on_menu_left"]
+[connection signal="message_complete" from="Dialogue Box" to="Tavern BG/ColorRect" method="_on_dialogue_box_message_complete"]
 [connection signal="show_question" from="Dialogue Box" to="DialogueOptions" method="_on_dialogue_box_show_question"]
 [connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceA" to="DialogueOptions/PlayerChoiceA" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="DialogueOptions/PlayerChoiceB" to="DialogueOptions/PlayerChoiceB" method="_on_mouse_entered"]

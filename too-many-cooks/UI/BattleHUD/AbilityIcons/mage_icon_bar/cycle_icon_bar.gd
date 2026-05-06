@@ -3,6 +3,7 @@ extends Control
 var current : Texture
 var left : Texture
 var right : Texture
+@export var mpCost : Array[int]
 
 func _ready():
 	PlayerStats.icon_bar = self

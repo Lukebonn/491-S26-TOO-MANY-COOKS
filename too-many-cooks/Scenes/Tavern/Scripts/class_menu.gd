@@ -8,7 +8,9 @@ var gold_upgrade_price
 var orb_upgrade_price
 @onready var requires_label_ref = $Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Label
 @onready var ability_label_ref = $Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Label
+signal on_menu_shown
 signal back_pressed
+signal on_menu_left
 
 func show_menu():
 	is_showing = true
@@ -17,7 +19,7 @@ func show_menu():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,320),.5).set_trans(Tween.TRANS_CUBIC)
 	is_showing = true
-	
+	on_menu_shown.emit()
 
 func hide_menu():
 	var tween = get_tree().create_tween()
@@ -198,3 +200,8 @@ func set_top_right_button(new_button: String):
 			$Panel/Back.hide()
 			$Panel/Close.show()
 	
+
+
+func _on_close_pressed() -> void:
+	on_menu_left.emit()
+	hide_menu()
