@@ -14,7 +14,7 @@ func enter_state(enemy_node):
 	if enemy_ref.enraged:
 		print(projectile_damage)
 		for i in range(3):
-			create_custom_projectile(projectile_damage + 10, projectile_speed + 20)
+			create_custom_projectile(projectile_damage + 10, projectile_speed + 50)
 			await get_tree().create_timer(0.5).timeout
 	else:
 		create_projectile()

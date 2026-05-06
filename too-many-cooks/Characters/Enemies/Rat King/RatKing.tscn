@@ -85,6 +85,8 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="SphereMesh" id="SphereMesh_qilw0"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
 "frames": [{
@@ -242,6 +244,7 @@ rotation = 0.6904465
 loop = false
 
 [node name="TempIndicators" type="ColorRect" parent="RegularProjectileLines" unique_id=557438723]
+visible = false
 offset_left = 11.0
 offset_top = 4.0
 offset_right = 51.0
@@ -298,6 +301,7 @@ rotation = 0.5144513
 loop = false
 
 [node name="TempIndicators" type="ColorRect" parent="EnragedProjectileLines" unique_id=920465838]
+visible = false
 offset_left = 12.0
 offset_top = 2.0
 offset_right = 52.0
@@ -331,6 +335,16 @@ offset_right = 31.033848
 offset_bottom = 0.47616005
 rotation = -1.0403383
 color = Color(1, 0, 0, 0.4509804)
+
+[node name="AoEWarningZone" type="Area2D" parent="." unique_id=27596639]
+visible = false
+
+[node name="WarningZone" type="MeshInstance2D" parent="AoEWarningZone" unique_id=877065479]
+modulate = Color(1, 0, 0, 0.4509804)
+z_index = -1
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(32.036285, 32.03629)
+mesh = SubResource("SphereMesh_qilw0")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
 stream = ExtResource("2_eliu1")
@@ -384,6 +398,10 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 script = ExtResource("16_ue585")
 state_to_enter = NodePath("../JunctionState")
 area_damage = 25
+max_size = 1.5
+enrage_size_multiplier = 1.5
+existence_time = 6.0
+summon_time = 1.0
 casting_time = 1.0
 cooldown_time = 2.0
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
@@ -392,7 +410,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 script = ExtResource("14_qilw0")
 state_to_enter = NodePath("../JunctionState")
 projectile_damage = 30
-projectile_speed = 50
+projectile_speed = 75
 casting_time = 1.0
 cooldown_time = 2.0
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
@@ -426,7 +444,7 @@ one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
 script = ExtResource("19_bi8cu")
-Possibilities = [NodePath("../MultiProjectileState"), NodePath("../HomingProjectileState")]
+Possibilities = [NodePath("../MultiProjectileState"), NodePath("../HomingProjectileState"), NodePath("../AoEState")]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

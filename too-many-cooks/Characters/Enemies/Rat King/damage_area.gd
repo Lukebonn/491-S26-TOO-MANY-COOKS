@@ -3,6 +3,7 @@ extends Area2D
 @export var damage: int
 @export var max_size: float
 @export var existence_time: float
+@export var summon_time: float
 var area_size
 var expand = false
 
@@ -10,11 +11,15 @@ var expand = false
 func _ready() -> void:
 	area_size = 0
 	scale = Vector2(0, 0)
-	$CollisionZone.set_deferred("disabled", true)
-	await get_tree().create_timer(1.5).timeout
-	$CollisionZone.set_deferred("disabled", false)
+	$DamageZone.set_deferred("disabled", true)
+	await get_tree().create_timer(summon_time).timeout
+	$DamageZone.set_deferred("disabled", false)
 	expand = true
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(existence_time).timeout
+	expand = false
+	$DamageZone.set_deferred("disabled", true)
+	await get_tree().create_timer(1.5 * max_size).timeout
+	queue_free()
 
 func _process(delta: float) -> void:
 	if expand:

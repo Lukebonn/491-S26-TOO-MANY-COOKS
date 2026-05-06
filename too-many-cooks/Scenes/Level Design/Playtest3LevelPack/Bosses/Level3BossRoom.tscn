@@ -78,7 +78,7 @@ shape = SubResource("RectangleShape2D_hbjbe")
 position = Vector2(0, -168)
 
 [node name="RatKing" parent="." unique_id=1670622060 instance=ExtResource("10_hu86m")]
-position = Vector2(2, -298)
+position = Vector2(0, -400)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
