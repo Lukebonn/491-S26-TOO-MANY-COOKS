@@ -1,18 +1,23 @@
-extends Node
+extends Node2D
 
 var target
 
 var potency : float = 0.6
 
-var duration : float = 10.0
+var old_speed
 
 ##saves target's orignal speed then reduces current speed by potency
-#after duration passes, restores speed to its original value
 func _ready() -> void:
-	var old_speed = target.get_node("ChaseState").Chase_Speed
+	old_speed = target.get_node("ChaseState").Chase_Speed
 	target.get_node("ChaseState").Chase_Speed *= potency
-	
-	await get_tree().create_timer(duration).timeout
-	
+
+
+##after duration passes, restores speed to its original value and node deletes itself
+func _on_duration_timer_timeout() -> void:
 	target.get_node("ChaseState").Chase_Speed = old_speed
 	queue_free()
+
+
+##restarts duration timer
+func refresh():
+	$DurationTimer.start()

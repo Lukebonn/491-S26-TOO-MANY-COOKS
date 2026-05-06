@@ -4,6 +4,9 @@ extends Node
 #also comment the intended use for each variable
 #make sure they are typed variables too, most will be floats
 
+##global reference for the player
+var player_ref : CharacterBody2D
+
 ##temp resource to track currency for tavern upgrades, will likely be changed. collected from enemies for now
 var Gold := 0
 var Orbs : int = 0

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dspkg3fkdimo0"]
+
+[ext_resource type="Script" uid="uid://bx8x7yaraq2ey" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/damage_up.gd" id="1_6g6ou"]
+
+[node name="damage_up" type="Node2D" unique_id=295063894]
+script = ExtResource("1_6g6ou")
+
+[node name="DurationTimer" type="Timer" parent="." unique_id=387664734]
+wait_time = 12.0
+autostart = true

@@ -1,15 +1,8 @@
-extends Node
+extends Node2D
 
 var target
 
-var potency : int = int((PlayerStats.base_str + PlayerStats.passive_str)/2)
-
-var duration : float = 10.0
-
-##deletes itself after an amount of time decided by duration
-func _ready():
-	await get_tree().create_timer(duration).timeout
-	queue_free()
+var potency : int = int(PlayerStats.player_ref.strength / 2)
 
 ##reduces health by potency every second
 #intantiates damage number effect over enemy
@@ -23,3 +16,14 @@ func _on_timer_timeout() -> void:
 	
 	if(target.current_health <= 0):
 		target.change_state("DeathState")
+
+
+##deletes itself after duration expires
+func _on_duration_timer_timeout() -> void:
+	queue_free()
+
+
+##restarts duration timer
+func refresh():
+	$DurationTimer.start()
+	potency = int(PlayerStats.player_ref.strength / 2)

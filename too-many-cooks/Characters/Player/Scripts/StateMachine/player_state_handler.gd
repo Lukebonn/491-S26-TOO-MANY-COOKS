@@ -47,6 +47,8 @@ func _ready() -> void:
 	#if %UI:
 	#	print("hi")
 	
+	PlayerStats.player_ref = self
+	
 	match PlayerStats.current_class:
 		PlayerStats.classes.none:
 			equipped_class = load("res://System/Classes/blank_class.tres")

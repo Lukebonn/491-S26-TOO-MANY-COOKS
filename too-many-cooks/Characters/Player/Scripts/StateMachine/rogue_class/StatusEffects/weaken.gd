@@ -1,18 +1,23 @@
-extends Node
+extends Node2D
 
 var target
 
 var potency : float = 0.8
 
-var duration : float = 10.0
+var old_damage
 
 ##saves target's orignal damage then reduces current damage by potency
-#after duration passes, restores damage to its original value
 func _ready() -> void:
-	var old_damage = target.damage
+	old_damage = target.damage
 	target.damage *= potency
-	
-	await get_tree().create_timer(duration).timeout
-	
+
+
+##after duration passes, restores speed to its original value and node deletes itself
+func _on_duration_timer_timeout() -> void:
 	target.damage = old_damage
 	queue_free()
+
+
+##restarts duration timer
+func refresh():
+	$DurationTimer.start()

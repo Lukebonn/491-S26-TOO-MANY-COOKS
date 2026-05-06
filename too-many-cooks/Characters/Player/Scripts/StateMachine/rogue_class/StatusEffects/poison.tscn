@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dliaa0oq628ge" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/poison.gd" id="1_710si"]
 
-[node name="poison" type="Node" unique_id=1715645303]
+[node name="poison" type="Node2D" unique_id=1842274957]
 script = ExtResource("1_710si")
 
-[node name="Timer" type="Timer" parent="." unique_id=740661631]
+[node name="DurationTimer" type="Timer" parent="." unique_id=1551471096]
+wait_time = 10.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="DamageTickTimer" type="Timer" parent="." unique_id=740661631]
+autostart = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="DamageTickTimer" to="." method="_on_timer_timeout"]

@@ -2,5 +2,11 @@
 
 [ext_resource type="Script" uid="uid://utwdaaeu2iow" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/slow.gd" id="1_g5vhm"]
 
-[node name="slow" type="Node" unique_id=1454988779]
+[node name="slow" type="Node2D" unique_id=861841945]
 script = ExtResource("1_g5vhm")
+
+[node name="DurationTimer" type="Timer" parent="." unique_id=105882480]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
