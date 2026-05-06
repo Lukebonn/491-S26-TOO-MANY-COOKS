@@ -14,4 +14,6 @@ func _ready():
 	queue_free()
 
 func _on_timer_timeout() -> void:
-	target.health -= potency
+	target.health -= potency 
+	if target.health <= 0: 
+		target.change_state("death_state")
