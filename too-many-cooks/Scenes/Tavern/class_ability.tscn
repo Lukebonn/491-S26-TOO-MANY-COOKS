@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c1ykacyqu6gok"]
+
+[ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="1_8p5x3"]
+[ext_resource type="Script" uid="uid://smel37jxkdir" path="res://Scenes/Tavern/class_ability.gd" id="1_ew5rj"]
+[ext_resource type="Texture2D" uid="uid://bpbmu0my54jgq" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_attack_icon1.png" id="2_8p5x3"]
+
+[node name="ClassAbility" type="HBoxContainer" unique_id=1488657676]
+offset_right = 452.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+theme = ExtResource("1_8p5x3")
+script = ExtResource("1_ew5rj")
+
+[node name="Img" type="TextureRect" parent="." unique_id=264059834]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_8p5x3")
+
+[node name="Txt" type="Label" parent="." unique_id=155068283]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 20
+text = "Sharpen weapon's edges.n/Costs ?? Mana. Attacks now inflict Bleed."
+autowrap_mode = 2
+paragraph_separator = "n/"

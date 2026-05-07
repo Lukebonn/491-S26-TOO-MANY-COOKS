@@ -21,6 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="13_ve6l4"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="14_s6ygs"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="16_ry3e8"]
+[ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="16_ve6l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8qbi"]
+size = Vector2(32, 96)
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -30,6 +34,7 @@ tile_map_data = PackedByteArray("AAADAAIAAgAJAAcAAAADAAEAAgAJAAcAAAADAAAAAgAJAAc
 tile_set = ExtResource("1_07r8g")
 
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("2_wyeoy")]
+position = Vector2(592, 96)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_3isxj")]
 zoom = Vector2(3, 3)
@@ -163,12 +168,19 @@ SpawnRadius = 64.0
 position = Vector2(832, 96)
 RandomLocation = true
 Enemies = Array[PackedScene]([ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_ry3e8"), ExtResource("8_0baqv"), ExtResource("8_0baqv"), ExtResource("9_gamat"), ExtResource("13_ve6l4")])
-CollisionRadius = 128.0
+CollisionRadius = 0.0
 LocationType = 2
 RadiusRangeMax = 96.0
+SpawnMethod = 1
 SpawnInterval = 3.0
 SpawnLimit = 6
 DefeatCount = 16
+
+[node name="ObjSpawnerCol" parent="Objects/Room3/ObjEnemySpawner" unique_id=719003453 instance=ExtResource("16_ve6l4")]
+position = Vector2(-144, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Room3/ObjEnemySpawner/ObjSpawnerCol" unique_id=1898810727]
+shape = SubResource("RectangleShape2D_e8qbi")
 
 [node name="Room4" type="Node" parent="Objects" unique_id=672918040]
 

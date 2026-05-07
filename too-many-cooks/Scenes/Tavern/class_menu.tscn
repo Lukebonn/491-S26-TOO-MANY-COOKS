@@ -1,8 +1,28 @@
 [gd_scene format=3 uid="uid://co1wdkv55yg55"]
 
-[ext_resource type="Script" uid="uid://cf1ldi44kyffq" path="res://Scenes/Tavern/Scripts/class_menu.gd" id="1_bjonv"]
+[ext_resource type="Script" uid="uid://df7gatko7ljlv" path="res://Scenes/Tavern/Scripts/class_menu_NEW.gd" id="2_6abwf"]
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tj6yy"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_6abwf"]
+[ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="4_tj6yy"]
+[ext_resource type="Texture2D" uid="uid://doohamv7fb3xp" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_attack_icon1.png" id="5_6abwf"]
+[ext_resource type="Script" uid="uid://c6575qun6xu5v" path="res://Scenes/Tavern/ability_info.gd" id="5_jn838"]
+[ext_resource type="Texture2D" uid="uid://88ejjeawn2g7" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_dash_icon1.png" id="6_mx16r"]
+[ext_resource type="Texture2D" uid="uid://contc5ksb0p6t" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_icicle_icon1.png" id="7_loq30"]
+[ext_resource type="Texture2D" uid="uid://bpbmu0my54jgq" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_attack_icon1.png" id="7_w40dp"]
+[ext_resource type="PackedScene" uid="uid://c1ykacyqu6gok" path="res://Scenes/Tavern/class_ability.tscn" id="8_loq30"]
+[ext_resource type="Texture2D" uid="uid://o4uef2rfmmn8" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_attack_icon1.png" id="9_nmtmf"]
+[ext_resource type="Texture2D" uid="uid://bhro676nml1g7" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_dash_icon1.png" id="10_oi3g4"]
+[ext_resource type="Texture2D" uid="uid://c8wqee0b2ses3" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_dash_icon1.png" id="12_my0l4"]
+[ext_resource type="Texture2D" uid="uid://dsp7x41sphwxh" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_parry_icon1.png" id="13_raem7"]
+[ext_resource type="Texture2D" uid="uid://llp51gt7celo" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_poison_icon1.png" id="15_iemub"]
+[ext_resource type="Texture2D" uid="uid://c8fsf4h5iuitn" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_spin_icon1.png" id="16_xk0np"]
+[ext_resource type="Texture2D" uid="uid://dbwiclkkiu8r3" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_fire_icon1.png" id="17_ny3nu"]
+[ext_resource type="Texture2D" uid="uid://dnacr5ecdm4eb" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_slow_icon1.png" id="18_e826o"]
+[ext_resource type="Texture2D" uid="uid://c8xfn6bmcd5lk" path="res://UI/BattleHUD/AbilityIcons/warrior_icon_bar/warrior_throw_icon1.png" id="19_71xqo"]
+[ext_resource type="Texture2D" uid="uid://bwy3v8sspcaie" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_vortex_icon1.png" id="20_ol62y"]
+[ext_resource type="Texture2D" uid="uid://b6uw8krd0dhom" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_weaken_icon1.png" id="21_1sa75"]
+[ext_resource type="Texture2D" uid="uid://2id3uio6f7en" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/Weaken_Frame1.png" id="22_iemub"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="23_xk0np"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn838"]
 texture = ExtResource("3_tj6yy")
@@ -22,7 +42,7 @@ offset_bottom = -284.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_6abwf")
-script = ExtResource("1_bjonv")
+script = ExtResource("2_6abwf")
 
 [node name="Container" type="Container" parent="." unique_id=14893344]
 layout_mode = 0
@@ -47,12 +67,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -129.0
-offset_top = 23.0
-offset_right = -30.0
-offset_bottom = 69.0
+offset_left = -104.0
+offset_top = 18.0
+offset_right = -32.0
+offset_bottom = 66.0
 grow_horizontal = 0
 theme = ExtResource("4_6abwf")
+theme_override_font_sizes/font_size = 24
 text = "Close"
 
 [node name="Back" type="Button" parent="Panel" unique_id=94567557]
@@ -62,20 +83,27 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -66.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 47.0
+offset_left = -104.0
+offset_top = 18.0
+offset_right = -32.0
+offset_bottom = 66.0
 grow_horizontal = 0
 theme = ExtResource("4_6abwf")
+theme_override_font_sizes/font_size = 24
 text = "Back
 "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
-layout_mode = 0
-offset_top = 19.0
-offset_right = 800.0
-offset_bottom = 500.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("4_6abwf")
 
@@ -85,14 +113,10 @@ mouse_filter = 2
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 48
-text = "The "
+text = "THE WARRIOR"
 fit_content = true
 horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1327689756]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1269665270]
 layout_mode = 2
@@ -101,394 +125,401 @@ theme = ExtResource("4_6abwf")
 alignment = 1
 
 [node name="Stats" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1944775991]
-custom_minimum_size = Vector2(320, 200)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
 theme = ExtResource("4_6abwf")
 
-[node name="ActiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1322756572]
+[node name="ClassLv" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=2089519543]
 layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "What your stats will be modified by when this class is chosen"
+mouse_filter = 0
+theme = ExtResource("4_6abwf")
+theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level 5"
+
+[node name="Numbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1921485031]
+layout_mode = 2
+
+[node name="StatName" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers" unique_id=887869302]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("4_6abwf")
+
+[node name="ActiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=1322756572]
+layout_mode = 2
+size_flags_horizontal = 0
 tooltip_text = "What your stats will be modified by when this class is chosen"
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/font_size = 24
-text = "ACTIVE STATS"
-horizontal_alignment = 1
+text = "STATS"
 
-[node name="ActiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1226013473]
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=970081200]
-custom_minimum_size = Vector2(96, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "STR"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=439849546]
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=439849546]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "HP"
+theme_override_font_sizes/normal_font_size = 24
+text = "Health"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=672175082]
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=556804055]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("4_6abwf")
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Mana"
+fit_content = true
+
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=970081200]
+custom_minimum_size = Vector2(96, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("4_6abwf")
+theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Strength"
+fit_content = true
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=672175082]
 visible = false
 custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "DEF"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=390507696]
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=390507696]
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "SPD"
+theme_override_font_sizes/normal_font_size = 24
+text = "Speed"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsLabels" unique_id=556804055]
-custom_minimum_size = Vector2(60, 30)
+[node name="ClassNum" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers" unique_id=427117630]
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "MP"
-fit_content = true
-horizontal_alignment = 1
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
-[node name="ActiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1484648764]
-custom_minimum_size = Vector2(200, 30)
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/ClassNum" unique_id=2005115973]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=128738324]
-custom_minimum_size = Vector2(96, 30)
-layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=2005115973]
-custom_minimum_size = Vector2(60, 30)
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/ClassNum" unique_id=267544287]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=1250182647]
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/ClassNum" unique_id=128738324]
+custom_minimum_size = Vector2(64, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "999"
+fit_content = true
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/ClassNum" unique_id=1250182647]
 visible = false
-custom_minimum_size = Vector2(96, 30)
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=1771233196]
-custom_minimum_size = Vector2(70, 30)
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/ClassNum" unique_id=1771233196]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/ActiveStatsNumbers" unique_id=267544287]
-custom_minimum_size = Vector2(60, 30)
+[node name="PassiveNum" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers" unique_id=1774820614]
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "0"
-fit_content = true
-horizontal_alignment = 1
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
-[node name="PassiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1778244130]
+[node name="PassiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1778244130]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 tooltip_text = "What your stats will be modified by even when this class is not chosen"
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/font_size = 24
-text = "PASSIVE STATS"
+text = "+ PASSIVE"
 horizontal_alignment = 1
 
-[node name="PassiveStatsLabels" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=444837674]
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=844642486]
-custom_minimum_size = Vector2(96, 30)
+[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1791383939]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "STR"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=1326767802]
-custom_minimum_size = Vector2(60, 30)
+[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1075096590]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "HP"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=2132782999]
+[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1254821010]
+custom_minimum_size = Vector2(64, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("4_6abwf")
+theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "999"
+fit_content = true
+
+[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=385489143]
 visible = false
-custom_minimum_size = Vector2(96, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "DEF"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=1945910566]
-custom_minimum_size = Vector2(70, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "SPD"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsLabels" unique_id=586825020]
-custom_minimum_size = Vector2(60, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "MP"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="PassiveStatsNumbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1230890971]
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1254821010]
-custom_minimum_size = Vector2(96, 30)
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1791383939]
-custom_minimum_size = Vector2(60, 30)
+[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=246019162]
+custom_minimum_size = Vector2(64, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/normal_font_size = 32
-text = "0"
+text = "999"
 fit_content = true
-horizontal_alignment = 1
 
-[node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=385489143]
-visible = false
-custom_minimum_size = Vector2(96, 30)
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=199862697]
+z_index = 1
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_6abwf")
+theme_override_font_sizes/font_size = 32
+text = "  Upgrade Class"
+alignment = 0
+
+[node name="IconGold" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" unique_id=1621783930]
+z_index = 5
+position = Vector2(278, 32)
+texture = ExtResource("4_tj6yy")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" unique_id=62058358]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = -40.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_6abwf")
+theme_override_colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
+theme_override_font_sizes/font_size = 24
+text = "999"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=129194331]
+z_index = 1
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme = ExtResource("4_6abwf")
+theme_override_font_sizes/font_size = 32
+text = "Have a Chat"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1059602539]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="Abilities" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1517445205]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "0"
-fit_content = true
-horizontal_alignment = 1
 
-[node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=246019162]
-custom_minimum_size = Vector2(70, 30)
+[node name="AbilityHeader" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1641235346]
 layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "0"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/PassiveStatsNumbers" unique_id=1075096590]
-custom_minimum_size = Vector2(60, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "0"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Other" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=597595398]
-layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "What your stats will be modified by when this class is chosen"
+mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-theme_override_font_sizes/font_size = 24
-text = "ACTIONS"
+theme_override_font_sizes/font_size = 32
+text = "ABILITIES"
 horizontal_alignment = 1
 
-[node name="AttackDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1361897609]
+[node name="AbilityInfo" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1863382326]
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Attack becomes a [color=dark_red]"
-fit_content = true
+script = ExtResource("5_jn838")
 
-[node name="DashDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=933498308]
+[node name="Atk" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=517528394 instance=ExtResource("8_loq30")]
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Dash becomes a [color=sienna]"
-fit_content = true
+size_flags_horizontal = 3
+LevelUp = 1
+Text = Array[String](["Short range sword swing.n/Restores Mana on hit.n/Changes available Spell with combo attack.", "Short range staff bonk.n/Restores Mana on hit.", "Long range dagger throw.n/Attack enemies from a distance."])
+UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Img = Array[Texture]([ExtResource("7_w40dp"), ExtResource("5_6abwf"), ExtResource("9_nmtmf")])
 
-[node name="MagicDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=88970703]
+[node name="Dash" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=1670919231 instance=ExtResource("8_loq30")]
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "Magic becomes a [color=midnight_blue]"
-fit_content = true
+size_flags_horizontal = 3
+ID = 1
+LevelUp = 2
+Text = Array[String](["Up to 3 sword dashes.n/Can damage nearby enemies.", "Short range teleport. Costs 10 Mana.n/Has no cooldown, but need Mana to use.", "Up to 5 short dashes.n/Executes the fastest of all dashes."])
+UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Img = Array[Texture]([ExtResource("10_oi3g4"), ExtResource("6_mx16r"), ExtResource("12_my0l4")])
 
-[node name="TrueOtherDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=891058085]
+[node name="Spell1" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=931387822 instance=ExtResource("8_loq30")]
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_colors/default_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-fit_content = true
+size_flags_horizontal = 3
+ID = 2
+LevelUp = 3
+Text = Array[String](["Enter parry stance.n/Incoming damage is reflected to attacker.n/Lasts a very short moment.", "Barrage of icicles. Costs 15 Mana.n/Good against single targets.", "Imbue weapon with sickly poison.n/Costs ?? Mana. Attacks now inflict Poison."])
+UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Img = Array[Texture]([ExtResource("13_raem7"), ExtResource("7_loq30"), ExtResource("15_iemub")])
 
-[node name="Buttons" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1517445205]
-custom_minimum_size = Vector2(200, 200)
+[node name="Spell2" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=1488657676 instance=ExtResource("8_loq30")]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("4_6abwf")
-alignment = 2
+size_flags_horizontal = 3
+ID = 3
+LevelUp = 4
+Text = Array[String](["Throw a magic sword.n/Damages enemies from a distance.", "Aura of hot flames. Costs 20 Mana on use.n/Damages nearby enemies.n/Hold the button to maintain; drains Mana.", "Imbue weapon with murkiness.n/Costs ?? Mana. Attacks now inflict Slow."])
+UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Img = Array[Texture]([ExtResource("19_71xqo"), ExtResource("17_ny3nu"), ExtResource("18_e826o")])
 
-[node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=129194331]
+[node name="Spell3" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=381227772 instance=ExtResource("8_loq30")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+ID = 4
+LevelUp = 5
+Text = Array[String](["Spinning sword slash. Costs ?? Mana.n/Damages nearby enemies repeatedly.", "Swirling gravity vortex. Costs ?? Mana.n/Vortex spawns at mouse; sucks in enemies.", "Sharpen weapon's edges.n/Costs ?? Mana. Attacks now inflict Bleed."])
+UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Img = Array[Texture]([ExtResource("16_xk0np"), ExtResource("20_ol62y"), ExtResource("21_1sa75")])
+
+[node name="Spell4" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=943222647 instance=ExtResource("8_loq30")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+ID = 5
+LevelUp = 5
+Text = Array[String](["N/A", "THIS SHOULDN'T BE SEEN!", "THIS SHOULDN'T BE SEEN!"])
+UpgradedText = Array[String](["N/A", "THIS SHOULDN'T BE SEEN!", "THIS SHOULDN'T BE SEEN!"])
+Img = Array[Texture]([ExtResource("16_xk0np"), ExtResource("22_iemub"), ExtResource("22_iemub")])
+
+[node name="SpellSwitch" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=2034054115]
+layout_mode = 2
+
+[node name="SpellBack" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=75168752]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Previous Spell"
+
+[node name="SpellNext" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=138088990]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Next Spell"
+
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1756229424]
 z_index = 1
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 48
-text = "Talk"
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1463405284]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1417052867]
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-alignment = 1
-
-[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=199862697]
-z_index = 1
-custom_minimum_size = Vector2(150, 100)
-layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 32
-text = "Level Up
-Class"
+text = "  Upgrade Ability"
+alignment = 0
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer" unique_id=62058358]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade" unique_id=1294981339]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = -44.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
-autowrap_mode = 2
+text = "999"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=1862622720]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Buttons" unique_id=223294735]
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-alignment = 1
-
-[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2" unique_id=1756229424]
-z_index = 1
-custom_minimum_size = Vector2(150, 100)
-layout_mode = 2
-size_flags_horizontal = 2
-theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 32
-text = "Upgrade
-Ability"
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2" unique_id=123855498]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme = ExtResource("4_6abwf")
-theme_override_colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
-autowrap_mode = 2
+[node name="IconGold" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade" unique_id=462908928]
+z_index = 5
+position = Vector2(442, 32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_xk0np")
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/Talk" to="." method="_on_talk_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Upgrade" to="." method="_on_upgrade_ability_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Stats/Talk" to="." method="_on_talk_pressed"]
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch/SpellBack" to="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" method="_on_spell_back_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch/SpellNext" to="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" method="_on_spell_next_button_down"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade" to="." method="_on_upgrade_ability_pressed"]

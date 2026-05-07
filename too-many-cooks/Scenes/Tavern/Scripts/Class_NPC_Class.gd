@@ -90,7 +90,7 @@ func _on_clicked():
 		Class_Menu_Ref.set_title(Class_Name, Class_Level, Class_Ability_Level)
 		Class_Menu_Ref.set_active_labels(new_str-new_passive_str,new_hp-new_passive_hp,new_def-new_passive_def,new_spd-new_passive_spd,new_mana-new_passive_mana)
 		Class_Menu_Ref.set_passive_labels(new_passive_str,new_passive_hp,new_passive_def,new_passive_spd,new_passive_mana)
-		Class_Menu_Ref.set_other_descriptions(Class_Attack_Desc,Class_Dash_Desc,Class_Magic_Desc,Class_Other_Desc)
+		Class_Menu_Ref.set_other_descriptions()
 		Class_Menu_Ref.show_menu()
 
 func change_class(new_class: String):
@@ -115,7 +115,7 @@ func update_sheet():
 	Class_Menu_Ref.set_title(Class_Name, Class_Level, Class_Ability_Level)
 	Class_Menu_Ref.set_active_labels(new_str,new_hp,new_def,new_spd,new_mana)
 	Class_Menu_Ref.set_passive_labels(new_passive_str,new_passive_hp,new_passive_def,new_passive_spd,new_passive_mana)
-	Class_Menu_Ref.set_other_descriptions(Class_Attack_Desc,Class_Dash_Desc,Class_Magic_Desc,Class_Other_Desc)
+	Class_Menu_Ref.set_other_descriptions()
 	
 	
 func update_new_stats():
