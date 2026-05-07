@@ -595,7 +595,6 @@ text = "Next Level
 Back to Tavern"
 
 [node name="Tavern Warning" type="Node2D" parent="." unique_id=1215423038]
-visible = false
 z_index = 10
 position = Vector2(0, 520)
 script = ExtResource("26_jf3kf")
