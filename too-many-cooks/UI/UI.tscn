@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://ctbfnwj1w3mf7" path="res://UI/Img/DPixelSkull.png" id="25_2jerp"]
 [ext_resource type="Script" uid="uid://i8ev7hiievp6" path="res://UI/tavern_warning_prompt.gd" id="26_jf3kf"]
 [ext_resource type="Texture2D" uid="uid://cai6aibrd4bh2" path="res://UI/Img/are you sure.png" id="26_nxoi0"]
-[ext_resource type="LabelSettings" uid="uid://bgqhacfrdeyky" path="res://UI/Themes/style_DmgNum.tres" id="27_gokaw"]
 [ext_resource type="Script" uid="uid://cojg5pf8ewqcj" path="res://UI/damage_values.gd" id="27_t0bwl"]
 [ext_resource type="Script" uid="uid://bsmsu72tp0eec" path="res://UI/time_machine.gd" id="29_rbg2s"]
 [ext_resource type="Texture2D" uid="uid://bdvnl6mbuu542" path="res://UI/Img/objective_frame.png" id="30_tvo8u"]
@@ -427,44 +426,44 @@ offset_right = 696.0
 offset_bottom = 272.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Time:"
+text = "Time"
 vertical_alignment = 1
 
 [node name="Timer" type="Label" parent="LevelReportScreen/Level Time" unique_id=1965921662]
 z_index = 2
 layout_mode = 0
-offset_left = 88.0
-offset_right = 249.0
+offset_left = 81.0
+offset_right = 242.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 
 [node name="Damage Taken" type="Label" parent="LevelReportScreen" unique_id=605153714]
 z_index = 2
 offset_left = 600.0
-offset_top = 272.0
+offset_top = 261.0
 offset_right = 824.0
-offset_bottom = 320.0
+offset_bottom = 309.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Damage Taken:"
+text = "Damage Taken"
 vertical_alignment = 1
 
 [node name="Player Damage" type="Label" parent="LevelReportScreen/Damage Taken" unique_id=476712954]
 z_index = 2
 layout_mode = 0
-offset_left = 224.0
-offset_right = 385.0
+offset_left = 219.0
+offset_right = 380.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 script = ExtResource("27_t0bwl")
 damage_type = "Player"
@@ -472,25 +471,25 @@ damage_type = "Player"
 [node name="Damage Dealt" type="Label" parent="LevelReportScreen" unique_id=268329472]
 z_index = 2
 offset_left = 600.0
-offset_top = 320.0
+offset_top = 301.0
 offset_right = 824.0
-offset_bottom = 368.0
+offset_bottom = 349.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Damage Dealt:"
+text = "Damage Dealt"
 vertical_alignment = 1
 
 [node name="Enemy Damage" type="Label" parent="LevelReportScreen/Damage Dealt" unique_id=1123132670]
 z_index = 2
 layout_mode = 0
-offset_left = 224.0
-offset_right = 385.0
+offset_left = 211.0
+offset_right = 372.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 script = ExtResource("27_t0bwl")
 damage_type = "Enemy"
@@ -596,6 +595,7 @@ text = "Next Level
 Back to Tavern"
 
 [node name="Tavern Warning" type="Node2D" parent="." unique_id=1215423038]
+visible = false
 z_index = 10
 position = Vector2(0, 520)
 script = ExtResource("26_jf3kf")

@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="." unique_id=1391810775]
-z_index = 2
+z_index = 1
 layout_mode = 0
 offset_left = 240.0
 offset_top = -24.0
