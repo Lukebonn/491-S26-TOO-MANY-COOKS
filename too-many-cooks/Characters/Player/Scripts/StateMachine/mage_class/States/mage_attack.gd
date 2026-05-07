@@ -7,7 +7,7 @@ var power : float = 0.5
 var cooldown : float = 0.2
 var on_cooldown : bool = false
 
-var mana_gain : float = 30
+var mana_gain : float = 0.3
 
 var current_spell : String = "ice spears"
 
@@ -54,7 +54,7 @@ func start_cooldown():
 func on_attack_hit(_body):
 	player.play_sound(load("res://Audio/Sounds/Player/Mage/mage staff smack.mp3"))
 	
-	player.mana += mana_gain
+	player.mana += PlayerStats.MaxMana * mana_gain
 
 
 ##cycles to the next spell

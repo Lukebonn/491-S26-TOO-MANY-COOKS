@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bttld8majq1dl"]
 
 [ext_resource type="Script" uid="uid://dvc3h7jylbo1d" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/vortex.gd" id="1_gmxgs"]
-[ext_resource type="Texture2D" uid="uid://ic10jpaxlsf1" path="res://Characters/Player/Sprites/Spells/Vortex_big1.png" id="2_54e3b"]
 [ext_resource type="AudioStream" uid="uid://c28qkrppjsfad" path="res://Audio/Sounds/Player/Mage/Vortex.wav" id="3_54e3b"]
-[ext_resource type="PackedScene" uid="uid://cm4vpecxkrxvn" path="res://Characters/Player/Particles/Spells/vortex_particles.tscn" id="4_ycb7n"]
+[ext_resource type="Texture2D" uid="uid://dwixr1n5tyya2" path="res://Characters/Player/Sprites/Spells/vortexS-1.png" id="3_pqvoq"]
+[ext_resource type="Texture2D" uid="uid://dlyx7quijldog" path="res://Characters/Player/Sprites/Spells/vortexS-2.png" id="4_rl2fw"]
+[ext_resource type="Texture2D" uid="uid://dyg7b5nlgto28" path="res://Characters/Player/Sprites/Spells/vortexS-3.png" id="5_1nmvj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wnfhi"]
 radius = 32.01562
@@ -11,15 +12,28 @@ radius = 32.01562
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmxgs"]
 radius = 33.01515
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_seu1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pqvoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rl2fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1nmvj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
 [node name="Vortex" type="StaticBody2D" unique_id=583506329]
 z_index = -1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_gmxgs")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1469738606]
-modulate = Color(1, 1, 1, 0.9411765)
-texture = ExtResource("2_54e3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=588539116]
 shape = SubResource("CircleShape2D_wnfhi")
@@ -40,7 +54,12 @@ autostart = true
 stream = ExtResource("3_54e3b")
 autoplay = true
 
-[node name="VortexParticles" parent="." unique_id=1647364824 instance=ExtResource("4_ycb7n")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1783285841]
+position = Vector2(1, -2)
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_seu1j")
+autoplay = "default"
+frame_progress = 0.004757882
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

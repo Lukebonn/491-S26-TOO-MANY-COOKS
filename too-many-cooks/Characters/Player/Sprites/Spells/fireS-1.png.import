@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://byiskpkwlt0g7"
+path="res://.godot/imported/fireS-1.png-becca9b1a5bc57a5e5d691c21ec8a9e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Player/Sprites/Spells/fireS-1.png"
+dest_files=["res://.godot/imported/fireS-1.png-becca9b1a5bc57a5e5d691c21ec8a9e9.ctex"]
 
 [params]
 

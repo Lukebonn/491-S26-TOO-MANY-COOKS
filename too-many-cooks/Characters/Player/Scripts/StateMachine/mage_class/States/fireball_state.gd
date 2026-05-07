@@ -33,3 +33,8 @@ func input_handler(delta : float) -> void:
 ##blast is deleted upon leaving the state
 func exit_state():
 	this_blast.queue_free()
+
+##player should lose a certain amount of health
+func hit_response(source):
+	$"../hurt_state".damage_hitbox = source
+	player.change_state("hurt_state")

@@ -2,10 +2,29 @@
 
 [ext_resource type="AudioStream" uid="uid://cssqg27bfaiag" path="res://Audio/Sounds/Player/Mage/fire ring.wav" id="1_6iwbg"]
 [ext_resource type="Script" uid="uid://dimtn2kkpv8t2" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/fire_blast.gd" id="1_d08n7"]
-[ext_resource type="PackedScene" uid="uid://7685wicrpig8" path="res://Characters/Player/Particles/Spells/fireBlast_particles.tscn" id="3_q3vsx"]
+[ext_resource type="Texture2D" uid="uid://byiskpkwlt0g7" path="res://Characters/Player/Sprites/Spells/fireS-1.png" id="3_dln5i"]
+[ext_resource type="Texture2D" uid="uid://b7rt6eqsonx1r" path="res://Characters/Player/Sprites/Spells/fireS-2.png" id="4_4ytu2"]
+[ext_resource type="Texture2D" uid="uid://o4flgqkht708" path="res://Characters/Player/Sprites/Spells/fireS-3.png" id="5_7711u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_es7ai"]
 radius = 40.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8n4x3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dln5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ytu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7711u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="FireBlast" type="Area2D" unique_id=864007785]
 collision_layer = 4
@@ -33,6 +52,10 @@ autoplay = true
 wait_time = 0.5
 autostart = true
 
-[node name="FireBlastParticles" parent="." unique_id=339703278 instance=ExtResource("3_q3vsx")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=116631871]
+scale = Vector2(2.8, 2.8)
+sprite_frames = SubResource("SpriteFrames_8n4x3")
+autoplay = "default"
+frame_progress = 0.60324454
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://dwixr1n5tyya2"
+path="res://.godot/imported/vortexS-1.png-874a4da8bb1fd6d88f55f92750e6a285.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://Characters/Player/Sprites/Spells/vortexS-1.png"
+dest_files=["res://.godot/imported/vortexS-1.png-874a4da8bb1fd6d88f55f92750e6a285.ctex"]
 
 [params]
 

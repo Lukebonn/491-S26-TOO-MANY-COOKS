@@ -13,17 +13,17 @@ func enter_state(player_node):
 		
 		match player.get_node("attack_state").combo_counter:
 			0:
-				if(player.mana >= 10):
+				if(player.mana >= 20):
 					await parry()
 				else:
 					get_parent().notEnoughMana.emit()
 			1:
-				if(player.mana >= 15):
+				if(player.mana >= 35):
 					sword_projectile()
 				else:
 					get_parent().notEnoughMana.emit()
 			2:
-				if(player.mana >= 25):
+				if(player.mana >= 55):
 					spin_attack()
 				else:
 					get_parent().notEnoughMana.emit()
@@ -40,10 +40,10 @@ func parry():
 	
 	player.velocity = Vector2.ZERO
 	
-	player.mana -= 10
+	player.mana -= 20
 	player.modulate = Color(0.674, 1.0, 0.901, 1.0)
 	
-	await get_tree().create_timer(0.25).timeout
+	await get_tree().create_timer(0.4).timeout
 	
 	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	parrying = false
@@ -54,7 +54,7 @@ func sword_projectile():
 	attack.global_position = player.global_position + player.local_mouse_pos.normalized() * 15
 	attack.velocity = player.local_mouse_pos.normalized() * 2
 	
-	player.mana -= 15
+	player.mana -= 35
 	
 	await get_tree().create_timer(1).timeout
 	
@@ -68,11 +68,14 @@ func spin_attack():
 	
 	#player.velocity = Vector2.ZERO
 	
-	player.mana -= 25
+	player.mana -= 55
 	
 	#player.set_damage(1.8)
 	
-	await get_tree().create_timer(0.5).timeout
+	if(PlayerStats.MeleeClassAbilityLevel >= 3):
+		await get_tree().create_timer(1.0).timeout
+	else:
+		await get_tree().create_timer(0.5).timeout
 	
 	attack.queue_free()
 	
