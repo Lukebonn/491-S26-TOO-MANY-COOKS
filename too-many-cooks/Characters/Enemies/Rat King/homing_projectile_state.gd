@@ -31,10 +31,13 @@ func enter_state(enemy_node):
 	exit_state()
 
 func exit_state():
-	if state_to_enter:
-		enemy_ref.change_state(str(state_to_enter))
+	if enemy_ref.playerNear:
+		enemy_ref.change_state("ShockwaveState")
 	else:
-		enemy_ref.change_state("IdleState")
+		if state_to_enter:
+			enemy_ref.change_state(str(state_to_enter))
+		else:
+			enemy_ref.change_state("IdleState")
 
 func hit_response(source):
 	pass

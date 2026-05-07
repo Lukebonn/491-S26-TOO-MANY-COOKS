@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c4cpnpe7akucx" path="res://Characters/Enemies/Rat King/rat_king.gd" id="1_qilw0"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_eliu1"]
+[ext_resource type="Script" uid="uid://d1wlbd3lg82sn" path="res://Characters/Enemies/Rat King/shockwave_hitbox.gd" id="2_ue585"]
 [ext_resource type="Texture2D" uid="uid://c6bv1ipibbi7n" path="res://Characters/Enemies/Rat King/Sprites/rk1.png" id="3_3pwg4"]
 [ext_resource type="Texture2D" uid="uid://dm7lhlh5yamgm" path="res://Characters/Enemies/Rat King/Sprites/rk2.png" id="4_qilw0"]
 [ext_resource type="Texture2D" uid="uid://bb3rpapxtg1dr" path="res://Characters/Enemies/Rat King/Sprites/rk3.png" id="5_nqo7f"]
 [ext_resource type="Texture2D" uid="uid://bdgst806axdrm" path="res://Characters/Enemies/Rat King/Sprites/rk4.png" id="6_ue585"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="10_b3l8j"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="11_hw1kh"]
+[ext_resource type="Script" uid="uid://blqi6c3s0gpi5" path="res://Characters/Enemies/Rat King/shockwave_state.gd" id="12_nqo7f"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="12_tchgu"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="13_1vrnj"]
 [ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="14_f3eq6"]
@@ -38,10 +40,15 @@ radius = 320.0
 size = Vector2(25, 42)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
-radius = 24.0
+radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 size = Vector2(25, 42)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue585"]
+radius = 40.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_nqo7f"]
 
 [sub_resource type="Curve2D" id="Curve2D_1tb61"]
 _data = {
@@ -208,18 +215,38 @@ shape = SubResource("RectangleShape2D_f5e7n")
 debug_color = Color(0.10499998, 0.7, 0, 0.41960785)
 
 [node name="Near Zone" type="Area2D" parent="." unique_id=2057668559]
-visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Near Zone" unique_id=832811309]
+position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_sqkpv")
 debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
 position = Vector2(-0.5, -12)
 shape = SubResource("RectangleShape2D_bhto8")
+
+[node name="ShockwaveHitbox" type="Area2D" parent="." unique_id=856074773]
+process_mode = 4
+visible = false
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("2_ue585")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShockwaveHitbox" unique_id=712836861]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_ue585")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="ShockwaveWarning" type="MeshInstance2D" parent="." unique_id=438183927]
+visible = false
+modulate = Color(1, 0, 0, 0.3529412)
+z_index = -1
+position = Vector2(9.536743e-07, -11.99999)
+scale = Vector2(80.09071, 80.09072)
+mesh = SubResource("SphereMesh_nqo7f")
 
 [node name="RegularProjectileLines" type="Node2D" parent="." unique_id=655689982]
 
@@ -384,6 +411,16 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="SlashState" type="Node" parent="." unique_id=1572581232 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("14_f3eq6")
 state_to_enter = NodePath("../JunctionState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ShockwaveState" type="Node" parent="." unique_id=170142546 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("12_nqo7f")
+state_to_enter = NodePath("../JunctionState")
+damage = 40
+enraged_damage = 60
+casting_time = 1.0
+persistence_time = 0.5
+cooldown_time = 0.5
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="MultiProjectileState" type="Node" parent="." unique_id=875655972 node_paths=PackedStringArray("state_to_enter")]
