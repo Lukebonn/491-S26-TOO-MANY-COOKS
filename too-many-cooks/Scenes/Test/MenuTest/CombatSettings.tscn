@@ -452,6 +452,7 @@ stream = ExtResource("10_1631t")
 volume_db = -8.0
 bus = &"Music"
 
+[connection signal="rich" from="." to="Pause UI" method="_on_combat_settings_rich"]
 [connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
