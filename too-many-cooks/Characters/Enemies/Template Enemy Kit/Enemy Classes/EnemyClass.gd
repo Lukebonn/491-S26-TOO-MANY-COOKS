@@ -47,6 +47,7 @@ func take_damage(inc_damage: int):
 	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
 	damage_number.Number = inc_damage
 	add_child(damage_number)
+	$Sight/CollisionShape2D.scale = Vector2(10,10)
 	current_state.hit_response(1)
 
 #collision signals

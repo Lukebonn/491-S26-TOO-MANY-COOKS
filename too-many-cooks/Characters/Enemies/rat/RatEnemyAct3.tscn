@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de0ddg5unbt3r"]
 
-[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/rat/rat_enemy.gd" id="1_s12cn"]
+[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_s12cn"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_5v6fr"]
 [ext_resource type="Texture2D" uid="uid://ce5adp5c58cb5" path="res://Characters/Enemies/Raven/ChaseAnim1.png" id="3_xru6w"]
 [ext_resource type="Texture2D" uid="uid://0djult22yhrk" path="res://Characters/Enemies/Raven/ChaseAnim2.png" id="4_rutbr"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="14_1tvkj"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="15_38g86"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="16_4kgmr"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="17_d2p21"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="17_d2p21"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="18_qdwyc"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="19_201px"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="20_jdlny"]
@@ -123,7 +123,7 @@ modulate = Color(1, 0, 0, 1)
 visibility_layer = 2
 position = Vector2(0.25, -2.75)
 sprite_frames = SubResource("SpriteFrames_g7d88")
-animation = &"chase"
+animation = &"idle"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("10_qwaxi")]
 offset_top = -16.5
@@ -160,7 +160,7 @@ script = ExtResource("16_4kgmr")
 Knockback_Strength = 50
 Hit_Stun = 0.3
 Hit_Sound = NodePath("../TakeDamage")
-animation_name = "NONE"
+animation_name = "hit"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="Timer" type="Timer" parent="HitState" unique_id=1954240173]

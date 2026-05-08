@@ -1,78 +1,28 @@
 [gd_scene format=3 uid="uid://7685wicrpig8"]
 
-[sub_resource type="Curve" id="Curve_ui5r2"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+[ext_resource type="Texture2D" uid="uid://bdjye1prueg2i" path="res://Characters/Player/Particles/Spells/fireblastsprite/fireS-1.png" id="1_6dt3u"]
+[ext_resource type="Texture2D" uid="uid://k6j8a48f7p0m" path="res://Characters/Player/Particles/Spells/fireblastsprite/fireS-2.png" id="2_fqya3"]
+[ext_resource type="Texture2D" uid="uid://be3lx1egwvf6e" path="res://Characters/Player/Particles/Spells/fireblastsprite/fireS-3.png" id="3_yjk03"]
 
-[sub_resource type="CurveTexture" id="CurveTexture_tyng4"]
-curve = SubResource("Curve_ui5r2")
-
-[sub_resource type="Gradient" id="Gradient_72eoc"]
-offsets = PackedFloat32Array(0, 0.46028042, 0.9883177)
-colors = PackedColorArray(1, 0.58431375, 0, 1, 0.8, 0.13333334, 0, 1, 0.13333334, 0.13333334, 0.13333334, 1)
-metadata/_snap_count = 2
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6dt3u"]
-gradient = SubResource("Gradient_72eoc")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fqya3"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 40.0
-direction = Vector3(0, -1, 0)
-spread = 180.0
-initial_velocity_min = 20.0
-initial_velocity_max = 60.0
-gravity = Vector3(0, 98, 0)
-scale_min = 0.79999995
-scale_max = 2.0
-color_ramp = SubResource("GradientTexture1D_6dt3u")
-alpha_curve = SubResource("CurveTexture_tyng4")
-turbulence_enabled = true
-turbulence_noise_strength = 0.3
-turbulence_noise_scale = 0.0
-turbulence_noise_speed = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="Curve" id="Curve_tyng4"]
-_data = [Vector2(0.010373451, 0.9885846), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_72eoc"]
-curve = SubResource("Curve_tyng4")
-
-[sub_resource type="Gradient" id="Gradient_6dt3u"]
-offsets = PackedFloat32Array(0, 0.5443925, 1)
-colors = PackedColorArray(1, 0.93333334, 0.53333336, 1, 1, 0.4, 0, 1, 1, 0.26666668, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fqya3"]
-gradient = SubResource("Gradient_6dt3u")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yjk03"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 40.0
-direction = Vector3(0, -1, 0)
-spread = 180.0
-initial_velocity_min = 5.0
-initial_velocity_max = 25.0
-angular_velocity_min = -180.00002
-angular_velocity_max = 179.99998
-gravity = Vector3(0, -20, 0)
-scale_min = 0.19999999
-scale_max = 0.79999995
-color_ramp = SubResource("GradientTexture1D_fqya3")
-alpha_curve = SubResource("CurveTexture_72eoc")
+[sub_resource type="SpriteFrames" id="SpriteFrames_lktaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6dt3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fqya3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yjk03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="FireBlastParticles" type="Node2D" unique_id=339703278]
 
-[node name="Flames" type="GPUParticles2D" parent="." unique_id=1565780576]
-amount = 80
-lifetime = 0.5
-speed_scale = 1.2
-process_material = SubResource("ParticleProcessMaterial_fqya3")
-
-[node name="Embers" type="GPUParticles2D" parent="." unique_id=736202401]
-amount = 50
-lifetime = 0.5
-speed_scale = 0.8
-process_material = SubResource("ParticleProcessMaterial_yjk03")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=725912799]
+sprite_frames = SubResource("SpriteFrames_lktaa")
+frame_progress = 0.59920025

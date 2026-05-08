@@ -73,7 +73,7 @@ offset_right = -32.0
 offset_bottom = 66.0
 grow_horizontal = 0
 theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 28
 text = "Close"
 
 [node name="Back" type="Button" parent="Panel" unique_id=94567557]
@@ -95,15 +95,18 @@ text = "Back
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -194.5
+offset_right = 372.0
+offset_bottom = 194.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 theme = ExtResource("4_6abwf")
 
@@ -228,7 +231,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
@@ -239,7 +242,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
@@ -250,7 +253,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
@@ -262,7 +265,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
@@ -273,18 +276,16 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
 [node name="PassiveNum" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers" unique_id=1774820614]
-custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="PassiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1778244130]
-custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 tooltip_text = "What your stats will be modified by even when this class is not chosen"
 mouse_filter = 0
@@ -295,53 +296,53 @@ text = "+ PASSIVE"
 horizontal_alignment = 1
 
 [node name="HP" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1791383939]
-custom_minimum_size = Vector2(64, 30)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
 [node name="MANA" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1075096590]
-custom_minimum_size = Vector2(64, 30)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
 [node name="STR" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1254821010]
-custom_minimum_size = Vector2(64, 30)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
 [node name="DEF" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=385489143]
 visible = false
-custom_minimum_size = Vector2(64, 30)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
 [node name="SPD" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=246019162]
-custom_minimum_size = Vector2(64, 30)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
@@ -351,13 +352,13 @@ custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "  Upgrade Class"
 alignment = 0
 
 [node name="IconGold" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" unique_id=1621783930]
 z_index = 5
-position = Vector2(278, 32)
+position = Vector2(276, 29.5)
 texture = ExtResource("4_tj6yy")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" unique_id=62058358]
@@ -366,9 +367,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -10.0
-offset_right = -40.0
-offset_bottom = 15.0
+offset_left = -4.0
+offset_top = -10.5
+offset_right = -44.0
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_6abwf")
@@ -383,7 +385,7 @@ z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "Have a Chat"
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1059602539]
@@ -473,13 +475,13 @@ layout_mode = 2
 [node name="SpellBack" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=75168752]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "Previous Spell"
 
 [node name="SpellNext" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=138088990]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "Next Spell"
 
 [node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1756229424]
@@ -488,7 +490,7 @@ custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "  Upgrade Ability"
 alignment = 0
 
@@ -498,9 +500,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -10.0
-offset_right = -44.0
-offset_bottom = 15.0
+offset_left = 8.0
+offset_top = -10.5
+offset_right = -36.0
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_6abwf")
@@ -512,7 +515,7 @@ vertical_alignment = 1
 
 [node name="IconGold" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade" unique_id=462908928]
 z_index = 5
-position = Vector2(442, 32)
+position = Vector2(408.00003, 29.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xk0np")
 

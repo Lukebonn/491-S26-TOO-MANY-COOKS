@@ -3,11 +3,10 @@
 [ext_resource type="FontFile" uid="uid://c06ko33jtwss" path="res://UI/Themes/Good Neighbors Fill.otf" id="1_trhw8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4lqs"]
-bg_color = Color(0.24313726, 0.10980392, 0.043137256, 1)
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+bg_color = Color(0.4, 0.17999999, 0.16, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trhw8"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+bg_color = Color(0.8, 0.4266667, 0.24000001, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -15,7 +14,7 @@ border_width_bottom = 4
 border_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uywam"]
-bg_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
+bg_color = Color(0.8, 0.4266667, 0.24000001, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -23,7 +22,7 @@ border_width_bottom = 4
 border_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7atx"]
-bg_color = Color(0.79607844, 0.6901961, 0.4627451, 1)
+bg_color = Color(0.7, 0.17500004, 0.070000015, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -31,7 +30,7 @@ border_width_bottom = 4
 border_color = Color(0.24313726, 0.10980392, 0.043137256, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpoxn"]
-bg_color = Color(0.9019608, 0.81960785, 0.64705884, 1)
+bg_color = Color(1, 0.8, 0.7019608, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -39,7 +38,7 @@ border_width_bottom = 4
 border_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx3c4"]
-bg_color = Color(0.79607844, 0.6901961, 0.4627451, 1)
+bg_color = Color(0.7, 0.17500004, 0.070000015, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -47,20 +46,20 @@ border_width_bottom = 4
 border_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i76u7"]
-bg_color = Color(0.9019608, 0.81960785, 0.64705884, 1)
+bg_color = Color(0.8, 0.4266667, 0.24000001, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+border_color = Color(0.4, 0.17999999, 0.16, 1)
 
 [resource]
 default_font = ExtResource("1_trhw8")
-Button/colors/font_color = Color(0.33333334, 0.15686275, 0.07058824, 1)
-Button/colors/font_disabled_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
-Button/colors/font_focus_color = Color(0.4117647, 0.2, 0.09803922, 1)
-Button/colors/font_hover_color = Color(0.4117647, 0.2, 0.09803922, 1)
-Button/colors/font_hover_pressed_color = Color(0.24313726, 0.10980392, 0.043137256, 1)
+Button/colors/font_color = Color(0.4, 0.17999999, 0.16, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 0.8, 0.7019608, 1)
+Button/colors/font_hover_pressed_color = Color(0.8, 0.4266667, 0.24000001, 1)
 Button/colors/font_pressed_color = Color(0.24313726, 0.10980392, 0.043137256, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_k4lqs")
 Button/styles/focus = SubResource("StyleBoxFlat_trhw8")
@@ -68,5 +67,5 @@ Button/styles/hover = SubResource("StyleBoxFlat_uywam")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_s7atx")
 Button/styles/normal = SubResource("StyleBoxFlat_fpoxn")
 Button/styles/pressed = SubResource("StyleBoxFlat_xx3c4")
-Label/colors/font_color = Color(0.30588236, 0.16470589, 0.019607844, 1)
+Label/colors/font_color = Color(1, 1, 1, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_i76u7")

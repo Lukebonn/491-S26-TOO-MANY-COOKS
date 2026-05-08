@@ -37,8 +37,10 @@
 [ext_resource type="PackedScene" uid="uid://dp2wyj4pxj1i6" path="res://Scenes/Tavern/act_select.tscn" id="29_0id2w"]
 [ext_resource type="PackedScene" uid="uid://cyh3a1qkkfmcu" path="res://Scenes/Tavern/class_select.tscn" id="29_a55l7"]
 [ext_resource type="Texture2D" uid="uid://culnikyvvhbo6" path="res://UI/Img/IconTower.png" id="31_kb1dg"]
+[ext_resource type="Texture2D" uid="uid://b8f20rjbtlutk" path="res://UI/Img/IconTowerPress.png" id="31_liq8o"]
 [ext_resource type="Texture2D" uid="uid://bh5pdrpwqgj7" path="res://Scenes/Tavern/Art/JournalTavern.png" id="31_ulbsv"]
 [ext_resource type="FontFile" uid="uid://daoc67pr3pw80" path="res://UI/Themes/Fonts/grape-soda-font/GrapeSoda.ttf" id="32_a55l7"]
+[ext_resource type="Texture2D" uid="uid://loxdnh2nr837" path="res://UI/Img/IconTowerHover.png" id="32_tlutn"]
 [ext_resource type="PackedScene" uid="uid://bp3qimvl4p8m4" path="res://Scenes/Test/MenuTest/settings.tscn" id="34_tvort"]
 [ext_resource type="Texture2D" uid="uid://du40u5c3f4oix" path="res://UI/Img/IconArrowL.png" id="35_01gve"]
 [ext_resource type="Texture2D" uid="uid://cy28flxqvqj6r" path="res://UI/Img/IconArrowR.png" id="36_01gve"]
@@ -555,6 +557,8 @@ offset_right = 2468.0
 offset_bottom = 222.0
 theme = ExtResource("2_tqgpy")
 texture_normal = ExtResource("31_kb1dg")
+texture_pressed = ExtResource("31_liq8o")
+texture_hover = ExtResource("32_tlutn")
 stretch_mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tavern BG/Exit" unique_id=270719110]
