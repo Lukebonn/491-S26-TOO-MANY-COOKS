@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
 [ext_resource type="Texture2D" uid="uid://ydgh8qblwa1u" path="res://UI/Img/objective_cross.png" id="32_vntq0"]
+[ext_resource type="FontFile" uid="uid://dwou2mmwlxkrl" path="res://UI/Themes/Fonts/unifontex-font/Unifontexmono-lxY45.ttf" id="37_tvo8u"]
 
 [node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
@@ -674,12 +675,22 @@ stream = ExtResource("31_v25sk")
 [node name="Death Song" type="AudioStreamPlayer" parent="." unique_id=649188314]
 stream = ExtResource("32_t0bwl")
 
+[node name="Objective Name" type="Label" parent="." unique_id=1078759042]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 463.0
+offset_right = 641.0
+offset_bottom = 495.0
+theme_override_fonts/font = ExtResource("37_tvo8u")
+text = "Objective"
+
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="level_is_complete" from="." to="ObjectiveManager" method="_on_ui_level_is_complete"]
 [connection signal="update_health_bar" from="." to="HealthBar" method="_on_ui_update_health_bar"]
 [connection signal="update_mana_bar" from="." to="ManaBar" method="_on_ui_update_mana_bar"]
 [connection signal="give_report_data" from="ObjectiveManager" to="LevelReportScreen" method="_on_objective_manager_give_report_data"]
 [connection signal="pause_objective" from="ObjectiveManager" to="PauseMenu2" method="_on_objective_manager_pause_objective"]
+[connection signal="ui_objective" from="ObjectiveManager" to="." method="_on_objective_manager_ui_objective"]
 [connection signal="pressed" from="PoisonButton" to="." method="_on_poison_button_pressed"]
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]

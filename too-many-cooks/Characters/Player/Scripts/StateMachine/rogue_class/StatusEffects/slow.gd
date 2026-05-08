@@ -9,6 +9,8 @@ var old_speed
 ##saves target's orignal speed then reduces current speed by potency
 func _ready() -> void:
 	old_speed = target.get_node("ChaseState").Chase_Speed
+	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
+	damage_number.self_modulate = Color(0, 1, 1)
 	target.get_node("ChaseState").Chase_Speed *= potency
 
 

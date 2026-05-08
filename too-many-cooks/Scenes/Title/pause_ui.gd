@@ -8,12 +8,14 @@ func show_menu():
 	var tween = self.create_tween()
 	tween.parallel().tween_property(self,"position",Vector2(0,0),2).set_trans(Tween.TRANS_EXPO)
 	opened_menu.emit()
+	$Objective.visible = true
 
 func hide_menu():
 	$"PauseStuff/TooltipReader".text = "Bye!"
 	var tween = self.create_tween()
 	tween.parallel().tween_property(self,"position",Vector2(1152,0),2).set_trans(Tween.TRANS_EXPO)
 	closed_menu.emit()
+	$Objective.visible = false
 func _on_back_pressed():
 	hide_menu()
 	clickSound.play()
@@ -57,5 +59,5 @@ func _on_sfx_slider_drag_started() -> void:
 	clickSound.play()
 
 
-func _on_combat_settings_rich() -> void:
-	$Objective.set_text("Collect 150 gold")
+func _on_combat_settings_show_pause_objective(objective_title) -> void:
+	$Objective.set_text("Objective: " + objective_title)

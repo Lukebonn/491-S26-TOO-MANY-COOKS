@@ -214,3 +214,7 @@ func _on_advance_button_pressed() -> void:
 
 func _on_return_button_pressed() -> void:
 	settings.show_warning_menu.emit()
+
+
+func _on_objective_manager_ui_objective(objective_title: Variant) -> void:
+	$"Objective Name".set_text("Objective: " + objective_title)

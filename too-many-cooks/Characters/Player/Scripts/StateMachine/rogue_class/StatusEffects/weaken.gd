@@ -9,6 +9,8 @@ var old_damage
 ##saves target's orignal damage then reduces current damage by potency
 func _ready() -> void:
 	old_damage = target.damage
+	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
+	damage_number.self_modulate = Color(1, 0, 0)
 	target.damage *= potency
 
 
