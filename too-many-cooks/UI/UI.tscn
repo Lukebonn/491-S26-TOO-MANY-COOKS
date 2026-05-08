@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8cinn6ehtcgy"]
 
 [ext_resource type="Script" uid="uid://depieuhvstkky" path="res://UI/UI.gd" id="1_dvulo"]
-[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="1_tabjk"]
+[ext_resource type="Theme" uid="uid://oii7jxldj7ts" path="res://UI/Themes/resultstheme.tres" id="1_tvo8u"]
 [ext_resource type="Texture2D" uid="uid://d2x02b0k0qqrh" path="res://UI/BattleHUD/Img/HpBarFill.png" id="2_1p4yy"]
 [ext_resource type="Texture2D" uid="uid://bgprqylqedkbv" path="res://UI/BattleHUD/Img/HpBarBack.png" id="2_7ubs7"]
 [ext_resource type="Script" uid="uid://bak7t6fhbhj8w" path="res://UI/BattleHUD/health_bar.gd" id="2_snacm"]
@@ -36,13 +36,12 @@
 [ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
 [ext_resource type="Texture2D" uid="uid://ydgh8qblwa1u" path="res://UI/Img/objective_cross.png" id="32_vntq0"]
-[ext_resource type="FontFile" uid="uid://dwou2mmwlxkrl" path="res://UI/Themes/Fonts/unifontex-font/Unifontexmono-lxY45.ttf" id="37_tvo8u"]
 
 [node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 script = ExtResource("1_dvulo")
 settings = NodePath("PauseMenu2")
 tavern_warning = NodePath("Tavern Warning")
@@ -60,7 +59,7 @@ offset_left = 1208.0
 offset_top = 64.0
 offset_right = 1400.0
 offset_bottom = 160.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 25
 text = "Apply Posion"
 
@@ -71,7 +70,7 @@ offset_left = 1208.0
 offset_top = 192.0
 offset_right = 1400.0
 offset_bottom = 288.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 25
 text = "Apply
 Regeneration"
@@ -83,7 +82,7 @@ offset_left = 1208.0
 offset_top = 488.0
 offset_right = 1400.0
 offset_bottom = 584.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 25
 text = "Clear Effects"
 
@@ -93,7 +92,7 @@ offset_left = 88.0
 offset_top = 8.0
 offset_right = 280.0
 offset_bottom = 40.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 2
@@ -105,7 +104,7 @@ offset_top = 46.0
 offset_right = 428.0
 offset_bottom = 78.0
 scale = Vector2(0.65, 0.65)
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 value = 50.0
 nine_patch_stretch = true
 stretch_margin_left = 4
@@ -128,7 +127,7 @@ offset_left = 88.0
 offset_top = 96.0
 offset_right = 280.0
 offset_bottom = 131.69229
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 
@@ -139,7 +138,7 @@ offset_top = 77.0
 offset_right = 428.7
 offset_bottom = 97.0
 scale = Vector2(0.65, 0.65)
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 value = 50.0
 nine_patch_stretch = true
 texture_under = ExtResource("7_6q2ik")
@@ -161,6 +160,7 @@ offset_left = 71.5
 offset_top = 128.0
 offset_right = 159.5
 offset_bottom = 160.0
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -178,6 +178,7 @@ offset_left = 71.5
 offset_top = 168.0
 offset_right = 159.5
 offset_bottom = 200.0
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -209,6 +210,7 @@ z_index = -1
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+theme = ExtResource("1_tvo8u")
 color = Color(1, 1, 1, 0.19215687)
 
 [node name="RetryButton" type="Button" parent="DeathScreen" unique_id=1822436038]
@@ -224,7 +226,7 @@ offset_right = -480.0
 offset_bottom = 104.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 45
 text = "Retry"
 
@@ -234,7 +236,7 @@ offset_left = 480.0
 offset_top = 760.0
 offset_right = 672.0
 offset_bottom = 856.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 30
 text = "Return to
 Tavern"
@@ -252,7 +254,7 @@ offset_right = 208.0
 offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/normal_font_size = 65
 text = "You Have Died!"
 horizontal_alignment = 1
@@ -265,6 +267,7 @@ offset_left = 290.0
 offset_top = 159.0
 offset_right = 866.0
 offset_bottom = 519.0
+theme = ExtResource("1_tvo8u")
 color = Color(0.1927709, 0.1927709, 0.1927709, 0.5882353)
 
 [node name="RetryButton" type="Button" parent="OLDPauseMenu" unique_id=930502395]
@@ -337,6 +340,7 @@ offset_left = 64.0
 offset_top = 374.0
 offset_right = 399.0
 offset_bottom = 485.0
+theme = ExtResource("1_tvo8u")
 text = "test"
 
 [node name="Quest2" type="Label" parent="." unique_id=1987583185]
@@ -346,6 +350,7 @@ offset_left = 64.0
 offset_top = 468.0
 offset_right = 399.0
 offset_bottom = 579.0
+theme = ExtResource("1_tvo8u")
 text = "test"
 
 [node name="IconEnemy" type="Sprite2D" parent="." unique_id=826344231]
@@ -360,7 +365,7 @@ layout_mode = 0
 offset_left = 1063.0
 offset_right = 1151.0
 offset_bottom = 48.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 script = ExtResource("4_snacm")
 counter = "Enemies"
 
@@ -384,7 +389,7 @@ offset_left = 232.0
 offset_top = 280.0
 offset_right = 920.0
 offset_bottom = 368.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 66
 text = "Level Complete"
 horizontal_alignment = 1
@@ -396,7 +401,7 @@ offset_left = 296.0
 offset_top = 224.0
 offset_right = 532.0
 offset_bottom = 265.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Gold Collected"
 vertical_alignment = 1
@@ -412,7 +417,7 @@ layout_mode = 0
 offset_left = 225.0
 offset_right = 313.0
 offset_bottom = 32.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -425,7 +430,7 @@ offset_left = 600.0
 offset_top = 224.0
 offset_right = 696.0
 offset_bottom = 272.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Time"
 vertical_alignment = 1
@@ -436,7 +441,7 @@ layout_mode = 0
 offset_left = 81.0
 offset_right = 242.0
 offset_bottom = 41.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
@@ -449,7 +454,7 @@ offset_left = 600.0
 offset_top = 261.0
 offset_right = 824.0
 offset_bottom = 309.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Damage Taken"
 vertical_alignment = 1
@@ -460,7 +465,7 @@ layout_mode = 0
 offset_left = 219.0
 offset_right = 380.0
 offset_bottom = 41.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
@@ -475,7 +480,7 @@ offset_left = 600.0
 offset_top = 301.0
 offset_right = 824.0
 offset_bottom = 349.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Damage Dealt"
 vertical_alignment = 1
@@ -486,7 +491,7 @@ layout_mode = 0
 offset_left = 211.0
 offset_right = 372.0
 offset_bottom = 41.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
@@ -501,7 +506,7 @@ offset_left = 296.0
 offset_top = 264.0
 offset_right = 532.0
 offset_bottom = 305.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Orbs Collected"
 vertical_alignment = 1
@@ -518,7 +523,7 @@ layout_mode = 0
 offset_left = 232.0
 offset_right = 320.0
 offset_bottom = 32.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -531,7 +536,7 @@ offset_left = 296.0
 offset_top = 304.0
 offset_right = 532.0
 offset_bottom = 345.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Enemies Killed"
 vertical_alignment = 1
@@ -548,7 +553,7 @@ layout_mode = 0
 offset_left = 227.0
 offset_right = 315.0
 offset_bottom = 32.0
-theme = ExtResource("1_tabjk")
+theme = ExtResource("1_tvo8u")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -561,7 +566,7 @@ offset_left = 352.0
 offset_top = 360.0
 offset_right = 612.0
 offset_bottom = 490.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 32
 text = "Something about objectives here i guess"
 vertical_alignment = 1
@@ -590,7 +595,7 @@ offset_left = 704.0
 offset_top = 416.0
 offset_right = 896.0
 offset_bottom = 488.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 25
 text = "Next Level
 Back to Tavern"
@@ -620,7 +625,7 @@ offset_left = 392.0
 offset_top = 376.0
 offset_right = 544.0
 offset_bottom = 448.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 50
 text = "Yes"
 
@@ -630,7 +635,7 @@ offset_left = 608.0
 offset_top = 376.0
 offset_right = 760.0
 offset_bottom = 448.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 50
 text = "No"
 
@@ -640,7 +645,7 @@ offset_left = 376.0
 offset_top = 184.0
 offset_right = 770.0
 offset_bottom = 269.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 40
 text = "Are you Sure you Want
 to Return to the Tavern?"
@@ -653,7 +658,7 @@ offset_left = 376.0
 offset_top = 272.0
 offset_right = 770.0
 offset_bottom = 357.0
-theme = ExtResource("16_kncd2")
+theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 30
 text = "You will not keep the loot
 you collected in this level."
@@ -677,12 +682,14 @@ stream = ExtResource("32_t0bwl")
 
 [node name="Objective Name" type="Label" parent="." unique_id=1078759042]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 463.0
-offset_right = 641.0
-offset_bottom = 495.0
-theme_override_fonts/font = ExtResource("37_tvo8u")
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 36.0
+theme = ExtResource("1_tvo8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 text = "Objective"
+horizontal_alignment = 1
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="level_is_complete" from="." to="ObjectiveManager" method="_on_ui_level_is_complete"]

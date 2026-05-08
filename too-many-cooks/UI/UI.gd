@@ -217,4 +217,6 @@ func _on_return_button_pressed() -> void:
 
 
 func _on_objective_manager_ui_objective(objective_title: Variant) -> void:
-	$"Objective Name".set_text("Objective: " + objective_title)
+	$"Objective Name".set_text("Objective:\n" + objective_title)
+	var tween = get_tree().create_tween()
+	tween.tween_property($"Objective Name","modulate",Color(1,1,1,0),5.0)
