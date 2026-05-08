@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bieb2r1oayga1" path="res://Characters/Enemies/WizardMouse/WizardMouse.tscn" id="8_4afp5"]
 [ext_resource type="Texture2D" uid="uid://dckotfm4i6lw" path="res://Objects/Tilesets/Obscurer.png" id="9_p0ksw"]
 [ext_resource type="Texture2D" uid="uid://doj7wyjw7kkvv" path="res://Objects/Tilesets/Wall.png" id="10_c8pry"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="11_c8pry"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -65,6 +66,8 @@ scale = Vector2(-1, 1)
 
 [node name="WizardMouseEnemy4" parent="." unique_id=1054805542 instance=ExtResource("8_4afp5")]
 position = Vector2(-696, -128)
+
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("11_c8pry")]
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="15_5rih4"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="16_3kry0"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="17_rbhei"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="18_58oep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
@@ -207,6 +208,8 @@ Flip_Out = false
 
 [node name="OrbPickup" parent="." unique_id=1955872402 instance=ExtResource("17_rbhei")]
 position = Vector2(925, 400)
+
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("18_58oep")]
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

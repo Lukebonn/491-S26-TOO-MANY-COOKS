@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_2dp6i"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="14_3ai76"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="15_j518v"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_xfeou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
@@ -189,6 +190,8 @@ Flip_Out = false
 
 [node name="OrbPickup" parent="." unique_id=1955872402 instance=ExtResource("15_j518v")]
 position = Vector2(-99, 160)
+
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("16_xfeou")]
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
