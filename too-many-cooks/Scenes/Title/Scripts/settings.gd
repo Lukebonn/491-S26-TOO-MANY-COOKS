@@ -3,6 +3,12 @@ var in_menu = false
 var in_settings_menu = false
 signal menu_animations_complete
 signal show_warning_menu
+signal rich
+signal nohit
+signal speedrun
+signal dashless
+signal enemies
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -100,3 +106,16 @@ func _on_exited_warning_menu() -> void:
 	#for i in range($buttons.get_child_count()):
 		#if $buttons.get_child(i).visible == true:
 			#$buttons.get_child(i).set_disabled(false)
+
+
+func _on_objective_manager_pause_objective(objective_task_key: Variant) -> void:
+	if objective_task_key == "speedrun":
+		speedrun.emit()
+	elif objective_task_key == "rich":
+		rich.emit()
+	elif objective_task_key == "nohit":
+		nohit.emit()
+	elif objective_task_key == "dashless":
+		dashless.emit()
+	elif objective_task_key == "enemies":
+		enemies.emit()

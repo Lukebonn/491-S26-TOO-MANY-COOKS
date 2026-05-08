@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_11xfy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_py1tv"]
+[ext_resource type="AudioStream" uid="uid://ckcx2ks517fr8" path="res://Scenes/Intro Cutscene/Audio/Intro/49053354-page-turn-305789.mp3" id="26_r5ao7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5ao7"]
 animations = [{
@@ -199,3 +200,6 @@ offset_top = -128.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("23_py1tv")
+
+[node name="Page Turn" type="AudioStreamPlayer" parent="." unique_id=618143244]
+stream = ExtResource("26_r5ao7")

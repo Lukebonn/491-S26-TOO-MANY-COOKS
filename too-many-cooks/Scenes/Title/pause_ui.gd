@@ -55,3 +55,7 @@ func _on_music_slider_drag_started() -> void:
 
 func _on_sfx_slider_drag_started() -> void:
 	clickSound.play()
+
+
+func _on_combat_settings_rich() -> void:
+	$Objective.set_text("Collect 150 gold")

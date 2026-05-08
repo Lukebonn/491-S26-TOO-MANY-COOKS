@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bgtyccjclp1y0" path="res://UI/FadeInFadeOut/FadeInFadeOut.tscn" id="21_pk06d"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_dw1wy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_tss7e"]
+[ext_resource type="AudioStream" uid="uid://ckcx2ks517fr8" path="res://Scenes/Intro Cutscene/Audio/Intro/49053354-page-turn-305789.mp3" id="32_i1clk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kdpsf"]
 animations = [{
@@ -210,3 +211,6 @@ offset_top = -128.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("23_tss7e")
+
+[node name="PageTurn" type="AudioStreamPlayer" parent="." unique_id=38966955]
+stream = ExtResource("32_i1clk")

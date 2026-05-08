@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckcx2ks517fr8"
+path="res://.godot/imported/49053354-page-turn-305789.mp3-df2ac3329332b8472fef13ac0467f12c.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Intro Cutscene/Audio/Intro/49053354-page-turn-305789.mp3"
+dest_files=["res://.godot/imported/49053354-page-turn-305789.mp3-df2ac3329332b8472fef13ac0467f12c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

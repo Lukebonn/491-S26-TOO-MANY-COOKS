@@ -2,7 +2,7 @@ extends PlayerState
 
 var attack : PackedScene = load("res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/mage_attack.tscn")
 
-var power : float = 0.5
+var power : float = 0.9
 
 var cooldown : float = 0.2
 var on_cooldown : bool = false

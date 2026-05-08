@@ -14,6 +14,7 @@ var speedrun_under_60 : bool
 var objective_task_key : String
 var objective_title : String
 var objective_result : bool 
+signal pause_objective(objective_task_key)
 func pick_an_objective():
 	match randi_range(2,5):
 		1:
@@ -36,6 +37,7 @@ func pick_an_objective():
 			print("Clear in under 60 seconds")
 			objective_title = "Clear in less than a minute"
 			objective_task_key = "speedrun"
+	pause_objective.emit(objective_task_key)
 	
 func evaluate_objective():
 	match objective_task_key:

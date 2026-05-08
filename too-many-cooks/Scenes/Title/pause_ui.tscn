@@ -344,6 +344,11 @@ stream = ExtResource("7_2bhlx")
 volume_db = -8.0
 bus = &"Music"
 
+[node name="Objective" type="Label" parent="." unique_id=2143918605]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/Master" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/MasterSlider" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]

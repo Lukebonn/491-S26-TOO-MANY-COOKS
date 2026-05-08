@@ -16,6 +16,8 @@ var sub_ref : RichTextLabel
 var voice_ref : AudioStreamPlayer
 var wait_ref : Timer
 var music_reference: AudioStreamPlayer
+var PageTurn : AudioStreamPlayer
+
 
 func _ready():
 	Global.First_Time_Combat = true
@@ -26,6 +28,7 @@ func _ready():
 	voice_ref = $Voice
 	wait_ref = $Timer
 	music_reference = $Music
+	PageTurn = $"Page Turn"
 	next_line(0)
 
 func _process(_delta):
@@ -76,6 +79,7 @@ func set_data() -> void:
 func tween_page() -> void:
 	if NextPage[index]:
 		page_index += 1
+		PageTurn.play()
 		var cur_page = $Pages.get_child(page_index)
 		var tween = get_tree().create_tween()
 		tween.tween_property(cur_page,"position",Vector2(576,320),1).set_trans(Tween.TRANS_CUBIC)
