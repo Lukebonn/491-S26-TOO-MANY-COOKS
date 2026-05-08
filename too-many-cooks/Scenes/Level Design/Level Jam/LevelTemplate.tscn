@@ -220,7 +220,7 @@ bus = &"Music"
 [node name="ObjRoomMgr" parent="Room" unique_id=1778230442 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("8_l0njl")]
 position = Vector2(267, -271)
 Spawners = [NodePath("../ObjDestructibleSpawner")]
-Barriers = [NodePath("../ObjBarrier"), NodePath("")]
+Barriers = [NodePath("../ObjBarrier"), null]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room/ObjRoomMgr" unique_id=599979132]
 position = Vector2(-64, 13)
