@@ -13,6 +13,10 @@ script = ExtResource("2_lbqgd")
 parry_icon = ExtResource("4_f4cky")
 throw_icon = ExtResource("5_t2v6u")
 spin_icon = ExtResource("5_f4cky")
+mpCost = Array[int]([20, 35, 55])
+
+[node name="Label" parent="." index="0" unique_id=1391810775]
+text = "20mp"
 
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_71oqw")

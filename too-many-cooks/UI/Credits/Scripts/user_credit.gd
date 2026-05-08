@@ -6,8 +6,14 @@ extends HBoxContainer
 @export var Name : String
 ##The contributor title for this person. "LEAD PROGRAMMER", etc.
 @export var Title : String
+##Are we evil?
+@export var Evil : bool = false
 
 func _ready() -> void:
 	$TextureRect.texture = Portrait
 	$VBoxContainer/Name.text = Name
 	$VBoxContainer/Title.text = Title
+
+func _process(delta: float) -> void:
+	if Evil:
+		rotation += delta * 2

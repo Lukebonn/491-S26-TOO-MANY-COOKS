@@ -55,6 +55,4 @@ func _on_tutorial_rat_enemy_death() -> void:
 		await dialogue_ref.message_complete
 		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1.2).timeout
-		push_warning("THIS IS PROBABLY WHERE THE CREDITS WOULD PLAY")
-		FadeInFadeOut.fade_in()
-		get_tree().change_scene_to_file("res://Scenes/Title/title_screen.tscn")
+		get_tree().change_scene_to_file("res://UI/Credits/credits.tscn")

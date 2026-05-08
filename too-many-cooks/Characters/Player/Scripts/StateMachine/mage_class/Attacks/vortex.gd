@@ -4,18 +4,22 @@ extends StaticBody2D
 
 var enemies : Array
 
+var force : int
+
 ##sets the amount of damage the vortex should do per hit
 #unused as vortex has been reworked and no longer does damage to enemies
 func _ready() -> void:
-	#damage = int(get_parent().strength * 1.2)
-	pass
+	if(PlayerStats.MageClassAbilityLevel >= 2):
+		force = 100
+	else:
+		force = 55
 
 
 ##applies velocity over time that drags enemies towards the center of the vortex
 func _process(delta: float) -> void:
 	for enemy in enemies:
 		if(enemy.global_position != global_position):
-			enemy.global_position += (global_position - enemy.global_position).normalized() * 55 * delta
+			enemy.global_position += (global_position - enemy.global_position).normalized() * force * delta
 
 
 ##adds any enemy who enters the vortex to the list

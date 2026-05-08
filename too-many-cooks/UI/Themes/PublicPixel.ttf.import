@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://kwsh6vnxnvw"
-path="res://.godot/imported/PublicPixel.otf-77445c3bdfe8d64124fdde63552a6d11.fontdata"
+uid="uid://6uvhycoiviax"
+path="res://.godot/imported/PublicPixel.ttf-aaa5db44d611deed1dccc8c9d69b3c46.fontdata"
 
 [deps]
 
-source_file="res://UI/Themes/PublicPixel.otf"
-dest_files=["res://.godot/imported/PublicPixel.otf-77445c3bdfe8d64124fdde63552a6d11.fontdata"]
+source_file="res://UI/Themes/PublicPixel.ttf"
+dest_files=["res://.godot/imported/PublicPixel.ttf-aaa5db44d611deed1dccc8c9d69b3c46.fontdata"]
 
 [params]
 
@@ -27,7 +27,7 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://kwsh6vnxnvw", "res://UI/Themes/PublicPixel.otf"), Resource("uid://cq4db84i8bay1", "res://PixelPurl.ttf")]
+fallbacks=[]
 Compress=null
 compress=true
 preload=[]

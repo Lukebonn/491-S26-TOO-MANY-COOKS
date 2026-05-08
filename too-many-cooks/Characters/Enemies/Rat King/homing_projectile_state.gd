@@ -14,7 +14,7 @@ func enter_state(enemy_node):
 	if enemy_ref.enraged:
 		print(projectile_damage)
 		for i in range(3):
-			create_custom_projectile(projectile_damage + 10, projectile_speed + 20)
+			create_custom_projectile(projectile_damage + 10, projectile_speed + 50)
 			await get_tree().create_timer(0.5).timeout
 	else:
 		create_projectile()
@@ -31,10 +31,13 @@ func enter_state(enemy_node):
 	exit_state()
 
 func exit_state():
-	if state_to_enter:
-		enemy_ref.change_state(str(state_to_enter))
+	if enemy_ref.playerNear:
+		enemy_ref.change_state("ShockwaveState")
 	else:
-		enemy_ref.change_state("IdleState")
+		if state_to_enter:
+			enemy_ref.change_state(str(state_to_enter))
+		else:
+			enemy_ref.change_state("IdleState")
 
 func hit_response(source):
 	pass

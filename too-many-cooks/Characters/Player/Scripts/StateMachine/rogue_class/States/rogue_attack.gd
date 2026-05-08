@@ -6,7 +6,7 @@ var on_cooldown : bool = false
 var equipped_status : String = "poison"
 var active_status : String = ""
 
-var mana_gain : float = 10
+var mana_gain : float = 0.1
 
 func enter_state(player_node):
 	super(player_node)
@@ -81,7 +81,7 @@ func start_cooldown():
 
 ##player regains mana when attacking enemies
 func on_attack_hit(_body):
-	player.mana += mana_gain
+	player.mana += PlayerStats.MaxMana * mana_gain
 
 ##player should lose a certain amount of health
 func hit_response(source):

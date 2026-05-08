@@ -1,9 +1,10 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://bgqhacfrdeyky"]
 
-[ext_resource type="FontFile" uid="uid://kwsh6vnxnvw" path="res://UI/Themes/PublicPixel.otf" id="1_nm8yy"]
+[ext_resource type="FontFile" uid="uid://6uvhycoiviax" path="res://UI/Themes/PublicPixel.ttf" id="1_s6s8d"]
 
 [resource]
-font = ExtResource("1_nm8yy")
+font = ExtResource("1_s6s8d")
+font_size = 12
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4

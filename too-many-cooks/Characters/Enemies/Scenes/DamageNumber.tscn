@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bwxj1bdnlf3bc"]
 
 [ext_resource type="Script" uid="uid://bdbt4as2bds2l" path="res://Characters/Enemies/Scripts/DamageNumber.gd" id="1_wxjec"]
-[ext_resource type="Theme" uid="uid://cjyah8gr6r4sy" path="res://UI/Themes/CombatTheme.tres" id="2_lia07"]
 [ext_resource type="LabelSettings" uid="uid://bgqhacfrdeyky" path="res://UI/Themes/style_DmgNum.tres" id="3_lia07"]
 
 [node name="DamageNumber" type="Node2D" unique_id=709976491]
@@ -22,10 +21,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_lia07")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 16
 text = "100"
 label_settings = ExtResource("3_lia07")
 horizontal_alignment = 1

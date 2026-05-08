@@ -270,6 +270,7 @@ scale = Vector2(1.5, 1.5)
 [node name="ObjDestructibleSpawner" parent="Objects/Room2" unique_id=374169863 instance=ExtResource("10_4h2ug")]
 position = Vector2(-568, -664)
 RandomLocation = true
+Enemies = Array[PackedScene]([ExtResource("8_6jkhw")])
 CollisionRadius = 0.0
 LocationType = 2
 RadiusRangeMin = 48.0

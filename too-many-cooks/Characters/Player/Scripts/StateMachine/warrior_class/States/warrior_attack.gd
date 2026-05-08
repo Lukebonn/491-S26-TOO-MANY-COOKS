@@ -22,7 +22,7 @@ var combo_counter : int = 0
 var combo_timer : Timer = Timer.new()
 var first_time : bool = true
 
-var mana_gain : float = 10
+var mana_gain : float = 0.1
 
 
 ##what should happen when the state is entered
@@ -116,7 +116,7 @@ func reset_combo():
 
 ##player regains mana when attacking enemies
 func on_attack_hit(_body):
-	player.mana += mana_gain
+	player.mana += PlayerStats.MaxMana * mana_gain
 
 
 ##player should lose a certain amount of health

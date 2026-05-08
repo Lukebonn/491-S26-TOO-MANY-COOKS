@@ -12,9 +12,9 @@ func input_handler(_delta : float) -> void:
 	#changes to move_state if movement inputs are pressed
 	
 	#changes to idle up animation if player is aiming up
-	if(player.local_mouse_pos.y < 0):
+	if(player.local_mouse_pos.y < -30):
 		player.get_node("Sprite2D").animation = "idle up"
-	elif(player.local_mouse_pos.y > 0):
+	elif(player.local_mouse_pos.y > -30):
 		player.get_node("Sprite2D").animation = "idle"
 	
 	if(Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down")) != Vector2(0,0)):

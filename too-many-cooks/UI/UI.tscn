@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://ctbfnwj1w3mf7" path="res://UI/Img/DPixelSkull.png" id="25_2jerp"]
 [ext_resource type="Script" uid="uid://i8ev7hiievp6" path="res://UI/tavern_warning_prompt.gd" id="26_jf3kf"]
 [ext_resource type="Texture2D" uid="uid://cai6aibrd4bh2" path="res://UI/Img/are you sure.png" id="26_nxoi0"]
-[ext_resource type="LabelSettings" uid="uid://bgqhacfrdeyky" path="res://UI/Themes/style_DmgNum.tres" id="27_gokaw"]
 [ext_resource type="Script" uid="uid://cojg5pf8ewqcj" path="res://UI/damage_values.gd" id="27_t0bwl"]
 [ext_resource type="Script" uid="uid://bsmsu72tp0eec" path="res://UI/time_machine.gd" id="29_rbg2s"]
 [ext_resource type="Texture2D" uid="uid://bdvnl6mbuu542" path="res://UI/Img/objective_frame.png" id="30_tvo8u"]
@@ -161,7 +160,6 @@ offset_left = 71.5
 offset_top = 128.0
 offset_right = 159.5
 offset_bottom = 160.0
-theme = ExtResource("1_tabjk")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -179,7 +177,6 @@ offset_left = 71.5
 offset_top = 168.0
 offset_right = 159.5
 offset_bottom = 200.0
-theme = ExtResource("1_tabjk")
 text = "000"
 label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
@@ -429,44 +426,44 @@ offset_right = 696.0
 offset_bottom = 272.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Time:"
+text = "Time"
 vertical_alignment = 1
 
 [node name="Timer" type="Label" parent="LevelReportScreen/Level Time" unique_id=1965921662]
 z_index = 2
 layout_mode = 0
-offset_left = 88.0
-offset_right = 249.0
+offset_left = 81.0
+offset_right = 242.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 
 [node name="Damage Taken" type="Label" parent="LevelReportScreen" unique_id=605153714]
 z_index = 2
 offset_left = 600.0
-offset_top = 272.0
+offset_top = 261.0
 offset_right = 824.0
-offset_bottom = 320.0
+offset_bottom = 309.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Damage Taken:"
+text = "Damage Taken"
 vertical_alignment = 1
 
 [node name="Player Damage" type="Label" parent="LevelReportScreen/Damage Taken" unique_id=476712954]
 z_index = 2
 layout_mode = 0
-offset_left = 224.0
-offset_right = 385.0
+offset_left = 219.0
+offset_right = 380.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 script = ExtResource("27_t0bwl")
 damage_type = "Player"
@@ -474,25 +471,25 @@ damage_type = "Player"
 [node name="Damage Dealt" type="Label" parent="LevelReportScreen" unique_id=268329472]
 z_index = 2
 offset_left = 600.0
-offset_top = 320.0
+offset_top = 301.0
 offset_right = 824.0
-offset_bottom = 368.0
+offset_bottom = 349.0
 theme = ExtResource("16_kncd2")
 theme_override_font_sizes/font_size = 40
-text = "Damage Dealt:"
+text = "Damage Dealt"
 vertical_alignment = 1
 
 [node name="Enemy Damage" type="Label" parent="LevelReportScreen/Damage Dealt" unique_id=1123132670]
 z_index = 2
 layout_mode = 0
-offset_left = 224.0
-offset_right = 385.0
+offset_left = 211.0
+offset_right = 372.0
 offset_bottom = 41.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "000"
-label_settings = ExtResource("27_gokaw")
+label_settings = ExtResource("6_t31p1")
 vertical_alignment = 1
 script = ExtResource("27_t0bwl")
 damage_type = "Enemy"

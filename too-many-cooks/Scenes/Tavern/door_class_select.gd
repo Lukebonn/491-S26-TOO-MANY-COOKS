@@ -3,6 +3,8 @@ var is_showing = false
 
 signal class_selected(name_of_class: String)
 signal class_checked(name_of_class: String)
+signal on_menu_show
+signal on_menu_left
 
 func _on_warrior_pressed():
 	class_selected.emit("Warrior")
@@ -41,6 +43,7 @@ func show_menu():
 	check_availability()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",Vector2(self.position.x,320),.5).set_trans(Tween.TRANS_CUBIC)
+	on_menu_show.emit()
 
 func hide_menu():
 	var tween = get_tree().create_tween()
@@ -48,6 +51,7 @@ func hide_menu():
 	await tween.finished
 	$Container.hide()
 	is_showing = false
+	on_menu_left.emit()
 
 func hide_menu_top():
 	var tween = get_tree().create_tween()

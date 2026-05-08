@@ -117,7 +117,6 @@ func _physics_process(delta: float) -> void:
 		$Weapon/Sprite2D.flip_v = false
 		$Sprite2D.flip_h = false
 	
-	
 	#hitbox is pointed towards the mouse unless the player is attacking
 	if(current_state != get_node("attack_state")):
 		$Weapon.look_at(global_mouse_pos)

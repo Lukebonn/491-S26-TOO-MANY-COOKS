@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_yqynw"]
 [ext_resource type="Texture2D" uid="uid://w4br41rxlo4t" path="res://Characters/Enemies/WizardMouse/wizard/3.png" id="5_07p8x"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="5_ok7q7"]
-[ext_resource type="Texture2D" uid="uid://i78x7chj6h0v" path="res://Characters/Enemies/WizardMouse/wizard/4 (1).png" id="6_ksona"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_11d7s"]
+[ext_resource type="Script" uid="uid://40m41fmrp021" path="res://Characters/Enemies/WizardMouse/do_nothing_state.gd" id="8_lec52"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_q5jt4"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_hxpx7"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_hxpx7"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_0p86b"]
 [ext_resource type="PackedScene" uid="uid://4wurpdaic22o" path="res://Characters/Enemies/WizardMouse/WizardOrb.tscn" id="11_lec52"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_4sql8"]
@@ -61,14 +61,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_07p8x")
+"texture": ExtResource("2_oybb8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ksona")
+"texture": ExtResource("5_07p8x")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="WizardMouseEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
@@ -77,7 +77,7 @@ collision_mask = 64
 script = ExtResource("1_31sml")
 health = 100
 damage = 10
-sight_state = NodePath("ProjectileState")
+sight_state = NodePath("DoNothingState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -114,7 +114,8 @@ shape = SubResource("RectangleShape2D_bhto8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
-animation = &"fire"
+animation = &"idle"
+frame_progress = 0.7245965
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("3_vvwog")]
 offset_top = -16.5
@@ -123,6 +124,10 @@ offset_bottom = -12.5
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
 script = ExtResource("4_yqynw")
 animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DoNothingState" type="Node" parent="." unique_id=71848221]
+script = ExtResource("8_lec52")
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
@@ -151,7 +156,7 @@ one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
 script = ExtResource("10_hxpx7")
-Possibilities = [NodePath("../ChaseState"), NodePath(""), NodePath("../ProjectileState")]
+Possibilities = [NodePath(".")]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

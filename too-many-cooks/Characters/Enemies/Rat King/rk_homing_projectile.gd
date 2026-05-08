@@ -32,10 +32,8 @@ func _on_near_zone_area_exited(area: Area2D) -> void:
 	print(player_in_range)
 
 func lerp_to_player(target: Vector2):
-	# our interested variable is position (built-in)
 	var start_dir = direction
-	# ending position is target (parameter the function was given)
-	var total_time = 0.5
+	var total_time = 0.1
 	var time_elapsed = 0.0
 	var lerp_value
 	

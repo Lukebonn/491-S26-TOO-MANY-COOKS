@@ -8,9 +8,14 @@ radius = 16.0
 [sub_resource type="SphereMesh" id="SphereMesh_4rug4"]
 
 [node name="DamageArea" type="Area2D" unique_id=1003819008]
+z_index = -1
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_xfnkd")
+damage = 10
+max_size = 1.0
+existence_time = 5.0
+summon_time = 1.5
 
 [node name="DamageZone" type="CollisionShape2D" parent="." unique_id=869777355]
 shape = SubResource("CircleShape2D_ue585")

@@ -2,6 +2,8 @@ extends Control
 var is_showing = false
 var allow_input = true
 
+signal on_menu_left
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Global.Act_2_Unlocked:
@@ -11,6 +13,7 @@ func _ready():
 
 func _on_close_pressed():
 	hide_menu()
+	on_menu_left.emit()
 
 func show_menu():
 	is_showing = true
