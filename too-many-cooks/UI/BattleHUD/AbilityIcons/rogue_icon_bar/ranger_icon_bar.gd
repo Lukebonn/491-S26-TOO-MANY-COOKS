@@ -11,6 +11,7 @@ var right : Texture
 
 func _ready():
 	PlayerStats.icon_bar = self
+	$Label.text = "35mp"
 	
 	current = $HBoxContainer/MagicIcons/Current/Icon.texture
 	left = $HBoxContainer/MagicIcons/Left/Icon.texture

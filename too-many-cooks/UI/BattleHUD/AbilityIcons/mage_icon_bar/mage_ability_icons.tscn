@@ -12,10 +12,10 @@
 
 [node name="AbilityIcons" unique_id=164958451 instance=ExtResource("1_14ivw")]
 script = ExtResource("4_iavm6")
-mpCost = Array[int]([20, 20, 35])
+mpCost = Array[int]([20, 35, 15])
 
 [node name="Label" parent="." index="0" unique_id=1391810775]
-z_index = 1
+text = "20mp"
 
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_iavm6")

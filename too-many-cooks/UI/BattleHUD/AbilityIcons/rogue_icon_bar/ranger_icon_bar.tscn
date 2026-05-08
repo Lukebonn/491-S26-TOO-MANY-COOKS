@@ -18,7 +18,10 @@ script = ExtResource("2_6ord2")
 poison_frame = ExtResource("3_hkauw")
 slow_frame = ExtResource("4_4bwc2")
 weaken_frame = ExtResource("5_e0c77")
-mpCost = Array[int]([35, 35, 35])
+mpCost = Array[int]([35])
+
+[node name="Label" parent="." index="0" unique_id=1391810775]
+text = "35mp"
 
 [node name="Icon" parent="HBoxContainer/AttackIcon" parent_id_path=PackedInt32Array(1152288890) index="1" unique_id=1632241512]
 texture = ExtResource("2_am18w")

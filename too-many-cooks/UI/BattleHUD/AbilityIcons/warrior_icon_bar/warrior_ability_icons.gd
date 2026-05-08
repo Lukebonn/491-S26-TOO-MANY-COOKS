@@ -8,6 +8,7 @@ extends Control
 ##sets global variable to self
 func _ready():
 	PlayerStats.icon_bar = self
+	$Label.text = "20mp"
 
 ##sets the current and right ability icons according to the player's current combo counter
 func set_icons(counter : int):
