@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_11xfy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_py1tv"]
-[ext_resource type="AudioStream" uid="uid://ckcx2ks517fr8" path="res://Scenes/Intro Cutscene/Audio/Intro/49053354-page-turn-305789.mp3" id="26_r5ao7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5ao7"]
 animations = [{
@@ -66,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6wkej")
-Subtitles = Array[String](["Let me spin you a yarn...", "In the town of Litshire, the people lived in an age of prosperity.", "Year after year, their crops were bountiful, and traders came far and wide to engage in commerce.", "Because of Litshire, the lands of Fuania began to prosper. There was peace.", "The Rat King...", "Like a plague, he and his marauder forces swept throughout the land. Plundering and crushing all in their way.", "Many heroes began to come together to fight back against the Rat King and his legion.", "But their efforts have been without advance. And they have all but been snuffed out.", "Tales of the Rat King's terror have spread throughout and to distant lands. And yet none have come to aid us.", "And thus, we are doomed."])
+Subtitles = Array[String](["Let me spin you a yarn...", "In the town of Litshire, the people lived in an age of prosperity.", "Year after year, their crops were bountiful, and traders came far and wide to engage in commerce.", "Because of Litshire, the lands of Faunia began to prosper. There was peace.", "The Rat King...", "Like a plague, he and his marauder forces swept throughout the land. Plundering and crushing all in their way.", "Many heroes began to come together to fight back against the Rat King and his legion.", "But their efforts have been without advance. And they have all but been snuffed out.", "Tales of the Rat King's terror have spread throughout and to distant lands. And yet none have come to aid us.", "And thus, we are doomed."])
 Voice = Array[AudioStream]([ExtResource("10_j8cwx"), ExtResource("15_8og2a"), ExtResource("11_6wkej"), ExtResource("12_11xfy"), ExtResource("13_py1tv"), ExtResource("14_ejlr2"), ExtResource("16_r5ao7"), ExtResource("17_efp4m"), ExtResource("18_k2rm0"), ExtResource("11_py1tv")])
 NextPage = Array[bool]([false, true, false, true, true, false, true, true, true, false])
 
@@ -200,6 +199,3 @@ offset_top = -128.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("23_py1tv")
-
-[node name="Page Turn" type="AudioStreamPlayer" parent="." unique_id=618143244]
-stream = ExtResource("26_r5ao7")
