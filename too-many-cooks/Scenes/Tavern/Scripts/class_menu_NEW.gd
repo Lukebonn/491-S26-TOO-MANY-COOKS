@@ -118,10 +118,10 @@ func _on_upgrade_pressed():
 	$Panel/VBoxContainer/HBoxContainer/Stats/Upgrade.disabled = !_check_upgrade_avaliability()
 func _on_upgrade_ability_pressed():
 	PlayerStats.Orbs -= orb_upgrade_price
+	current_ability_level += 1
 	match current_class:
 		"Warrior":
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level += 1
-			current_ability_level = $"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level
 			$"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".update_sheet()
 			match $"../Tavern BG/Class_NPCS/Warrior_CLASS_NPC".Class_Ability_Level:
 				1:
@@ -144,7 +144,6 @@ func _on_upgrade_ability_pressed():
 					show_menu()
 		"Rogue":
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level += 1
-			current_ability_level = $"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level
 			$"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".update_sheet()
 			match $"../Tavern BG/Class_NPCS/Rogue_CLASS_NPC".Class_Ability_Level:
 				1:
@@ -167,7 +166,6 @@ func _on_upgrade_ability_pressed():
 					show_menu()
 		"Mage":
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level += 1
-			current_ability_level = $"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level
 			$"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".update_sheet()
 			match $"../Tavern BG/Class_NPCS/Mage_CLASS_NPC".Class_Ability_Level:
 				1:
