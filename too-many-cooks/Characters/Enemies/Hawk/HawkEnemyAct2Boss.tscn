@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_ep4l3"]
 [ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="2_j1n0u"]
+[ext_resource type="AudioStream" uid="uid://dp5dhv15cj28l" path="res://Characters/Enemies/Hawk/Hawk Hit.wav" id="2_reqb8"]
 [ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="3_reqb8"]
 [ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="4_w5ber"]
 [ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="5_fin7d"]
@@ -12,12 +13,12 @@
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="10_21axn"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="11_rtkfh"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="12_di3ft"]
-[ext_resource type="Script" path="res://Characters/Enemies/Hawk/slash_state.gd" id="13_5kdi5"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="13_5kdi5"]
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="14_52fqq"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="15_c76uj"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="16_6nvjc"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="17_5t2e6"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="18_7xo43"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="18_7xo43"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="19_fca1h"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="20_5jg6m"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="21_5wkg3"]
@@ -194,6 +195,7 @@ collision_mask = 64
 collide_with_areas = true
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_reqb8")
 
 [node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
 

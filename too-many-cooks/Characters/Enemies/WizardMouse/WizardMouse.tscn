@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bieb2r1oayga1"]
 
 [ext_resource type="Script" uid="uid://d3q6aiklmd5m5" path="res://Characters/Enemies/Template Enemy Kit/Enemy Classes/EnemyClass.gd" id="1_31sml"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_66076"]
 [ext_resource type="Texture2D" uid="uid://bo87e6in8k5o8" path="res://Characters/Enemies/WizardMouse/wizard/1.png" id="2_oybb8"]
 [ext_resource type="Texture2D" uid="uid://1fckt4yw5nef" path="res://Characters/Enemies/WizardMouse/wizard/2.png" id="3_66076"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_vvwog"]
@@ -110,6 +111,7 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_66076")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)

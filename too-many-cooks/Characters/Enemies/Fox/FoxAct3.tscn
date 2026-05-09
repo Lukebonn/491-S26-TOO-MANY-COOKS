@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_o7v3m"]
 [ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_8absh"]
+[ext_resource type="AudioStream" uid="uid://diq0pjaau1sb6" path="res://Characters/Enemies/Fox/Fox Hit.wav" id="2_gj5me"]
 [ext_resource type="Texture2D" uid="uid://but46j8h1oth1" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalkUp1.png" id="3_gj5me"]
 [ext_resource type="Texture2D" uid="uid://ywxwlijnrcat" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalkUp2.png" id="4_ml48h"]
 [ext_resource type="Texture2D" uid="uid://c8qh0mc84rgj8" path="res://Characters/Enemies/Fox/Walk Sprites/FoxWalkUp3.png" id="5_prgbo"]
@@ -15,12 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="13_jvg3u"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="14_nat6o"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="15_gm5vy"]
-[ext_resource type="Script" path="res://Characters/Enemies/Hawk/slash_state.gd" id="16_585b4"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="16_585b4"]
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="17_i6hm6"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="18_bf35o"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="19_7kkw4"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="20_hwky0"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="21_woajw"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="21_woajw"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="22_lfyi8"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="23_to81s"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="24_o7v3m"]
@@ -209,7 +210,7 @@ debug_color = Color(0, 1, 0, 0.41960785)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
-stream = ExtResource("2_8absh")
+stream = ExtResource("2_gj5me")
 
 [node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
 stream = ExtResource("2_8absh")
