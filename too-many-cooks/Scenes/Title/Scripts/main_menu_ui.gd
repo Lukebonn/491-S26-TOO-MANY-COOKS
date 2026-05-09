@@ -1,6 +1,10 @@
 extends Control
 # Carson made this so yell at her if you want something different
 
+func _ready():
+	if Global.Act_2_Unlocked:
+		$Buttons/VBoxContainer/Journals.show()
+
 func _on_title_ui_stop_spinning_enivonment():
 	menu_ui_come_in()
 
@@ -15,6 +19,7 @@ func _on_settings_pressed():
 	menu_ui_to_settings()
 
 func menu_ui_to_settings():
+	$"../Journals".hide_menu()
 	$"Pause UI/PauseStuff/TooltipReader".text = "Hello!"
 	var tween = get_tree().create_tween().set_parallel(true)
 	#this is so messy but its a prototype haha
@@ -35,3 +40,10 @@ func _on_pause_ui_closed_menu():
 	for panel in $Sidebar.get_children():
 		tween.tween_property(panel,"position",(Vector2(0,0)),panel.get_index()+1*.6).set_trans(Tween.TRANS_EXPO)
 	tween.parallel().tween_property($"../Title UI/titletop","position",Vector2(576,-0),.3)
+
+
+func _on_journals_pressed():
+	var tween = get_tree().create_tween().set_parallel(true)
+	for panel in $Sidebar.get_children():
+		tween.tween_property(panel,"position",(Vector2(-1300,0)),panel.get_index()+1*.6).set_trans(Tween.TRANS_EXPO)
+	$"../Journals".show_menu()

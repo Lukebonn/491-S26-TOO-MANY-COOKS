@@ -1,7 +1,7 @@
 #Introduction (First meeting):
 [1]Hey there, you're that cool cat that everyone has been blabbing on and on about. I'm Renly, you're new best friend!
 [5]I came by because I've heard about this Rat King. Horrible stuff he's done, really.
-[5]It's a great shame how all that treasure has been holed up in the Tower. Could really use someone to get in there and “liberate” the townsfolk's valuables. 
+[5]It's a great shame how all that treasure has been holed up in the Tower. Could really use someone to get in there and "liberate" the townsfolk's valuables. 
 [1]That's where you come in kid. I'll show you some neat tricks, and you go clear out that Tower for me. We have a deal?# 
 #
 #First talk after beating first boss/Act 1:

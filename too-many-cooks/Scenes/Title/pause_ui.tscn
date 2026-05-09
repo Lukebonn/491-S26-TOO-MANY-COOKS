@@ -353,7 +353,6 @@ offset_right = -879.0
 offset_bottom = 375.0
 theme_override_colors/font_color = Color(0.8482885, 0.50443524, 0.15797234, 1)
 theme_override_font_sizes/font_size = 32
-text = "Objective"
 
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Audio/Audio Sliders/HBoxContainer/Master Audio/Master" to="PauseStuff/TooltipReader" method="_on_master_audio_mouse_entered"]

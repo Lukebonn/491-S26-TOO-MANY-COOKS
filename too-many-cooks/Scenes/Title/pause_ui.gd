@@ -60,4 +60,4 @@ func _on_sfx_slider_drag_started() -> void:
 
 
 func _on_combat_settings_show_pause_objective(objective_title) -> void:
-	$Objective.set_text("Objective: " + objective_title)
+	pass#$Objective.set_text("Objective: " + objective_title)

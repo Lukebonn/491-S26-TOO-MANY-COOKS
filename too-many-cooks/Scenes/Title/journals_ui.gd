@@ -29,4 +29,3 @@ func check_all_entries():
 		entry.check_avaliablilty()
 	for entry in $TabContainer/Rogue/Entries.get_children():
 		entry.check_avaliablilty()
-	

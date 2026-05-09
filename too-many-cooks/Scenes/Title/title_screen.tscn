@@ -18,6 +18,12 @@
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="12_xruoh"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="13_72lsw"]
 [ext_resource type="AudioStream" uid="uid://bdqq53n0efejs" path="res://Audio/Music/TitleScreenMusic.ogg" id="15_fbuyo"]
+[ext_resource type="Script" uid="uid://de0angmpdci63" path="res://Scenes/Title/journals_ui.gd" id="19_jhms8"]
+[ext_resource type="Script" uid="uid://m1ratefdb4lj" path="res://Scenes/Tavern/Scripts/journal_entryy.gd" id="20_q3h1k"]
+[ext_resource type="Script" uid="uid://ego2ey2td6r0" path="res://Scenes/Tavern/journals_panel.gd" id="21_vjiri"]
+[ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="22_g1voa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rupx0"]
 
 [node name="Node3D" type="Node2D" unique_id=991571869]
 
@@ -240,6 +246,16 @@ script = ExtResource("11_fbuyo")
 hoverSound = NodePath("../../../../ButtonHoverSound")
 clickSound = NodePath("../../../../ButtonClickSound")
 
+[node name="Journals" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=1283411397 node_paths=PackedStringArray("hoverSound", "clickSound")]
+visible = false
+layout_mode = 2
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 64
+text = "Journals"
+script = ExtResource("11_fbuyo")
+hoverSound = NodePath("../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../ButtonClickSound")
+
 [node name="Quit" type="Button" parent="Menu UI/Buttons/VBoxContainer" unique_id=911186619 node_paths=PackedStringArray("hoverSound", "clickSound")]
 visible = false
 layout_mode = 2
@@ -272,6 +288,393 @@ bus = &"Music"
 stream = ExtResource("15_fbuyo")
 autoplay = true
 
+[node name="Journals" type="Control" parent="." unique_id=111199113 node_paths=PackedStringArray("clickSound", "hoverSound")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1152.0
+offset_right = 1192.0
+offset_bottom = 40.0
+theme = ExtResource("7_xruoh")
+script = ExtResource("19_jhms8")
+clickSound = NodePath("../ButtonClickSound")
+hoverSound = NodePath("../ButtonHoverSound")
+
+[node name="TabContainer" type="TabContainer" parent="Journals" unique_id=1196990299]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 74.0
+offset_right = 692.0
+offset_bottom = 574.0
+theme = ExtResource("7_xruoh")
+current_tab = 0
+
+[node name="Warrior" type="MarginContainer" parent="Journals/TabContainer" unique_id=1265999366]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7_xruoh")
+metadata/_tab_index = 0
+
+[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Warrior" unique_id=739387303]
+custom_minimum_size = Vector2(320, 300)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7_xruoh")
+columns = 2
+
+[node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1115078855 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 1"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Title = "New Tyranny"
+Author = "Akari"
+Body = "I have heard rumblings of a new King taking hold of the old tower.  The locals have been speaking of a new illness growing over the land, and from what I gather the well-being of this land is somehow connected to that ancient tower, which is why it holds great importance over these people.  I would be amiss if I did not take it upon myself to enter the tower to see what I could do to help those abandoned by magic."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry2" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=2139284916 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 2"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Weaklings"
+Unlock_Goal = 1
+Author = "Akari"
+Body = "The little rodents think they are a match for my sword.  They are sorely mistaken.  They run around carrying a banner for their king but they ought to be carrying around some sort of better weaponry."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry3" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1978669018 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 3"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "New Friend"
+Unlock_Goal = 3
+Author = "Akari"
+Body = "A curious little cat approached me after I couldn't figure out one of the doors to climb up.  Despite it's smaller stature it sure is capable of fending off the rats.  Maybe it is worth it to keep training the little critter.  They serve some pretty good food too."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry4" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=437720245 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 4"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Against all odds..."
+Unlock_Goal = 5
+Author = "Akari"
+Body = "Despite all odds, the little kit has made its way towards the top of the tower.  I honestly do not know if I would be even able to do that.  I can't be too bothered though.  It is nice being able to meet with the funny little raccoon and toad that have taken up home within this run down tavern.I have gotten quite the thrill watching the little fellow run around the tower, but I know their heart is with this Tavern, perhaps I take position and watch over the tower.  That little toad has talked about something similar, perhaps they will need a guard."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="Rogue" type="MarginContainer" parent="Journals/TabContainer" unique_id=1606068571]
+visible = false
+layout_mode = 2
+theme = ExtResource("7_xruoh")
+metadata/_tab_index = 1
+
+[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Rogue" unique_id=116844398]
+custom_minimum_size = Vector2(320, 300)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7_xruoh")
+columns = 2
+
+[node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1274171343 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 1"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Trash Pandas"
+Author = "Renly"
+Body = "\"Trash Panda\" this- \"Trash Panda\" that- I'm not some low class bin diving scum.  I have someone no one else does... class.  They say that tower is pretty heavily guarded huh?  Everything in there is just ancient relics that no one could be bothered to take.  Surely something in there will give me the acclaim I am seeking."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry2" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=667653421 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 2"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Crashout"
+Unlock_Goal = 1
+Author = "Renly"
+Body = "That tower is supposed to be ABANDONED and now there are swarms of ARMED RATS scouring the floors.  H*** F*** I better find something good in there.  Something like that gotta be on the top floor."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry3" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=98469673 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 3"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "New Little Guy"
+Unlock_Goal = 3
+Author = "Renly"
+Body = "A little cat found me and brought me to this tavern. Part of me doesn’t really trust them.  The other part of me is seeing what they are bringing back.  I wonder if I can get them to nab some nice stuff for me, maybe I could teach them some of my tricks."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry4" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1567895555 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 4"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Impressive"
+Unlock_Goal = 5
+Author = "Renly"
+Body = "That little rascal is really something.  They finessed their way around the tower in a way I could never.  Even better, they have kept bringing back me some shinies to show my friends.  It feels weird though, I didn’t actually steal any of this...  Maybe I stick around and see what I can do for the little rascal."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="Mage" type="MarginContainer" parent="Journals/TabContainer" unique_id=926364393]
+visible = false
+layout_mode = 2
+theme = ExtResource("7_xruoh")
+metadata/_tab_index = 2
+
+[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Mage" unique_id=541618824]
+custom_minimum_size = Vector2(320, 300)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7_xruoh")
+columns = 2
+
+[node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=662389663 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 1"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Corruption"
+Author = "Walter"
+Body = "That tower is supposed to protect the land, now everyone seems afraid of it.  Something evil is corrupting the heart of the tower and it needs to be stopped.  If I had to guess some form of energy is polluting the central crystal.  I must investigate further."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry2" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=1745082239 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 2"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Research Annoyances"
+Unlock_Goal = 1
+Author = "Walter"
+Body = "There is something seriously wrong here.  If only there were less rats around I would be able to take more time to do better research.  I think I saw some lion lady running around.  I wonder if she would be interested in protecting me."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry3" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=916104731 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 3"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "Curious Fellow"
+Unlock_Goal = 3
+Author = "Walter"
+Body = "That funny little cat seems to be able to do everything.  They brought me, that warrior lion lady and a funny little raccoon to this old run town tavern that they seem to be renovating.  I must be honest, it has been awhile since I have had a meal this good.  Perhaps I can stay here awhile and rest, study what information I have right now.  Plus the little feline seems to be more than capable of handling themselves under my tutelage."
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="entry4" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=904493015 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_xruoh")
+theme_override_font_sizes/font_size = 32
+text = "Entry 4"
+autowrap_mode = 2
+script = ExtResource("20_q3h1k")
+Locked = true
+Title = "The Future"
+Unlock_Goal = 5
+Author = "Walter"
+Body = "The cat made its way to the upper floors.  I do not know if I would have been able to do the same. But now that the cat has dealt with the Rat King, perhaps the crystal will be restored and with it, the blight on the land will be reversed.  I wonder if I could take homage in the tower, to keep it safe and to further my studies?"
+journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
+journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
+journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+metadata/_custom_type_script = "uid://m1ratefdb4lj"
+
+[node name="JournalPanel" type="Panel" parent="." unique_id=1191794539 node_paths=PackedStringArray("ClickSound", "HoverSound")]
+z_index = 2
+custom_minimum_size = Vector2(800, 600)
+offset_left = 1152.0
+offset_top = 40.0
+offset_right = 1952.0
+offset_bottom = 640.0
+theme = ExtResource("7_xruoh")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rupx0")
+script = ExtResource("21_vjiri")
+ClickSound = NodePath("../ButtonClickSound")
+HoverSound = NodePath("../ButtonHoverSound")
+
+[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=2101473344]
+z_index = 1
+custom_minimum_size = Vector2(540, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -249.0
+offset_right = 281.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_xruoh")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "dummy tex"
+scroll_active = false
+
+[node name="AuthorLabel" type="RichTextLabel" parent="JournalPanel" unique_id=399778071]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 216.0
+offset_right = 363.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_xruoh")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 40
+text = "author..."
+horizontal_alignment = 2
+
+[node name="Container" type="Container" parent="JournalPanel" unique_id=990928749]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_xruoh")
+
+[node name="Sprite2D" type="Sprite2D" parent="JournalPanel" unique_id=1375482160]
+position = Vector2(400, 300)
+texture = ExtResource("22_g1voa")
+
+[node name="ExitJournals" type="Button" parent="JournalPanel" unique_id=1514828711]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 33.0
+offset_right = 767.0
+offset_bottom = 73.0
+theme = ExtResource("7_xruoh")
+text = "Exit"
+
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Art" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="stop_spinning_enivonment" from="Title UI" to="Menu UI" method="_on_title_ui_stop_spinning_enivonment"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Start" to="Menu UI/Buttons/VBoxContainer/Start" method="_on_button_down"]
@@ -286,7 +689,13 @@ autoplay = true
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_button_down"]
 [connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Credits" to="Menu UI/Buttons/VBoxContainer/Credits" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Credits" to="Title UI" method="_on_credits_pressed"]
+[connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Journals" to="Menu UI/Buttons/VBoxContainer/Journals" method="_on_button_down"]
+[connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Journals" to="Menu UI/Buttons/VBoxContainer/Journals" method="_on_mouse_entered"]
+[connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Journals" to="Menu UI" method="_on_journals_pressed"]
+[connection signal="pressed" from="Menu UI/Buttons/VBoxContainer/Journals" to="Journals" method="_on_journals_pressed"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Title UI" method="_on_quit_button_down"]
 [connection signal="button_down" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_button_down"]
 [connection signal="mouse_entered" from="Menu UI/Buttons/VBoxContainer/Quit" to="Menu UI/Buttons/VBoxContainer/Quit" method="_on_mouse_entered"]
 [connection signal="closed_menu" from="Menu UI/Pause UI" to="Menu UI" method="_on_pause_ui_closed_menu"]
+[connection signal="mouse_entered" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_mouse_entered"]
+[connection signal="pressed" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_pressed"]

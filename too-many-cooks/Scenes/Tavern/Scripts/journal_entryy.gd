@@ -44,5 +44,5 @@ func check_avaliablilty():
 func _on_pressed():
 	print(journal_text_ref)
 	journal_text_ref.text = "\t" + Body
-	journal_author_ref.text = Author
+	journal_author_ref.text = Author + " "
 	journal_panel_ref.show_menu()

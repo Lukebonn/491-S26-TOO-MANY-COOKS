@@ -57,3 +57,7 @@ func _on_credits_pressed() -> void:
 		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1.2).timeout
 		get_tree().change_scene_to_file("res://UI/Credits/credits.tscn")
+
+
+func _on_journals_pressed():
+	pass # Replace with function body.
