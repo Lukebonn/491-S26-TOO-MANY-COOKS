@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cv8urftq3uh8s"]
 
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_cl82m"]
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_n4jxl"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_3ai76"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_j518v"]
@@ -16,11 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="14_3ai76"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="15_j518v"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_xfeou"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="17_ner28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
+script = ExtResource("1_cl82m")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1746741095]
 z_index = -1
@@ -193,6 +196,10 @@ position = Vector2(-99, 160)
 
 [node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("16_xfeou")]
 
+[node name="DeathSong" type="AudioStreamPlayer" parent="." unique_id=807917055]
+stream = ExtResource("17_ner28")
+
+[connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

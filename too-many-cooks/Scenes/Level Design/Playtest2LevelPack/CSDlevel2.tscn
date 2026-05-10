@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="7_ssysm"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_wfqkj"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="9_ga6jb"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="10_bhwye"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -335,6 +336,9 @@ stream = ExtResource("9_ga6jb")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="DeathMusic" type="AudioStreamPlayer" parent="." unique_id=1752077207]
+stream = ExtResource("10_bhwye")
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

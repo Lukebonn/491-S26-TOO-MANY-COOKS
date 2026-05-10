@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwov7xph3ejlx"
+path="res://.godot/imported/Orb pick up.ogg-84da2892bc84ed7e5d1b8c02656017de.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Sounds/General/Orb pick up.ogg"
+dest_files=["res://.godot/imported/Orb pick up.ogg-84da2892bc84ed7e5d1b8c02656017de.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

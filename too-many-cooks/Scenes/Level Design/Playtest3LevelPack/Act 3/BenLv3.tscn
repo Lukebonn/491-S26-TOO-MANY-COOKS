@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://claean3n45vqg"]
 
 [ext_resource type="TileSet" uid="uid://dwtsix1jpmf65" path="res://Objects/Tilesets/FloorThreeSet.tres" id="1_07r8g"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_b0a50"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_wyeoy"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_3isxj"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_td01o"]
@@ -22,11 +23,13 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="14_s6ygs"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="16_ry3e8"]
 [ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="16_ve6l4"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="23_e8qbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8qbi"]
 size = Vector2(32, 96)
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
+script = ExtResource("1_b0a50")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1746741095]
 z_index = -1
@@ -241,4 +244,8 @@ volume_db = -8.0
 autoplay = true
 bus = &"Music"
 
+[node name="DeathMusic" type="AudioStreamPlayer" parent="." unique_id=800331167]
+stream = ExtResource("23_e8qbi")
+
+[connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

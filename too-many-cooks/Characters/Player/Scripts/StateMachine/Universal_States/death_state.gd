@@ -1,5 +1,6 @@
 extends PlayerState
 
+signal combat_music_stop
 func enter_state(player_node):
 	print_debug("death_state entered")
 	super(player_node)
@@ -10,3 +11,4 @@ func enter_state(player_node):
 	player.dead = true
 	get_parent().playerDeath.emit()
 	player.process_mode = Node.PROCESS_MODE_DISABLED
+	combat_music_stop.emit()

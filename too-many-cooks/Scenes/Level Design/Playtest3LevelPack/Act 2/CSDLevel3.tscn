@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dd3ga4mcq5gmj"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_87tbe"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_eb5wj"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_1hv6n"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_byj2w"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="5_kr6hc"]
@@ -14,11 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_q63rm"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_4rq8p"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="14_8k0ea"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="15_bfmjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
+script = ExtResource("1_eb5wj")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1746741095]
 z_index = -1
@@ -120,6 +123,10 @@ position = Vector2(206, 6)
 
 [node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("14_8k0ea")]
 
+[node name="DeathSong" type="AudioStreamPlayer" parent="." unique_id=1939297795]
+stream = ExtResource("15_bfmjg")
+
+[connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

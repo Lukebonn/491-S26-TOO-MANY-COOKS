@@ -1,6 +1,7 @@
 extends Pickup
 
 @export var Flip_Out : bool = true
+@export var Collect_Sound : AudioStreamPlayer
 var done_landing = false
 func _ready():
 	$Area2D.connect("body_entered",collect)
@@ -26,4 +27,5 @@ func collect(body):
 	if body.name == "Player":
 		PlayerStats.Gold += Value
 		PlayerStats.Floor_Gold += Value
+		Collect_Sound.play()
 		queue_free()

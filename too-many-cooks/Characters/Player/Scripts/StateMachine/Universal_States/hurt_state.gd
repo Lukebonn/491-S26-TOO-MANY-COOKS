@@ -2,6 +2,7 @@ extends PlayerState
 
 var damage_hitbox : Area2D
 @export var Hurt_Sound: AudioStreamPlayer
+@export var Death_Sound: AudioStreamPlayer
 
 var invincible : bool = false
 
@@ -35,6 +36,8 @@ func enter_state(player_node):
 		#to be replaced with something fancier in the future
 		if(player.health <= 0):
 			player.change_state("death_state")
+			if Death_Sound:
+				Death_Sound.play()
 		else:
 			#player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			player.change_state("move_state")

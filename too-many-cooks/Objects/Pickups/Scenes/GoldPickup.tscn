@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bak0aytwj4ug" path="res://Objects/Pickups/Scripts/gold_pickup.gd" id="1_utgee"]
 [ext_resource type="Texture2D" uid="uid://ncvmbiugtx26" path="res://Objects/Pickups/Img/coin.png" id="2_p2c1h"]
+[ext_resource type="AudioStream" uid="uid://cxfh7urjp5sk2" path="res://Audio/Sounds/General/Gold pick up.mp3" id="3_p2c1h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
 
@@ -37,3 +38,6 @@ debug_color = Color(1, 1, 0.05490196, 0.08627451)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181732196]
 shape = SubResource("CircleShape2D_3aqng")
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="." unique_id=116320063]
+stream = ExtResource("3_p2c1h")

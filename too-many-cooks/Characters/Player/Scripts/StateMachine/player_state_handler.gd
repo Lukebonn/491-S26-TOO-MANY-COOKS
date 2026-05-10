@@ -39,7 +39,8 @@ var dead : bool = false
 var num_keys : int = 0
 #Number of held Keys, used by Key and Lock objects.
 
-
+#Emitted when death state gives off the signal to stop the combat music
+signal Music_Stop()
 ##Called when the node enters the scene tree for the first time.
 #player should be in idle state when loaded
 #loads the correct class for the player
@@ -147,3 +148,7 @@ func set_damage(multiplier : float):
 func play_sound(sound : AudioStream):
 	$AudioStreamPlayer2D.stream = sound
 	$AudioStreamPlayer2D.play()
+
+
+func _on_death_state_combat_music_stop() -> void:
+	Music_Stop.emit()

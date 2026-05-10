@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="12_l0q1t"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="14_4y6nv"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="14_li7w1"]
+[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="16_f7boq"]
 [ext_resource type="PackedScene" uid="uid://cvxl3oo88rrdk" path="res://Objects/Lock/obj_lock.tscn" id="16_ft3hf"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
@@ -1087,6 +1088,9 @@ position = Vector2(-1098, -1668)
 
 [node name="ObjLock" parent="." unique_id=269246272 instance=ExtResource("16_ft3hf")]
 position = Vector2(-10, -1304)
+
+[node name="DeathMusic" type="AudioStreamPlayer" parent="." unique_id=724938678]
+stream = ExtResource("16_f7boq")
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
