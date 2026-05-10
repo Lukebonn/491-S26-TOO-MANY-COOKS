@@ -75,11 +75,11 @@ func _on_mouse_exited():
 	
 func reset_bond_rank():
 	match Name:
-		"Warrior":
+		"Akari":
 			bond_rank = PlayerStats.MeleeClassAbilityLevel
-		"Rogue":
+		"Renly":
 			bond_rank = PlayerStats.RogueClassAbilityLevel
-		"Mage":
+		"Walter":
 			bond_rank = PlayerStats.MageClassAbilityLevel
 
 

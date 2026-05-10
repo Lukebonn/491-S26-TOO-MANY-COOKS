@@ -114,11 +114,11 @@ func find_message(character: String, index, emotions):
 			Global.Has_Finished_Playtest = true
 		"Gramps":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/INTRO.txt", FileAccess.READ)
-		"Warrior":
+		"Akari":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/WARRIOR.txt", FileAccess.READ)
-		"Rogue":
+		"Renly":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/RANGER.txt", FileAccess.READ)
-		"Mage":
+		"Walter":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/MAGE.txt",FileAccess.READ)
 		"Player":
 			file = FileAccess.open("res://Scenes/Tavern/NPCs/PLAYER.txt",FileAccess.READ)
@@ -159,7 +159,7 @@ func find_portrait(character: String, index, emotions, line: String):
 				"5":
 					$Container/SpeakerSprite.texture = GrampsPortraits[4]
 					print("Gramps just here") 
-		"Warrior":
+		"Akari":
 			match tag:
 				"0":
 					pass
@@ -179,7 +179,7 @@ func find_portrait(character: String, index, emotions, line: String):
 				"5":
 					$Container/SpeakerSprite.texture = WarriorPortraits[4]
 					print("Warrior just here")
-		"Rogue":
+		"Renly":
 			match tag:
 				"0":
 					pass
@@ -199,7 +199,7 @@ func find_portrait(character: String, index, emotions, line: String):
 				"5":
 					$Container/SpeakerSprite.texture = RoguePortraits[4]
 					print("Rogue just here")
-		"Mage":
+		"Walter":
 			match tag:
 				"0":
 					pass
