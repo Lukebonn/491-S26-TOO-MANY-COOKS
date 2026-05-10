@@ -73,7 +73,7 @@ offset_right = -32.0
 offset_bottom = 66.0
 grow_horizontal = 0
 theme = ExtResource("4_6abwf")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 24
 text = "Close"
 
 [node name="Back" type="Button" parent="Panel" unique_id=94567557]

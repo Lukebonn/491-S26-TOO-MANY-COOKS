@@ -18,6 +18,7 @@ func hide_menu():
 	$Objective.visible = false
 func _on_back_pressed():
 	hide_menu()
+	$Back.disabled = true
 	clickSound.play()
 
 func _on_master_slider_value_changed(value):

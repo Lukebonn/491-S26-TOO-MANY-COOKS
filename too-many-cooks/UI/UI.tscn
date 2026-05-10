@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
@@ -36,6 +36,16 @@
 [ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
 [ext_resource type="Texture2D" uid="uid://ydgh8qblwa1u" path="res://UI/Img/objective_cross.png" id="32_vntq0"]
+[ext_resource type="FontFile" uid="uid://6uvhycoiviax" path="res://UI/Themes/PublicPixel.ttf" id="37_tvo8u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bbpqy"]
+line_spacing = 0.0
+font = ExtResource("37_tvo8u")
+font_size = 20
+outline_size = 4
+outline_color = Color(8.731843e-06, 8.731842e-06, 8.731842e-06, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="Control" unique_id=1832120515 node_paths=PackedStringArray("settings", "tavern_warning", "level_review")]
 process_mode = 3
@@ -680,16 +690,32 @@ stream = ExtResource("31_v25sk")
 [node name="Death Song" type="AudioStreamPlayer" parent="." unique_id=649188314]
 stream = ExtResource("32_t0bwl")
 
+[node name="HUD Timer" type="Label" parent="." unique_id=2024309446]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 28.0
+theme = ExtResource("16_kncd2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
+text = "00:00"
+label_settings = SubResource("LabelSettings_bbpqy")
+horizontal_alignment = 1
+
 [node name="Objective Name" type="Label" parent="." unique_id=1078759042]
 layout_mode = 0
-offset_top = 4.0
-offset_right = 1152.0
-offset_bottom = 36.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 33.0
 theme = ExtResource("1_tvo8u")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
 text = "Objective"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="level_is_complete" from="." to="ObjectiveManager" method="_on_ui_level_is_complete"]

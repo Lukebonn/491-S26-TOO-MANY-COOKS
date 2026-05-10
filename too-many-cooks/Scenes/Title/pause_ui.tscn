@@ -107,7 +107,7 @@ theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
-text = "Master"
+text = "Global Volume"
 fit_content = true
 horizontal_alignment = 1
 
@@ -147,7 +147,7 @@ theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
-text = "Music"
+text = "Music Volume"
 fit_content = true
 horizontal_alignment = 1
 
@@ -187,7 +187,7 @@ theme = ExtResource("1_0758p")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 32
-text = "SFX"
+text = "Sound Volume"
 fit_content = true
 horizontal_alignment = 1
 
@@ -218,6 +218,11 @@ metadata/_tab_index = 1
 
 [node name="Graphics Settings" type="VBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics" unique_id=1206408645]
 custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = ExtResource("1_0758p")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=633329492]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 theme = ExtResource("1_0758p")
 
@@ -322,12 +327,12 @@ hoverSound = NodePath("../../ButtonHoverSound")
 
 [node name="Back" type="Button" parent="." unique_id=1178690095 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 0
-offset_left = 972.0
-offset_top = 23.0
-offset_right = 1128.0
-offset_bottom = 119.0
+offset_left = 992.0
+offset_top = 16.0
+offset_right = 1120.0
+offset_bottom = 88.0
 theme = ExtResource("1_0758p")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "Back
 "
 script = ExtResource("4_0758p")

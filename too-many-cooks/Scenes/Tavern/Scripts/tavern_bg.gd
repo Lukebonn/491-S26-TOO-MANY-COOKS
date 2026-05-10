@@ -53,6 +53,7 @@ func set_up_tavern():
 
 func _on_door_andy_pressed():
 	class_select_ref.show_menu()
+	$Exit.disabled = true
 
 
 func _on_end_door_pressed():

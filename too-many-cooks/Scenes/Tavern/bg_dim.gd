@@ -22,8 +22,10 @@ func _on_class_select_on_menu_show() -> void:
 	dim()
 func _on_class_select_on_menu_left() -> void:
 	undim()
+	$"../Exit".disabled = false
 func _on_act_select_on_menu_left() -> void:
 	undim()
+	$"../Exit".disabled = false
 
 #Dims/undims specific to the Gramps NPC.
 func _on_gramps_button_down() -> void:

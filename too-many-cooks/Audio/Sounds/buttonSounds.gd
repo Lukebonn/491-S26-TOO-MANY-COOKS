@@ -12,6 +12,5 @@ func _on_button_down() -> void:
 		clickSound.play()
 
 func continue_enable():
-	
 	if SaveMgr.GameData != null:
 		Button.disabled = false

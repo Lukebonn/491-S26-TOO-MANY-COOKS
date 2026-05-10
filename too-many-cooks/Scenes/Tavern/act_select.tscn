@@ -47,12 +47,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -114.0
-offset_top = 15.0
-offset_right = -15.0
-offset_bottom = 61.0
+offset_left = -104.0
+offset_top = 18.0
+offset_right = -32.0
+offset_bottom = 66.0
 grow_horizontal = 0
 theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 24
 text = "Close"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
@@ -87,44 +88,62 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="Levels" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2" unique_id=1269665270]
+[node name="Levels" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer2" unique_id=2079272959]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_oxpr4")
 alignment = 1
 
-[node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("4_oxpr4")
-theme_override_font_sizes/font_size = 64
-text = "Act 1"
-
-[node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("4_oxpr4")
-theme_override_font_sizes/font_size = 64
-disabled = true
-text = "Act 2"
-
 [node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670]
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 3"
 
-[node name="Practice" type="Button" parent="Panel/VBoxContainer" unique_id=1579989149]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1872809481]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "Act 2"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=949467083]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_oxpr4")
+theme_override_font_sizes/font_size = 64
+text = "Act 1"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1420436753]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Practice" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1579989149]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_oxpr4")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "Practice"
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act1" to="." method="_on_act_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act2" to="." method="_on_act_2_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act3" to="." method="_on_act_3_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Practice" to="." method="_on_practice_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act2" to="." method="_on_act_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act1" to="." method="_on_act_1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Practice" to="." method="_on_practice_pressed"]
