@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="11_c8pry"]
 [ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="12_n1nik"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="13_akgbs"]
-[ext_resource type="PackedScene" uid="uid://dcph8r5jg0jch" path="res://Objects/Pickups/Scenes/HpPickup.tscn" id="14_0isc8"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="15_xic8e"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="16_1fe72"]
 
@@ -127,9 +126,6 @@ position = Vector2(-256, 0)
 
 [node name="FoxAct4" parent="." unique_id=1698718556 instance=ExtResource("13_akgbs")]
 position = Vector2(-352, 0)
-
-[node name="GoldPickup" parent="." unique_id=739019463 instance=ExtResource("14_0isc8")]
-position = Vector2(88, 56)
 
 [node name="RangedEnemy" parent="." unique_id=1000626856 instance=ExtResource("15_xic8e")]
 position = Vector2(320, 232)

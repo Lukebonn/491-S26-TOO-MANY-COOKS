@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://o78ikw2j5x55"]
+
+[ext_resource type="Script" uid="uid://c2i3nm1aduwtl" path="res://System/Globals/pickup_sounds.gd" id="1_d5vfl"]
+[ext_resource type="AudioStream" uid="uid://dwov7xph3ejlx" path="res://Audio/Sounds/General/Orb pick up.ogg" id="2_by5o5"]
+[ext_resource type="AudioStream" uid="uid://cxfh7urjp5sk2" path="res://Audio/Sounds/General/Gold pick up.mp3" id="3_12b61"]
+
+[node name="PickupSounds" type="Node" unique_id=1538855487 node_paths=PackedStringArray("Gold_Pickup_Sound", "Orb_Pickup_Sound")]
+script = ExtResource("1_d5vfl")
+Gold_Pickup_Sound = NodePath("GoldPickupSound")
+Orb_Pickup_Sound = NodePath("OrbPickupSound")
+
+[node name="GoldPickupSound" type="AudioStreamPlayer" parent="." unique_id=830554852]
+stream = ExtResource("3_12b61")
+volume_db = -10.0
+
+[node name="OrbPickupSound" type="AudioStreamPlayer" parent="." unique_id=1082043413]
+stream = ExtResource("2_by5o5")
+volume_db = -10.0

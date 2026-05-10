@@ -129,6 +129,10 @@ func _on_player_not_enough_mana() -> void:
 func _on_player_death() -> void:
 	player_dead = true
 	$DeathScreen.visible = true
+	if $"../../CombatMusic":
+		$"../../CombatMusic".stop()
+		$"Death Sound".play()
+		$"Death Song".play()
 	var tween = $DeathScreen.create_tween()
 	tween.tween_property(
 		$DeathScreen, 

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="1_sntfj"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="2_sntfj"]
 [ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="3_efa58"]
-[ext_resource type="AudioStream" uid="uid://dwov7xph3ejlx" path="res://Audio/Sounds/General/Orb pick up.ogg" id="4_qieyn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
 
@@ -62,6 +61,3 @@ scale_amount_min = 0.5
 scale_amount_curve = SubResource("Curve_rqdct")
 color_ramp = SubResource("Gradient_7gtmk")
 hue_variation_max = 1.0
-
-[node name="CollectSound" type="AudioStreamPlayer" parent="." unique_id=1862907810]
-stream = ExtResource("4_qieyn")

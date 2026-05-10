@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://6cujdiydpyop"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_68oev"]
-[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_ac5gm"]
+[ext_resource type="Script" path="res://level_music.gd" id="1_ac5gm"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_ln8f6"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_ac5gm"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_dggp5"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://nfywsv4v04pd" path="res://Characters/Enemies/Hawk/HawkEnemyAct2Boss.tscn" id="9_68oev"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_dc86p"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_1secu"]
-[ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="12_ln8f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjbe"]
 size = Vector2(124, 53)
@@ -83,9 +82,6 @@ position = Vector2(0, -184)
 
 [node name="ObjBarrier2" parent="." unique_id=1473828029 instance=ExtResource("11_1secu")]
 position = Vector2(0, -464)
-
-[node name="DeathSong" type="AudioStreamPlayer" parent="." unique_id=132225215]
-stream = ExtResource("12_ln8f6")
 
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]

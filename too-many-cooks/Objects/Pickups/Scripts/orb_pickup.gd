@@ -1,10 +1,9 @@
 extends Pickup
-@export var Orb_Sound : AudioStreamPlayer
 
 func collect(body):
 	if body.name == "Player":
 		PlayerStats.Orbs += Value
 		PlayerStats.Floor_Orbs += Value
-		print("Collected a " + Name)
-		Orb_Sound.play()
+		#print("Collected a " + Name)
+		Sounds.play_orb_sound()
 		queue_free()
