@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://craq1coyrr5wk" path="res://Characters/Enemies/Macho Mouse/machomouse.gd" id="1_opqhs"]
 [ext_resource type="Texture2D" uid="uid://2mur3xggtd32" path="res://Characters/Enemies/Macho Mouse/walk/walk 1.png" id="2_1j8ml"]
+[ext_resource type="AudioStream" uid="uid://d2hfmbjku842b" path="res://Characters/Enemies/Macho Mouse/Macho Mouse Hit.wav" id="2_mvhqh"]
 [ext_resource type="Texture2D" uid="uid://df8nt42isped4" path="res://Characters/Enemies/Macho Mouse/attackwarningcircle.png" id="2_opqhs"]
 [ext_resource type="Script" uid="uid://bj6u7034h2mul" path="res://Characters/Enemies/Macho Mouse/attack_warning.gd" id="3_1j8ml"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_agy67"]
@@ -13,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0p3fvys7m7hb" path="res://Characters/Enemies/Macho Mouse/smash/smash 2.png" id="7_x7f34"]
 [ext_resource type="Texture2D" uid="uid://dqxpxu6sh12ku" path="res://Characters/Enemies/Macho Mouse/smash/smash 3.png" id="8_qe3ti"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_d7iom"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_7o77w"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_7o77w"]
 [ext_resource type="Script" uid="uid://djnjfg5cdrrc6" path="res://Characters/Enemies/Macho Mouse/macho_mouse_chase_state.gd" id="11_jcfvy"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_t6iec"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_g6eui"]
@@ -124,6 +125,7 @@ shape = SubResource("RectangleShape2D_opqhs")
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_mvhqh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(0.25, -2.75)

@@ -136,7 +136,7 @@ theme = ExtResource("4_6abwf")
 [node name="ClassLv" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=2089519543]
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "What your stats will be modified by when this class is chosen"
+tooltip_text = "The current level of this Class."
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
@@ -144,7 +144,9 @@ theme_override_font_sizes/font_size = 32
 text = "Level 5"
 
 [node name="Numbers" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=1921485031]
+custom_minimum_size = Vector2(0, 165)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="StatName" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers" unique_id=887869302]
 custom_minimum_size = Vector2(100, 0)
@@ -155,7 +157,7 @@ theme = ExtResource("4_6abwf")
 [node name="ActiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/StatName" unique_id=1322756572]
 layout_mode = 2
 size_flags_horizontal = 0
-tooltip_text = "What your stats will be modified by when this class is chosen"
+tooltip_text = "The stats you have while using this Class."
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
@@ -167,6 +169,8 @@ custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+tooltip_text = "Determines how much Health (HP) you have.
+Higher values means more HP."
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -178,6 +182,8 @@ custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+tooltip_text = "Determines how much Mana (MP) you have.
+Higher values means more MP for spells."
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -189,6 +195,8 @@ custom_minimum_size = Vector2(96, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+tooltip_text = "Determines how strong your attacks are.
+Higher values means you'll deal more damage."
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -212,6 +220,8 @@ custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+tooltip_text = "Determines how fast you can move in battle.
+Higher values mean you'll move faster."
 theme = ExtResource("4_6abwf")
 theme_override_colors/default_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -287,7 +297,7 @@ size_flags_vertical = 8
 
 [node name="PassiveStatChanges" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Stats/Numbers/PassiveNum" unique_id=1778244130]
 layout_mode = 2
-tooltip_text = "What your stats will be modified by even when this class is not chosen"
+tooltip_text = "Stat bonuses that apply to all Classes."
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
@@ -351,6 +361,8 @@ z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Click to increase the stats of this Class.
+You need Gold to do so."
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "  Upgrade Class"
@@ -384,6 +396,8 @@ vertical_alignment = 1
 z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+size_flags_vertical = 10
+tooltip_text = "Click to talk to the character this Class belongs to."
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "Have a Chat"
@@ -401,7 +415,8 @@ theme = ExtResource("4_6abwf")
 [node name="AbilityHeader" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1641235346]
 layout_mode = 2
 size_flags_vertical = 1
-tooltip_text = "What your stats will be modified by when this class is chosen"
+tooltip_text = "The Abilities that can be performed when using this Class.
+This includes Attack, Dash, and Spells."
 mouse_filter = 0
 theme = ExtResource("4_6abwf")
 theme_override_colors/font_color = Color(0.92941177, 0.8627451, 0.7294118, 1)
@@ -475,12 +490,14 @@ layout_mode = 2
 [node name="SpellBack" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=75168752]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Switch to view the previous Spell available for this Class."
 theme_override_font_sizes/font_size = 20
 text = "Previous Spell"
 
 [node name="SpellNext" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=138088990]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Switch to view the next Spell available for this Class."
 theme_override_font_sizes/font_size = 20
 text = "Next Spell"
 
@@ -489,6 +506,8 @@ z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Click to increase the power of an Ability.
+You need Orbs to do so."
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "  Upgrade Ability"

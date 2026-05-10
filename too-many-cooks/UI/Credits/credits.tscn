@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="8_jjdaq"]
 [ext_resource type="Texture2D" uid="uid://b00mw1ecyogno" path="res://UI/Credits/Img/AbiW.png" id="11_1qmnl"]
 [ext_resource type="Texture2D" uid="uid://bs8xyx21s4vps" path="res://UI/Credits/Img/JonathanM.png" id="11_3x4qe"]
+[ext_resource type="Texture2D" uid="uid://bb6w5068hs5se" path="res://UI/Credits/Img/AbbyP.png" id="12_6lhih"]
+[ext_resource type="Texture2D" uid="uid://d288dampa2jgg" path="res://UI/Credits/Img/Louie.png" id="13_fu6bj"]
 
 [node name="Credits" type="Control" unique_id=1758667731]
 layout_mode = 3
@@ -304,6 +306,7 @@ theme_override_constants/separation = 64
 [node name="AbiP1" parent="VBoxContainer/VBoxContainer4/HBoxContainer" unique_id=78673757 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("12_6lhih")
 Name = "Abigail Parisan"
 Title = "Environment Artist"
 
@@ -321,6 +324,7 @@ theme_override_constants/separation = 64
 [node name="Louie1" parent="VBoxContainer/VBoxContainer4/HBoxContainer2" unique_id=1552400064 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("13_fu6bj")
 Name = "Louis Rizzo"
 Title = "Character Artist"
 

@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://ccq3hl2dhge34"]
 
 [ext_resource type="Script" uid="uid://csc8rtib3xiw2" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/ranged_enemy.gd" id="1_571j5"]
-[ext_resource type="Texture2D" uid="uid://bdcb6unjge202" path="res://Characters/Enemies/rat/1.png" id="2_03kei"]
+[ext_resource type="Texture2D" uid="uid://bdcb6unjge202" path="res://Characters/Enemies/Rat/1.png" id="2_03kei"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_8faoy"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="3_88p6i"]
-[ext_resource type="Texture2D" uid="uid://1vdr5ts7d4rw" path="res://Characters/Enemies/rat/2a.png" id="3_571j5"]
+[ext_resource type="Texture2D" uid="uid://1vdr5ts7d4rw" path="res://Characters/Enemies/Rat/2a.png" id="3_571j5"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_571j5"]
-[ext_resource type="Texture2D" uid="uid://c01mgrymt6r0f" path="res://Characters/Enemies/rat/2.png" id="4_nedhr"]
-[ext_resource type="Texture2D" uid="uid://cu5qxx0n4lnv7" path="res://Characters/Enemies/rat/3.png" id="5_ia4o2"]
+[ext_resource type="Texture2D" uid="uid://c01mgrymt6r0f" path="res://Characters/Enemies/Rat/2.png" id="4_nedhr"]
+[ext_resource type="Texture2D" uid="uid://cu5qxx0n4lnv7" path="res://Characters/Enemies/Rat/3.png" id="5_ia4o2"]
 [ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="5_nedhr"]
 [ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="6_ia4o2"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="7_euyqm"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="8_xy53g"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_8bdog"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_fip0q"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="10_fip0q"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="11_jm3rd"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_p24jc"]
 [ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="13_ljnpv"]
@@ -116,6 +117,7 @@ position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_8faoy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
 position = Vector2(-0.125, -2.375)
