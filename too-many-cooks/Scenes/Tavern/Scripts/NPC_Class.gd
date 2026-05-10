@@ -69,7 +69,7 @@ func _send_conversation():
 
 func _on_mouse_entered():
 	self.modulate = Color(1,1,1)
-	#hoverSound.play()
+	hoverSound.play()
 func _on_mouse_exited():
 	self.modulate = Color(.8,.8,.8)
 	
@@ -81,3 +81,7 @@ func reset_bond_rank():
 			bond_rank = PlayerStats.RogueClassAbilityLevel
 		"Mage":
 			bond_rank = PlayerStats.MageClassAbilityLevel
+
+
+func _on_pressed() -> void:
+	clickSound.play()

@@ -85,7 +85,6 @@ func _on_mouse_exited():
 
 func _on_clicked():	
 	update_new_stats()
-	clickSound.play()
 	if Class_Menu_Ref.is_showing == false:
 		Class_Menu_Ref.set_title(Class_Name, Class_Level, Class_Ability_Level)
 		Class_Menu_Ref.set_active_labels(new_str-new_passive_str,new_hp-new_passive_hp,new_def-new_passive_def,new_spd-new_passive_spd,new_mana-new_passive_mana)
@@ -154,3 +153,6 @@ func prepare_level():
 		"Mage":
 			Class_Level = PlayerStats.MageClassLevel
 			Class_Ability_Level = PlayerStats.MageClassAbilityLevel
+
+func _on_pressed() -> void:
+	clickSound.play()

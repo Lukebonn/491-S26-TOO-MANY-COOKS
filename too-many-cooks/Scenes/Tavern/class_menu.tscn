@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://df7gatko7ljlv" path="res://Scenes/Tavern/Scripts/class_menu_NEW.gd" id="2_6abwf"]
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tj6yy"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_6abwf"]
+[ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="4_71xqo"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="4_tj6yy"]
 [ext_resource type="Texture2D" uid="uid://doohamv7fb3xp" path="res://UI/BattleHUD/AbilityIcons/mage_icon_bar/mage_attack_icon1.png" id="5_6abwf"]
 [ext_resource type="Script" uid="uid://c6575qun6xu5v" path="res://Scenes/Tavern/ability_info.gd" id="5_jn838"]
@@ -23,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://b6uw8krd0dhom" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/rogue_weaken_icon1.png" id="21_1sa75"]
 [ext_resource type="Texture2D" uid="uid://2id3uio6f7en" path="res://UI/BattleHUD/AbilityIcons/rogue_icon_bar/Weaken_Frame1.png" id="22_iemub"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="23_xk0np"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="25_ol62y"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="26_1sa75"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn838"]
 texture = ExtResource("3_tj6yy")
@@ -61,7 +64,7 @@ offset_bottom = 250.0
 theme = ExtResource("4_6abwf")
 theme_override_styles/panel = SubResource("StyleBoxTexture_jn838")
 
-[node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+[node name="Close" type="Button" parent="Panel" unique_id=2059311441 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -75,8 +78,11 @@ grow_horizontal = 0
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 24
 text = "Close"
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
-[node name="Back" type="Button" parent="Panel" unique_id=94567557]
+[node name="Back" type="Button" parent="Panel" unique_id=94567557 node_paths=PackedStringArray("hoverSound", "clickSound")]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -92,6 +98,9 @@ theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 24
 text = "Back
 "
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
 layout_mode = 1
@@ -356,7 +365,7 @@ theme_override_font_sizes/normal_font_size = 24
 text = "999"
 fit_content = true
 
-[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=199862697]
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=199862697 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -367,6 +376,9 @@ theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "  Upgrade Class"
 alignment = 0
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="IconGold" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Stats/Upgrade" unique_id=1621783930]
 z_index = 5
@@ -392,7 +404,7 @@ text = "999"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=129194331]
+[node name="Talk" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Stats" unique_id=129194331 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -401,6 +413,9 @@ tooltip_text = "Click to talk to the character this Class belongs to."
 theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "Have a Chat"
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1059602539]
 custom_minimum_size = Vector2(8, 0)
@@ -487,21 +502,27 @@ Img = Array[Texture]([ExtResource("16_xk0np"), ExtResource("22_iemub"), ExtResou
 [node name="SpellSwitch" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=2034054115]
 layout_mode = 2
 
-[node name="SpellBack" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=75168752]
+[node name="SpellBack" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=75168752 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Switch to view the previous Spell available for this Class."
 theme_override_font_sizes/font_size = 20
 text = "Previous Spell"
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../../ButtonClickSound")
 
-[node name="SpellNext" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=138088990]
+[node name="SpellNext" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo/SpellSwitch" unique_id=138088990 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Switch to view the next Spell available for this Class."
 theme_override_font_sizes/font_size = 20
 text = "Next Spell"
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../../ButtonClickSound")
 
-[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1756229424]
+[node name="Upgrade" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Abilities" unique_id=1756229424 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -512,6 +533,9 @@ theme = ExtResource("4_6abwf")
 theme_override_font_sizes/font_size = 28
 text = "  Upgrade Ability"
 alignment = 0
+script = ExtResource("4_71xqo")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade" unique_id=1294981339]
 layout_mode = 1
@@ -537,6 +561,14 @@ z_index = 5
 position = Vector2(408.00003, 29.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_xk0np")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=648556968]
+stream = ExtResource("25_ol62y")
+volume_db = -8.0
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=1665449353]
+stream = ExtResource("26_1sa75")
+volume_db = -8.0
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]

@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bonnm81j261y3" path="res://Scenes/Tavern/Scripts/act_select.gd" id="2_37k14"]
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_jrdk3"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_oxpr4"]
+[ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="5_fc5dc"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="6_sr6uo"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="7_0ynda"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxpr4"]
 texture = ExtResource("3_jrdk3")
@@ -41,7 +44,7 @@ offset_right = 400.0
 offset_bottom = 300.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oxpr4")
 
-[node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+[node name="Close" type="Button" parent="Panel" unique_id=2059311441 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -55,6 +58,9 @@ grow_horizontal = 0
 theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 24
 text = "Close"
+script = ExtResource("5_fc5dc")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1915074452]
 layout_mode = 1
@@ -94,7 +100,7 @@ size_flags_vertical = 3
 theme = ExtResource("4_oxpr4")
 alignment = 1
 
-[node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670]
+[node name="Act3" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1259405670 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -103,12 +109,15 @@ theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 3"
+script = ExtResource("5_fc5dc")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1872809481]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168]
+[node name="Act2" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1154282168 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -117,12 +126,15 @@ theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Act 2"
+script = ExtResource("5_fc5dc")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=949467083]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820]
+[node name="Act1" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1120229820 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -130,17 +142,31 @@ size_flags_vertical = 3
 theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 64
 text = "Act 1"
+script = ExtResource("5_fc5dc")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
 
 [node name="MarginContainer3" type="MarginContainer" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1420436753]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="Practice" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1579989149]
+[node name="Practice" type="Button" parent="Panel/VBoxContainer/MarginContainer2/Levels" unique_id=1579989149 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_oxpr4")
 theme_override_font_sizes/font_size = 48
 text = "Practice"
+script = ExtResource("5_fc5dc")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../ButtonClickSound")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1025914020]
+stream = ExtResource("6_sr6uo")
+volume_db = -8.0
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=535800667]
+stream = ExtResource("7_0ynda")
+volume_db = -8.0
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/Levels/Act3" to="." method="_on_act_3_pressed"]

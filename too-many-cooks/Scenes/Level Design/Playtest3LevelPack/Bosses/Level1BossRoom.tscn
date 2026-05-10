@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bgcv00r6h1phd"]
 
 [ext_resource type="Texture2D" uid="uid://bvpewu83cvmdt" path="res://Objects/Tilesets/ActOneAtlas.png" id="1_2vnh2"]
-[ext_resource type="Script" path="res://level_music.gd" id="1_blcki"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_blcki"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_jfyhu"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_lq6tk"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="6_hfb0y"]

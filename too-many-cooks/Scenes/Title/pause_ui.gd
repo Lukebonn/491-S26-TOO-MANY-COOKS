@@ -18,8 +18,7 @@ func hide_menu():
 	$Objective.visible = false
 func _on_back_pressed():
 	hide_menu()
-	$Back.disabled = true
-	clickSound.play()
+	#$Back.disabled = true Including this line breaks the back button, and it can't be clicked again
 
 func _on_master_slider_value_changed(value):
 	#dude this reference is so long its actually killing me :sob:
@@ -52,13 +51,13 @@ func _on_fullscreentoggle_toggled(toggled_on):
 		clickSound.play()
 
 
-func _on_music_slider_drag_started() -> void:
-	clickSound.play()
+#func _on_music_slider_drag_started() -> void:
+	#clickSound.play()
+#
+#
+#func _on_sfx_slider_drag_started() -> void:
+	#clickSound.play()
 
 
-func _on_sfx_slider_drag_started() -> void:
-	clickSound.play()
-
-
-func _on_combat_settings_show_pause_objective(objective_title) -> void:
-	pass#$Objective.set_text("Objective: " + objective_title)
+#func _on_combat_settings_show_pause_objective(objective_title) -> void:
+	#pass#$Objective.set_text("Objective: " + objective_title)

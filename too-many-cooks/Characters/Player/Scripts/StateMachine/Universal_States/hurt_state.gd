@@ -13,6 +13,7 @@ func enter_state(player_node):
 	#player shouldn't get hit if invincible is true
 	if(!invincible):
 		if Hurt_Sound:
+			Hurt_Sound.pitch_scale = randf_range(0.90, 1.10)
 			Hurt_Sound.play()
 		
 		player.get_node("Sprite2D").animation = "hurt"
