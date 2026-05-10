@@ -146,9 +146,10 @@ script = ExtResource("11_jcfvy")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
-[node name="HitState" type="Node" parent="." unique_id=2073522825]
+[node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
 script = ExtResource("9_d7iom")
 Knockback_Strength = 5
+Hit_Sound = NodePath("../TakeDamage")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

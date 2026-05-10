@@ -83,8 +83,10 @@ func _process(delta: float) -> void:
 		pauseDisabled = true
 		if settings.in_menu == true:
 			settings.do_settings_action("hide_menu")
+			$"Objective Name".modulate = Color(1,1,1,0)
 		else:
 			settings.do_settings_action("show_menu")
+			$"Objective Name".modulate = Color(1,1,1,1)
 		get_tree().create_timer(1, true).timeout.connect(on_pause_cooldown_finished)
 	if settings.in_menu or level_complete: get_tree().paused = true
 	else: get_tree().paused = false

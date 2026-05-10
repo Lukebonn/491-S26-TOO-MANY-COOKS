@@ -71,7 +71,7 @@ script = ExtResource("3_c4lv5")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
-[node name="TavernButton" type="Button" parent="buttons" unique_id=447781717]
+[node name="TavernButton" type="Button" parent="buttons" unique_id=447781717 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 2
 theme = ExtResource("2_jxjhu")
@@ -80,6 +80,8 @@ text = "Return
 to
 Tavern"
 script = ExtResource("4_jxjhu")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="NothingButton2" type="Button" parent="buttons" unique_id=1393948121 node_paths=PackedStringArray("hoverSound", "clickSound")]
 visible = false
@@ -126,6 +128,7 @@ clickSound = NodePath("../../ButtonClickSound")
 
 [node name="Journals" type="Control" parent="." unique_id=418823849]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1152.0
@@ -352,6 +355,7 @@ journal_panel_ref = NodePath("../../../../../JournalPanel")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="JournalPanel" type="Panel" parent="." unique_id=1224800550]
+visible = false
 z_index = 2
 custom_minimum_size = Vector2(800, 600)
 offset_left = 1152.0

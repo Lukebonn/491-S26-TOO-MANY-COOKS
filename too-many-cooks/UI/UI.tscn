@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
@@ -36,7 +36,10 @@
 [ext_resource type="AudioStream" uid="uid://ctpkskcqvc8gf" path="res://UI/Death/Death sound fade.mp3" id="31_v25sk"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="32_t0bwl"]
 [ext_resource type="Texture2D" uid="uid://ydgh8qblwa1u" path="res://UI/Img/objective_cross.png" id="32_vntq0"]
+[ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="34_17dtq"]
 [ext_resource type="FontFile" uid="uid://6uvhycoiviax" path="res://UI/Themes/PublicPixel.ttf" id="37_tvo8u"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="39_om3dq"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="40_utdh5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bbpqy"]
 line_spacing = 0.0
@@ -599,7 +602,7 @@ position = Vector2(-46, 61)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("32_vntq0")
 
-[node name="AdvanceButton" type="Button" parent="LevelReportScreen" unique_id=6245996]
+[node name="AdvanceButton" type="Button" parent="LevelReportScreen" unique_id=6245996 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 offset_left = 704.0
 offset_top = 416.0
@@ -609,6 +612,9 @@ theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 25
 text = "Next Level
 Back to Tavern"
+script = ExtResource("34_17dtq")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="Tavern Warning" type="Node2D" parent="." unique_id=1215423038]
 z_index = 10
@@ -629,7 +635,7 @@ position = Vector2(576, 276)
 scale = Vector2(1, 0.51977396)
 texture = ExtResource("26_nxoi0")
 
-[node name="YesButton" type="Button" parent="Tavern Warning" unique_id=1329267103]
+[node name="YesButton" type="Button" parent="Tavern Warning" unique_id=1329267103 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 offset_left = 392.0
 offset_top = 376.0
@@ -638,8 +644,11 @@ offset_bottom = 448.0
 theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 50
 text = "Yes"
+script = ExtResource("34_17dtq")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
-[node name="NoButton" type="Button" parent="Tavern Warning" unique_id=2065293517]
+[node name="NoButton" type="Button" parent="Tavern Warning" unique_id=2065293517 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 offset_left = 608.0
 offset_top = 376.0
@@ -648,6 +657,9 @@ offset_bottom = 448.0
 theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 50
 text = "No"
+script = ExtResource("34_17dtq")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="AreYouSure2" type="Label" parent="Tavern Warning" unique_id=514104715]
 z_index = 2
@@ -679,6 +691,7 @@ vertical_alignment = 1
 position = Vector2(19, 502)
 
 [node name="TimeMachine" type="Timer" parent="." unique_id=457147804 node_paths=PackedStringArray("timer_reference")]
+process_mode = 1
 wait_time = 0.1
 autostart = true
 script = ExtResource("29_rbg2s")
@@ -693,9 +706,9 @@ stream = ExtResource("32_t0bwl")
 [node name="HUD Timer" type="Label" parent="." unique_id=2024309446]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 8.0
+offset_top = 616.0
 offset_right = 1136.0
-offset_bottom = 28.0
+offset_bottom = 636.0
 theme = ExtResource("16_kncd2")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
@@ -705,6 +718,7 @@ label_settings = SubResource("LabelSettings_bbpqy")
 horizontal_alignment = 1
 
 [node name="Objective Name" type="Label" parent="." unique_id=1078759042]
+z_index = 6
 layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
@@ -715,7 +729,30 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "Objective"
-horizontal_alignment = 2
+horizontal_alignment = 1
+
+[node name="PauseKeyShortcut" type="Label" parent="." unique_id=1116489831]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 616.0
+offset_right = 1144.0
+offset_bottom = 641.0
+theme = ExtResource("1_tvo8u")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "Pause: ESC/P"
+horizontal_alignment = 1
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1490174149]
+stream = ExtResource("39_om3dq")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=471917713]
+stream = ExtResource("40_utdh5")
+volume_db = -8.0
+bus = &"Music"
 
 [connection signal="flashManaBar" from="." to="ManaBar" method="_on_flash_mana_bar"]
 [connection signal="level_is_complete" from="." to="ObjectiveManager" method="_on_ui_level_is_complete"]

@@ -59,6 +59,9 @@ func evaluate_objective():
 			if PlayerStats.Enemy_Damage_Dealt <= 0:
 				objective_result = true
 
+func show_objective():
+	pass
+
 func _on_ui_level_is_complete():
 	evaluate_objective()
 	give_report_data.emit(objective_title,objective_result)

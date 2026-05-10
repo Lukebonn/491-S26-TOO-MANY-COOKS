@@ -190,9 +190,11 @@ text = "OK"
 
 [node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=713553985]
 stream = ExtResource("3_yecbg")
+volume_db = -8.0
 
 [node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1433893241]
 stream = ExtResource("4_j5ms4")
+volume_db = -8.0
 
 [connection signal="mouse_entered" from="FirstPanel/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="FirstPanel/Button" to="." method="_on_button_one_pressed"]

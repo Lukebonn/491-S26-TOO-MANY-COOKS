@@ -5,12 +5,14 @@
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_gjm8c"]
 [ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="3_gjm8c"]
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_4i5kg"]
+[ext_resource type="Texture2D" uid="uid://cm6p4yh5ef06y" path="res://UI/Credits/Img/Axel.png" id="6_5f2kc"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="6_ailny"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
 [ext_resource type="Texture2D" uid="uid://k8pxgiaqu2pe" path="res://UI/Credits/Img/ShainaZ.png" id="6_uplb4"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="7_30bwe"]
 [ext_resource type="Texture2D" uid="uid://cciqv1yk8koyi" path="res://UI/Credits/Img/AtaKitapci.png" id="8_30bwe"]
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="8_jjdaq"]
+[ext_resource type="Texture2D" uid="uid://cw7p0aa113lak" path="res://UI/Credits/Img/Michelle.png" id="10_f3hc1"]
 [ext_resource type="Texture2D" uid="uid://b00mw1ecyogno" path="res://UI/Credits/Img/AbiW.png" id="11_1qmnl"]
 [ext_resource type="Texture2D" uid="uid://bs8xyx21s4vps" path="res://UI/Credits/Img/JonathanM.png" id="11_3x4qe"]
 [ext_resource type="Texture2D" uid="uid://bb6w5068hs5se" path="res://UI/Credits/Img/AbbyP.png" id="12_6lhih"]
@@ -134,26 +136,34 @@ Title = "Programmer"
 [node name="Axel1" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=2003764466 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("6_5f2kc")
 Name = "Axel Rodriguez-Leòn"
 Title = "Programmer"
 
-[node name="GridContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=498101422]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 64
-
-[node name="Shaina1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=845239611 instance=ExtResource("3_gjm8c")]
+[node name="Shaina1" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=845239611 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Portrait = ExtResource("6_uplb4")
 Name = "Shaina Zaccagnino"
 Title = "Enemy Programmer"
 
+[node name="GridContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=498101422]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
 [node name="Owen1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1437229437 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
 Name = "Owen Magee"
 Title = "Combat Programmer"
+
+[node name="Dawson1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1163134786 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Portrait = ExtResource("6_ailny")
+Name = "Dawson Brown"
+Title = "Enemy & UI Programmer"
 
 [node name="Luke1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
@@ -166,13 +176,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 64
 
-[node name="Dawson1" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=1163134786 instance=ExtResource("3_gjm8c")]
-layout_mode = 2
-size_flags_horizontal = 4
-Portrait = ExtResource("6_ailny")
-Name = "Dawson Brown"
-Title = "Programmer"
-
 [node name="Michael1" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=1417202682 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -184,6 +187,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 Portrait = ExtResource("6_lfta3")
 Name = "Tyler Neri"
+Title = "Programmer"
+
+[node name="Michelle" parent="VBoxContainer/VBoxContainer2/GridContainer3" unique_id=2035289119 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Portrait = ExtResource("10_f3hc1")
+Name = "Michelle Bartolotta"
 Title = "Programmer"
 
 [node name="Designers" type="Label" parent="VBoxContainer" unique_id=1063558316]
@@ -270,7 +280,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 Portrait = ExtResource("8_jjdaq")
 Name = "Eli Johnson"
-Title = "Designer"
+Title = "Enemy Designer"
 
 [node name="Artists" type="Label" parent="VBoxContainer" unique_id=133866385]
 layout_mode = 2
@@ -342,8 +352,9 @@ Title = "Artist"
 [node name="Michelle1" parent="VBoxContainer/VBoxContainer4/HBoxContainer3" unique_id=1337613264 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("10_f3hc1")
 Name = "Michelle Bartolotta"
-Title = "Artist"
+Title = "Character & Enemy Artist"
 
 [node name="Writers" type="Label" parent="VBoxContainer" unique_id=274455689]
 layout_mode = 2
@@ -376,11 +387,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 64
 
-[node name="David1" parent="VBoxContainer/VBoxContainer5/HBoxContainer" unique_id=279976128 instance=ExtResource("3_gjm8c")]
+[node name="Eli2" parent="VBoxContainer/VBoxContainer5/HBoxContainer" unique_id=132098264 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
-Name = "David Humphrey"
-Title = "Writer"
+Portrait = ExtResource("8_jjdaq")
+Name = "Eli Johnson"
+Title = "Plot & World Designer"
 
 [node name="Ata1" parent="VBoxContainer/VBoxContainer5/HBoxContainer" unique_id=79677959 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
@@ -394,12 +406,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 64
 
-[node name="Ian1" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=649560253 instance=ExtResource("3_gjm8c")]
-layout_mode = 2
-size_flags_horizontal = 4
-Name = "Ian Baynard"
-Title = "Writer"
-
 [node name="Patrick3" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=2092161146 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -407,11 +413,16 @@ Portrait = ExtResource("7_30bwe")
 Name = "Patrick Ellis"
 Title = "Writer"
 
-[node name="Eli2" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=132098264 instance=ExtResource("3_gjm8c")]
+[node name="Ian1" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=649560253 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
-Portrait = ExtResource("8_jjdaq")
-Name = "Eli Johnson"
+Name = "Ian Baynard"
+Title = "Writer"
+
+[node name="David1" parent="VBoxContainer/VBoxContainer5/HBoxContainer2" unique_id=279976128 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "David Humphrey"
 Title = "Writer"
 
 [node name="Audio" type="Label" parent="VBoxContainer" unique_id=1233573311]
@@ -438,13 +449,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 Portrait = ExtResource("8_jjdaq")
 Name = "Eli Johnson"
-Title = "Audio Lead"
-
-[node name="Jaime1" parent="VBoxContainer/VBoxContainer6" unique_id=1179797579 instance=ExtResource("3_gjm8c")]
-layout_mode = 2
-size_flags_horizontal = 4
-Name = "Jaime Rosario"
-Title = "Musician"
+Title = "Lead Audio"
 
 [node name="Patrick2" parent="VBoxContainer/VBoxContainer6" unique_id=553686352 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
@@ -452,6 +457,12 @@ size_flags_horizontal = 4
 Portrait = ExtResource("7_30bwe")
 Name = "Patrick Ellis"
 Title = "Voice Actor"
+
+[node name="Jaime1" parent="VBoxContainer/VBoxContainer6" unique_id=1179797579 instance=ExtResource("3_gjm8c")]
+layout_mode = 2
+size_flags_horizontal = 4
+Name = "Jaime Rosario"
+Title = "Musician"
 
 [node name="Audio2" type="Label" parent="VBoxContainer" unique_id=159888487]
 layout_mode = 2

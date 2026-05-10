@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @export var hoverSound : AudioStreamPlayer
 @export var clickSound : AudioStreamPlayer

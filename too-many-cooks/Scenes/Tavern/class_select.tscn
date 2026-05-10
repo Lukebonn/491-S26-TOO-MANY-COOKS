@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cg2nyu8ql7ij2" path="res://UI/Chapterselect.png" id="3_tsy5r"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="4_4b76g"]
 [ext_resource type="Texture2D" uid="uid://7daebneftgah" path="res://Characters/Player/Sprites/Weapons/Knife/ThrowingKnife1.png" id="5_4b76g"]
-[ext_resource type="Texture2D" uid="uid://qon1yyruwokm" path="res://Scenes/Test/ProtoArt/KenneyArt/TinyDungeon/KtdArrow.png" id="5_tsy5r"]
+[ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="5_vwykc"]
+[ext_resource type="Texture2D" uid="uid://tekcktkhvhru" path="res://Characters/Player/Sprites/Weapons/Wand/Wand1.png" id="8_vwykc"]
+[ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="9_lj0bv"]
+[ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="10_8kqe0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_150b5"]
 texture = ExtResource("3_tsy5r")
@@ -75,7 +78,7 @@ offset_right = 400.0
 offset_bottom = 250.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_150b5")
 
-[node name="Close" type="Button" parent="Panel" unique_id=2059311441]
+[node name="Close" type="Button" parent="Panel" unique_id=2059311441 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -89,6 +92,9 @@ grow_horizontal = 0
 theme = ExtResource("4_4b76g")
 theme_override_font_sizes/font_size = 24
 text = "Close"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="Title" type="RichTextLabel" parent="Panel" unique_id=1150372819]
 layout_mode = 0
@@ -134,7 +140,7 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Warrior" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1120229820]
+[node name="Warrior" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1120229820 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -144,8 +150,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lj0bv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 text = "Warrior"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
 
-[node name="Rogue" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1154282168]
+[node name="Rogue" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1154282168 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -156,8 +165,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 disabled = true
 text = "Rogue"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
 
-[node name="Magician" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1259405670]
+[node name="Magician" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1259405670 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -168,50 +180,70 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8kqe0")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sr3at")
 disabled = true
 text = "Mage"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
 
 [node name="knife" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=186783298]
 visible = false
 z_index = 1
-position = Vector2(320, 83)
+position = Vector2(316.00003, 86)
 scale = Vector2(11, 11)
 texture = ExtResource("5_4b76g")
 
 [node name="sword" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=1895565087]
 z_index = 1
-position = Vector2(98, 102.5)
+position = Vector2(100, 99)
 scale = Vector2(10.214286, 10.214286)
 texture = ExtResource("3_rjcil")
 
 [node name="staff" type="Sprite2D" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes" unique_id=816185281]
 visible = false
 z_index = 1
-position = Vector2(492, 102.5)
+position = Vector2(500, 97)
 scale = Vector2(10.214286, 10.214286)
-texture = ExtResource("5_tsy5r")
+texture = ExtResource("8_vwykc")
 
 [node name="Checks" type="HBoxContainer" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=1469144720]
 layout_mode = 2
 alignment = 1
 
-[node name="WarriorCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=247833101]
+[node name="WarriorCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=247833101 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Check Class"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
 
-[node name="RogueCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=572888052]
+[node name="RogueCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=572888052 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Check Class"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
 
-[node name="MagicianCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=826261879]
+[node name="MagicianCheck" type="Button" parent="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Checks" unique_id=826261879 node_paths=PackedStringArray("hoverSound", "clickSound")]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Check Class"
+script = ExtResource("5_vwykc")
+hoverSound = NodePath("../../../../../../ButtonHoverSound")
+clickSound = NodePath("../../../../../../ButtonClickSound")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="." unique_id=1689543287]
+stream = ExtResource("9_lj0bv")
+volume_db = -8.0
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="." unique_id=441972638]
+stream = ExtResource("10_8kqe0")
+volume_db = -8.0
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/VBoxContainer/Classes/Warrior" to="." method="_on_warrior_pressed"]

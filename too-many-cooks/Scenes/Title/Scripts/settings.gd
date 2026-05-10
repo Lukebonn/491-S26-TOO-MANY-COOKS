@@ -84,6 +84,7 @@ func _on_pause_ui_closed_menu():
 
 func _on_pause_ui_opened_menu() -> void:
 	in_settings_menu = true
+	#show_pause_objective.emit()
 
 func _on_journal_pressed():
 	do_settings_action("show_menu")
