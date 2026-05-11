@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_h80x0"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_k7r22"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_0xdw0"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_3dgk2"]
+[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="5_3dgk2"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_plm7v"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_hu86m"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_oixpj"]
@@ -38,7 +38,7 @@ zoom = Vector2(3, 3)
 visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_3dgk2")]
-position = Vector2(428, -393)
+position = Vector2(464, -432)
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2108959592]
 stream = ExtResource("6_plm7v")

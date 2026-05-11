@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dd3ga4mcq5gmj"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_87tbe"]
-[ext_resource type="Script" path="res://level_music.gd" id="1_eb5wj"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_eb5wj"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_1hv6n"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_byj2w"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="5_kr6hc"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="6_lb5ah"]
+[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="6_lb5ah"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="7_t1tab"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="8_hjqy5"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="9_ejkah"]

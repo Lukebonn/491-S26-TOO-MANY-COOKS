@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="7_0pk33"]
 [ext_resource type="PackedScene" uid="uid://boun2iub13glp" path="res://Characters/Enemies/Template Enemy Kit/TemplateEnemy.tscn" id="7_yfkqy"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_g380y"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_hah25"]
+[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="9_hah25"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="9_k28en"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="10_how2r"]
 [ext_resource type="AudioStream" uid="uid://c2e3jsrxn6emd" path="res://UI/Death/Death song 491.ogg" id="11_htsfb"]

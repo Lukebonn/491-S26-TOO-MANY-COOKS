@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_jmo5r"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_aiahw"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_i3yqj"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_oafaf"]
+[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="5_oafaf"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_jxl0y"]
 [ext_resource type="PackedScene" uid="uid://b3bsmqowy1nm" path="res://Characters/Enemies/Rat King/RatKing.tscn" id="8_6o0tx"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="8_70o4s"]

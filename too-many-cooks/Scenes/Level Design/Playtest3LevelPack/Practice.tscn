@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_pthdt"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_at860"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="5_vsyur"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="6_tilgl"]
+[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="6_tilgl"]
 [ext_resource type="AudioStream" uid="uid://buuva0b5o55he" path="res://Audio/Music/HallwayAmbience.ogg" id="7_ifveq"]
 [ext_resource type="PackedScene" uid="uid://dv21ndi0sx2vk" path="res://Characters/Enemies/Dummy/Dummy.tscn" id="7_ppfsa"]
 [ext_resource type="Texture2D" uid="uid://c25mmqul28ks1" path="res://Scenes/Level Design/Props/ambient/web_left.png" id="8_h0nsx"]
 [ext_resource type="PackedScene" uid="uid://dh2e5arjhgwwb" path="res://barrier.tscn" id="9_a2xmc"]
 [ext_resource type="Texture2D" uid="uid://bjsi2lbgyuju1" path="res://Scenes/Test/ProtoArt/ControlsRanged.png" id="11_asund"]
+[ext_resource type="PackedScene" uid="uid://csnegpn7esi1n" path="res://Scenes/Level Design/Exit Stairs/ExitStair.tscn" id="12_tbpgs"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -211,7 +212,8 @@ zoom = Vector2(4, 4)
 visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("6_tilgl")]
-position = Vector2(0, -237)
+visible = false
+position = Vector2(0, -288)
 Unlock_Act = "practice"
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1264768103]
@@ -246,3 +248,7 @@ position = Vector2(93, -132)
 position = Vector2(0, 42)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_asund")
+
+[node name="ExitStair" parent="." unique_id=1952837479 instance=ExtResource("12_tbpgs")]
+position = Vector2(0, -232)
+Unlock_Act = "practice"

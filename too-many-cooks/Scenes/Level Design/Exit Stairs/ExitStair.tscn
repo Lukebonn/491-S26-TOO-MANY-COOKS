@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0aulhipdltmu"]
+[gd_scene format=3 uid="uid://csnegpn7esi1n"]
 
 [ext_resource type="Script" uid="uid://byk0d34bqg72" path="res://Scenes/Level Design/Exit Stairs/exit.gd" id="1_2rtbg"]
 [ext_resource type="Texture2D" uid="uid://c0bn7xqprmrd4" path="res://Scenes/Level Design/Props/functional/stairs.png" id="2_2rtbg"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuaim"]
 size = Vector2(30, 30)
 
-[node name="Exit" type="Area2D" unique_id=1591480781]
+[node name="ExitStair" type="Area2D" unique_id=1591480781]
 script = ExtResource("1_2rtbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402429632]

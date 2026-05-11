@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_ln8f6"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_ac5gm"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_dggp5"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="5_j3v3d"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_j1xip"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_f77y3"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_ylt37"]
 [ext_resource type="PackedScene" uid="uid://nfywsv4v04pd" path="res://Characters/Enemies/Hawk/HawkEnemyAct2Boss.tscn" id="9_68oev"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_dc86p"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_1secu"]
+[ext_resource type="PackedScene" uid="uid://csnegpn7esi1n" path="res://Scenes/Level Design/Exit Stairs/ExitStair.tscn" id="13_ac5gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjbe"]
 size = Vector2(124, 53)
@@ -35,10 +35,6 @@ zoom = Vector2(3.5, 3.5)
 
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("4_dggp5")]
 visible = false
-
-[node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_j3v3d")]
-position = Vector2(0, -635)
-Unlock_Act = "act3"
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2108959592]
 stream = ExtResource("6_j1xip")
@@ -83,7 +79,11 @@ position = Vector2(0, -184)
 [node name="ObjBarrier2" parent="." unique_id=1473828029 instance=ExtResource("11_1secu")]
 position = Vector2(0, -464)
 
+[node name="ExitDoor" parent="." unique_id=1835708025 instance=ExtResource("13_ac5gm")]
+position = Vector2(0, -688)
+Unlock_Act = "act3"
+
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
-[connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
-[connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
-[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
+[connection signal="current_health" from="ExitDoor" to="CanvasLayer/UI" method="_on_exit_current_health"]
+[connection signal="current_mana" from="ExitDoor" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="ExitDoor" to="CanvasLayer/UI" method="_on_level_complete"]

@@ -70,7 +70,7 @@ func set_other_descriptions() -> void:
 	$Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade.disabled = !_check_ability_avaliability()
 	
 func _check_upgrade_avaliability():
-	gold_upgrade_price = floor((10 * current_level)**1.3)
+	gold_upgrade_price = int(floor((10 * current_level)**1.3))
 	requires_label_ref.text = str(gold_upgrade_price)
 	if PlayerStats.Gold >= gold_upgrade_price:
 		return true
@@ -78,7 +78,7 @@ func _check_upgrade_avaliability():
 		return false
 func _check_ability_avaliability():
 	if current_ability_level <5:
-		orb_upgrade_price = floor((2 * current_ability_level)**1.3)
+		orb_upgrade_price = int(floor((2 * current_ability_level)**1.3))
 		ability_label_ref.text = str(orb_upgrade_price)
 		if PlayerStats.Orbs >= orb_upgrade_price:
 			return true

@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_jfyhu"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_lq6tk"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="6_hfb0y"]
-[ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="7_a1i5v"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_ykscn"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_13628"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="8_t77vx"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="9_jsha0"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_hbjbe"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_jsha0"]
+[ext_resource type="PackedScene" uid="uid://csnegpn7esi1n" path="res://Scenes/Level Design/Exit Stairs/ExitStair.tscn" id="14_blcki"]
 [ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="37_kuruh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
@@ -207,10 +207,6 @@ zoom = Vector2(3.5, 3.5)
 [node name="UI" parent="CanvasLayer" unique_id=1832120515 instance=ExtResource("6_hfb0y")]
 visible = false
 
-[node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("7_a1i5v")]
-position = Vector2(0, -635)
-Unlock_Act = "act2"
-
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=2108959592]
 stream = ExtResource("8_t77vx")
 volume_db = -8.0
@@ -248,7 +244,11 @@ position = Vector2(0, -448)
 [node name="Fox" parent="." unique_id=1670622060 instance=ExtResource("37_kuruh")]
 position = Vector2(432, -240)
 
+[node name="ExitDoor" parent="." unique_id=695250487 instance=ExtResource("14_blcki")]
+position = Vector2(0, -672)
+Unlock_Act = "act2"
+
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
-[connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
-[connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
-[connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
+[connection signal="current_health" from="ExitDoor" to="CanvasLayer/UI" method="_on_exit_current_health"]
+[connection signal="current_mana" from="ExitDoor" to="CanvasLayer/UI" method="_on_exit_current_mana"]
+[connection signal="level_complete" from="ExitDoor" to="CanvasLayer/UI" method="_on_level_complete"]
