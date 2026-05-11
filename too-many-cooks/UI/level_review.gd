@@ -9,10 +9,13 @@ func _ready() -> void:
 	$"Damage Dealt".hide()
 	$"Objective Title".hide()
 	$AdvanceButton.hide()
-	
-func reveal():
-	var tween = self.create_tween()
 
+func reveal():
+	var dim = get_tree().create_tween()
+	dim.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	dim.tween_property($"../BgDim","color",Color(0.0, 0.0, 0.0, 0.588),.25)
+	
+	var tween = self.create_tween()
 	tween.tween_property(
 		self,
 		"position",
@@ -37,13 +40,13 @@ func reveal():
 	$"Damage Dealt".show()
 	await get_tree().create_timer(0.5).timeout
 	$"Objective Title".show()
-	show_result.emit()
 	await get_tree().create_timer(0.5).timeout
 	if (LevelQueue.Queue.size() == 0):
 		$AdvanceButton.text = "Back to Tavern"
 	else:
 		$AdvanceButton.text = "Next Level"
 	$AdvanceButton.show()
+	show_result.emit()
 
 
 func _on_objective_manager_give_report_data(obj_title, result):

@@ -17,10 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bnwdbcqhgbrhq" path="res://Objects/Key/Sprites (temp)/IronKey.png" id="7_nxoi0"]
 [ext_resource type="Script" uid="uid://brxjhl4pidsod" path="res://UI/objective_manager.gd" id="8_8saf6"]
 [ext_resource type="Texture2D" uid="uid://brkecisggyy3v" path="res://UI/BattleHUD/Img/MpBarBorder.png" id="8_017wa"]
+[ext_resource type="Script" uid="uid://c5rxwikx4twcw" path="res://Scenes/Tavern/bg_dim.gd" id="8_om3dq"]
 [ext_resource type="Texture2D" uid="uid://bpoj2pr081g85" path="res://UI/BattleHUD/Img/MpBarFill.png" id="8_t31p1"]
 [ext_resource type="Texture2D" uid="uid://cmjactlqo5n4s" path="res://UI/Img/IconGold.png" id="8_vx7wu"]
 [ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="10_r2vy3"]
-[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/Mice/black/1.png" id="12_qhxh2"]
+[ext_resource type="Texture2D" uid="uid://chhqqhq6xesqi" path="res://Characters/Enemies/mice/black/1.png" id="12_qhxh2"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="16_kncd2"]
 [ext_resource type="PackedScene" uid="uid://ecua2j8vrbo4" path="res://Scenes/Test/MenuTest/CombatSettings.tscn" id="18_1sm7k"]
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="23_idhk4"]
@@ -60,6 +61,14 @@ settings = NodePath("PauseMenu2")
 tavern_warning = NodePath("Tavern Warning")
 level_review = NodePath("LevelReportScreen")
 key_sprites = Array[Texture2D]([ExtResource("3_uk6e0"), ExtResource("4_idhk4"), ExtResource("5_uk6e0"), ExtResource("6_2jerp"), ExtResource("7_nxoi0")])
+
+[node name="BgDim" type="ColorRect" parent="." unique_id=636785206]
+z_index = 2
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("8_om3dq")
 
 [node name="ObjectiveManager" type="Node" parent="." unique_id=256422148 node_paths=PackedStringArray("time_machine_ref")]
 script = ExtResource("8_8saf6")
@@ -724,7 +733,6 @@ label_settings = SubResource("LabelSettings_bbpqy")
 horizontal_alignment = 1
 
 [node name="Objective Name" type="Label" parent="." unique_id=1078759042]
-z_index = 6
 layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
