@@ -26,6 +26,6 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 20
-text = "Sharpen weapon's edges.n/Costs ?? Mana. Attacks now inflict Bleed."
+text = "Imbue weapon with murkiness.n/Costs 35 Mana. Attacks now inflict Slow.n/Inflicting Slow grants you a Speed boost."
 autowrap_mode = 2
 paragraph_separator = "n/"

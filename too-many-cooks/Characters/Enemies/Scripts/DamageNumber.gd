@@ -13,9 +13,3 @@ func go_up():
 	tween.set_parallel(true)
 	tween.tween_property(self,"position",Vector2(x,y),.25).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(self,"modulate",Color(1,1,1,0),.65).set_trans(Tween.TRANS_CUBIC)
-func _on_timer_timeout():
-	queue_free()
-
-
-func _on_weaken_change_color() -> void:
-	self_modulate = Color(1, 0, 0)

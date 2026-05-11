@@ -465,8 +465,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 ID = 2
 LevelUp = 3
-Text = Array[String](["Enter parry stance.n/Incoming damage is reflected to attacker.n/Lasts a very short moment.", "Barrage of icicles. Costs 15 Mana.n/Good against single targets.", "Imbue weapon with sickly poison.n/Costs ?? Mana. Attacks now inflict Poison."])
-UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Text = Array[String](["Enter parry stance. Costs 20 Mana.n/Incoming damage is reflected to attacker.n/Lasts a very short moment.", "Barrage of icicles. Costs 20 Mana.n/Good against single targets.", "Imbue weapon with sickly poison.n/Costs 35 Mana. Attacks now inflict Poison."])
+UpgradedText = Array[String](["Enter parry stance. Costs 20 Mana.n/Incoming damage is reflected to nearby enemies.n/Lasts a very short moment.", "Barrage of icicles. Costs 20 Mana.n/Good against single targets.n/Short range splash damage on hit.", "Imbue weapon with sickly poison.n/Costs 35 Mana. Attacks now inflict Poison.n/Poisoning enemies restores your own HP."])
 Img = Array[Texture]([ExtResource("13_raem7"), ExtResource("7_loq30"), ExtResource("15_iemub")])
 
 [node name="Spell2" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=1488657676 instance=ExtResource("8_loq30")]
@@ -475,8 +475,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 ID = 3
 LevelUp = 4
-Text = Array[String](["Throw a magic sword.n/Damages enemies from a distance.", "Aura of hot flames. Costs 20 Mana on use.n/Damages nearby enemies.n/Hold the button to maintain; drains Mana.", "Imbue weapon with murkiness.n/Costs ?? Mana. Attacks now inflict Slow."])
-UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Text = Array[String](["Throw a magic sword. Costs 35 Mana.n/Damages enemies from a distance.", "Aura of hot flames. Costs 15 Mana on use.n/Damages nearby enemies occasionally.n/Hold the button to maintain; drains Mana.", "Imbue weapon with murkiness.n/Costs 35 Mana. Attacks now inflict Slow."])
+UpgradedText = Array[String](["Throw a magic sword. Costs 35 Mana.n/Damages enemies from a distance.n/Can bounce off of walls!", "Aura of hot flames. Costs 15 Mana on use.n/Damages nearby enemies constantly.n/Hold the button to maintain; drains Mana.", "Imbue weapon with murkiness.n/Costs 35 Mana. Attacks now inflict Slow.n/Inflicting Slow grants you a Speed boost."])
 Img = Array[Texture]([ExtResource("19_71xqo"), ExtResource("17_ny3nu"), ExtResource("18_e826o")])
 
 [node name="Spell3" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=381227772 instance=ExtResource("8_loq30")]
@@ -485,8 +485,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 ID = 4
 LevelUp = 5
-Text = Array[String](["Spinning sword slash. Costs ?? Mana.n/Damages nearby enemies repeatedly.", "Swirling gravity vortex. Costs ?? Mana.n/Vortex spawns at mouse; sucks in enemies.", "Sharpen weapon's edges.n/Costs ?? Mana. Attacks now inflict Bleed."])
-UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+Text = Array[String](["Short-lived spinning sword slash. Costs 55 Mana.n/Damages nearby enemies repeatedly.", "Swirling gravity vortex. Costs 35 Mana.n/Vortex spawns at mouse; sucks in enemies.", "Sharpen weapon's edges.n/Costs 35 Mana. Attacks now inflict Weaken."])
+UpgradedText = Array[String](["Longer spinning sword slash. Costs 55 Mana.n/Damages nearby enemies repeatedly.", "Large swirling gravity vortex. Costs 35 Mana.n/Vortex spawns at mouse; strongly sucks in enemies.", "Sharpen weapon's edges.n/Costs 35 Mana. Attacks now inflict Weaken.n/Inflicting Weaken grants you a Strength boost."])
 Img = Array[Texture]([ExtResource("16_xk0np"), ExtResource("20_ol62y"), ExtResource("21_1sa75")])
 
 [node name="Spell4" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=943222647 instance=ExtResource("8_loq30")]
