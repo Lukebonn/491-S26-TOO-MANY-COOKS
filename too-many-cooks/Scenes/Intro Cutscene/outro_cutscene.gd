@@ -24,6 +24,7 @@ func _ready():
 	wait_ref = $Timer
 	music_reference = $Music
 	pageTurn = $PageTurn
+	music_reference.play()
 	next_line(0)
 
 func _process(_delta):
@@ -37,9 +38,6 @@ func next_line(i: int):
 	if can_advance and index < Subtitles.size()-1:
 		index = i
 		can_advance = false
-		
-		if index >= 1:
-			if not music_reference.playing: music_reference.play()
 		
 		#Fade subtitle out, wait for fade to complete.
 		voice_ref.stop()

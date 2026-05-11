@@ -15,6 +15,7 @@ func player_in_smash_range() -> bool:
 	if not player_ref:
 		return false
 	
+	#print(global_position.distance_to(player_ref.global_position))
 	return global_position.distance_to(player_ref.global_position) <= smash_range
 
 func reset_smash():

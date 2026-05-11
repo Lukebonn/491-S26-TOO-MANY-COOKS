@@ -6,26 +6,24 @@ extends EnemyState
 
 func enter_state(enemy_node):
 	super(enemy_node)
-
 	enemy_ref.can_smash = false
 	enemy_ref.is_smashing = false
 	enemy_ref.set_hitbox_active(false)
 	enemy_ref.velocity = Vector2.ZERO
 	enemy_ref.move_and_slide()
-
+	
 	enemy_ref.show_attack_warning()
-
+	
 	var sprite = enemy_ref.get_node("AnimatedSprite2D")
-	sprite.play("smash")
-
+	sprite.play("windup")
 	await get_tree().create_timer(windup_time).timeout
-
+	sprite.play("smash")
 	enemy_ref.hide_attack_warning()
 	enemy_ref.is_smashing = true
 	enemy_ref.set_hitbox_active(true)
-
+	
 	await get_tree().create_timer(smash_duration).timeout
-
+	
 	enemy_ref.is_smashing = false
 	enemy_ref.set_hitbox_active(false)
 	enemy_ref.velocity = Vector2.ZERO

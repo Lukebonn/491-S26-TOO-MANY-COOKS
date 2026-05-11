@@ -12,7 +12,7 @@ func _on_timer_timeout() -> void:
 	
 	var damage_number = preload("res://Characters/Enemies/Scenes/DamageNumber.tscn").instantiate()
 	damage_number.Number = potency
-	damage_number.self_modulate = Color(0, 1, 0)
+	damage_number.modulate = Color(0.507, 0.95, 0.285, 1.0)
 	target.add_child(damage_number)
 	
 	if(target.current_health <= 0):

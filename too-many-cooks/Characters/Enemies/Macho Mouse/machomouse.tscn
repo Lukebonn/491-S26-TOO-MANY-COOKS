@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dddmq4coquv1" path="res://Characters/Enemies/Macho Mouse/idle/idle.png" id="4_trp88"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="4_y8bo7"]
 [ext_resource type="Texture2D" uid="uid://b5skg46p4ag6e" path="res://Characters/Enemies/Macho Mouse/idle/idle 2.png" id="5_ibuk5"]
-[ext_resource type="Texture2D" uid="uid://ddjq834dc35xh" path="res://Characters/Enemies/Macho Mouse/smash/smash 1.png" id="6_et0uv"]
 [ext_resource type="Texture2D" uid="uid://b0p3fvys7m7hb" path="res://Characters/Enemies/Macho Mouse/smash/smash 2.png" id="7_x7f34"]
 [ext_resource type="Texture2D" uid="uid://dqxpxu6sh12ku" path="res://Characters/Enemies/Macho Mouse/smash/smash 3.png" id="8_qe3ti"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="9_d7iom"]
@@ -25,6 +24,7 @@
 [ext_resource type="Script" uid="uid://c44ky2rgcsuu4" path="res://Characters/Enemies/Macho Mouse/enemy_smash_state.gd" id="20_cf11o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
+size = Vector2(36.76483, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
 radius = 109.47
@@ -33,9 +33,10 @@ radius = 109.47
 radius = 32.42
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opqhs"]
-size = Vector2(12.505396, 14.321125)
+size = Vector2(14.210677, 16.484385)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
+size = Vector2(25, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
@@ -63,23 +64,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_et0uv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_x7f34")
-}, {
-"duration": 1.0,
 "texture": ExtResource("8_qe3ti")
 }],
-"loop": true,
+"loop": false,
 "name": &"smash",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x7f34")
+}],
+"loop": false,
+"name": &"windup",
+"speed": 5.0
 }]
 
 [node name="Macho Mouse" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
 collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_opqhs")
+smash_range = 40.0
+smash_cooldown = 1.0
 health = 500
 damage = 30
 sight_state = NodePath("ChaseState")
@@ -92,6 +97,7 @@ collision_layer = 16
 collision_mask = 68
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
+position = Vector2(0.7352973, -0.5)
 shape = SubResource("RectangleShape2D_jonyw")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1355964886]
@@ -109,7 +115,7 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
-position = Vector2(-0.5, -2.5)
+position = Vector2(0, 2.3841858e-07)
 shape = SubResource("CircleShape2D_mvhqh")
 
 [node name="ContactDamage" type="Area2D" parent="." unique_id=644303446]
@@ -118,10 +124,11 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage" unique_id=101597319]
-position = Vector2(0, -0.22898978)
+position = Vector2(0.28421354, -0.28421348)
 shape = SubResource("RectangleShape2D_opqhs")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
@@ -143,6 +150,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
 script = ExtResource("11_jcfvy")
+Chase_Speed = 60
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
@@ -175,12 +183,14 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="SmashState" type="Node" parent="." unique_id=1001357903]
 script = ExtResource("20_cf11o")
 windup_time = 0.4
+smash_duration = 0.1
+pause_after_smash = 0.5
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="AttackWarning" type="Sprite2D" parent="." unique_id=1230588944]
 modulate = Color(0.827451, 0.105882354, 0.12156863, 1)
 z_index = -1
-position = Vector2(-0.50000167, -1.9999998)
+position = Vector2(0, -9.536743e-07)
 scale = Vector2(1.9381465, 1.9412313)
 texture = ExtResource("2_opqhs")
 script = ExtResource("3_1j8ml")
