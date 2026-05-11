@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bpq6n3eie3bgy"]
+
+[ext_resource type="Script" uid="uid://hlmbnnvfgvgb" path="res://Characters/Enemies/Rat/rat_enemy.gd" id="1_knxsy"]
+[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_5badp"]
+[ext_resource type="Texture2D" uid="uid://dmm0mhgp0p5q0" path="res://Characters/Enemies/Mice/brown/1.png" id="3_knxsy"]
+[ext_resource type="Texture2D" uid="uid://bklwjutxp310a" path="res://Characters/Enemies/Mice/brown/2.png" id="4_5badp"]
+[ext_resource type="Texture2D" uid="uid://owhav2kl34rs" path="res://Characters/Enemies/Mice/brown/4.png" id="5_vx4lj"]
+[ext_resource type="Texture2D" uid="uid://cwe08hahxcypo" path="res://Characters/Enemies/Mice/brown/3.png" id="6_b0l1x"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="7_y8yu6"]
+[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="8_53tna"]
+[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="9_yybcf"]
+[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="10_s5l7v"]
+[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="11_5cmse"]
+[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="12_m4xx8"]
+[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="13_wfyae"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="14_2pj7c"]
+[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="15_2n5jh"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="16_8xt1p"]
+[ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="17_b1088"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="18_10j2y"]
+[ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="19_sat6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
+size = Vector2(18.040981, 7.9523997)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
+radius = 119.03781
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
+size = Vector2(18.0047, 8.030174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
+size = Vector2(18.024143, 8.010731)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7d88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_knxsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5badp")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vx4lj")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_knxsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b0l1x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Floor2Rat" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
+collision_layer = 8
+collision_mask = 64
+script = ExtResource("1_knxsy")
+health = 250
+damage = 30
+sight_state = NodePath("ChaseState")
+starting_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
+position = Vector2(0, 1)
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
+position = Vector2(-0.9757352, -0.4672792)
+shape = SubResource("RectangleShape2D_jonyw")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1355964886]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1657238234]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_1oxet")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=646997873]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
+position = Vector2(-0.98974085, 0.5132774)
+shape = SubResource("RectangleShape2D_f5e7n")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
+position = Vector2(-0.96057653, 0.52299917)
+shape = SubResource("RectangleShape2D_bhto8")
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_5badp")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
+stream = ExtResource("2_5badp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
+visibility_layer = 2
+sprite_frames = SubResource("SpriteFrames_g7d88")
+animation = &"idle"
+
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("7_y8yu6")]
+offset_left = -16.4654
+offset_top = -10.384884
+offset_right = 14.034599
+offset_bottom = -6.384884
+
+[node name="IdleState" type="Node" parent="." unique_id=216113114]
+script = ExtResource("8_53tna")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ChaseState" type="Node" parent="." unique_id=284789326]
+script = ExtResource("9_yybcf")
+Chase_Speed = 50
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DashState" type="Node" parent="." unique_id=1342912869]
+script = ExtResource("10_s5l7v")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ProjectileState" type="Node" parent="." unique_id=742252322]
+script = ExtResource("11_5cmse")
+Projectile = ExtResource("12_m4xx8")
+Projectile_Speed = 2
+Idle_Time = 1.0
+Flee_While_Firing = true
+Flee_Speed = 5.0
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
+script = ExtResource("13_wfyae")
+Knockback_Strength = 50
+Hit_Stun = 0.3
+Hit_Sound = NodePath("../TakeDamage")
+animation_name = "hit"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="Timer" type="Timer" parent="HitState" unique_id=1954240173]
+wait_time = 0.3
+one_shot = true
+
+[node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
+script = ExtResource("14_2pj7c")
+Possibilities = [NodePath("../ChaseState"), NodePath("../DashState"), NodePath("../ProjectileState")]
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DeathState" type="Node" parent="." unique_id=297472194 node_paths=PackedStringArray("Death_Sound")]
+script = ExtResource("15_2n5jh")
+Drops = Array[ExtResource("16_8xt1p")]([ExtResource("17_b1088")])
+Drop = ExtResource("18_10j2y")
+Drop_Amount = 3
+Drop_Amount_Max = 5
+Death_Sound = NodePath("../Die")
+dust_effect = ExtResource("19_sat6o")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

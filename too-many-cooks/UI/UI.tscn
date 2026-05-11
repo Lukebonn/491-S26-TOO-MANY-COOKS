@@ -226,7 +226,7 @@ offset_bottom = 648.0
 theme = ExtResource("1_tvo8u")
 color = Color(1, 1, 1, 0.19215687)
 
-[node name="RetryButton" type="Button" parent="DeathScreen" unique_id=1822436038]
+[node name="RetryButton" type="Button" parent="DeathScreen" unique_id=1822436038 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -242,8 +242,11 @@ grow_vertical = 0
 theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 45
 text = "Retry"
+script = ExtResource("34_17dtq")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
-[node name="ReturnButton" type="Button" parent="DeathScreen" unique_id=2127298838]
+[node name="ReturnButton" type="Button" parent="DeathScreen" unique_id=2127298838 node_paths=PackedStringArray("hoverSound", "clickSound")]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 760.0
@@ -253,6 +256,9 @@ theme = ExtResource("1_tvo8u")
 theme_override_font_sizes/font_size = 30
 text = "Return to
 Tavern"
+script = ExtResource("34_17dtq")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="DeathText" type="RichTextLabel" parent="DeathScreen" unique_id=1500146652]
 layout_mode = 1
@@ -765,7 +771,7 @@ bus = &"Music"
 [connection signal="pressed" from="HealButton" to="." method="_on_heal_button_pressed"]
 [connection signal="pressed" from="EffectClearButton" to="." method="_on_effect_clear_button_pressed"]
 [connection signal="timeout" from="HealthBar/Timer" to="HealthBar" method="_on_timer_timeout"]
-[connection signal="button_down" from="DeathScreen/RetryButton" to="." method="_on_retry_button_button_down"]
+[connection signal="pressed" from="DeathScreen/RetryButton" to="." method="_on_retry_button_button_down"]
 [connection signal="pressed" from="DeathScreen/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="show_warning_menu" from="PauseMenu2" to="Tavern Warning" method="_on_show_warning_menu"]
 [connection signal="pressed" from="LevelReportScreen/AdvanceButton" to="." method="_on_advance_button_pressed"]

@@ -58,6 +58,8 @@ func _on_journal_button_pressed():
 
 
 func _on_exit_button_pressed():
+	if $"../Objective Name":
+		$"../Objective Name".modulate = Color(1,1,1,0)
 	$Mouse_Blocker.show()
 	do_settings_action("hide_menu")
 	in_menu = false

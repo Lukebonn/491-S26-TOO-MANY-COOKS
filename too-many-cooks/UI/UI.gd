@@ -134,7 +134,6 @@ func _on_player_death() -> void:
 	if $"../../CombatMusic":
 		$"../../CombatMusic".stop()
 		$"Death Sound".play()
-		$"Death Song".play()
 	var tween = $DeathScreen.create_tween()
 	tween.tween_property(
 		$DeathScreen, 
@@ -143,6 +142,7 @@ func _on_player_death() -> void:
 		1).set_trans(Tween.TRANS_LINEAR)
 	#await get_tree().create_timer(1.0).timeout
 	await tween.finished
+	$"Death Song".play()
 	var tween2 = $DeathScreen.create_tween()
 	var text_tween = $DeathScreen/DeathText.create_tween()
 	var retry_tween = $DeathScreen/RetryButton.create_tween()

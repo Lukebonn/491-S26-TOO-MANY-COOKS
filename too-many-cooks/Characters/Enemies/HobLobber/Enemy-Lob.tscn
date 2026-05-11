@@ -150,10 +150,13 @@ projectile_gravity = 100.0
 launch_speed = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=481920401]
+z_index = -1
 position = Vector2(-1.0000005, 0)
 scale = Vector2(3.436973, 3.3091059)
 sprite_frames = SubResource("SpriteFrames_36sb7")
 animation = &"sphere"
+frame = 1
+frame_progress = 0.3537878
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=832595165]
 position = Vector2(-9.536743e-07, 9.536743e-07)

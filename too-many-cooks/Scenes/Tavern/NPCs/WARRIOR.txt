@@ -15,7 +15,7 @@ Orb Upgrade 1
 [5]The sword is not pulling you off balance as much now. Keep working and you will start controlling the fight instead of reacting.#
 Orb Upgrade 2
 [1]You have improved more than I expected. Your strikes carry weight and your footing holds under pressure.
-[5]hat kind of progress comes from repetition, not from luck. Do not slow down now or you will lose that edge.#
+[5]That kind of progress comes from repetition, not from luck. Do not slow down now or you will lose that edge.#
 Orb Upgrade 3
 [4]That was clean. You are finally fighting like the weapon belongs to you. 
 [5]You are dangerous now, not just stubborn. Keep that control, or the Tower will take it from you again.#
