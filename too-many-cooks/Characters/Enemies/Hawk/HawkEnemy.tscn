@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]

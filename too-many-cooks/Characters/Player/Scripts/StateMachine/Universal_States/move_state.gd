@@ -10,9 +10,9 @@ func enter_state(player_node):
 func input_handler(_delta : float) -> void:
 	#player.current_dir = player.velocity
 	
-	if(player.local_mouse_pos.y < -30):
+	if(player.local_mouse_pos.y < 0):
 		player.get_node("Sprite2D").animation = "move up"
-	elif(player.local_mouse_pos.y > -30):
+	elif(player.local_mouse_pos.y > 0):
 		player.get_node("Sprite2D").animation = "move"
 	
 	player.velocity = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))

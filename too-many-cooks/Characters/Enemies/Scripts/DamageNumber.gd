@@ -15,3 +15,7 @@ func go_up():
 	tween.tween_property(self,"modulate",Color(1,1,1,0),.65).set_trans(Tween.TRANS_CUBIC)
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_weaken_change_color() -> void:
+	self_modulate = Color(1, 0, 0)

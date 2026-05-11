@@ -42,7 +42,6 @@ func parry():
 	
 	player.mana -= 20
 	player.modulate = Color(0.674, 1.0, 0.901, 1.0)
-	
 	await get_tree().create_timer(0.4).timeout
 	
 	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
