@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i028f"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="15_gppm1"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="15_vsw4c"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_dyfh2"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -225,5 +226,7 @@ position = Vector2(819, -355)
 
 [node name="FoxAct15" parent="." unique_id=1163114955 instance=ExtResource("15_vsw4c")]
 position = Vector2(839, -354)
+
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("16_dyfh2")]
 
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://ddd3j5u5rgl5o"]
 
 [ext_resource type="Texture2D" uid="uid://bvpewu83cvmdt" path="res://Objects/Tilesets/ActOneAtlas.png" id="1_umfuv"]
-[ext_resource type="Script" path="res://level_music.gd" id="1_vict8"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_vict8"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_hsh4s"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_e1qgt"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="6_hdsb5"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="7_xx2eu"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="8_gtqpw"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="8_xx2eu"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_xx2eu"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/Exit.tscn" id="9_dgmkv"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="9_umfuv"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="10_whjc4"]
@@ -194,7 +194,7 @@ tile_set = SubResource("TileSet_l0njl")
 [node name="Player" parent="." unique_id=1909083790 groups=["Player"] instance=ExtResource("2_hsh4s")]
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_e1qgt")]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 

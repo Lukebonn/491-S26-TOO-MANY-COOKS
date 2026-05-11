@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dckotfm4i6lw" path="res://Objects/Tilesets/Obscurer.png" id="9_p0ksw"]
 [ext_resource type="Texture2D" uid="uid://doj7wyjw7kkvv" path="res://Objects/Tilesets/Wall.png" id="10_c8pry"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="11_c8pry"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="12_n1nik"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="12_n1nik"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="13_akgbs"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="15_xic8e"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="16_1fe72"]
-[ext_resource type="PackedScene" uid="uid://dnbtp3ptq05qe" path="res://Characters/Enemies/Rat/F3TutorialRatEnemy.tscn" id="16_400lw"]
-[ext_resource type="PackedScene" uid="uid://c2p0prtf41rry" path="res://Characters/Enemies/Rat/ActualRatEnemyAct3.tscn" id="17_400lw"]
+[ext_resource type="PackedScene" uid="uid://dnbtp3ptq05qe" path="res://Characters/Enemies/rat/F3TutorialRatEnemy.tscn" id="16_400lw"]
+[ext_resource type="PackedScene" uid="uid://c2p0prtf41rry" path="res://Characters/Enemies/rat/ActualRatEnemyAct3.tscn" id="17_400lw"]
 [ext_resource type="PackedScene" uid="uid://dcph8r5jg0jch" path="res://Objects/Pickups/Scenes/HpPickup.tscn" id="18_rx7wd"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="19_21tjk"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="20_othwg"]
@@ -47,7 +47,7 @@ texture = ExtResource("10_c8pry")
 position = Vector2(0, 24)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_iwe7v")]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 

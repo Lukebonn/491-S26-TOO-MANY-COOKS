@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://6cujdiydpyop"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_68oev"]
-[ext_resource type="Script" path="res://level_music.gd" id="1_ac5gm"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_ac5gm"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_ln8f6"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_ac5gm"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_dggp5"]
@@ -29,7 +29,7 @@ position = Vector2(0, 32)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_ac5gm")]
 position = Vector2(0, 32)
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798874676]
 

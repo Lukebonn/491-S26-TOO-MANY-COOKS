@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_vs887"]
 [ext_resource type="Resource" uid="uid://b2ydgw0c2far6" path="res://Objects/Pickups/PickupData/PickupChestGold.tres" id="13_l1u6y"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="14_egdkp"]
+[ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="15_o75lx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mwhbo"]
 tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2, 131072, 65536, 3)
@@ -292,5 +293,7 @@ stream = ExtResource("14_egdkp")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("15_o75lx")]
 
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
