@@ -8,12 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_2wspw"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="7_06tgm"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="8_6whnx"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_5wxf4"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_5wxf4"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="10_c43aa"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="11_ac4vc"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_ac4vc"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="11_yp0hh"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="12_g0o15"]
-[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_ow2u6"]
+[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_ow2u6"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_o0sri"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="15_6syr4"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="18_j64nr"]
@@ -143,7 +143,8 @@ position = Vector2(176, -462)
 
 [node name="Macho Mouse" parent="." unique_id=241229409 instance=ExtResource("19_ac4vc")]
 position = Vector2(0, -41)
-health = 1000
+health = 1250
+damage = 75
 
 [node name="BigGoldPickup3" parent="." unique_id=538686064 instance=ExtResource("13_o0sri")]
 position = Vector2(315, -94)

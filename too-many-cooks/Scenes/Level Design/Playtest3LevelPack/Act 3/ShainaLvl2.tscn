@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="8_dyfh2"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="9_b3idh"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="10_vsw4c"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="11_dyfh2"]
-[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_b3idh"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_dyfh2"]
+[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_b3idh"]
 [ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i028f"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="15_gppm1"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="15_gppm1"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="15_vsw4c"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_dyfh2"]
 
@@ -67,9 +67,13 @@ position = Vector2(829, -340)
 
 [node name="Macho Mouse" parent="." unique_id=1670622060 instance=ExtResource("9_b3idh")]
 position = Vector2(823, -81)
+health = 1250
+damage = 75
 
 [node name="Macho Mouse2" parent="." unique_id=972219586 instance=ExtResource("9_b3idh")]
 position = Vector2(595, 268)
+health = 1250
+damage = 75
 
 [node name="RangedEnemy" parent="." unique_id=203918445 instance=ExtResource("10_vsw4c")]
 position = Vector2(-63, -85)
