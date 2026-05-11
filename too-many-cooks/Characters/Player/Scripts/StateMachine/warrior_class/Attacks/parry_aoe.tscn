@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0lqkmrhba8qn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osqrq"]
+radius = 18.0
+
+[node name="ParryAoe" type="Area2D" unique_id=1609983682]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=634954427]
+shape = SubResource("CircleShape2D_osqrq")

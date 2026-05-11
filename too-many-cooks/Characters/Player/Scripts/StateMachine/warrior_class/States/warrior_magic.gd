@@ -89,9 +89,19 @@ func start_cooldown():
 	on_cooldown = false
 
 ##player should lose a certain amount of health
+#if parrying, the enemy will take damage instead
+#if parry is upgraded, it will cause a damaging aoe instead of hitting the attacking enemy
 func hit_response(source):
 	if(parrying):
-		source.get_parent().take_damage(int(player.strength * 1.7))
+		if(PlayerStats.MeleeClassAbilityLevel >= 1):
+			var aoe = load("res://Characters/Player/Scripts/StateMachine/warrior_class/Attacks/parry_aoe.tscn").instantiate()
+			player.add_child(aoe)
+			aoe.position = Vector2.ZERO
+			player.set_damage(1.7)
+			await get_tree().create_timer(0.1).timeout
+			aoe.queue_free()
+		else:
+			source.get_parent().take_damage(int(player.strength * 1.7))
 	else:
 		$"../hurt_state".damage_hitbox = source
 		player.change_state("hurt_state")

@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://boxpfjutacct2" path="res://Characters/Player/Sprites/Spells/Mage_Icicle.png" id="2_56juu"]
 [ext_resource type="AudioStream" uid="uid://dnx81jon2mn8w" path="res://Audio/Sounds/Player/Mage/ice attack.mp3" id="2_gq6xp"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56juu"]
+radius = 3.0
+height = 18.0
+
 [node name="Icicle" type="RigidBody2D" unique_id=544606156]
 collision_layer = 0
 collision_mask = 0
@@ -29,8 +33,9 @@ polygon = PackedVector2Array(-10, 0, 0, -2, 10, 0, 0, 2)
 collision_layer = 4
 collision_mask = 80
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=2037062181]
-polygon = PackedVector2Array(-8, 0, -8, -3, 9, 0, -8, 3)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Hitbox" unique_id=2063250566]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_56juu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=467555919]
 stream = ExtResource("2_gq6xp")

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dwst3vqucemt8"]
+
+[ext_resource type="Script" uid="uid://vr3ofpbpilrx" path="res://Characters/Player/Scripts/StateMachine/mage_class/Attacks/icicle_aoe.gd" id="1_cefg5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxbly"]
+radius = 20.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=923398230]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_cefg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009165950]
+shape = SubResource("CircleShape2D_sxbly")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1159825477]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=644555034]
+shape = SubResource("CircleShape2D_sxbly")
+
+[node name="Timer" type="Timer" parent="." unique_id=615990148]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1992918482]
+color = Color(0.70980394, 1, 0.99607843, 0.27058825)
+polygon = PackedVector2Array(0, -20, 5, -19, 9, -18, 12, -16, 14, -14, 17, -10, 19, -6, 20, 0, 19, 5, 17, 10, 14, 14, 10, 18, 3, 20, -6, 19, -12, 16, -16, 12, -19, 7, -20, 1, -19, -5, -17, -10, -14, -14, -10, -17, -5, -19)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
