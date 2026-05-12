@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://cgtva4qcm50np"]
 
 [ext_resource type="Script" uid="uid://gdco27v36wix" path="res://Characters/Enemies/HobLobber/hob_lobber_enemy.gd" id="1_a35iv"]
-[ext_resource type="Texture2D" uid="uid://bdcb6unjge202" path="res://Characters/Enemies/Rat/1.png" id="2_bcs01"]
-[ext_resource type="AudioStream" uid="uid://dw111xfnmhw5s" path="res://Audio/Sounds/Enemies/RatDeathSound.mp3" id="2_wu4u0"]
-[ext_resource type="Texture2D" uid="uid://1vdr5ts7d4rw" path="res://Characters/Enemies/Rat/2a.png" id="3_s6j1x"]
-[ext_resource type="Texture2D" uid="uid://c01mgrymt6r0f" path="res://Characters/Enemies/Rat/2.png" id="4_y3g35"]
-[ext_resource type="Texture2D" uid="uid://cu5qxx0n4lnv7" path="res://Characters/Enemies/Rat/3.png" id="5_76tv6"]
+[ext_resource type="AudioStream" uid="uid://d1uuxxokmjen" path="res://Characters/Enemies/HobLobber/Snake Hurt Sound.wav" id="2_loi73"]
+[ext_resource type="Texture2D" uid="uid://b6ppqbsgxj177" path="res://Characters/Enemies/HobLobber/SnakeSpitter2.png" id="3_loi73"]
+[ext_resource type="Texture2D" uid="uid://cc226x7dmag6m" path="res://Characters/Enemies/HobLobber/SnakeSpitter3.png" id="4_wu4u0"]
+[ext_resource type="Texture2D" uid="uid://bnes80pv2aykh" path="res://Characters/Enemies/HobLobber/SnakeSpitter1.png" id="5_a35iv"]
 [ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="6_kmshr"]
 [ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="7_d4lm5"]
 [ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_3qjek"]
@@ -20,58 +19,49 @@
 [ext_resource type="PackedScene" uid="uid://cxetchx584n3q" path="res://Characters/Enemies/Particles/DustParticles.tscn" id="19_snltd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
-size = Vector2(33, 10)
+size = Vector2(31, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
 radius = 81.68537
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
-size = Vector2(34, 11)
+size = Vector2(31, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
-size = Vector2(36, 11)
+size = Vector2(31, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bcs01")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_s6j1x")
+"texture": ExtResource("5_a35iv")
 }],
-"loop": true,
+"loop": false,
 "name": &"chase",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bcs01")
+"texture": ExtResource("3_loi73")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_y3g35")
+"texture": ExtResource("4_wu4u0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_76tv6")
+"texture": ExtResource("3_loi73")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_y3g35")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_bcs01")
+"texture": ExtResource("5_a35iv")
 }],
-"loop": true,
+"loop": false,
 "name": &"fire",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bcs01")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_s6j1x")
+"texture": ExtResource("5_a35iv")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -91,7 +81,7 @@ collision_layer = 16
 collision_mask = 68
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
-position = Vector2(-0.5, -2)
+position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_jonyw")
 
 [node name="Sight" type="Area2D" parent="." unique_id=1355964886]
@@ -107,24 +97,29 @@ collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
-position = Vector2(0, -1.5)
+position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_f5e7n")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
-position = Vector2(1, -1.5)
+position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_bhto8")
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
-stream = ExtResource("2_wu4u0")
+stream = ExtResource("2_loi73")
+volume_db = 8.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
-position = Vector2(0.25, -2.75)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"fire"
+frame = 1
+frame_progress = 0.2930184
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_kmshr")]
-offset_top = -16.5
-offset_bottom = -12.5
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 14.5
+offset_bottom = -20.0
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
 script = ExtResource("7_d4lm5")
