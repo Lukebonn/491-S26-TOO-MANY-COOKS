@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="5_xd44r"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="6_bfno4"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="7_2ind5"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="8_0baqv"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="8_0baqv"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_easig"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="9_gamat"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="9_ry3e8"]

@@ -24,7 +24,6 @@ func do_settings_action(action: String):
 				i += 1
 
 		"hide_menu":
-			
 			in_menu = false
 			var tween = self.create_tween()
 			for sprite in $buttons.get_children():
