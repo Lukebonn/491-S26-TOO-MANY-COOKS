@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_yeytj"]
 [ext_resource type="PackedScene" uid="uid://cgtva4qcm50np" path="res://Characters/Enemies/HobLobber/HobLobberEnemy.tscn" id="7_gop4e"]
 [ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="8_je0s1"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="9_k5ohu"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_k5ohu"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="10_lfrgb"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="12_6cgg2"]
 [ext_resource type="Texture2D" uid="uid://cnim6l3rymyt7" path="res://Objects/Decor/Cobweb.png" id="13_m3yji"]

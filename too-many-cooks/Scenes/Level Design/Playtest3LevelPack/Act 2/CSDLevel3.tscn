@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dd3ga4mcq5gmj"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_87tbe"]
-[ext_resource type="Script" path="res://level_music.gd" id="1_eb5wj"]
+[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_eb5wj"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_1hv6n"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_byj2w"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="5_kr6hc"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="8_hjqy5"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="9_ejkah"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="10_ejkah"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="10_hjqy5"]
+[ext_resource type="PackedScene" uid="uid://bpq6n3eie3bgy" path="res://Characters/Enemies/Rat/ActualRatEnemyAct2.tscn" id="10_ho7tm"]
 [ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="11_q63rm"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_q63rm"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_4rq8p"]
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_q63rm")
 
 [node name="ObjDestructibleSpawner" parent="Room" unique_id=817439483 instance=ExtResource("9_ejkah")]
 position = Vector2(245, -208)
-Enemies = Array[PackedScene]([ExtResource("10_hjqy5")])
+Enemies = Array[PackedScene]([ExtResource("10_ho7tm")])
 SpawnInterval = 1.0
 HP = 300
 
@@ -94,33 +94,6 @@ position = Vector2(-185, -183)
 
 [node name="BigRatEnemy4" parent="." unique_id=81256711 instance=ExtResource("12_q63rm")]
 position = Vector2(-138, -37)
-
-[node name="RatEnemy3" parent="." unique_id=596819824 instance=ExtResource("10_hjqy5")]
-position = Vector2(0, -43)
-
-[node name="RatEnemy11" parent="." unique_id=1456003775 instance=ExtResource("10_hjqy5")]
-position = Vector2(-125, 57)
-
-[node name="RatEnemy4" parent="." unique_id=1092344819 instance=ExtResource("10_hjqy5")]
-position = Vector2(48, 41)
-
-[node name="RatEnemy5" parent="." unique_id=1058920267 instance=ExtResource("10_hjqy5")]
-position = Vector2(-153, -208)
-
-[node name="RatEnemy6" parent="." unique_id=103872362 instance=ExtResource("10_hjqy5")]
-position = Vector2(-107, -149)
-
-[node name="RatEnemy7" parent="." unique_id=1820048985 instance=ExtResource("10_hjqy5")]
-position = Vector2(-264, -209)
-
-[node name="RatEnemy8" parent="." unique_id=743397662 instance=ExtResource("10_hjqy5")]
-position = Vector2(-218, -150)
-
-[node name="RatEnemy9" parent="." unique_id=1739887574 instance=ExtResource("10_hjqy5")]
-position = Vector2(-207, -210)
-
-[node name="RatEnemy10" parent="." unique_id=1258390875 instance=ExtResource("10_hjqy5")]
-position = Vector2(-161, -151)
 
 [node name="BigGoldPickup" parent="." unique_id=739019463 instance=ExtResource("13_4rq8p")]
 position = Vector2(206, 6)
@@ -227,6 +200,33 @@ texture = ExtResource("19_pi8nr")
 z_index = -1
 position = Vector2(246, -34)
 texture = ExtResource("18_6f7ea")
+
+[node name="Floor2Rat" parent="." unique_id=1908921471 instance=ExtResource("10_ho7tm")]
+position = Vector2(-264, -216)
+
+[node name="Floor2Rat2" parent="." unique_id=1951241948 instance=ExtResource("10_ho7tm")]
+position = Vector2(-208, -216)
+
+[node name="Floor2Rat3" parent="." unique_id=1113334321 instance=ExtResource("10_ho7tm")]
+position = Vector2(-152, -216)
+
+[node name="Floor2Rat4" parent="." unique_id=1760145437 instance=ExtResource("10_ho7tm")]
+position = Vector2(-216, -152)
+
+[node name="Floor2Rat5" parent="." unique_id=66373069 instance=ExtResource("10_ho7tm")]
+position = Vector2(-160, -152)
+
+[node name="Floor2Rat6" parent="." unique_id=1039916382 instance=ExtResource("10_ho7tm")]
+position = Vector2(-104, -152)
+
+[node name="Floor2Rat7" parent="." unique_id=808840906 instance=ExtResource("10_ho7tm")]
+position = Vector2(-120, 56)
+
+[node name="Floor2Rat8" parent="." unique_id=103958749 instance=ExtResource("10_ho7tm")]
+position = Vector2(48, 40)
+
+[node name="Floor2Rat9" parent="." unique_id=1220917247 instance=ExtResource("10_ho7tm")]
+position = Vector2(0, -48)
 
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
