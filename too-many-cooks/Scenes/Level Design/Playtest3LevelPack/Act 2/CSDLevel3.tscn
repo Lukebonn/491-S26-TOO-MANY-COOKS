@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dd3ga4mcq5gmj"]
 
 [ext_resource type="TileSet" uid="uid://ktks2v07d3n4" path="res://Objects/Tilesets/FloorTwoSet.tres" id="1_87tbe"]
-[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_eb5wj"]
+[ext_resource type="Script" path="res://level_music.gd" id="1_eb5wj"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_1hv6n"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_byj2w"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="5_kr6hc"]
@@ -15,6 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_q63rm"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_4rq8p"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="14_8k0ea"]
+[ext_resource type="Texture2D" uid="uid://cqfd4tygmvk1s" path="res://Objects/Decor/Column_gray.png" id="16_qxuak"]
+[ext_resource type="Texture2D" uid="uid://cnim6l3rymyt7" path="res://Objects/Decor/Cobweb.png" id="17_ho7tm"]
+[ext_resource type="Texture2D" uid="uid://bdgc27baocdx6" path="res://Objects/Decor/Candelabra.png" id="18_6f7ea"]
+[ext_resource type="Texture2D" uid="uid://y0ygqyc83gp6" path="res://Objects/Decor/Lantern.png" id="19_pi8nr"]
+[ext_resource type="Texture2D" uid="uid://bb0lkpbxlq5yi" path="res://Objects/Decor/Skull.png" id="20_grffe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
@@ -121,6 +126,107 @@ position = Vector2(-161, -151)
 position = Vector2(206, 6)
 
 [node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("14_8k0ea")]
+
+[node name="ColumnGray" type="Sprite2D" parent="." unique_id=1704942027]
+z_index = -1
+position = Vector2(-308, 23)
+texture = ExtResource("16_qxuak")
+
+[node name="ColumnGray2" type="Sprite2D" parent="." unique_id=363688150]
+z_index = -1
+position = Vector2(-252, 23)
+texture = ExtResource("16_qxuak")
+
+[node name="ColumnGray3" type="Sprite2D" parent="." unique_id=1368791042]
+z_index = -1
+position = Vector2(-307, -73)
+texture = ExtResource("16_qxuak")
+
+[node name="ColumnGray4" type="Sprite2D" parent="." unique_id=217153363]
+z_index = -1
+position = Vector2(-252, -73)
+texture = ExtResource("16_qxuak")
+
+[node name="Cobweb" type="Sprite2D" parent="." unique_id=305637913]
+position = Vector2(-248, 105)
+texture = ExtResource("17_ho7tm")
+flip_v = true
+
+[node name="Cobweb2" type="Sprite2D" parent="." unique_id=462606914]
+position = Vector2(-136, 73)
+texture = ExtResource("17_ho7tm")
+flip_h = true
+flip_v = true
+
+[node name="Cobweb3" type="Sprite2D" parent="." unique_id=2071864670]
+position = Vector2(-136, -88)
+texture = ExtResource("17_ho7tm")
+flip_h = true
+
+[node name="Cobweb4" type="Sprite2D" parent="." unique_id=1793506680]
+position = Vector2(248, 25)
+texture = ExtResource("17_ho7tm")
+flip_v = true
+
+[node name="Candelabra" type="Sprite2D" parent="." unique_id=209935637]
+z_index = -1
+position = Vector2(-196, -69)
+texture = ExtResource("18_6f7ea")
+
+[node name="Lantern" type="Sprite2D" parent="." unique_id=393176268]
+position = Vector2(-266, -248)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern2" type="Sprite2D" parent="." unique_id=1535203689]
+position = Vector2(-104, -248)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern3" type="Sprite2D" parent="." unique_id=1268603455]
+position = Vector2(-182, -248)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern4" type="Sprite2D" parent="." unique_id=90927980]
+position = Vector2(-25, -216)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern5" type="Sprite2D" parent="." unique_id=2128859236]
+position = Vector2(97, -216)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern6" type="Sprite2D" parent="." unique_id=1942792691]
+position = Vector2(37, -216)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern7" type="Sprite2D" parent="." unique_id=55304786]
+position = Vector2(182, -280)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern8" type="Sprite2D" parent="." unique_id=526855282]
+position = Vector2(283, -280)
+texture = ExtResource("19_pi8nr")
+
+[node name="Skull" type="Sprite2D" parent="." unique_id=1688362192]
+z_index = -1
+position = Vector2(313, -270)
+texture = ExtResource("20_grffe")
+flip_h = true
+
+[node name="Lantern9" type="Sprite2D" parent="." unique_id=104657819]
+position = Vector2(-29, -88)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern10" type="Sprite2D" parent="." unique_id=310750645]
+position = Vector2(110, -88)
+texture = ExtResource("19_pi8nr")
+
+[node name="Lantern11" type="Sprite2D" parent="." unique_id=1964778336]
+position = Vector2(39, -88)
+texture = ExtResource("19_pi8nr")
+
+[node name="Candelabra2" type="Sprite2D" parent="." unique_id=1457663899]
+z_index = -1
+position = Vector2(246, -34)
+texture = ExtResource("18_6f7ea")
 
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]

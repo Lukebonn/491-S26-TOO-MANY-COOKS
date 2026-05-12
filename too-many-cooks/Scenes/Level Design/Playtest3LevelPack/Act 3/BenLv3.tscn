@@ -1,17 +1,17 @@
-[gd_scene format=4 uid="uid://claean3n45vqg"]
+[gd_scene format=4 uid="uid://hhnhf7yj2av2"]
 
 [ext_resource type="TileSet" uid="uid://dwtsix1jpmf65" path="res://Objects/Tilesets/FloorThreeSet.tres" id="1_07r8g"]
-[ext_resource type="Script" uid="uid://bhhwot7xgv3ch" path="res://level_music.gd" id="1_b0a50"]
+[ext_resource type="Script" path="res://level_music.gd" id="1_b0a50"]
 [ext_resource type="PackedScene" uid="uid://ja87ubeb3t44" path="res://Characters/Player/player.tscn" id="2_wyeoy"]
 [ext_resource type="PackedScene" uid="uid://cbi6g6e1p10k2" path="res://Objects/PlayerCamera/player_camera.tscn" id="3_3isxj"]
 [ext_resource type="PackedScene" uid="uid://8cinn6ehtcgy" path="res://UI/UI.tscn" id="4_td01o"]
 [ext_resource type="PackedScene" uid="uid://0aulhipdltmu" path="res://Scenes/Level Design/Exit Stairs/ExitDoor.tscn" id="5_xd44r"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="6_bfno4"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="7_2ind5"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="8_0baqv"]
+[ext_resource type="PackedScene" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="8_0baqv"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_easig"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="9_gamat"]
-[ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="9_ry3e8"]
+[ext_resource type="PackedScene" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="9_ry3e8"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="10_7crwr"]
 [ext_resource type="Texture2D" uid="uid://ixm31pmapd8g" path="res://Scenes/Level Design/Props/functional/crate.png" id="10_v2yju"]
 [ext_resource type="PackedScene" uid="uid://cbicb0gxx7kju" path="res://Characters/Enemies/Fox/Fox.tscn" id="10_ve6l4"]
@@ -21,8 +21,13 @@
 [ext_resource type="Resource" uid="uid://b2ydgw0c2far6" path="res://Objects/Pickups/PickupData/PickupChestGold.tres" id="13_ry2dp"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="13_ve6l4"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="14_s6ygs"]
-[ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="16_ry3e8"]
+[ext_resource type="PackedScene" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="16_ry3e8"]
 [ext_resource type="PackedScene" uid="uid://cefkrvakavfju" path="res://Objects/EnemySpawner/obj_spawner_col.tscn" id="16_ve6l4"]
+[ext_resource type="Texture2D" uid="uid://d1ccethqyg3uf" path="res://Objects/Decor/Banner2.png" id="24_nd35h"]
+[ext_resource type="Texture2D" uid="uid://upaekfkbaywf" path="res://Objects/Decor/Column_white.png" id="25_nronl"]
+[ext_resource type="Texture2D" uid="uid://g80gr27xh7mp" path="res://Objects/Decor/Carpet_RoyalRed.png" id="26_4n5sq"]
+[ext_resource type="Texture2D" uid="uid://c4km0l0d2e7fh" path="res://Objects/Decor/TableWithClothPurple.png" id="27_3nw43"]
+[ext_resource type="Texture2D" uid="uid://ck0a7cyjdepmh" path="res://Objects/Decor/Plant.png" id="28_2egin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8qbi"]
 size = Vector2(32, 96)
@@ -242,6 +247,102 @@ stream = ExtResource("14_s6ygs")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
+
+[node name="Banner2" type="Sprite2D" parent="." unique_id=567222630]
+position = Vector2(-82, 178)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner3" type="Sprite2D" parent="." unique_id=419461666]
+position = Vector2(83, 179)
+texture = ExtResource("24_nd35h")
+
+[node name="ColumnWhite" type="Sprite2D" parent="." unique_id=1836767999]
+z_index = -1
+position = Vector2(-36, 183)
+texture = ExtResource("25_nronl")
+
+[node name="ColumnWhite2" type="Sprite2D" parent="." unique_id=3566662]
+z_index = -1
+position = Vector2(36, 183)
+texture = ExtResource("25_nronl")
+
+[node name="ColumnWhite3" type="Sprite2D" parent="." unique_id=1319343875]
+z_index = -1
+position = Vector2(796, 471)
+texture = ExtResource("25_nronl")
+
+[node name="ColumnWhite4" type="Sprite2D" parent="." unique_id=1978948479]
+z_index = -1
+position = Vector2(868, 471)
+texture = ExtResource("25_nronl")
+
+[node name="CarpetRoyalRed" type="Sprite2D" parent="." unique_id=1896289097]
+z_index = -1
+position = Vector2(1048, 509)
+texture = ExtResource("26_4n5sq")
+
+[node name="Banner4" type="Sprite2D" parent="." unique_id=1171465963]
+z_index = -1
+position = Vector2(1086, 435)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner5" type="Sprite2D" parent="." unique_id=955776589]
+z_index = -1
+position = Vector2(1012, 435)
+texture = ExtResource("24_nd35h")
+
+[node name="TableWithClothPurple" type="Sprite2D" parent="." unique_id=546815548]
+z_index = -1
+position = Vector2(929, 481)
+texture = ExtResource("27_3nw43")
+
+[node name="Plant" type="Sprite2D" parent="." unique_id=2100697293]
+z_index = -1
+position = Vector2(930, 472)
+texture = ExtResource("28_2egin")
+
+[node name="Banner6" type="Sprite2D" parent="." unique_id=1751020499]
+position = Vector2(-33, -61)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner7" type="Sprite2D" parent="." unique_id=1780600349]
+position = Vector2(38, -61)
+texture = ExtResource("24_nd35h")
+
+[node name="CarpetRoyalRed2" type="Sprite2D" parent="." unique_id=1922090105]
+z_index = -1
+position = Vector2(-384, 358)
+texture = ExtResource("26_4n5sq")
+
+[node name="Banner8" type="Sprite2D" parent="." unique_id=58114916]
+position = Vector2(765, -29)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner9" type="Sprite2D" parent="." unique_id=950260503]
+position = Vector2(904, -29)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner10" type="Sprite2D" parent="." unique_id=15985592]
+position = Vector2(837, -30)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner11" type="Sprite2D" parent="." unique_id=666290571]
+position = Vector2(610, 50)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner12" type="Sprite2D" parent="." unique_id=1974569746]
+position = Vector2(682, 51)
+texture = ExtResource("24_nd35h")
+
+[node name="Banner13" type="Sprite2D" parent="." unique_id=1881181954]
+position = Vector2(219, 243)
+texture = ExtResource("24_nd35h")
+
+[node name="CarpetRoyalRed3" type="Sprite2D" parent="." unique_id=1200871558]
+z_index = -1
+position = Vector2(218, 289)
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("26_4n5sq")
 
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]
