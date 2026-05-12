@@ -17,10 +17,11 @@
 script = ExtResource("1_5jne5")
 
 [node name="background" type="ColorRect" parent="." unique_id=1813375192]
-offset_left = 1152.3555
-offset_top = 2.1018372
-offset_right = 1629.711
-offset_bottom = 649.1018
+offset_left = 1360.0
+offset_top = -100.0
+offset_right = 1860.0
+offset_bottom = 700.0
+rotation = 0.2617994
 color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
 
 [node name="cover" type="ColorRect" parent="." unique_id=1480557321]
@@ -34,18 +35,43 @@ color = Color(0, 0, 0, 0.44705883)
 position = Vector2(1152.3555, 2.1018372)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1948197532]
-position = Vector2(848, 0)
+position = Vector2(744, 0)
+
+[node name="BgMarker" type="Marker2D" parent="." unique_id=467025998]
+position = Vector2(1088, -104)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=686372798]
-position = Vector2(1152, 0)
+position = Vector2(1376, 0)
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=181482053]
-offset_left = 1213.0
-offset_right = 1416.0
+offset_left = 1176.0
+offset_right = 1426.0
 offset_bottom = 649.0
 theme = ExtResource("4_ocaao")
 theme_override_constants/separation = 40
-alignment = 1
+alignment = 2
+
+[node name="JournalButton" type="Button" parent="buttons" unique_id=1178310031 node_paths=PackedStringArray("hoverSound", "clickSound")]
+z_index = 1
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("4_ocaao")
+theme_override_font_sizes/font_size = 32
+text = "Journal"
+script = ExtResource("3_hnlrl")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
+
+[node name="ExitButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
+z_index = 1
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("4_ocaao")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+script = ExtResource("3_hnlrl")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
 
 [node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
 visible = false
@@ -65,26 +91,6 @@ layout_mode = 2
 theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 60
 text = "Save"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="JournalButton" type="Button" parent="buttons" unique_id=1178310031 node_paths=PackedStringArray("hoverSound", "clickSound")]
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "Journal"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="ExitButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "Back"
 script = ExtResource("3_hnlrl")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
@@ -130,6 +136,7 @@ offset_top = 74.0
 offset_right = 692.0
 offset_bottom = 574.0
 theme = ExtResource("4_ocaao")
+theme_override_font_sizes/font_size = 32
 current_tab = 0
 
 [node name="Warrior" type="MarginContainer" parent="Journals/TabContainer" unique_id=2033841847]
@@ -138,12 +145,11 @@ mouse_filter = 2
 theme = ExtResource("4_ocaao")
 metadata/_tab_index = 0
 
-[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Warrior" unique_id=710095474]
+[node name="Entries" type="VBoxContainer" parent="Journals/TabContainer/Warrior" unique_id=802251407]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
-columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
@@ -225,12 +231,11 @@ layout_mode = 2
 theme = ExtResource("4_ocaao")
 metadata/_tab_index = 1
 
-[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Rogue" unique_id=459778636]
+[node name="Entries" type="VBoxContainer" parent="Journals/TabContainer/Rogue" unique_id=64751908]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
-columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
@@ -313,12 +318,11 @@ layout_mode = 2
 theme = ExtResource("4_ocaao")
 metadata/_tab_index = 2
 
-[node name="Entries" type="GridContainer" parent="Journals/TabContainer/Mage" unique_id=1739284250]
+[node name="Entries" type="VBoxContainer" parent="Journals/TabContainer/Mage" unique_id=763228611]
 custom_minimum_size = Vector2(320, 300)
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
-columns = 2
 
 [node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
 layout_mode = 2
@@ -408,7 +412,7 @@ script = ExtResource("5_11tbu")
 ClickSound = NodePath("../ButtonClickSound")
 HoverSound = NodePath("../ButtonHoverSound")
 
-[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=568087088]
+[node name="TitleLabel" type="RichTextLabel" parent="JournalPanel" unique_id=1206416960]
 z_index = 1
 custom_minimum_size = Vector2(540, 440)
 layout_mode = 1
@@ -424,11 +428,39 @@ offset_bottom = 211.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_ocaao")
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.17999999, 0.16, 1)
+theme_override_constants/line_separation = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "TITLE"
+scroll_active = false
+
+[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=568087088]
+z_index = 1
+custom_minimum_size = Vector2(540, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -196.0
+offset_right = 281.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_ocaao")
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
+theme_override_constants/line_separation = 2
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "dummy tex"
+text = "dummy tex
+dummy tex
+dummy tex"
 scroll_active = false
 
 [node name="AuthorLabel" type="RichTextLabel" parent="JournalPanel" unique_id=896771501]
@@ -446,9 +478,9 @@ offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_ocaao")
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 36
 text = "author..."
 horizontal_alignment = 2
 
@@ -498,18 +530,18 @@ stream = ExtResource("10_8n4gj")
 volume_db = -8.0
 bus = &"Music"
 
-[connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="button_down" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="button_down" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/JournalButton" to="." method="_on_journal_button_pressed"]
 [connection signal="button_down" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="button_down" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="button_down" from="buttons/Button5" to="buttons/Button5" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/Button5" to="buttons/Button5" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/Button5" to="." method="_on_button_5_pressed"]

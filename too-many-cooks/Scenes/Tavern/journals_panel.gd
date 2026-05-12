@@ -3,11 +3,11 @@ extends Panel
 @export var HoverSound : AudioStreamPlayer
 func show_menu():
 	var tween = self.create_tween()
-	tween.tween_property(self,"position",Vector2(40,40),1).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self,"position",Vector2(40,40),0.5).set_trans(Tween.TRANS_CUBIC)
 	
 func hide_menu():
 	var tween = self.create_tween()
-	tween.tween_property(self,"position",Vector2(1152,40),1).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self,"position",Vector2(1152,40),0.5).set_trans(Tween.TRANS_CUBIC)
 	
 
 

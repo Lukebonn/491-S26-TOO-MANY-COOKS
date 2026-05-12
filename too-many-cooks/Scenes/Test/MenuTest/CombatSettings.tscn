@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bfru7s7hhn4mw" path="res://Scenes/Title/Scripts/settings.gd" id="1_obsv4"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_jxjhu"]
 [ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="3_c4lv5"]
-[ext_resource type="Script" path="res://Scenes/Test/MenuTest/combat_settings_buttons.gd" id="3_me480"]
+[ext_resource type="Script" uid="uid://c2tcplnh2e623" path="res://Scenes/Test/MenuTest/combat_settings_buttons.gd" id="3_me480"]
 [ext_resource type="Script" uid="uid://b5nvqwfff46c" path="res://UI/tavern_button.gd" id="4_jxjhu"]
 [ext_resource type="Script" uid="uid://de0angmpdci63" path="res://Scenes/Title/journals_ui.gd" id="4_me480"]
 [ext_resource type="Script" uid="uid://m1ratefdb4lj" path="res://Scenes/Tavern/Scripts/journal_entryy.gd" id="5_xn5l6"]
