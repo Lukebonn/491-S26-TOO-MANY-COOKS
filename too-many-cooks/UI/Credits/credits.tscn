@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cw7p0aa113lak" path="res://UI/Credits/Img/Michelle.png" id="10_f3hc1"]
 [ext_resource type="Texture2D" uid="uid://b00mw1ecyogno" path="res://UI/Credits/Img/AbiW.png" id="11_1qmnl"]
 [ext_resource type="Texture2D" uid="uid://bs8xyx21s4vps" path="res://UI/Credits/Img/JonathanM.png" id="11_3x4qe"]
+[ext_resource type="Texture2D" uid="uid://dwj0u1x05bjqb" path="res://UI/Credits/Img/luke-bonniwell-credit-png.png" id="11_y1gn0"]
 [ext_resource type="Texture2D" uid="uid://bb6w5068hs5se" path="res://UI/Credits/Img/AbbyP.png" id="12_6lhih"]
 [ext_resource type="Texture2D" uid="uid://d288dampa2jgg" path="res://UI/Credits/Img/Louie.png" id="13_fu6bj"]
 
@@ -172,8 +173,9 @@ Title = "Enemy & UI Programmer"
 [node name="Luke1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("11_y1gn0")
 Name = "Luke Bonniwell"
-Title = "Programmer"
+Title = "Enemy & Level Programmer"
 
 [node name="GridContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=418734572]
 layout_mode = 2
@@ -241,8 +243,9 @@ Title = "UI & Level Designer"
 [node name="Luke2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1027214142 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("11_y1gn0")
 Name = "Luke Bonniwell"
-Title = "Level Designer"
+Title = "Enemy & Level Designer"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=897514686]
 layout_mode = 2
