@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhc5qgog600dq"]
 
 [ext_resource type="Script" uid="uid://b30iqujos0dat" path="res://Objects/Projectiles/Scripts/magic_sword_projectile.gd" id="1_vkla8"]
-[ext_resource type="Texture2D" uid="uid://cglqsmcwtr7j" path="res://Characters/Player/Sprites/Weapons/Sword/sword2.png" id="2_qdc61"]
+[ext_resource type="Texture2D" uid="uid://dcjrjopmrapdy" path="res://Characters/Player/Sprites/Weapons/Sword/sword2.png" id="2_si8ae"]
 [ext_resource type="AudioStream" uid="uid://bc2s7t4flkld5" path="res://Audio/Sounds/Player/Warrior/spinning woosh.wav" id="3_si8ae"]
 
 [node name="MagicSwordProjectile" type="RigidBody2D" unique_id=591366031]
@@ -21,7 +21,7 @@ polygon = PackedVector2Array(0, -10.400001, -3, 4.8000007, 0, 11.200001, 3, 4.80
 position = Vector2(-0.00014651101, 0.00307889)
 rotation = -0.7853982
 scale = Vector2(1.7646965, 1.7648172)
-texture = ExtResource("2_qdc61")
+texture = ExtResource("2_si8ae")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=379563901]
 collision_layer = 4
