@@ -38,7 +38,7 @@ position = Vector2(1152.3555, 2.1018372)
 position = Vector2(744, 0)
 
 [node name="BgMarker" type="Marker2D" parent="." unique_id=467025998]
-position = Vector2(1088, -104)
+position = Vector2(960, -104)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=686372798]
 position = Vector2(1376, 0)
