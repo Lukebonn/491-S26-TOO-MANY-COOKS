@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="9_a8skd"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_clonn"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="9_tpl7r"]
+[ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="10_clonn"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="10_pxkah"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="11_lpck8"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="14_xksmw"]
@@ -52,8 +53,9 @@ bus = &"Music"
 
 [node name="BigRoom" type="Node" parent="." unique_id=168743545]
 
-[node name="ObjRoomMgr" parent="BigRoom" unique_id=1778230442 node_paths=PackedStringArray("Barriers") instance=ExtResource("9_a8skd")]
+[node name="ObjRoomMgr" parent="BigRoom" unique_id=1778230442 node_paths=PackedStringArray("Spawners", "Barriers") instance=ExtResource("9_a8skd")]
 position = Vector2(-8, 24)
+Spawners = [NodePath("../ObjEnemySpawner"), NodePath("../ObjEnemySpawner2")]
 Barriers = [NodePath("../ObjBarrier"), NodePath("../ObjBarrier2"), NodePath("../ObjBarrier3")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigRoom/ObjRoomMgr" unique_id=1761157216]
@@ -74,13 +76,20 @@ position = Vector2(-168, -312)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 
+[node name="ObjEnemySpawner" parent="BigRoom" unique_id=817439483 instance=ExtResource("10_clonn")]
+position = Vector2(-48, -304)
+Enemies = Array[PackedScene]([ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8")])
+SpawnRadius = 64.0
+
+[node name="ObjEnemySpawner2" parent="BigRoom" unique_id=962603513 instance=ExtResource("10_clonn")]
+position = Vector2(-40, -160)
+Enemies = Array[PackedScene]([ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8"), ExtResource("11_lpck8")])
+SpawnRadius = 96.0
+
 [node name="Pickups" type="Node2D" parent="." unique_id=1664005544]
 
 [node name="OrbPickup" parent="Pickups" unique_id=1955872402 instance=ExtResource("9_tpl7r")]
 position = Vector2(-531, -299)
-
-[node name="OrbPickup2" parent="Pickups" unique_id=1876016118 instance=ExtResource("9_tpl7r")]
-position = Vector2(100, -13)
 
 [node name="GoldPickup" parent="Pickups" unique_id=739019463 instance=ExtResource("10_pxkah")]
 position = Vector2(368, -43)
@@ -119,45 +128,9 @@ position = Vector2(-48, -370)
 position = Vector2(-25, -370)
 
 [node name="OrbPickup3" parent="Pickups" unique_id=831166614 instance=ExtResource("9_tpl7r")]
-position = Vector2(104, -357)
+position = Vector2(104, -368)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=780822676]
-
-[node name="RatEnemy6" parent="Enemies" unique_id=1114141748 instance=ExtResource("11_lpck8")]
-position = Vector2(-129, -34)
-
-[node name="RatEnemy7" parent="Enemies" unique_id=1903438505 instance=ExtResource("11_lpck8")]
-position = Vector2(-105, 1)
-
-[node name="RatEnemy8" parent="Enemies" unique_id=760264400 instance=ExtResource("11_lpck8")]
-position = Vector2(119, 9)
-
-[node name="RatEnemy9" parent="Enemies" unique_id=283184364 instance=ExtResource("11_lpck8")]
-position = Vector2(85, 7)
-
-[node name="RatEnemy10" parent="Enemies" unique_id=1727384388 instance=ExtResource("11_lpck8")]
-position = Vector2(115, -37)
-
-[node name="RatEnemy11" parent="Enemies" unique_id=1414157915 instance=ExtResource("11_lpck8")]
-position = Vector2(83, -41)
-
-[node name="RatEnemy12" parent="Enemies" unique_id=1174505541 instance=ExtResource("11_lpck8")]
-position = Vector2(-128, -149)
-
-[node name="RatEnemy13" parent="Enemies" unique_id=1015248832 instance=ExtResource("11_lpck8")]
-position = Vector2(-45, -167)
-
-[node name="RatEnemy14" parent="Enemies" unique_id=588578930 instance=ExtResource("11_lpck8")]
-position = Vector2(68, -168)
-
-[node name="RatEnemy15" parent="Enemies" unique_id=665576464 instance=ExtResource("11_lpck8")]
-position = Vector2(-16, -118)
-
-[node name="RatEnemy16" parent="Enemies" unique_id=1514094957 instance=ExtResource("11_lpck8")]
-position = Vector2(11, -170)
-
-[node name="RatEnemy17" parent="Enemies" unique_id=193533914 instance=ExtResource("11_lpck8")]
-position = Vector2(-66, -111)
 
 [node name="RatEnemy18" parent="Enemies" unique_id=1748236057 instance=ExtResource("11_lpck8")]
 position = Vector2(246, -187)
@@ -176,21 +149,6 @@ position = Vector2(383, -73)
 
 [node name="RatEnemy23" parent="Enemies" unique_id=399780193 instance=ExtResource("11_lpck8")]
 position = Vector2(384, -139)
-
-[node name="RatEnemy24" parent="Enemies" unique_id=345102416 instance=ExtResource("11_lpck8")]
-position = Vector2(-105, -355)
-
-[node name="RatEnemy25" parent="Enemies" unique_id=804362040 instance=ExtResource("11_lpck8")]
-position = Vector2(13, -352)
-
-[node name="RatEnemy26" parent="Enemies" unique_id=1537813907 instance=ExtResource("11_lpck8")]
-position = Vector2(-103, -252)
-
-[node name="RatEnemy27" parent="Enemies" unique_id=1023846422 instance=ExtResource("11_lpck8")]
-position = Vector2(28, -259)
-
-[node name="RatEnemy28" parent="Enemies" unique_id=1575996486 instance=ExtResource("11_lpck8")]
-position = Vector2(-43, -307)
 
 [node name="RatEnemy29" parent="Enemies" unique_id=1670622060 instance=ExtResource("11_lpck8")]
 position = Vector2(-441, -367)
@@ -238,10 +196,10 @@ position = Vector2(359, -169)
 position = Vector2(351, -102)
 
 [node name="Fox4" parent="." unique_id=911900436 instance=ExtResource("16_l7dxy")]
-position = Vector2(95, -368)
+position = Vector2(104, -296)
 
 [node name="Fox5" parent="." unique_id=194950098 instance=ExtResource("16_l7dxy")]
-position = Vector2(119, -367)
+position = Vector2(104, -344)
 
 [node name="Fox6" parent="." unique_id=2085118849 instance=ExtResource("16_l7dxy")]
 position = Vector2(-431, -354)
