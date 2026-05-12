@@ -10,16 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="8_dyfh2"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="9_b3idh"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="10_vsw4c"]
-[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/rat/RatEnemyAct3.tscn" id="11_dyfh2"]
-[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/rat/RatEnemyAct2.tscn" id="12_b3idh"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i028f"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="15_gppm1"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_dyfh2"]
+[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_b3idh"]
+[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="15_gppm1"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="15_vsw4c"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_dyfh2"]
 [ext_resource type="Texture2D" uid="uid://dmhsbftjmt75w" path="res://Objects/Decor/Banner1Purple.png" id="17_b3idh"]
 [ext_resource type="Texture2D" uid="uid://5r3qeo4y8ks0" path="res://Objects/Decor/Banner2Purple.png" id="17_d3hj8"]
 [ext_resource type="Texture2D" uid="uid://bnc27vk2ri3c3" path="res://Objects/Decor/Carpet_RoyalPurple.png" id="19_i028f"]
 [ext_resource type="Texture2D" uid="uid://upaekfkbaywf" path="res://Objects/Decor/Column_white.png" id="20_gppm1"]
+[ext_resource type="PackedScene" uid="uid://jm16rk482kd3" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="21_6c1bv"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -118,12 +118,6 @@ position = Vector2(358, -344)
 [node name="BigRatEnemy10" parent="." unique_id=1469940977 instance=ExtResource("11_dyfh2")]
 position = Vector2(356, -219)
 
-[node name="HawkEnemy" parent="." unique_id=1538636747 instance=ExtResource("14_i028f")]
-position = Vector2(334, -276)
-
-[node name="HawkEnemy2" parent="." unique_id=655717470 instance=ExtResource("14_i028f")]
-position = Vector2(688, -335)
-
 [node name="BigRatEnemy11" parent="." unique_id=971161401 instance=ExtResource("11_dyfh2")]
 position = Vector2(600, -247)
 
@@ -189,9 +183,6 @@ position = Vector2(112, 268)
 
 [node name="BigRatEnemy27" parent="." unique_id=724691084 instance=ExtResource("12_b3idh")]
 position = Vector2(44, 262)
-
-[node name="HawkEnemy3" parent="." unique_id=218540478 instance=ExtResource("14_i028f")]
-position = Vector2(135, -3)
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_v56i3")]
 position = Vector2(280, -88)
@@ -402,5 +393,14 @@ texture = ExtResource("20_gppm1")
 [node name="ColumnWhite12" type="Sprite2D" parent="." unique_id=113822173]
 position = Vector2(152, -304)
 texture = ExtResource("20_gppm1")
+
+[node name="HawkEnemy4" parent="." unique_id=1097215267 instance=ExtResource("21_6c1bv")]
+position = Vector2(680, -328)
+
+[node name="HawkEnemy5" parent="." unique_id=244790614 instance=ExtResource("21_6c1bv")]
+position = Vector2(328, -280)
+
+[node name="HawkEnemy2" parent="." unique_id=1155752990 instance=ExtResource("21_6c1bv")]
+position = Vector2(136, -8)
 
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

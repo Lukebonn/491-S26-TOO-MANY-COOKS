@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="7_hu86m"]
 [ext_resource type="PackedScene" uid="uid://dvjyx80o6k8li" path="res://Objects/EnemySpawner/enemy_spawner.tscn" id="8_oixpj"]
 [ext_resource type="PackedScene" uid="uid://b3bsmqowy1nm" path="res://Characters/Enemies/Rat King/RatKing.tscn" id="10_hu86m"]
-[ext_resource type="PackedScene" uid="uid://nfywsv4v04pd" path="res://Characters/Enemies/Hawk/HawkEnemyAct2Boss.tscn" id="10_oixpj"]
+[ext_resource type="PackedScene" uid="uid://drxkcc42iweig" path="res://Characters/Enemies/Hawk/HawkEnemyAct3Boss.tscn" id="10_oixpj"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="10_ut6kg"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="11_wprim"]
 
@@ -78,9 +78,12 @@ shape = SubResource("RectangleShape2D_hbjbe")
 position = Vector2(0, -168)
 
 [node name="RatKing" parent="." unique_id=1670622060 instance=ExtResource("10_hu86m")]
+process_mode = 4
 position = Vector2(0, -400)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]
 [connection signal="on_all_dead" from="ObjEnemySpawner" to="RatKing" method="_on_obj_enemy_spawner_on_all_dead"]
+[connection signal="spawned_enemy_killed" from="ObjEnemySpawner" to="RatKing" method="_on_spawned_enemy_killed"]
+[connection signal="on_room_start" from="ObjRoomMgr" to="RatKing" method="_on_room_start"]
 [connection signal="onEnemyDeath" from="RatKing" to="." method="_on_rat_king_on_enemy_death"]

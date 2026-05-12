@@ -416,8 +416,8 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="ShockwaveState" type="Node" parent="." unique_id=170142546 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("12_nqo7f")
 state_to_enter = NodePath("../JunctionState")
-damage = 40
-enraged_damage = 60
+damage = 100
+enraged_damage = 150
 casting_time = 1.0
 persistence_time = 0.5
 cooldown_time = 0.5
@@ -426,7 +426,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="MultiProjectileState" type="Node" parent="." unique_id=875655972 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("15_nqo7f")
 state_to_enter = NodePath("../JunctionState")
-projectile_damage = 50
+projectile_damage = 70
 casting_time = 1.5
 cooldown_time = 2.0
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
@@ -434,7 +434,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="AoEState" type="Node" parent="." unique_id=675504382 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("16_ue585")
 state_to_enter = NodePath("../JunctionState")
-area_damage = 25
+area_damage = 50
 max_size = 1.5
 enrage_size_multiplier = 1.5
 existence_time = 6.0
@@ -446,7 +446,7 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [node name="HomingProjectileState" type="Node" parent="." unique_id=419087830 node_paths=PackedStringArray("state_to_enter")]
 script = ExtResource("14_qilw0")
 state_to_enter = NodePath("../JunctionState")
-projectile_damage = 30
+projectile_damage = 70
 projectile_speed = 75
 casting_time = 1.0
 cooldown_time = 2.0

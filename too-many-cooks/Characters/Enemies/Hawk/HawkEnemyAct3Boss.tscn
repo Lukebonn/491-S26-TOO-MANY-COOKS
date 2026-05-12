@@ -1,38 +1,38 @@
-[gd_scene format=3 uid="uid://jm16rk482kd3"]
+[gd_scene format=3 uid="uid://drxkcc42iweig"]
 
-[ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_7syrx"]
-[ext_resource type="AudioStream" uid="uid://dp5dhv15cj28l" path="res://Characters/Enemies/Hawk/Hawk Hit.wav" id="2_28cnu"]
-[ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_8226d"]
-[ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_sqkpv"]
-[ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_fs6er"]
-[ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_3j15n"]
-[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="6_dedhg"]
-[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="7_2v1gg"]
-[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_28cnu"]
-[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="8_gyy8f"]
-[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_i4era"]
-[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="9_7ye8k"]
-[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_xwg5o"]
-[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_6u5ja"]
-[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="10_sqkpv"]
-[ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
-[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
-[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
-[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
-[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
-[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
-[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]
-[ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="19_w36m3"]
-[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="20_dibtd"]
-[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="21_yklns"]
-[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="22_28cnu"]
-[ext_resource type="PackedScene" uid="uid://b6t8as10flpya" path="res://Characters/Enemies/Particles/FeatherParticles.tscn" id="27_28cnu"]
+[ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_ywa8c"]
+[ext_resource type="AudioStream" uid="uid://dp5dhv15cj28l" path="res://Characters/Enemies/Hawk/Hawk Hit.wav" id="2_absus"]
+[ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_gogjv"]
+[ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_8vjc8"]
+[ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_v4mfn"]
+[ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_kr5me"]
+[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_0ngkl"]
+[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_p2cav"]
+[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_icepr"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="10_rhvp3"]
+[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="11_gdfxl"]
+[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="12_ays84"]
+[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="13_xkx1o"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="14_oh3in"]
+[ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="15_uobns"]
+[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="16_gvgd1"]
+[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="17_7awlr"]
+[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="18_ta4k1"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="19_dnodd"]
+[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="20_toqva"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="21_okgmm"]
+[ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="22_k3mhe"]
+[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="23_vcu7s"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="24_lety4"]
+[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="25_g4dl3"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="26_ttylo"]
+[ext_resource type="PackedScene" uid="uid://b6t8as10flpya" path="res://Characters/Enemies/Particles/FeatherParticles.tscn" id="27_q08fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
 size = Vector2(26, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
-radius = 192.0
+radius = 323.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
 size = Vector2(26, 28)
@@ -53,10 +53,10 @@ size = Vector2(34, 26)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8226d")
+"texture": ExtResource("3_gogjv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sqkpv")
+"texture": ExtResource("4_8vjc8")
 }],
 "loop": true,
 "name": &"chase",
@@ -64,10 +64,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_fs6er")
+"texture": ExtResource("5_v4mfn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_3j15n")
+"texture": ExtResource("6_kr5me")
 }],
 "loop": true,
 "name": &"hit",
@@ -75,10 +75,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8226d")
+"texture": ExtResource("3_gogjv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sqkpv")
+"texture": ExtResource("4_8vjc8")
 }],
 "loop": true,
 "name": &"idle",
@@ -86,13 +86,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_28cnu")
+"texture": ExtResource("7_0ngkl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_i4era")
+"texture": ExtResource("8_p2cav")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_xwg5o")
+"texture": ExtResource("9_icepr")
 }],
 "loop": true,
 "name": &"swing",
@@ -126,12 +126,12 @@ _bundled = {
 "node_ids": PackedInt32Array(1955872402, 1657457641, 998753768, 861499226, 408621695, 1691155092, 181732196, 1731360392),
 "node_paths": [NodePath("."), NodePath("./Area2D"), NodePath("."), NodePath("."), NodePath("./sight"), NodePath("."), NodePath(".")],
 "nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741824, 0, 9, 8, -1, 1, 10, 6, 0, 1073741825, 0, 12, 11, -1, 1, 13, 7, 0, 1073741826, 0, 15, 14, -1, 2, 16, 8, 17, 9, 0, 1073741827, 0, 19, 18, -1, 1, 20, 10, 0, 1073741828, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741829, 0, 27, 26, -1, 1, 28, 14, 0, 1073741830, 0, 30, 29, -1, 11, 31, 15, 32, 16, 33, 17, 34, 18, 35, 19, 36, 20, 37, 21, 38, 22, 39, 23, 40, 24, 41, 25, 0),
-"variants": [0, 64, ExtResource("20_dibtd"), "Orb", 1, "uid://tgpwx3tswq0", 0, SubResource("CircleShape2D_e8js4"), 1, ExtResource("21_yklns"), 0, 1, SubResource("CircleShape2D_lcjsq"), Color(0.99564105, 0.940498, 0.97477525, 0.08627451), SubResource("CircleShape2D_3aqng"), ExtResource("22_28cnu"), 1, 8.0, 180.0, Vector2(0, 0), 10.0, 10.0, 0.5, SubResource("Curve_rqdct"), SubResource("Gradient_7gtmk"), 1.0],
+"variants": [0, 64, ExtResource("23_vcu7s"), "Orb", 1, "uid://tgpwx3tswq0", 0, SubResource("CircleShape2D_e8js4"), 1, ExtResource("24_lety4"), 0, 1, SubResource("CircleShape2D_lcjsq"), Color(0.99564105, 0.940498, 0.97477525, 0.08627451), SubResource("CircleShape2D_3aqng"), ExtResource("25_g4dl3"), 1, 8.0, 180.0, Vector2(0, 0), 10.0, 10.0, 0.5, SubResource("Curve_rqdct"), SubResource("Gradient_7gtmk"), 1.0],
 "version": 3
 }
 
 [sub_resource type="Resource" id="Resource_xwg5o"]
-script = ExtResource("18_3tayx")
+script = ExtResource("21_okgmm")
 SceneToSpawn = SubResource("PackedScene_i4era")
 DropCountRange = Vector2(1, 1)
 DropChance = 0.3
@@ -139,9 +139,9 @@ DropChance = 0.3
 [node name="HawkEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
 collision_layer = 8
 collision_mask = 64
-script = ExtResource("1_7syrx")
-health = 750
-damage = 30
+script = ExtResource("1_ywa8c")
+health = 1750
+damage = 70
 sight_state = NodePath("JunctionState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
@@ -205,7 +205,7 @@ hit_from_inside = true
 collide_with_areas = true
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
-stream = ExtResource("2_28cnu")
+stream = ExtResource("2_absus")
 
 [node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
 
@@ -216,42 +216,43 @@ scale = Vector2(1.0833335, 1.0391688)
 sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"swing"
 
-[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_dedhg")]
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("10_rhvp3")]
 offset_left = -15.0
 offset_top = -18.0
 offset_right = 15.5
 offset_bottom = -14.0
+metadata/_edit_use_anchors_ = true
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
-script = ExtResource("7_2v1gg")
+script = ExtResource("11_gdfxl")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ChaseState" type="Node" parent="." unique_id=284789326]
-script = ExtResource("8_gyy8f")
+script = ExtResource("12_ays84")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DashState" type="Node" parent="." unique_id=1342912869 node_paths=PackedStringArray("state_to_enter")]
-script = ExtResource("9_7ye8k")
+script = ExtResource("13_xkx1o")
 speed = 0.5
 state_to_enter = NodePath("../JunctionState")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="SlashState" type="Node" parent="." unique_id=1572581232 node_paths=PackedStringArray("state_to_enter")]
-script = ExtResource("10_sqkpv")
+script = ExtResource("14_oh3in")
 state_to_enter = NodePath("../JunctionState")
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ApproachState" type="Node" parent="." unique_id=1069220951 node_paths=PackedStringArray("state_to_enter")]
-script = ExtResource("11_fs6er")
+script = ExtResource("15_uobns")
 state_to_enter = NodePath("../SlashState")
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="ProjectileState" type="Node" parent="." unique_id=742252322]
-script = ExtResource("10_6u5ja")
-Projectile = ExtResource("11_ui3by")
+script = ExtResource("16_gvgd1")
+Projectile = ExtResource("17_7awlr")
 Projectile_Speed = 2
 Idle_Time = 1.0
 Flee_While_Firing = true
@@ -260,7 +261,7 @@ animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
-script = ExtResource("12_luwkr")
+script = ExtResource("18_ta4k1")
 Knockback_Strength = 50
 Hit_Stun = 0.3
 Hit_Sound = NodePath("../TakeDamage")
@@ -272,19 +273,19 @@ wait_time = 0.3
 one_shot = true
 
 [node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
-script = ExtResource("13_qs7f2")
+script = ExtResource("19_dnodd")
 Possibilities = [NodePath("../DashState"), NodePath("../ApproachState")]
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 
 [node name="DeathState" type="Node" parent="." unique_id=297472194 node_paths=PackedStringArray("Death_Sound")]
-script = ExtResource("14_kcit4")
-Drops = Array[ExtResource("18_3tayx")]([ExtResource("19_w36m3"), SubResource("Resource_xwg5o")])
-Drop = ExtResource("15_x328g")
+script = ExtResource("20_toqva")
+Drops = Array[ExtResource("21_okgmm")]([ExtResource("22_k3mhe"), SubResource("Resource_xwg5o")])
+Drop = ExtResource("26_ttylo")
 Drop_Amount = 1
 Drop_Amount_Max = 2
 Death_Sound = NodePath("../Die")
-dust_effect = ExtResource("27_28cnu")
+dust_effect = ExtResource("27_q08fb")
 animation_name = "NONE"
 metadata/_custom_type_script = "uid://d4asfymlcifxo"
 

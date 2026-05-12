@@ -10,11 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="8_t5v42"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="9_5vcnr"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="10_y8bbk"]
-[ext_resource type="PackedScene" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_yr5lb"]
-[ext_resource type="PackedScene" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="12_eh1tw"]
+[ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_yr5lb"]
+[ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="12_eh1tw"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="13_fflfr"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="14_120i5"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="15_5rih4"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="16_3kry0"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="17_rbhei"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="18_58oep"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bnc27vk2ri3c3" path="res://Objects/Decor/Carpet_RoyalPurple.png" id="22_yr5lb"]
 [ext_resource type="Texture2D" uid="uid://c4km0l0d2e7fh" path="res://Objects/Decor/TableWithClothPurple.png" id="23_eh1tw"]
 [ext_resource type="Texture2D" uid="uid://ck0a7cyjdepmh" path="res://Objects/Decor/Plant.png" id="24_fflfr"]
+[ext_resource type="PackedScene" uid="uid://jm16rk482kd3" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="24_t5v42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
@@ -161,11 +161,6 @@ position = Vector2(756, 382)
 health = 1250
 damage = 75
 
-[node name="HawkEnemy" parent="." unique_id=2002460282 instance=ExtResource("15_5rih4")]
-position = Vector2(651, 388)
-health = 1000
-damage = 30
-
 [node name="BigGoldPickup3" parent="." unique_id=538686064 instance=ExtResource("16_3kry0")]
 position = Vector2(345, 453)
 Flip_Out = false
@@ -283,6 +278,9 @@ texture = ExtResource("21_y8bbk")
 [node name="Banner2Purple4" type="Sprite2D" parent="." unique_id=1657219580]
 position = Vector2(961, 307)
 texture = ExtResource("21_y8bbk")
+
+[node name="HawkEnemy" parent="." unique_id=2045389756 instance=ExtResource("24_t5v42")]
+position = Vector2(640, 384)
 
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]
 [connection signal="current_mana" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_mana"]

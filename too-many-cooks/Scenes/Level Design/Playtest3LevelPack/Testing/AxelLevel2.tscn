@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="13_qdr7y"]
 [ext_resource type="PackedScene" uid="uid://dnbtp3ptq05qe" path="res://Characters/Enemies/Rat/F3TutorialRatEnemy.tscn" id="14_jloms"]
 [ext_resource type="PackedScene" uid="uid://c2p0prtf41rry" path="res://Characters/Enemies/Rat/ActualRatEnemyAct3.tscn" id="15_e305v"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="16_xc2od"]
+[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/OldHawkEnemy.tscn" id="16_xc2od"]
 [ext_resource type="PackedScene" uid="uid://bieb2r1oayga1" path="res://Characters/Enemies/WizardMouse/WizardMouse.tscn" id="17_gqcv8"]
 [ext_resource type="PackedScene" uid="uid://dcph8r5jg0jch" path="res://Objects/Pickups/Scenes/HpPickup.tscn" id="18_k33ug"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="19_elhcw"]
