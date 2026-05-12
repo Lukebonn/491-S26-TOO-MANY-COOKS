@@ -49,6 +49,7 @@ stream = ExtResource("1_6iwbg")
 autoplay = true
 
 [node name="Timer" type="Timer" parent="." unique_id=38749908]
+process_mode = 1
 wait_time = 0.5
 autostart = true
 

@@ -60,7 +60,7 @@ func sword_projectile():
 	
 	player.mana -= 35
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	
 	if(attack):
 		attack.queue_free()
@@ -77,9 +77,9 @@ func spin_attack():
 	#player.set_damage(1.8)
 	
 	if(PlayerStats.MeleeClassAbilityLevel >= 3):
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false).timeout
 	else:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5, false).timeout
 	
 	attack.queue_free()
 	

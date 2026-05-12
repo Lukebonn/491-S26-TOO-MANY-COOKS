@@ -30,7 +30,7 @@ func enter_state(player_node):
 		
 		attack.status = active_status
 		
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.1, false).timeout
 		
 		start_cooldown()
 	
