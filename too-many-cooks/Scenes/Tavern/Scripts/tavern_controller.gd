@@ -4,7 +4,9 @@ func _ready():
 	FadeInFadeOut.fade_in()
 	if Global.First_Time_Tavern:
 		dialogue_ref.show_dialogue("Gramps","5,6,7,8,9","0,0")
+		$"Tavern BG/ColorRect".dim()
 		await dialogue_ref.message_complete
+		$"Tavern BG/ColorRect".undim()
 		$FirstTimeUI.show()
 
 
