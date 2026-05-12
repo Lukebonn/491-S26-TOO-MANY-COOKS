@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_vgogy"]
 [ext_resource type="Texture2D" uid="uid://k8pxgiaqu2pe" path="res://UI/Credits/Img/ShainaZ.png" id="6_cb1je"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="7_47ysf"]
+[ext_resource type="Texture2D" uid="uid://xcee8um2abm8" path="res://UI/Credits/Img/BenjaminB.png" id="7_vgogy"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="8_jujdl"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="9_5vy3o"]
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="10_bskmb"]
@@ -134,6 +135,7 @@ theme_override_constants/separation = 64
 [node name="Benjamin1" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=1290761535 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("7_vgogy")
 Name = "Benjamin Barnes"
 Title = "Programmer"
 Evil = true
@@ -235,6 +237,7 @@ theme_override_constants/separation = 64
 [node name="Benjamin2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1092889361 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("7_vgogy")
 Name = "Benjamin Barnes"
 Title = "UI & Level Designer"
 Evil = true
