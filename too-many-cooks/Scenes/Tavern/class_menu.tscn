@@ -448,7 +448,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 LevelUp = 1
 Text = Array[String](["Short range sword swing.n/Restores Mana on hit.n/Changes available Spell with combo attack.", "Short range staff bonk.n/Restores Mana on hit.", "Long range dagger throw.n/Attack enemies from a distance."])
-UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+UpgradedText = Array[String](["Short range sword swing.n/Restores Mana on hit.n/Changes available Spell with combo attack.", "Short range staff bonk.n/Restores Mana on hit.", "Long range dagger throw.n/Attack enemies from a distance."])
 Img = Array[Texture]([ExtResource("7_w40dp"), ExtResource("5_6abwf"), ExtResource("9_nmtmf")])
 
 [node name="Dash" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=1670919231 instance=ExtResource("8_loq30")]
@@ -457,7 +457,7 @@ size_flags_horizontal = 3
 ID = 1
 LevelUp = 2
 Text = Array[String](["Up to 3 sword dashes.n/Can damage nearby enemies.", "Short range teleport. Costs 10 Mana.n/Has no cooldown, but need Mana to use.", "Up to 5 short dashes.n/Executes the fastest of all dashes."])
-UpgradedText = Array[String](["N/A", "N/A", "N/A"])
+UpgradedText = Array[String](["Up to 3 sword dashes.n/Can damage nearby enemies.", "Short range teleport. Costs 10 Mana.n/Has no cooldown, but need Mana to use.", "Up to 5 short dashes.n/Executes the fastest of all dashes."])
 Img = Array[Texture]([ExtResource("10_oi3g4"), ExtResource("6_mx16r"), ExtResource("12_my0l4")])
 
 [node name="Spell1" parent="Panel/VBoxContainer/HBoxContainer/Abilities/AbilityInfo" unique_id=931387822 instance=ExtResource("8_loq30")]

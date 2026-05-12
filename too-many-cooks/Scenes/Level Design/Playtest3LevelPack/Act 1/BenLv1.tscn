@@ -10,11 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/rat/RatEnemy.tscn" id="8_6jkhw"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="9_h11h6"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="10_4h2ug"]
-[ext_resource type="PackedScene" uid="uid://b04ibwwhdjicd" path="res://Objects/Chest/obj_chest.tscn" id="11_3micv"]
-[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="12_vs887"]
-[ext_resource type="Resource" uid="uid://b2ydgw0c2far6" path="res://Objects/Pickups/PickupData/PickupChestGold.tres" id="13_l1u6y"]
+[ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_65g87"]
 [ext_resource type="Texture2D" uid="uid://cnim6l3rymyt7" path="res://Objects/Decor/Cobweb.png" id="14_65g87"]
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="14_egdkp"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="14_jvg4a"]
 [ext_resource type="Texture2D" uid="uid://bb0lkpbxlq5yi" path="res://Objects/Decor/Skull.png" id="15_jvg4a"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="15_o75lx"]
 
@@ -394,9 +393,36 @@ HP = 250
 
 [node name="Bonus1" type="Node" parent="Objects" unique_id=495793898]
 
-[node name="ObjChest" parent="Objects/Bonus1" unique_id=439909105 instance=ExtResource("11_3micv")]
-position = Vector2(-640, -448)
-Drops = Array[ExtResource("12_vs887")]([ExtResource("13_l1u6y")])
+[node name="BigGoldPickup" parent="Objects/Bonus1" unique_id=739019463 instance=ExtResource("13_65g87")]
+position = Vector2(-640, -424)
+Value = 20
+
+[node name="GoldPickup" parent="Objects/Bonus1" unique_id=1449721498 instance=ExtResource("14_jvg4a")]
+position = Vector2(-672, -448)
+
+[node name="GoldPickup2" parent="Objects/Bonus1" unique_id=619677399 instance=ExtResource("14_jvg4a")]
+position = Vector2(-680, -456)
+
+[node name="GoldPickup3" parent="Objects/Bonus1" unique_id=989267911 instance=ExtResource("14_jvg4a")]
+position = Vector2(-672, -472)
+
+[node name="GoldPickup4" parent="Objects/Bonus1" unique_id=475935976 instance=ExtResource("14_jvg4a")]
+position = Vector2(-600, -480)
+
+[node name="GoldPickup5" parent="Objects/Bonus1" unique_id=1594480095 instance=ExtResource("14_jvg4a")]
+position = Vector2(-592, -472)
+
+[node name="GoldPickup6" parent="Objects/Bonus1" unique_id=889748653 instance=ExtResource("14_jvg4a")]
+position = Vector2(-600, -456)
+
+[node name="GoldPickup7" parent="Objects/Bonus1" unique_id=1407465497 instance=ExtResource("14_jvg4a")]
+position = Vector2(-592, -408)
+
+[node name="GoldPickup8" parent="Objects/Bonus1" unique_id=810436317 instance=ExtResource("14_jvg4a")]
+position = Vector2(-600, -400)
+
+[node name="GoldPickup9" parent="Objects/Bonus1" unique_id=1327578444 instance=ExtResource("14_jvg4a")]
+position = Vector2(-616, -408)
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1535045514]
 stream = ExtResource("14_egdkp")
