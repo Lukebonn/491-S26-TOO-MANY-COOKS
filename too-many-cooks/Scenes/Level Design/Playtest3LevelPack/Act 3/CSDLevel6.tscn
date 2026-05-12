@@ -70,6 +70,7 @@ shape = SubResource("RectangleShape2D_q63rm")
 
 [node name="ObjDestructibleSpawner" parent="Room" unique_id=817439483 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("8_t5v42")]
 position = Vector2(273, 293)
+RandomLocation = true
 Enemies = Array[PackedScene]([ExtResource("9_5vcnr")])
 LocationType = 3
 SpawnPoints = [NodePath("Marker2D3"), NodePath("Marker2D4")]
@@ -85,6 +86,7 @@ position = Vector2(-169, 265)
 
 [node name="ObjDestructibleSpawner2" parent="Room" unique_id=1881234429 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("8_t5v42")]
 position = Vector2(65, 555)
+RandomLocation = true
 Enemies = Array[PackedScene]([ExtResource("9_5vcnr")])
 LocationType = 3
 SpawnPoints = [NodePath("Marker2D"), NodePath("Marker2D2")]
