@@ -20,10 +20,11 @@ process_mode = 3
 script = ExtResource("1_obsv4")
 
 [node name="background" type="ColorRect" parent="." unique_id=1813375192]
-offset_left = 1152.3555
-offset_top = 2.1018372
-offset_right = 1629.711
-offset_bottom = 649.1018
+offset_left = 1360.0
+offset_top = -100.0
+offset_right = 1860.0
+offset_bottom = 700.0
+rotation = 0.2617994
 color = Color(0.51074886, 0.0060839676, 0.2735629, 1)
 
 [node name="cover" type="ColorRect" parent="." unique_id=1480557321]
@@ -37,94 +38,58 @@ color = Color(0, 0, 0, 0.44705883)
 position = Vector2(1152.3555, 2.1018372)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1948197532]
-position = Vector2(848, 0)
+position = Vector2(744, 0)
+
+[node name="BgMarker" type="Marker2D" parent="." unique_id=510186992]
+position = Vector2(1120, -104)
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=686372798]
-position = Vector2(1152, 0)
+position = Vector2(1376, 0)
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=181482053]
 z_index = 1
-offset_left = 1213.0
-offset_right = 1416.0
-offset_bottom = 649.0
+offset_left = 1176.0
+offset_top = -40.0
+offset_right = 1426.0
+offset_bottom = 609.0
 theme = ExtResource("2_jxjhu")
 theme_override_constants/separation = 40
-alignment = 1
+alignment = 2
 script = ExtResource("3_me480")
 
-[node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
+[node name="BackButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "Settings"
+theme_override_font_sizes/font_size = 32
+text = "Resume Game"
 script = ExtResource("3_c4lv5")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
-[node name="NothingButton" type="Button" parent="buttons" unique_id=430778779 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
+[node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "meow"
+theme_override_font_sizes/font_size = 32
+text = "Settings"
 script = ExtResource("3_c4lv5")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
 [node name="TavernButton" type="Button" parent="buttons" unique_id=447781717 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "Return 
-to
-Tavern"
+theme_override_font_sizes/font_size = 32
+text = "Return to Tavern"
 script = ExtResource("4_jxjhu")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="NothingButton2" type="Button" parent="buttons" unique_id=1393948121 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "meow"
-script = ExtResource("3_c4lv5")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="NothingButton3" type="Button" parent="buttons" unique_id=655223177 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "meow"
-script = ExtResource("3_c4lv5")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="NothingButton4" type="Button" parent="buttons" unique_id=1178310031 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "Journal"
-script = ExtResource("3_c4lv5")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="BackButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
-z_index = 1
-layout_mode = 2
-theme = ExtResource("2_jxjhu")
-theme_override_font_sizes/font_size = 60
-text = "Back"
-script = ExtResource("3_c4lv5")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
@@ -458,28 +423,16 @@ stream = ExtResource("10_1631t")
 volume_db = -8.0
 bus = &"Music"
 
+[connection signal="button_down" from="buttons/BackButton" to="buttons/BackButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/BackButton" to="buttons/BackButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/BackButton" to="." method="_on_exit_button_pressed"]
 [connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="button_down" from="buttons/NothingButton" to="buttons/NothingButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/NothingButton" to="buttons/NothingButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/NothingButton" to="." method="_on_button_5_pressed"]
 [connection signal="button_down" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/TavernButton" to="." method="_on_tavern_button_pressed"]
 [connection signal="pressed" from="buttons/TavernButton" to="buttons/TavernButton" method="_on_pressed"]
-[connection signal="button_down" from="buttons/NothingButton2" to="buttons/NothingButton2" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/NothingButton2" to="buttons/NothingButton2" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/NothingButton2" to="." method="_on_button_6_pressed"]
-[connection signal="button_down" from="buttons/NothingButton3" to="buttons/NothingButton3" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/NothingButton3" to="buttons/NothingButton3" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/NothingButton3" to="." method="_on_button_6_pressed"]
-[connection signal="button_down" from="buttons/NothingButton4" to="buttons/NothingButton4" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/NothingButton4" to="buttons/NothingButton4" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/NothingButton4" to="." method="_on_journal_button_pressed"]
-[connection signal="button_down" from="buttons/BackButton" to="buttons/BackButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/BackButton" to="buttons/BackButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/BackButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_pressed"]
 [connection signal="pressed" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_pressed"]
 [connection signal="closed_menu" from="Pause UI" to="." method="_on_pause_ui_closed_menu"]

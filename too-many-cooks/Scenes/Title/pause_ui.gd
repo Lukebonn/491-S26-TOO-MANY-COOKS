@@ -18,7 +18,9 @@ func hide_menu():
 	$Objective.visible = false
 func _on_back_pressed():
 	hide_menu()
-	#$Back.disabled = true Including this line breaks the back button, and it can't be clicked again
+	$Back.disabled = true
+	await get_tree().create_timer(1.5).timeout
+	$Back.disabled = false
 
 func _on_master_slider_value_changed(value):
 	#dude this reference is so long its actually killing me :sob:

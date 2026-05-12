@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="2_gjm8c"]
 [ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="3_gjm8c"]
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_4i5kg"]
+[ext_resource type="Texture2D" uid="uid://bokhp23md1sjj" path="res://UI/Credits/Img/Alanna.png" id="5_lvb41"]
 [ext_resource type="Texture2D" uid="uid://cm6p4yh5ef06y" path="res://UI/Credits/Img/Axel.png" id="6_5f2kc"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="6_ailny"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
@@ -95,6 +96,7 @@ Title = "Producer"
 [node name="Alanna1" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1821230972 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("5_lvb41")
 Name = "Alanna Socha"
 Title = "Producer"
 

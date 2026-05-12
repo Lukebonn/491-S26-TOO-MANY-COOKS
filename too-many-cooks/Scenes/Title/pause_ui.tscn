@@ -326,13 +326,13 @@ clickSound = NodePath("../../ButtonClickSound")
 hoverSound = NodePath("../../ButtonHoverSound")
 
 [node name="Back" type="Button" parent="." unique_id=1178690095 node_paths=PackedStringArray("hoverSound", "clickSound")]
-layout_mode = 0
-offset_left = 992.0
-offset_top = 16.0
-offset_right = 1120.0
-offset_bottom = 88.0
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 120.0
+offset_bottom = 72.0
 theme = ExtResource("1_0758p")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "Back
 "
 script = ExtResource("4_0758p")

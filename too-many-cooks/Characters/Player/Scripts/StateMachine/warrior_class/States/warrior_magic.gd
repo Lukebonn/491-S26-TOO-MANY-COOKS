@@ -33,19 +33,24 @@ func enter_state(player_node):
 
 ##parry: player cannot be hit and will damage attackers for a quarter second
 func parry():
-	
-	player.play_sound(load("res://Audio/Sounds/Player/Warrior/Parry noise.mp3"))
-	
 	parrying = true
-	
 	player.velocity = Vector2.ZERO
-	
 	player.mana -= 20
 	player.modulate = Color(0.674, 1.0, 0.901, 1.0)
+	player.play_sound(load("res://Audio/Sounds/Player/Warrior/Parry noise.mp3"))
+	parry_sword_anim()
 	await get_tree().create_timer(0.4).timeout
-	
 	player.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	parrying = false
+
+func parry_sword_anim() -> void:
+	#Rotates player weapon when parry is used; transferred Tyler's code from player_state_handler to here.
+	var ref = $"../Weapon/Sprite2D"
+	ref.flip_h = true
+	ref.position = Vector2(4.0, 0.0)
+	await get_tree().create_timer(0.4).timeout
+	ref.flip_h = false
+	ref.position = Vector2(14.0, 0.0)
 
 func sword_projectile():
 	var attack = preload("res://Objects/Projectiles/magic_sword_projectile.tscn").instantiate()
