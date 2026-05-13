@@ -11,7 +11,6 @@ class_name journal_entry extends Button
 @export var clickSound : AudioStreamPlayer
 @export var hoverSound : AudioStreamPlayer
 @onready var journal_title_ref : RichTextLabel = $"../../../../../JournalPanel/TitleLabel"
-
 func _ready():
 	check_avaliablilty()
 	self.connect("pressed",_on_pressed)
