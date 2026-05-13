@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://0ulkwhw17caj"]
+
+[ext_resource type="Texture2D" uid="uid://ddee4ogbgu07e" path="res://Characters/Player/Sprites/Spells/status_haze1.png" id="1_hft8y"]
+[ext_resource type="Texture2D" uid="uid://cwb55tsxy0mjr" path="res://Characters/Player/Sprites/Spells/status_haze2.png" id="2_jbywr"]
+[ext_resource type="Texture2D" uid="uid://yosrjomndbf3" path="res://Characters/Player/Sprites/Spells/status_haze3.png" id="3_v6v0p"]
+[ext_resource type="Texture2D" uid="uid://ddnvdoc04ekln" path="res://Characters/Player/Sprites/Spells/status_haze4.png" id="4_p18ot"]
+[ext_resource type="Texture2D" uid="uid://ctjk5daoi37oq" path="res://Characters/Player/Sprites/Spells/status_haze5.png" id="5_h4w7q"]
+[ext_resource type="Texture2D" uid="uid://cteptqq38o8bh" path="res://Characters/Player/Sprites/Spells/status_haze6.png" id="6_exbm3"]
+[ext_resource type="Texture2D" uid="uid://cuv3jw5b6iioa" path="res://Characters/Player/Sprites/Spells/status_haze7.png" id="7_mfooi"]
+[ext_resource type="Texture2D" uid="uid://ddvv83p4ytqcx" path="res://Characters/Player/Sprites/Spells/status_haze8.png" id="8_feo8w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dm1pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hft8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jbywr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v6v0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p18ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h4w7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_exbm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mfooi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_feo8w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="StatusHaze" type="AnimatedSprite2D" unique_id=1755685779]
+position = Vector2(8.34465e-07, 0)
+scale = Vector2(2.5, 2.5000002)
+sprite_frames = SubResource("SpriteFrames_dm1pc")
+autoplay = "default"
+frame_progress = 0.98819864

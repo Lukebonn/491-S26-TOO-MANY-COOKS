@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="3_gjm8c"]
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_4i5kg"]
 [ext_resource type="Texture2D" uid="uid://bokhp23md1sjj" path="res://UI/Credits/Img/Alanna.png" id="5_lvb41"]
+[ext_resource type="Texture2D" uid="uid://dfmf0una4flo3" path="res://UI/Credits/Img/Prof_Belford_Icon.png" id="5_xc3er"]
 [ext_resource type="Texture2D" uid="uid://cm6p4yh5ef06y" path="res://UI/Credits/Img/Axel.png" id="6_5f2kc"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="6_ailny"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="6_lfta3"]
@@ -82,6 +83,7 @@ theme_override_constants/separation = 32
 [node name="Belford1" parent="VBoxContainer/VBoxContainer" unique_id=1302544757 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("5_xc3er")
 Name = "Lochlan Belford"
 Title = "Professor"
 

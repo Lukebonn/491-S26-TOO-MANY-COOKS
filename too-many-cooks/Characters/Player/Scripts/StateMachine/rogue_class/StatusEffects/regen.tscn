@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bf3j42rfyngwd"]
 
 [ext_resource type="Script" uid="uid://c2qiqwebnk1f2" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/regen.gd" id="1_x4k53"]
+[ext_resource type="PackedScene" uid="uid://0ulkwhw17caj" path="res://Characters/Player/Scripts/StateMachine/rogue_class/StatusEffects/status_haze.tscn" id="2_7mkij"]
 
 [node name="regen" type="Node2D" unique_id=1052624840]
 script = ExtResource("1_x4k53")
@@ -11,6 +12,9 @@ autostart = true
 
 [node name="HealTickTimer" type="Timer" parent="." unique_id=177422357]
 autostart = true
+
+[node name="StatusHaze" parent="." unique_id=1755685779 instance=ExtResource("2_7mkij")]
+modulate = Color(0.39, 1, 0.42049998, 1)
 
 [connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
 [connection signal="timeout" from="HealTickTimer" to="." method="_on_heal_tick_timer_timeout"]
