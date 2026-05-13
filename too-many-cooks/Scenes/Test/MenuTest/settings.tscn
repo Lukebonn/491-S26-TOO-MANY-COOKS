@@ -10,9 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://nuhsaetemlhm" path="res://Scenes/Test/MenuTest/journal.png" id="6_ssjum"]
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="9_ocaao"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="10_8n4gj"]
-[ext_resource type="Texture2D" uid="uid://cf06bnk6pm6sr" path="res://Scenes/Tavern/Art/Journal Art/warrior 2.png" id="11_c2hko"]
-[ext_resource type="Texture2D" uid="uid://c4jldkcg48iwq" path="res://Scenes/Tavern/Art/Journal Art/mage 1.png" id="12_8xnlr"]
-[ext_resource type="Texture2D" uid="uid://b6fcufg40308o" path="res://Scenes/Tavern/Art/Journal Art/rogue 1.png" id="13_4g023"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mm4c"]
 
@@ -532,16 +529,6 @@ bus = &"Music"
 stream = ExtResource("10_8n4gj")
 volume_db = -8.0
 bus = &"Music"
-
-[node name="Warrior Doodle" type="Sprite2D" parent="." unique_id=2096126076]
-texture = ExtResource("11_c2hko")
-
-[node name="Mage Doodle" type="Sprite2D" parent="." unique_id=922389793]
-position = Vector2(1352, 540)
-texture = ExtResource("12_8xnlr")
-
-[node name="Rogue Doodle" type="Sprite2D" parent="." unique_id=1464253488]
-texture = ExtResource("13_4g023")
 
 [connection signal="button_down" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_mouse_entered"]
