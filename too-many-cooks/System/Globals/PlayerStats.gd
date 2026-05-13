@@ -78,7 +78,7 @@ var passive_hp : int = 0
 var Magic := "None"
 
 ##classes enum for all possible classes and current_class for the player's equipped class
-var current_class = classes.mage
+var current_class = classes.rogue
 
 enum classes{
 	none,
@@ -108,7 +108,7 @@ var RogueClassLevel : int = 1
 #same but for abilities
 var MeleeClassAbilityLevel : int = 0
 var MageClassAbilityLevel : int = 0
-var RogueClassAbilityLevel : int = 0
+var RogueClassAbilityLevel : int = 3
 
 func reset_objective_stats():
 	level_kill_count = 0
