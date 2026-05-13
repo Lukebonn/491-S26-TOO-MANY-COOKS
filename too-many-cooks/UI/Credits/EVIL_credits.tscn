@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="3_le4ah"]
 [ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="4_eyp6y"]
 [ext_resource type="Texture2D" uid="uid://bokhp23md1sjj" path="res://UI/Credits/Img/Alanna.png" id="5_eyp6y"]
+[ext_resource type="Texture2D" uid="uid://dfmf0una4flo3" path="res://UI/Credits/Img/Prof_Belford_Icon.png" id="5_jujdl"]
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_vgogy"]
 [ext_resource type="Texture2D" uid="uid://k8pxgiaqu2pe" path="res://UI/Credits/Img/ShainaZ.png" id="6_cb1je"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="7_47ysf"]
@@ -80,6 +81,7 @@ theme_override_constants/separation = 32
 [node name="Belford1" parent="VBoxContainer/VBoxContainer" unique_id=1302544757 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("5_jujdl")
 Name = "Lochlan Belford"
 Title = "Professor"
 Evil = true
