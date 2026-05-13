@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cciqv1yk8koyi" path="res://UI/Credits/Img/AtaKitapci.png" id="8_30bwe"]
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="8_jjdaq"]
 [ext_resource type="Texture2D" uid="uid://cw7p0aa113lak" path="res://UI/Credits/Img/Michelle.png" id="10_f3hc1"]
+[ext_resource type="Texture2D" uid="uid://btt61monwb5lr" path="res://UI/Credits/Img/OwenM.png" id="10_nmsmf"]
 [ext_resource type="Texture2D" uid="uid://b00mw1ecyogno" path="res://UI/Credits/Img/AbiW.png" id="11_1qmnl"]
 [ext_resource type="Texture2D" uid="uid://bs8xyx21s4vps" path="res://UI/Credits/Img/JonathanM.png" id="11_3x4qe"]
 [ext_resource type="Texture2D" uid="uid://dwj0u1x05bjqb" path="res://UI/Credits/Img/luke-bonniwell-credit-png.png" id="11_y1gn0"]
@@ -160,6 +161,7 @@ theme_override_constants/separation = 64
 [node name="Owen1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1437229437 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("10_nmsmf")
 Name = "Owen Magee"
 Title = "Combat Programmer"
 
@@ -280,6 +282,7 @@ Title = "Enemy & UI Designer"
 [node name="Owen2" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=103258314 instance=ExtResource("3_gjm8c")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("10_nmsmf")
 Name = "Owen Magee"
 Title = "Combat Designer"
 

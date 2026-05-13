@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhqqhq6xesqi"
-path="res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"
+uid="uid://btt61monwb5lr"
+path="res://.godot/imported/OwenM.png-aa23386416232220192c8289d9bbfaca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Enemies/mice/black/1.png"
-dest_files=["res://.godot/imported/1.png-4cb1be9001641572353ddc9859bae41b.ctex"]
+source_file="res://UI/Credits/Img/OwenM.png"
+dest_files=["res://.godot/imported/OwenM.png-aa23386416232220192c8289d9bbfaca.ctex"]
 
 [params]
 
