@@ -4,8 +4,8 @@ signal closed_menu
 @export var hoverSound : AudioStreamPlayer
 
 func show_menu():
-	var tween = get_tree().create_tween()
 	check_all_entries()
+	var tween = get_tree().create_tween()
 	tween.parallel().tween_property(self,"position",Vector2(0,0),.5).set_trans(Tween.TRANS_EXPO)
 
 
@@ -27,5 +27,5 @@ func check_all_entries():
 		entry.check_avaliablilty()
 	for entry in $TabContainer/Rogue/Entries.get_children():
 		entry.check_avaliablilty()
-	for entry in $TabContainer/Rogue/Entries.get_children():
+	for entry in $TabContainer/Mage/Entries.get_children():
 		entry.check_avaliablilty()
