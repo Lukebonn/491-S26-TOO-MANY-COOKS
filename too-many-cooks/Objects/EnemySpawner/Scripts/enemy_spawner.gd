@@ -1,6 +1,7 @@
 extends Node2D
 signal on_spawn
 signal on_all_dead
+signal spawned_enemy_killed
 enum LocType {
 	FixedRadius, ##Enemies spawn a fixed distance away from the spawner.
 	AlongPath, ##Enemies spawn along the assigned SpawnPath.
@@ -152,6 +153,7 @@ func calc_spawn_pos(i: int):
 			return rp
 
 func on_enemy_dead() -> void:
+	spawned_enemy_killed.emit()
 	enemies_defeated += 1
 	enemy_count -= 1
 	enemy_count = clampi(enemy_count, 0, SpawnLimit)

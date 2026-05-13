@@ -9,14 +9,18 @@
 [ext_resource type="AudioStream" uid="uid://nkr3xbp7tmsc" path="res://Audio/Music/Eli491_Combat softer.ogg" id="6_cl82m"]
 [ext_resource type="PackedScene" uid="uid://c63ktfb6ib3fm" path="res://Objects/RoomManager/obj_room_mgr.tscn" id="7_ks5rf"]
 [ext_resource type="PackedScene" uid="uid://b257mg1ty2vf4" path="res://Objects/EnemySpawner/destructible_spawner.tscn" id="8_8xf7e"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_2xhkc"]
 [ext_resource type="PackedScene" uid="uid://d3kyhoaa2p1tq" path="res://Objects/Barrier/obj_barrier.tscn" id="10_bklu6"]
+[ext_resource type="PackedScene" uid="uid://bpq6n3eie3bgy" path="res://Characters/Enemies/Rat/ActualRatEnemyAct2.tscn" id="10_jtfak"]
 [ext_resource type="PackedScene" uid="uid://ccq3hl2dhge34" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemy.tscn" id="11_jtfak"]
 [ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_afbxv"]
 [ext_resource type="PackedScene" uid="uid://chfvtio8t8lwd" path="res://Objects/Pickups/Scenes/BigGoldPickup.tscn" id="13_2dp6i"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="14_3ai76"]
 [ext_resource type="PackedScene" uid="uid://dedpwrjxmd2km" path="res://Objects/Pickups/Scenes/OrbPickup.tscn" id="15_j518v"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_xfeou"]
+[ext_resource type="Texture2D" uid="uid://y0ygqyc83gp6" path="res://Objects/Decor/Lantern.png" id="18_cl82m"]
+[ext_resource type="Texture2D" uid="uid://cqfd4tygmvk1s" path="res://Objects/Decor/Column_gray.png" id="19_ks5rf"]
+[ext_resource type="Texture2D" uid="uid://bdgc27baocdx6" path="res://Objects/Decor/Candelabra.png" id="20_8xf7e"]
+[ext_resource type="Texture2D" uid="uid://cnim6l3rymyt7" path="res://Objects/Decor/Cobweb.png" id="21_2xhkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q63rm"]
 size = Vector2(20, 53)
@@ -62,7 +66,7 @@ shape = SubResource("RectangleShape2D_q63rm")
 
 [node name="ObjDestructibleSpawner" parent="Room" unique_id=817439483 instance=ExtResource("8_8xf7e")]
 position = Vector2(-63, -351)
-Enemies = Array[PackedScene]([ExtResource("9_2xhkc")])
+Enemies = Array[PackedScene]([ExtResource("10_jtfak")])
 SpawnInterval = 3.0
 HP = 150
 
@@ -98,33 +102,6 @@ position = Vector2(-278, -176)
 [node name="BigRatEnemy4" parent="." unique_id=81256711 instance=ExtResource("12_afbxv")]
 position = Vector2(-138, -37)
 
-[node name="RatEnemy3" parent="." unique_id=596819824 instance=ExtResource("9_2xhkc")]
-position = Vector2(-145, 85)
-
-[node name="RatEnemy11" parent="." unique_id=1456003775 instance=ExtResource("9_2xhkc")]
-position = Vector2(-101, 111)
-
-[node name="RatEnemy4" parent="." unique_id=1092344819 instance=ExtResource("9_2xhkc")]
-position = Vector2(-52, 84)
-
-[node name="RatEnemy5" parent="." unique_id=1058920267 instance=ExtResource("9_2xhkc")]
-position = Vector2(-234, -208)
-
-[node name="RatEnemy6" parent="." unique_id=103872362 instance=ExtResource("9_2xhkc")]
-position = Vector2(-204, -136)
-
-[node name="RatEnemy7" parent="." unique_id=1820048985 instance=ExtResource("9_2xhkc")]
-position = Vector2(-345, -209)
-
-[node name="RatEnemy8" parent="." unique_id=743397662 instance=ExtResource("9_2xhkc")]
-position = Vector2(-344, -136)
-
-[node name="RatEnemy9" parent="." unique_id=1739887574 instance=ExtResource("9_2xhkc")]
-position = Vector2(-271, -213)
-
-[node name="RatEnemy10" parent="." unique_id=1258390875 instance=ExtResource("9_2xhkc")]
-position = Vector2(-177, -329)
-
 [node name="BigGoldPickup" parent="." unique_id=739019463 instance=ExtResource("13_2dp6i")]
 position = Vector2(-154, 174)
 Flip_Out = false
@@ -147,24 +124,6 @@ position = Vector2(-228, -485)
 
 [node name="BigRatEnemy7" parent="." unique_id=881557452 instance=ExtResource("12_afbxv")]
 position = Vector2(-543, -312)
-
-[node name="RatEnemy12" parent="." unique_id=512103582 instance=ExtResource("9_2xhkc")]
-position = Vector2(-586, -82)
-
-[node name="RatEnemy13" parent="." unique_id=338824764 instance=ExtResource("9_2xhkc")]
-position = Vector2(-542, -56)
-
-[node name="RatEnemy14" parent="." unique_id=1619921611 instance=ExtResource("9_2xhkc")]
-position = Vector2(-493, -83)
-
-[node name="RatEnemy15" parent="." unique_id=1376942088 instance=ExtResource("9_2xhkc")]
-position = Vector2(-588, -302)
-
-[node name="RatEnemy16" parent="." unique_id=1424397365 instance=ExtResource("9_2xhkc")]
-position = Vector2(-544, -276)
-
-[node name="RatEnemy17" parent="." unique_id=1118762565 instance=ExtResource("9_2xhkc")]
-position = Vector2(-495, -303)
 
 [node name="BigGoldPickup3" parent="." unique_id=538686064 instance=ExtResource("13_2dp6i")]
 position = Vector2(-595, 7)
@@ -194,6 +153,224 @@ Flip_Out = false
 position = Vector2(-99, 160)
 
 [node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("16_xfeou")]
+
+[node name="Lanterns" type="Node" parent="." unique_id=262267065]
+
+[node name="Lantern4" type="Sprite2D" parent="Lanterns" unique_id=1524383947]
+position = Vector2(-288, -424)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern5" type="Sprite2D" parent="Lanterns" unique_id=2078973757]
+position = Vector2(-176, -424)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern6" type="Sprite2D" parent="Lanterns" unique_id=637511915]
+position = Vector2(-232, -424)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern12" type="Sprite2D" parent="Lanterns" unique_id=625625114]
+position = Vector2(-632, -392)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern13" type="Sprite2D" parent="Lanterns" unique_id=1442350050]
+position = Vector2(-512, -392)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern15" type="Sprite2D" parent="Lanterns" unique_id=418295812]
+position = Vector2(-456, -392)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern14" type="Sprite2D" parent="Lanterns" unique_id=1033438058]
+position = Vector2(-576, -392)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern16" type="Sprite2D" parent="Lanterns" unique_id=2097474663]
+position = Vector2(-600, -152)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern17" type="Sprite2D" parent="Lanterns" unique_id=434051250]
+position = Vector2(-488, -152)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern18" type="Sprite2D" parent="Lanterns" unique_id=56978148]
+position = Vector2(-360, -248)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern19" type="Sprite2D" parent="Lanterns" unique_id=471586466]
+position = Vector2(-200, -248)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern21" type="Sprite2D" parent="Lanterns" unique_id=678690177]
+position = Vector2(-88, -72)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern22" type="Sprite2D" parent="Lanterns" unique_id=313143643]
+position = Vector2(-224, -72)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern23" type="Sprite2D" parent="Lanterns" unique_id=1028232562]
+position = Vector2(-328, -72)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern24" type="Sprite2D" parent="Lanterns" unique_id=951998678]
+position = Vector2(-424, -72)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern25" type="Sprite2D" parent="Lanterns" unique_id=1086128418]
+position = Vector2(-160, 56)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern26" type="Sprite2D" parent="Lanterns" unique_id=1203545691]
+position = Vector2(-48, 56)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern7" type="Sprite2D" parent="Lanterns" unique_id=1576121026]
+position = Vector2(-264, -536)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern8" type="Sprite2D" parent="Lanterns" unique_id=442635336]
+position = Vector2(-144, -536)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern9" type="Sprite2D" parent="Lanterns" unique_id=385003228]
+position = Vector2(-208, -536)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern10" type="Sprite2D" parent="Lanterns" unique_id=663988179]
+position = Vector2(-24, -536)
+texture = ExtResource("18_cl82m")
+
+[node name="Lantern11" type="Sprite2D" parent="Lanterns" unique_id=960844250]
+position = Vector2(-80, -536)
+texture = ExtResource("18_cl82m")
+
+[node name="Cobwebs" type="Node" parent="." unique_id=4337054]
+
+[node name="ColumnGray2" type="Sprite2D" parent="." unique_id=784171097]
+z_index = -1
+position = Vector2(-568, -152)
+texture = ExtResource("19_ks5rf")
+
+[node name="ColumnGray3" type="Sprite2D" parent="." unique_id=1623930378]
+z_index = -1
+position = Vector2(-520, -152)
+texture = ExtResource("19_ks5rf")
+
+[node name="ColumnGray4" type="Sprite2D" parent="." unique_id=1389974531]
+z_index = -1
+position = Vector2(-312, -72)
+texture = ExtResource("19_ks5rf")
+
+[node name="ColumnGray5" type="Sprite2D" parent="." unique_id=408328589]
+z_index = -1
+position = Vector2(-248, -72)
+texture = ExtResource("19_ks5rf")
+
+[node name="ColumnGray6" type="Sprite2D" parent="." unique_id=1040467879]
+z_index = -1
+position = Vector2(-136, 56)
+texture = ExtResource("19_ks5rf")
+
+[node name="ColumnGray7" type="Sprite2D" parent="." unique_id=928694845]
+z_index = -1
+position = Vector2(-72, 56)
+texture = ExtResource("19_ks5rf")
+
+[node name="Candelabra" type="Sprite2D" parent="." unique_id=1780186672]
+z_index = -1
+position = Vector2(-544, -392)
+texture = ExtResource("20_8xf7e")
+
+[node name="Candelabra2" type="Sprite2D" parent="." unique_id=1576807477]
+z_index = -1
+position = Vector2(-424, -512)
+texture = ExtResource("20_8xf7e")
+
+[node name="Candelabra3" type="Sprite2D" parent="." unique_id=243773183]
+z_index = -1
+position = Vector2(-376, -72)
+texture = ExtResource("20_8xf7e")
+
+[node name="Candelabra4" type="Sprite2D" parent="." unique_id=1436388021]
+z_index = -1
+position = Vector2(-280, -248)
+texture = ExtResource("20_8xf7e")
+
+[node name="Cobweb" type="Sprite2D" parent="." unique_id=273845207]
+position = Vector2(-648, -392)
+texture = ExtResource("21_2xhkc")
+flip_h = true
+
+[node name="Cobweb2" type="Sprite2D" parent="." unique_id=415622331]
+position = Vector2(-280, -536)
+texture = ExtResource("21_2xhkc")
+flip_h = true
+
+[node name="Cobweb3" type="Sprite2D" parent="." unique_id=1177234378]
+position = Vector2(8, -440)
+texture = ExtResource("21_2xhkc")
+
+[node name="Cobweb4" type="Sprite2D" parent="." unique_id=682593354]
+position = Vector2(-184, -248)
+texture = ExtResource("21_2xhkc")
+
+[node name="Cobweb5" type="Sprite2D" parent="." unique_id=484799748]
+position = Vector2(-312, 24)
+texture = ExtResource("21_2xhkc")
+flip_h = true
+
+[node name="Cobweb6" type="Sprite2D" parent="." unique_id=507756964]
+position = Vector2(-40, 56)
+texture = ExtResource("21_2xhkc")
+
+[node name="Cobweb7" type="Sprite2D" parent="." unique_id=798800522]
+position = Vector2(-456, -152)
+texture = ExtResource("21_2xhkc")
+
+[node name="Floor2Rat" parent="." unique_id=550007473 instance=ExtResource("10_jtfak")]
+position = Vector2(-144, 80)
+
+[node name="Floor2Rat2" parent="." unique_id=1732612721 instance=ExtResource("10_jtfak")]
+position = Vector2(-104, 112)
+
+[node name="Floor2Rat3" parent="." unique_id=413941091 instance=ExtResource("10_jtfak")]
+position = Vector2(-48, 80)
+
+[node name="Floor2Rat4" parent="." unique_id=692148021 instance=ExtResource("10_jtfak")]
+position = Vector2(-584, -88)
+
+[node name="Floor2Rat5" parent="." unique_id=1294837509 instance=ExtResource("10_jtfak")]
+position = Vector2(-544, -56)
+
+[node name="Floor2Rat6" parent="." unique_id=1240570267 instance=ExtResource("10_jtfak")]
+position = Vector2(-496, -88)
+
+[node name="Floor2Rat7" parent="." unique_id=1976622492 instance=ExtResource("10_jtfak")]
+position = Vector2(-344, -136)
+
+[node name="Floor2Rat8" parent="." unique_id=2110470410 instance=ExtResource("10_jtfak")]
+position = Vector2(-208, -136)
+
+[node name="Floor2Rat9" parent="." unique_id=1733852657 instance=ExtResource("10_jtfak")]
+position = Vector2(-344, -216)
+
+[node name="Floor2Rat10" parent="." unique_id=1680068181 instance=ExtResource("10_jtfak")]
+position = Vector2(-272, -216)
+
+[node name="Floor2Rat11" parent="." unique_id=1977179904 instance=ExtResource("10_jtfak")]
+position = Vector2(-232, -216)
+
+[node name="Floor2Rat12" parent="." unique_id=1319510010 instance=ExtResource("10_jtfak")]
+position = Vector2(-176, -328)
+
+[node name="Floor2Rat13" parent="." unique_id=133197808 instance=ExtResource("10_jtfak")]
+position = Vector2(-592, -304)
+
+[node name="Floor2Rat14" parent="." unique_id=1443498658 instance=ExtResource("10_jtfak")]
+position = Vector2(-544, -280)
+
+[node name="Floor2Rat15" parent="." unique_id=1953192183 instance=ExtResource("10_jtfak")]
+position = Vector2(-496, -304)
 
 [connection signal="Music_Stop" from="Player" to="." method="_on_player_music_stop"]
 [connection signal="current_health" from="Exit" to="CanvasLayer/UI" method="_on_exit_current_health"]

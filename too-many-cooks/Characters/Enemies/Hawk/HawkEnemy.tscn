@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ds5nw70mq58tu"]
+[gd_scene format=3 uid="uid://jm16rk482kd3"]
 
 [ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_7syrx"]
 [ext_resource type="AudioStream" uid="uid://dp5dhv15cj28l" path="res://Characters/Enemies/Hawk/Hawk Hit.wav" id="2_28cnu"]
@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
 [ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
 [ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
-[ext_resource type="Script" uid="uid://1ihdgi808xa4" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
 [ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
 [ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
 [ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]
@@ -32,7 +32,7 @@
 size = Vector2(26, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
-radius = 175.10283
+radius = 192.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
 size = Vector2(26, 28)
@@ -45,6 +45,9 @@ radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 size = Vector2(26, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1n0u"]
+size = Vector2(34, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
@@ -137,9 +140,9 @@ DropChance = 0.3
 collision_layer = 8
 collision_mask = 64
 script = ExtResource("1_7syrx")
-health = 500
-damage = 15
-sight_state = NodePath("DashState")
+health = 750
+damage = 30
+sight_state = NodePath("JunctionState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -188,10 +191,17 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
 shape = SubResource("RectangleShape2D_bhto8")
 
+[node name="WallDetector" type="Area2D" parent="." unique_id=663147389]
+collision_layer = 0
+collision_mask = 64
+
+[node name="Collision" type="CollisionShape2D" parent="WallDetector" unique_id=2108879417]
+shape = SubResource("RectangleShape2D_j1n0u")
+
 [node name="DashLine" type="RayCast2D" parent="." unique_id=2077328044]
-scale = Vector2(1, 2)
 target_position = Vector2(80, 0)
 collision_mask = 64
+hit_from_inside = true
 collide_with_areas = true
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
@@ -207,8 +217,10 @@ sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"swing"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_dedhg")]
-offset_top = -16.5
-offset_bottom = -12.5
+offset_left = -15.0
+offset_top = -18.0
+offset_right = 15.5
+offset_bottom = -14.0
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
 script = ExtResource("7_2v1gg")
@@ -284,3 +296,5 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
 [connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
+[connection signal="body_entered" from="WallDetector" to="." method="_on_wall_detector_body_entered"]
+[connection signal="body_exited" from="WallDetector" to="." method="_on_wall_detector_body_exited"]

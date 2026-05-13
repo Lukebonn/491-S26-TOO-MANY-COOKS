@@ -83,7 +83,7 @@ func _check_ability_avaliability():
 		else:
 			return false
 	else:
-		$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Label.text = "Maxxed!"
+		$Panel/VBoxContainer/HBoxContainer/Buttons/HBoxContainer2/Label.text = "Maxed!"
 		return false
 func _on_talk_pressed():
 	hide_menu_top()

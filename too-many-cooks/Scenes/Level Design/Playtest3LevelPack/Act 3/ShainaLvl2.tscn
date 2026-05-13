@@ -11,11 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="9_b3idh"]
 [ext_resource type="PackedScene" uid="uid://jcrxagxxwpm3" path="res://Characters/Enemies/Unnamed Ranged Enemy 1/RangedEnemyAct3.tscn" id="10_vsw4c"]
 [ext_resource type="PackedScene" uid="uid://de0ddg5unbt3r" path="res://Characters/Enemies/Rat/RatEnemyAct3.tscn" id="11_dyfh2"]
-[ext_resource type="PackedScene" uid="uid://sjayfxijlqwq" path="res://Characters/Enemies/Rat/RatEnemyAct2.tscn" id="12_b3idh"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="14_i028f"]
-[ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="15_gppm1"]
 [ext_resource type="PackedScene" uid="uid://cenm2hxy4ojns" path="res://Characters/Enemies/Fox/FoxAct3.tscn" id="15_vsw4c"]
 [ext_resource type="PackedScene" uid="uid://datwflplfxsxh" path="res://UI/Minimap/MiniMap.tscn" id="16_dyfh2"]
+[ext_resource type="Texture2D" uid="uid://dmhsbftjmt75w" path="res://Objects/Decor/Banner1Purple.png" id="17_b3idh"]
+[ext_resource type="Texture2D" uid="uid://5r3qeo4y8ks0" path="res://Objects/Decor/Banner2Purple.png" id="17_d3hj8"]
+[ext_resource type="PackedScene" uid="uid://c2p0prtf41rry" path="res://Characters/Enemies/Rat/ActualRatEnemyAct3.tscn" id="19_gppm1"]
+[ext_resource type="Texture2D" uid="uid://bnc27vk2ri3c3" path="res://Objects/Decor/Carpet_RoyalPurple.png" id="19_i028f"]
+[ext_resource type="Texture2D" uid="uid://upaekfkbaywf" path="res://Objects/Decor/Column_white.png" id="20_gppm1"]
+[ext_resource type="PackedScene" uid="uid://jm16rk482kd3" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="21_6c1bv"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -25,7 +28,7 @@ tile_map_data = PackedByteArray("AAAJAAQAAgAIAAcAAAAJAAMAAgAJAAYAAAAJAAIAAgAJAAc
 tile_set = ExtResource("1_wrk5c")
 
 [node name="Player" parent="." unique_id=1909083790 instance=ExtResource("2_e8mcd")]
-position = Vector2(-210, -22)
+position = Vector2(-208, -24)
 
 [node name="PlayerCamera" parent="." unique_id=587947942 instance=ExtResource("3_fowid")]
 zoom = Vector2(3, 3)
@@ -99,26 +102,11 @@ position = Vector2(-3, -132)
 [node name="BigRatEnemy5" parent="." unique_id=749413766 instance=ExtResource("11_dyfh2")]
 position = Vector2(132, 58)
 
-[node name="BigRatEnemy6" parent="." unique_id=147489494 instance=ExtResource("12_b3idh")]
-position = Vector2(140, -49)
-
-[node name="BigRatEnemy7" parent="." unique_id=1302240852 instance=ExtResource("12_b3idh")]
-position = Vector2(17, 116)
-
-[node name="BigRatEnemy8" parent="." unique_id=114078074 instance=ExtResource("12_b3idh")]
-position = Vector2(121, -226)
-
 [node name="BigRatEnemy9" parent="." unique_id=2033324765 instance=ExtResource("11_dyfh2")]
 position = Vector2(358, -344)
 
 [node name="BigRatEnemy10" parent="." unique_id=1469940977 instance=ExtResource("11_dyfh2")]
 position = Vector2(356, -219)
-
-[node name="HawkEnemy" parent="." unique_id=1538636747 instance=ExtResource("14_i028f")]
-position = Vector2(334, -276)
-
-[node name="HawkEnemy2" parent="." unique_id=655717470 instance=ExtResource("14_i028f")]
-position = Vector2(688, -335)
 
 [node name="BigRatEnemy11" parent="." unique_id=971161401 instance=ExtResource("11_dyfh2")]
 position = Vector2(600, -247)
@@ -134,9 +122,6 @@ position = Vector2(767, -54)
 
 [node name="BigRatEnemy15" parent="." unique_id=258901571 instance=ExtResource("11_dyfh2")]
 position = Vector2(860, -48)
-
-[node name="RatEnemy" parent="." unique_id=751976834 instance=ExtResource("15_gppm1")]
-position = Vector2(819, -48)
 
 [node name="BigRatEnemy16" parent="." unique_id=676233994 instance=ExtResource("11_dyfh2")]
 position = Vector2(473, -123)
@@ -174,23 +159,8 @@ position = Vector2(291, 274)
 [node name="BigRatEnemy23" parent="." unique_id=1331637436 instance=ExtResource("11_dyfh2")]
 position = Vector2(280, 234)
 
-[node name="BigRatEnemy24" parent="." unique_id=279302295 instance=ExtResource("12_b3idh")]
-position = Vector2(245, 265)
-
-[node name="BigRatEnemy25" parent="." unique_id=1868036277 instance=ExtResource("12_b3idh")]
-position = Vector2(182, 279)
-
-[node name="BigRatEnemy26" parent="." unique_id=1711081227 instance=ExtResource("12_b3idh")]
-position = Vector2(112, 268)
-
-[node name="BigRatEnemy27" parent="." unique_id=724691084 instance=ExtResource("12_b3idh")]
-position = Vector2(44, 262)
-
-[node name="HawkEnemy3" parent="." unique_id=218540478 instance=ExtResource("14_i028f")]
-position = Vector2(135, -3)
-
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_v56i3")]
-position = Vector2(276, -87)
+position = Vector2(280, -88)
 
 [node name="FoxAct3" parent="." unique_id=1034226883 instance=ExtResource("15_vsw4c")]
 position = Vector2(105, -51)
@@ -232,5 +202,204 @@ position = Vector2(819, -355)
 position = Vector2(839, -354)
 
 [node name="MiniMap" parent="." unique_id=2081874814 instance=ExtResource("16_dyfh2")]
+
+[node name="Banner1Purple" type="Sprite2D" parent="." unique_id=1482626914]
+position = Vector2(-208, -61)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple2" type="Sprite2D" parent="." unique_id=687340356]
+position = Vector2(40, -126)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple3" type="Sprite2D" parent="." unique_id=430721478]
+position = Vector2(72, -126)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple4" type="Sprite2D" parent="." unique_id=1022844187]
+position = Vector2(72, -206)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple5" type="Sprite2D" parent="." unique_id=84475054]
+position = Vector2(-32, -206)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple6" type="Sprite2D" parent="." unique_id=620747808]
+position = Vector2(184, -381)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple7" type="Sprite2D" parent="." unique_id=186298588]
+position = Vector2(360, -381)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple8" type="Sprite2D" parent="." unique_id=2020199262]
+position = Vector2(272, -382)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple9" type="Sprite2D" parent="." unique_id=1435417265]
+position = Vector2(560, -365)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple10" type="Sprite2D" parent="." unique_id=1156444142]
+position = Vector2(672, -365)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple12" type="Sprite2D" parent="." unique_id=1371821166]
+position = Vector2(824, -381)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple13" type="Sprite2D" parent="." unique_id=484767493]
+position = Vector2(784, -174)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple14" type="Sprite2D" parent="." unique_id=362110956]
+position = Vector2(864, -174)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple15" type="Sprite2D" parent="." unique_id=1313449137]
+position = Vector2(360, 99)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple16" type="Sprite2D" parent="." unique_id=967005457]
+position = Vector2(312, 178)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple17" type="Sprite2D" parent="." unique_id=537988702]
+position = Vector2(408, 178)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple18" type="Sprite2D" parent="." unique_id=584796497]
+position = Vector2(544, 146)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple19" type="Sprite2D" parent="." unique_id=1411055075]
+position = Vector2(624, 146)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple20" type="Sprite2D" parent="." unique_id=390258953]
+position = Vector2(72, 227)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple21" type="Sprite2D" parent="." unique_id=1406220506]
+position = Vector2(200, 227)
+texture = ExtResource("17_d3hj8")
+
+[node name="Banner1Purple22" type="Sprite2D" parent="." unique_id=1348131358]
+position = Vector2(136, 226)
+texture = ExtResource("17_b3idh")
+
+[node name="Banner1Purple11" type="Sprite2D" parent="." unique_id=443452917]
+position = Vector2(616, -366)
+texture = ExtResource("17_b3idh")
+
+[node name="CarpetRoyalPurple" type="Sprite2D" parent="." unique_id=322510471]
+z_index = -1
+position = Vector2(-208, -16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_i028f")
+
+[node name="CarpetRoyalPurple2" type="Sprite2D" parent="." unique_id=1521053497]
+z_index = -1
+position = Vector2(360, 128)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_i028f")
+
+[node name="CarpetRoyalPurple3" type="Sprite2D" parent="." unique_id=1297771167]
+z_index = -1
+position = Vector2(408, 288)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_i028f")
+
+[node name="CarpetRoyalPurple4" type="Sprite2D" parent="." unique_id=5311624]
+z_index = -1
+position = Vector2(280, -56)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_i028f")
+
+[node name="CarpetRoyalPurple5" type="Sprite2D" parent="." unique_id=2003719105]
+z_index = -1
+position = Vector2(824, -352)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_i028f")
+
+[node name="ColumnWhite" type="Sprite2D" parent="." unique_id=1944408751]
+position = Vector2(-24, -112)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite2" type="Sprite2D" parent="." unique_id=518310124]
+position = Vector2(-88, -48)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite3" type="Sprite2D" parent="." unique_id=625264294]
+position = Vector2(-168, -48)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite4" type="Sprite2D" parent="." unique_id=136164183]
+position = Vector2(520, 176)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite5" type="Sprite2D" parent="." unique_id=848282173]
+position = Vector2(440, -96)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite6" type="Sprite2D" parent="." unique_id=278381183]
+position = Vector2(616, -128)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite7" type="Sprite2D" parent="." unique_id=121142376]
+position = Vector2(744, -128)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite8" type="Sprite2D" parent="." unique_id=454034166]
+position = Vector2(808, -304)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite9" type="Sprite2D" parent="." unique_id=430065062]
+position = Vector2(712, -304)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite10" type="Sprite2D" parent="." unique_id=1838604909]
+position = Vector2(520, -320)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite11" type="Sprite2D" parent="." unique_id=1307766649]
+position = Vector2(392, -320)
+texture = ExtResource("20_gppm1")
+
+[node name="ColumnWhite12" type="Sprite2D" parent="." unique_id=113822173]
+position = Vector2(152, -304)
+texture = ExtResource("20_gppm1")
+
+[node name="HawkEnemy4" parent="." unique_id=1097215267 instance=ExtResource("21_6c1bv")]
+position = Vector2(680, -328)
+
+[node name="HawkEnemy5" parent="." unique_id=244790614 instance=ExtResource("21_6c1bv")]
+position = Vector2(328, -280)
+
+[node name="HawkEnemy2" parent="." unique_id=1155752990 instance=ExtResource("21_6c1bv")]
+position = Vector2(136, -8)
+
+[node name="BigRatEnemy28" parent="." unique_id=1471367905 instance=ExtResource("11_dyfh2")]
+position = Vector2(144, -48)
+
+[node name="BigRatEnemy29" parent="." unique_id=79417004 instance=ExtResource("11_dyfh2")]
+position = Vector2(16, 112)
+
+[node name="BigRatEnemy30" parent="." unique_id=1937257649 instance=ExtResource("11_dyfh2")]
+position = Vector2(40, 264)
+
+[node name="BigRatEnemy31" parent="." unique_id=168448295 instance=ExtResource("11_dyfh2")]
+position = Vector2(112, 272)
+
+[node name="BigRatEnemy32" parent="." unique_id=1343830668 instance=ExtResource("11_dyfh2")]
+position = Vector2(184, 280)
+
+[node name="BigRatEnemy33" parent="." unique_id=1673695520 instance=ExtResource("11_dyfh2")]
+position = Vector2(248, 264)
+
+[node name="Floor3Rat" parent="." unique_id=288568401 instance=ExtResource("19_gppm1")]
+position = Vector2(816, -48)
+
+[node name="BigRatEnemy34" parent="." unique_id=1871228140 instance=ExtResource("11_dyfh2")]
+position = Vector2(120, -224)
 
 [connection signal="level_complete" from="Exit" to="CanvasLayer/UI" method="_on_level_complete"]

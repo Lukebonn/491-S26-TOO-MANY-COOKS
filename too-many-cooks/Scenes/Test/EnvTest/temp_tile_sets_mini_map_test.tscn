@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bqne2320dex2t" path="res://Scenes/Level Design/Hazzards + traps/Spike Trap/spikes.tscn" id="13_g56id"]
 [ext_resource type="PackedScene" uid="uid://cgxhj8xrmp76d" path="res://Scenes/Level Design/Hazzards + traps/Teleporter trap/Teleport trap.tscn" id="14_mx150"]
 [ext_resource type="PackedScene" uid="uid://u4gsdq7ux57k" path="res://Scenes/Level Design/Hazzards + traps/Bear Trap/Bear Trap.tscn" id="15_bx7wk"]
-[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/HawkEnemy.tscn" id="16_fohm4"]
+[ext_resource type="PackedScene" uid="uid://ds5nw70mq58tu" path="res://Characters/Enemies/Hawk/OldHawkEnemy.tscn" id="16_fohm4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvpnl"]
 texture = ExtResource("1_0l5ya")

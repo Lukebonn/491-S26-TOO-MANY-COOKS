@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	if direction:
 		global_position += direction * speed * delta
 		look_at(global_position + direction)
-		get_tree().create_timer(0.25).timeout.connect(_land)
+		get_tree().create_timer(0.25, false).timeout.connect(_land)
 		
 #what this function is doing is 1. hiding the "potion" sprite
 #2. turns on the collisions for the collision shape, so that it will send info to the player to be poisoned
@@ -45,7 +45,7 @@ func _land() -> void:
 	velocity = Vector2(0,0)
 	animated_sprite_2d.play("sphere")
 	##after landing it should last ____ seconds before dissappearing
-	get_tree().create_timer(2.0).timeout.connect(queue_free)
+	get_tree().create_timer(2.0, false).timeout.connect(queue_free)
 
 #this is turned on after EnemyStats.airtime_of_lob_thrown_by_hob_lobber, 
 #and used to tell the player it's been hit

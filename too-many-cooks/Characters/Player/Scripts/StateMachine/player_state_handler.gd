@@ -130,11 +130,6 @@ func _physics_process(delta: float) -> void:
 	(Input.is_action_just_pressed("scroll_up") or Input.is_action_just_pressed("scroll_down"))):
 		$attack_state.switch_equipped()
 	
-	#when using the warrior class, if the player parries, the weapon will flip horizontally
-	if(PlayerStats.current_class == PlayerStats.classes.warrior and Input.is_action_just_pressed("magic")):
-		$Weapon/Sprite2D.flip_h = true
-		await get_tree().create_timer(0.4).timeout
-		$Weapon/Sprite2D.flip_h = false
 	move_and_slide()
 
 

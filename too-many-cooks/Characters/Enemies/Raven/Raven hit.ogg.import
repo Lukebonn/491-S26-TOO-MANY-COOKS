@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://y6chy73sgji5"
+path="res://.godot/imported/Raven hit.ogg-55148c39ebef534ee4b6c16fee621b4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Characters/Enemies/Raven/Raven hit.ogg"
+dest_files=["res://.godot/imported/Raven hit.ogg-55148c39ebef534ee4b6c16fee621b4d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

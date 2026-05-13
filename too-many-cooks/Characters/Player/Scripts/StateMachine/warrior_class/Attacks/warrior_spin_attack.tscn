@@ -7,6 +7,8 @@
 [node name="SpinAttack" type="RigidBody2D" unique_id=491256885]
 collision_layer = 0
 collision_mask = 0
+mass = 0.001
+gravity_scale = 0.0
 script = ExtResource("1_61ylc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1277489146]

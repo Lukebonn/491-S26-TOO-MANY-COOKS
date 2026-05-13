@@ -46,6 +46,9 @@ radius = 24.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
 size = Vector2(26, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1n0u"]
+size = Vector2(34, 26)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
 animations = [{
 "frames": [{
@@ -139,7 +142,7 @@ collision_mask = 64
 script = ExtResource("1_ep4l3")
 health = 1000
 damage = 45
-sight_state = NodePath("DashState")
+sight_state = NodePath("JunctionState")
 starting_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
 
@@ -188,10 +191,17 @@ debug_color = Color(0, 1, 0, 0.41960785)
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
 shape = SubResource("RectangleShape2D_bhto8")
 
+[node name="WallDetector" type="Area2D" parent="." unique_id=663147389]
+collision_layer = 0
+collision_mask = 64
+
+[node name="Collision" type="CollisionShape2D" parent="WallDetector" unique_id=2108879417]
+shape = SubResource("RectangleShape2D_j1n0u")
+
 [node name="DashLine" type="RayCast2D" parent="." unique_id=2077328044]
-scale = Vector2(1, 2)
 target_position = Vector2(80, 0)
 collision_mask = 64
+hit_from_inside = true
 collide_with_areas = true
 
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
@@ -207,8 +217,11 @@ sprite_frames = SubResource("SpriteFrames_wcvgi")
 animation = &"swing"
 
 [node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("9_0itom")]
-offset_top = -16.5
-offset_bottom = -12.5
+offset_left = -15.0
+offset_top = -18.0
+offset_right = 15.5
+offset_bottom = -14.0
+metadata/_edit_use_anchors_ = true
 
 [node name="IdleState" type="Node" parent="." unique_id=216113114]
 script = ExtResource("10_21axn")
@@ -284,3 +297,5 @@ metadata/_custom_type_script = "uid://d4asfymlcifxo"
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
 [connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]
+[connection signal="body_entered" from="WallDetector" to="." method="_on_wall_detector_body_entered"]
+[connection signal="body_exited" from="WallDetector" to="." method="_on_wall_detector_body_exited"]

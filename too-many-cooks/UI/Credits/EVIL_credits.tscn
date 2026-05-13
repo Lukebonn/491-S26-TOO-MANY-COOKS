@@ -4,11 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://d11fk85gj3btm" path="res://Scenes/Title/Art/TotT-Logo.png" id="2_d70gl"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="3_le4ah"]
 [ext_resource type="PackedScene" uid="uid://bxvo3jxe4jvjf" path="res://UI/Credits/user_credit.tscn" id="4_eyp6y"]
+[ext_resource type="Texture2D" uid="uid://bokhp23md1sjj" path="res://UI/Credits/Img/Alanna.png" id="5_eyp6y"]
 [ext_resource type="Texture2D" uid="uid://dd1o2prwbgx0k" path="res://UI/Credits/Img/CarsonDunn.png" id="5_vgogy"]
 [ext_resource type="Texture2D" uid="uid://k8pxgiaqu2pe" path="res://UI/Credits/Img/ShainaZ.png" id="6_cb1je"]
 [ext_resource type="Texture2D" uid="uid://c1si15oabnm2m" path="res://UI/Credits/Img/Dawson'sSuperAwesomePortrait.png" id="7_47ysf"]
+[ext_resource type="Texture2D" uid="uid://xcee8um2abm8" path="res://UI/Credits/Img/BenjaminB.png" id="7_vgogy"]
 [ext_resource type="Texture2D" uid="uid://b4fuai4l1bqkr" path="res://UI/Credits/Img/TylerNeri.png" id="8_jujdl"]
 [ext_resource type="Texture2D" uid="uid://db6grg2b3dgel" path="res://UI/Credits/Img/PatrickEllis.png" id="9_5vy3o"]
+[ext_resource type="Texture2D" uid="uid://btt61monwb5lr" path="res://UI/Credits/Img/OwenM.png" id="9_47ysf"]
+[ext_resource type="Texture2D" uid="uid://dwj0u1x05bjqb" path="res://UI/Credits/Img/luke-bonniwell-credit-png.png" id="9_cb1je"]
 [ext_resource type="Texture2D" uid="uid://bgmpofuest0rb" path="res://UI/Credits/Img/EliJohnson.png" id="10_bskmb"]
 [ext_resource type="Texture2D" uid="uid://b00mw1ecyogno" path="res://UI/Credits/Img/AbiW.png" id="11_mo3w8"]
 [ext_resource type="Texture2D" uid="uid://bb6w5068hs5se" path="res://UI/Credits/Img/AbbyP.png" id="12_d70gl"]
@@ -95,6 +99,7 @@ Evil = true
 [node name="Alanna1" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1821230972 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("5_eyp6y")
 Name = "Alanna Socha"
 Title = "Producer"
 Evil = true
@@ -132,6 +137,7 @@ theme_override_constants/separation = 64
 [node name="Benjamin1" parent="VBoxContainer/VBoxContainer2/GridContainer" unique_id=1290761535 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("7_vgogy")
 Name = "Benjamin Barnes"
 Title = "Programmer"
 Evil = true
@@ -159,6 +165,7 @@ Evil = true
 [node name="Owen1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1437229437 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("9_47ysf")
 Name = "Owen Magee"
 Title = "Combat Programmer"
 Evil = true
@@ -166,8 +173,9 @@ Evil = true
 [node name="Luke1" parent="VBoxContainer/VBoxContainer2/GridContainer2" unique_id=1791792053 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("9_cb1je")
 Name = "Luke Bonniwell"
-Title = "Programmer"
+Title = "Enemy & Level Programmer"
 Evil = true
 
 [node name="GridContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=418734572]
@@ -233,6 +241,7 @@ theme_override_constants/separation = 64
 [node name="Benjamin2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1092889361 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("7_vgogy")
 Name = "Benjamin Barnes"
 Title = "UI & Level Designer"
 Evil = true
@@ -240,8 +249,9 @@ Evil = true
 [node name="Luke2" parent="VBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1027214142 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("9_cb1je")
 Name = "Luke Bonniwell"
-Title = "Level Designer"
+Title = "Enemy & Level Designer"
 Evil = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer3" unique_id=897514686]
@@ -280,6 +290,7 @@ Evil = true
 [node name="Owen2" parent="VBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=103258314 instance=ExtResource("4_eyp6y")]
 layout_mode = 2
 size_flags_horizontal = 4
+Portrait = ExtResource("9_47ysf")
 Name = "Owen Magee"
 Title = "Combat Designer"
 Evil = true

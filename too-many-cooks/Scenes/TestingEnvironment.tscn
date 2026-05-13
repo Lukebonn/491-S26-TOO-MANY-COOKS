@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3bsmqowy1nm" path="res://Characters/Enemies/Rat King/RatKing.tscn" id="8_6o0tx"]
 [ext_resource type="PackedScene" uid="uid://cn040ujaxitbj" path="res://Characters/Enemies/Macho Mouse/machomouse.tscn" id="8_70o4s"]
 [ext_resource type="PackedScene" uid="uid://c8osew8i4x2lu" path="res://Characters/Enemies/Rat/RatEnemy.tscn" id="9_6o0tx"]
+[ext_resource type="PackedScene" uid="uid://nfywsv4v04pd" path="res://Characters/Enemies/Hawk/HawkEnemyAct2Boss.tscn" id="10_ghwf5"]
 
 [node name="LevelJamTemplate" type="Node2D" unique_id=1329965379]
 
@@ -43,12 +44,15 @@ bus = &"Music"
 position = Vector2(-368, 8)
 
 [node name="RatKing" parent="." unique_id=1670622060 instance=ExtResource("8_6o0tx")]
-position = Vector2(0, -32)
+position = Vector2(1008, -200)
 health = 1
 damage = 100
 
 [node name="RatEnemy" parent="." unique_id=1430967865 instance=ExtResource("9_6o0tx")]
 position = Vector2(-120, -200)
+
+[node name="HawkEnemy2" parent="." unique_id=347141449 instance=ExtResource("10_ghwf5")]
+position = Vector2(-96, -48)
 
 [connection signal="notEnoughMana" from="Player" to="CanvasLayer/UI" method="_on_player_not_enough_mana"]
 [connection signal="playerDeath" from="Player" to="CanvasLayer/UI" method="_on_player_death"]

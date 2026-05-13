@@ -2,9 +2,10 @@ extends EnemyState
 #unimplemented so far
 
 var xDifference
-var yDifference
+var yDifference: float
 var extraX
 var stuckOnWall
+var tween
 @export var speed: float
 # Works inversely compared to what you might be familiar with
 # Lower speed values increase the speed at which the enemy
@@ -18,12 +19,17 @@ func enter_state(enemy_node):
 	super(enemy_node)
 
 func process(delta: float) -> void:
-	if player_ref and enemy_ref and not dashing:
+	if dashing:
+		if enemy_ref.colliding_with_wall:
+			tween.stop()
+			dashing = false
+			exit_state()
+	elif player_ref and enemy_ref and not dashing:
 		extraX = 0
-		xDifference = player_ref.position.x - enemy_ref.position.x
+		if not dashing: xDifference = player_ref.position.x - enemy_ref.position.x
 		yDifference = player_ref.position.y - enemy_ref.position.y
 		#print(yDifference)
-		if abs(yDifference) < 0.75:
+		if abs(yDifference) < 3.5:
 			# if the difference in y-axis positions is very small,
 			# then the enemy and the player are nearly on the same
 			# y-level, so...
@@ -47,8 +53,8 @@ func process(delta: float) -> void:
 			#print("Player is above me")
 			# if the difference is negative,
 			# then the player is above the enemy, so move up
-			if not stuckOnWall: $"../DashLine".target_position = Vector2(0, -7.5)
-			if $"../DashLine".is_colliding():
+			if not stuckOnWall and not dashing: $"../DashLine".target_position = Vector2(0, -7.5)
+			if $"../DashLine".is_colliding() and not dashing:
 				stuckOnWall = true
 				if xDifference < 0: # negative -> player to left of enemy
 					extraX = -100
@@ -67,8 +73,8 @@ func process(delta: float) -> void:
 			#print("Player is below me")
 			# if the difference is positive, 
 			# then the player is below the enemy, so move down
-			if not stuckOnWall: $"../DashLine".target_position = Vector2(0, 7.5)
-			if $"../DashLine".is_colliding():
+			if not stuckOnWall and not dashing: $"../DashLine".target_position = Vector2(0, 7.5)
+			if $"../DashLine".is_colliding() and not dashing:
 				stuckOnWall = true
 				if xDifference < 0: # negative -> player to left of enemy
 					extraX = -100
@@ -96,29 +102,34 @@ func exit_state():
 		enemy_ref.change_state("IdleState")
 
 func dash(direction: String):
-	var tween = self.create_tween()
 	$"../DashLine".target_position = Vector2(0, 0)
 	var additional_distance = 35
-	xDifference = player_ref.position.x - enemy_ref.position.x
+	#xDifference = player_ref.position.x - enemy_ref.position.x
 	#print(xDifference)
 	match direction:
 		"Right":
-			$"../DashLine".target_position = Vector2(xDifference - 35, 0)
-			if $"../DashLine".is_colliding(): additional_distance = -10
+			$"../DashLine".target_position = Vector2(xDifference - 40, 0)
+			await get_tree().process_frame
+			tween = self.create_tween()
+			if $"../DashLine".is_colliding(): additional_distance = 0
 			tween.tween_property(
 				enemy_ref, 
 				"position", 
 				Vector2(enemy_ref.position.x - abs(xDifference) - additional_distance, enemy_ref.position.y), 
 				speed).set_trans(Tween.TRANS_EXPO)
 			enemy_ref.get_node("AnimatedSprite2D").flip_h = false
+			await tween.finished
 		"Left":
-			$"../DashLine".target_position = Vector2(xDifference + 35, 0)
-			if $"../DashLine".is_colliding(): additional_distance = -10
+			$"../DashLine".target_position = Vector2(xDifference + 40, 0)
+			await get_tree().process_frame
+			tween = self.create_tween()
+			if $"../DashLine".is_colliding(): additional_distance = 0
 			tween.tween_property(
 				enemy_ref, 
 				"position", 
 				Vector2(enemy_ref.position.x + abs(xDifference) + additional_distance, enemy_ref.position.y), 
 				speed).set_trans(Tween.TRANS_EXPO)
 			enemy_ref.get_node("AnimatedSprite2D").flip_h = true
-	await get_tree().create_timer(1.0).timeout
+			await tween.finished
+	#await get_tree().create_timer(1.0).timeout
 	dashComplete.emit()

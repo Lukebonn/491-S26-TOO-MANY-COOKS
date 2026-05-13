@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://ds5nw70mq58tu"]
+
+[ext_resource type="Script" uid="uid://jrebjj0yvg7v" path="res://Characters/Enemies/Hawk/hawk_enemy.gd" id="1_7syrx"]
+[ext_resource type="AudioStream" uid="uid://dp5dhv15cj28l" path="res://Characters/Enemies/Hawk/Hawk Hit.wav" id="2_28cnu"]
+[ext_resource type="Texture2D" uid="uid://bh5oj66l7bnnd" path="res://Characters/Enemies/Hawk/Hawk walk/walk 1.png" id="3_8226d"]
+[ext_resource type="Texture2D" uid="uid://dqrwdgjf66ro" path="res://Characters/Enemies/Hawk/Hawk walk/walk 2.png" id="4_sqkpv"]
+[ext_resource type="Texture2D" uid="uid://dfpch4yask8nq" path="res://Characters/Enemies/Hawk/Hawk damage/damage 1.png" id="5_fs6er"]
+[ext_resource type="Texture2D" uid="uid://c3va38euur1ts" path="res://Characters/Enemies/Hawk/Hawk damage/damage 2.png" id="6_3j15n"]
+[ext_resource type="PackedScene" uid="uid://de1p0vuatk8jg" path="res://Characters/Enemies/Template Enemy Kit/Enemy_Health_Bar.tscn" id="6_dedhg"]
+[ext_resource type="Script" uid="uid://dbx4mo7kid3u4" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_idle_state.gd" id="7_2v1gg"]
+[ext_resource type="Texture2D" uid="uid://bmcwpnej62qdd" path="res://Characters/Enemies/Hawk/Hawk swing/swing 1.png" id="7_28cnu"]
+[ext_resource type="Script" uid="uid://cgodck0u86wt0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_chase_state.gd" id="8_gyy8f"]
+[ext_resource type="Texture2D" uid="uid://bfe8wa88ws2tf" path="res://Characters/Enemies/Hawk/Hawk swing/swing 2.png" id="8_i4era"]
+[ext_resource type="Script" uid="uid://fk4ciulb64q" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_dash_state.gd" id="9_7ye8k"]
+[ext_resource type="Texture2D" uid="uid://g1wialqbbwqm" path="res://Characters/Enemies/Hawk/Hawk swing/swing 3.png" id="9_xwg5o"]
+[ext_resource type="Script" uid="uid://bf633sb8ghxne" path="res://Characters/Enemies/Template Enemy Kit/States/projectile_state.gd" id="10_6u5ja"]
+[ext_resource type="Script" uid="uid://fk1al47pw06x" path="res://Characters/Enemies/Hawk/slash_state.gd" id="10_sqkpv"]
+[ext_resource type="Script" uid="uid://bc8c6q0s6mvfa" path="res://Characters/Enemies/Hawk/approach_state.gd" id="11_fs6er"]
+[ext_resource type="PackedScene" uid="uid://ccknvsbk3xdax" path="res://Characters/Enemies/Unnamed Ranged Enemy 2/arrow.tscn" id="11_ui3by"]
+[ext_resource type="Script" uid="uid://beu5ru6wmp0dk" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_hit_state.gd" id="12_luwkr"]
+[ext_resource type="Script" path="res://Characters/Enemies/Template Enemy Kit/States/junction_state.gd" id="13_qs7f2"]
+[ext_resource type="Script" uid="uid://b3a1cxrb5uhd0" path="res://Characters/Enemies/Template Enemy Kit/States/enemy_death_state.gd" id="14_kcit4"]
+[ext_resource type="PackedScene" uid="uid://o8n7p4lveipj" path="res://Objects/Pickups/Scenes/GoldPickup.tscn" id="15_x328g"]
+[ext_resource type="Script" uid="uid://ba2eha0jldn2m" path="res://Objects/Pickups/PickupData/PickupData.gd" id="18_3tayx"]
+[ext_resource type="Resource" uid="uid://ciusheucruyxk" path="res://Objects/Pickups/PickupData/PickupGold.tres" id="19_w36m3"]
+[ext_resource type="Script" uid="uid://cv7er86qqregn" path="res://Objects/Pickups/Scripts/orb_pickup.gd" id="20_dibtd"]
+[ext_resource type="Texture2D" uid="uid://b0sjhfuvqbdl4" path="res://Objects/Pickups/Img/orb.png" id="21_yklns"]
+[ext_resource type="Texture2D" uid="uid://kv2tiwd53jqb" path="res://Scenes/Level Design/Props/ambient/cross.png" id="22_28cnu"]
+[ext_resource type="PackedScene" uid="uid://b6t8as10flpya" path="res://Characters/Enemies/Particles/FeatherParticles.tscn" id="27_28cnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jonyw"]
+size = Vector2(26, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oxet"]
+radius = 175.10283
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5e7n"]
+size = Vector2(26, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqkpv"]
+size = Vector2(26, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqkpv"]
+radius = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhto8"]
+size = Vector2(26, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcvgi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8226d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sqkpv")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fs6er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3j15n")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8226d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sqkpv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_28cnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i4era")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwg5o")
+}],
+"loop": true,
+"name": &"swing",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8js4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcjsq"]
+radius = 43.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aqng"]
+radius = 5.0
+
+[sub_resource type="Curve" id="Curve_rqdct"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.8980377, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7gtmk"]
+offsets = PackedFloat32Array(0, 0.36477986, 0.7201258, 1)
+colors = PackedColorArray(1, 0.5562859, 0.49291265, 1, 1.6508848e-05, 0.88766235, 2.3102762e-06, 1, 0.4312825, 0.6115833, 1, 1, 1, 0.5710682, 0.50889343, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_i4era"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("OrbPickup", "CharacterBody2D", "collision_layer", "collision_mask", "script", "Name", "Value", "metadata/_custom_type_script", "Area2D", "Area2D", "collision_layer", "CollisionShape2D", "CollisionShape2D", "shape", "Sprite2D", "Sprite2D", "z_index", "texture", "sight", "Area2D", "collision_layer", "CollisionShape2D", "CollisionShape2D", "z_index", "shape", "debug_color", "CollisionShape2D", "CollisionShape2D", "shape", "CPUParticles2D", "CPUParticles2D", "texture", "emission_shape", "emission_sphere_radius", "spread", "gravity", "initial_velocity_min", "initial_velocity_max", "scale_amount_min", "scale_amount_curve", "color_ramp", "hue_variation_max"),
+"node_count": 8,
+"node_ids": PackedInt32Array(1955872402, 1657457641, 998753768, 861499226, 408621695, 1691155092, 181732196, 1731360392),
+"node_paths": [NodePath("."), NodePath("./Area2D"), NodePath("."), NodePath("."), NodePath("./sight"), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741824, 0, 9, 8, -1, 1, 10, 6, 0, 1073741825, 0, 12, 11, -1, 1, 13, 7, 0, 1073741826, 0, 15, 14, -1, 2, 16, 8, 17, 9, 0, 1073741827, 0, 19, 18, -1, 1, 20, 10, 0, 1073741828, 0, 22, 21, -1, 3, 23, 11, 24, 12, 25, 13, 0, 1073741829, 0, 27, 26, -1, 1, 28, 14, 0, 1073741830, 0, 30, 29, -1, 11, 31, 15, 32, 16, 33, 17, 34, 18, 35, 19, 36, 20, 37, 21, 38, 22, 39, 23, 40, 24, 41, 25, 0),
+"variants": [0, 64, ExtResource("20_dibtd"), "Orb", 1, "uid://tgpwx3tswq0", 0, SubResource("CircleShape2D_e8js4"), 1, ExtResource("21_yklns"), 0, 1, SubResource("CircleShape2D_lcjsq"), Color(0.99564105, 0.940498, 0.97477525, 0.08627451), SubResource("CircleShape2D_3aqng"), ExtResource("22_28cnu"), 1, 8.0, 180.0, Vector2(0, 0), 10.0, 10.0, 0.5, SubResource("Curve_rqdct"), SubResource("Gradient_7gtmk"), 1.0],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_xwg5o"]
+script = ExtResource("18_3tayx")
+SceneToSpawn = SubResource("PackedScene_i4era")
+DropCountRange = Vector2(1, 1)
+DropChance = 0.3
+
+[node name="HawkEnemy" type="CharacterBody2D" unique_id=1670622060 node_paths=PackedStringArray("sight_state", "starting_state")]
+collision_layer = 8
+collision_mask = 64
+script = ExtResource("1_7syrx")
+health = 500
+damage = 15
+sight_state = NodePath("JunctionState")
+starting_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://d3q6aiklmd5m5"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=115979723]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=237549060]
+shape = SubResource("RectangleShape2D_jonyw")
+
+[node name="Sight" type="Area2D" parent="." unique_id=1355964886]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1657238234]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_1oxet")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=646997873]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1458399904]
+shape = SubResource("RectangleShape2D_f5e7n")
+
+[node name="Slash Hitbox" type="Area2D" parent="." unique_id=599952008]
+process_mode = 4
+visible = false
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slash Hitbox" unique_id=999639537]
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_sqkpv")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Near Zone" type="Area2D" parent="." unique_id=2057668559]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Near Zone" unique_id=832811309]
+shape = SubResource("CircleShape2D_sqkpv")
+debug_color = Color(0, 1, 0, 0.41960785)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=79380045]
+shape = SubResource("RectangleShape2D_bhto8")
+
+[node name="DashLine" type="RayCast2D" parent="." unique_id=2077328044]
+target_position = Vector2(80, 0)
+collision_mask = 64
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=335291265]
+stream = ExtResource("2_28cnu")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=223538413]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1729595061]
+visibility_layer = 2
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(1.0833335, 1.0391688)
+sprite_frames = SubResource("SpriteFrames_wcvgi")
+animation = &"swing"
+
+[node name="EnemyHealthBar" parent="." unique_id=1226760327 instance=ExtResource("6_dedhg")]
+offset_top = -16.5
+offset_bottom = -12.5
+
+[node name="IdleState" type="Node" parent="." unique_id=216113114]
+script = ExtResource("7_2v1gg")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ChaseState" type="Node" parent="." unique_id=284789326]
+script = ExtResource("8_gyy8f")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DashState" type="Node" parent="." unique_id=1342912869 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("9_7ye8k")
+speed = 0.5
+state_to_enter = NodePath("../JunctionState")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="SlashState" type="Node" parent="." unique_id=1572581232 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("10_sqkpv")
+state_to_enter = NodePath("../JunctionState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ApproachState" type="Node" parent="." unique_id=1069220951 node_paths=PackedStringArray("state_to_enter")]
+script = ExtResource("11_fs6er")
+state_to_enter = NodePath("../SlashState")
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="ProjectileState" type="Node" parent="." unique_id=742252322]
+script = ExtResource("10_6u5ja")
+Projectile = ExtResource("11_ui3by")
+Projectile_Speed = 2
+Idle_Time = 1.0
+Flee_While_Firing = true
+Flee_Speed = 5.0
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="HitState" type="Node" parent="." unique_id=2073522825 node_paths=PackedStringArray("Hit_Sound")]
+script = ExtResource("12_luwkr")
+Knockback_Strength = 50
+Hit_Stun = 0.3
+Hit_Sound = NodePath("../TakeDamage")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="Timer" type="Timer" parent="HitState" unique_id=1954240173]
+wait_time = 0.3
+one_shot = true
+
+[node name="JunctionState" type="Node" parent="." unique_id=1564803182 node_paths=PackedStringArray("Possibilities")]
+script = ExtResource("13_qs7f2")
+Possibilities = [NodePath("../DashState"), NodePath("../ApproachState")]
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[node name="DeathState" type="Node" parent="." unique_id=297472194 node_paths=PackedStringArray("Death_Sound")]
+script = ExtResource("14_kcit4")
+Drops = Array[ExtResource("18_3tayx")]([ExtResource("19_w36m3"), SubResource("Resource_xwg5o")])
+Drop = ExtResource("15_x328g")
+Drop_Amount = 1
+Drop_Amount_Max = 2
+Death_Sound = NodePath("../Die")
+dust_effect = ExtResource("27_28cnu")
+animation_name = "NONE"
+metadata/_custom_type_script = "uid://d4asfymlcifxo"
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_entered" from="Near Zone" to="." method="_on_near_zone_area_entered"]
+[connection signal="area_exited" from="Near Zone" to="." method="_on_near_zone_area_exited"]

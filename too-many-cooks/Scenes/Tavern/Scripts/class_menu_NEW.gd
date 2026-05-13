@@ -22,6 +22,7 @@ func show_menu():
 	tween.tween_property(self,"position",Vector2(self.position.x,320),.5).set_trans(Tween.TRANS_CUBIC)
 	is_showing = true
 	on_menu_shown.emit()
+	$Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade.disabled = !_check_ability_avaliability()
 
 func hide_menu():
 	var tween = get_tree().create_tween()
@@ -85,7 +86,7 @@ func _check_ability_avaliability():
 		else:
 			return false
 	else:
-		$Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade/Label.text = "Maxxed!"
+		$Panel/VBoxContainer/HBoxContainer/Abilities/Upgrade/Label.text = "Maxed!"
 		return false
 func _on_talk_pressed():
 	hide_menu_top()

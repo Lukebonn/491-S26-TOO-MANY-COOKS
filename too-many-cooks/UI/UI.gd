@@ -78,7 +78,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and (not player_dead) and (not settings.in_settings_menu) and (not tavern_warning.warning_prompted) and (not pauseDisabled):
 		pauseDisabled = true
 		if settings.in_menu == true:

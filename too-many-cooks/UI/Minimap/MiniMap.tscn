@@ -17,10 +17,10 @@ shader = ExtResource("3_bbufj")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -214.0
-offset_top = 4.0
-offset_right = 44.0
-offset_bottom = 262.0
+offset_left = -216.0
+offset_top = 8.0
+offset_right = 42.0
+offset_bottom = 266.0
 grow_horizontal = 0
 scale = Vector2(0.8, 0.8)
 metadata/_edit_use_anchors_ = true
@@ -41,6 +41,8 @@ position = Vector2(3.9280577, -7.956522)
 scale = Vector2(1, 1.029)
 points = PackedVector2Array(-1.9420166, 7.7872343, -1.9420166, 258.34042, 255.91302, 258.34042, 255.91302, 7.787234)
 closed = true
+width = 4.0
+default_color = Color(0.4, 0.17999999, 0.16, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="MiniMap/SubViewportContainer" unique_id=990057017]
 position = Vector2(130, 128)
