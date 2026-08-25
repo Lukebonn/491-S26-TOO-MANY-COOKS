@@ -51,6 +51,17 @@ theme = ExtResource("4_ocaao")
 theme_override_constants/separation = 40
 alignment = 2
 
+[node name="SettingsButton" type="Button" parent="buttons" unique_id=1321651638 node_paths=PackedStringArray("hoverSound", "clickSound")]
+z_index = 1
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("4_ocaao")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+script = ExtResource("3_hnlrl")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
+
 [node name="JournalButton" type="Button" parent="buttons" unique_id=1178310031 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 custom_minimum_size = Vector2(0, 48)
@@ -73,7 +84,7 @@ script = ExtResource("3_hnlrl")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
-[node name="SettingsButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
+[node name="unusedButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -530,15 +541,18 @@ stream = ExtResource("10_8n4gj")
 volume_db = -8.0
 bus = &"Music"
 
+[connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="button_down" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/JournalButton" to="." method="_on_journal_button_pressed"]
 [connection signal="button_down" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="button_down" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/SettingsButton" to="buttons/SettingsButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="button_down" from="buttons/unusedButton" to="buttons/unusedButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/unusedButton" to="buttons/unusedButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/unusedButton" to="." method="_on_settings_button_pressed"]
 [connection signal="button_down" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]

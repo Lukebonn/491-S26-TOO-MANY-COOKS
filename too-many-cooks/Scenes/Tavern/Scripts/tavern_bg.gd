@@ -15,6 +15,10 @@ func _process(delta):
 	if dialogue_box_ref.in_dialogue == false and class_menu_ref.is_showing == false and act_select_ref.is_showing == false and class_select_ref.is_showing == false:
 		position.x = position.x + (direction * scroll_speed * delta)
 		position.x = clamp(position.x,-2304.0,0.0)
+	if Input.is_action_just_pressed("debug_gold"):
+		PlayerStats.Gold += 10
+	if Input.is_action_just_pressed("debug_orbs"):
+		PlayerStats.Orbs += 1
 func _on_left_panel_mouse_entered():
 	#lerp it to -1
 	if !Global.First_Time_Tavern:
