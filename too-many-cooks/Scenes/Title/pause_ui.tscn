@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://dmw0wdh1gtrgt" path="res://Scenes/Title/pause_ui.gd" id="2_k4shc"]
 [ext_resource type="Script" uid="uid://e4vth3j7r0pt" path="res://Scenes/Title/Scripts/fullscreentoggle.gd" id="2_p6tjk"]
 [ext_resource type="Script" uid="uid://85y5flhve1dl" path="res://Scenes/Title/Scripts/tooltip_reader.gd" id="3_k4shc"]
+[ext_resource type="Script" uid="uid://b4fki5w380wna" path="res://UI/Minimap/minimapToggle.gd" id="4_2bhlx"]
 [ext_resource type="Script" uid="uid://cb20n124xygrf" path="res://Audio/Sounds/buttonSounds.gd" id="4_0758p"]
+[ext_resource type="Script" uid="uid://ctdcob1lbkc7f" path="res://UI/Minimap/timerToggle.gd" id="5_tip6r"]
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="6_0758p"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="7_2bhlx"]
 
@@ -53,7 +55,7 @@ mouse_filter = 2
 theme = ExtResource("1_0758p")
 theme_override_font_sizes/font_size = 32
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 tab_2/title = "Secret..."
 tab_2/disabled = true
 tab_2/hidden = true
@@ -61,6 +63,7 @@ tab_3/title = "Purple"
 tab_3/hidden = true
 
 [node name="Audio" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=705027667]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("1_0758p")
@@ -211,7 +214,6 @@ text = "  100.0%"
 horizontal_alignment = 1
 
 [node name="Graphics" type="MarginContainer" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1077153258]
-visible = false
 layout_mode = 2
 theme = ExtResource("1_0758p")
 metadata/_tab_index = 1
@@ -259,6 +261,53 @@ layout_mode = 2
 theme = ExtResource("1_0758p")
 expand_icon = true
 script = ExtResource("2_p6tjk")
+
+[node name="Minimap" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=608309969]
+layout_mode = 2
+theme = ExtResource("1_0758p")
+alignment = 1
+
+[node name="Minimap" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Minimap" unique_id=634574766]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_0758p")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Minimap"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MinimapToggle" type="CheckButton" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Minimap" unique_id=1529471471]
+layout_mode = 2
+theme = ExtResource("1_0758p")
+button_pressed = true
+expand_icon = true
+script = ExtResource("4_2bhlx")
+
+[node name="Time" type="HBoxContainer" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings" unique_id=1263368190]
+layout_mode = 2
+theme = ExtResource("1_0758p")
+alignment = 1
+
+[node name="Time" type="RichTextLabel" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Time" unique_id=1318887082]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_0758p")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 32
+text = "Timer
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TimeToggle" type="CheckButton" parent="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Time" unique_id=55343649]
+layout_mode = 2
+theme = ExtResource("1_0758p")
+button_pressed = true
+expand_icon = true
+script = ExtResource("5_tip6r")
 
 [node name="Secret" type="Control" parent="PauseStuff/MarginContainer/TabContainer" unique_id=1286230963]
 visible = false
@@ -376,6 +425,12 @@ theme_override_font_sizes/font_size = 32
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreen" to="PauseStuff/TooltipReader" method="_on_fullscreen_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreentoggle" to="PauseStuff/TooltipReader" method="_on_fullscreen_mouse_entered"]
 [connection signal="toggled" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Fullscreen/Fullscreentoggle" to="." method="_on_fullscreentoggle_toggled"]
+[connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Minimap/Minimap" to="PauseStuff/TooltipReader" method="_on_minimap_toggle_mouse_entered"]
+[connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Minimap/MinimapToggle" to="PauseStuff/TooltipReader" method="_on_minimap_toggle_mouse_entered"]
+[connection signal="toggled" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Minimap/MinimapToggle" to="." method="_on_minimap_toggle_toggled"]
+[connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Time/Time" to="PauseStuff/TooltipReader" method="_on_time_toggle_mouse_entered"]
+[connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Time/TimeToggle" to="PauseStuff/TooltipReader" method="_on_time_toggle_mouse_entered"]
+[connection signal="toggled" from="PauseStuff/MarginContainer/TabContainer/Graphics/Graphics Settings/Time/TimeToggle" to="." method="_on_time_toggle_toggled"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleLabel" to="PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
 [connection signal="mouse_entered" from="PauseStuff/MarginContainer/TabContainer/Graphics2/Purple Toggle/Purple/PurpleToggle" to="PauseStuff/TooltipReader" method="_on_purple_toggle_mouse_entered"]
 [connection signal="button_down" from="Back" to="Back" method="_on_button_down"]

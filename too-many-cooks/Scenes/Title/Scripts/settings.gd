@@ -20,7 +20,7 @@ func do_settings_action(action: String):
 			tween.tween_property($background,"position",$BgMarker.position,0.2).set_trans(Tween.TRANS_EXPO)
 			var i = 1
 			for button in $buttons.get_children():
-				tween.tween_property(button, "global_position", Vector2($Marker2D.position.x+120,(3.5*i*20)+350), 0.05).set_trans(Tween.TRANS_EXPO)
+				tween.tween_property(button, "global_position", Vector2($Marker2D.position.x+120,(3.5*i*20)+300), 0.05).set_trans(Tween.TRANS_EXPO)
 				i += 1
 
 		"hide_menu":
@@ -55,6 +55,11 @@ func _on_journal_button_pressed():
 	do_settings_action("submenu")
 	$Journals.show_menu()
 
+func _on_title_button_pressed() -> void:
+	FadeInFadeOut.fade_out()
+	await get_tree().create_timer(1.2).timeout
+	FadeInFadeOut.fade_in()
+	get_tree().change_scene_to_file("res://Scenes/Title/title_screen.tscn")
 
 func _on_exit_button_pressed():
 	if $"../Objective Name":

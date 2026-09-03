@@ -43,7 +43,7 @@ zoom = Vector2(3, 3)
 visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_wsy8s")]
-position = Vector2(600, -619)
+position = Vector2(600, -616)
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1264768103]
 stream = ExtResource("6_2wspw")

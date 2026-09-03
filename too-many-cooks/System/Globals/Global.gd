@@ -4,6 +4,8 @@ extends Node
 #or extrinsic stats like no damage or highest dps
 #or player progression flags to determine npc dialogue
 
+var New_Game := true
+
 var First_Time_Tavern := false
 
 var Has_Finished_Playtest := false
@@ -24,3 +26,8 @@ var Act_3_Unlocked := false
 var Mage_Objective := false
 var Warrior_Objective := false
 var Rogue_Objective := false
+
+var minimapEnabled := true
+signal disableMinimap()
+var timerEnabled := true
+signal disableTimer()

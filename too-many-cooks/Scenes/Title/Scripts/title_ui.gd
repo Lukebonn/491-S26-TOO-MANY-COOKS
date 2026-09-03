@@ -38,6 +38,7 @@ func _on_quit_button_down():
 func _on_start_pressed():
 	if not selected:
 		selected = true
+		Global.New_Game = false
 		FadeInFadeOut.fade_out()
 		await get_tree().create_timer(1.2).timeout
 		get_tree().change_scene_to_file("res://Scenes/Intro Cutscene/intro_cutscene.tscn")
@@ -46,9 +47,20 @@ func _on_start_pressed():
 func _on_continue_pressed():
 	if not selected:
 		selected = true
-		Global.First_Time_Tavern = true
-		Global.First_Time_Combat = false
-		get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
+		if Global.New_Game:
+			Global.New_Game = false
+			Global.First_Time_Tavern = true
+			FadeInFadeOut.fade_out()
+			await get_tree().create_timer(1.2).timeout
+			PlayerStats.current_class = PlayerStats.classes.none
+			var target_scene = ResourceLoader.load("uid://dkpv4bqf7uhxt")
+			get_tree().change_scene_to_packed(target_scene)
+		else:
+			Global.New_Game = false
+			Global.First_Time_Combat = false
+			FadeInFadeOut.fade_out()
+			await get_tree().create_timer(1.2).timeout
+			get_tree().change_scene_to_file("res://Scenes/Tavern/tavern.tscn")
 
 
 func _on_credits_pressed() -> void:

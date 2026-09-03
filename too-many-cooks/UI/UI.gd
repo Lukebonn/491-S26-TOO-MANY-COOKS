@@ -41,6 +41,9 @@ func _ready() -> void:
 	PlayerStats.Player_Damage_Dealt = 0
 	PlayerStats.Enemy_Damage_Dealt = 0
 	PlayerStats.Enemies_Defeated = 0
+	Global.connect("disableTimer", _on_disable_timer)
+	if not Global.timerEnabled:
+		$"HUD Timer".visible = false
 	#level_complete = false
 	#pauseDisabled = false
 	for key in key_slots:
@@ -215,6 +218,8 @@ func _on_level_complete() -> void:
 	level_complete = true
 	pauseDisabled = true
 	$TimeMachine.stop()
+	if $"../../CombatMusic":
+		$"../../CombatMusic".stop()
 	level_review.reveal()
 
 
@@ -232,3 +237,9 @@ func _on_objective_manager_ui_objective(objective_title: Variant) -> void:
 	$"Objective Name".set_text("Objective\n" + objective_title)
 	var tween = get_tree().create_tween()
 	tween.tween_property($"Objective Name","modulate",Color(1,1,1,0),5.0)
+
+func _on_disable_timer() -> void:
+	if Global.timerEnabled:
+		$"HUD Timer".visible = true
+	else:
+		$"HUD Timer".visible = false

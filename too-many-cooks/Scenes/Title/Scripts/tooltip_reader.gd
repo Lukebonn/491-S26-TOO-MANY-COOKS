@@ -27,3 +27,15 @@ func _on_purple_toggle_mouse_entered():
 	var tween = get_tree().create_tween()
 	hoverSound.play()
 	tween.tween_property(self,"text","Make him purple",.1).set_trans(Tween.TRANS_CUBIC)
+
+
+func _on_minimap_toggle_mouse_entered() -> void:
+	var tween = get_tree().create_tween()
+	hoverSound.play()
+	tween.tween_property(self,"text","Toggle visibility of the Combat Minimap.",.1).set_trans(Tween.TRANS_CUBIC)
+
+
+func _on_time_toggle_mouse_entered() -> void:
+	var tween = get_tree().create_tween()
+	hoverSound.play()
+	tween.tween_property(self,"text","Toggle visibility of the Level Timer.",.1).set_trans(Tween.TRANS_CUBIC)

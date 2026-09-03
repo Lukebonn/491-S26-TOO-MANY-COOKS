@@ -43,7 +43,7 @@ zoom = Vector2(3.5, 3.5)
 visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("7_b0xek")]
-position = Vector2(-601, -297)
+position = Vector2(-584, -384)
 
 [node name="CombatMusic" type="AudioStreamPlayer" parent="." unique_id=1517349553]
 stream = ExtResource("8_rwye0")
@@ -89,7 +89,7 @@ SpawnRadius = 96.0
 [node name="Pickups" type="Node2D" parent="." unique_id=1664005544]
 
 [node name="OrbPickup" parent="Pickups" unique_id=1955872402 instance=ExtResource("9_tpl7r")]
-position = Vector2(-531, -299)
+position = Vector2(-584, -224)
 
 [node name="GoldPickup" parent="Pickups" unique_id=739019463 instance=ExtResource("10_pxkah")]
 position = Vector2(368, -43)

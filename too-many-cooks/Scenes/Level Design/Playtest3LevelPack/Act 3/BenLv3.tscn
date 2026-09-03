@@ -50,7 +50,7 @@ zoom = Vector2(3, 3)
 visible = false
 
 [node name="Exit" parent="." unique_id=1591480781 instance=ExtResource("5_xd44r")]
-position = Vector2(255, 581)
+position = Vector2(256, 584)
 
 [node name="Objects" type="Node" parent="." unique_id=18122269]
 

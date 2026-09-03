@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://datwflplfxsxh"]
 
 [ext_resource type="Script" uid="uid://csf3x4kstoxfu" path="res://UI/Minimap/mini_map_sub_viewport.gd" id="1_bhlx6"]
+[ext_resource type="Script" uid="uid://dio6y5hoty3ik" path="res://UI/Minimap/mini_map.gd" id="1_mqrhf"]
 [ext_resource type="Texture2D" uid="uid://chlgcx4ia40ek" path="res://Characters/Player/Sprites/cat_portrait.png" id="2_bbufj"]
-[ext_resource type="Shader" uid="uid://bsn5kuo8adaag" path="res://UI/Minimap/FogOfWar.gdshader" id="3_bbufj"]
+[ext_resource type="Shader" path="res://UI/Minimap/FogOfWar.gdshader" id="3_bbufj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mqrhf"]
 shader = ExtResource("3_bbufj")
@@ -10,6 +11,7 @@ shader = ExtResource("3_bbufj")
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mqrhf"]
 
 [node name="MiniMap" type="Node2D" unique_id=2081874814]
+script = ExtResource("1_mqrhf")
 
 [node name="MiniMap" type="CanvasLayer" parent="." unique_id=1928942930]
 

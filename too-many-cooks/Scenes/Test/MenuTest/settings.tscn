@@ -45,8 +45,9 @@ position = Vector2(1376, 0)
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=181482053]
 offset_left = 1176.0
+offset_top = -24.0
 offset_right = 1426.0
-offset_bottom = 649.0
+offset_bottom = 625.0
 theme = ExtResource("4_ocaao")
 theme_override_constants/separation = 40
 alignment = 2
@@ -73,6 +74,17 @@ script = ExtResource("3_hnlrl")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
 
+[node name="TitleButton" type="Button" parent="buttons" unique_id=536729445 node_paths=PackedStringArray("hoverSound", "clickSound")]
+z_index = 1
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme = ExtResource("4_ocaao")
+theme_override_font_sizes/font_size = 32
+text = "Title Screen "
+script = ExtResource("3_hnlrl")
+hoverSound = NodePath("../../ButtonHoverSound")
+clickSound = NodePath("../../ButtonClickSound")
+
 [node name="ExitButton" type="Button" parent="buttons" unique_id=2071759466 node_paths=PackedStringArray("hoverSound", "clickSound")]
 z_index = 1
 custom_minimum_size = Vector2(0, 48)
@@ -80,50 +92,6 @@ layout_mode = 2
 theme = ExtResource("4_ocaao")
 theme_override_font_sizes/font_size = 32
 text = "Back"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="unusedButton" type="Button" parent="buttons" unique_id=762065297 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "Settings"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="SaveButton" type="Button" parent="buttons" unique_id=447781717 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "Save"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="Button5" type="Button" parent="buttons" unique_id=430778779 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "meow"
-script = ExtResource("3_hnlrl")
-hoverSound = NodePath("../../ButtonHoverSound")
-clickSound = NodePath("../../ButtonClickSound")
-
-[node name="Button6" type="Button" parent="buttons" unique_id=1393948121 node_paths=PackedStringArray("hoverSound", "clickSound")]
-visible = false
-z_index = 1
-layout_mode = 2
-theme = ExtResource("4_ocaao")
-theme_override_font_sizes/font_size = 60
-text = "meow"
 script = ExtResource("3_hnlrl")
 hoverSound = NodePath("../../ButtonHoverSound")
 clickSound = NodePath("../../ButtonClickSound")
@@ -547,21 +515,12 @@ bus = &"Music"
 [connection signal="button_down" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/JournalButton" to="buttons/JournalButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/JournalButton" to="." method="_on_journal_button_pressed"]
+[connection signal="button_down" from="buttons/TitleButton" to="buttons/TitleButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="buttons/TitleButton" to="buttons/TitleButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="buttons/TitleButton" to="." method="_on_title_button_pressed"]
 [connection signal="button_down" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_button_down"]
 [connection signal="mouse_entered" from="buttons/ExitButton" to="buttons/ExitButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="buttons/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="button_down" from="buttons/unusedButton" to="buttons/unusedButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/unusedButton" to="buttons/unusedButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/unusedButton" to="." method="_on_settings_button_pressed"]
-[connection signal="button_down" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/SaveButton" to="buttons/SaveButton" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="button_down" from="buttons/Button5" to="buttons/Button5" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/Button5" to="buttons/Button5" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="button_down" from="buttons/Button6" to="buttons/Button6" method="_on_button_down"]
-[connection signal="mouse_entered" from="buttons/Button6" to="buttons/Button6" method="_on_mouse_entered"]
-[connection signal="pressed" from="buttons/Button6" to="." method="_on_button_6_pressed"]
 [connection signal="mouse_entered" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_mouse_entered"]
 [connection signal="mouse_entered" from="JournalPanel/ExitJournals" to="JournalPanel" method="_on_exit_journals_mouse_entered"]
 [connection signal="pressed" from="JournalPanel/ExitJournals" to="Journals" method="_on_exit_journals_pressed"]

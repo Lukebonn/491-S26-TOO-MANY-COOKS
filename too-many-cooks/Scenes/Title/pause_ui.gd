@@ -63,3 +63,19 @@ func _on_fullscreentoggle_toggled(toggled_on):
 
 #func _on_combat_settings_show_pause_objective(objective_title) -> void:
 	#pass#$Objective.set_text("Objective: " + objective_title)
+
+
+func _on_minimap_toggle_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Global.minimapEnabled = true
+	else:
+		Global.minimapEnabled = false
+	Global.disableMinimap.emit()
+
+
+func _on_time_toggle_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Global.timerEnabled = true
+	else:
+		Global.timerEnabled = false
+	Global.disableTimer.emit()

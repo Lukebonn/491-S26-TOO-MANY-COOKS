@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://cupikeha563yw" path="res://Audio/Sounds/General/buttonClick.mp3" id="12_xruoh"]
 [ext_resource type="AudioStream" uid="uid://busfk48iqxwow" path="res://Audio/Sounds/General/buttonHover.mp3" id="13_72lsw"]
 [ext_resource type="AudioStream" uid="uid://bdqq53n0efejs" path="res://Audio/Music/TitleScreenMusic.ogg" id="15_fbuyo"]
+[ext_resource type="Script" uid="uid://c800cxgvuabsm" path="res://UI/ContinueButton.gd" id="15_q3h1k"]
 [ext_resource type="Script" uid="uid://de0angmpdci63" path="res://Scenes/Title/journals_ui.gd" id="19_jhms8"]
 [ext_resource type="Script" uid="uid://m1ratefdb4lj" path="res://Scenes/Tavern/Scripts/journal_entryy.gd" id="20_q3h1k"]
 [ext_resource type="Script" uid="uid://ego2ey2td6r0" path="res://Scenes/Tavern/journals_panel.gd" id="21_vjiri"]
@@ -224,7 +225,7 @@ layout_mode = 2
 theme = ExtResource("7_xruoh")
 theme_override_font_sizes/font_size = 64
 text = "Skip Intro"
-script = ExtResource("11_fbuyo")
+script = ExtResource("15_q3h1k")
 hoverSound = NodePath("../../../../ButtonHoverSound")
 clickSound = NodePath("../../../../ButtonClickSound")
 
