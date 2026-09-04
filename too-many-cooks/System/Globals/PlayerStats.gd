@@ -108,7 +108,7 @@ var RogueClassLevel : int = 1
 #same but for abilities
 var MeleeClassAbilityLevel : int = 0
 var MageClassAbilityLevel : int = 0
-var RogueClassAbilityLevel : int = 3
+var RogueClassAbilityLevel : int = 0
 
 func reset_objective_stats():
 	level_kill_count = 0
