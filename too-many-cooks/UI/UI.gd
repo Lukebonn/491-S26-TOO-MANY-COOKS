@@ -83,9 +83,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debug_gold"):
-		PlayerStats.Gold += 10
+		PlayerStats.Gold += 100
 	if Input.is_action_just_pressed("debug_orbs"):
-		PlayerStats.Orbs += 1
+		PlayerStats.Orbs += 5
 	if Input.is_action_just_pressed("pause") and (not player_dead) and (not settings.in_settings_menu) and (not tavern_warning.warning_prompted) and (not pauseDisabled):
 		pauseDisabled = true
 		if settings.in_menu == true:

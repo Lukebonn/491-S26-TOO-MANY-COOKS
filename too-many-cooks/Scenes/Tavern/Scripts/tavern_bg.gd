@@ -16,9 +16,9 @@ func _process(delta):
 		position.x = position.x + (direction * scroll_speed * delta)
 		position.x = clamp(position.x,-2304.0,0.0)
 	if Input.is_action_just_pressed("debug_gold"):
-		PlayerStats.Gold += 10
+		PlayerStats.Gold += 100
 	if Input.is_action_just_pressed("debug_orbs"):
-		PlayerStats.Orbs += 1
+		PlayerStats.Orbs += 5
 func _on_left_panel_mouse_entered():
 	#lerp it to -1
 	if !Global.First_Time_Tavern:

@@ -130,7 +130,7 @@ layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=718436562 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -145,9 +145,11 @@ Body = "I have heard rumblings of a new King taking hold of the old tower.  The 
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=110990707 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=110990707 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -164,9 +166,11 @@ Body = "The little rodents think they are a match for my sword.  They are sorely
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=2146731276 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=2146731276 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -183,9 +187,11 @@ Body = "A curious little cat approached me after I couldn't figure out one of th
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1635940106 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Warrior/Entries" unique_id=1635940106 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -202,6 +208,8 @@ Body = "Despite all odds, the little kit has made its way towards the top of the
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="Rogue" type="MarginContainer" parent="Journals/TabContainer" unique_id=1456971047]
@@ -216,7 +224,7 @@ layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=2140746950 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -232,9 +240,11 @@ Body = "\"Trash Panda\" this- \"Trash Panda\" that- I'm not some low class bin d
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=735753074 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=735753074 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -251,9 +261,11 @@ Body = "That tower is supposed to be ABANDONED and now there are swarms of ARMED
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1525226597 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1525226597 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -270,9 +282,11 @@ Body = "A little cat found me and brought me to this tavern. Part of me doesn’
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1217085459 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Rogue/Entries" unique_id=1217085459 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -289,6 +303,8 @@ Body = "That little rascal is really something.  They finessed their way around 
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="Mage" type="MarginContainer" parent="Journals/TabContainer" unique_id=1972224127]
@@ -303,7 +319,7 @@ layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_ocaao")
 
-[node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry1" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=344495932 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -319,9 +335,11 @@ Body = "That tower is supposed to protect the land, now everyone seems afraid of
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry2" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=1904525624 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry2" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=1904525624 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -338,9 +356,11 @@ Body = "There is something seriously wrong here.  If only there were less rats a
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry3" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=863285290 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry3" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=863285290 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -357,9 +377,11 @@ Body = "That funny little cat seems to be able to do everything.  They brought m
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
-[node name="entry4" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=878879187 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref")]
+[node name="entry4" type="Button" parent="Journals/TabContainer/Mage/Entries" unique_id=878879187 node_paths=PackedStringArray("journal_text_ref", "journal_author_ref", "journal_panel_ref", "clickSound", "hoverSound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -376,6 +398,8 @@ Body = "The cat made its way to the upper floors.  I do not know if I would have
 journal_text_ref = NodePath("../../../../../JournalPanel/JournalLabel")
 journal_author_ref = NodePath("../../../../../JournalPanel/AuthorLabel")
 journal_panel_ref = NodePath("../../../../../JournalPanel")
+clickSound = NodePath("../../../../../ButtonClickSound")
+hoverSound = NodePath("../../../../../ButtonHoverSound")
 metadata/_custom_type_script = "uid://m1ratefdb4lj"
 
 [node name="JournalPanel" type="Panel" parent="." unique_id=1224800550 node_paths=PackedStringArray("ClickSound", "HoverSound")]

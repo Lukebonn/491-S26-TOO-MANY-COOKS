@@ -610,7 +610,33 @@ script = ExtResource("21_vjiri")
 ClickSound = NodePath("../ButtonClickSound")
 HoverSound = NodePath("../ButtonHoverSound")
 
-[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=2101473344]
+[node name="JournalLabel" type="RichTextLabel" parent="JournalPanel" unique_id=509904353]
+z_index = 1
+custom_minimum_size = Vector2(540, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -196.0
+offset_right = 281.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_xruoh")
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "dummy tex
+dummy tex
+dummy tex"
+scroll_active = false
+
+[node name="TitleLabel" type="RichTextLabel" parent="JournalPanel" unique_id=883248820]
 z_index = 1
 custom_minimum_size = Vector2(540, 440)
 layout_mode = 1
@@ -626,14 +652,16 @@ offset_bottom = 211.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_xruoh")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/normal_font_size = 32
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.17999999, 0.16, 1)
+theme_override_constants/line_separation = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "dummy tex"
+text = "TITLE"
 scroll_active = false
 
-[node name="AuthorLabel" type="RichTextLabel" parent="JournalPanel" unique_id=399778071]
+[node name="AuthorLabel" type="RichTextLabel" parent="JournalPanel" unique_id=1640766755]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -648,9 +676,9 @@ offset_bottom = 259.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_xruoh")
+theme_override_colors/default_color = Color(0.4, 0.17999999, 0.16, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 36
 text = "author..."
 horizontal_alignment = 2
 
