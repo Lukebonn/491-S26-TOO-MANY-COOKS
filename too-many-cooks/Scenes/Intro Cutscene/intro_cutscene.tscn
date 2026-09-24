@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://kynperywo8m" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P3.png" id="5_hhtmf"]
 [ext_resource type="Texture2D" uid="uid://bvdsehvvr7m07" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P4.png" id="6_ceprt"]
 [ext_resource type="Texture2D" uid="uid://dkkqcq82ntjex" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P5.webp" id="8_k7ifm"]
-[ext_resource type="Texture2D" uid="uid://cylyuy2wv0pir" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P6.webp" id="9_lna37"]
 [ext_resource type="AudioStream" uid="uid://cfh5to08pi61t" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline1.wav" id="10_j8cwx"]
 [ext_resource type="AudioStream" uid="uid://bo2t82rts7l8j" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline3.wav" id="11_6wkej"]
 [ext_resource type="AudioStream" uid="uid://b2qcphvbnrwxk" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline10.wav" id="11_py1tv"]
@@ -23,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://bo0xn3ahm8nm5" path="res://Scenes/Intro Cutscene/Audio/Intro/SubtitleVoiceline9.wav" id="18_k2rm0"]
 [ext_resource type="Theme" uid="uid://bejhfnvpr2bas" path="res://UI/Themes/abi'stheme.tres" id="20_6wkej"]
 [ext_resource type="AudioStream" uid="uid://c4l21p5f5v2t8" path="res://Audio/Music/IntroMusic.ogg" id="21_6wkej"]
+[ext_resource type="Texture2D" uid="uid://dxo2ypfkubckq" path="res://Scenes/Intro Cutscene/Img/INTROCUT-P6.png" id="22_8og2a"]
 [ext_resource type="Texture2D" uid="uid://djinl5jg3nhox" path="res://Scenes/Intro Cutscene/Img/introbg.png" id="22_11xfy"]
 [ext_resource type="Texture2D" uid="uid://b8fotf2c8sgim" path="res://Scenes/Intro Cutscene/Img/intrograd.png" id="23_py1tv"]
 
@@ -168,7 +168,7 @@ texture = ExtResource("8_k7ifm")
 [node name="5" type="Sprite2D" parent="Pages" unique_id=400003766]
 z_index = 6
 position = Vector2(1728, 319)
-texture = ExtResource("9_lna37")
+texture = ExtResource("22_8og2a")
 
 [node name="FadeInFadeOut" parent="." unique_id=1881155850 instance=ExtResource("2_ct673")]
 z_index = 10
