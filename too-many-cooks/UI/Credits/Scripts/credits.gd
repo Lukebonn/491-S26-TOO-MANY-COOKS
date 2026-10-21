@@ -12,6 +12,7 @@ var fading : bool = false
 func _ready() -> void:
 	FadeInFadeOut.fade_in()
 	var tween = get_tree().create_tween()
+	$"../Music".play()
 	tween.tween_property(self,"position",Vector2(0,TweenTarget),TweenTime).set_trans(Tween.TRANS_LINEAR)
 	await tween.finished
 	await get_tree().create_timer(3.0).timeout

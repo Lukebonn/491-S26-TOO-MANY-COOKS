@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dwj0u1x05bjqb" path="res://UI/Credits/Img/luke-bonniwell-credit-png.png" id="11_y1gn0"]
 [ext_resource type="Texture2D" uid="uid://bb6w5068hs5se" path="res://UI/Credits/Img/AbbyP.png" id="12_6lhih"]
 [ext_resource type="Texture2D" uid="uid://d288dampa2jgg" path="res://UI/Credits/Img/Louie.png" id="13_fu6bj"]
+[ext_resource type="AudioStream" uid="uid://dbxak61ei1v3s" path="res://Audio/Music/CreditsMusic.mp3" id="23_qqtkc"]
 
 [node name="Credits" type="Control" unique_id=1758667731]
 layout_mode = 3
@@ -515,3 +516,6 @@ theme = ExtResource("2_gjm8c")
 theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
 theme_override_font_sizes/font_size = 24
 text = "Press Anything to Skip"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1334591680]
+stream = ExtResource("23_qqtkc")
